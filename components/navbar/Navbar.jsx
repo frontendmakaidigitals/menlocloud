@@ -257,7 +257,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <Link href="/docs" legacyBehavior passHref>
+                <Link href="/" legacyBehavior passHref>
                   <NavigationMenuLink
                     className={`${navigationMenuTriggerStyle()} bg-transparent`}
                   >
@@ -266,7 +266,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link href="/docs" legacyBehavior passHref>
+                <Link href="/" legacyBehavior passHref>
                   <NavigationMenuLink
                     className={`${navigationMenuTriggerStyle()} bg-transparent`}
                   >
@@ -275,7 +275,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link href="/docs" legacyBehavior passHref>
+                <Link href="/" legacyBehavior passHref>
                   <NavigationMenuLink
                     className={`${navigationMenuTriggerStyle()} bg-transparent`}
                   >
