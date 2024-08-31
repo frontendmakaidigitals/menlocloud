@@ -25,7 +25,7 @@ const Header_01 = () => {
           
             <Link
               href='/signup'
-              className='button hidden rounded-[50px] border-black bg-black text-white after:bg-colorOrangyRed hover:border-colorOrangyRed hover:text-white lg:inline-block'
+              className='button hidden rounded-[50px] border-black bg-black text-white after:bg-[#2962FF] hover:border-[#2962FF] hover:text-white lg:inline-block'
             >
               + Lets Connect
             </Link>

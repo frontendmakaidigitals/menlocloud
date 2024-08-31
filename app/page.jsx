@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+
 import Link from "next/link";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -37,15 +37,15 @@ function Home() {
                 >
                   <Link
                     href="#"
-                    className="button rounded-[50px] border-2 border-black bg-black py-4 text-white after:bg-colorOrangyRed hover:border-colorOrangyRed hover:text-white"
+                    className="button rounded-[50px] border-2 border-black bg-black py-4 text-white after:bg-[#2962FF] hover:border-[#2962FF] hover:text-white"
                   >
-                    Get started for free
+                    Read More
                   </Link>
                   <Link
                     href="#"
-                    className="button rounded-[50px] border-2 border-black bg-transparent py-4 text-black after:bg-colorOrangyRed hover:border-colorOrangyRed hover:text-white"
+                    className="button rounded-[50px] border-2 border-black bg-transparent py-4 text-black after:bg-[#2962FF] hover:border-[#2962FF] hover:text-white"
                   >
-                    Learn more
+                    About Us
                   </Link>
                 </div>
               </div>
@@ -53,8 +53,8 @@ function Home() {
                 className="jos hero-img overflow-hidden rounded-2xl bg-black"
                 data-jos_animation="zoom"
               >
-                <Image
-                  src="/assets/img_placeholder/th-1/hero-dashboard.jpg"
+                <img
+                  src="https://images.unsplash.com/photo-1610795868681-4b4ebb6aec43?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                   alt="hero-dashboard"
                   width="1296"
                   height="640"
@@ -91,8 +91,8 @@ function Home() {
                   }}
                 >
                   <SwiperSlide>
-                    <Image
-                      src="/assets/img_placeholder/th-1/brand-1.png"
+                    <img
+                      src="/assets/img_placeholder/th-1/googleCloud.png"
                       alt="brand-1"
                       width="180"
                       height="38"
@@ -100,92 +100,54 @@ function Home() {
                     />
                   </SwiperSlide>
                   <SwiperSlide>
-                    <Image
-                      src="/assets/img_placeholder/th-1/brand-2.png"
+                    <img
+                      src="/assets/img_placeholder/th-1/aws.png"
                       alt="brand-2"
-                      width="183"
+                      width="90"
                       height="35"
                       className="max-w-full"
                     />
                   </SwiperSlide>
                   <SwiperSlide>
-                    <Image
-                      src="/assets/img_placeholder/th-1/brand-3.png"
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Microsoft_Azure_Logo.svg/1280px-Microsoft_Azure_Logo.svg.png"
                       alt="brand-3"
-                      width="172"
-                      height="35"
+                      width="130"
                       className="max-w-full"
                     />
                   </SwiperSlide>
                   <SwiperSlide>
-                    <Image
-                      src="/assets/img_placeholder/th-1/brand-4.png"
+                    <img
+                      src="/assets/img_placeholder/th-1/postgress.png"
                       alt="brand-4"
-                      width="175"
+                      width="145"
                       height="30"
                       className="max-w-full"
                     />
                   </SwiperSlide>
                   <SwiperSlide>
-                    <Image
-                      src="/assets/img_placeholder/th-1/brand-5.png"
+                    <img
+                      src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*zmMOdVZ_j9vwMcpdD8Uceg.png"
                       alt="brand-5"
-                      width="168"
-                      height="36"
+                      width="188"
                       className="max-w-full"
                     />
                   </SwiperSlide>
                   <SwiperSlide>
-                    <Image
-                      src="/assets/img_placeholder/th-1/brand-1.png"
+                    <img
+                      src="/assets/img_placeholder/th-1/django.png"
                       alt="brand-1"
-                      width="180"
+                      width="110"
                       height="38"
-                      className="max-w-full"
-                    />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <Image
-                      src="/assets/img_placeholder/th-1/brand-2.png"
-                      alt="brand-2"
-                      width="183"
-                      height="35"
-                      className="max-w-full"
-                    />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <Image
-                      src="/assets/img_placeholder/th-1/brand-3.png"
-                      alt="brand-3"
-                      width="172"
-                      height="35"
-                      className="max-w-full"
-                    />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <Image
-                      src="/assets/img_placeholder/th-1/brand-4.png"
-                      alt="brand-4"
-                      width="175"
-                      height="30"
-                      className="max-w-full"
-                    />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <Image
-                      src="/assets/img_placeholder/th-1/brand-5.png"
-                      alt="brand-5"
-                      width="168"
-                      height="36"
                       className="max-w-full"
                     />
                   </SwiperSlide>
                 </Swiper>
               </div>
             </div>
-            <div className="orange-gradient-1 absolute -right-[150px] top-[370px] -z-[1] h-[500px] w-[500px] animate-spin rounded-[500px]"></div>
+            <div className="blue-gradient-1 absolute -right-[150px] top-[370px] -z-[1] h-[500px] w-[500px] animate-spin rounded-[500px]"></div>
 
-            <div className="orange-gradient-2 absolute right-[57px] top-[620px] -z-[1] h-[450px] w-[450px] animate-spin rounded-[450px]"></div>
+            <div className="blue-gradient-2 absolute right-[57px] top-[620px] -z-[1] h-[450px] w-[450px] animate-spin rounded-[450px]"></div>
           </div>
         </section>
         {/*...::: Hero Section End :::... */}
@@ -208,13 +170,13 @@ function Home() {
                 {/* Service Item */}
                 <li className="group bg-white p-[30px] transition-all duration-300 ease-in-out hover:bg-black">
                   <div className="relative mb-9 h-[70px] w-[70px]">
-                    <Image
+                    <img
                       src="/assets/img_placeholder/th-1/service-icon-black-1.svg"
                       alt=""
                       width="70"
                       height="70"
                     />
-                    <Image
+                    <img
                       src="/assets/img_placeholder/th-1/service-icon-orange-1.svg"
                       alt="service-icon-orange-1"
                       width="70"
@@ -225,7 +187,7 @@ function Home() {
                   <h3 className="mb-4 block text-xl leading-tight -tracking-[0.5px] group-hover:text-white xl:text-2xl xxl:text-[28px]">
                     <Link
                       href="/service-details"
-                      className="hover:text-colorOrangyRed"
+                      className="hover:text-[#2962FF]"
                     >
                       Resource Flexibility
                     </Link>
@@ -240,13 +202,13 @@ function Home() {
                     href="/service-details"
                     className="relative inline-block h-[30px] w-[30px] duration-300"
                   >
-                    <Image
+                    <img
                       src="/assets/img_placeholder/th-1/arrow-right-black.svg"
                       alt="arrow-right-black"
                       width="30"
                       height="30"
                     />
-                    <Image
+                    <img
                       src="/assets/img_placeholder/th-1/arrow-right-orange.svg"
                       alt="arrow-right-black"
                       width="30"
@@ -259,13 +221,13 @@ function Home() {
                 {/* Service Item */}
                 <li className="group bg-white p-[30px] transition-all duration-300 ease-in-out hover:bg-black">
                   <div className="relative mb-9 h-[70px] w-[70px]">
-                    <Image
+                    <img
                       src="/assets/img_placeholder/th-1/service-icon-black-2.svg"
                       alt="service-icon-black-2"
                       width="70"
                       height="70"
                     />
-                    <Image
+                    <img
                       src="/assets/img_placeholder/th-1/service-icon-orange-2.svg"
                       alt="service-icon-orange-1"
                       width="70"
@@ -277,7 +239,7 @@ function Home() {
                   <h3 className="mb-4 block text-xl leading-tight -tracking-[0.5px] group-hover:text-white xl:text-2xl xxl:text-[28px]">
                     <Link
                       href="/service-details"
-                      className="hover:text-colorOrangyRed"
+                      className="hover:text-[#2962FF]"
                     >
                       Managed Services
                     </Link>
@@ -292,13 +254,13 @@ function Home() {
                     href="/service-details"
                     className="relative inline-block h-[30px] w-[30px] duration-300"
                   >
-                    <Image
+                    <img
                       src="/assets/img_placeholder/th-1/arrow-right-black.svg"
                       alt="arrow-right-black"
                       width="30"
                       height="30"
                     />
-                    <Image
+                    <img
                       src="/assets/img_placeholder/th-1/arrow-right-orange.svg"
                       alt="arrow-right-black"
                       width="30"
@@ -313,13 +275,13 @@ function Home() {
                 {/* Service Item */}
                 <li className="group bg-white p-[30px] transition-all duration-300 ease-in-out hover:bg-black">
                   <div className="relative mb-9 h-[70px] w-[70px]">
-                    <Image
+                    <img
                       src="/assets/img_placeholder/th-1/service-icon-black-3.svg"
                       alt="service-icon-black-3"
                       width="70"
                       height="70"
                     />
-                    <Image
+                    <img
                       src="/assets/img_placeholder/th-1/service-icon-orange-3.svg"
                       alt="service-icon-orange-3"
                       width="70"
@@ -330,7 +292,7 @@ function Home() {
                   <h3 className="mb-4 block text-xl leading-tight -tracking-[0.5px] group-hover:text-white xl:text-2xl xxl:text-[28px]">
                     <Link
                       href="/service-details"
-                      className="hover:text-colorOrangyRed"
+                      className="hover:text-[#2962FF]"
                     >
                       Web-Based Access
                     </Link>
@@ -345,13 +307,13 @@ function Home() {
                     href="/service-details"
                     className="relative inline-block h-[30px] w-[30px] duration-300"
                   >
-                    <Image
+                    <img
                       src="/assets/img_placeholder/th-1/arrow-right-black.svg"
                       alt="arrow-right-black"
                       width="30"
                       height="30"
                     />
-                    <Image
+                    <img
                       src="/assets/img_placeholder/th-1/arrow-right-orange.svg"
                       alt="arrow-right-black"
                       width="30"
@@ -364,13 +326,13 @@ function Home() {
                 {/* Service Item */}
                 <li className="group bg-white p-[30px] transition-all duration-300 ease-in-out hover:bg-black">
                   <div className="relative mb-9 h-[70px] w-[70px]">
-                    <Image
+                    <img
                       src="/assets/img_placeholder/th-1/service-icon-black-4.svg"
                       alt="service-icon-black-4"
                       width="70"
                       height="70"
                     />
-                    <Image
+                    <img
                       src="/assets/img_placeholder/th-1/service-icon-orange-4.svg"
                       alt="service-icon-orange-4"
                       width="70"
@@ -381,7 +343,7 @@ function Home() {
                   <h3 className="mb-4 block text-xl leading-tight -tracking-[0.5px] group-hover:text-white xl:text-2xl xxl:text-[28px]">
                     <Link
                       href="/service-details"
-                      className="hover:text-colorOrangyRed"
+                      className="hover:text-[#2962FF]"
                     >
                       Resource Flexibility
                     </Link>
@@ -396,13 +358,13 @@ function Home() {
                     href="/service-details"
                     className="relative inline-block h-[30px] w-[30px] duration-300"
                   >
-                    <Image
+                    <img
                       src="/assets/img_placeholder/th-1/arrow-right-black.svg"
                       alt="arrow-right-black"
                       width="30"
                       height="30"
                     />
-                    <Image
+                    <img
                       src="/assets/img_placeholder/th-1/arrow-right-orange.svg"
                       alt="arrow-right-black"
                       width="30"
@@ -433,9 +395,9 @@ function Home() {
                   className="jos order-2 overflow-hidden rounded-md md:order-1"
                   data-jos_animation="fade-left"
                 >
-                  <Image
-                    src="/assets/img_placeholder/th-1/content-image-1.jpg"
-                    alt="content-image-1"
+                  <img
+                    src="/assets/img_placeholder/th-1/content-img-1.jpg"
+                    alt="content-img-1"
                     width="526"
                     height="450"
                     className="h-auto w-full"
@@ -449,19 +411,22 @@ function Home() {
                 >
                   {/* Section Content Block */}
                   <div className="mb-6">
-                    <h2>Accessible to a wider audience</h2>
+                    <h2>Standing at the forefront of professional services</h2>
                   </div>
                   {/* Section Content Block */}
                   <div className="text-lg leading-[1.4] lg:text-[21px]">
                     <p className="mb-7 last:mb-0">
-                      Advanced AI capabilities accessible to a broader audience,
-                      including small & medium-sized businesses and individuals
-                      who may not have the resources or expertise to develop.
+                      MenloCloud is a pioneering professional services firm
+                      driving value through integrating business, technology,
+                      and human elements.
                     </p>
                     <p className="mb-7 last:mb-0">
-                      Advanced AI capabilities accessible to a broader audience,
-                      including small & medium-sized businesses and individuals
-                      who may not have the resources or expertise to develop.
+                      From strategy, development to digital product creation and
+                      beyond, we offer a comprehensive range of services
+                      designed to fast-track your vision with practical,
+                      integrated solutions. We attentively listen and share our
+                      expertise throughout the process, equipping your teams to
+                      sustain progress long after our involvement.
                     </p>
                   </div>
                 </div>
@@ -486,9 +451,9 @@ function Home() {
                   className="jos order-2 overflow-hidden rounded-md"
                   data-jos_animation="fade-left"
                 >
-                  <Image
-                    src="/assets/img_placeholder/th-1/content-image-2.jpg"
-                    alt="content-image-2"
+                  <img
+                    src="/assets/img_placeholder/th-1/content-img-2.jpg"
+                    alt="content-img-2"
                     width="526"
                     height="450"
                     className="h-auto w-full"
@@ -499,54 +464,28 @@ function Home() {
                 <div className="jos order-1" data-jos_animation="fade-right">
                   {/* Section Content Block */}
                   <div className="mb-6">
-                    <h2>Providing quick deploy solutions</h2>
+                    <h2> Required by Everyone, Everywhere</h2>
                   </div>
                   {/* Section Content Block */}
                   <div className="text-lg leading-[1.4] lg:text-[21px]">
                     <p className="mb-7 last:mb-0">
-                      Our AI SaaS solutions can be quickly deployed, enabling
-                      users to start benefiting from AI capabilities without
-                      lengthy setup and development times in fast-paced
-                      industries.
+                      Artificial Intelligence (AI), Machine Learning (ML), and
+                      Data Science are no longer just technological luxuries but
+                      essential tools across all sectors.
                     </p>
-                    <ul className="flex flex-col gap-y-5 font-dmSans text-xl leading-tight tracking-tighter text-black lg:mt-12 lg:text-[28px]">
-                      <li className="flex items-start gap-x-3">
-                        <div className="mt-[2.5px] h-[30px] w-[30px]">
-                          <Image
-                            src="/assets/img_placeholder/th-1/check-circle.svg"
-                            alt="check-circle"
-                            width="30"
-                            height="30"
-                            className="h-full w-full"
-                          />
-                        </div>
-                        Ready-to-use AI capabilities system
-                      </li>
-                      <li className="flex items-start gap-x-3">
-                        <div className="mt-[2.5px] h-[30px] w-[30px]">
-                          <Image
-                            src="/assets/img_placeholder/th-1/check-circle.svg"
-                            alt="check-circle"
-                            width="30"
-                            height="30"
-                            className="h-full w-full"
-                          />
-                        </div>
-                        Users can quickly integrate AI features
-                      </li>
-                      <li className="flex items-start gap-x-3">
-                        <div className="mt-[2.5px] h-[30px] w-[30px]">
-                          <Image
-                            src="/assets/img_placeholder/th-1/check-circle.svg"
-                            alt="check-circle"
-                            width="30"
-                            height="30"
-                            className="h-full w-full"
-                          />
-                        </div>
-                        Time savings translate to cost savings
-                      </li>
-                    </ul>
+
+                    <div className="text-lg leading-[1.4] lg:text-[21px]">
+                      <p className="mb-7 last:mb-0">
+                        The necessity of these technologies extends beyond
+                        specific industries; they are crucial for everyone,
+                        everywhere and are pivotal in addressing complex
+                        challenges and seizing new opportunities. As digital
+                        transformation accelerates, embracing these technologies
+                        becomes indispensable for achieving efficiency,
+                        fostering growth, and staying competitive in an
+                        increasingly data-driven world.
+                      </p>
+                    </div>
                   </div>
                 </div>
                 {/* Content Right Block */}
@@ -564,9 +503,9 @@ function Home() {
             <div className="jos grid grid-cols-1 overflow-hidden rounded-[30px] bg-black lg:rounded-[50px] xl:grid-cols-[minmax(400px,_1fr)_1.5fr] xxl:grid-cols-[1fr_minmax(800px,_1fr)]">
               {/* Funfact Left Block */}
               <div className="relative overflow-hidden rounded-[30px] lg:rounded-[50px]">
-                <Image
-                  src="/assets/img_placeholder/th-1/funfact-image.jpg"
-                  alt="funfact-image"
+                <img
+                  src="/assets/img_placeholder/th-1/funfact-img.jpg"
+                  alt="funfact-img"
                   width="721"
                   height="784"
                   className="h-80 w-full object-cover object-center lg:h-[35rem] xl:h-full"
@@ -578,7 +517,7 @@ function Home() {
                   href="https://www.youtube.com/watch?v=3nQNiWdeH2Q"
                   className="absolute left-1/2 top-1/2 z-[1] -translate-x-1/2 -translate-y-1/2"
                 >
-                  <div className="relative flex h-[120px] w-[120px] items-center justify-center rounded-full border-[3px] border-black text-lg font-bold backdrop-blur-[2px] transition-all duration-300 hover:bg-colorOrangyRed hover:text-white">
+                  <div className="relative flex h-[120px] w-[120px] items-center justify-center rounded-full border-[3px] border-black text-lg font-bold backdrop-blur-[2px] transition-all duration-300 hover:bg-[#2962FF] hover:text-white">
                     Play
                     <div className="absolute -z-[1] h-[110%] w-[110%] animate-[ping_1.5s_ease-in-out_infinite] rounded-full bg-gray-600 opacity-30"></div>
                   </div>
@@ -610,7 +549,7 @@ function Home() {
                   {/* Counter Items */}
                   <li>
                     <h3
-                      className="text-5xl text-colorOrangyRed md:text-6xl lg:text-7xl xl:text-7xl xxl:text-[120px]"
+                      className="text-5xl text-[#2962FF] md:text-6xl lg:text-7xl xl:text-7xl xxl:text-[120px]"
                       data-module="countup"
                     >
                       <span className="start-number" data-countup-number="92">
@@ -626,7 +565,7 @@ function Home() {
                   {/* Counter Items */}
                   <li>
                     <h3
-                      className="text-5xl text-colorOrangyRed md:text-6xl lg:text-7xl xl:text-7xl xxl:text-[120px]"
+                      className="text-5xl text-[#2962FF] md:text-6xl lg:text-7xl xl:text-7xl xxl:text-[120px]"
                       data-module="countup"
                     >
                       <span className="start-number" data-countup-number="75">
@@ -724,7 +663,7 @@ function Home() {
                         </p>
                         <Link
                           href="/pricing"
-                          className="button mt-auto block rounded-[50px] border-2 border-black bg-transparent py-4 text-center text-black transition-all duration-300 ease-linear after:bg-colorOrangyRed hover:border-colorOrangyRed hover:text-black group-hover:border-colorOrangyRed group-hover:text-white"
+                          className="button mt-auto block rounded-[50px] border-2 border-black bg-transparent py-4 text-center text-black transition-all duration-300 ease-linear after:bg-[#2962FF] hover:border-[#2962FF] hover:text-black group-hover:border-[#2962FF] group-hover:text-white"
                         >
                           Choose the plan
                         </Link>
@@ -756,7 +695,7 @@ function Home() {
                         </p>
                         <Link
                           href="/pricing"
-                          className="button mt-auto block rounded-[50px] border-2 border-black bg-transparent py-4 text-center text-black transition-all duration-300 ease-linear after:bg-colorOrangyRed hover:border-colorOrangyRed hover:text-black group-hover:border-colorOrangyRed group-hover:text-white"
+                          className="button mt-auto block rounded-[50px] border-2 border-black bg-transparent py-4 text-center text-black transition-all duration-300 ease-linear after:bg-[#2962FF] hover:border-[#2962FF] hover:text-black group-hover:border-[#2962FF] group-hover:text-white"
                         >
                           Choose the plan
                         </Link>
@@ -788,7 +727,7 @@ function Home() {
                         </p>
                         <Link
                           href="/pricing"
-                          className="button mt-auto block rounded-[50px] border-2 border-black bg-transparent py-4 text-center text-black transition-all duration-300 ease-linear after:bg-colorOrangyRed hover:border-colorOrangyRed hover:text-black group-hover:border-colorOrangyRed group-hover:text-white"
+                          className="button mt-auto block rounded-[50px] border-2 border-black bg-transparent py-4 text-center text-black transition-all duration-300 ease-linear after:bg-[#2962FF] hover:border-[#2962FF] hover:text-black group-hover:border-[#2962FF] group-hover:text-white"
                         >
                           Choose the plan
                         </Link>
@@ -829,7 +768,7 @@ function Home() {
                         </p>
                         <Link
                           href="/pricing"
-                          className="button mt-auto block rounded-[50px] border-2 border-black bg-transparent py-4 text-center text-black transition-all duration-300 ease-linear after:bg-colorOrangyRed hover:border-colorOrangyRed hover:text-black group-hover:border-colorOrangyRed group-hover:text-white"
+                          className="button mt-auto block rounded-[50px] border-2 border-black bg-transparent py-4 text-center text-black transition-all duration-300 ease-linear after:bg-[#2962FF] hover:border-[#2962FF] hover:text-black group-hover:border-[#2962FF] group-hover:text-white"
                         >
                           Choose the plan
                         </Link>
@@ -861,7 +800,7 @@ function Home() {
                         </p>
                         <Link
                           href="/pricing"
-                          className="button mt-auto block rounded-[50px] border-2 border-black bg-transparent py-4 text-center text-black transition-all duration-300 ease-linear after:bg-colorOrangyRed hover:border-colorOrangyRed hover:text-black group-hover:border-colorOrangyRed group-hover:text-white"
+                          className="button mt-auto block rounded-[50px] border-2 border-black bg-transparent py-4 text-center text-black transition-all duration-300 ease-linear after:bg-[#2962FF] hover:border-[#2962FF] hover:text-black group-hover:border-[#2962FF] group-hover:text-white"
                         >
                           Choose the plan
                         </Link>
@@ -893,7 +832,7 @@ function Home() {
                         </p>
                         <Link
                           href="/pricing"
-                          className="button mt-auto block rounded-[50px] border-2 border-black bg-transparent py-4 text-center text-black transition-all duration-300 ease-linear after:bg-colorOrangyRed hover:border-colorOrangyRed hover:text-black group-hover:border-colorOrangyRed group-hover:text-white"
+                          className="button mt-auto block rounded-[50px] border-2 border-black bg-transparent py-4 text-center text-black transition-all duration-300 ease-linear after:bg-[#2962FF] hover:border-[#2962FF] hover:text-black group-hover:border-[#2962FF] group-hover:text-white"
                         >
                           Choose the plan
                         </Link>
@@ -940,7 +879,7 @@ function Home() {
                     </p>
                     <Link
                       href="/faq-1"
-                      className="button mt-5 rounded-[50px] border-2 border-black bg-black py-4 text-white after:bg-colorOrangyRed hover:border-colorOrangyRed hover:text-white"
+                      className="button mt-5 rounded-[50px] border-2 border-black bg-black py-4 text-white after:bg-[#2962FF] hover:border-[#2962FF] hover:text-white"
                     >
                       Ask you questions
                     </Link>
@@ -965,7 +904,7 @@ function Home() {
                       <div className="accordion-header flex items-center justify-between font-dmSans text-xl font-bold leading-[1.2] -tracking-[0.5px] text-black lg:text-[28px]">
                         <p>How do I start AI SaaS?</p>
                         <div className="accordion-icon">
-                          <Image
+                          <img
                             src="/assets/img_placeholder/plus.svg"
                             width={24}
                             height={24}
@@ -992,7 +931,7 @@ function Home() {
                       <div className="accordion-header flex items-center justify-between font-dmSans text-xl font-bold leading-[1.2] -tracking-[0.5px] text-black lg:text-[28px]">
                         <p>Can I customize AI SaaS solutions?</p>
                         <div className="accordion-icon">
-                          <Image
+                          <img
                             src="/assets/img_placeholder/plus.svg"
                             width={24}
                             height={24}
@@ -1019,7 +958,7 @@ function Home() {
                       <div className="accordion-header flex items-center justify-between font-dmSans text-xl font-bold leading-[1.2] -tracking-[0.5px] text-black lg:text-[28px]">
                         <p>How can AI benefit my business?</p>
                         <div className="accordion-icon">
-                          <Image
+                          <img
                             src="/assets/img_placeholder/plus.svg"
                             width={24}
                             height={24}
@@ -1072,7 +1011,7 @@ function Home() {
                   data-jos_delay="0.1"
                 >
                   <div className="block">
-                    <Image
+                    <img
                       src="/assets/img_placeholder/th-1/rating.svg"
                       alt="rating"
                       width="146"
@@ -1085,7 +1024,7 @@ function Home() {
                   </p>
                   <div className="flex items-center gap-x-4">
                     <div className="h-[60px] w-[60px] overflow-hidden rounded-full">
-                      <Image
+                      <img
                         src="/assets/img_placeholder/th-1/testimonial-img-1.jpg"
                         alt="testimonial-img"
                         width="60"
@@ -1111,7 +1050,7 @@ function Home() {
                   data-jos_delay="0.2"
                 >
                   <div className="block">
-                    <Image
+                    <img
                       src="/assets/img_placeholder/th-1/rating.svg"
                       alt="rating"
                       width="146"
@@ -1125,7 +1064,7 @@ function Home() {
                   </p>
                   <div className="flex items-center gap-x-4">
                     <div className="h-[60px] w-[60px] overflow-hidden rounded-full">
-                      <Image
+                      <img
                         src="/assets/img_placeholder/th-1/testimonial-img-2.jpg"
                         alt="testimonial-img"
                         width="60"
@@ -1151,7 +1090,7 @@ function Home() {
                   data-jos_delay="0.3"
                 >
                   <div className="block">
-                    <Image
+                    <img
                       src="/assets/img_placeholder/th-1/rating.svg"
                       alt="rating"
                       width="146"
@@ -1165,7 +1104,7 @@ function Home() {
                   </p>
                   <div className="flex items-center gap-x-4">
                     <div className="h-[60px] w-[60px] overflow-hidden rounded-full">
-                      <Image
+                      <img
                         src="/assets/img_placeholder/th-1/testimonial-img-3.jpg"
                         alt="testimonial-img"
                         width="60"
@@ -1191,7 +1130,7 @@ function Home() {
                   data-jos_delay="0.1"
                 >
                   <div className="block">
-                    <Image
+                    <img
                       src="/assets/img_placeholder/th-1/rating.svg"
                       alt="rating"
                       width="146"
@@ -1205,7 +1144,7 @@ function Home() {
                   </p>
                   <div className="flex items-center gap-x-4">
                     <div className="h-[60px] w-[60px] overflow-hidden rounded-full">
-                      <Image
+                      <img
                         src="/assets/img_placeholder/th-1/testimonial-img-4.jpg"
                         alt="testimonial-img"
                         width="60"
@@ -1231,7 +1170,7 @@ function Home() {
                   data-jos_delay="0.2"
                 >
                   <div className="block">
-                    <Image
+                    <img
                       src="/assets/img_placeholder/th-1/rating.svg"
                       alt="rating"
                       width="146"
@@ -1244,7 +1183,7 @@ function Home() {
                   </p>
                   <div className="flex items-center gap-x-4">
                     <div className="h-[60px] w-[60px] overflow-hidden rounded-full">
-                      <Image
+                      <img
                         src="/assets/img_placeholder/th-1/testimonial-img-5.jpg"
                         alt="testimonial-img"
                         width="60"
@@ -1270,7 +1209,7 @@ function Home() {
                   data-jos_delay="0.3"
                 >
                   <div className="block">
-                    <Image
+                    <img
                       src="/assets/img_placeholder/th-1/rating.svg"
                       alt="rating"
                       width="146"
@@ -1283,7 +1222,7 @@ function Home() {
                   </p>
                   <div className="flex items-center gap-x-4">
                     <div className="h-[60px] w-[60px] overflow-hidden rounded-full">
-                      <Image
+                      <img
                         src="/assets/img_placeholder/th-1/testimonial-img-6.jpg"
                         alt="testimonial-img"
                         width="60"
@@ -1312,10 +1251,10 @@ function Home() {
         {/*...::: Testimonial Section Start :::... */}
 
         {/* Body Background Shape 1 */}
-        <div className="orange-gradient-1 absolute -left-[15px] top-[61%] -z-[1] h-[400px] w-[400px] -rotate-[-9.022deg] rounded-[400px]"></div>
+        <div className="blue-gradient-1 absolute -left-[15px] top-[61%] -z-[1] h-[400px] w-[400px] -rotate-[-9.022deg] rounded-[400px]"></div>
 
         {/* Body Background Shape 2 */}
-        <div className="orange-gradient-2 absolute -left-[100px] top-[64%] -z-[1] h-[360px] w-[360px] -rotate-[-9.022deg] rounded-[360px]"></div>
+        <div className="blue-gradient-2 absolute -left-[100px] top-[64%] -z-[1] h-[360px] w-[360px] -rotate-[-9.022deg] rounded-[360px]"></div>
       </main>
       {/*...::: Footer Start :::... */}
       <Footer_01 />

@@ -191,7 +191,7 @@ const Footer_01 = () => {
                 />
                 <button
                   type='submit'
-                  className='absolute right-[5px] top-[50%] inline-block h-10 -translate-y-[50%] rounded-[50px] bg-black px-6 transition-all hover:bg-orange-500'
+                  className='absolute right-[5px] top-[50%] inline-block h-10 -translate-y-[50%] rounded-[50px] bg-black px-6 transition-all hover:bg-[#2962FF]'
                 >
                   <Image
                     src='/assets/img_placeholder/th-1/arrow-right-large.svg'
@@ -218,9 +218,9 @@ const Footer_01 = () => {
         {/* Footer Bottom */}
       </div>
       {/* Footer Background Shape 1  */}
-      <div className='orange-gradient-2 absolute -top-[290px] right-[90px] -z-[1] h-[406px] w-[406px] -rotate-[58deg] rounded-[406px]'></div>
+      <div className='blue-gradient-2 absolute -top-[290px] right-[90px] -z-[1] h-[406px] w-[406px] -rotate-[58deg] rounded-[406px]'></div>
       {/* Footer Background Shape 2  */}
-      <div className='orange-gradient-1 absolute -right-[200px] -top-[205px] -z-[1] h-[451px] w-[451px] -rotate-[58deg] rounded-[451px]'></div>
+      <div className='blue-gradient-1 absolute -right-[200px] -top-[205px] -z-[1] h-[451px] w-[451px] -rotate-[58deg] rounded-[451px]'></div>
     </footer>
   );
 };

@@ -343,13 +343,13 @@
 }
 
 /* ...::: Custom Gradiant :::... */
-.orange-gradient-1 {
-  background: radial-gradient(50% 50% at 50% 50%, #ff9831 0%, #fe330a 100%);
+.blue-gradient-1 {
+  background: radial-gradient(50% 50% at 50% 50%, #98CEFF 0%, #2962FF 100%);
   filter: blur(55px);
 }
 
-.orange-gradient-2 {
-  background: radial-gradient(50% 50% at 50% 50%, #fe330a 0%, #ff9831 100%);
+.blue-gradient-2 {
+  background: radial-gradient(50% 50% at 50% 50%, #2962FF 0%, #98CEFF 100%);
   filter: blur(55px);
 }
 
