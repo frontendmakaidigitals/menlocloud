@@ -125,12 +125,12 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
         <ul className={`site-menu-main ${color}`}>
           {/* Global navbar */}
           <NavigationMenu>
-            <NavigationMenuList>
+            <NavigationMenuList >
               <NavigationMenuItem>
                 <NavigationMenuTrigger className={`bg-transparent`}>
                   Services
                 </NavigationMenuTrigger>
-                <NavigationMenuContent>
+                <NavigationMenuContent className="" >
                   <div className="grid gap-10 px-6 py-10 md:w-[400px] lg:w-[900px] lg:grid-cols-3">
                     <div className="p-3 hover:bg-slate-100 rounded-xl">
                       <p className="text-md font-bold">Data & Analytics</p>

@@ -1,11 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import logo from "../../public/assets/img_placeholder/logo-dark.png";
+ 
 
 const LogoDark = () => {
   return (
     <Link href='/'>
-      <Image src={logo} alt='AIMass' width='96' height='24' />
+     <p className='text-xl font-bold'>menlo<span className='text-sky-500 italic'>cloud</span></p>
     </Link>
   );
 };
