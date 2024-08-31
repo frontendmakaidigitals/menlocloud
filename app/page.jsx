@@ -24,9 +24,9 @@ function Home() {
           <div className="relative z-[1] overflow-hidden rounded-bl-[30px] rounded-br-[30px] bg-colorLinenRuffle pb-20 pt-28 lg:rounded-bl-[50px] lg:rounded-br-[50px] lg:pb-24 lg:pt-32 xl:pt-40 xxl:pb-[133px] xxl:pt-[195px]">
             <div className="global-container">
               <div className="mb-14 flex flex-col items-center text-center lg:mb-20">
-                <h1 className="jos slide-from-bottom mb-6 max-w-[630px] lg:max-w-[868px] xl:max-w-[1206px]">
+                <h2 className="jos slide-from-bottom mb-6 max-w-[630px] lg:max-w-[868px] xl:max-w-[1206px]">
                   Delivering intelligent outcomes with Big data & Analytics
-                </h1>
+                </h2>
                 <p className="jos slide-from-bottom mb-11 max-w-[700px] text-lg font-semibold sm:text-xl xl:max-w-[980px]">
                   Menlocloud is a robust organization using modern technologies
                   like AI, ML and Data Science
