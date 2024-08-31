@@ -22,17 +22,12 @@ const Header_01 = () => {
           {/* Header Navigation */}
           {/* Header User Event */}
           <div className='flex items-center gap-6'>
-            <Link
-              href='/login'
-              className='button hidden rounded-[50px] border-[#7F8995] bg-transparent text-black after:bg-colorOrangyRed hover:border-colorOrangyRed hover:text-white lg:inline-block'
-            >
-              Login
-            </Link>
+          
             <Link
               href='/signup'
               className='button hidden rounded-[50px] border-black bg-black text-white after:bg-colorOrangyRed hover:border-colorOrangyRed hover:text-white lg:inline-block'
             >
-              Sign up free
+              + Lets Connect
             </Link>
             {/* Responsive Off-canvas Menu Button */}
             <div className='block lg:hidden'>
