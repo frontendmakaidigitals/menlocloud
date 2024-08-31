@@ -7,7 +7,7 @@ import useAccordion from "@/components/hooks/useAccordion";
 import useTabs from "@/components/hooks/useTabs";
 import Header_01 from "@/components/header/Header_01";
 import Footer_01 from "@/components/footer/Footer_01";
-
+import '/styles/globals.css'
 function Home() {
   const [activeIndex, handleAccordion] = useAccordion(0);
 
@@ -552,40 +552,48 @@ function Home() {
                 {/* Horizontal Separator */}
                 <div className="my-14 h-[1px] w-full bg-colorCodGray"></div>
                 {/* Counter Scroll */}
-                <ul className="flex flex-col justify-center gap-x-11 gap-y-8 text-center sm:flex-row md:text-left xl:justify-normal xl:text-left xxl:gap-x-20">
-                  {/* Counter Items */}
-                  <li>
-                    <h3
-                      className="text-5xl text-[#2962FF] md:text-6xl lg:text-7xl xl:text-7xl xxl:text-[120px]"
-                      data-module="countup"
-                    >
-                      <span className="start-number" data-countup-number="92">
-                        92
-                      </span>
-                      %
-                    </h3>
-                    <span className="block text-lg font-normal text-white lg:text-[21px]">
-                      Customer service inquiries
-                    </span>
-                  </li>
-                  {/* Counter Items */}
-                  {/* Counter Items */}
-                  <li>
-                    <h3
-                      className="text-5xl text-[#2962FF] md:text-6xl lg:text-7xl xl:text-7xl xxl:text-[120px]"
-                      data-module="countup"
-                    >
-                      <span className="start-number" data-countup-number="75">
-                        75
-                      </span>
-                      %
-                    </h3>
-                    <span className="block text-lg font-normal text-white lg:text-[21px]">
-                      Using financial institutions
-                    </span>
-                  </li>
-                  {/* Counter Items */}
-                </ul>
+                <div className="jos brand-slider" data-jos_animation="fade">
+                <Swiper
+                  slidesPerView={3}
+                  spaceBetween={50}
+                  autoplay={{
+                    delay: 4000,
+                    disableOnInteraction: false,
+                  }}
+                    modules={[Autoplay]}
+                    loop={true} 
+                  breakpoints={{
+                    768: {
+                      slidesPerView: 3,
+                    },
+                    992: {
+                      slidesPerView: 3,
+                    },
+                    1200: {
+                      slidesPerView: 3,
+                    },
+                  }}
+                >
+                  <SwiperSlide>
+                   <p className="text-sm">Data & Analytics</p>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                  <p className="text-sm">Artificial Intelligence </p>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                  <p className="text-sm">Software engineering </p>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                  <p className="text-sm">Cloud modernisation</p>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                  <p className="text-sm">Systems Implementation</p>
+                  </SwiperSlide>
+                  <SwiperSlide>
+                  <p className="text-sm">Strategy</p>
+                  </SwiperSlide>
+                </Swiper>
+              </div>
                 {/* Counter Scroll */}
               </div>
               {/* Funfact Right Block */}

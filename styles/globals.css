@@ -164,3 +164,7 @@ h5 {
     @apply bg-background text-foreground;
   }
 }
+
+.swiper-slide-next p{
+  color:white
+}
