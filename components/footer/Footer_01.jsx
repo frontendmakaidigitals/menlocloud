@@ -57,22 +57,14 @@ const Footer_01 = () => {
           {/* Footer Widget */}
           <div className='flex flex-col gap-y-6'>
             <Link href='/' className='inline-block'>
-              <Image
-                src='/assets/img_placeholder/th-1/logo.png'
-                alt='logo'
-                width={96}
-                height={24}
-              />
+            <p className='text-xl font-bold'>menlo<span className='text-sky-500 italic'>cloud</span></p>
             </Link>
             <p>
               Our mission is to harness the power of AI to solve complex
               business challenges &amp; decision-makers with data-driven
               insights, and enhance user experiences across digital platforms.
             </p>
-            <p>
-              Website:{' '}
-              <Link href='https://www.example.com'>www.example.com</Link>
-            </p>
+           
           </div>
           {/* Footer Widget */}
           {/* Footer Widget */}
@@ -94,7 +86,7 @@ const Footer_01 = () => {
               </li>
               <li>
                 <Link
-                  href='/about'
+                  href='/'
                   className='transition-all duration-300 ease-linear hover:text-colorOrangyRed'
                 >
                   About Us
@@ -102,7 +94,7 @@ const Footer_01 = () => {
               </li>
               <li>
                 <Link
-                  href='/services'
+                  href='/'
                   className='transition-all duration-300 ease-linear hover:text-colorOrangyRed'
                 >
                   Services
@@ -110,7 +102,7 @@ const Footer_01 = () => {
               </li>
               <li>
                 <Link
-                  href='/pricing'
+                  href='/'
                   className='transition-all duration-300 ease-linear hover:text-colorOrangyRed'
                 >
                   pricing
@@ -118,7 +110,7 @@ const Footer_01 = () => {
               </li>
               <li>
                 <Link
-                  href='/contact'
+                  href='/'
                   className='transition-all duration-300 ease-linear hover:text-colorOrangyRed'
                 >
                   Contact
@@ -136,17 +128,10 @@ const Footer_01 = () => {
             {/* Footer Title */}
             {/* Footer Navbar */}
             <ul className='flex flex-col gap-y-[10px] capitalize'>
+             
               <li>
                 <Link
-                  href='/signup'
-                  className='transition-all duration-300 ease-linear hover:text-colorOrangyRed'
-                >
-                  Signup
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href='/login'
+                  href='/'
                   className='transition-all duration-300 ease-linear hover:text-colorOrangyRed'
                 >
                   Login
@@ -154,20 +139,13 @@ const Footer_01 = () => {
               </li>
               <li>
                 <Link
-                  href='/not-found'
+                  href='/'
                   className='transition-all duration-300 ease-linear hover:text-colorOrangyRed'
                 >
                   404 Not found
                 </Link>
               </li>
-              <li>
-                <Link
-                  href='/reset-password'
-                  className='transition-all duration-300 ease-linear hover:text-colorOrangyRed'
-                >
-                  Password Reset
-                </Link>
-              </li>
+            
             </ul>
           </div>
           {/* Footer Widget */}
@@ -211,8 +189,7 @@ const Footer_01 = () => {
         {/* Footer Bottom */}
         <div className='py-9 text-center'>
           <p>
-            © Copyright {new Date().getFullYear()}, All Rights Reserved by
-            Favdevs
+            © Copyright {new Date().getFullYear()}, All Rights Reserved by MAKAI
           </p>
         </div>
         {/* Footer Bottom */}

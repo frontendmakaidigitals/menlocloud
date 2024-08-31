@@ -161,7 +161,7 @@ function Home() {
               {/* Section Content Block */}
               <div className="jos mb-10 lg:mb-16 xl:mb-20">
                 <div className="md:max-w-sm lg:max-w-xl xl:max-w-[746px]">
-                  <h2>Core features that make it valuable</h2>
+                  <h2>Services</h2>
                 </div>
               </div>
               {/* Section Content Block */}
@@ -186,16 +186,16 @@ function Home() {
                   </div>
                   <h3 className="mb-4 block text-xl leading-tight -tracking-[0.5px] group-hover:text-white xl:text-2xl xxl:text-[28px]">
                     <Link
-                      href="/service-details"
+                      href="/"
                       className="hover:text-[#2962FF]"
                     >
-                      Resource Flexibility
+                    Applied Ai
                     </Link>
                   </h3>
 
                   <p className="mb-12 duration-300 group-hover:text-white">
-                    This is an excellent option for people & small businesses
-                    who are starting out.
+                  Bridging conventional and generative AI to deliver effective, real-world applications.
+
                   </p>
 
                   <Link
@@ -238,16 +238,15 @@ function Home() {
 
                   <h3 className="mb-4 block text-xl leading-tight -tracking-[0.5px] group-hover:text-white xl:text-2xl xxl:text-[28px]">
                     <Link
-                      href="/service-details"
+                      href="/ "
                       className="hover:text-[#2962FF]"
                     >
-                      Managed Services
+                  Artificial Intelligence 
                     </Link>
                   </h3>
 
                   <p className="mb-12 duration-300 group-hover:text-white">
-                    This is an excellent option for people & small businesses
-                    who are starting out.
+                  Shaping the future through advanced AI
                   </p>
 
                   <Link
@@ -291,16 +290,16 @@ function Home() {
                   </div>
                   <h3 className="mb-4 block text-xl leading-tight -tracking-[0.5px] group-hover:text-white xl:text-2xl xxl:text-[28px]">
                     <Link
-                      href="/service-details"
+                      href="/ "
                       className="hover:text-[#2962FF]"
                     >
-                      Web-Based Access
+                      Cloud modernisation
                     </Link>
                   </h3>
 
                   <p className="mb-12 duration-300 group-hover:text-white">
-                    This is an excellent option for people & small businesses
-                    who are starting out.
+                  Transforming business operations with next-generation cloud modernization
+
                   </p>
 
                   <Link
@@ -345,13 +344,13 @@ function Home() {
                       href="/service-details"
                       className="hover:text-[#2962FF]"
                     >
-                      Resource Flexibility
+                     Systems Implementation
                     </Link>
                   </h3>
 
                   <p className="mb-12 duration-300 group-hover:text-white">
-                    This is an excellent option for people & small businesses
-                    who are starting out.
+                  Transforming concepts into functional systems through precise implementation
+
                   </p>
 
                   <Link
@@ -375,6 +374,14 @@ function Home() {
                 </li>
                 {/* Service Item */}
               </ul>
+              <div className="w-full flex justify-center mt-4">
+              <button
+                    href="#"
+                    className="button rounded-[50px] border-2 border-black bg-black py-4 text-white after:bg-[#2962FF] hover:border-[#2962FF] hover:text-white"
+                  >
+                    Explore more
+                  </button>
+             </div>
               {/* Service List */}
             </div>
             {/* Section Container */}
@@ -531,15 +538,15 @@ function Home() {
                 {/* Section Content Block */}
                 <div className="mb-8 lg:mb-16 xl:mb-6">
                   <h2 className="text-white">
-                    AI-powered that streamline tasks
+                  Industry specific usage with AI & ML 
+
                   </h2>
                 </div>
                 {/* Section Content Block */}
                 <div className="text-left text-lg leading-[1.4] text-white lg:text-[21px]">
                   <p className="mb-7 last:mb-0">
-                    As your business grows or your AI SaaS needs change, you can
-                    easily adjust your subscription level to match those needs.
-                    This flexibility ensures that AI remains an asset.
+                  MenloCloud offers a wealth of experience and measurable success in your field, while also sharing insights from cross-industries to help you discover novel ways to adapt and lead.
+
                   </p>
                 </div>
                 {/* Horizontal Separator */}
@@ -587,272 +594,10 @@ function Home() {
         </section>
         {/*...::: Funfact Section End :::... */}
 
-        {/*...::: Pricing Section Start :::... */}
-        <section className="pricing-section">
-          {/* Section Spacer */}
-          <div className="pb-20 pt-20 xl:pb-[150px] xl:pt-[130px]">
-            {/* Section Container */}
-            <div className="global-container">
-              {/* Section Content Block */}
-              <div className="jos mb-10 text-center lg:mb-12">
-                <div className="mx-auto md:max-w-xs lg:max-w-xl xl:max-w-[746px]">
-                  <h2>Cost-effectively build any software</h2>
-                </div>
-              </div>
-              {/* Section Content Block */}
-              {/* Pricing Block */}
-              <div className="container mx-auto">
-                {/* Tab buttons */}
-                <div
-                  className="jos flex justify-center"
-                  data-jos_animation="fade"
-                >
-                  <div className="inline-flex space-x-4 rounded-[50px] border-2 border-black font-semibold">
-                    <button
-                      className={`tab-button price-button ${
-                        activeTab === 0 ? "active" : ""
-                      }`}
-                      onClick={() => handleTab(0)}
-                      data-tab="monthly"
-                    >
-                      Monthly
-                    </button>
-                    <button
-                      className={`tab-button price-button ${
-                        activeTab === 1 ? "active" : ""
-                      }`}
-                      onClick={() => handleTab(1)}
-                      data-tab="annually"
-                    >
-                      Annually
-                    </button>
-                  </div>
-                </div>
-
-                {/* Pricing Block */}
-                <div className="mt-12 lg:mt-16 xl:mt-20">
-                  {/* Price List */}
-                  {activeTab === 0 && (
-                    <ul
-                      id="monthly"
-                      className="tab-content grid grid-cols-1 gap-6 md:grid-cols-2 xxl:grid-cols-3"
-                    >
-                      {/* Price Item */}
-                      <li
-                        className="jos group flex flex-col rounded-[10px] bg-colorLinenRuffle p-10 transition-all duration-300 ease-linear hover:bg-black"
-                        data-jos_animation="flip"
-                        data-jos_delay="0"
-                      >
-                        <h3 className="font-dmSans text-[28px] font-bold leading-[1.28] tracking-tighter text-black transition-all duration-300 ease-linear group-hover:text-white">
-                          Beginner
-                        </h3>
-                        <span className="text-lg text-black transition-all duration-300 ease-linear group-hover:text-white">
-                          Up to 10 members
-                        </span>
-
-                        <div className="my-5 h-[1px] w-full bg-[#DBD6CF]"></div>
-                        <h4 className="mb-4 font-dmSans text-5xl font-bold leading-none text-black transition-all duration-300 ease-linear group-hover:text-white md:text-6xl lg:text-7xl xl:text-[80px]">
-                          $25
-                          <span className="text-lg font-semibold">
-                            /Per month
-                          </span>
-                        </h4>
-                        <p className="mb-10 text-lg text-black transition-all duration-300 ease-linear group-hover:text-white">
-                          This is an excellent option for people & small
-                          businesses who are starting out.
-                        </p>
-                        <Link
-                          href="/pricing"
-                          className="button mt-auto block rounded-[50px] border-2 border-black bg-transparent py-4 text-center text-black transition-all duration-300 ease-linear after:bg-[#2962FF] hover:border-[#2962FF] hover:text-black group-hover:border-[#2962FF] group-hover:text-white"
-                        >
-                          Choose the plan
-                        </Link>
-                      </li>
-                      {/* Price Item */}
-                      {/* Price Item */}
-                      <li
-                        className="jos group flex flex-col rounded-[10px] bg-colorLinenRuffle p-10 transition-all duration-300 ease-linear hover:bg-black"
-                        data-jos_animation="flip"
-                        data-jos_delay="0"
-                      >
-                        <h3 className="font-dmSans text-[28px] font-bold leading-[1.28] tracking-tighter text-black transition-all duration-300 ease-linear group-hover:text-white">
-                          Starter
-                        </h3>
-                        <span className="text-lg text-black transition-all duration-300 ease-linear group-hover:text-white">
-                          Up to 50 members
-                        </span>
-
-                        <div className="my-5 h-[1px] w-full bg-[#DBD6CF]"></div>
-                        <h4 className="mb-4 font-dmSans text-5xl font-bold leading-none text-black transition-all duration-300 ease-linear group-hover:text-white md:text-6xl lg:text-7xl xl:text-[80px]">
-                          $89
-                          <span className="text-lg font-semibold">
-                            /Per month
-                          </span>
-                        </h4>
-                        <p className="mb-10 text-lg text-black transition-all duration-300 ease-linear group-hover:text-white">
-                          This plan is suitable for e-commerce stores as well as
-                          professional blogs.
-                        </p>
-                        <Link
-                          href="/pricing"
-                          className="button mt-auto block rounded-[50px] border-2 border-black bg-transparent py-4 text-center text-black transition-all duration-300 ease-linear after:bg-[#2962FF] hover:border-[#2962FF] hover:text-black group-hover:border-[#2962FF] group-hover:text-white"
-                        >
-                          Choose the plan
-                        </Link>
-                      </li>
-                      {/* Price Item */}
-                      {/* Price Item */}
-                      <li
-                        className="jos group flex flex-col rounded-[10px] bg-colorLinenRuffle p-10 transition-all duration-300 ease-linear hover:bg-black"
-                        data-jos_animation="flip"
-                        data-jos_delay="0"
-                      >
-                        <h3 className="font-dmSans text-[28px] font-bold leading-[1.28] tracking-tighter text-black transition-all duration-300 ease-linear group-hover:text-white">
-                          Pro
-                        </h3>
-                        <span className="text-lg text-black transition-all duration-300 ease-linear group-hover:text-white">
-                          Up to 100 members
-                        </span>
-
-                        <div className="my-5 h-[1px] w-full bg-[#DBD6CF]"></div>
-                        <h4 className="mb-4 font-dmSans text-5xl font-bold leading-none text-black transition-all duration-300 ease-linear group-hover:text-white md:text-6xl lg:text-7xl xl:text-[80px]">
-                          $199
-                          <span className="text-lg font-semibold">
-                            /Per month
-                          </span>
-                        </h4>
-                        <p className="mb-10 text-lg text-black transition-all duration-300 ease-linear group-hover:text-white">
-                          Ideal for handling complicated projects
-                          enterprise-level projects, and websites.
-                        </p>
-                        <Link
-                          href="/pricing"
-                          className="button mt-auto block rounded-[50px] border-2 border-black bg-transparent py-4 text-center text-black transition-all duration-300 ease-linear after:bg-[#2962FF] hover:border-[#2962FF] hover:text-black group-hover:border-[#2962FF] group-hover:text-white"
-                        >
-                          Choose the plan
-                        </Link>
-                      </li>
-                      {/* Price Item */}
-                    </ul>
-                  )}
-                  {/* Price List */}
-                  {/* Price List */}
-                  {activeTab === 1 && (
-                    <ul
-                      id="annually"
-                      className="tab-content grid grid-cols-1 gap-6 md:grid-cols-2 xxl:grid-cols-3"
-                    >
-                      {/* Price Item */}
-                      <li
-                        className="jos group flex flex-col rounded-[10px] bg-colorLinenRuffle p-10 transition-all duration-300 ease-linear hover:bg-black"
-                        data-jos_animation="flip"
-                        data-jos_delay="0"
-                      >
-                        <h3 className="font-dmSans text-[28px] font-bold leading-[1.28] tracking-tighter text-black transition-all duration-300 ease-linear group-hover:text-white">
-                          Beginner
-                        </h3>
-                        <span className="text-lg text-black transition-all duration-300 ease-linear group-hover:text-white">
-                          Up to 10 members
-                        </span>
-
-                        <div className="my-5 h-[1px] w-full bg-[#DBD6CF]"></div>
-                        <h4 className="mb-4 font-dmSans text-5xl font-bold leading-none text-black transition-all duration-300 ease-linear group-hover:text-white md:text-6xl lg:text-7xl xl:text-[80px]">
-                          $240
-                          <span className="text-lg font-semibold">
-                            /Per year
-                          </span>
-                        </h4>
-                        <p className="mb-10 text-lg text-black transition-all duration-300 ease-linear group-hover:text-white">
-                          This is an excellent option for people & small
-                          businesses who are starting out.
-                        </p>
-                        <Link
-                          href="/pricing"
-                          className="button mt-auto block rounded-[50px] border-2 border-black bg-transparent py-4 text-center text-black transition-all duration-300 ease-linear after:bg-[#2962FF] hover:border-[#2962FF] hover:text-black group-hover:border-[#2962FF] group-hover:text-white"
-                        >
-                          Choose the plan
-                        </Link>
-                      </li>
-                      {/* Price Item */}
-                      {/* Price Item */}
-                      <li
-                        className="jos group flex flex-col rounded-[10px] bg-colorLinenRuffle p-10 transition-all duration-300 ease-linear hover:bg-black"
-                        data-jos_animation="flip"
-                        data-jos_delay="0"
-                      >
-                        <h3 className="font-dmSans text-[28px] font-bold leading-[1.28] tracking-tighter text-black transition-all duration-300 ease-linear group-hover:text-white">
-                          Starter
-                        </h3>
-                        <span className="text-lg text-black transition-all duration-300 ease-linear group-hover:text-white">
-                          Up to 50 members
-                        </span>
-
-                        <div className="my-5 h-[1px] w-full bg-[#DBD6CF]"></div>
-                        <h4 className="mb-4 font-dmSans text-5xl font-bold leading-none text-black transition-all duration-300 ease-linear group-hover:text-white md:text-6xl lg:text-7xl xl:text-[80px]">
-                          $960
-                          <span className="text-lg font-semibold">
-                            /Per year
-                          </span>
-                        </h4>
-                        <p className="mb-10 text-lg text-black transition-all duration-300 ease-linear group-hover:text-white">
-                          This plan is suitable for e-commerce stores as well as
-                          professional blogs.
-                        </p>
-                        <Link
-                          href="/pricing"
-                          className="button mt-auto block rounded-[50px] border-2 border-black bg-transparent py-4 text-center text-black transition-all duration-300 ease-linear after:bg-[#2962FF] hover:border-[#2962FF] hover:text-black group-hover:border-[#2962FF] group-hover:text-white"
-                        >
-                          Choose the plan
-                        </Link>
-                      </li>
-                      {/* Price Item */}
-                      {/* Price Item */}
-                      <li
-                        className="jos group flex flex-col rounded-[10px] bg-colorLinenRuffle p-10 transition-all duration-300 ease-linear hover:bg-black"
-                        data-jos_animation="flip"
-                        data-jos_delay="0"
-                      >
-                        <h3 className="font-dmSans text-[28px] font-bold leading-[1.28] tracking-tighter text-black transition-all duration-300 ease-linear group-hover:text-white">
-                          Pro
-                        </h3>
-                        <span className="text-lg text-black transition-all duration-300 ease-linear group-hover:text-white">
-                          Up to 100 members
-                        </span>
-
-                        <div className="my-5 h-[1px] w-full bg-[#DBD6CF]"></div>
-                        <h4 className="mb-4 font-dmSans text-5xl font-bold leading-none text-black transition-all duration-300 ease-linear group-hover:text-white md:text-6xl lg:text-7xl xl:text-[80px]">
-                          $1800
-                          <span className="text-lg font-semibold leading-none">
-                            /Per year
-                          </span>
-                        </h4>
-                        <p className="mb-10 text-lg text-black transition-all duration-300 ease-linear group-hover:text-white">
-                          Ideal for handling complicated projects
-                          enterprise-level projects, and websites.
-                        </p>
-                        <Link
-                          href="/pricing"
-                          className="button mt-auto block rounded-[50px] border-2 border-black bg-transparent py-4 text-center text-black transition-all duration-300 ease-linear after:bg-[#2962FF] hover:border-[#2962FF] hover:text-black group-hover:border-[#2962FF] group-hover:text-white"
-                        >
-                          Choose the plan
-                        </Link>
-                      </li>
-                      {/* Price Item */}
-                    </ul>
-                  )}
-                  {/* Price List */}
-                </div>
-                {/* Pricing Block */}
-              </div>
-            </div>
-            {/* Section Container */}
-          </div>
-          {/* Section Spacer */}
-        </section>
-        {/*...::: Pricing Section End :::... */}
+      
 
         {/*...::: FAQ Section Start :::... */}
-        <section className="faq-section">
+        <section className="faq-section mt-40">
           {/* Section Spacer */}
           <div className="pb-20 xl:pb-[150px]">
             {/* Section Container */}
@@ -881,7 +626,7 @@ function Home() {
                       href="/faq-1"
                       className="button mt-5 rounded-[50px] border-2 border-black bg-black py-4 text-white after:bg-[#2962FF] hover:border-[#2962FF] hover:text-white"
                     >
-                      Ask you questions
+                     Ask us more Questions 
                     </Link>
                   </div>
                 </div>
@@ -902,7 +647,8 @@ function Home() {
                       onClick={() => handleAccordion(0)}
                     >
                       <div className="accordion-header flex items-center justify-between font-dmSans text-xl font-bold leading-[1.2] -tracking-[0.5px] text-black lg:text-[28px]">
-                        <p>How do I start AI SaaS?</p>
+                        <p>How can AI benefit my business?
+                        </p>
                         <div className="accordion-icon">
                           <img
                             src="/assets/img_placeholder/plus.svg"
@@ -914,9 +660,7 @@ function Home() {
                       </div>
                       <div className="accordion-content text-[#2C2C2C]">
                         <p>
-                          Go to the our official website and require users to
-                          create an account. You ll need to provide some basic
-                          information and agree to our terms and conditions.
+                        It can significantly enhance business operations by uncovering actionable insights, can optimize workflows, predict trends, and personalize customer experiences and much more.
                         </p>
                       </div>
                     </li>
@@ -929,7 +673,8 @@ function Home() {
                       onClick={() => handleAccordion(1)}
                     >
                       <div className="accordion-header flex items-center justify-between font-dmSans text-xl font-bold leading-[1.2] -tracking-[0.5px] text-black lg:text-[28px]">
-                        <p>Can I customize AI SaaS solutions?</p>
+                        <p>What are the common challenges ?
+                        </p>
                         <div className="accordion-icon">
                           <img
                             src="/assets/img_placeholder/plus.svg"
@@ -941,9 +686,8 @@ function Home() {
                       </div>
                       <div className="accordion-content text-[#2C2C2C]">
                         <p>
-                          Go to the our official website and require users to
-                          create an account. You ll need to provide some basic
-                          information and agree to our terms and conditions.
+                        Having accurate and sufficient data is crucial for effective AI and ML models,  Integration with existing systems and ensuring that stakeholders understand and can act on data insights. 
+
                         </p>
                       </div>
                     </li>
@@ -956,7 +700,8 @@ function Home() {
                       onClick={() => handleAccordion(2)}
                     >
                       <div className="accordion-header flex items-center justify-between font-dmSans text-xl font-bold leading-[1.2] -tracking-[0.5px] text-black lg:text-[28px]">
-                        <p>How can AI benefit my business?</p>
+                        <p>How to handle data privacy and security ? 
+                        </p>
                         <div className="accordion-icon">
                           <img
                             src="/assets/img_placeholder/plus.svg"
@@ -968,9 +713,8 @@ function Home() {
                       </div>
                       <div className="accordion-content text-[#2C2C2C]">
                         <p>
-                          Go to the our official website and require users to
-                          create an account. Youll need to provide some basic
-                          information and agree to our terms and conditions.
+                        Implementing robust data encryption, access controls, and anonymization techniques to safeguard personal data. Compliance with regulations such as GDPR and CCPA is crucial.
+
                         </p>
                       </div>
                     </li>
