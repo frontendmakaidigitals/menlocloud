@@ -145,9 +145,9 @@ function Home() {
                 </Swiper>
               </div>
             </div>
-            <div className="blue-gradient-1 absolute -right-[150px] top-[370px] -z-[1] h-[500px] w-[500px] animate-spin rounded-[500px]"></div>
+            <div className="blue-gradient-1 absolute -right-[200px]  lg:-right-[150px] top-[370px] -z-[1]  h-[200px] w-[200px] lg:w-[500px] lg:h-[500px] animate-spin rounded-[500px]"></div>
 
-            <div className="blue-gradient-2 absolute right-[57px] top-[620px] -z-[1] h-[450px] w-[450px] animate-spin rounded-[450px]"></div>
+            <div className="blue-gradient-2 absolute -right-[200px] lg:right-[57px] top-[620px] -z-[1] h-[300px] w-[300px] lg:w-[450px] lg:h-[450px] animate-spin rounded-[450px]"></div>
           </div>
         </section>
         {/*...::: Hero Section End :::... */}
@@ -168,7 +168,7 @@ function Home() {
               {/* Service List */}
               <ul className="jos grid grid-cols-1 gap-[2px] overflow-hidden rounded-[10px] border-2 border-black bg-black sm:grid-cols-2 lg:grid-cols-4">
                 {/* Service Item */}
-                <li className="group bg-white p-[30px] transition-all duration-300 ease-in-out hover:bg-black">
+                <li className="flex flex-col justify-around group bg-white p-[30px] transition-all duration-300 ease-in-out hover:bg-black">
                   <div className="relative mb-9 h-[70px] w-[70px]">
                     <img
                       src="/assets/img_placeholder/th-1/service-icon-black-1.svg"
@@ -185,17 +185,14 @@ function Home() {
                     />
                   </div>
                   <h3 className="mb-4 block text-xl leading-tight -tracking-[0.5px] group-hover:text-white xl:text-2xl xxl:text-[28px]">
-                    <Link
-                      href="/"
-                      className="hover:text-[#2962FF]"
-                    >
-                    Applied Ai
+                    <Link href="/" className="hover:text-[#2962FF]">
+                      Applied Ai
                     </Link>
                   </h3>
 
                   <p className="mb-12 duration-300 group-hover:text-white">
-                  Bridging conventional and generative AI to deliver effective, real-world applications.
-
+                    Bridging conventional and generative AI to deliver
+                    effective, real-world applications.
                   </p>
 
                   <Link
@@ -210,7 +207,7 @@ function Home() {
                     />
                     <img
                       src="/assets/img_placeholder/th-1/arrow-right-orange.svg"
-                      alt="arrow-right-black"
+                      alt="arrow-right-blue"
                       width="30"
                       height="30"
                       className="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100"
@@ -219,7 +216,7 @@ function Home() {
                 </li>
                 {/* Service Item */}
                 {/* Service Item */}
-                <li className="group bg-white p-[30px] transition-all duration-300 ease-in-out hover:bg-black">
+                <li className="flex flex-col group justify-around bg-white p-[30px] transition-all duration-300 ease-in-out hover:bg-black">
                   <div className="relative mb-9 h-[70px] w-[70px]">
                     <img
                       src="/assets/img_placeholder/th-1/service-icon-black-2.svg"
@@ -237,16 +234,13 @@ function Home() {
                   </div>
 
                   <h3 className="mb-4 block text-xl leading-tight -tracking-[0.5px] group-hover:text-white xl:text-2xl xxl:text-[28px]">
-                    <Link
-                      href="/ "
-                      className="hover:text-[#2962FF]"
-                    >
-                  Artificial Intelligence 
+                    <Link href="/ " className="hover:text-[#2962FF]">
+                      Artificial Intelligence
                     </Link>
                   </h3>
 
                   <p className="mb-12 duration-300 group-hover:text-white">
-                  Shaping the future through advanced AI
+                    Shaping the future through advanced AI
                   </p>
 
                   <Link
@@ -261,7 +255,7 @@ function Home() {
                     />
                     <img
                       src="/assets/img_placeholder/th-1/arrow-right-orange.svg"
-                      alt="arrow-right-black"
+                      alt="arrow-right-blue"
                       width="30"
                       height="30"
                       className="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100"
@@ -272,7 +266,7 @@ function Home() {
                 </li>
                 {/* Service Item */}
                 {/* Service Item */}
-                <li className="group bg-white p-[30px] transition-all duration-300 ease-in-out hover:bg-black">
+                <li className="group flex flex-col justify-around bg-white p-[30px] transition-all duration-300 ease-in-out hover:bg-black">
                   <div className="relative mb-9 h-[70px] w-[70px]">
                     <img
                       src="/assets/img_placeholder/th-1/service-icon-black-3.svg"
@@ -289,17 +283,14 @@ function Home() {
                     />
                   </div>
                   <h3 className="mb-4 block text-xl leading-tight -tracking-[0.5px] group-hover:text-white xl:text-2xl xxl:text-[28px]">
-                    <Link
-                      href="/ "
-                      className="hover:text-[#2962FF]"
-                    >
+                    <Link href="/ " className="hover:text-[#2962FF]">
                       Cloud modernisation
                     </Link>
                   </h3>
 
                   <p className="mb-12 duration-300 group-hover:text-white">
-                  Transforming business operations with next-generation cloud modernization
-
+                    Transforming business operations with next-generation cloud
+                    modernization
                   </p>
 
                   <Link
@@ -323,7 +314,7 @@ function Home() {
                 </li>
                 {/* Service Item */}
                 {/* Service Item */}
-                <li className="group bg-white p-[30px] transition-all duration-300 ease-in-out hover:bg-black">
+                <li className="flex flex-col justify-around group bg-white p-[30px] transition-all duration-300 ease-in-out hover:bg-black">
                   <div className="relative mb-9 h-[70px] w-[70px]">
                     <img
                       src="/assets/img_placeholder/th-1/service-icon-black-4.svg"
@@ -344,13 +335,13 @@ function Home() {
                       href="/service-details"
                       className="hover:text-[#2962FF]"
                     >
-                     Systems Implementation
+                      Systems Implementation
                     </Link>
                   </h3>
 
                   <p className="mb-12 duration-300 group-hover:text-white">
-                  Transforming concepts into functional systems through precise implementation
-
+                    Transforming concepts into functional systems through
+                    precise implementation
                   </p>
 
                   <Link
@@ -375,13 +366,13 @@ function Home() {
                 {/* Service Item */}
               </ul>
               <div className="w-full flex justify-center mt-4">
-              <button
-                    href="#"
-                    className="button rounded-[50px] border-2 border-black bg-black py-4 text-white after:bg-[#2962FF] hover:border-[#2962FF] hover:text-white"
-                  >
-                    Explore more
-                  </button>
-             </div>
+                <button
+                  href="#"
+                  className="button rounded-[50px] border-2 border-black bg-black py-4 text-white after:bg-[#2962FF] hover:border-[#2962FF] hover:text-white"
+                >
+                  Explore more
+                </button>
+              </div>
               {/* Service List */}
             </div>
             {/* Section Container */}
@@ -510,25 +501,11 @@ function Home() {
             <div className="jos grid grid-cols-1 overflow-hidden rounded-[30px] bg-black lg:rounded-[50px] xl:grid-cols-[minmax(400px,_1fr)_1.5fr] xxl:grid-cols-[1fr_minmax(800px,_1fr)]">
               {/* Funfact Left Block */}
               <div className="relative overflow-hidden rounded-[30px] lg:rounded-[50px]">
-                <img
-                  src="/assets/img_placeholder/th-1/funfact-img.jpg"
-                  alt="funfact-img"
-                  width="721"
-                  height="784"
-                  className="h-80 w-full object-cover object-center lg:h-[35rem] xl:h-full"
-                />
+                <video width={"100%"} height={"100%"} autoPlay>
+                  <source src="/assets/img_placeholder/video.mp4" />
+                </video>
                 {/* Video Play Button */}
-                <Link
-                  data-fslightbox="gallery"
-                  rel="noopener noreferrer"
-                  href="https://www.youtube.com/watch?v=3nQNiWdeH2Q"
-                  className="absolute left-1/2 top-1/2 z-[1] -translate-x-1/2 -translate-y-1/2"
-                >
-                  <div className="relative flex h-[120px] w-[120px] items-center justify-center rounded-full border-[3px] border-black text-lg font-bold backdrop-blur-[2px] transition-all duration-300 hover:bg-[#2962FF] hover:text-white">
-                    Play
-                    <div className="absolute -z-[1] h-[110%] w-[110%] animate-[ping_1.5s_ease-in-out_infinite] rounded-full bg-gray-600 opacity-30"></div>
-                  </div>
-                </Link>
+
                 {/* Video Play Button */}
               </div>
               {/* Funfacct Left Block */}
@@ -538,62 +515,64 @@ function Home() {
                 {/* Section Content Block */}
                 <div className="mb-8 lg:mb-16 xl:mb-6">
                   <h2 className="text-white">
-                  Industry specific usage with AI & ML 
-
+                    Industry specific usage with AI & ML
                   </h2>
                 </div>
                 {/* Section Content Block */}
                 <div className="text-left text-lg leading-[1.4] text-white lg:text-[21px]">
                   <p className="mb-7 last:mb-0">
-                  MenloCloud offers a wealth of experience and measurable success in your field, while also sharing insights from cross-industries to help you discover novel ways to adapt and lead.
-
+                    MenloCloud offers a wealth of experience and measurable
+                    success in your field, while also sharing insights from
+                    cross-industries to help you discover novel ways to adapt
+                    and lead.
                   </p>
                 </div>
                 {/* Horizontal Separator */}
                 <div className="my-14 h-[1px] w-full bg-colorCodGray"></div>
                 {/* Counter Scroll */}
                 <div className="jos brand-slider" data-jos_animation="fade">
-                <Swiper
-                  slidesPerView={3}
-                  spaceBetween={50}
-                  autoplay={{
-                    delay: 4000,
-                    disableOnInteraction: false,
-                  }}
+                  <Swiper
+                    slidesPerView={3}
+                    spaceBetween={50}
+                    autoplay={{
+                      delay: 4000,
+                      disableOnInteraction: false,
+                    }}
                     modules={[Autoplay]}
-                    loop={true} 
-                  breakpoints={{
-                    768: {
-                      slidesPerView: 3,
-                    },
-                    992: {
-                      slidesPerView: 3,
-                    },
-                    1200: {
-                      slidesPerView: 3,
-                    },
-                  }}
-                >
-                  <SwiperSlide>
-                   <p className="text-sm">Data & Analytics</p>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                  <p className="text-sm">Artificial Intelligence </p>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                  <p className="text-sm">Software engineering </p>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                  <p className="text-sm">Cloud modernisation</p>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                  <p className="text-sm">Systems Implementation</p>
-                  </SwiperSlide>
-                  <SwiperSlide>
-                  <p className="text-sm">Strategy</p>
-                  </SwiperSlide>
-                </Swiper>
-              </div>
+                    loop={true}
+                    breakpoints={{
+                      768: {
+                        slidesPerView: 3,
+                      },
+                      992: {
+                        slidesPerView: 3,
+                      },
+                      1200: {
+                        slidesPerView: 3,
+                      },
+                    }}
+                    className="text-gray-400"
+                  >
+                    <SwiperSlide>
+                      <p className="text-sm">Data & Analytics</p>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <p className="text-sm ">Artificial Intelligence </p>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <p className="text-sm">Software engineering </p>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <p className="text-sm">Cloud modernisation</p>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <p className="text-sm">Systems Implementation</p>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <p className="text-sm">Strategy</p>
+                    </SwiperSlide>
+                  </Swiper>
+                </div>
                 {/* Counter Scroll */}
               </div>
               {/* Funfact Right Block */}
@@ -601,8 +580,6 @@ function Home() {
           </div>
         </section>
         {/*...::: Funfact Section End :::... */}
-
-      
 
         {/*...::: FAQ Section Start :::... */}
         <section className="faq-section mt-40">
@@ -634,7 +611,7 @@ function Home() {
                       href="/faq-1"
                       className="button mt-5 rounded-[50px] border-2 border-black bg-black py-4 text-white after:bg-[#2962FF] hover:border-[#2962FF] hover:text-white"
                     >
-                     Ask us more Questions 
+                      Ask us more Questions
                     </Link>
                   </div>
                 </div>
@@ -654,9 +631,8 @@ function Home() {
                       }`}
                       onClick={() => handleAccordion(0)}
                     >
-                      <div className="accordion-header flex items-center justify-between font-dmSans text-xl font-bold leading-[1.2] -tracking-[0.5px] text-black lg:text-[28px]">
-                        <p>How can AI benefit my business?
-                        </p>
+                      <div className="accordion-header flex items-center justify-between font-dmSans text-xl font-bold leading-[1.2] -tracking-[0.5px] text-black lg:text-[24px]">
+                        <p>How can AI benefit my business?</p>
                         <div className="accordion-icon">
                           <img
                             src="/assets/img_placeholder/plus.svg"
@@ -668,7 +644,10 @@ function Home() {
                       </div>
                       <div className="accordion-content text-[#2C2C2C]">
                         <p>
-                        It can significantly enhance business operations by uncovering actionable insights, can optimize workflows, predict trends, and personalize customer experiences and much more.
+                          It can significantly enhance business operations by
+                          uncovering actionable insights, can optimize
+                          workflows, predict trends, and personalize customer
+                          experiences and much more.
                         </p>
                       </div>
                     </li>
@@ -680,9 +659,8 @@ function Home() {
                       }`}
                       onClick={() => handleAccordion(1)}
                     >
-                      <div className="accordion-header flex items-center justify-between font-dmSans text-xl font-bold leading-[1.2] -tracking-[0.5px] text-black lg:text-[28px]">
-                        <p>What are the common challenges ?
-                        </p>
+                      <div className="accordion-header flex items-center justify-between font-dmSans text-xl font-bold leading-[1.2] -tracking-[0.5px] text-black lg:text-[24px]">
+                        <p>What are the common challenges ?</p>
                         <div className="accordion-icon">
                           <img
                             src="/assets/img_placeholder/plus.svg"
@@ -694,8 +672,10 @@ function Home() {
                       </div>
                       <div className="accordion-content text-[#2C2C2C]">
                         <p>
-                        Having accurate and sufficient data is crucial for effective AI and ML models,  Integration with existing systems and ensuring that stakeholders understand and can act on data insights. 
-
+                          Having accurate and sufficient data is crucial for
+                          effective AI and ML models, Integration with existing
+                          systems and ensuring that stakeholders understand and
+                          can act on data insights.
                         </p>
                       </div>
                     </li>
@@ -708,8 +688,7 @@ function Home() {
                       onClick={() => handleAccordion(2)}
                     >
                       <div className="accordion-header flex items-center justify-between font-dmSans text-xl font-bold leading-[1.2] -tracking-[0.5px] text-black lg:text-[28px]">
-                        <p>How to handle data privacy and security ? 
-                        </p>
+                        <p>How to handle data privacy and security ?</p>
                         <div className="accordion-icon">
                           <img
                             src="/assets/img_placeholder/plus.svg"
@@ -721,8 +700,10 @@ function Home() {
                       </div>
                       <div className="accordion-content text-[#2C2C2C]">
                         <p>
-                        Implementing robust data encryption, access controls, and anonymization techniques to safeguard personal data. Compliance with regulations such as GDPR and CCPA is crucial.
-
+                          Implementing robust data encryption, access controls,
+                          and anonymization techniques to safeguard personal
+                          data. Compliance with regulations such as GDPR and
+                          CCPA is crucial.
                         </p>
                       </div>
                     </li>

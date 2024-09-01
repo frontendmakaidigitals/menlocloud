@@ -3,7 +3,12 @@ import { useState, forwardRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -60,7 +65,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
       return;
     }
   };
- 
+
   return (
     <div className="menu-block-wrapper">
       <div
@@ -87,22 +92,222 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
           </div>
         </div>
         <ul className={`site-menu-main ${color}`}>
- 
-          <NavigationMenu>
-            <NavigationMenuList >
-              <NavigationMenuItem>
-                <NavigationMenuTrigger className={`bg-transparent`}>
+          <div className="hidden lg:block">
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className={`bg-transparent`}>
+                    Services
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent className="">
+                    <div className="grid gap-10 px-6 py-10 md:w-[400px] lg:w-[1100px] lg:grid-cols-3">
+                      <div className="p-3 hover:bg-slate-100 rounded-xl">
+                        <p className="text-md font-bold">Data & Analytics</p>
+                        <p className="text-sm font-medium mt-1">
+                          Leveraging today’s data for a more promising future
+                        </p>
+                      </div>
+                      <div className="p-3 hover:bg-slate-100 rounded-xl">
+                        <p className="text-md font-bold">
+                          Artificial Intelligence{" "}
+                        </p>
+                        <p className="text-sm font-medium mt-1">
+                          Shaping the future through advanced AI
+                        </p>
+                      </div>
+                      <div className="p-3 hover:bg-slate-100 rounded-xl">
+                        <p className="text-md font-bold">
+                          Conventional and Generative AI
+                        </p>
+                        <p className="text-sm font-medium mt-1">
+                          Bridging conventional and generative AI to deliver
+                          effective, real-world applications.
+                        </p>
+                      </div>
+                      <div className="p-3 hover:bg-slate-100 rounded-xl">
+                        <p className="text-md font-bold">
+                          Software engineering
+                        </p>
+                        <p className="text-sm font-medium mt-1">
+                          Crafting robust and scalable systems through expert
+                          software engineering.
+                        </p>
+                      </div>
+                      <div className="p-3 hover:bg-slate-100 rounded-xl">
+                        <p className="text-md font-bold">Cloud modernisation</p>
+                        <p className="text-sm font-medium mt-1">
+                          Transforming business operations with next-generation
+                          cloud modernization
+                        </p>
+                      </div>
+                      <div className="p-3 hover:bg-slate-100 rounded-xl">
+                        <p className="text-md font-bold">
+                          Systems Implementation
+                        </p>
+                        <p className="text-sm font-medium mt-1">
+                          Transforming concepts into functional systems through
+                          precise implementation
+                        </p>
+                      </div>
+                      <div className="p-3 hover:bg-slate-100 rounded-xl">
+                        <p className="text-md font-bold">Strategy</p>
+                        <p className="text-sm font-medium mt-1">
+                          Guiding growth and innovation with a clear strategic
+                          vision
+                        </p>
+                      </div>
+                      <div className="p-3 hover:bg-slate-100 rounded-xl">
+                        <p className="text-md font-bold">Privacy & Security</p>
+                        <p className="text-sm font-medium mt-1">
+                          Safeguarding information with cutting-edge privacy and
+                          security practices
+                        </p>
+                      </div>
+                      <div className="p-3 hover:bg-slate-100 rounded-xl">
+                        <p className="text-md font-bold">
+                          Organizational Change{" "}
+                        </p>
+                        <p className="text-sm font-medium mt-1">
+                          Enhancing company approach with top level cultural &
+                          hierarchy transformation
+                        </p>
+                      </div>
+                    </div>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className={`bg-transparent`}>
+                    Industries
+                  </NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <div className="grid gap-10 px-6 py-10 md:w-[400px] lg:w-[1100px] lg:grid-cols-3">
+                      <div className="p-3 hover:bg-slate-100 rounded-xl">
+                        <p className="text-md font-bold">
+                          Life Science & Health Care
+                        </p>
+                        <p className="text-sm font-medium mt-1">
+                          Revolutionizing life sciences and Healthcare through
+                          AI-powered research and diagnostics
+                        </p>
+                      </div>
+                      <div className="p-3 hover:bg-slate-100 rounded-xl">
+                        <p className="text-md font-bold">Finance</p>
+                        <p className="text-sm font-medium mt-1">
+                          Optimizing financial strategies and customer
+                          experiences with AI
+                        </p>
+                      </div>
+                      <div className="p-3 hover:bg-slate-100 rounded-xl">
+                        <p className="text-md font-bold">Technology</p>
+                        <p className="text-sm font-medium mt-1">
+                          Leading the way with innovative technology and digital
+                          transformation
+                        </p>
+                      </div>
+                      <div className="p-3 hover:bg-slate-100 rounded-xl">
+                        <p className="text-md font-bold">
+                          Media and Communications
+                        </p>
+                        <p className="text-sm font-medium mt-1">
+                          Leveraging AI and ML to tailor communications and
+                          drive impactful storytelling
+                        </p>
+                      </div>
+                      <div className="p-3 hover:bg-slate-100 rounded-xl">
+                        <p className="text-md font-bold">
+                          Travel Transport and Logistics
+                        </p>
+                        <p className="text-sm font-medium mt-1">
+                          Deliver tangible business results by enhancing
+                          profitability and customer experience in the TTL
+                          industry
+                        </p>
+                      </div>
+                      <div className="p-3 hover:bg-slate-100 rounded-xl">
+                        <p className="text-md font-bold">
+                          Educations and Learning
+                        </p>
+                        <p className="text-sm font-medium mt-1">
+                          Speed up modernization in the EdTech industry by
+                          leveraging cloud-based infrastructure and advanced
+                          AI/ML solutions to achieve excellence.
+                        </p>
+                      </div>
+                      <div className="p-3 hover:bg-slate-100 rounded-xl">
+                        <p className="text-md font-bold">
+                          Retails and E-commerce
+                        </p>
+                        <p className="text-sm font-medium mt-1">
+                          A robust selection of wide solutions equips retailers
+                          with a competitive advantage, accelerates growth, and
+                          promotes innovation.
+                        </p>
+                      </div>
+                      <div className="p-3 hover:bg-slate-100 rounded-xl">
+                        <p className="text-md font-bold">
+                          Manufacturing & Distribution
+                        </p>
+                        <p className="text-sm font-medium mt-1">
+                          Driving growth and efficiency in manufacturing and
+                          distribution through smart technology and automation
+                        </p>
+                      </div>
+                      <div className="p-3 hover:bg-slate-100 rounded-xl">
+                        <p className="text-md font-bold">Resource and Wealth</p>
+                        <p className="text-sm font-medium mt-1">
+                          Transforming resource and wealth strategies to unlock
+                          new opportunities and drive financial success
+                        </p>
+                      </div>
+                    </div>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+
+                <NavigationMenuItem>
+                  <Link href="/" legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={`${navigationMenuTriggerStyle()} bg-transparent`}
+                    >
+                      Insights
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <Link href="/" legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={`${navigationMenuTriggerStyle()} bg-transparent`}
+                    >
+                      About Us
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <Link href="/" legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={`${navigationMenuTriggerStyle()} bg-transparent`}
+                    >
+                      Contact
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
+          </div>
+          <div className="block lg:hidden px-3">
+            <Accordion type="single" collapsible className="w-full">
+              <AccordionItem value="item-1">
+                <AccordionTrigger className={`tracking-tight`}>
                   Services
-                </NavigationMenuTrigger>
-                <NavigationMenuContent className="" >
-                  <div className="grid gap-10 px-6 py-10 md:w-[400px] lg:w-[1100px] lg:grid-cols-3">
+                </AccordionTrigger>
+                <AccordionContent>
+                  <div className="h-[400px] overflow-scroll">
                     <div className="p-3 hover:bg-slate-100 rounded-xl">
                       <p className="text-md font-bold">Data & Analytics</p>
                       <p className="text-sm font-medium mt-1">
                         Leveraging today’s data for a more promising future
                       </p>
                     </div>
-                  <div className="p-3 hover:bg-slate-100 rounded-xl">
+                    <div className="p-3 hover:bg-slate-100 rounded-xl">
                       <p className="text-md font-bold">
                         Artificial Intelligence{" "}
                       </p>
@@ -110,7 +315,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                         Shaping the future through advanced AI
                       </p>
                     </div>
-                  <div className="p-3 hover:bg-slate-100 rounded-xl">
+                    <div className="p-3 hover:bg-slate-100 rounded-xl">
                       <p className="text-md font-bold">
                         Conventional and Generative AI
                       </p>
@@ -119,21 +324,21 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                         effective, real-world applications.
                       </p>
                     </div>
-                  <div className="p-3 hover:bg-slate-100 rounded-xl">
+                    <div className="p-3 hover:bg-slate-100 rounded-xl">
                       <p className="text-md font-bold">Software engineering</p>
                       <p className="text-sm font-medium mt-1">
                         Crafting robust and scalable systems through expert
                         software engineering.
                       </p>
                     </div>
-                  <div className="p-3 hover:bg-slate-100 rounded-xl">
+                    <div className="p-3 hover:bg-slate-100 rounded-xl">
                       <p className="text-md font-bold">Cloud modernisation</p>
                       <p className="text-sm font-medium mt-1">
                         Transforming business operations with next-generation
                         cloud modernization
                       </p>
                     </div>
-                  <div className="p-3 hover:bg-slate-100 rounded-xl">
+                    <div className="p-3 hover:bg-slate-100 rounded-xl">
                       <p className="text-md font-bold">
                         Systems Implementation
                       </p>
@@ -142,21 +347,21 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                         precise implementation
                       </p>
                     </div>
-                  <div className="p-3 hover:bg-slate-100 rounded-xl">
+                    <div className="p-3 hover:bg-slate-100 rounded-xl">
                       <p className="text-md font-bold">Strategy</p>
                       <p className="text-sm font-medium mt-1">
                         Guiding growth and innovation with a clear strategic
                         vision
                       </p>
                     </div>
-                  <div className="p-3 hover:bg-slate-100 rounded-xl">
+                    <div className="p-3 hover:bg-slate-100 rounded-xl">
                       <p className="text-md font-bold">Privacy & Security</p>
                       <p className="text-sm font-medium mt-1">
                         Safeguarding information with cutting-edge privacy and
                         security practices
                       </p>
                     </div>
-                  <div className="p-3 hover:bg-slate-100 rounded-xl">
+                    <div className="p-3 hover:bg-slate-100 rounded-xl">
                       <p className="text-md font-bold">
                         Organizational Change{" "}
                       </p>
@@ -166,15 +371,15 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                       </p>
                     </div>
                   </div>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuTrigger className={`bg-transparent`}>
+                </AccordionContent>
+              </AccordionItem>
+              <AccordionItem value="item-2">
+                <AccordionTrigger className={`tracking-tight`}>
                   Industries
-                </NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <div className="grid gap-10 px-6 py-10 md:w-[400px] lg:w-[1100px] lg:grid-cols-3">
-                  <div className="p-3 hover:bg-slate-100 rounded-xl">
+                </AccordionTrigger>
+                <AccordionContent>
+                  <div className="h-[400px] overflow-scroll">
+                    <div className="p-3 hover:bg-slate-100 rounded-xl">
                       <p className="text-md font-bold">
                         Life Science & Health Care
                       </p>
@@ -183,21 +388,21 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                         AI-powered research and diagnostics
                       </p>
                     </div>
-                  <div className="p-3 hover:bg-slate-100 rounded-xl">
+                    <div className="p-3 hover:bg-slate-100 rounded-xl">
                       <p className="text-md font-bold">Finance</p>
                       <p className="text-sm font-medium mt-1">
                         Optimizing financial strategies and customer experiences
                         with AI
                       </p>
                     </div>
-                  <div className="p-3 hover:bg-slate-100 rounded-xl">
+                    <div className="p-3 hover:bg-slate-100 rounded-xl">
                       <p className="text-md font-bold">Technology</p>
                       <p className="text-sm font-medium mt-1">
                         Leading the way with innovative technology and digital
                         transformation
                       </p>
                     </div>
-                  <div className="p-3 hover:bg-slate-100 rounded-xl">
+                    <div className="p-3 hover:bg-slate-100 rounded-xl">
                       <p className="text-md font-bold">
                         Media and Communications
                       </p>
@@ -206,7 +411,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                         impactful storytelling
                       </p>
                     </div>
-                  <div className="p-3 hover:bg-slate-100 rounded-xl">
+                    <div className="p-3 hover:bg-slate-100 rounded-xl">
                       <p className="text-md font-bold">
                         Travel Transport and Logistics
                       </p>
@@ -216,7 +421,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                         industry
                       </p>
                     </div>
-                  <div className="p-3 hover:bg-slate-100 rounded-xl">
+                    <div className="p-3 hover:bg-slate-100 rounded-xl">
                       <p className="text-md font-bold">
                         Educations and Learning
                       </p>
@@ -226,7 +431,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                         solutions to achieve excellence.
                       </p>
                     </div>
-                  <div className="p-3 hover:bg-slate-100 rounded-xl">
+                    <div className="p-3 hover:bg-slate-100 rounded-xl">
                       <p className="text-md font-bold">
                         Retails and E-commerce
                       </p>
@@ -236,7 +441,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                         promotes innovation.
                       </p>
                     </div>
-                  <div className="p-3 hover:bg-slate-100 rounded-xl">
+                    <div className="p-3 hover:bg-slate-100 rounded-xl">
                       <p className="text-md font-bold">
                         Manufacturing & Distribution
                       </p>
@@ -245,7 +450,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                         distribution through smart technology and automation
                       </p>
                     </div>
-                  <div className="p-3 hover:bg-slate-100 rounded-xl">
+                    <div className="p-3 hover:bg-slate-100 rounded-xl">
                       <p className="text-md font-bold">Resource and Wealth</p>
                       <p className="text-sm font-medium mt-1">
                         Transforming resource and wealth strategies to unlock
@@ -253,38 +458,19 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                       </p>
                     </div>
                   </div>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <Link href="/" legacyBehavior passHref>
-                  <NavigationMenuLink
-                    className={`${navigationMenuTriggerStyle()} bg-transparent`}
-                  >
-                    Insights  
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <Link href="/" legacyBehavior passHref>
-                  <NavigationMenuLink
-                    className={`${navigationMenuTriggerStyle()} bg-transparent`}
-                  >
-                    About Us
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <Link href="/" legacyBehavior passHref>
-                  <NavigationMenuLink
-                    className={`${navigationMenuTriggerStyle()} bg-transparent`}
-                  >
-                    Contact
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+            <div>
+              <p className="text-sm font-semibold py-4 border-b ">Insights</p>
+            </div>
+            <div>
+              <p className="text-sm font-semibold py-4 border-b ">About us</p>
+            </div>
+            <div>
+              <p className="text-sm font-semibold py-4 border-b ">Contact</p>
+            </div>
+          </div>
         </ul>
       </nav>
     </div>
