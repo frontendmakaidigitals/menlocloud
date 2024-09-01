@@ -28,8 +28,11 @@ function Home() {
                   Delivering intelligent outcomes with Big data & Analytics
                 </h2>
                 <p className="jos slide-from-bottom mb-11 max-w-[700px] text-lg font-semibold sm:text-xl xl:max-w-[980px]">
-                  Menlocloud is a robust organization using modern technologies
-                  like AI, ML and Data Science
+                  <span className="text-xl font-bold">
+                    menlo<span className="text-sky-500 italic">cloud</span>
+                  </span>{" "}
+                  is a robust organization using modern technologies like AI, ML
+                  and Data Science
                 </p>
                 <div
                   className="jos flex flex-wrap justify-center gap-6"
@@ -65,8 +68,8 @@ function Home() {
               <div className="my-10 h-[1px] w-full bg-[#DBD6CF] lg:my-16 xl:my-20"></div>
               <div className="jos mx-auto mb-12 max-w-[715px] text-center lg:mb-16">
                 <p className="text-lg">
-                  Companies of all sizes trust us to find AI SaaS critical to
-                  their growth and innovation
+                  Our tech stack integrates cutting edge technology for
+                  growth and innovation
                 </p>
               </div>
               <div className="jos brand-slider" data-jos_animation="fade">
@@ -185,9 +188,7 @@ function Home() {
                     />
                   </div>
                   <h3 className="mb-4 block text-xl leading-tight -tracking-[0.5px] group-hover:text-white xl:text-2xl xxl:text-[28px]">
-                    <Link href="/" className="hover:text-[#2962FF]">
-                      Applied Ai
-                    </Link>
+                    <p className="hover:text-[#2962FF]">Applied Ai</p>
                   </h3>
 
                   <p className="mb-12 duration-300 group-hover:text-white">
@@ -195,10 +196,7 @@ function Home() {
                     effective, real-world applications.
                   </p>
 
-                  <Link
-                    href="/service-details"
-                    className="relative inline-block h-[30px] w-[30px] duration-300"
-                  >
+                  <div className="relative inline-block h-[30px] w-[30px] duration-300">
                     <img
                       src="/assets/img_placeholder/th-1/arrow-right-black.svg"
                       alt="arrow-right-black"
@@ -212,7 +210,7 @@ function Home() {
                       height="30"
                       className="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100"
                     />
-                  </Link>
+                  </div>
                 </li>
                 {/* Service Item */}
                 {/* Service Item */}
@@ -234,19 +232,16 @@ function Home() {
                   </div>
 
                   <h3 className="mb-4 block text-xl leading-tight -tracking-[0.5px] group-hover:text-white xl:text-2xl xxl:text-[28px]">
-                    <Link href="/ " className="hover:text-[#2962FF]">
+                    <p className="hover:text-[#2962FF]">
                       Artificial Intelligence
-                    </Link>
+                    </p>
                   </h3>
 
                   <p className="mb-12 duration-300 group-hover:text-white">
                     Shaping the future through advanced AI
                   </p>
 
-                  <Link
-                    href="/service-details"
-                    className="relative inline-block h-[30px] w-[30px] duration-300"
-                  >
+                  <div className="relative inline-block h-[30px] w-[30px] duration-300">
                     <img
                       src="/assets/img_placeholder/th-1/arrow-right-black.svg"
                       alt="arrow-right-black"
@@ -260,7 +255,7 @@ function Home() {
                       height="30"
                       className="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100"
                     />
-                  </Link>
+                  </div>
                   {/* Features Item */}
                   {/* Features Item */}
                 </li>
@@ -283,9 +278,7 @@ function Home() {
                     />
                   </div>
                   <h3 className="mb-4 block text-xl leading-tight -tracking-[0.5px] group-hover:text-white xl:text-2xl xxl:text-[28px]">
-                    <Link href="/ " className="hover:text-[#2962FF]">
-                      Cloud modernisation
-                    </Link>
+                    <p className="hover:text-[#2962FF]">Cloud modernisation</p>
                   </h3>
 
                   <p className="mb-12 duration-300 group-hover:text-white">
@@ -293,10 +286,7 @@ function Home() {
                     modernization
                   </p>
 
-                  <Link
-                    href="/service-details"
-                    className="relative inline-block h-[30px] w-[30px] duration-300"
-                  >
+                  <div className="relative inline-block h-[30px] w-[30px] duration-300">
                     <img
                       src="/assets/img_placeholder/th-1/arrow-right-black.svg"
                       alt="arrow-right-black"
@@ -310,7 +300,7 @@ function Home() {
                       height="30"
                       className="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100"
                     />
-                  </Link>
+                  </div>
                 </li>
                 {/* Service Item */}
                 {/* Service Item */}
@@ -331,12 +321,9 @@ function Home() {
                     />
                   </div>
                   <h3 className="mb-4 block text-xl leading-tight -tracking-[0.5px] group-hover:text-white xl:text-2xl xxl:text-[28px]">
-                    <Link
-                      href="/service-details"
-                      className="hover:text-[#2962FF]"
-                    >
+                    <p className="hover:text-[#2962FF]">
                       Systems Implementation
-                    </Link>
+                    </p>
                   </h3>
 
                   <p className="mb-12 duration-300 group-hover:text-white">
@@ -344,10 +331,7 @@ function Home() {
                     precise implementation
                   </p>
 
-                  <Link
-                    href="/service-details"
-                    className="relative inline-block h-[30px] w-[30px] duration-300"
-                  >
+                  <div className="relative inline-block h-[30px] w-[30px] duration-300">
                     <img
                       src="/assets/img_placeholder/th-1/arrow-right-black.svg"
                       alt="arrow-right-black"
@@ -361,7 +345,7 @@ function Home() {
                       height="30"
                       className="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100"
                     />
-                  </Link>
+                  </div>
                 </li>
                 {/* Service Item */}
               </ul>
@@ -521,10 +505,12 @@ function Home() {
                 {/* Section Content Block */}
                 <div className="text-left text-lg leading-[1.4] text-white lg:text-[21px]">
                   <p className="mb-7 last:mb-0">
-                    MenloCloud offers a wealth of experience and measurable
-                    success in your field, while also sharing insights from
-                    cross-industries to help you discover novel ways to adapt
-                    and lead.
+                    <span className="text-xl font-bold">
+                      menlo<span className="text-sky-500 italic">cloud</span>
+                    </span>{" "}
+                    offers a wealth of experience and measurable success in your
+                    field, while also sharing insights from cross-industries to
+                    help you discover novel ways to adapt and lead.
                   </p>
                 </div>
                 {/* Horizontal Separator */}
@@ -602,10 +588,10 @@ function Home() {
                   {/* Section Content Block */}
                   <div className="text-lg leading-[1.4] lg:text-[21px]">
                     <p className="mb-7 last:mb-0">
-                      Our AI SaaS solutions can be quickly deployed, enabling
-                      users to start benefiting from AI capabilities without
-                      lengthy setup and development times in fast-paced
-                      industries.
+                      Our AI, ML and Data Analytics solutions can be quickly
+                      deployed, enabling companies or individuals to start
+                      benefiting from its capabilities without lengthy setup and
+                      development times in fast-paced industries.
                     </p>
                     <Link
                       href="/faq-1"
