@@ -593,12 +593,12 @@ function Home() {
                       benefiting from its capabilities without lengthy setup and
                       development times in fast-paced industries.
                     </p>
-                    <Link
-                      href="/faq-1"
+                    <button
+                      
                       className="button mt-5 rounded-[50px] border-2 border-black bg-black py-4 text-white after:bg-[#2962FF] hover:border-[#2962FF] hover:text-white"
                     >
                       Ask us more Questions
-                    </Link>
+                    </button>
                   </div>
                 </div>
                 {/* FAQ Left Block */}
