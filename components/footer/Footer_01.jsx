@@ -1,12 +1,12 @@
-import Image from 'next/image';
-import Link from 'next/link';
+import Image from "next/image";
+import Link from "next/link";
 
 const Footer_01 = () => {
   return (
     <footer className="relative z-[1] -mt-[70px] overflow-hidden rounded-tl-[30px] rounded-tr-[30px] bg-colorLinenRuffle lg:rounded-tl-[50px] lg:rounded-tr-[50px]">
       {/* Footer Top */}
-      <div className="py-[60px] xl:pb-[100px] xl:pt-[130px]">
-        <div className="overflow-hidden">
+      <div className="py-[60px] xl:pb-[80px] xl:pt-[90px]">
+        <div className="overflow-hidden h-28">
           {/* Footer Text Slider */}
           <div className="footer-text-slider flex w-full items-center gap-x-[30px] whitespace-nowrap">
             {/* Footer Slide Item  */}
@@ -17,7 +17,7 @@ const Footer_01 = () => {
               height={60}
               className="h-10 w-10 lg:h-[60px] lg:w-[60px]"
             />
-            <div className="block font-dmSans text-4xl font-bold leading-none -tracking-[2px] text-black lg:text-6xl xl:text-7xl xxl:text-[80px]">
+            <div className="block font-dmSans text-4xl font-bold  text-black lg:text-6xl xl:text-7xl xxl:text-[80px]">
               Driving Innovation throught intelligent data-driven solutions
             </div>
             {/* Footer Slide Item  */}
@@ -29,7 +29,7 @@ const Footer_01 = () => {
               height={60}
               className="h-10 w-10 lg:h-[60px] lg:w-[60px]"
             />
-            <div className="block font-dmSans text-4xl font-bold leading-none -tracking-[2px] text-black lg:text-6xl xl:text-7xl xxl:text-[80px]">
+            <div className="block font-dmSans text-4xl font-bold  text-black lg:text-6xl xl:text-7xl xxl:text-[80px]">
               Driving Innovation throught intelligent data-driven solutions
             </div>
             {/* Footer Slide Item  */}
@@ -41,7 +41,7 @@ const Footer_01 = () => {
               height={60}
               className="h-10 w-10 lg:h-[60px] lg:w-[60px]"
             />
-            <div className="block font-dmSans text-4xl font-bold leading-none -tracking-[2px] text-black lg:text-6xl xl:text-7xl xxl:text-[80px]">
+            <div className="block font-dmSans text-4xl font-bold  text-black lg:text-6xl xl:text-7xl xxl:text-[80px]">
               Driving Innovation throught intelligent data-driven solutions
             </div>
             {/* Footer Slide Item  */}
