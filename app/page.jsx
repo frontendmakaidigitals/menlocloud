@@ -56,13 +56,12 @@ function Home() {
                 className="jos hero-img overflow-hidden rounded-2xl bg-black"
                 data-jos_animation="zoom"
               >
-                <img
-                  src="https://images.unsplash.com/photo-1610795868681-4b4ebb6aec43?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt="hero-dashboard"
-                  width="1296"
-                  height="640"
-                  className="h-auto w-full"
-                />
+                
+                <video width="1296" height="640" autoPlay muted>
+                  <source
+                    src={`/assets/img_placeholder/th-1/dev video.mp4`}
+                  ></source>
+                </video>
               </div>
 
               <div className="my-10 h-[1px] w-full bg-[#DBD6CF] lg:my-16 xl:my-20"></div>
@@ -539,7 +538,7 @@ function Home() {
                     }}
                     className=""
                   >
-                    <SwiperSlide  >
+                    <SwiperSlide>
                       <div className="text-sm flex items-center text-gray-50">
                         <div className="size-7 flex items-center justify-center mr-1 bg-blue-500">
                           DA
