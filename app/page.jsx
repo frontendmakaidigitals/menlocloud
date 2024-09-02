@@ -519,7 +519,7 @@ function Home() {
                 <div className="jos brand-slider" data-jos_animation="fade">
                   <Swiper
                     slidesPerView={3}
-                    spaceBetween={50}
+                    spaceBetween={20}
                     autoplay={{
                       delay: 4000,
                       disableOnInteraction: false,
@@ -540,22 +540,72 @@ function Home() {
                     className="text-gray-400"
                   >
                     <SwiperSlide>
-                      <p className="text-sm">Data & Analytics</p>
+                      <div className="flex items-cetner gap-3">
+                        <img
+                          src={`/assets/img_placeholder/th-1/database.png`}
+                        />
+                        <p className="text-sm">Data & Analytics</p>
+                      </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                      <p className="text-sm ">Artificial Intelligence </p>
+                      <div className="flex items-cetner gap-3">
+                        <img src={`/assets/img_placeholder/th-1/ai.png`} />
+                        <p className="text-sm ">Artificial Intelligence </p>
+                      </div>
+                    </SwiperSlide>
+
+                    <SwiperSlide>
+                      <div className="flex items-cetner gap-3">
+                        <img src={`/assets/img_placeholder/th-1/cloud.png`} />
+                        <p className="text-sm">Cloud modernisation</p>
+                      </div>
+                    </SwiperSlide>
+
+                    <SwiperSlide>
+                      <div className="flex items-cetner gap-3">
+                        <img
+                          src={`/assets/img_placeholder/th-1/organisatinal.png`}
+                        />
+                        <p className="text-sm">Organizational change</p>
+                      </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                      <p className="text-sm">Software engineering </p>
+                      <div className="flex items-cetner gap-3">
+                        <img
+                          src={`/assets/img_placeholder/th-1/deep-learning.png`}
+                        />
+                        <p className="text-sm">Applied Ai</p>
+                      </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                      <p className="text-sm">Cloud modernisation</p>
+                      <div className="flex items-cetner gap-3">
+                        <img
+                          src={`/assets/img_placeholder/th-1/implement.png`}
+                        />
+                        <p className="text-sm">System implementation</p>
+                      </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                      <p className="text-sm">Systems Implementation</p>
+                      <div className="flex items-cetner gap-3">
+                        <img
+                          src={`/assets/img_placeholder/th-1/strategy.png`}
+                        />
+                        <p className="text-sm">Strategy</p>
+                      </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                      <p className="text-sm">Strategy</p>
+                      <div className="flex items-cetner gap-3">
+                        <img
+                          src={`/assets/img_placeholder/th-1/engineer.png`}
+                        />
+                        <p className="text-sm">Software Engineering</p>
+                      </div>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                      <div className="flex items-cetner gap-3">
+                        <img src={`/assets/img_placeholder/th-1/privacy.png`} />
+                        <p className="text-sm">Privacy & Security</p>
+                      </div>
                     </SwiperSlide>
                   </Swiper>
                 </div>
@@ -593,10 +643,7 @@ function Home() {
                       benefiting from its capabilities without lengthy setup and
                       development times in fast-paced industries.
                     </p>
-                    <button
-                      
-                      className="button mt-5 rounded-[50px] border-2 border-black bg-black py-4 text-white after:bg-[#2962FF] hover:border-[#2962FF] hover:text-white"
-                    >
+                    <button className="button mt-5 rounded-[50px] border-2 border-black bg-black py-4 text-white after:bg-[#2962FF] hover:border-[#2962FF] hover:text-white">
                       Ask us more Questions
                     </button>
                   </div>
