@@ -7,7 +7,7 @@ import useAccordion from "@/components/hooks/useAccordion";
 import useTabs from "@/components/hooks/useTabs";
 import Header_01 from "@/components/header/Header_01";
 import Footer_01 from "@/components/footer/Footer_01";
-import '/styles/globals.css'
+import "/styles/globals.css";
 function Home() {
   const [activeIndex, handleAccordion] = useAccordion(0);
 
@@ -485,7 +485,7 @@ function Home() {
             <div className="jos grid grid-cols-1 overflow-hidden rounded-[30px] bg-black lg:rounded-[50px] xl:grid-cols-[minmax(400px,_1fr)_1.5fr] xxl:grid-cols-[1fr_minmax(800px,_1fr)]">
               {/* Funfact Left Block */}
               <div className="relative overflow-hidden rounded-[30px] lg:rounded-[50px]">
-                <video width={"100%"} height={"100%"} autoPlay>
+                <video width={"100%"} height={"100%"} autoPlay muted>
                   <source src="/assets/img_placeholder/video.mp4" />
                 </video>
                 {/* Video Play Button */}
@@ -518,7 +518,7 @@ function Home() {
                 {/* Counter Scroll */}
                 <div className="jos brand-slider" data-jos_animation="fade">
                   <Swiper
-                    slidesPerView={3}
+                    slidesPerView={2}
                     spaceBetween={20}
                     autoplay={{
                       delay: 4000,
@@ -540,71 +540,55 @@ function Home() {
                     className="text-gray-400"
                   >
                     <SwiperSlide>
-                      <div className="flex items-cetner gap-3">
-                        <img
-                          src={`/assets/img_placeholder/th-1/database.png`}
-                        />
-                        <p className="text-sm">Data & Analytics</p>
+                      <div className="text-sm flex items-center text-gray-50">
+                        <div className="size-7 flex items-center justify-center mr-1 bg-blue-500">
+                          DA
+                        </div>
+                        <p> Data & Analytics</p>
                       </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                      <div className="flex items-cetner gap-3">
-                        <img src={`/assets/img_placeholder/th-1/ai.png`} />
-                        <p className="text-sm ">Artificial Intelligence </p>
-                      </div>
-                    </SwiperSlide>
-
-                    <SwiperSlide>
-                      <div className="flex items-cetner gap-3">
-                        <img src={`/assets/img_placeholder/th-1/cloud.png`} />
-                        <p className="text-sm">Cloud modernisation</p>
+                      <div className="text-sm flex items-center text-gray-50">
+                        <div className="size-7 flex items-center justify-center mr-1 bg-blue-500">
+                          AI
+                        </div>
+                        <p> Artificial Intelligence</p>
                       </div>
                     </SwiperSlide>
 
                     <SwiperSlide>
-                      <div className="flex items-cetner gap-3">
-                        <img
-                          src={`/assets/img_placeholder/th-1/organisatinal.png`}
-                        />
-                        <p className="text-sm">Organizational change</p>
+                      <div className="text-sm flex items-center text-gray-50">
+                        <div className="size-7 flex items-center justify-center mr-1 bg-blue-500">
+                          CM
+                        </div>
+                        <p>Cloud Modernisation</p>
                       </div>
                     </SwiperSlide>
+
                     <SwiperSlide>
-                      <div className="flex items-cetner gap-3">
-                        <img
-                          src={`/assets/img_placeholder/th-1/deep-learning.png`}
-                        />
-                        <p className="text-sm">Applied Ai</p>
+                      <div className="text-sm flex items-center text-gray-50">
+                        <div className="size-7 flex items-center justify-center mr-1 bg-blue-500">
+                          OC
+                        </div>
+                        <p> Organizational Change</p>
                       </div>
                     </SwiperSlide>
+
                     <SwiperSlide>
-                      <div className="flex items-cetner gap-3">
-                        <img
-                          src={`/assets/img_placeholder/th-1/implement.png`}
-                        />
-                        <p className="text-sm">System implementation</p>
+                      <div className="text-sm flex items-center text-gray-50">
+                        <div className="size-7 flex items-center justify-center mr-1 bg-blue-500">
+                          SI
+                        </div>
+                        <p> System Implementation</p>
                       </div>
                     </SwiperSlide>
+
                     <SwiperSlide>
-                      <div className="flex items-cetner gap-3">
-                        <img
-                          src={`/assets/img_placeholder/th-1/strategy.png`}
-                        />
-                        <p className="text-sm">Strategy</p>
-                      </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                      <div className="flex items-cetner gap-3">
-                        <img
-                          src={`/assets/img_placeholder/th-1/engineer.png`}
-                        />
-                        <p className="text-sm">Software Engineering</p>
-                      </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                      <div className="flex items-cetner gap-3">
-                        <img src={`/assets/img_placeholder/th-1/privacy.png`} />
-                        <p className="text-sm">Privacy & Security</p>
+                      <div className="text-sm flex items-center text-gray-50">
+                        <div className="size-7 flex items-center justify-center mr-1 bg-blue-500">
+                          SE
+                        </div>
+                        <p> Software Engineering</p>
                       </div>
                     </SwiperSlide>
                   </Swiper>

@@ -88,26 +88,25 @@ const Footer_01 = () => {
           <div className="flex flex-col gap-y-6">
             {/* Footer Title */}
             <h4 className="text-[21px] font-semibold capitalize text-black">
-              Utility pages
+              Social
             </h4>
             {/* Footer Title */}
             {/* Footer Navbar */}
             <ul className="flex flex-col gap-y-[10px] capitalize">
               <li>
-                <Link
-                  href="/"
-                  className="transition-all duration-300 ease-linear hover:text-colorOrangyRed"
-                >
-                  Login
-                </Link>
+                <button className="transition-all duration-300 ease-linear hover:text-colorOrangyRed">
+                  X (formerly know as Twitter)
+                </button>
               </li>
               <li>
-                <Link
-                  href="/"
-                  className="transition-all duration-300 ease-linear hover:text-colorOrangyRed"
-                >
-                  404 Not found
-                </Link>
+                <button className="transition-all duration-300 ease-linear hover:text-colorOrangyRed">
+                  Instagram
+                </button>
+              </li>
+              <li>
+                <button className="transition-all duration-300 ease-linear hover:text-colorOrangyRed">
+                  LinkedIn
+                </button>
               </li>
             </ul>
           </div>
