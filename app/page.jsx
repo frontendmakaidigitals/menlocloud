@@ -518,7 +518,7 @@ function Home() {
                 {/* Counter Scroll */}
                 <div className="jos brand-slider" data-jos_animation="fade">
                   <Swiper
-                    slidesPerView={2}
+                    slidesPerView={1}
                     spaceBetween={20}
                     autoplay={{
                       delay: 4000,
@@ -537,9 +537,9 @@ function Home() {
                         slidesPerView: 3,
                       },
                     }}
-                    className="text-gray-400"
+                    className=""
                   >
-                    <SwiperSlide>
+                    <SwiperSlide  >
                       <div className="text-sm flex items-center text-gray-50">
                         <div className="size-7 flex items-center justify-center mr-1 bg-blue-500">
                           DA

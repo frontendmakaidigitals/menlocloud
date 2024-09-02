@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
+import { FaXTwitter, FaInstagram, FaLinkedin } from "react-icons/fa6";
+
 const Footer_01 = () => {
   return (
     <footer className="relative z-[1] -mt-[70px] overflow-hidden rounded-tl-[30px] rounded-tr-[30px] bg-colorLinenRuffle lg:rounded-tl-[50px] lg:rounded-tr-[50px]">
@@ -94,17 +96,20 @@ const Footer_01 = () => {
             {/* Footer Navbar */}
             <ul className="flex flex-col gap-y-[10px] capitalize">
               <li>
-                <button className="transition-all duration-300 ease-linear hover:text-colorOrangyRed">
-                  X (formerly know as Twitter)
+                <button className="flex group items-center gap-2 ">
+                  <FaXTwitter className="group-hover:text-blue-500 transition-all duration-200" />{" "}
+                  Twitter
                 </button>
               </li>
               <li>
-                <button className="transition-all duration-300 ease-linear hover:text-colorOrangyRed">
+                <button className="flex items-center gap-2  group">
+                  <FaInstagram className="group-hover:text-blue-500 transition-all duration-200" />{" "}
                   Instagram
                 </button>
               </li>
               <li>
-                <button className="transition-all duration-300 ease-linear hover:text-colorOrangyRed">
+                <button className="flex items-center gap-2 group">
+                  <FaLinkedin className="group-hover:text-blue-500 transition-all duration-200" />{" "}
                   LinkedIn
                 </button>
               </li>
