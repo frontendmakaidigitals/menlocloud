@@ -8,9 +8,9 @@ import SwiperNavButtons from "@/components/SwiperNavButton";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { useRef } from "react";
-import {motion} from 'framer-motion'
-
+import { useRef, useState } from "react";
+import { motion } from "framer-motion";
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 const data = [
   {
     img: "https://s7d9.scene7.com/is/image/slalom/insight-globalbas-turtle-finserv-thumb-520x490?fmt=webp-alpha",
@@ -48,8 +48,117 @@ const data = [
     hoverColor: "#FFAB91",
   },
 ];
+
+const tabs = [
+  {
+    name: "Data & Analytics",
+    data: "Formulate the best data strategy and seamlessly deploy data solutions and technologies with MenloCloud expert guidance. Unlock the full potential of your data assets and drive informed decision-making. We offer a comprehensive range of services, from data collection and integration to advanced analytics and insights generation",
+    points: [
+      "Predictive Insights",
+      "Data Visualization",
+      "Business Intelligence",
+      "Analytical Reporting",
+      "Data Strategy",
+    ],
+  },
+  {
+    name: "Artificial Intelligence",
+    data: "Assisting you in leveraging AI to automate repetitive functions, push beyond traditional limitations, and transform user experiences in an ethical manner. Our expertise includes machine learning, natural language processing, computer vision, and robotic process automation. We start by understanding your unique business challenges and objectives, then design and implement AI solutions tailored to your needs.",
+    points: [
+      "Natural Language Processing",
+      "Predictive Analytics",
+      "Deep Learning",
+      "Robotic Process Automation",
+      "Smart Algorithms",
+    ],
+  },
+  {
+    name: "Applied AI ",
+    data: "Deploy conventional and generative AI to optimize existing processes, explore innovative solutions, and redefine user experiences responsibly. We combine Conventional and Generative AI and provide a holistic approach to solving complex challenges and unlocking new opportunities in the AI landscape. ",
+    points: [
+      "Conventional Models",
+      "Generative Adversarial Networks",
+      "Data Synthesis",
+      "Pattern Recognition",
+      "Algorithm Development",
+    ],
+  },
+  {
+    name: "Software Engineering",
+    data: "With our advanced software development efficiency, solve intricate technical problems, and create impactful, reliable software solutions. We provide custom applications, integration of third-party systems, and enhancement of existing software. We focus on delivering solutions that are user-friendly, secure, and optimized for performance. From web and mobile applications to enterprise software and cloud-based solutions, we provide expertise in a wide range of technologies and platforms.",
+    points: [
+      "System Design",
+      "Code Development",
+      "Quality Assurance",
+      "Version Control",
+      "User Experience",
+      "Debugging Processes",
+    ],
+  },
+  {
+    name: "Cloud Modernisation",
+    data: "With cloud modernization, transform your existing infrastructure into a robust, scalable, and agile environment. Our approach involves assessing your current systems, developing a strategic cloud migration plan, streamline operations, reduce costs and implementing cutting-edge cloud solutions that enhance performance and efficiency. ",
+    points: [
+      "Cloud Migration",
+      "Hybrid Cloud",
+      "Containerization Technologies",
+      "Serverless Computing",
+      "Automated Provisioning",
+    ],
+  },
+  {
+    name: "Systems Implementation",
+    data: "Our systems implementation services include the configuration and customization of software, migration of data, and integration with other systems. We apply industry best practices to ensure that the implementation is executed flawlessly, with attention to detail in every aspect of the process. This includes rigorous testing to validate functionality, performance, and security before the system goes live.",
+    points: [
+      "Deployment Planning",
+      "User Training",
+      "Operational Testing",
+      "Technical Support",
+      "System Customization",
+    ],
+  },
+  {
+    name: "Strategy",
+    data: "Our strategic approach encompasses various areas, including business transformation, market entry, digital strategy, and organizational development. We design tailored strategies that leverage your strengths, address weaknesses, and capitalize on emerging trends. Our goal is to create a strategic roadmap that not only guides your immediate actions but also positions you for long-term success and adaptability.",
+    points: [
+      "Strategic Planning",
+      "Market Analysis",
+      "Competitive Positioning",
+      "Long-Term Vision",
+      "Strategic Alignment",
+      "Risk Management",
+      "Tactical Execution",
+    ],
+  },
+  {
+    name: "Privacy & Security",
+    data: "We also focus on privacy management, Safeguarding information with cutting-edge privacy and security practices, establishing data governance frameworks, conducting privacy impact assessments, and ensuring transparent data collection and usage practices. A proactive approach to privacy and security that protects your organization and supports your business objectives.",
+    points: [
+      "Data Protection",
+      "Cybersecurity Measures",
+      "Access Control",
+      "Encryption Protocols",
+      "Security Audits",
+      "Threat Detection",
+      "Compliance Standards",
+    ],
+  },
+  {
+    name: "Organizational Change",
+    data: "Enhancing company approach with top level cultural & hierarchy transformation, We provide comprehensive support for implementing change initiatives, including process redesign, technology adoption, and cultural transformation. Our team assists with designing and executing effective training programs to equip your employees with the skills and knowledge needed to adapt to new systems and processes.",
+    points: [
+      "Change Management",
+      "Transformation Strategy",
+      "Process Improvement",
+      "Adaptation Strategies",
+      "Implementation Planning",
+    ],
+  },
+];
 function Services() {
-  const [activeIndex, handleAccordion] = useAccordion(0);
+  const [mobileTabs, setMobileTabs] = useState(false);
+  const [tabSelected, setTabSelected] = useState(0);
+
   const swiperRef = useRef(null);
   return (
     <>
@@ -75,441 +184,133 @@ function Services() {
             </div>
           </div>
         </div>
-        <section id="section-service">
-          {/* Section Spacer */}
-          <div className="pb-20 xl:pb-[150px]">
-            {/* Section Container */}
-            <div className="global-container">
-              {/* Section Content Block */}
-              <div className="jos mb-10 text-center lg:mb-16 xl:mb-20">
-                <div className="mx-auto max-w-md lg:max-w-xl xl:max-w-[950px]">
-                  <h2>We provide smart AI solutions for all tasks</h2>
-                </div>
-              </div>
-              {/* Section Content Block */}
-              {/* Service List */}
-              <ul className="jos grid grid-cols-1 gap-[2px] overflow-hidden rounded-[10px] border-2 border-black bg-black sm:grid-cols-2 lg:grid-cols-4">
-                {/* Service Item */}
-                <li className="group bg-white p-[30px] transition-all duration-300 ease-in-out hover:bg-black">
-                  <div className="relative mb-9 h-[70px] w-[70px]">
-                    <Image
-                      src="/assets/img_placeholder/th-1/service-icon-black-1.svg"
-                      alt="service-icon-black-1"
-                      width={70}
-                      height={70}
-                    />
-                    <Image
-                      src="/assets/img_placeholder/th-1/service-icon-orange-1.svg"
-                      alt="service-icon-orange-1"
-                      width={70}
-                      height={70}
-                      className="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100"
-                    />
-                  </div>
-                  <h3 className="mb-4 block text-xl leading-tight -tracking-[0.5px] group-hover:text-white xl:text-2xl xxl:text-[28px]">
-                    <Link
-                      href="/service-details"
-                      className="hover:text-colorOrangyRed"
-                    >
-                      Resource Flexibility
-                    </Link>
-                  </h3>
-                  <p className="mb-12 duration-300 group-hover:text-white">
-                    This is an excellent option for people &amp; small
-                    businesses who are starting out.
-                  </p>
-                  <Link
-                    href="/service-details"
-                    className="relative inline-block h-[30px] w-[30px] duration-300"
-                  >
-                    <Image
-                      src="/assets/img_placeholder/th-1/arrow-right-black.svg"
-                      alt="arrow-right-black"
-                      width={30}
-                      height={30}
-                    />
-                    <Image
-                      src="/assets/img_placeholder/th-1/arrow-right-orange.svg"
-                      alt="arrow-right-black"
-                      width={30}
-                      height={30}
-                      className="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100"
-                    />
-                  </Link>
-                </li>
-                {/* Service Item */}
-                {/* Service Item */}
-                <li className="group bg-white p-[30px] transition-all duration-300 ease-in-out hover:bg-black">
-                  <div className="relative mb-9 h-[70px] w-[70px]">
-                    <Image
-                      src="/assets/img_placeholder/th-1/service-icon-black-2.svg"
-                      alt="service-icon-black-2"
-                      width={70}
-                      height={70}
-                    />
-                    <Image
-                      src="/assets/img_placeholder/th-1/service-icon-orange-2.svg"
-                      alt="service-icon-orange-1"
-                      width={70}
-                      height={70}
-                      className="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100"
-                    />
-                  </div>
-                  <h3 className="mb-4 block text-xl leading-tight -tracking-[0.5px] group-hover:text-white xl:text-2xl xxl:text-[28px]">
-                    <Link
-                      href="/service-details"
-                      className="hover:text-colorOrangyRed"
-                    >
-                      Managed Services
-                    </Link>
-                  </h3>
-                  <p className="mb-12 duration-300 group-hover:text-white">
-                    This is an excellent option for people &amp; small
-                    businesses who are starting out.
-                  </p>
-                  <Link
-                    href="/service-details"
-                    className="relative inline-block h-[30px] w-[30px] duration-300"
-                  >
-                    <Image
-                      src="/assets/img_placeholder/th-1/arrow-right-black.svg"
-                      alt="arrow-right-black"
-                      width={30}
-                      height={30}
-                    />
-                    <Image
-                      src="/assets/img_placeholder/th-1/arrow-right-orange.svg"
-                      alt="arrow-right-black"
-                      width={30}
-                      height={30}
-                      className="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100"
-                    />
-                  </Link>
-                  {/* Features Item */}
-                  {/* Features Item */}
-                </li>
-                {/* Service Item */}
-                {/* Service Item */}
-                <li className="group bg-white p-[30px] transition-all duration-300 ease-in-out hover:bg-black">
-                  <div className="relative mb-9 h-[70px] w-[70px]">
-                    <Image
-                      src="/assets/img_placeholder/th-1/service-icon-black-3.svg"
-                      alt="service-icon-black-3"
-                      width={70}
-                      height={70}
-                    />
-                    <Image
-                      src="/assets/img_placeholder/th-1/service-icon-orange-3.svg"
-                      alt="service-icon-orange-3"
-                      width={70}
-                      height={70}
-                      className="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100"
-                    />
-                  </div>
-                  <h3 className="mb-4 block text-xl leading-tight -tracking-[0.5px] group-hover:text-white xl:text-2xl xxl:text-[28px]">
-                    <Link
-                      href="/service-details"
-                      className="hover:text-colorOrangyRed"
-                    >
-                      Web-Based Access
-                    </Link>
-                  </h3>
-                  <p className="mb-12 duration-300 group-hover:text-white">
-                    This is an excellent option for people &amp; small
-                    businesses who are starting out.
-                  </p>
-                  <Link
-                    href="/service-details"
-                    className="relative inline-block h-[30px] w-[30px] duration-300"
-                  >
-                    <Image
-                      src="/assets/img_placeholder/th-1/arrow-right-black.svg"
-                      alt="arrow-right-black"
-                      width={30}
-                      height={30}
-                    />
-                    <Image
-                      src="/assets/img_placeholder/th-1/arrow-right-orange.svg"
-                      alt="arrow-right-black"
-                      width={30}
-                      height={30}
-                      className="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100"
-                    />
-                  </Link>
-                </li>
-                {/* Service Item */}
-                {/* Service Item */}
-                <li className="group bg-white p-[30px] transition-all duration-300 ease-in-out hover:bg-black">
-                  <div className="relative mb-9 h-[70px] w-[70px]">
-                    <Image
-                      src="/assets/img_placeholder/th-1/service-icon-black-4.svg"
-                      alt="service-icon-black-4"
-                      width={70}
-                      height={70}
-                    />
-                    <Image
-                      src="/assets/img_placeholder/th-1/service-icon-orange-4.svg"
-                      alt="service-icon-orange-4"
-                      width={70}
-                      height={70}
-                      className="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100"
-                    />
-                  </div>
-                  <h3 className="mb-4 block text-xl leading-tight -tracking-[0.5px] group-hover:text-white xl:text-2xl xxl:text-[28px]">
-                    <Link
-                      href="/service-details"
-                      className="hover:text-colorOrangyRed"
-                    >
-                      Resource Flexibility
-                    </Link>
-                  </h3>
-                  <p className="mb-12 duration-300 group-hover:text-white">
-                    This is an excellent option for people &amp; small
-                    businesses who are starting out.
-                  </p>
-                  <Link
-                    href="/service-details"
-                    className="relative inline-block h-[30px] w-[30px] duration-300"
-                  >
-                    <Image
-                      src="/assets/img_placeholder/th-1/arrow-right-black.svg"
-                      alt="arrow-right-black"
-                      width={30}
-                      height={30}
-                    />
-                    <Image
-                      src="/assets/img_placeholder/th-1/arrow-right-orange.svg"
-                      alt="arrow-right-black"
-                      width={30}
-                      height={30}
-                      className="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100"
-                    />
-                  </Link>
-                </li>
-                {/* Service Item */}
-                {/* Service Item */}
-                <li className="group bg-white p-[30px] transition-all duration-300 ease-in-out hover:bg-black">
-                  <div className="relative mb-9 h-[70px] w-[70px]">
-                    <Image
-                      src="/assets/img_placeholder/th-1/service-icon-black-5.svg"
-                      alt="service-icon-black-5"
-                      width={70}
-                      height={70}
-                    />
-                    <Image
-                      src="/assets/img_placeholder/th-1/service-icon-orange-5.svg"
-                      alt="service-icon-orange-5"
-                      width={70}
-                      height={70}
-                      className="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100"
-                    />
-                  </div>
-                  <h3 className="mb-4 block text-xl leading-tight -tracking-[0.5px] group-hover:text-white xl:text-2xl xxl:text-[28px]">
-                    <Link
-                      href="/service-details"
-                      className="hover:text-colorOrangyRed"
-                    >
-                      Anomaly Detection
-                    </Link>
-                  </h3>
-                  <p className="mb-12 duration-300 group-hover:text-white">
-                    AI SaaS can analyze IoT sensor data to detect predict
-                    equipment failures.
-                  </p>
-                  <Link
-                    href="/service-details"
-                    className="relative inline-block h-[30px] w-[30px] duration-300"
-                  >
-                    <Image
-                      src="/assets/img_placeholder/th-1/arrow-right-black.svg"
-                      alt="arrow-right-black"
-                      width={30}
-                      height={30}
-                    />
-                    <Image
-                      src="/assets/img_placeholder/th-1/arrow-right-orange.svg"
-                      alt="arrow-right-black"
-                      width={30}
-                      height={30}
-                      className="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100"
-                    />
-                  </Link>
-                </li>
-                {/* Service Item */}
-                {/* Service Item */}
-                <li className="group bg-white p-[30px] transition-all duration-300 ease-in-out hover:bg-black">
-                  <div className="relative mb-9 h-[70px] w-[70px]">
-                    <Image
-                      src="/assets/img_placeholder/th-1/service-icon-black-6.svg"
-                      alt="service-icon-black-6"
-                      width={70}
-                      height={70}
-                    />
-                    <Image
-                      src="/assets/img_placeholder/th-1/service-icon-orange-6.svg"
-                      alt="service-icon-orange-6"
-                      width={70}
-                      height={70}
-                      className="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100"
-                    />
-                  </div>
-                  <h3 className="mb-4 block text-xl leading-tight -tracking-[0.5px] group-hover:text-white xl:text-2xl xxl:text-[28px]">
-                    <Link
-                      href="/service-details"
-                      className="hover:text-colorOrangyRed"
-                    >
-                      Predictive Analytics
-                    </Link>
-                  </h3>
-                  <p className="mb-12 duration-300 group-hover:text-white">
-                    Solutions that use AI to predict future trends and outcomes,
-                    such as demand forecastin.
-                  </p>
-                  <Link
-                    href="/service-details"
-                    className="relative inline-block h-[30px] w-[30px] duration-300"
-                  >
-                    <Image
-                      src="/assets/img_placeholder/th-1/arrow-right-black.svg"
-                      alt="arrow-right-black"
-                      width={30}
-                      height={30}
-                    />
-                    <Image
-                      src="/assets/img_placeholder/th-1/arrow-right-orange.svg"
-                      alt="arrow-right-black"
-                      width={30}
-                      height={30}
-                      className="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100"
-                    />
-                  </Link>
-                  {/* Features Item */}
-                  {/* Features Item */}
-                </li>
-                {/* Service Item */}
-                {/* Service Item */}
-                <li className="group bg-white p-[30px] transition-all duration-300 ease-in-out hover:bg-black">
-                  <div className="relative mb-9 h-[70px] w-[70px]">
-                    <Image
-                      src="/assets/img_placeholder/th-1/service-icon-black-7.svg"
-                      alt="service-icon-black-7"
-                      width={70}
-                      height={70}
-                    />
-                    <Image
-                      src="/assets/img_placeholder/th-1/service-icon-orange-7.svg"
-                      alt="service-icon-orange-7"
-                      width={70}
-                      height={70}
-                      className="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100"
-                    />
-                  </div>
-                  <h3 className="mb-4 block text-xl leading-tight -tracking-[0.5px] group-hover:text-white xl:text-2xl xxl:text-[28px]">
-                    <Link
-                      href="/service-details"
-                      className="hover:text-colorOrangyRed"
-                    >
-                      Speech Recognition
-                    </Link>
-                  </h3>
-                  <p className="mb-12 duration-300 group-hover:text-white">
-                    Speech recognition services convert spoken language into
-                    text and accessibility.
-                  </p>
-                  <Link
-                    href="/service-details"
-                    className="relative inline-block h-[30px] w-[30px] duration-300"
-                  >
-                    <Image
-                      src="/assets/img_placeholder/th-1/arrow-right-black.svg"
-                      alt="arrow-right-black"
-                      width={30}
-                      height={30}
-                    />
-                    <Image
-                      src="/assets/img_placeholder/th-1/arrow-right-orange.svg"
-                      alt="arrow-right-black"
-                      width={30}
-                      height={30}
-                      className="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100"
-                    />
-                  </Link>
-                </li>
-                {/* Service Item */}
-                {/* Service Item */}
-                <li className="group bg-white p-[30px] transition-all duration-300 ease-in-out hover:bg-black">
-                  <div className="relative mb-9 h-[70px] w-[70px]">
-                    <Image
-                      src="/assets/img_placeholder/th-1/service-icon-black-8.svg"
-                      alt="service-icon-black-8"
-                      width={70}
-                      height={70}
-                    />
-                    <Image
-                      src="/assets/img_placeholder/th-1/service-icon-orange-8.svg"
-                      alt="service-icon-orange-8"
-                      width={70}
-                      height={70}
-                      className="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100"
-                    />
-                  </div>
-                  <h3 className="mb-4 block text-xl leading-tight -tracking-[0.5px] group-hover:text-white xl:text-2xl xxl:text-[28px]">
-                    <Link
-                      href="/service-details"
-                      className="hover:text-colorOrangyRed"
-                    >
-                      Computer Vision
-                    </Link>
-                  </h3>
-                  <p className="mb-12 duration-300 group-hover:text-white">
-                    Computer vision services use AI to interpret and process
-                    visual information.
-                  </p>
-                  <Link
-                    href="/service-details"
-                    className="relative inline-block h-[30px] w-[30px] duration-300"
-                  >
-                    <Image
-                      src="/assets/img_placeholder/th-1/arrow-right-black.svg"
-                      alt="arrow-right-black"
-                      width={30}
-                      height={30}
-                    />
-                    <Image
-                      src="/assets/img_placeholder/th-1/arrow-right-orange.svg"
-                      alt="arrow-right-black"
-                      width={30}
-                      height={30}
-                      className="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100"
-                    />
-                  </Link>
-                </li>
-                {/* Service Item */}
-              </ul>
-              {/* Service List */}
-            </div>
-            {/* Section Container */}
-          </div>
-          {/* Section Spacer */}
+        <section className="global-container mb-20">
+          <h2 className="w-full text-center">Industries and impact</h2>
+          <p className="text-md text-center mt-2">
+            Learn how we’re driving impact with organizations like yours across
+            key industry sectors.
+          </p>
         </section>
-        <section id="section-service" className="mb-20 global-container">
+        <div
+          className={`bg-blue-500 block  lg:hidden px-4 py-3 transition-all duration-200   w-full `}
+        >
+          <p
+            onClick={() => setMobileTabs(!mobileTabs)}
+            className="flex w-full capitalize items-center gap-1"
+          >
+            {tabs[tabSelected].name}
+            <span>
+              <MdOutlineKeyboardArrowDown
+                className={`text-2xl ${mobileTabs ? "rotate-180" : "rotate-0"}`}
+              />
+            </span>
+          </p>
+          <div
+            className={`transition-all duration-300 ${
+              mobileTabs ? "max-h-[100vh] py-4 " : "max-h-0"
+            }  bg-blue-500 `}
+          >
+            {mobileTabs
+              ? tabs.map((service, index) => {
+                  if (tabSelected !== index) {
+                    return (
+                      <p
+                        key={index}
+                        onClick={() => {
+                          setTabSelected(index);
+                          setMobileTabs(false);
+                        }}
+                        className="mt-5 text-[1rem] xxl:text-[.8vw]   hover:underline cursor-pointer uppercase"
+                      >
+                        {service.name}
+                      </p>
+                    );
+                  }
+                })
+              : null}
+          </div>
+        </div>
+        <section className=" w-full h-auto lg:h-screen lg:mb-20 flex flex-col lg:flex-row justify-between items-start">
+          <div className="bg-blue-400 h-full transition-all duration-200 xl:h-full w-full xl:w-1/3 max-w-[750px]  xl:px-14 xl:py-14 rounded-lg xl:rounded-r-[2rem]">
+            <div className="hidden lg:block">
+              {tabs.map((service, index) => {
+                return (
+                  <p
+                    key={index}
+                    onClick={() => setTabSelected(index)}
+                    className={`mt-5 text-sm xxl:text-lg  hover:underline cursor-pointer uppercase ${
+                      tabSelected == index ? "underline" : ""
+                    } `}
+                  >
+                    {service.name}
+                  </p>
+                );
+              })}
+            </div>
+          </div>
+          <div className="w-full px-4 lg:px-10 lg:h-full h-auto mt-20 justify-start gap-5 items-start flex flex-col md:flex-row ">
+            <div className="w-auto max-w-[700px]">
+              <p className="text-3xl md:text-4xl xxl:text-5xl capitalize">
+                {tabs[tabSelected].name}
+              </p>
+              <p className="text-sm !leading-loose xxl:text-lg  md:mt-5">
+                {tabs[tabSelected].data}
+              </p>
+              <p className="md:mt-5 md:mb-4 text-lg  xxl:text-2xl font-semibold">
+                Industires include:
+              </p>
+              {tabs[tabSelected].points.map((point, index) => (
+                <p className="text-sm xxl:text-lg mt-1" key={index}>{point}</p>
+              ))}
+
+              <button className="button rounded-[50px] mt-10 border-2 border-black bg-transparent py-3 text-black after:bg-[#2962FF] hover:border-[#2962FF] hover:text-white">
+                Learn more
+              </button>
+            </div>
+            <div className="bg-gray-100 w-full lg:w-[21rem]  lg:mt-0 min-w-[350px] pb-7 rounded-xl ">
+              <div className=" rounded-xl w-full bg-[url('https://images.unsplash.com/photo-1531538512164-e6c51ea63d20?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-no-repeat bg-center bg-cover h-[300px] lg:h-[330px]"></div>
+              <div className="px-5">
+                <p className="mt-4 text-lg uppercase">customer story</p>
+                <p className="xxl:text-2xl mt-3 font-bold">
+                  Investing in a culture of innovation
+                </p>
+                <p className="mt-12">Nasdaq</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        {/* Service Section */}
+        <section className="mb-40 mt-20 global-container">
           <div>
-            <div className="flex justify-between items-center">
-              <h2 className="text-gray-900">Random Texts</h2>
-              <SwiperNavButtons swiperRef={swiperRef} />
+            <div className="flex  justify-between items-center">
+              <h2 className="text-gray-900">2024 Industry Outlooks </h2>
+              <div className="hidden lg:flex">
+                <SwiperNavButtons swiperRef={swiperRef} />
+              </div>
             </div>
             <Swiper
               ref={swiperRef}
               spaceBetween={10}
-              slidesPerView={4}
+              slidesPerView={1.3}
               loop={true}
-			  className="mt-10"
+              breakpoints={{
+                320: {
+                  slidesPerView: 1.3, // 2 slides for screens >= 640px
+                },
+                768: {
+                  slidesPerView: 3, // 3 slides for screens >= 768px
+                },
+                1024: {
+                  slidesPerView: 4, // 4 slides for screens >= 1024px
+                },
+              }}
+              className="mt-10"
             >
               {data.map((elem, index) => {
                 return (
                   <SwiperSlide key={index} className="  w-full cursor-pointer ">
                     <motion.div
-					whileHover={{backgroundColor:elem.hoverColor}}
+                      whileHover={{ backgroundColor: elem.hoverColor }}
                       className={`h-[30rem] rounded-xl bg-gray-100 `}
                     >
                       <div
