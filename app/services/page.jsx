@@ -249,7 +249,7 @@ function Services() {
             </div>
           </div>
           <div className="w-full px-4 lg:px-10 lg:h-full h-auto mt-20 justify-start gap-5 items-start flex flex-col md:flex-row ">
-            <div className="w-auto max-w-[700px]">
+            <div className="w-auto max-w-[800px]">
               <p className="text-3xl md:text-4xl xxl:text-5xl capitalize">
                 {tabs[tabSelected].name}
               </p>
