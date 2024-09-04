@@ -15,12 +15,12 @@ function Contact() {
 						{/* Section Container */}
 						<div className="global-container">
 							<div className="breadcrumb-block">
-								<h1 className="breadcrumb-title">Contact Us</h1>
+								<h1 className="breadcrumb-title ">Contact Us</h1>
 								<ul className="breadcrumb-nav">
 									<li>
 										<Link href="/">Home</Link>
 									</li>
-									<li>Contact Us</li>
+									<li className="!text-blue-500">Contact Us</li>
 								</ul>
 							</div>
 						</div>
@@ -55,16 +55,16 @@ function Contact() {
 												Send us an email:
 												<Link
 													href="mailto:yourmail@email.com"
-													className="text-2xl font-normal leading-loose hover:text-colorOrangyRed lg:text-3xl"
+													className="text-2xl font-normal leading-loose hover:text-blue-500 lg:text-3xl"
 												>
-													info@favdevs.com
+													info@melapo.com
 												</Link>
 											</li>
 											<li className="flex flex-col gap-y-4 text-2xl font-bold">
 												Give us a call:
 												<Link
 													href="tel:+0123456789"
-													className="text-2xl font-normal leading-loose hover:text-colorOrangyRed lg:text-3xl"
+													className="text-2xl font-normal leading-loose hover:text-blue-500 lg:text-3xl"
 												>
 													+(012) 345 6789
 												</Link>
@@ -76,7 +76,7 @@ function Contact() {
 														<Link
 															rel="noopener noreferrer"
 															href="http://www.facebook.com"
-															className="group relative flex h-[30px] w-[30px] items-center justify-center rounded-[50%] bg-black hover:bg-colorOrangyRed"
+															className="group relative flex h-[30px] w-[30px] items-center justify-center rounded-[50%] bg-black hover:bg-blue-500"
 														>
 															<Image
 																src="/assets/img_placeholder/th-1/facebook-icon-white.svg"
@@ -98,7 +98,7 @@ function Contact() {
 														<Link
 															rel="noopener noreferrer"
 															href="http://www.twitter.com"
-															className="group relative flex h-[30px] w-[30px] items-center justify-center rounded-[50%] bg-black hover:bg-colorOrangyRed"
+															className="group relative flex h-[30px] w-[30px] items-center justify-center rounded-[50%] bg-black hover:bg-blue-500"
 														>
 															<Image
 																src="/assets/img_placeholder/th-1/twitter-icon-white.svg"
@@ -120,7 +120,7 @@ function Contact() {
 														<Link
 															rel="noopener noreferrer"
 															href="http://www.linkedin.com"
-															className="group relative flex h-[30px] w-[30px] items-center justify-center rounded-[50%] bg-black hover:bg-colorOrangyRed"
+															className="group relative flex h-[30px] w-[30px] items-center justify-center rounded-[50%] bg-black hover:bg-blue-500"
 														>
 															<Image
 																src="/assets/img_placeholder/th-1/linkedin-icon-white.svg"
@@ -142,7 +142,7 @@ function Contact() {
 														<Link
 															rel="noopener noreferrer"
 															href="http://www.instagram.com"
-															className="group relative flex h-[30px] w-[30px] items-center justify-center rounded-[50%] bg-black hover:bg-colorOrangyRed"
+															className="group relative flex h-[30px] w-[30px] items-center justify-center rounded-[50%] bg-black hover:bg-blue-500"
 														>
 															<Image
 																src="/assets/img_placeholder/th-1/instagram-icon-white.svg"
@@ -189,7 +189,7 @@ function Contact() {
 													name="contact-name"
 													id="contact-name"
 													placeholder="Adam Smith"
-													className="rounded-[10px] border border-gray-300 bg-white px-6 py-[18px] font-bold text-black outline-none transition-all placeholder:text-slate-500 focus:border-colorOrangyRed"
+													className="rounded-[10px] border border-gray-300 bg-white px-6 py-[18px] font-bold text-black outline-none transition-all placeholder:text-slate-500 focus:border-blue-500"
 													required=""
 												/>
 											</div>
@@ -206,8 +206,8 @@ function Contact() {
 													type="email"
 													name="contact-email"
 													id="contact-email"
-													placeholder="example@gmail.com"
-													className="rounded-[10px] border border-gray-300 bg-white px-6 py-[18px] font-bold text-black outline-none transition-all placeholder:text-slate-500 focus:border-colorOrangyRed"
+													placeholder="melapo@gmail.com"
+													className="rounded-[10px] border border-gray-300 bg-white px-6 py-[18px] font-bold text-black outline-none transition-all placeholder:text-slate-500 focus:border-blue-500"
 													required=""
 												/>
 											</div>
@@ -228,8 +228,8 @@ function Contact() {
 													type="tel"
 													name="contact-phone"
 													id="contact-phone"
-													placeholder="(123) 456 - 7890"
-													className="rounded-[10px] border border-gray-300 bg-white px-6 py-[18px] font-bold text-black outline-none transition-all placeholder:text-slate-500 focus:border-colorOrangyRed"
+													placeholder="12345 67890"
+													className="rounded-[10px] border border-gray-300 bg-white px-6 py-[18px] font-bold text-black outline-none transition-all placeholder:text-slate-500 focus:border-blue-500"
 													required=""
 												/>
 											</div>
@@ -247,7 +247,7 @@ function Contact() {
 													name="contact-company"
 													id="contact-company"
 													placeholder="EX Facebook"
-													className="rounded-[10px] border border-gray-300 bg-white px-6 py-[18px] font-bold text-black outline-none transition-all placeholder:text-slate-500 focus:border-colorOrangyRed"
+													className="rounded-[10px] border border-gray-300 bg-white px-6 py-[18px] font-bold text-black outline-none transition-all placeholder:text-slate-500 focus:border-blue-500"
 													required=""
 												/>
 											</div>
@@ -267,7 +267,7 @@ function Contact() {
 												<textarea
 													name="contact-message"
 													id="contact-message"
-													className="min-h-[180px] rounded-[10px] border border-gray-300 bg-white px-6 py-[18px] font-bold text-black outline-none transition-all placeholder:text-slate-500 focus:border-colorOrangyRed"
+													className="min-h-[180px] rounded-[10px] border border-gray-300 bg-white px-6 py-[18px] font-bold text-black outline-none transition-all placeholder:text-slate-500 focus:border-blue-500"
 													placeholder="Write your message here..."
 													required=""
 													defaultValue={
@@ -280,7 +280,7 @@ function Contact() {
 										<div>
 											<button
 												type="submit"
-												className="button mt-5 rounded-[50px] border-2 border-black bg-black py-4 text-white after:bg-colorOrangyRed hover:border-colorOrangyRed hover:text-white"
+												className="button mt-5 rounded-[50px] border-2 border-black bg-black py-4 text-white after:bg-blue-500 hover:border-blue-500 hover:text-white"
 											>
 												Send your message
 											</button>
