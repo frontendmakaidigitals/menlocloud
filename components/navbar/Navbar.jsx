@@ -2,13 +2,15 @@
 import { useState, forwardRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { cn } from "@/lib/utils";
+ 
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { cn } from "@/lib/utils";
+import AnimatedShinyText from "@/components/magicui/animated-shiny-text";
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -97,7 +99,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
               <NavigationMenuList>
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className={`bg-transparent`}>
-                    Services
+                    <Link href={`/services`}>Services</Link>
                   </NavigationMenuTrigger>
                   <NavigationMenuContent className="">
                     <div className="grid gap-10 px-6 py-10 md:w-[400px] lg:w-[1100px] lg:grid-cols-3">

@@ -14,9 +14,9 @@ module.exports = {
       xl: "1200px",
       xxl: "1400px",
     },
-	  fontFamily: {
-		'Telma': ['Telma', 'sans-serif'],
-	},
+    fontFamily: {
+      Telma: ["Telma", "sans-serif"],
+    },
     extend: {
       colors: {
         colorCodGray: "#191919",
@@ -87,10 +87,19 @@ module.exports = {
             height: "0",
           },
         },
+        shimmer: {
+          "0%, 90%, 100%": {
+            "background-position": "calc(-100% - var(--shimmer-width)) 0",
+          },
+          "30%, 60%": {
+            "background-position": "calc(100% + var(--shimmer-width)) 0",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        shimmer: "shimmer 8s infinite",
       },
     },
   },

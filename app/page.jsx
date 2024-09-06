@@ -7,12 +7,15 @@ import useAccordion from "@/components/hooks/useAccordion";
 import useTabs from "@/components/hooks/useTabs";
 import Header_01 from "@/components/header/Header_01";
 import Footer_01 from "@/components/footer/Footer_01";
+import { useEffect } from "react";
 import "/styles/globals.css";
+
 function Home() {
   const [activeIndex, handleAccordion] = useAccordion(0);
 
   const [activeTab, handleTab] = useTabs();
-
+  // This will run one time after the component mounts
+  
   return (
     <div className="page-wrapper relative z-[1] bg-white">
       {/*...::: Header Start :::... */}
@@ -56,7 +59,6 @@ function Home() {
                 className="jos hero-img overflow-hidden rounded-2xl bg-black"
                 data-jos_animation="zoom"
               >
-                
                 <video width="1296" height="640" autoPlay muted>
                   <source
                     src={`/assets/img_placeholder/th-1/dev video.mp4`}
