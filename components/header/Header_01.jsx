@@ -25,10 +25,11 @@ const Header_01 = () => {
           <div className="flex items-center gap-6">
             <div
               className={cn(
-                "group rounded-full border border-black/5 font- bg-neutral-900 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200 dark:border-white/5 dark:bg-neutral-900 dark:hover:bg-neutral-800"
+                "group rounded-full border border-black/5 font- bg-neutral-900 text-base text-white transition-all relative overflow-hidden ease-in hover:cursor-pointer hover:bg-black "
               )}
             >
-              <AnimatedShinyText className="inline-flex text-gray-300 items-center justify-center px-6 py-2 transition ease-out hover:text-neutral-600 hover:duration-300 hover:dark:text-neutral-400">
+            <div className='bg-blue-500 size-1 group-hover:scale-[50] transition-all duration-300 rounded-full absolute top-[110%] left-1/2 -translate-x-1/2  -translate-y-1/2'></div>
+              <AnimatedShinyText className="relative z-10 inline-flex font-semibold group-hover:text-gray-900 text-gray-400 items-center justify-center px-6 py-2  ">
                 <span>✨ Lets connect</span>
                 
               </AnimatedShinyText>
