@@ -412,7 +412,7 @@ function Home() {
                   {/* Section Content Block */}
                   <div className="text-lg leading-[1.4] lg:text-[21px]">
                     <p className="mb-7 last:mb-0">
-                      <span className="text-3xl font-bold font-Satoshi">
+                      <span className=" font-bold font-Satoshi">
                         Menlo
                         <span className="text-sky-500 font-Clash font-[600]">
                           cloud
