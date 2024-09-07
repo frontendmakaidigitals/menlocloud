@@ -16,6 +16,8 @@ module.exports = {
     },
     fontFamily: {
       Telma: ["Telma", "sans-serif"],
+      Satoshi: ["Satoshi", "sans-serif"],
+      Clash: ["Clash Grotesk", "sans-serif"],
     },
     extend: {
       colors: {
@@ -95,11 +97,22 @@ module.exports = {
             "background-position": "calc(100% + var(--shimmer-width)) 0",
           },
         },
+        spotlight: {
+          "0%": {
+            opacity: 0,
+            transform: "translate(-72%, -62%) scale(0.5)",
+          },
+          "100%": {
+            opacity: 1,
+            transform: "translate(-50%,-40%) scale(1)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         shimmer: "shimmer 8s infinite",
+        spotlight: "spotlight 2s ease .75s 1 forwards",
       },
     },
   },

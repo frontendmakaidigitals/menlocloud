@@ -7,7 +7,8 @@ import useAccordion from "@/components/hooks/useAccordion";
 import useTabs from "@/components/hooks/useTabs";
 import Header_01 from "@/components/header/Header_01";
 import Footer_01 from "@/components/footer/Footer_01";
-import { useEffect } from "react";
+import WordRotate from "@/components/magicui/word-rotate";
+import { Spotlight } from "@/components/ui/spotlight";
 import "/styles/globals.css";
 
 function Home() {
@@ -15,7 +16,7 @@ function Home() {
 
   const [activeTab, handleTab] = useTabs();
   // This will run one time after the component mounts
-  
+
   return (
     <div className="page-wrapper relative z-[1] bg-white">
       {/*...::: Header Start :::... */}
@@ -24,16 +25,28 @@ function Home() {
       <main className="main-wrapper relative overflow-hidden">
         {/*...::: Hero Section Start :::... */}
         <section id="section-hero">
-          <div className="relative z-[1] overflow-hidden rounded-bl-[30px] rounded-br-[30px] bg-colorLinenRuffle pb-20 pt-28 lg:rounded-bl-[50px] lg:rounded-br-[50px] lg:pb-24 lg:pt-32 xl:pt-40 xxl:pb-[133px] xxl:pt-[195px]">
+          <div className="relative z-[1] overflow-hidden rounded-bl-[30px] rounded-br-[30px] bg-black pb-20 pt-28 lg:rounded-bl-[50px] lg:rounded-br-[50px] lg:pb-24 lg:pt-32 xl:pt-40 xxl:pb-[133px] xxl:pt-[195px]">
             <div className="global-container">
-              <div className="mb-14 flex flex-col items-center text-center lg:mb-20">
-                <h2 className="jos slide-from-bottom mb-6 max-w-[630px] lg:max-w-[868px] xl:max-w-[1206px]">
-                  Delivering intelligent outcomes with Big data & Analytics
-                </h2>
+              <div className="mb-14 flex text-gray-200 flex-col items-center text-center lg:mb-20">
+                <div className="mb-6 max-w-[630px]   lg:max-w-[868px] xl:max-w-[1206px]">
+                 
+                  <h2 className="jos slide-from-bottom  ">
+                    Delivering intelligent outcomes with{" "}
+                    <span className="inline-flex mt-4 ">
+                      <WordRotate
+                        words={["Big Data", "Analyitcs", "Machine Learning"]}
+                      />
+                    </span>
+                  </h2>
+                </div>
+
                 <p className="jos slide-from-bottom mb-11 max-w-[700px] text-lg font-semibold sm:text-xl xl:max-w-[980px]">
-                  <span className="text-xl font-bold">
-                    menlo<span className="text-sky-500 italic">cloud</span>
-                  </span>{" "}
+                  <span className="font-bold font-Satoshi">
+                    Menlo
+                    <span className="text-sky-500 font-Clash font-[600]">
+                      cloud
+                    </span>{" "}
+                  </span>
                   is a robust organization using modern technologies like AI, ML
                   and Data Science
                 </p>
@@ -43,13 +56,13 @@ function Home() {
                 >
                   <Link
                     href="#"
-                    className="button rounded-[50px] border-2 border-black bg-black py-4 text-white after:bg-[#2962FF] hover:border-[#2962FF] hover:text-white"
+                    className="button text-gray-900 rounded-[50px] border-2 border-black bg-gray-100 py-4   after:bg-[#2962FF] hover:border-[#2962FF] hover:text-gray-100"
                   >
                     Read More
                   </Link>
                   <Link
                     href="#"
-                    className="button rounded-[50px] border-2 border-black bg-transparent py-4 text-black after:bg-[#2962FF] hover:border-[#2962FF] hover:text-white"
+                    className="button rounded-[50px] border-2 border-gray-100 bg-transparent py-4 text-gray-200 after:bg-[#2962FF] hover:border-[#2962FF] hover:text-white"
                   >
                     About Us
                   </Link>
@@ -59,16 +72,16 @@ function Home() {
                 className="jos hero-img overflow-hidden rounded-2xl bg-black"
                 data-jos_animation="zoom"
               >
-                <video width="1296" height="640" autoPlay muted>
+                <video width="100%" height="auto" autoPlay muted>
                   <source
                     src={`/assets/img_placeholder/th-1/dev video.mp4`}
                   ></source>
                 </video>
               </div>
 
-              <div className="my-10 h-[1px] w-full bg-[#DBD6CF] lg:my-16 xl:my-20"></div>
+              <div className="my-10 h-[1px] w-full bg-gray-50 lg:my-16 xl:my-20"></div>
               <div className="jos mx-auto mb-12 max-w-[715px] text-center lg:mb-16">
-                <p className="text-lg">
+                <p className="text-lg text-gray-100">
                   Our tech stack integrates cutting edge technology for
                   growth and innovation
                 </p>
@@ -399,9 +412,15 @@ function Home() {
                   {/* Section Content Block */}
                   <div className="text-lg leading-[1.4] lg:text-[21px]">
                     <p className="mb-7 last:mb-0">
-                      MenloCloud is a pioneering professional services firm
-                      driving value through integrating business, technology,
-                      and human elements.
+                      <span className="text-3xl font-bold font-Satoshi">
+                        Menlo
+                        <span className="text-sky-500 font-Clash font-[600]">
+                          cloud
+                        </span>
+                      </span>{" "}
+                      is a pioneering professional services firm driving value
+                      through integrating business, technology, and human
+                      elements.
                     </p>
                     <p className="mb-7 last:mb-0">
                       From strategy, development to digital product creation and
@@ -509,9 +528,12 @@ function Home() {
                 {/* Section Content Block */}
                 <div className="text-left text-lg leading-[1.4] text-white lg:text-[21px]">
                   <p className="mb-7 last:mb-0">
-                    <span className="text-xl font-bold">
-                      menlo<span className="text-sky-500 italic">cloud</span>
-                    </span>{" "}
+                    <span className="font-bold font-Satoshi">
+                      Menlo
+                      <span className="text-sky-500 font-Clash font-[600]">
+                        cloud
+                      </span>{" "}
+                    </span>
                     offers a wealth of experience and measurable success in your
                     field, while also sharing insights from cross-industries to
                     help you discover novel ways to adapt and lead.

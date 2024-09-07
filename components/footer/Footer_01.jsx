@@ -23,9 +23,12 @@ const Footer_01 = () => {
           {/* Footer Widget */}
           <div className="flex flex-col gap-y-6">
             <Link href="/" className="inline-block">
-              <p className="text-xl font-bold">
-                menlo<span className="text-sky-500 italic">cloud</span>
-              </p>
+              <span className="text-3xl font-bold font-Satoshi">
+                Menlo
+                <span className="text-sky-500 font-Clash font-[600]">
+                  cloud
+                </span>
+              </span>
             </Link>
             <p>
               Our mission is to harness the power of AI to solve complex

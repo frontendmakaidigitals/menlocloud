@@ -71,9 +71,12 @@ export default function RootLayout({ children }) {
     }
   }, []);
   return (
-    <html lang='en'>
+    <html lang="en">
       <head>
-      <link href="https://api.fontshare.com/v2/css?f[]=telma@300,400,500,700&display=swap" rel="stylesheet" />
+        <link
+          href="https://api.fontshare.com/v2/css?f[]=telma@300,400,500&f[]=clash-grotesk@200,300,400,500,600,700&f[]=satoshi@300,400,500,700,900&display=swap"
+          rel="stylesheet"
+        />
       </head>
       <body
         className={`${DMSans.variable} ${ClashDisplay.variable} ${Raleway.variable} ${SpaceGrotesk.variable} ${inter.variable}`}
