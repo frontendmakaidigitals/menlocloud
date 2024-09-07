@@ -25,7 +25,7 @@ const Header_01 = () => {
           <div className="flex items-center gap-6">
             <div
               className={cn(
-                "group rounded-full border relative overflow-hidden border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200  "
+                "group rounded-full hidden lg:block border relative overflow-hidden border-black/5 bg-neutral-100 text-base text-white transition-all ease-in hover:cursor-pointer hover:bg-neutral-200  "
               )}
             >
               <div className="bg-blue-500  size-1 group-hover:scale-[50] transition-all duration-500 rounded-full absolute top-[110%] left-1/2 -translate-x-1/2  -translate-y-1/2"></div>

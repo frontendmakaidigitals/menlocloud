@@ -30,17 +30,17 @@ function Home() {
               <div className="mb-14 flex text-gray-200 flex-col items-center text-center lg:mb-20">
                 <div className="mb-6 max-w-[630px]   lg:max-w-[868px] xl:max-w-[1206px]">
                  
-                  <h2 className="jos slide-from-bottom  ">
+                  <p className="jos slide-from-bottom text-2xl lg:text-7xl">
                     Delivering intelligent outcomes with{" "}
-                    <span className="inline-flex mt-4 ">
+                    <span className="inline-flex mt-2 lg:mt-4 ">
                       <WordRotate
                         words={["Big Data", "Analyitcs", "Machine Learning"]}
                       />
                     </span>
-                  </h2>
+                  </p>
                 </div>
 
-                <p className="jos slide-from-bottom mb-11 max-w-[700px] text-lg font-semibold sm:text-xl xl:max-w-[980px]">
+                <p className="jos slide-from-bottom mb-11 max-w-[700px] text-md lg:text-lg font-semibold sm:text-xl xl:max-w-[980px]">
                   <span className="font-bold font-Satoshi">
                     Menlo
                     <span className="text-sky-500 font-Clash font-[600]">
