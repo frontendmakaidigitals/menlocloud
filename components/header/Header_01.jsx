@@ -28,7 +28,7 @@ const Header_01 = () => {
                 "group rounded-full border border-black/5 font- bg-neutral-900 text-base text-white transition-all relative overflow-hidden ease-in hover:cursor-pointer hover:bg-black "
               )}
             >
-            <div className='bg-blue-500 size-1 group-hover:scale-[50] transition-all duration-300 rounded-full absolute top-[110%] left-1/2 -translate-x-1/2  -translate-y-1/2'></div>
+            <div className='bg-blue-500 size-1 group-hover:scale-[50] transition-all duration-500 rounded-full absolute top-[110%] left-1/2 -translate-x-1/2  -translate-y-1/2'></div>
               <AnimatedShinyText className="relative z-10 inline-flex font-semibold group-hover:text-gray-900 text-gray-400 items-center justify-center px-6 py-2  ">
                 <span>✨ Lets connect</span>
                 

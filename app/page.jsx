@@ -375,11 +375,11 @@ function Home() {
               <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2 lg:gap-20 xl:gap-28 xxl:gap-32">
                 {/* Content Left Block */}
                 <div
-                  className="jos order-2 overflow-hidden rounded-md md:order-1"
+                  className="jos  order-2 overflow-hidden rounded-md md:order-1"
                   data-jos_animation="fade-left"
                 >
                   <img
-                    src="/assets/img_placeholder/th-1/content-img-1.jpg"
+                    src="https://plus.unsplash.com/premium_photo-1681400548054-93f9d085a872?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c3F1YXJlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D"
                     alt="content-img-1"
                     width="526"
                     height="450"
@@ -435,7 +435,7 @@ function Home() {
                   data-jos_animation="fade-left"
                 >
                   <img
-                    src="/assets/img_placeholder/th-1/content-img-2.jpg"
+                    src="https://plus.unsplash.com/premium_photo-1681400548054-93f9d085a872?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c3F1YXJlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D"
                     alt="content-img-2"
                     width="526"
                     height="450"
@@ -485,14 +485,17 @@ function Home() {
           <div className="mx-auto max-w-[1500px] px-5">
             <div className="jos grid grid-cols-1 overflow-hidden rounded-[30px] bg-black lg:rounded-[50px] xl:grid-cols-[minmax(400px,_1fr)_1.5fr] xxl:grid-cols-[1fr_minmax(800px,_1fr)]">
               {/* Funfact Left Block */}
-              <div className="relative overflow-hidden rounded-[30px] lg:rounded-[50px]">
-                <video width={"100%"} height={"100%"} autoPlay muted>
-                  <source src="/assets/img_placeholder/video.mp4" />
-                </video>
+              <div className="object-fill w-full relative overflow-hidden rounded-[30px] lg:rounded-[50px]">
+                <img
+                  src="https://images.unsplash.com/photo-1667035100694-ff123f76f17d?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="Description"
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
                 {/* Video Play Button */}
 
                 {/* Video Play Button */}
               </div>
+
               {/* Funfacct Left Block */}
 
               {/* Funfact Right Block */}
