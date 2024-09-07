@@ -29,12 +29,12 @@ export default function WordRotate({
   }, [words, duration]);
 
   return (
-    <div className="overflow-hidden w-auto text-xl  lg:text-7xl inline-flex text-gray-50 px-5 py-2 lg:py-3 lg:px-14 bg-blue-500 rounded-[1.5rem]">
+    <span className=" mt-2 lg:mt-4  overflow-hidden w-auto text-xl  lg:text-7xl inline-flex text-gray-50 px-5 py-2 lg:py-3 lg:px-14 bg-blue-500 rounded-[1.5rem]">
       <AnimatePresence mode="wait">
-        <motion.p key={words[index]} className={cn(className)} {...framerProps}>
+        <motion.span key={words[index]} className={cn(className)} {...framerProps}>
           {words[index]}
-        </motion.p>
+        </motion.span>
       </AnimatePresence>
-    </div>
-  );
+    </span>
+  );  
 }

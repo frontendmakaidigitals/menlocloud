@@ -8,8 +8,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "@/styles/globals.css";
 import "@/styles/vendors/menu.css";
-import { trio } from "ldrs";
-trio.register();
+
 const DMSans = localFont({
   src: "../fonts/DMSans-Bold.woff2",
   variable: "--font-DMSans",
@@ -54,22 +53,7 @@ export default function RootLayout({ children }) {
   useEffect(() => {
     JOS.refresh();
   }, [pathname]);
-  useEffect(() => {
-    // callback function to call when event triggers
-    const onPageLoad = () => {
-      setLoading(false);
-      // do something else
-    };
-
-    // Check if the page has already loaded
-    if (document.readyState === "complete") {
-      onPageLoad();
-    } else {
-      window.addEventListener("load", onPageLoad, false);
-      // Remove the event listener when component unmounts
-      return () => window.removeEventListener("load", onPageLoad);
-    }
-  }, []);
+  
   return (
     <html lang="en">
       <head>

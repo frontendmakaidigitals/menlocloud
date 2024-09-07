@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import useAccordion from "@/components/hooks/useAccordion";
@@ -8,7 +7,7 @@ import useTabs from "@/components/hooks/useTabs";
 import Header_01 from "@/components/header/Header_01";
 import Footer_01 from "@/components/footer/Footer_01";
 import WordRotate from "@/components/magicui/word-rotate";
-import { Spotlight } from "@/components/ui/spotlight";
+ 
 import "/styles/globals.css";
 
 function Home() {
@@ -31,11 +30,9 @@ function Home() {
                 <div className="mb-6 max-w-[630px]   lg:max-w-[868px] xl:max-w-[1206px]">
                   <p className="jos slide-from-bottom text-2xl lg:text-7xl">
                     Delivering intelligent outcomes with{" "}
-                    <span className="inline-flex mt-2 lg:mt-4 ">
-                      <WordRotate
-                        words={["Big Data", "Analyitcs", "Machine Learning"]}
-                      />
-                    </span>
+                    <WordRotate
+                      words={["Big Data", "Analyitcs", "Machine Learning"]}
+                    />
                   </p>
                 </div>
 
