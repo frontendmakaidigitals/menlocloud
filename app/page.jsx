@@ -29,7 +29,6 @@ function Home() {
             <div className="global-container">
               <div className="mb-14 flex text-gray-200 flex-col items-center text-center lg:mb-20">
                 <div className="mb-6 max-w-[630px]   lg:max-w-[868px] xl:max-w-[1206px]">
-                 
                   <p className="jos slide-from-bottom text-2xl lg:text-7xl">
                     Delivering intelligent outcomes with{" "}
                     <span className="inline-flex mt-2 lg:mt-4 ">
@@ -54,18 +53,12 @@ function Home() {
                   className="jos flex flex-wrap justify-center gap-6"
                   data-jos_animation="fade"
                 >
-                  <Link
-                    href="#"
-                    className="button text-gray-900 rounded-[50px] border-2 border-black bg-gray-100 py-4   after:bg-[#2962FF] hover:border-[#2962FF] hover:text-gray-100"
-                  >
+                  <button className="button text-gray-900 rounded-[50px] border-2 border-black bg-gray-100 py-4   after:bg-[#2962FF] hover:border-[#2962FF] hover:text-gray-100">
                     Read More
-                  </Link>
-                  <Link
-                    href="#"
-                    className="button rounded-[50px] border-2 border-gray-100 bg-transparent py-4 text-gray-200 after:bg-[#2962FF] hover:border-[#2962FF] hover:text-white"
-                  >
+                  </button>
+                  <button className="button rounded-[50px] border-2 border-gray-100 bg-transparent py-4 text-gray-200 after:bg-[#2962FF] hover:border-[#2962FF] hover:text-white">
                     About Us
-                  </Link>
+                  </button>
                 </div>
               </div>
               <div
