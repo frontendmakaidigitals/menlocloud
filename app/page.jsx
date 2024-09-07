@@ -62,7 +62,7 @@ function Home() {
                 className="jos hero-img overflow-hidden rounded-2xl bg-black"
                 data-jos_animation="zoom"
               >
-                <video width="100%" height="auto" autoPlay muted>
+                <video width="100%" height="auto" autoPlay muted loop>
                   <source
                     src={`/assets/img_placeholder/th-1/dev video.mp4`}
                   ></source>
