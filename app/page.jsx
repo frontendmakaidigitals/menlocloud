@@ -655,7 +655,7 @@ function Home() {
           </Marquee>
         </section>
         {/*...::: FAQ Section Start :::... */}
-        <section className="mt-36">
+        <section className="mt-20">
           <div className="w-full flex flex-col justify-center items-center">
             <p className=" text-2xl my-5 lg:text-6xl">We are</p>
             <h1 className=" font-[800] gradient-text w-fit animate-gradient">
