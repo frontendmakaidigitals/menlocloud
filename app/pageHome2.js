@@ -271,7 +271,7 @@ function Home() {
           <h2 className="text-center">We Turn Good Ideas Into Great Things</h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-5 place-items-center">
             {experiences.map((exp, index) => (
-              <div className="mt-20 flex gap-1 flex-col items-center">
+              <div key={index} className="mt-20 flex gap-1 flex-col items-center">
                 <NumberTicker
                   value={`${exp.number}`}
                   className={`text-7xl font-[900] font-Satoshi`}
