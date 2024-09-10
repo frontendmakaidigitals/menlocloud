@@ -264,8 +264,8 @@ function Home() {
             )}
           </AnimatePresence>
 
-          <div className="global-container relative z-5 w-full h-full flex flex-col justify-around items-start">
-            <div></div>
+          <div className="global-container relative z-5 w-full h-full flex flex-col justify-center items-start">
+            
             <div>
               <p className="text-gray-50 text-2xl lg:text-6xl">
                 We specialize in
