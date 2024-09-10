@@ -1,7 +1,7 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { useEffect, useRef, useState } from "react";
-
+import "/styles/globals.css";
 export const BackgroundGradientAnimation = ({
   gradientBackgroundStart = "rgb(108, 0, 162)",
   gradientBackgroundEnd = "rgb(0, 17, 82)",
@@ -65,8 +65,9 @@ export const BackgroundGradientAnimation = ({
 
   return (
     (<div
+     
       className={cn(
-        "h-screen w-screen relative overflow-hidden top-0 left-0 bg-[linear-gradient(40deg,var(--gradient-background-start),var(--gradient-background-end))]",
+        " w-full h-[600px] relative overflow-hidden top-0 left-0 bg-[linear-gradient(40deg,var(--gradient-background-start),var(--gradient-background-end))]",
         containerClassName
       )}>
       <svg className="hidden">

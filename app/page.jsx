@@ -4,14 +4,19 @@ import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import useAccordion from "@/components/hooks/useAccordion";
 import useTabs from "@/components/hooks/useTabs";
+import { useRef, useState, useEffect } from "react";
 import Header_01 from "@/components/header/Header_01";
 import Footer_01 from "@/components/footer/Footer_01";
 import WordRotate from "@/components/magicui/word-rotate";
-
+import DotPattern from "@/components/magicui/dot-pattern";
 import "/styles/globals.css";
 import Marquee from "@/components/magicui/marquee";
-import { color, motion } from "framer-motion";
-
+import { AnimatePresence, color, motion } from "framer-motion";
+import NumberTicker from "@/components/magicui/number-ticker";
+import { BackgroundGradientAnimation } from "@/components/ui/background-gradient-animation";
+import { FlipWords } from "@/components/ui/flip-words";
+import SwiperNavButtons from "@/components/SwiperNavButton";
+import { HiOutlineArrowDown } from "react-icons/hi2";
 const techLogos = [
   {
     username: "@jack",
@@ -99,16 +104,60 @@ const industries = [
       "you can drive automation with our intelligent systems and robotics, boosting efficiency and accuracy across various industries.",
   },
 ];
+const experiences = [
+  { name: "Years of Experience", number: 12, color: "#1E88E5" },
+  { name: "In-House Experts", number: 400, color: "#212121" },
+  { name: "Projects Delivered", number: 1000, color: "#00796B" },
+  { name: "Happy Clients", number: 400, color: "#D81B60" },
+];
+
+const data = [
+  {
+    img: "https://s7d9.scene7.com/is/image/slalom/insight-globalbas-turtle-finserv-thumb-520x490?fmt=webp-alpha",
+    title: "2024 industry outlook: Financial services",
+    hoverColor: "#F48FB1",
+  },
+  {
+    img: "https://s7d9.scene7.com/is/image/slalom/insight-globalbas-turtle-finserv-thumb-520x490?fmt=webp-alpha",
+    title: "2024 industry outlook: Financial services",
+    hoverColor: "#90CAF9",
+  },
+  {
+    img: "https://s7d9.scene7.com/is/image/slalom/insight-globalbas-turtle-finserv-thumb-520x490?fmt=webp-alpha",
+    title: "2024 industry outlook: Financial services",
+    hoverColor: "#B39DDB",
+  },
+  {
+    img: "https://s7d9.scene7.com/is/image/slalom/insight-globalbas-turtle-finserv-thumb-520x490?fmt=webp-alpha",
+    title: "2024 industry outlook: Financial services",
+    hoverColor: "#80CBC4",
+  },
+  {
+    img: "https://s7d9.scene7.com/is/image/slalom/insight-globalbas-turtle-finserv-thumb-520x490?fmt=webp-alpha",
+    title: "2024 industry outlook: Financial services",
+    hoverColor: "#E6EE9C",
+  },
+  {
+    img: "https://s7d9.scene7.com/is/image/slalom/insight-globalbas-turtle-finserv-thumb-520x490?fmt=webp-alpha",
+    title: "2024 industry outlook: Financial services",
+    hoverColor: "#FFF59D",
+  },
+  {
+    img: "https://s7d9.scene7.com/is/image/slalom/insight-globalbas-turtle-finserv-thumb-520x490?fmt=webp-alpha",
+    title: "2024 industry outlook: Financial services",
+    hoverColor: "#FFAB91",
+  },
+];
 
 function Home() {
   const [activeIndex, handleAccordion] = useAccordion(0);
-
+  const [isVisible, setIsVisible] = useState(true);
   const parentVariants = {
     hover: {
       scale: 1.05, // Scale up the parent a bit
     },
   };
-
+  const swiperRef = useRef(null);
   const headerVariant = {
     initial: {
       fontSize: "2.4rem",
@@ -150,6 +199,39 @@ function Home() {
     },
   };
 
+  const words = [
+    "Software Development",
+    "Digital Strategies",
+    "Talent Solutions",
+  ];
+  useEffect(() => {
+    // Function to handle scroll events
+    const handleScroll = () => {
+      // Check if the page has been scrolled down 200 pixels
+      if (window.scrollY >= 199) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+    };
+
+    // Add scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  // Function to scroll down by 200 pixels
+ const scrollDown = () => {
+   const viewportHeight = window.innerHeight; // Get the height of the viewport in pixels
+   window.scrollBy({
+     top: viewportHeight, // Scroll down by the viewport height
+     behavior: "smooth", // Smooth scrolling
+   });
+ };
   return (
     <div className="page-wrapper relative z-[1] bg-white">
       {/*...::: Header Start :::... */}
@@ -157,65 +239,73 @@ function Home() {
       {/*...::: Header End :::... */}
       <main className="main-wrapper relative overflow-hidden">
         {/*...::: Hero Section Start :::... */}
-        <section id="section-hero">
-          <div className="relative z-[1] overflow-hidden rounded-bl-[30px] rounded-br-[30px] bg-black pb-20 pt-28 lg:rounded-bl-[50px] lg:rounded-br-[50px] lg:pb-24 lg:pt-32 xl:pt-40 xxl:pb-[133px] xxl:pt-[195px]">
-            <div className="global-container">
-              <div className="mb-14 flex text-gray-200 flex-col items-center text-center lg:mb-20">
-                <div className="mb-6 max-w-[630px]   lg:max-w-[868px] xl:max-w-[1206px]">
-                  <p className="jos slide-from-bottom text-2xl lg:text-7xl">
-                    Delivering intelligent outcomes with{" "}
-                    <WordRotate
-                      words={["Big Data", "Analyitcs", "Machine Learning"]}
-                    />
-                  </p>
-                </div>
-
-                <p className="jos slide-from-bottom mb-11 max-w-[700px] text-sm lg:text-lg font-semibold sm:text-xl xl:max-w-[980px]">
-                  <span className="font-bold font-Satoshi">
-                    Menlo
-                    <span className="text-sky-500 font-Clash font-[600]">
-                      cloud
-                    </span>{" "}
-                  </span>
-                  is a robust organization using modern technologies like AI, ML
-                  and Data Science
-                </p>
-                <div
-                  className="jos flex flex-wrap justify-center gap-6"
-                  data-jos_animation="fade"
-                >
-                  <button className="button text-gray-900 rounded-[50px] border-2 border-black bg-gray-100 py-4   after:bg-[#2962FF] hover:border-[#2962FF] hover:text-gray-100">
-                    Read More
-                  </button>
-                  <button className="button rounded-[50px] border-2 border-gray-100 bg-transparent py-4 text-gray-200 after:bg-[#2962FF] hover:border-[#2962FF] hover:text-white">
-                    About Us
-                  </button>
-                </div>
-              </div>
-              <div
-                className="jos hero-img overflow-hidden rounded-2xl bg-black"
-                data-jos_animation="zoom"
+        <section
+          id="section-hero"
+          className="h-[90vh] relative xl:h-screen bg-black"
+        >
+          <div className="absolute w-full h-full">
+            <video className="w-full h-full object-fill" muted autoPlay loop>
+              <source src={`/assets/img_placeholder/heroBg.mp4`}></source>
+            </video>
+          </div>
+          <div className="w-full h-full z-4 overflow-hidden absolute top-0 left-0 bg-gradient-to-t from-gray-900/60 to-transparent"></div>
+          <AnimatePresence mode="wait">
+            {isVisible && (
+              <motion.div
+                animate={{ scale: 1 }}
+                initial={{ scale: 0 }}
+                exit={{ scale: 0 }}
+                onClick={scrollDown}
+                className="size-16 flex justify-center  cursor-pointer z-10 hover:bg-gray-200/70 items-center  bg-gray-200/60 border border-gray-300 rounded-full absolute left-1/2 bottom-5 -translate-x-1/2 "
               >
-                <video width="100%" height="auto" autoPlay muted loop>
-                  <source
-                    src={`/assets/img_placeholder/th-1/dev video.mp4`}
-                  ></source>
-                </video>
-              </div>
-            </div>
-            <div className="blue-gradient-1 absolute -right-[200px]  lg:-right-[150px] top-[370px] -z-[1]  h-[200px] w-[200px] lg:w-[500px] lg:h-[500px] animate-spin rounded-[500px]"></div>
+                <HiOutlineArrowDown className="text-2xl" />
+                <motion.div className="ripple absolute size-10 border border-gray-300 -z-[99] rounded-full" />
+              </motion.div>
+            )}
+          </AnimatePresence>
 
-            <div className="blue-gradient-2 absolute -right-[200px] lg:right-[57px] top-[620px] -z-[1] h-[300px] w-[300px] lg:w-[450px] lg:h-[450px] animate-spin rounded-[450px]"></div>
+          <div className="global-container relative z-5 w-full h-full flex flex-col justify-around items-start">
+            <div></div>
+            <div>
+              <p className="text-gray-50 text-2xl lg:text-6xl">
+                We specialize in
+              </p>
+              <FlipWords
+                words={words}
+                className={`text-gray-50 uppercase tracking-tight leading-tighter lg:text-[5.5rem] font-Satoshi font-bold`}
+              />
+              <p className="text-gray-50 text-2xl lg:text-6xl">
+                that Elevate Your Business.
+              </p>
+            </div>
           </div>
         </section>
         {/*...::: Hero Section End :::... */}
         <section className="mt-32 ">
-          <h2 className="global-container mb-10">Our Tech Experties</h2>
+          <h2 className="global-container mb-10 text-center">
+            Our Tech Experties
+          </h2>
           <Marquee className=" [--duration:20s]">
             {firstRow.map((review) => (
               <ReviewCard key={review.username} {...review} />
             ))}
           </Marquee>
+        </section>
+
+        <section className="global-container mt-32">
+          <h2 className="text-center">We Turn Good Ideas Into Great Things</h2>
+          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-5 place-items-center">
+            {experiences.map((exp, index) => (
+              <div className="mt-20 flex gap-1 flex-col items-center">
+                <NumberTicker
+                  value={`${exp.number}`}
+                  className={`text-7xl font-[900] font-Satoshi`}
+                  color={exp.color}
+                />
+                <p className="font-Satoshi text-xl font-medium">{exp.name}</p>
+              </div>
+            ))}
+          </div>
         </section>
         {/*...::: Service Section Start :::... */}
         <section id="section-service">
@@ -225,28 +315,33 @@ function Home() {
             <div className="global-container">
               {/* Section Content Block */}
               <div className="jos mb-10 lg:mb-10 xl:mb-10">
-                <div className="md:max-w-sm lg:max-w-xl xl:max-w-[746px]">
-                  <h2>Services</h2>
+                <div className="global-container">
+                  <h2 className="text-center">Services</h2>
                 </div>
               </div>
               {/* Section Content Block */}
               {/* Service List */}
-              <ul className="jos grid grid-cols-1 gap-x-5 gap-y-5  sm:grid-cols-2 lg:grid-cols-4">
-                {/* Service Item */}
 
+              <ul className="jos px-4 py-4 bg-background  relative overflow-hidden grid grid-cols-1 gap-x-5 gap-y-5  sm:grid-cols-2 lg:grid-cols-4">
+                {/* Service Item */}
+                <DotPattern
+                  className={cn(
+                    "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]"
+                  )}
+                />
                 <motion.li
                   variants={parentVariants}
                   initial="initial"
                   whileHover="hover"
                   className="overflow-hidden group h-[450px] relative cursor-pointer   shadow-md border border-gray-400  rounded-[10px] w-full bg-red-500"
                 >
-                  <div className="w-full bg-no-repeat bg-center bg-cover h-full bg-[url('https://images.pexels.com/photos/27915621/pexels-photo-27915621/free-photo-of-robot-waiter.jpeg?auto=compress&cs=tinysrgb&w=600')] scale-[1.2] group-hover:scale-[1.5] duration-300  absolute top-0 left-0 transition-all"></div>
+                  <div className="w-full bg-no-repeat bg-center bg-cover h-full bg-[url('https://images.pexels.com/photos/3153204/pexels-photo-3153204.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] scale-[1.2] group-hover:scale-[1.5] duration-300  absolute top-0 left-0 transition-all"></div>
                   <motion.div className="relative h-full flex flex-col justify-end  items-end z-3 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent text-gray-50 font-bold  font-Satoshi px-5 py-7 rounded-[10px] w-full ">
                     <motion.p
                       variants={headerVariant}
                       className="w-full leading-snug"
                     >
-                      Applied Ai
+                      Web Development
                     </motion.p>
 
                     <div className="">
@@ -279,7 +374,7 @@ function Home() {
                       variants={headerVariant}
                       className="w-full leading-snug"
                     >
-                      Data Analyitcs
+                      Digital Transformation
                     </motion.p>
 
                     <div className="">
@@ -306,13 +401,13 @@ function Home() {
                   whileHover="hover"
                   className="overflow-hidden group h-[450px] relative cursor-pointer   shadow-md border border-gray-400  rounded-[10px] w-full bg-red-500"
                 >
-                  <div className="w-full bg-no-repeat bg-center bg-cover h-full bg-[url('https://images.pexels.com/photos/5474296/pexels-photo-5474296.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] scale-[1.2] group-hover:scale-[1.5] duration-300  absolute top-0 left-0 transition-all"></div>
+                  <div className="w-full bg-no-repeat bg-center bg-cover h-full bg-[url('https://images.pexels.com/photos/5380590/pexels-photo-5380590.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] scale-[1.2] group-hover:scale-[1.5] duration-300  absolute top-0 left-0 transition-all"></div>
                   <motion.div className="relative h-full flex flex-col justify-end  items-end z-3 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent text-gray-50 font-bold  font-Satoshi px-5 py-7 rounded-[10px] w-full ">
                     <motion.p
                       variants={headerVariant}
                       className="w-full leading-snug"
                     >
-                      Software Engineering
+                      White Label Services
                     </motion.p>
 
                     <div className="">
@@ -339,13 +434,13 @@ function Home() {
                   whileHover="hover"
                   className="overflow-hidden group h-[450px] relative cursor-pointer   shadow-md border border-gray-400  rounded-[10px] w-full bg-red-500"
                 >
-                  <div className="w-full bg-no-repeat bg-right bg-cover h-full bg-[url('https://images.pexels.com/photos/8438942/pexels-photo-8438942.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] scale-[1.2] group-hover:scale-[1.5] duration-300  absolute top-0 left-0 transition-all"></div>
+                  <div className="w-full bg-no-repeat bg-right bg-cover h-full bg-[url('https://images.pexels.com/photos/5082578/pexels-photo-5082578.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] scale-[1.2] group-hover:scale-[1.5] duration-300  absolute top-0 left-0 transition-all"></div>
                   <motion.div className="relative h-full flex flex-col justify-end  items-end z-3 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent text-gray-50 font-bold  font-Satoshi px-5 py-7 rounded-[10px] w-full ">
                     <motion.p
                       variants={headerVariant}
                       className="w-full leading-snug"
                     >
-                      Artificial Intelligence
+                      App Development
                     </motion.p>
 
                     <div className="">
@@ -372,13 +467,14 @@ function Home() {
                   whileHover="hover"
                   className="overflow-hidden group h-[450px] relative cursor-pointer   shadow-md border border-gray-400  rounded-[10px] w-full bg-red-500"
                 >
-                  <div className="w-full bg-no-repeat bg-center bg-cover h-full bg-[url('https://images.pexels.com/photos/16423102/pexels-photo-16423102/free-photo-of-home-security-camera.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] scale-[1.2] group-hover:scale-[1.5] duration-300  absolute top-0 left-0 transition-all"></div>
+                  <div className="w-full bg-no-repeat bg-center bg-cover h-full bg-[url('https://images.pexels.com/photos/3861959/pexels-photo-3861959.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] scale-[1.2] group-hover:scale-[1.5] duration-300  absolute top-0 left-0 transition-all"></div>
                   <motion.div className="relative h-full flex flex-col justify-end  items-end z-3 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent text-gray-50 font-bold  font-Satoshi px-5 py-7 rounded-[10px] w-full ">
                     <motion.p
                       variants={headerVariant}
                       className="w-full leading-snug"
                     >
-                      Privacy and Security
+                      Hire <br />
+                      Developers
                     </motion.p>
 
                     <div className="">
@@ -405,13 +501,13 @@ function Home() {
                   whileHover="hover"
                   className="overflow-hidden group h-[450px] relative cursor-pointer   shadow-md border border-gray-400  rounded-[10px] w-full bg-red-500"
                 >
-                  <div className="w-full bg-no-repeat bg-center bg-cover h-full bg-[url('https://img.freepik.com/free-photo/woman-scrolling-laptop_53876-167050.jpg?w=740&t=st=1725881122~exp=1725881722~hmac=46816e5c3070b090b0fd180db9c7107bd6b724fe031f611530bbb21398805c2c')] scale-[1.2] group-hover:scale-[1.5] duration-300  absolute top-0 left-0 transition-all"></div>
+                  <div className="w-full bg-no-repeat bg-center bg-cover h-full bg-[url('https://images.pexels.com/photos/5922204/pexels-photo-5922204.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] scale-[1.2] group-hover:scale-[1.5] duration-300  absolute top-0 left-0 transition-all"></div>
                   <motion.div className="relative h-full flex flex-col justify-end  items-end z-3 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent text-gray-50 font-bold  font-Satoshi px-5 py-7 rounded-[10px] w-full ">
                     <motion.p
                       variants={headerVariant}
-                      className="w-full leading-snug"
+                      className="w-full  leading-snug"
                     >
-                      Cloud Modernization
+                      Hire <br /> Marketers
                     </motion.p>
 
                     <div className="">
@@ -442,9 +538,10 @@ function Home() {
                   <motion.div className="relative h-full flex flex-col justify-end  items-end z-3 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent text-gray-50 font-bold  font-Satoshi px-5 py-7 rounded-[10px] w-full ">
                     <motion.p
                       variants={headerVariant}
-                      className="w-full leading-snug"
+                      className="w-full  leading-snug"
                     >
-                      Strategy
+                      Hire <br />
+                      Testers
                     </motion.p>
 
                     <div className="">
@@ -471,13 +568,13 @@ function Home() {
                   whileHover="hover"
                   className="overflow-hidden group h-[450px] relative cursor-pointer   shadow-md border border-gray-400  rounded-[10px] w-full bg-red-500"
                 >
-                  <div className="w-full bg-no-repeat bg-center bg-cover h-full bg-[url('https://images.pexels.com/photos/6328791/pexels-photo-6328791.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] scale-[1.2] group-hover:scale-[1.5] duration-300  absolute top-0 left-0 transition-all"></div>
+                  <div className="w-full bg-no-repeat bg-center bg-cover h-full bg-[url('https://images.pexels.com/photos/6322370/pexels-photo-6322370.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] scale-[1.2] group-hover:scale-[1.5] duration-300  absolute top-0 left-0 transition-all"></div>
                   <motion.div className="relative h-full flex flex-col justify-end  items-end z-3 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent text-gray-50 font-bold  font-Satoshi px-5 py-7 rounded-[10px] w-full ">
                     <motion.p
                       variants={headerVariant}
                       className="w-full leading-snug"
                     >
-                      System Implementation
+                      Hire <br /> Designers
                     </motion.p>
 
                     <div className="">
@@ -516,254 +613,7 @@ function Home() {
 
         {/*...::: Service Section End :::... */}
 
-        {/*...::: Content Section Start_1 :::... */}
-        <section id="content-section-1">
-          {/* Section Spacer */}
-          <div className="pb-20 xl:pb-[150px]">
-            {/* Section Container */}
-            <div className="global-container">
-              <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2 lg:gap-20 xl:gap-28 xxl:gap-32">
-                {/* Content Left Block */}
-                <div
-                  className="jos  order-2 overflow-hidden rounded-md md:order-1"
-                  data-jos_animation="fade-left"
-                >
-                  <img
-                    src="https://plus.unsplash.com/premium_photo-1681400548054-93f9d085a872?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c3F1YXJlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D"
-                    alt="content-img-1"
-                    width="526"
-                    height="450"
-                    className="h-auto w-full"
-                  />
-                </div>
-                {/* Content Left Block */}
-                {/* Content Right Block */}
-                <div
-                  className="jos order-1 md:order-2"
-                  data-jos_animation="fade-right"
-                >
-                  {/* Section Content Block */}
-                  <div className="mb-6">
-                    <h2>Standing at the forefront of professional services</h2>
-                  </div>
-                  {/* Section Content Block */}
-                  <div className="text-lg leading-[1.4] lg:text-[21px]">
-                    <p className="mb-7 last:mb-0">
-                      <span className=" font-bold font-Satoshi">
-                        Menlo
-                        <span className="text-sky-500 font-Clash font-[600]">
-                          cloud
-                        </span>
-                      </span>{" "}
-                      is a pioneering professional services firm driving value
-                      through integrating business, technology, and human
-                      elements.
-                    </p>
-                    <p className="mb-7 last:mb-0">
-                      From strategy, development to digital product creation and
-                      beyond, we offer a comprehensive range of services
-                      designed to fast-track your vision with practical,
-                      integrated solutions. We attentively listen and share our
-                      expertise throughout the process, equipping your teams to
-                      sustain progress long after our involvement.
-                    </p>
-                  </div>
-                </div>
-                {/* Content Right Block */}
-              </div>
-            </div>
-            {/* Section Container */}
-          </div>
-          {/* Section Spacer */}
-        </section>
-        {/*...::: Content Section End_1 :::... */}
-
-        {/*...::: Content Section Start_2 :::... */}
-        <section id="content-section-2">
-          {/* Section Spacer */}
-          <div className="pb-20 xl:pb-[150px]">
-            {/* Section Container */}
-            <div className="global-container">
-              <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2 lg:gap-20 xl:grid-cols-[minmax(0,_1.2fr)_1fr] xl:gap-28 xxl:gap-32">
-                {/* Content Left Block */}
-                <div
-                  className="jos order-2 overflow-hidden rounded-md"
-                  data-jos_animation="fade-left"
-                >
-                  <img
-                    src="https://plus.unsplash.com/premium_photo-1681400548054-93f9d085a872?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8c3F1YXJlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D"
-                    alt="content-img-2"
-                    width="526"
-                    height="450"
-                    className="h-auto w-full"
-                  />
-                </div>
-                {/* Content Left Block */}
-                {/* Content Right Block */}
-                <div className="jos order-1" data-jos_animation="fade-right">
-                  {/* Section Content Block */}
-                  <div className="mb-6">
-                    <h2> Required by Everyone, Everywhere</h2>
-                  </div>
-                  {/* Section Content Block */}
-                  <div className="text-lg leading-[1.4] lg:text-[21px]">
-                    <p className="mb-7 last:mb-0">
-                      Artificial Intelligence (AI), Machine Learning (ML), and
-                      Data Science are no longer just technological luxuries but
-                      essential tools across all sectors.
-                    </p>
-
-                    <div className="text-lg leading-[1.4] lg:text-[21px]">
-                      <p className="mb-7 last:mb-0">
-                        The necessity of these technologies extends beyond
-                        specific industries; they are crucial for everyone,
-                        everywhere and are pivotal in addressing complex
-                        challenges and seizing new opportunities. As digital
-                        transformation accelerates, embracing these technologies
-                        becomes indispensable for achieving efficiency,
-                        fostering growth, and staying competitive in an
-                        increasingly data-driven world.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                {/* Content Right Block */}
-              </div>
-            </div>
-            {/* Section Container */}
-          </div>
-          {/* Section Spacer */}
-        </section>
-        {/*...::: Content Section End :::... */}
-
-        {/*...::: Funfact Section Start :::... */}
-        <section id="funfact-section">
-          <div className="mx-auto max-w-[1500px] px-5">
-            <div className="jos grid grid-cols-1 overflow-hidden rounded-[30px] bg-black lg:rounded-[50px] xl:grid-cols-[minmax(400px,_1fr)_1.5fr] xxl:grid-cols-[1fr_minmax(800px,_1fr)]">
-              {/* Funfact Left Block */}
-              <div className="object-fill w-full relative overflow-hidden rounded-[30px] lg:rounded-[50px]">
-                <img
-                  src="https://images.unsplash.com/photo-1667035100694-ff123f76f17d?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  alt="Description"
-                  className="absolute inset-0 w-full h-full object-cover"
-                />
-                {/* Video Play Button */}
-
-                {/* Video Play Button */}
-              </div>
-
-              {/* Funfacct Left Block */}
-
-              {/* Funfact Right Block */}
-              <div className="self-center px-6 py-16 sm:py-20 md:px-16 xl:px-10 xl:py-24 xxl:py-32 xxl:pl-16 xxl:pr-28">
-                {/* Section Content Block */}
-                <div className="mb-8 lg:mb-16 xl:mb-6">
-                  <h2 className="text-white">
-                    Industry specific usage with AI & ML
-                  </h2>
-                </div>
-                {/* Section Content Block */}
-                <div className="text-left text-lg leading-[1.4] text-white lg:text-[21px]">
-                  <p className="mb-7 last:mb-0">
-                    <span className="font-bold font-Satoshi">
-                      Menlo
-                      <span className="text-sky-500 font-Clash font-[600]">
-                        cloud
-                      </span>{" "}
-                    </span>
-                    offers a wealth of experience and measurable success in your
-                    field, while also sharing insights from cross-industries to
-                    help you discover novel ways to adapt and lead.
-                  </p>
-                </div>
-                {/* Horizontal Separator */}
-                <div className="my-14 h-[1px] w-full bg-colorCodGray"></div>
-                {/* Counter Scroll */}
-                <div className="jos brand-slider" data-jos_animation="fade">
-                  <Swiper
-                    slidesPerView={1}
-                    spaceBetween={20}
-                    autoplay={{
-                      delay: 4000,
-                      disableOnInteraction: false,
-                    }}
-                    modules={[Autoplay]}
-                    loop={true}
-                    breakpoints={{
-                      768: {
-                        slidesPerView: 3,
-                      },
-                      992: {
-                        slidesPerView: 3,
-                      },
-                      1200: {
-                        slidesPerView: 3,
-                      },
-                    }}
-                    className=""
-                  >
-                    <SwiperSlide>
-                      <div className="text-sm flex items-center text-gray-50">
-                        <div className="size-7 flex items-center justify-center mr-1 bg-blue-500">
-                          DA
-                        </div>
-                        <p> Data & Analytics</p>
-                      </div>
-                    </SwiperSlide>
-                    <SwiperSlide>
-                      <div className="text-sm flex items-center text-gray-50">
-                        <div className="size-7 flex items-center justify-center mr-1 bg-blue-500">
-                          AI
-                        </div>
-                        <p> Artificial Intelligence</p>
-                      </div>
-                    </SwiperSlide>
-
-                    <SwiperSlide>
-                      <div className="text-sm flex items-center text-gray-50">
-                        <div className="size-7 flex items-center justify-center mr-1 bg-blue-500">
-                          CM
-                        </div>
-                        <p>Cloud Modernisation</p>
-                      </div>
-                    </SwiperSlide>
-
-                    <SwiperSlide>
-                      <div className="text-sm flex items-center text-gray-50">
-                        <div className="size-7 flex items-center justify-center mr-1 bg-blue-500">
-                          OC
-                        </div>
-                        <p> Organizational Change</p>
-                      </div>
-                    </SwiperSlide>
-
-                    <SwiperSlide>
-                      <div className="text-sm flex items-center text-gray-50">
-                        <div className="size-7 flex items-center justify-center mr-1 bg-blue-500">
-                          SI
-                        </div>
-                        <p> System Implementation</p>
-                      </div>
-                    </SwiperSlide>
-
-                    <SwiperSlide>
-                      <div className="text-sm flex items-center text-gray-50">
-                        <div className="size-7 flex items-center justify-center mr-1 bg-blue-500">
-                          SE
-                        </div>
-                        <p> Software Engineering</p>
-                      </div>
-                    </SwiperSlide>
-                  </Swiper>
-                </div>
-                {/* Counter Scroll */}
-              </div>
-              {/* Funfact Right Block */}
-            </div>
-          </div>
-        </section>
-
-        <section className="my-28">
+        <section className="my-16">
           <div className="global-container ">
             <h2 className="text-center text-black">Broad indusrty usage</h2>
           </div>
@@ -794,144 +644,83 @@ function Home() {
           </div>
         </section>
         {/*...::: Funfact Section End :::... */}
-
+        <section className="mt-28">
+          <h2 className="global-container text-center mb-10">
+            Awards & Certifications
+          </h2>
+          <Marquee reverse className=" [--duration:20s]">
+            {firstRow.map((review) => (
+              <ReviewCard key={review.username} {...review} />
+            ))}
+          </Marquee>
+        </section>
         {/*...::: FAQ Section Start :::... */}
-        <section className="faq-section mt-40">
-          {/* Section Spacer */}
-          <div className="pb-20 xl:pb-[150px]">
-            {/* Section Container */}
-            <div className="global-container">
-              <div className="grid grid-cols-1 gap-y-10 md:grid-cols-2">
-                {/* FAQ Left Block */}
-                <div
-                  className="jos flex flex-col"
-                  data-jos_animation="fade-right"
-                >
-                  {/* Section Content Block */}
-                  <div className="mb-6">
-                    <div className="mx-auto md:mx-0 md:max-w-none">
-                      <h2>Freely ask us for more information</h2>
-                    </div>
-                  </div>
-                  {/* Section Content Block */}
-                  <div className="text-lg leading-[1.4] lg:text-[21px]">
-                    <p className="mb-7 last:mb-0">
-                      Our AI, ML and Data Analytics solutions can be quickly
-                      deployed, enabling companies or individuals to start
-                      benefiting from its capabilities without lengthy setup and
-                      development times in fast-paced industries.
-                    </p>
-                    <button className="button mt-5 rounded-[50px] border-2 border-black bg-black py-4 text-white after:bg-[#2962FF] hover:border-[#2962FF] hover:text-white">
-                      Ask us more Questions
-                    </button>
-                  </div>
-                </div>
-                {/* FAQ Left Block */}
+        <section className="mt-36">
+          <div className="w-full flex flex-col justify-center items-center">
+            <p className=" text-2xl my-5 lg:text-6xl">We are</p>
+            <h1 className=" font-[800] gradient-text w-fit animate-gradient">
+              Menlo<span className="font-Clash">cloud</span>
+            </h1>
 
-                {/* FAQ Right Block */}
-                <div
-                  className="jos md:ml-10 lg:ml-20 xl:ml-32"
-                  data-jos_animation="fade-left"
-                >
-                  {/* Accordion*/}
-                  <ul className="accordion">
-                    {/* Accordion items */}
-                    <li
-                      className={`accordion-item border-b-[1px] border-[#DBD6CF] pb-6 pt-6 first:pt-0 last:border-b-0 last:pb-0 ${
-                        activeIndex === 0 ? "active" : ""
-                      }`}
-                      onClick={() => handleAccordion(0)}
-                    >
-                      <div className="accordion-header flex items-center justify-between font-dmSans text-xl font-bold leading-[1.2] -tracking-[0.5px] text-black lg:text-[24px]">
-                        <p>How can AI benefit my business?</p>
-                        <div className="accordion-icon">
-                          <img
-                            src="/assets/img_placeholder/plus.svg"
-                            width={24}
-                            height={24}
-                            alt="plus"
-                          />
-                        </div>
-                      </div>
-                      <div className="accordion-content text-[#2C2C2C]">
-                        <p>
-                          It can significantly enhance business operations by
-                          uncovering actionable insights, can optimize
-                          workflows, predict trends, and personalize customer
-                          experiences and much more.
-                        </p>
-                      </div>
-                    </li>
-                    {/* Accordion items */}
-                    {/* Accordion items */}
-                    <li
-                      className={`accordion-item border-b-[1px] border-[#DBD6CF] pb-6 pt-6 first:pt-0 last:border-b-0 last:pb-0 ${
-                        activeIndex === 1 ? "active" : ""
-                      }`}
-                      onClick={() => handleAccordion(1)}
-                    >
-                      <div className="accordion-header flex items-center justify-between font-dmSans text-xl font-bold leading-[1.2] -tracking-[0.5px] text-black lg:text-[24px]">
-                        <p>What are the common challenges ?</p>
-                        <div className="accordion-icon">
-                          <img
-                            src="/assets/img_placeholder/plus.svg"
-                            width={24}
-                            height={24}
-                            alt="plus"
-                          />
-                        </div>
-                      </div>
-                      <div className="accordion-content text-[#2C2C2C]">
-                        <p>
-                          Having accurate and sufficient data is crucial for
-                          effective AI and ML models, Integration with existing
-                          systems and ensuring that stakeholders understand and
-                          can act on data insights.
-                        </p>
-                      </div>
-                    </li>
-                    {/* Accordion items */}
-                    {/* Accordion items */}
-                    <li
-                      className={`accordion-item border-b-[1px] border-[#DBD6CF] pb-6 pt-6 first:pt-0 last:border-b-0 last:pb-0 ${
-                        activeIndex === 2 ? "active" : ""
-                      }`}
-                      onClick={() => handleAccordion(2)}
-                    >
-                      <div className="accordion-header flex items-center justify-between font-dmSans text-xl font-bold leading-[1.2] -tracking-[0.5px] text-black lg:text-[28px]">
-                        <p>How to handle data privacy and security ?</p>
-                        <div className="accordion-icon">
-                          <img
-                            src="/assets/img_placeholder/plus.svg"
-                            width={24}
-                            height={24}
-                            alt="plus"
-                          />
-                        </div>
-                      </div>
-                      <div className="accordion-content text-[#2C2C2C]">
-                        <p>
-                          Implementing robust data encryption, access controls,
-                          and anonymization techniques to safeguard personal
-                          data. Compliance with regulations such as GDPR and
-                          CCPA is crucial.
-                        </p>
-                      </div>
-                    </li>
-                  </ul>
-                  {/* Accordion*/}
-                </div>
-                {/* FAQ Right Block */}
-              </div>
+            <div className="w-full overflow-hidden flex justify-center mt-6 relative">
+              <button className="overflow-hidden group rounded-[50px] px-7 font-satoshi relative bg-black py-3 text-white  ">
+                <div className="bg-blue-500  size-1 group-hover:scale-[50] transition-all duration-500 rounded-full absolute top-[110%] left-1/2 -translate-x-1/2  -translate-y-1/2"></div>
+                <span className="relative z-5"> Join Our Team</span>
+              </button>
             </div>
-            {/* Section Container */}
           </div>
-          {/* Section Spacer */}
         </section>
         {/*...::: FAQ Section End :::... */}
-
+        <section className="mb-40 mt-20 global-container">
+          <div>
+            <div className="flex  justify-between items-center">
+              <h2 className="text-gray-900">2024 Industry Outlooks </h2>
+              <div className="hidden lg:flex">
+                <SwiperNavButtons swiperRef={swiperRef} />
+              </div>
+            </div>
+            <Swiper
+              ref={swiperRef}
+              spaceBetween={10}
+              slidesPerView={1.3}
+              loop={true}
+              breakpoints={{
+                320: {
+                  slidesPerView: 1.3, // 2 slides for screens >= 640px
+                },
+                768: {
+                  slidesPerView: 3, // 3 slides for screens >= 768px
+                },
+                1024: {
+                  slidesPerView: 4, // 4 slides for screens >= 1024px
+                },
+              }}
+              className="mt-10"
+            >
+              {data.map((elem, index) => {
+                return (
+                  <SwiperSlide key={index} className="  w-full cursor-pointer ">
+                    <motion.div
+                      whileHover={{ backgroundColor: elem.hoverColor }}
+                      className={`h-[30rem] rounded-xl bg-gray-100 `}
+                    >
+                      <div
+                        className="w-full h-64 bg-no-repeat rounded-xl bg-center bg-cover "
+                        style={{ backgroundImage: `url(${elem.img})` }}
+                      ></div>
+                      <p className="text-3xl font-semibold mt-5 px-3">
+                        {elem.title}
+                        {index}
+                      </p>
+                    </motion.div>
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
+          </div>
+        </section>
         {/*...::: Testimonial Section Start :::... */}
-        <section className="testimonial-section">
+        <section className="testimonial-section mt-60">
           {/* Section Spacer */}
           <div className="bg-black pb-40 pt-20 xl:pb-[200px] xl:pt-[130px]">
             {/* Section Container */}
