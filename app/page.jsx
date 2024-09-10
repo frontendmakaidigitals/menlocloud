@@ -1,5 +1,5 @@
 "use client";
-
+import { cn } from "@/lib/utils";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import useAccordion from "@/components/hooks/useAccordion";
@@ -7,14 +7,148 @@ import useTabs from "@/components/hooks/useTabs";
 import Header_01 from "@/components/header/Header_01";
 import Footer_01 from "@/components/footer/Footer_01";
 import WordRotate from "@/components/magicui/word-rotate";
- 
+
 import "/styles/globals.css";
+import Marquee from "@/components/magicui/marquee";
+import { color, motion } from "framer-motion";
+
+const techLogos = [
+  {
+    username: "@jack",
+
+    img: "https://www.netscout.com/sites/default/files/2022-02/17/images/cloud-lockup-logo-500px.png",
+  },
+  {
+    username: "@john",
+
+    img: "/assets/img_placeholder/Power_Bi.png",
+  },
+  {
+    username: "@jill",
+
+    img: "https://www.logo.wine/a/logo/Amazon_Web_Services/Amazon_Web_Services-Logo.wine.svg",
+  },
+  {
+    username: "@jane",
+
+    img: "/assets/img_placeholder/google-analytics.png",
+  },
+
+  {
+    username: "@jack3",
+
+    img: "https://cdn.icon-icons.com/icons2/2699/PNG/512/pytorch_logo_icon_169823.png",
+  },
+];
+
+const industries = [
+  {
+    name: "Healthcare",
+    icon: "/assets/img_placeholder/healthcare.png",
+    color: "#FFCDD2",
+    description:
+      "you can transform healthcare with our cutting-edge solutions like telemedicine and AI tools, enhancing patient care and operational efficiency.",
+  },
+  {
+    name: "Construction",
+    icon: "/assets/img_placeholder/hook.png",
+    color: "#FFECB3",
+    description:
+      "you can revolutionize construction with our smart building technologies and project management software, improving efficiency and safety on-site.",
+  },
+  {
+    name: "Finance",
+    icon: "/assets/img_placeholder/budget.png",
+    color: "#CFD8DC",
+    description:
+      "you can innovate finance with our advanced fintech solutions and AI-driven analytics, enhancing security, efficiency, and decision-making.",
+  },
+  {
+    name: "transportation",
+    icon: "/assets/img_placeholder/delivery-truck.png",
+    color: "#FFCCBC",
+    description:
+      "you can transform transportation with our smart routing and autonomous vehicle technologies, enhancing efficiency and safety in transit systems.",
+  },
+  {
+    name: "entertainment",
+    icon: "/assets/img_placeholder/popcorn.png",
+    color: "#B3E5FC",
+    description:
+      "you can revolutionize entertainment with our immersive technologies and innovative content delivery systems, creating engaging and interactive experiences.",
+  },
+  {
+    name: "retail",
+    icon: "/assets/img_placeholder/store.png",
+    color: "#FFAB91",
+    description:
+      "you can elevate retail with our smart analytics and seamless e-commerce solutions, enhancing customer experiences and operational efficiency.",
+  },
+  {
+    name: "manufacturing",
+    icon: "/assets/img_placeholder/manufacturing.png",
+    color: "#E0E0E0",
+    description:
+      "you can transform manufacturing with our advanced automation and IoT solutions, optimizing production processes and enhancing efficiency.",
+  },
+  {
+    name: "automation",
+    icon: "/assets/img_placeholder/bot.png",
+    color: "#FFE082",
+    description:
+      "you can drive automation with our intelligent systems and robotics, boosting efficiency and accuracy across various industries.",
+  },
+];
 
 function Home() {
   const [activeIndex, handleAccordion] = useAccordion(0);
 
-  const [activeTab, handleTab] = useTabs();
-  // This will run one time after the component mounts
+  const parentVariants = {
+    hover: {
+      scale: 1.05, // Scale up the parent a bit
+    },
+  };
+
+  const headerVariant = {
+    initial: {
+      fontSize: "2.4rem",
+      y: 100, // Start below
+    },
+    hover: {
+      y: 0,
+      fontSize: "2rem",
+      transition: {
+        ease: [0.33, 1, 0.68, 1],
+      },
+    },
+  };
+
+  const contentVariant = {
+    initial: {
+      y: 150, // Start below
+      opacity: 0,
+    },
+    hover: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        delay: 0.2,
+        ease: [0.33, 1, 0.68, 1],
+      },
+    },
+  };
+  const buttonVariant = {
+    initial: {
+      y: 120,
+    },
+    hover: {
+      y: 0,
+      transition: {
+        delay: 0.3,
+        ease: [0.33, 1, 0.68, 1],
+      },
+    },
+  };
 
   return (
     <div className="page-wrapper relative z-[1] bg-white">
@@ -36,7 +170,7 @@ function Home() {
                   </p>
                 </div>
 
-                <p className="jos slide-from-bottom mb-11 max-w-[700px] text-md lg:text-lg font-semibold sm:text-xl xl:max-w-[980px]">
+                <p className="jos slide-from-bottom mb-11 max-w-[700px] text-sm lg:text-lg font-semibold sm:text-xl xl:max-w-[980px]">
                   <span className="font-bold font-Satoshi">
                     Menlo
                     <span className="text-sky-500 font-Clash font-[600]">
@@ -68,89 +202,6 @@ function Home() {
                   ></source>
                 </video>
               </div>
-
-              <div className="my-10 h-[1px] w-full bg-gray-50 lg:my-16 xl:my-20"></div>
-              <div className="jos mx-auto mb-12 max-w-[715px] text-center lg:mb-16">
-                <p className="text-lg text-gray-100">
-                  Our tech stack integrates cutting edge technology for
-                  growth and innovation
-                </p>
-              </div>
-              <div className="jos brand-slider" data-jos_animation="fade">
-                <Swiper
-                  slidesPerView={2}
-                  spaceBetween={105}
-                  autoplay={{
-                    delay: 4000,
-                    disableOnInteraction: false,
-                  }}
-                  modules={[Autoplay]}
-                  breakpoints={{
-                    768: {
-                      slidesPerView: 3,
-                    },
-                    992: {
-                      slidesPerView: 4,
-                    },
-                    1200: {
-                      slidesPerView: 5,
-                    },
-                  }}
-                >
-                  <SwiperSlide>
-                    <img
-                      src="/assets/img_placeholder/th-1/googleCloud.png"
-                      alt="brand-1"
-                      width="180"
-                      height="38"
-                      className="max-w-full"
-                    />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img
-                      src="/assets/img_placeholder/th-1/aws.png"
-                      alt="brand-2"
-                      width="90"
-                      height="35"
-                      className="max-w-full"
-                    />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img
-                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Microsoft_Azure_Logo.svg/1280px-Microsoft_Azure_Logo.svg.png"
-                      alt="brand-3"
-                      width="130"
-                      className="max-w-full"
-                    />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img
-                      src="/assets/img_placeholder/th-1/postgress.png"
-                      alt="brand-4"
-                      width="145"
-                      height="30"
-                      className="max-w-full"
-                    />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img
-                      src="https://miro.medium.com/v2/resize:fit:720/format:webp/1*zmMOdVZ_j9vwMcpdD8Uceg.png"
-                      alt="brand-5"
-                      width="188"
-                      className="max-w-full"
-                    />
-                  </SwiperSlide>
-                  <SwiperSlide>
-                    <img
-                      src="/assets/img_placeholder/th-1/django.png"
-                      alt="brand-1"
-                      width="110"
-                      height="38"
-                      className="max-w-full"
-                    />
-                  </SwiperSlide>
-                </Swiper>
-              </div>
             </div>
             <div className="blue-gradient-1 absolute -right-[200px]  lg:-right-[150px] top-[370px] -z-[1]  h-[200px] w-[200px] lg:w-[500px] lg:h-[500px] animate-spin rounded-[500px]"></div>
 
@@ -158,7 +209,14 @@ function Home() {
           </div>
         </section>
         {/*...::: Hero Section End :::... */}
-
+        <section className="mt-32 ">
+          <h2 className="global-container mb-10">Our Tech Experties</h2>
+          <Marquee className=" [--duration:20s]">
+            {firstRow.map((review) => (
+              <ReviewCard key={review.username} {...review} />
+            ))}
+          </Marquee>
+        </section>
         {/*...::: Service Section Start :::... */}
         <section id="section-service">
           {/* Section Spacer */}
@@ -166,199 +224,287 @@ function Home() {
             {/* Section Container */}
             <div className="global-container">
               {/* Section Content Block */}
-              <div className="jos mb-10 lg:mb-16 xl:mb-20">
+              <div className="jos mb-10 lg:mb-10 xl:mb-10">
                 <div className="md:max-w-sm lg:max-w-xl xl:max-w-[746px]">
                   <h2>Services</h2>
                 </div>
               </div>
               {/* Section Content Block */}
               {/* Service List */}
-              <ul className="jos grid grid-cols-1 gap-[2px] overflow-hidden rounded-[10px] border-2 border-black bg-black sm:grid-cols-2 lg:grid-cols-4">
+              <ul className="jos grid grid-cols-1 gap-x-5 gap-y-5  sm:grid-cols-2 lg:grid-cols-4">
                 {/* Service Item */}
-                <li className="flex flex-col justify-around group bg-white p-[30px] transition-all duration-300 ease-in-out hover:bg-black">
-                  <div className="relative mb-9 h-[70px] w-[70px]">
-                    <img
-                      src="/assets/img_placeholder/th-1/service-icon-black-1.svg"
-                      alt=""
-                      width="70"
-                      height="70"
-                    />
-                    <img
-                      src="/assets/img_placeholder/th-1/service-icon-orange-1.svg"
-                      alt="service-icon-orange-1"
-                      width="70"
-                      height="70"
-                      className="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100"
-                    />
-                  </div>
-                  <h3 className="mb-4 block text-xl leading-tight -tracking-[0.5px] group-hover:text-white xl:text-2xl xxl:text-[28px]">
-                    <p className="hover:text-[#2962FF]">Applied Ai</p>
-                  </h3>
 
-                  <p className="mb-12 duration-300 group-hover:text-white">
-                    Bridging conventional and generative AI to deliver
-                    effective, real-world applications.
-                  </p>
+                <motion.li
+                  variants={parentVariants}
+                  initial="initial"
+                  whileHover="hover"
+                  className="overflow-hidden group h-[450px] relative cursor-pointer   shadow-md border border-gray-400  rounded-[10px] w-full bg-red-500"
+                >
+                  <div className="w-full bg-no-repeat bg-center bg-cover h-full bg-[url('https://images.pexels.com/photos/27915621/pexels-photo-27915621/free-photo-of-robot-waiter.jpeg?auto=compress&cs=tinysrgb&w=600')] scale-[1.2] group-hover:scale-[1.5] duration-300  absolute top-0 left-0 transition-all"></div>
+                  <motion.div className="relative h-full flex flex-col justify-end  items-end z-3 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent text-gray-50 font-bold  font-Satoshi px-5 py-7 rounded-[10px] w-full ">
+                    <motion.p
+                      variants={headerVariant}
+                      className="w-full leading-snug"
+                    >
+                      Applied Ai
+                    </motion.p>
 
-                  <div className="relative inline-block h-[30px] w-[30px] duration-300">
-                    <img
-                      src="/assets/img_placeholder/th-1/arrow-right-black.svg"
-                      alt="arrow-right-black"
-                      width="30"
-                      height="30"
-                    />
-                    <img
-                      src="/assets/img_placeholder/th-1/arrow-right-orange.svg"
-                      alt="arrow-right-blue"
-                      width="30"
-                      height="30"
-                      className="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100"
-                    />
-                  </div>
-                </li>
-                {/* Service Item */}
-                {/* Service Item */}
-                <li className="flex flex-col group justify-around bg-white p-[30px] transition-all duration-300 ease-in-out hover:bg-black">
-                  <div className="relative mb-9 h-[70px] w-[70px]">
-                    <img
-                      src="/assets/img_placeholder/th-1/service-icon-black-2.svg"
-                      alt="service-icon-black-2"
-                      width="70"
-                      height="70"
-                    />
-                    <img
-                      src="/assets/img_placeholder/th-1/service-icon-orange-2.svg"
-                      alt="service-icon-orange-1"
-                      width="70"
-                      height="70"
-                      className="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100"
-                    />
-                  </div>
+                    <div className="">
+                      <motion.p
+                        variants={contentVariant}
+                        className=" text-sm font-medium"
+                      >
+                        Some random text written may be lorem ipsum{" "}
+                      </motion.p>
+                      <div className="w-full">
+                        <motion.button
+                          variants={buttonVariant}
+                          className="bg-blue-500 hover:bg-blue-400 font-Satoshi font-medium rounded-lg text-sm px-4 py-2 mt-2"
+                        >
+                          Learn More
+                        </motion.button>
+                      </div>
+                    </div>
+                  </motion.div>
+                </motion.li>
+                <motion.li
+                  variants={parentVariants}
+                  initial="initial"
+                  whileHover="hover"
+                  className="overflow-hidden group h-[450px] relative cursor-pointer   shadow-md border border-gray-400  rounded-[10px] w-full bg-red-500"
+                >
+                  <div className="w-full bg-no-repeat bg-center bg-cover h-full bg-[url('https://images.pexels.com/photos/5475760/pexels-photo-5475760.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] scale-[1.2] group-hover:scale-[1.5] duration-300  absolute top-0 left-0 transition-all"></div>
+                  <motion.div className="relative h-full flex flex-col justify-end  items-end z-3 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent text-gray-50 font-bold  font-Satoshi px-5 py-7 rounded-[10px] w-full ">
+                    <motion.p
+                      variants={headerVariant}
+                      className="w-full leading-snug"
+                    >
+                      Data Analyitcs
+                    </motion.p>
 
-                  <h3 className="mb-4 block text-xl leading-tight -tracking-[0.5px] group-hover:text-white xl:text-2xl xxl:text-[28px]">
-                    <p className="hover:text-[#2962FF]">
+                    <div className="">
+                      <motion.p
+                        variants={contentVariant}
+                        className=" text-sm font-medium"
+                      >
+                        Some random text written may be lorem ipsum{" "}
+                      </motion.p>
+                      <div className="w-full">
+                        <motion.button
+                          variants={buttonVariant}
+                          className="bg-blue-500 hover:bg-blue-400 font-Satoshi font-medium rounded-lg text-sm px-4 py-2 mt-2"
+                        >
+                          Learn More
+                        </motion.button>
+                      </div>
+                    </div>
+                  </motion.div>
+                </motion.li>
+                <motion.li
+                  variants={parentVariants}
+                  initial="initial"
+                  whileHover="hover"
+                  className="overflow-hidden group h-[450px] relative cursor-pointer   shadow-md border border-gray-400  rounded-[10px] w-full bg-red-500"
+                >
+                  <div className="w-full bg-no-repeat bg-center bg-cover h-full bg-[url('https://images.pexels.com/photos/5474296/pexels-photo-5474296.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] scale-[1.2] group-hover:scale-[1.5] duration-300  absolute top-0 left-0 transition-all"></div>
+                  <motion.div className="relative h-full flex flex-col justify-end  items-end z-3 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent text-gray-50 font-bold  font-Satoshi px-5 py-7 rounded-[10px] w-full ">
+                    <motion.p
+                      variants={headerVariant}
+                      className="w-full leading-snug"
+                    >
+                      Software Engineering
+                    </motion.p>
+
+                    <div className="">
+                      <motion.p
+                        variants={contentVariant}
+                        className=" text-sm font-medium"
+                      >
+                        Some random text written may be lorem ipsum{" "}
+                      </motion.p>
+                      <div className="w-full">
+                        <motion.button
+                          variants={buttonVariant}
+                          className="bg-blue-500 hover:bg-blue-400 font-Satoshi font-medium rounded-lg text-sm px-4 py-2 mt-2"
+                        >
+                          Learn More
+                        </motion.button>
+                      </div>
+                    </div>
+                  </motion.div>
+                </motion.li>
+                <motion.li
+                  variants={parentVariants}
+                  initial="initial"
+                  whileHover="hover"
+                  className="overflow-hidden group h-[450px] relative cursor-pointer   shadow-md border border-gray-400  rounded-[10px] w-full bg-red-500"
+                >
+                  <div className="w-full bg-no-repeat bg-right bg-cover h-full bg-[url('https://images.pexels.com/photos/8438942/pexels-photo-8438942.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] scale-[1.2] group-hover:scale-[1.5] duration-300  absolute top-0 left-0 transition-all"></div>
+                  <motion.div className="relative h-full flex flex-col justify-end  items-end z-3 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent text-gray-50 font-bold  font-Satoshi px-5 py-7 rounded-[10px] w-full ">
+                    <motion.p
+                      variants={headerVariant}
+                      className="w-full leading-snug"
+                    >
                       Artificial Intelligence
-                    </p>
-                  </h3>
+                    </motion.p>
 
-                  <p className="mb-12 duration-300 group-hover:text-white">
-                    Shaping the future through advanced AI
-                  </p>
+                    <div className="">
+                      <motion.p
+                        variants={contentVariant}
+                        className=" text-sm font-medium"
+                      >
+                        Some random text written may be lorem ipsum{" "}
+                      </motion.p>
+                      <div className="w-full">
+                        <motion.button
+                          variants={buttonVariant}
+                          className="bg-blue-500 hover:bg-blue-400 font-Satoshi font-medium rounded-lg text-sm px-4 py-2 mt-2"
+                        >
+                          Learn More
+                        </motion.button>
+                      </div>
+                    </div>
+                  </motion.div>
+                </motion.li>
+                <motion.li
+                  variants={parentVariants}
+                  initial="initial"
+                  whileHover="hover"
+                  className="overflow-hidden group h-[450px] relative cursor-pointer   shadow-md border border-gray-400  rounded-[10px] w-full bg-red-500"
+                >
+                  <div className="w-full bg-no-repeat bg-center bg-cover h-full bg-[url('https://images.pexels.com/photos/16423102/pexels-photo-16423102/free-photo-of-home-security-camera.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] scale-[1.2] group-hover:scale-[1.5] duration-300  absolute top-0 left-0 transition-all"></div>
+                  <motion.div className="relative h-full flex flex-col justify-end  items-end z-3 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent text-gray-50 font-bold  font-Satoshi px-5 py-7 rounded-[10px] w-full ">
+                    <motion.p
+                      variants={headerVariant}
+                      className="w-full leading-snug"
+                    >
+                      Privacy and Security
+                    </motion.p>
 
-                  <div className="relative inline-block h-[30px] w-[30px] duration-300">
-                    <img
-                      src="/assets/img_placeholder/th-1/arrow-right-black.svg"
-                      alt="arrow-right-black"
-                      width="30"
-                      height="30"
-                    />
-                    <img
-                      src="/assets/img_placeholder/th-1/arrow-right-orange.svg"
-                      alt="arrow-right-blue"
-                      width="30"
-                      height="30"
-                      className="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100"
-                    />
-                  </div>
-                  {/* Features Item */}
-                  {/* Features Item */}
-                </li>
-                {/* Service Item */}
-                {/* Service Item */}
-                <li className="group flex flex-col justify-around bg-white p-[30px] transition-all duration-300 ease-in-out hover:bg-black">
-                  <div className="relative mb-9 h-[70px] w-[70px]">
-                    <img
-                      src="/assets/img_placeholder/th-1/service-icon-black-3.svg"
-                      alt="service-icon-black-3"
-                      width="70"
-                      height="70"
-                    />
-                    <img
-                      src="/assets/img_placeholder/th-1/service-icon-orange-3.svg"
-                      alt="service-icon-orange-3"
-                      width="70"
-                      height="70"
-                      className="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100"
-                    />
-                  </div>
-                  <h3 className="mb-4 block text-xl leading-tight -tracking-[0.5px] group-hover:text-white xl:text-2xl xxl:text-[28px]">
-                    <p className="hover:text-[#2962FF]">Cloud modernisation</p>
-                  </h3>
+                    <div className="">
+                      <motion.p
+                        variants={contentVariant}
+                        className=" text-sm font-medium"
+                      >
+                        Some random text written may be lorem ipsum{" "}
+                      </motion.p>
+                      <div className="w-full">
+                        <motion.button
+                          variants={buttonVariant}
+                          className="bg-blue-500 hover:bg-blue-400 font-Satoshi font-medium rounded-lg text-sm px-4 py-2 mt-2"
+                        >
+                          Learn More
+                        </motion.button>
+                      </div>
+                    </div>
+                  </motion.div>
+                </motion.li>
+                <motion.li
+                  variants={parentVariants}
+                  initial="initial"
+                  whileHover="hover"
+                  className="overflow-hidden group h-[450px] relative cursor-pointer   shadow-md border border-gray-400  rounded-[10px] w-full bg-red-500"
+                >
+                  <div className="w-full bg-no-repeat bg-center bg-cover h-full bg-[url('https://img.freepik.com/free-photo/woman-scrolling-laptop_53876-167050.jpg?w=740&t=st=1725881122~exp=1725881722~hmac=46816e5c3070b090b0fd180db9c7107bd6b724fe031f611530bbb21398805c2c')] scale-[1.2] group-hover:scale-[1.5] duration-300  absolute top-0 left-0 transition-all"></div>
+                  <motion.div className="relative h-full flex flex-col justify-end  items-end z-3 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent text-gray-50 font-bold  font-Satoshi px-5 py-7 rounded-[10px] w-full ">
+                    <motion.p
+                      variants={headerVariant}
+                      className="w-full leading-snug"
+                    >
+                      Cloud Modernization
+                    </motion.p>
 
-                  <p className="mb-12 duration-300 group-hover:text-white">
-                    Transforming business operations with next-generation cloud
-                    modernization
-                  </p>
+                    <div className="">
+                      <motion.p
+                        variants={contentVariant}
+                        className=" text-sm font-medium"
+                      >
+                        Some random text written may be lorem ipsum{" "}
+                      </motion.p>
+                      <div className="w-full">
+                        <motion.button
+                          variants={buttonVariant}
+                          className="bg-blue-500 hover:bg-blue-400 font-Satoshi font-medium rounded-lg text-sm px-4 py-2 mt-2"
+                        >
+                          Learn More
+                        </motion.button>
+                      </div>
+                    </div>
+                  </motion.div>
+                </motion.li>
+                <motion.li
+                  variants={parentVariants}
+                  initial="initial"
+                  whileHover="hover"
+                  className="overflow-hidden group h-[450px] relative cursor-pointer   shadow-md border border-gray-400  rounded-[10px] w-full bg-red-500"
+                >
+                  <div className="w-full bg-no-repeat bg-center bg-cover h-full bg-[url('https://images.pexels.com/photos/2102416/pexels-photo-2102416.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] scale-[1.2] group-hover:scale-[1.5] duration-300  absolute top-0 left-0 transition-all"></div>
+                  <motion.div className="relative h-full flex flex-col justify-end  items-end z-3 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent text-gray-50 font-bold  font-Satoshi px-5 py-7 rounded-[10px] w-full ">
+                    <motion.p
+                      variants={headerVariant}
+                      className="w-full leading-snug"
+                    >
+                      Strategy
+                    </motion.p>
 
-                  <div className="relative inline-block h-[30px] w-[30px] duration-300">
-                    <img
-                      src="/assets/img_placeholder/th-1/arrow-right-black.svg"
-                      alt="arrow-right-black"
-                      width="30"
-                      height="30"
-                    />
-                    <img
-                      src="/assets/img_placeholder/th-1/arrow-right-orange.svg"
-                      alt="arrow-right-black"
-                      width="30"
-                      height="30"
-                      className="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100"
-                    />
-                  </div>
-                </li>
-                {/* Service Item */}
-                {/* Service Item */}
-                <li className="flex flex-col justify-around group bg-white p-[30px] transition-all duration-300 ease-in-out hover:bg-black">
-                  <div className="relative mb-9 h-[70px] w-[70px]">
-                    <img
-                      src="/assets/img_placeholder/th-1/service-icon-black-4.svg"
-                      alt="service-icon-black-4"
-                      width="70"
-                      height="70"
-                    />
-                    <img
-                      src="/assets/img_placeholder/th-1/service-icon-orange-4.svg"
-                      alt="service-icon-orange-4"
-                      width="70"
-                      height="70"
-                      className="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100"
-                    />
-                  </div>
-                  <h3 className="mb-4 block text-xl leading-tight -tracking-[0.5px] group-hover:text-white xl:text-2xl xxl:text-[28px]">
-                    <p className="hover:text-[#2962FF]">
-                      Systems Implementation
-                    </p>
-                  </h3>
+                    <div className="">
+                      <motion.p
+                        variants={contentVariant}
+                        className=" text-sm font-medium"
+                      >
+                        Some random text written may be lorem ipsum{" "}
+                      </motion.p>
+                      <div className="w-full">
+                        <motion.button
+                          variants={buttonVariant}
+                          className="bg-blue-500 hover:bg-blue-400 font-Satoshi font-medium rounded-lg text-sm px-4 py-2 mt-2"
+                        >
+                          Learn More
+                        </motion.button>
+                      </div>
+                    </div>
+                  </motion.div>
+                </motion.li>
+                <motion.li
+                  variants={parentVariants}
+                  initial="initial"
+                  whileHover="hover"
+                  className="overflow-hidden group h-[450px] relative cursor-pointer   shadow-md border border-gray-400  rounded-[10px] w-full bg-red-500"
+                >
+                  <div className="w-full bg-no-repeat bg-center bg-cover h-full bg-[url('https://images.pexels.com/photos/6328791/pexels-photo-6328791.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] scale-[1.2] group-hover:scale-[1.5] duration-300  absolute top-0 left-0 transition-all"></div>
+                  <motion.div className="relative h-full flex flex-col justify-end  items-end z-3 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent text-gray-50 font-bold  font-Satoshi px-5 py-7 rounded-[10px] w-full ">
+                    <motion.p
+                      variants={headerVariant}
+                      className="w-full leading-snug"
+                    >
+                      System Implementation
+                    </motion.p>
 
-                  <p className="mb-12 duration-300 group-hover:text-white">
-                    Transforming concepts into functional systems through
-                    precise implementation
-                  </p>
+                    <div className="">
+                      <motion.p
+                        variants={contentVariant}
+                        className=" text-sm font-medium"
+                      >
+                        Some random text written may be lorem ipsum{" "}
+                      </motion.p>
+                      <div className="w-full">
+                        <motion.button
+                          variants={buttonVariant}
+                          className="bg-blue-500 hover:bg-blue-400 font-Satoshi font-medium rounded-lg text-sm px-4 py-2 mt-2"
+                        >
+                          Learn More
+                        </motion.button>
+                      </div>
+                    </div>
+                  </motion.div>
+                </motion.li>
 
-                  <div className="relative inline-block h-[30px] w-[30px] duration-300">
-                    <img
-                      src="/assets/img_placeholder/th-1/arrow-right-black.svg"
-                      alt="arrow-right-black"
-                      width="30"
-                      height="30"
-                    />
-                    <img
-                      src="/assets/img_placeholder/th-1/arrow-right-orange.svg"
-                      alt="arrow-right-black"
-                      width="30"
-                      height="30"
-                      className="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100"
-                    />
-                  </div>
-                </li>
                 {/* Service Item */}
               </ul>
-              <div className="w-full flex justify-center mt-4">
-                <button
-                  href="#"
-                  className="button rounded-[50px] border-2 border-black bg-black py-4 text-white after:bg-[#2962FF] hover:border-[#2962FF] hover:text-white"
-                >
-                  Explore more
+              <div className="w-full  overflow-hidden flex justify-center mt-6 relative">
+                <button className="button group rounded-[50px]  relative   bg-black py-3 text-white  ">
+                  <div className="bg-blue-500  size-1 group-hover:scale-[50] transition-all duration-500 rounded-full absolute top-[110%] left-1/2 -translate-x-1/2  -translate-y-1/2"></div>
+                  <span className="relative z-5"> Explore more</span>
                 </button>
               </div>
               {/* Service List */}
@@ -367,6 +513,7 @@ function Home() {
           </div>
           {/* Section Spacer */}
         </section>
+
         {/*...::: Service Section End :::... */}
 
         {/*...::: Content Section Start_1 :::... */}
@@ -613,6 +760,37 @@ function Home() {
               </div>
               {/* Funfact Right Block */}
             </div>
+          </div>
+        </section>
+
+        <section className="my-28">
+          <div className="global-container ">
+            <h2 className="text-center text-black">Broad indusrty usage</h2>
+          </div>
+          <div className="w-full global-container mt-10 grid grid-cols-1  xl:grid-cols-4 gap-5">
+            {industries.map((industry, index) => (
+              <div
+                className="bg-gray-50 group relative shadow-sm cursor-pointer overflow-hidden rounded-xl px-5 py-7 flex flex-col justify-center items-center "
+                key={index}
+              >
+                <div
+                  className="size-2 transition-all duration-500 top-1/4 group-hover:scale-[70] absolute rounded-full "
+                  style={{ backgroundColor: industry.color }}
+                ></div>
+                <div
+                  style={{ backgroundColor: industry.color }}
+                  className="relative z-5 size-24 flex justify-center items-center rounded-full  overflow-hidden"
+                >
+                  <img className="w-2/3" src={industry.icon} />
+                </div>
+                <p className="font-[700] text-2xl capitalize mt-2 font-Satoshi relative z-5">
+                  {industry.name}
+                </p>
+                <p className="text-center relative z-5 text-gray-500 text-sm mt-1 capitalize ">
+                  {industry.description}{" "}
+                </p>
+              </div>
+            ))}
           </div>
         </section>
         {/*...::: Funfact Section End :::... */}
@@ -1030,3 +1208,18 @@ function Home() {
 }
 
 export default Home;
+const firstRow = techLogos;
+const ReviewCard = ({ img, index }) => {
+  return (
+    <figure
+      className={cn(
+        `relative size-40 flex justify-center items-center cursor-pointer overflow-hidden rounded-xl border p-4`,
+        // light styles
+        "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]"
+        // dark styles
+      )}
+    >
+      <img className=" " width="auto" alt="" src={img} />
+    </figure>
+  );
+};

@@ -97,6 +97,10 @@ module.exports = {
             "background-position": "calc(100% + var(--shimmer-width)) 0",
           },
         },
+        marquee: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(calc(-100% - var(--gap)))" },
+        },
         spotlight: {
           "0%": {
             opacity: 0,
@@ -113,6 +117,7 @@ module.exports = {
         "accordion-up": "accordion-up 0.2s ease-out",
         shimmer: "shimmer 8s infinite",
         spotlight: "spotlight 2s ease .75s 1 forwards",
+        marquee: "marquee var(--duration) linear infinite",
       },
     },
   },
