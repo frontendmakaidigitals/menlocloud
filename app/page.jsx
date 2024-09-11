@@ -241,7 +241,7 @@ function Home() {
         {/*...::: Hero Section Start :::... */}
         <section
           id="section-hero"
-          className="h-[90vh] relative xl:h-screen bg-black"
+          className="h-[75vh] relative xl:h-screen bg-black"
         >
           <div className="absolute w-full h-full">
             <video className="w-full h-full object-fill" muted autoPlay loop>
@@ -256,7 +256,7 @@ function Home() {
                 initial={{ scale: 0 }}
                 exit={{ scale: 0 }}
                 onClick={scrollDown}
-                className="size-16 flex justify-center  cursor-pointer z-10 hover:bg-gray-200/70 items-center  bg-gray-200/60 border border-gray-300 rounded-full absolute left-1/2 bottom-5 -translate-x-1/2 "
+                className="size-16 hidden xl:flex justify-center  cursor-pointer z-10 hover:bg-gray-200/70 items-center  bg-gray-200/60 border border-gray-300 rounded-full absolute left-1/2 bottom-5 -translate-x-1/2 "
               >
                 <HiOutlineArrowDown className="text-2xl" />
                 <motion.div className="ripple absolute size-10 border border-gray-300 -z-[99] rounded-full" />
@@ -272,7 +272,7 @@ function Home() {
               </p>
               <FlipWords
                 words={words}
-                className={`text-gray-50 uppercase tracking-tight leading-tighter lg:text-[5.5rem] font-Satoshi font-bold`}
+                className={`text-gray-50 uppercase tracking-tight leading-tighter text-4xl lg:text-[5.5rem] font-Satoshi font-bold`}
               />
               <p className="text-gray-50 text-2xl lg:text-6xl">
                 that Elevate Your Business.
@@ -281,7 +281,7 @@ function Home() {
           </div>
         </section>
         {/*...::: Hero Section End :::... */}
-        <section className="mt-32 ">
+        <section className=" mt-14 xl:mt-32 ">
           <h2 className="global-container mb-10 text-center">
             Our Tech Experties
           </h2>

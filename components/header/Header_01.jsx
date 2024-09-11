@@ -1,10 +1,11 @@
-'use client';
-import { useState } from 'react';
- 
-import Navbar from '../navbar/Navbar';
-import LogoDark from '../logo/LogoDark';
+"use client";
+import { useState } from "react";
+
+import Navbar from "../navbar/Navbar";
+import LogoDark from "../logo/LogoDark";
 import { cn } from "@/lib/utils";
 import AnimatedShinyText from "@/components/magicui/animated-shiny-text";
+import { FiMenu } from "react-icons/fi";
 const Header_01 = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
 
@@ -37,9 +38,9 @@ const Header_01 = () => {
             <div className="block lg:hidden">
               <button
                 onClick={() => setMobileMenu(true)}
-                className="mobile-menu-trigger is-black"
+                className=" text-gray-100 text-4xl is-black"
               >
-                <span />
+                <FiMenu />
               </button>
             </div>
           </div>
