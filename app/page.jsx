@@ -265,16 +265,15 @@ function Home() {
           </AnimatePresence>
 
           <div className="global-container relative z-5 w-full h-full flex flex-col justify-center items-start">
-            
             <div>
               <p className="text-gray-50 text-2xl lg:text-6xl">
                 We specialize in
               </p>
               <FlipWords
                 words={words}
-                className={`text-gray-50 uppercase tracking-tight leading-tighter text-4xl lg:text-[5.5rem] font-Satoshi font-bold`}
+                className={`text-gray-50 uppercase lg:mt-3 tracking-tight leading-tighter text-4xl lg:text-7xl font-Satoshi font-bold`}
               />
-              <p className="text-gray-50 text-2xl lg:text-6xl">
+              <p className="text-gray-50 lg:mt-3 text-2xl lg:text-6xl">
                 that Elevate Your Business.
               </p>
             </div>
@@ -296,7 +295,10 @@ function Home() {
           <h2 className="text-center">We Turn Good Ideas Into Great Things</h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-5 place-items-center">
             {experiences.map((exp, index) => (
-              <div className="mt-20 flex gap-1 flex-col items-center" key={index}>
+              <div
+                className="mt-20 flex gap-1 flex-col items-center"
+                key={index}
+              >
                 <NumberTicker
                   value={`${exp.number}`}
                   className={`text-7xl font-[900] font-Satoshi`}
