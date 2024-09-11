@@ -12,7 +12,7 @@ const Header_01 = () => {
     // Function to handle scroll events
     const handleScroll = () => {
       // Check if the page has been scrolled down 200 pixels
-      if (window.scrollY >= window.innerHeight) {
+      if (window.scrollY >= 10) {
         setIsVisible(false);
       } else {
         setIsVisible(true);

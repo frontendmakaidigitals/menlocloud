@@ -1,11 +1,8 @@
 "use client";
 import Footer_01 from "@/components/footer/Footer_01";
 import Header_01 from "@/components/header/Header_01";
-import useAccordion from "@/components/hooks/useAccordion";
-import Image from "next/image";
-import Link from "next/link";
 import SwiperNavButtons from "@/components/SwiperNavButton";
-import { Navigation } from "swiper/modules";
+
 import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useRef, useState } from "react";
@@ -164,16 +161,16 @@ function Services() {
     <>
       <Header_01 />
       <main className="main-wrapper relative overflow-hidden">
-        <div className="w-full mb-20  h-screen bg-no-repeat bg-center bg-cover bg-[url('https://images.unsplash.com/photo-1560264418-c4445382edbc?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')]">
-          <div className="bg-gradient-to-t w-full h-full from-gray-800/40 via-gray-700/40 to-transparent">
+        <div className="w-full mb-20  h-[85vh] xl:h-screen bg-no-repeat bg-center bg-cover bg-[url('https://images.pexels.com/photos/5716052/pexels-photo-5716052.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')]">
+          <div className="bg-gradient-to-b w-full h-full from-gray-800/50 via-transparent to-gray-700/40">
             <div className="global-container flex flex-col justify-around  w-full h-full">
               <div></div>
               <div></div>
-              <div>
+              <div className="mt-32 xl:mt-0">
                 <h2 className="font-dmSans font-bold text-gray-50">
                   Our Services
                 </h2>
-                <p className="mt-3 leading-relaxed text-lg text-gray-100 w-2/4">
+                <p className="mt-3  leading-relaxed text-sm xl:text-lg text-gray-100 w-[80%] lg:w-2/4">
                   With a relentless focus on “why,” we combine our services to
                   discover, design, and build the most impactful outcomes for
                   you. We don’t come with predetermined processes. Rather, we
@@ -253,15 +250,19 @@ function Services() {
               <p className="text-3xl md:text-4xl xxl:text-5xl capitalize">
                 {tabs[tabSelected].name}
               </p>
-              <p className="text-sm !leading-loose xxl:text-lg  md:mt-5">
+              <p className="text-sm !leading-loose xxl:text-lg  mt-3">
                 {tabs[tabSelected].data}
               </p>
-              <p className="md:mt-5 md:mb-4 text-lg  xxl:text-2xl font-semibold">
+              <p className="mt-5 text-lg  xxl:text-2xl font-semibold">
                 Industires include:
               </p>
-              {tabs[tabSelected].points.map((point, index) => (
-                <p className="text-sm xxl:text-lg mt-1" key={index}>{point}</p>
-              ))}
+              <div className="mt-2">
+                {tabs[tabSelected].points.map((point, index) => (
+                  <p className="text-sm xxl:text-lg mt-1" key={index}>
+                    {point}
+                  </p>
+                ))}
+              </div>
 
               <button className="button rounded-[50px] mt-10 border-2 border-black bg-transparent py-3 text-black after:bg-[#2962FF] hover:border-[#2962FF] hover:text-white">
                 Learn more
@@ -272,9 +273,9 @@ function Services() {
               <div className="px-5">
                 <p className="mt-4 text-lg uppercase">customer story</p>
                 <p className="xxl:text-2xl mt-3 font-bold">
-                  Investing in a culture of innovation
+                  Investing in a culture of innovation and Technology
                 </p>
-                <p className="mt-12">Nasdaq</p>
+                <p className="mt-7">Nasdaq</p>
               </div>
             </div>
           </div>
