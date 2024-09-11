@@ -17,6 +17,8 @@ import { BackgroundGradientAnimation } from "@/components/ui/background-gradient
 import { FlipWords } from "@/components/ui/flip-words";
 import SwiperNavButtons from "@/components/SwiperNavButton";
 import { HiOutlineArrowDown } from "react-icons/hi2";
+import { StickyScroll } from "../components/ui/sticky-scroll-reveal";
+
 const techLogos = [
   {
     username: "@jack",
@@ -110,7 +112,54 @@ const experiences = [
   { name: "Projects Delivered", number: 1000, color: "#00796B" },
   { name: "Happy Clients", number: 400, color: "#D81B60" },
 ];
-
+const content = [
+  {
+    title: "Collaborative Editing",
+    description:
+      "Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.",
+    content: (
+      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
+        Collaborative Editing
+      </div>
+    ),
+  },
+  {
+    title: "Real time changes",
+    description:
+      "See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.",
+    content: (
+      <div className="h-full w-full  flex items-center justify-center text-white">
+        <img
+          src="/linear.webp"
+          width={300}
+          height={300}
+          className="h-full w-full object-cover"
+          alt="linear board demo"
+        />
+      </div>
+    ),
+  },
+  {
+    title: "Version control",
+    description:
+      "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+    content: (
+      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--orange-500),var(--yellow-500))] flex items-center justify-center text-white">
+        Version control
+      </div>
+    ),
+  },
+  {
+    title: "Running out of content",
+    description:
+      "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+    content: (
+      <div className="h-full w-full bg-[linear-gradient(to_bottom_right,var(--cyan-500),var(--emerald-500))] flex items-center justify-center text-white">
+        Running out of content
+      </div>
+    ),
+  },
+];
 const data = [
   {
     img: "https://s7d9.scene7.com/is/image/slalom/insight-globalbas-turtle-finserv-thumb-520x490?fmt=webp-alpha",
@@ -225,19 +274,19 @@ function Home() {
   }, []);
 
   // Function to scroll down by 200 pixels
- const scrollDown = () => {
-   const viewportHeight = window.innerHeight; // Get the height of the viewport in pixels
-   window.scrollBy({
-     top: viewportHeight, // Scroll down by the viewport height
-     behavior: "smooth", // Smooth scrolling
-   });
- };
+  const scrollDown = () => {
+    const viewportHeight = window.innerHeight; // Get the height of the viewport in pixels
+    window.scrollBy({
+      top: viewportHeight, // Scroll down by the viewport height
+      behavior: "smooth", // Smooth scrolling
+    });
+  };
   return (
     <div className="page-wrapper relative z-[1] bg-white">
       {/*...::: Header Start :::... */}
       <Header_01 />
       {/*...::: Header End :::... */}
-      <main className="main-wrapper relative overflow-hidden">
+      <main className="main-wrapper relative ">
         {/*...::: Hero Section Start :::... */}
         <section
           id="section-hero"
@@ -264,8 +313,8 @@ function Home() {
             )}
           </AnimatePresence>
 
-          <div className="global-container relative z-5 w-full h-full flex flex-col justify-center items-start">
-            <div>
+          <div className="global-container overflow-hidden relative z-5 w-full h-full flex flex-col justify-center items-start">
+            <div className=" w-full">
               <p className="text-gray-50 text-2xl lg:text-6xl">
                 We specialize in
               </p>
@@ -291,9 +340,9 @@ function Home() {
           </Marquee>
         </section>
 
-        <section className="global-container mt-32">
+        <section className="global-container mt-32 flex flex-col items-center justify-center">
           <h2 className="text-center">We Turn Good Ideas Into Great Things</h2>
-          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-5 place-items-center">
+          <div className="grid w-full  grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-5 place-items-between">
             {experiences.map((exp, index) => (
               <div
                 className="mt-20 flex gap-1 flex-col items-center"
@@ -301,10 +350,12 @@ function Home() {
               >
                 <NumberTicker
                   value={`${exp.number}`}
-                  className={`text-7xl font-[900] font-Satoshi`}
+                  className={`text-3xl lg:text-7xl font-[900] font-Satoshi`}
                   color={exp.color}
                 />
-                <p className="font-Satoshi text-xl font-medium">{exp.name}</p>
+                <p className="font-Satoshi text-md lg:text-xl font-medium">
+                  {exp.name}
+                </p>
               </div>
             ))}
           </div>
@@ -615,7 +666,13 @@ function Home() {
 
         {/*...::: Service Section End :::... */}
 
-        <section className="my-16">
+        <section className="my-16 relative">
+          <div className="overflow-hidden">
+            <div className="blue-gradient-1 absolute -left-[15px] top-[61%] -z-[1] w-[200px] h-[200px] lg:h-[400px] lg:w-[400px] -rotate-[-9.022deg] rounded-[400px]"></div>
+
+            {/* Body Background Shape 2 */}
+            <div className="blue-gradient-2 absolute -left-[100px] top-[64%] -z-[1]  w-[160px] h-[160px] lg:h-[360px] lg:w-[360px] -rotate-[-9.022deg] rounded-[360px]"></div>
+          </div>
           <div className="global-container ">
             <h2 className="text-center text-black">Broad indusrty usage</h2>
           </div>
@@ -646,6 +703,8 @@ function Home() {
           </div>
         </section>
         {/*...::: Funfact Section End :::... */}
+
+        {/*...::: Awards Section starts :::... */}
         <section className="mt-28">
           <h2 className="global-container text-center mb-10">
             Awards & Certifications
@@ -986,10 +1045,6 @@ function Home() {
         {/*...::: Testimonial Section Start :::... */}
 
         {/* Body Background Shape 1 */}
-        <div className="blue-gradient-1 absolute -left-[15px] top-[61%] -z-[1] h-[400px] w-[400px] -rotate-[-9.022deg] rounded-[400px]"></div>
-
-        {/* Body Background Shape 2 */}
-        <div className="blue-gradient-2 absolute -left-[100px] top-[64%] -z-[1] h-[360px] w-[360px] -rotate-[-9.022deg] rounded-[360px]"></div>
       </main>
       {/*...::: Footer Start :::... */}
       <Footer_01 />

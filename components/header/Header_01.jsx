@@ -1,6 +1,5 @@
 "use client";
-import { useState } from "react";
-
+import { useState, useEffect } from "react";
 import Navbar from "../navbar/Navbar";
 import LogoDark from "../logo/LogoDark";
 import { cn } from "@/lib/utils";
@@ -8,10 +7,33 @@ import AnimatedShinyText from "@/components/magicui/animated-shiny-text";
 import { FiMenu } from "react-icons/fi";
 const Header_01 = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
+  useEffect(() => {
+    // Function to handle scroll events
+    const handleScroll = () => {
+      // Check if the page has been scrolled down 200 pixels
+      if (window.scrollY >= window.innerHeight) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+    };
 
+    // Add scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <header
-      className="site-header site-header--absolute is--white py-3"
+      className={`site-header transition-all duration-300 fixed ${
+        !isVisible
+          ? "bg-gray-700 py-2 rounded-md bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-40 "
+          : "py-3"
+      } site-header--absolute is--white `}
       id="sticky-menu"
     >
       <div className="global-container">
