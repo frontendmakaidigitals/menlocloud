@@ -363,7 +363,7 @@ function Services() {
             <p className="text-md xl:text-lg text-center mt-5 w-2/3 font-Satoshi">
               Our staff augmentation services offer a seamless way to integrate
               skilled professionals into your team, ensuring you get the
-              expertise you need when you need it. Here’s why we stand out:
+              expertise you need when you need it. Here's why we stand out:
             </p>
           </div>
           <div className="global-container grid grid-cols-1 xl:grid-cols-4 gap-5 mt-10">
