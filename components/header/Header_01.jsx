@@ -9,9 +9,7 @@ const Header_01 = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   useEffect(() => {
-    // Function to handle scroll events
     const handleScroll = () => {
-      // Check if the page has been scrolled down 200 pixels
       if (window.scrollY >= 10) {
         setIsVisible(false);
       } else {
@@ -29,12 +27,12 @@ const Header_01 = () => {
   }, []);
   return (
     <header
-      className={`site-header transition-all duration-300 fixed ${
+      className={`w-full transition-all duration-300 fixed ${
         !isVisible
           ? "bg-gray-700 py-2 rounded-md bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-40 "
           : "py-3"
-      } site-header--absolute is--white `}
-      id="sticky-menu"
+      }  `}
+      
     >
       <div className="global-container">
         <div className="flex items-center justify-between gap-x-8">
