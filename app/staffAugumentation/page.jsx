@@ -12,12 +12,12 @@ import { Timeline } from "@/components/ui/timeline";
 function Services() {
   const services = [
     {
-      name: "Hire Web Developers",
+      name: "Hire web developers",
       img: "/assets/img_placeholder/web.png",
       color: "#512DA8",
     },
     {
-      name: "Hire App Developers",
+      name: "Hire mobile app developers",
       img: "/assets/img_placeholder/app.png",
       color: "black",
     },
@@ -302,8 +302,9 @@ function Services() {
   ];
   return (
     <>
+      <div className="page-wrapper relative">
       <Header_01 />
-      <main className="main-wrapper relative ">
+      <main className="main-wrapper">
         <div className="w-full mb-20  h-[85vh] xl:h-screen bg-no-repeat bg-center bg-cover bg-[url('/assets/img_placeholder/staff.jpg')]">
           <div className="bg-gradient-to-b w-full h-full from-gray-800/40 to-gray-700/30">
             <div className="global-container flex flex-col justify-around  w-full h-full">
@@ -311,21 +312,21 @@ function Services() {
               <div></div>
               <div className="mt-32 xl:mt-0">
                 <h2 className="font-dmSans font-bold text-gray-50">
-                  Staff Augmentation <br /> Services
+                  Unlock the Power of Staff Augmentation
                 </h2>
                 <p className="mt-3  leading-relaxed text-sm xl:text-lg text-gray-100 w-[80%] lg:w-2/4">
-                  With a relentless focus on “why,” we combine our services to
-                  discover, design, and build the most impactful outcomes for
-                  you. We don’t come with predetermined processes. Rather, we
-                  roll up our sleeves and craft practical, end-to-end solutions
-                  in partnership with your teams.
+                  Staff augmentation is a strategic approach to expanding your
+                  team with skilled professionals on a temporary or project
+                  basis. It provides the flexibility to adapt to changing
+                  demands, access specialized skills, and meet deadlines without
+                  the long-term commitment of hiring full-time employees.
                 </p>
               </div>
             </div>
           </div>
         </div>
         <section className="global-container mb-20">
-          <h2 className="w-full text-center">Services We Offer</h2>
+          <h2 className="w-full text-center">Talent we Provide</h2>
           <div className="grid place-items-center grid-cols-1 lg:grid-cols-2 xl:grid-cols-4">
             {services.map((service, index) => (
               <div
@@ -357,8 +358,13 @@ function Services() {
         </section>
 
         <section className="mb-32">
-          <div className="global-container flex justify-center">
-            <h2>Why Choose Us?</h2>
+          <div className="global-container flex flex-col justify-center items-center">
+            <h2 className="font-Satoshi font-[500]">Why Partner with Us?</h2>
+            <p className="text-md xl:text-lg text-center mt-5 w-2/3 font-Satoshi">
+              Our staff augmentation services offer a seamless way to integrate
+              skilled professionals into your team, ensuring you get the
+              expertise you need when you need it. Here’s why we stand out:
+            </p>
           </div>
           <div className="global-container grid grid-cols-1 xl:grid-cols-4 gap-5 mt-10">
             <div className="w-full bg-red-300 overflow-hidden relative h-[350px] shadow-lg bg-[url('https://images.pexels.com/photos/5716031/pexels-photo-5716031.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] bg-no-repeat bg-center bg-cover rounded-xl xl:col-span-2 ">
@@ -369,9 +375,9 @@ function Services() {
                   Experienced Professionals
                 </p>
                 <p className="relative z-10 font-Satoshi mt-1 text-gray-100 font-[500]">
-                  We connect you with highly experienced specialists in the
-                  Indian talent market with the specific skills you need for
-                  your projects.
+                  We link you with seasoned specialists from the various talent
+                  market, offering the specific skills required for your
+                  projects
                 </p>
               </div>
             </div>
@@ -383,8 +389,9 @@ function Services() {
                   Save upto 70%
                 </p>
                 <p className="relative z-10 font-Satoshi mt-1 text-gray-100 font-[500]">
-                  You can save up to 70% by hiring dedicated specialists from us
-                  - developers, designers, QA experts, and digital marketers
+                  By hiring dedicated specialists from us—whether developers,
+                  designers, QA experts, or digital marketers—you can save up to
+                  70%
                 </p>
               </div>
             </div>
@@ -396,8 +403,9 @@ function Services() {
                   Team Flexibility
                 </p>
                 <p className="relative z-10 font-Satoshi mt-1 text-gray-100 font-[500]">
-                  You can scale up/down your team with ease when you hire our
-                  offshore specialists for your projects.
+                  Our offshore specialists provide the flexibility to
+                  effortlessly adjust your team size according to your project's
+                  requirements
                 </p>
               </div>
             </div>
@@ -409,9 +417,9 @@ function Services() {
                   Zero Overheads
                 </p>
                 <p className="relative z-10 font-Satoshi mt-1 text-gray-100 font-[500]">
-                  We connect you with highly experienced specialists in the
-                  Indian talent market with the specific skills you need for
-                  your projects.
+                  With our dedicated professionals, you can skip the hassle of
+                  managing payroll, taxes, infrastructure costs, and employee
+                  benefits.
                 </p>
               </div>
             </div>
@@ -423,8 +431,8 @@ function Services() {
                   Strict NDAs
                 </p>
                 <p className="relative z-10 font-Satoshi mt-1 text-gray-100 font-[500]">
-                  You can save up to 70% by hiring dedicated specialists from us
-                  - developers, designers, QA experts, and digital marketers
+                  We implement stringent NDAs to guarantee absolute
+                  confidentiality and security of your projects
                 </p>
               </div>
             </div>
@@ -436,8 +444,8 @@ function Services() {
                   Same Business Hours
                 </p>
                 <p className="relative z-10 font-Satoshi mt-1 text-gray-100 font-[500]">
-                  You can scale up/down your team with ease when you hire our
-                  offshore specialists for your projects.
+                  MenloCloud's remote experts are aligned to work within your
+                  business hours, ensuring seamless collaboration
                 </p>
               </div>
             </div>
@@ -451,6 +459,7 @@ function Services() {
         </section>
       </main>
       <Footer_01 />
+     </div>
     </>
   );
 }

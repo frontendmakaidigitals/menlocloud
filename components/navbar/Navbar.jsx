@@ -1,16 +1,12 @@
 "use client";
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
-import { BackgroundGradientAnimation } from "../ui/background-gradient-animation";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { cn } from "@/lib/utils";
-
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -79,7 +75,12 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
         id="append-menu-header"
       >
         <div className={`mobile-menu-head ${mobileSubMenu && "active"}`}>
-          <div className="px-3 font-Clash">Menu</div>
+          <div className="px-3 font-Clash">
+            <p className="text-lg xl:text-xl text-gray-200 font-bold font-Satoshi">
+              Menlo
+              <span className="text-sky-500 font-Clash font-[600]">cloud</span>
+            </p>
+          </div>
           <div onClick={handleMenu} className="mobile-menu-close">
             ×
           </div>
