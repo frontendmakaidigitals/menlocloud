@@ -363,7 +363,7 @@ function Services() {
             <p className="text-md xl:text-lg text-center mt-5 w-2/3 font-Satoshi">
               Our staff augmentation services offer a seamless way to integrate
               skilled professionals into your team, ensuring you get the
-              expertise you need when you need it. Here's why we stand out:
+              expertise you need when you need it. Here &apos;s why we stand out:
             </p>
           </div>
           <div className="global-container grid grid-cols-1 xl:grid-cols-4 gap-5 mt-10">
@@ -404,7 +404,7 @@ function Services() {
                 </p>
                 <p className="relative z-10 font-Satoshi mt-1 text-gray-100 font-[500]">
                   Our offshore specialists provide the flexibility to
-                  effortlessly adjust your team size according to your project's
+                  effortlessly adjust your team size according to your project&apos;ss
                   requirements
                 </p>
               </div>
@@ -444,7 +444,7 @@ function Services() {
                   Same Business Hours
                 </p>
                 <p className="relative z-10 font-Satoshi mt-1 text-gray-100 font-[500]">
-                  MenloCloud's remote experts are aligned to work within your
+                  MenloCloud&apos;ss remote experts are aligned to work within your
                   business hours, ensuring seamless collaboration
                 </p>
               </div>
