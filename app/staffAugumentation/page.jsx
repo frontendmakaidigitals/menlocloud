@@ -89,7 +89,7 @@ function Services() {
       content: (
         <div>
           <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
-            IWe share the resumes of the shortlisted candidates for your review.
+            We share the resumes of the shortlisted candidates for your review.
           </p>
 
           <div className="grid grid-cols-2 gap-4">
@@ -312,7 +312,7 @@ function Services() {
               <div></div>
               <div className="mt-32 xl:mt-0">
                 <h2 className="font-dmSans font-bold text-gray-50">
-                  Unlock the Power of Staff Augmentation
+                  Unlock the Power of <br /> Staff Augmentation
                 </h2>
                 <p className="mt-3  leading-relaxed text-sm xl:text-lg text-gray-100 w-[80%] lg:w-2/4">
                   Staff augmentation is a strategic approach to expanding your
@@ -332,22 +332,22 @@ function Services() {
               <div
                 key={index}
                 style={{ backgroundColor: service?.color }}
-                className="mt-10 border-[10px] cursor-pointer border-gray-200 group  rounded-2xl w-[300px] h-[400px] relative overflow-hidden"
+                className="mt-10 border-[10px] cursor-pointer border-gray-200 group  rounded-2xl w-full lg:w-[300px] h-[400px] xxl:w-[400px] xxl:h-[550px] relative overflow-hidden"
               >
-                <div className="size-28  absolute top-16 -translate-x-1/2 left-1/2 -translate-y-0">
+                <div className="size-28 xxl:size-40  absolute top-16 -translate-x-1/2 left-1/2 -translate-y-0">
                   <img className="w-full" src={service.img} />
                 </div>
-                <div className="size-4 group-hover:scale-[80] absolute transition-all duration-700  -top-4 -left-4 bg-gray-200 rounded-full"></div>
-                <div className="size-3 group-hover:scale-[90] absolute transition-all duration-700 -top-4 -left-4 bg-white delay-200 rounded-full"></div>
+                <div className="size-4 group-hover:scale-[80] xxl:group-hover:scale-[110]  absolute transition-all duration-700  -top-4 -left-4 bg-gray-200 rounded-full"></div>
+                <div className="size-3 group-hover:scale-[90] xxl:group-hover:scale-[120] absolute transition-all duration-700 -top-4 -left-4 bg-white delay-200 rounded-full"></div>
                 <div className="w-full relative  z-10 h-full flex py-5 px-5 flex-col justify-end items-start">
-                  <p className="xl:text-2xl pr-3 font-bold font-Satoshi leading-snug group-hover:text-gray-900 transition-all duration-500 text-gray-100">
+                  <p className="xl:text-2xl xxl:text-4xl pr-3 font-bold font-Satoshi leading-snug group-hover:text-gray-900 transition-all duration-500 text-gray-100">
                     {service.name}
                   </p>
-                  <p className="leading-snug mt-1 text-sm text-gray-200 group-hover:text-gray-800 transition-all duration-500">
+                  <p className="leading-snug mt-1 text-sm text-gray-200 group-hover:text-gray-800 xxl:text-lg transition-all duration-500">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   </p>
                   <div className="w-full flex justify-between items-center">
-                    <button className="px-4 bg-lime-300 py-2 font-Satoshi font-semibold text-sm mt-2  rounded-full">
+                    <button className="px-4 bg-lime-300 py-2 font-Satoshi font-semibold text-sm mt-2 xxl:text-lg rounded-full">
                       Learn more
                     </button>
                   </div>
@@ -360,7 +360,7 @@ function Services() {
         <section className="mb-32">
           <div className="global-container flex flex-col justify-center items-center">
             <h2 className="font-Satoshi font-[500]">Why Partner with Us?</h2>
-            <p className="text-md xl:text-lg text-center mt-5 w-2/3 font-Satoshi">
+            <p className="text-md xl:text-lg text-center mt-5 w-full lg:w-2/3 font-Satoshi">
               Our staff augmentation services offer a seamless way to integrate
               skilled professionals into your team, ensuring you get the
               expertise you need when you need it. Here &apos;s why we stand out:
