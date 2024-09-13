@@ -2,7 +2,8 @@
 import Footer_01 from "@/components/footer/Footer_01";
 import Header_01 from "@/components/header/Header_01";
 import { HeroParallax } from "@/components/ui/hero-parallax";
-import { Timeline } from "@/components/ui/timeline";
+import { TracingBeam } from "@/components/ui/tracing-beam";
+import { twMerge } from "tailwind-merge";
 function Services() {
   const products = [
     {
@@ -79,24 +80,57 @@ function Services() {
     },
   ];
 
-  const webServices = [
+  
+
+  const dummyContent = [
     {
-      img: "dd",
       title: "Web Apps",
-      description:
-        "We offer full-cycle web app development services from UI/UX design and development to QA and upgrade & maintenance. We build web apps that are secure, scalable, fast, and work seamlessly across all devices and platforms.",
+      description: (
+        <>
+          <p className="text-lg">
+            We offer full-cycle web app development services from UI/UX design
+            and development to QA and upgrade & maintenance. We build web apps
+            that are secure, scalable, fast, and work seamlessly across all
+            devices and platforms
+          </p>
+        </>
+      ),
+      badge: "React",
+      image:
+        "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     },
     {
-      img: "dd",
       title: "eCommerce",
-      description:
-        "With more than 12 years of delivering the best eCommerce web development services, our web design & development team can help you leverage Shopify, Magento, WooCommerce, or BigCommerce to transform your store with a smooth shopping experience for your users.",
+      description: (
+        <>
+          <p className="text-lg">
+            With more than 12 years of delivering the best eCommerce web
+            development services, our web design & development team can help you
+            leverage Shopify, Magento, WooCommerce, or BigCommerce to transform
+            your store with a smooth shopping experience for your users.
+          </p>
+        </>
+      ),
+      badge: "Shopify",
+      image:
+        "https://images.pexels.com/photos/34577/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     },
     {
-      img: "dd",
       title: "ERP",
-      description:
-        "Leverage our expert ERP development services to build a solution from the ground up, regardless of its scale, functionalities, or complexity. We help enterprises to streamline processes, function efficiently, and facilitate growth by building scalable ERP solutions.",
+      description: (
+        <>
+          <p className="text-lg">
+            Leverage our expert ERP development services to build a solution
+            from the ground up, regardless of its scale, functionalities, or
+            complexity. We help enterprises to streamline processes, function
+            efficiently, and facilitate growth by building scalable ERP
+            solutions.
+          </p>
+        </>
+      ),
+      badge: "Java",
+      image:
+        "https://ibrinfotech.b-cdn.net/uploads/erp-solution-1.png",
     },
   ];
   return (
@@ -107,18 +141,47 @@ function Services() {
           <div className="w-full mb-20 ">
             <HeroParallax products={products} />;
           </div>
-          <section className="global-container">
-            <div className="flex lg:w-2/3 justify-center w-full">
-              <h1>Our Web Development Services</h1>
-              <p>
-                Whether you need a new web app, custom or CMS website, eCommerce
-                store, or an ERP solution, we can handle it all. Improve your
-                business processes and increase profits through our strategic
-                web development services.
-              </p>
-            </div>
-          </section>
         </main>
+        <section className="global-container flex flex-col items-center justify-center">
+          <div className="lg:w-2/3 flex flex-col items-center justify-center w-full">
+            <h2 className="text-center">Our Web Development Services</h2>
+            <p className="text-center mt-3 text-lg">
+              Whether you need a new web app, custom or CMS website, eCommerce
+              store, or an ERP solution, we can handle it all. Improve your
+              business processes and increase profits through our strategic web
+              development services.
+            </p>
+          </div>
+          <TracingBeam className="px-6 mt-10">
+            <div className="max-w-2xl mx-auto antialiased pt-6 relative">
+              {dummyContent.map((item, index) => (
+                <div key={`content-${index}`} className="mb-10">
+                  <div className="flex items-center mb-2 gap-4">
+                    <p className={"text-3xl text-Satoshi font-[600]"}>
+                      {item.title}
+                    </p>
+                    <h2 className="bg-lime-400 text-gray-900 rounded-full text-sm w-fit px-4 py-1">
+                      {item.badge}
+                    </h2>
+                  </div>
+
+                  <div className="text-sm prose prose-sm dark:prose-invert">
+                    {item?.image && (
+                      <img
+                        src={item.image}
+                        alt="blog thumbnail"
+                        height="1000"
+                        width="1000"
+                        className="rounded-lg mb-10 object-cover"
+                      />
+                    )}
+                    {item.description}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </TracingBeam>
+        </section>
         <Footer_01 />
       </div>
     </>
