@@ -1,23 +1,18 @@
 "use client";
 import { cn } from "@/lib/utils";
-import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import useAccordion from "@/components/hooks/useAccordion";
-import useTabs from "@/components/hooks/useTabs";
 import { useRef, useState, useEffect } from "react";
 import Header_01 from "@/components/header/Header_01";
 import Footer_01 from "@/components/footer/Footer_01";
-import WordRotate from "@/components/magicui/word-rotate";
 import DotPattern from "@/components/magicui/dot-pattern";
 import "/styles/globals.css";
 import Marquee from "@/components/magicui/marquee";
 import { AnimatePresence, color, motion } from "framer-motion";
 import NumberTicker from "@/components/magicui/number-ticker";
-import { BackgroundGradientAnimation } from "@/components/ui/background-gradient-animation";
 import { FlipWords } from "@/components/ui/flip-words";
 import SwiperNavButtons from "@/components/SwiperNavButton";
 import { HiOutlineArrowDown } from "react-icons/hi2";
-import { StickyScroll } from "../components/ui/sticky-scroll-reveal";
 
 const techLogos = [
   {
@@ -199,8 +194,8 @@ const data = [
 ];
 
 function Home() {
-  const [activeIndex, handleAccordion] = useAccordion(0);
   const [isVisible, setIsVisible] = useState(true);
+  const [isTopVisible, setIsTop] = useState(false);
   const parentVariants = {
     hover: {
       scale: 1.05, // Scale up the parent a bit
@@ -259,8 +254,10 @@ function Home() {
       // Check if the page has been scrolled down 200 pixels
       if (window.scrollY >= 199) {
         setIsVisible(false);
+        setIsTop(true);
       } else {
         setIsVisible(true);
+        setIsTop(false);
       }
     };
 
@@ -281,13 +278,35 @@ function Home() {
       behavior: "smooth", // Smooth scrolling
     });
   };
+  const scrollTop = () => {
+    window.scrollTo({
+      top: 0, // Scroll to the top of the page
+      behavior: "smooth", // Smooth scrolling
+    });
+  };
   return (
     <div className="page-wrapper relative z-[1] bg-white">
-      {/*...::: Header Start :::... */}
       <Header_01 />
-      {/*...::: Header End :::... */}
+      <motion.div
+        animate={{
+          x: isVisible ? "-50%" : 0,
+          left: isVisible ? "50%" : '95%',
+          rotate: isVisible ? 0 : 180
+        }}
+        transition={{type:'spring', duration:.5}}
+        onClick={isVisible ? scrollDown : scrollTop}
+        className={`size-16 hidden xl:flex left-1/2 justify-center bottom-10  cursor-pointer z-10  items-center   border border-gray-300 rounded-full fixed  ${
+          isVisible
+            ? " bg-gray-200/60 hover:bg-gray-200/70 "
+            : "  bg-lime-400 hover:bg-lime-400/70"
+        }`}
+      >
+        <HiOutlineArrowDown className="text-2xl" />
+        <motion.div className="ripple absolute size-10 border border-gray-300 -z-[99] rounded-full" />
+      </motion.div>
       <main className="main-wrapper relative ">
         {/*...::: Hero Section Start :::... */}
+
         <section
           id="section-hero"
           className="h-[75vh] relative xl:h-screen bg-black"
@@ -298,20 +317,6 @@ function Home() {
             </video>
           </div>
           <div className="w-full h-full z-4 overflow-hidden absolute top-0 left-0 bg-gradient-to-t from-gray-900/60 to-transparent"></div>
-          <AnimatePresence mode="wait">
-            {isVisible && (
-              <motion.div
-                animate={{ scale: 1 }}
-                initial={{ scale: 0 }}
-                exit={{ scale: 0 }}
-                onClick={scrollDown}
-                className="size-16 hidden xl:flex justify-center  cursor-pointer z-10 hover:bg-gray-200/70 items-center  bg-gray-200/60 border border-gray-300 rounded-full absolute left-1/2 bottom-5 -translate-x-1/2 "
-              >
-                <HiOutlineArrowDown className="text-2xl" />
-                <motion.div className="ripple absolute size-10 border border-gray-300 -z-[99] rounded-full" />
-              </motion.div>
-            )}
-          </AnimatePresence>
 
           <div className="global-container overflow-hidden relative z-5 w-full h-full flex flex-col justify-center items-start">
             <div className=" w-full">
