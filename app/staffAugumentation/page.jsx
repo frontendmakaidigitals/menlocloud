@@ -453,7 +453,7 @@ function Services() {
         </section>
         <section className="mb-60">
           <div className="global-container flex justify-center">
-            <h2 className="font-Satoshi font-bold ">Lorem Ipsum</h2>
+            <h2 className="font-Satoshi font-bold ">Onboarding Process</h2>
           </div>
           <Timeline data={data} />
         </section>
