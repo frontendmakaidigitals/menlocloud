@@ -27,7 +27,8 @@ const Header_01 = () => {
   }, []);
   return (
     <header
-      className={`w-full z-[999] transition-all duration-300 fixed ${
+      id='sticky-menu'
+      className={`w-full site-header z-[999] transition-all duration-300 fixed ${
         !isVisible
           ? "bg-gray-700 py-2 rounded-md bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-40 "
           : "py-3"

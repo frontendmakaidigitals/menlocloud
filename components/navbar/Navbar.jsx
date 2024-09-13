@@ -21,6 +21,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
   const [mobileSubMenu, setMobileSubMenu] = useState("");
   const [mobileSubMenuSub, setMobileSubMenuSub] = useState("");
   const [menuTitle, setMenuTitle] = useState("");
+  console.log(mobileMenu)
 
   const handleMenu = () => {
     setMobileMenu(false);
@@ -76,7 +77,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
       >
         <div className={`mobile-menu-head ${mobileSubMenu && "active"}`}>
           <div className="px-3 font-Clash">
-            <p className="text-lg xl:text-xl text-gray-200 font-bold font-Satoshi">
+            <p className="text-lg xl:text-xl text-gray-800 font-bold font-Satoshi">
               Menlo
               <span className="text-sky-500 font-Clash font-[600]">cloud</span>
             </p>
@@ -85,7 +86,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
             ×
           </div>
         </div>
-        <ul className={` text-gray-900`}>
+        <ul className={` text-gray-900 site-menu-main`}>
           <div className="hidden lg:block">
             <NavigationMenu className={``}>
               <NavigationMenuList className={``}>
