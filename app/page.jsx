@@ -781,7 +781,7 @@ function Home() {
           </div>
         </section>
         {/*...::: Testimonial Section Start :::... */}
-        <section className="testimonial-section mt-60">
+        <section className="testimonial-section overflow-hidden mt-60">
           {/* Section Spacer */}
           <div className="bg-black pb-40 pt-20 xl:pb-[200px] xl:pt-[130px]">
             {/* Section Container */}
