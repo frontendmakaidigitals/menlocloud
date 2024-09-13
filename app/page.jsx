@@ -320,14 +320,14 @@ function Home() {
 
           <div className="global-container overflow-hidden relative z-5 w-full h-full flex flex-col justify-center items-start">
             <div className=" w-full">
-              <p className="text-gray-50 text-2xl lg:text-6xl">
+              <p className="text-gray-50 text-2xl  lg:text-6xl xxl:text-7xl"> 
                 We specialize in
               </p>
               <FlipWords
                 words={words}
-                className={`text-gray-50 uppercase lg:mt-3 tracking-tight leading-tighter text-4xl lg:text-7xl font-Satoshi font-bold`}
+                className={`text-gray-50 uppercase lg:mt-3 tracking-tight leading-tighter text-4xl lg:text-7xl xxl:text-8xl font-Satoshi font-bold`}
               />
-              <p className="text-gray-50 lg:mt-3 text-2xl lg:text-6xl">
+              <p className="text-gray-50 lg:mt-3 text-2xl lg:text-6xl xxl:text-7xl">
                 that Elevate Your Business.
               </p>
             </div>
