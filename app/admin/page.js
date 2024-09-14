@@ -50,7 +50,7 @@ const LoginTab = () => {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [errors, setErrors] = useState({ email: "", password: "" });
-
+  const [token, setToken] = useState("");
   const validate = () => {
     let valid = true;
     let errors = { email: "", password: "" };
@@ -80,12 +80,28 @@ const LoginTab = () => {
   const handleLogin = () => {
     if (validate()) {
       setLoader(true);
-      // Implement your login logic here
-      // For example, you might make an API call to authenticate the user
-      // After the API call, setLoader(false) to hide the loader
+      axios
+        .post(`http://localhost:8000/api/admin/login`, {
+          email: email,
+          password: password,
+        })
+        .then((res) => {
+          console.log(res);
+          const token = res.data?.token;
+          if (token) {
+            localStorage.setItem("authToken", token); // Store token in localStorage
+            setToken(token); // Update the token state or context
+          }
+        })
+        .catch((error) => {
+          console.error(error);
+          // Optionally set an error state here
+        })
+        .finally(() => {
+          setLoader(false);
+        });
     }
   };
-
   return (
     <Card>
       <CardHeader>
