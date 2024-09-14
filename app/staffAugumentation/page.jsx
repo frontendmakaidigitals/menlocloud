@@ -47,7 +47,7 @@ function Services() {
       title: "Requirement Gathering ",
       content: (
         <div>
-          <p className="text-neutral-800 text-xs md:text-md font-normal mb-4">
+          <p className="text-neutral-800 text-xs md:text-md  font-normal mb-2 lg:mb-4">
             We analyze your requirements and match them with the best resources
             from our in-house team for your project
           </p>
@@ -55,7 +55,7 @@ function Services() {
             <img
               src="https://www.teced.com/wp-content/uploads/bigstock-Manager-leading-a-meeting-with-137595377.jpg"
               alt="startup template"
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-[30rem] w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+              className="rounded-lg object-cover h-60 md:h-44 lg:h-[30rem] w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
             />
           </div>
         </div>
@@ -65,7 +65,7 @@ function Services() {
       title: "Allocate Resources ",
       content: (
         <div>
-          <p className="text-neutral-800 text-xs md:text-md font-normal mb-4">
+          <p className="text-neutral-800 text-xs md:text-md  font-normal mb-2 lg:mb-4">
             We provide you with the resumes of the shortlisted candidates for
             your evaluation
           </p>
@@ -74,7 +74,7 @@ function Services() {
             <img
               src="https://www.projectmanager.com/wp-content/uploads/2023/05/Resource-Optimization.jpg"
               alt="startup template"
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-[30rem] w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+              className="rounded-lg object-cover h-60 md:h-44 lg:h-[30rem] w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
             />
           </div>
         </div>
@@ -84,7 +84,7 @@ function Services() {
       title: "Interview Candidate",
       content: (
         <div>
-          <p className="text-neutral-800 text-xs md:text-md font-normal mb-4">
+          <p className="text-neutral-800 text-xs md:text-md  font-normal mb-2 lg:mb-4">
             Feel free to interview candidates to find the most suitable match
             for your requirements.
           </p>
@@ -93,7 +93,7 @@ function Services() {
             <img
               src="https://www.proclinical.com/img/dxMB0y2fUkX69QjW-32sXA/how+to+spot+a+great+candidate+at+interview.jpg?v=cbbb5d01d08ad7bdf659ba32cd053aa1"
               alt="startup template"
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-[30rem] w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+              className="rounded-lg object-cover h-60 md:h-44 lg:h-[30rem] w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
             />
           </div>
         </div>
@@ -103,7 +103,7 @@ function Services() {
       title: "Contract Finalization",
       content: (
         <div>
-          <p className="text-neutral-800 text-xs md:text-md font-normal mb-4">
+          <p className="text-neutral-800 text-xs md:text-md  font-normal mb-2 lg:mb-4">
             After you have selected the appropriate resources from our in-house
             team for your project, we will provide a final contract for your
             review.
@@ -113,7 +113,7 @@ function Services() {
             <img
               src="https://media.licdn.com/dms/image/D5612AQGqKDWRA3L23A/article-cover_image-shrink_720_1280/0/1692817692297?e=2147483647&v=beta&t=tFbcP3EjhgnYbOGsznY5O2KbnCP8Y8DPIKdWsH3q4UY"
               alt="startup template"
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-[30rem] w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+              className="rounded-lg object-cover h-60 md:h-44 lg:h-[30rem] w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
             />
           </div>
         </div>
@@ -123,7 +123,7 @@ function Services() {
       title: "Scheduling and Monitoring",
       content: (
         <div>
-          <p className="text-neutral-800 text-xs md:text-md font-normal mb-4">
+          <p className="text-neutral-800 text-xs md:text-md  font-normal mb-2 lg:mb-4">
             Your remote resource at MenloCloud will maintain work logs and
             provide regular updates on the progress of the work.
           </p>
@@ -132,7 +132,7 @@ function Services() {
             <img
               src="https://www.firstlight.net/wp-content/uploads/2021/04/Monitoring-Header.png"
               alt="hero template"
-              className="rounded-lg object-cover h-20 md:h-44 lg:h-[30rem] w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
+              className="rounded-lg object-cover h-60 md:h-44 lg:h-[30rem] w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
             />
           </div>
         </div>
@@ -146,14 +146,14 @@ function Services() {
         <main className="main-wrapper">
           <div className="w-full mb-20  h-[85vh] xl:h-screen bg-no-repeat bg-center bg-cover bg-[url('/assets/img_placeholder/staff.jpg')]">
             <div className="bg-gradient-to-b w-full h-full from-gray-800/40 to-gray-700/30">
-              <div className="global-container flex flex-col justify-around  w-full h-full">
+              <div className="global-container  flex flex-col justify-around  w-full h-full">
                 <div></div>
                 <div></div>
                 <div className="mt-32 xl:mt-0">
-                  <h2 className="font-dmSans font-bold text-gray-50">
+                  <p className="text-3xl lg:text-6xl font-dmSans font-bold text-gray-50">
                     Unlock the Power of <br /> Staff Augmentation
-                  </h2>
-                  <p className="mt-3  leading-relaxed text-sm xl:text-lg text-gray-100 w-[80%] lg:w-2/4">
+                  </p>
+                  <p className="mt-3 leading-relaxed hidden lg:block text-sm xl:text-lg text-gray-100 w-[80%] lg:w-2/4">
                     Staff augmentation is a strategic approach to expanding your
                     team with skilled professionals on a temporary or project
                     basis. It provides the flexibility to adapt to changing
@@ -199,8 +199,8 @@ function Services() {
 
           <section className="mb-32">
             <div className="global-container flex flex-col justify-center items-center">
-              <h2 className="font-Satoshi font-[500]">Why Partner with Us?</h2>
-              <p className="text-md xl:text-lg text-center mt-5 w-full lg:w-2/3 font-Satoshi">
+              <h2 className="font-Satoshi font-[500] text-center">Why Partner with Us?</h2>
+              <p className="text-sm xl:text-lg text-center mt-5 w-full lg:w-2/3 font-Satoshi">
                 Our staff augmentation services offer a seamless way to
                 integrate skilled professionals into your team, ensuring you get
                 the expertise you need when you need it. Here &apos;s why we
@@ -294,7 +294,7 @@ function Services() {
           </section>
           <section className="mb-60">
             <div className="global-container flex justify-center">
-              <h2 className="font-Satoshi font-bold ">Onboarding Process</h2>
+              <h2 className="font-Satoshi font-bold  text-center">Onboarding Process</h2>
             </div>
             <Timeline data={data} />
           </section>
