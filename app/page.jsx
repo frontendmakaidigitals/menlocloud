@@ -679,7 +679,7 @@ function Home() {
             <div className="blue-gradient-2 absolute -left-[100px] top-[64%] -z-[1]  w-[160px] h-[160px] lg:h-[360px] lg:w-[360px] -rotate-[-9.022deg] rounded-[360px]"></div>
           </div>
           <div className="global-container ">
-            <h2 className="text-center text-black">Broad indusrty usage</h2>
+            <h2 className="text-center text-black">Broad Industry usage</h2>
           </div>
           <div className="w-full global-container mt-10 grid grid-cols-1  xl:grid-cols-4 gap-5">
             {industries.map((industry, index) => (
@@ -725,7 +725,7 @@ function Home() {
           <div className="w-full flex flex-col justify-center items-center">
             <p className=" text-2xl my-5 lg:text-6xl">We are</p>
             <h1 className=" font-[800] gradient-text w-fit animate-gradient">
-              Menlo<span className="font-Clash">cloud</span>
+              Menlo<span className="font-Clash">Cloud</span>
             </h1>
 
             <div className="w-full overflow-hidden flex justify-center mt-6 relative">
