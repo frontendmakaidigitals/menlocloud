@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import localFont from "next/font/local";
 import { Inter } from "next/font/google";
@@ -33,7 +33,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export default function RootLayout({ children }) {
   const pathname = usePathname();
-  const [loading, setLoading] = useState(true);
+
   const jos_options = {
     passive: false,
     once: true,
@@ -53,7 +53,7 @@ export default function RootLayout({ children }) {
   useEffect(() => {
     JOS.refresh();
   }, [pathname]);
-  
+
   return (
     <html lang="en">
       <head>
@@ -61,6 +61,11 @@ export default function RootLayout({ children }) {
           href="https://api.fontshare.com/v2/css?f[]=telma@300,400,500&f[]=clash-grotesk@200,300,400,500,600,700&f[]=satoshi@300,400,500,700,900&display=swap"
           rel="stylesheet"
         />
+        <link
+          rel="icon"
+          type="image/x-icon"
+          href="/assets/img_placeholder/logo-icon.png"
+        ></link>
       </head>
       <body
         className={`${DMSans.variable} ${ClashDisplay.variable} ${Raleway.variable} ${SpaceGrotesk.variable} ${inter.variable}`}

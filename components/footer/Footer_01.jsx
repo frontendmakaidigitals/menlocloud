@@ -22,13 +22,14 @@ const Footer_01 = () => {
         <div className="lg grid grid-cols-1 gap-10 py-[60px] md:grid-cols-[1fr_auto_auto] xl:grid-cols-[1fr_auto_auto_1fr] xl:gap-20 xl:py-[100px]">
           {/* Footer Widget */}
           <div className="flex flex-col gap-y-6">
-            <Link href="/" className="inline-block">
-              <span className="text-3xl font-bold font-Satoshi">
+            <Link href="/" className="flex items-center gap-1">
+              <img src={"/assets/img_placeholder/logo-icon.png"} width={40} />
+              <p className="text-xl xl:text-2xl text-gray-900 font-bold font-Satoshi">
                 Menlo
                 <span className="text-sky-500 font-Clash font-[600]">
                   Cloud
                 </span>
-              </span>
+              </p>
             </Link>
             <p>
               Our mission is to harness the power of AI to solve complex

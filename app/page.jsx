@@ -33,13 +33,23 @@ const techLogos = [
   {
     username: "@jane",
 
-    img: "/assets/img_placeholder/google-analytics.png",
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Microsoft_Azure.svg/2048px-Microsoft_Azure.svg.png",
   },
 
   {
     username: "@jack3",
 
-    img: "https://cdn.icon-icons.com/icons2/2699/PNG/512/pytorch_logo_icon_169823.png",
+    img: "https://companieslogo.com/img/orig/SNOW-35164165.png?t=1720244494",
+  },
+  {
+    username: "@jack3",
+
+    img: "/assets/img_placeholder/qlik.png",
+  },
+  {
+    username: "@jack3",
+
+    img: "https://www.svgrepo.com/show/354012/looker-icon.svg",
   },
 ];
 
@@ -290,10 +300,10 @@ function Home() {
       <motion.div
         animate={{
           x: isVisible ? "-50%" : 0,
-          left: isVisible ? "50%" : '95%',
-          rotate: isVisible ? 0 : 180
+          left: isVisible ? "50%" : "90%",
+          rotate: isVisible ? 0 : 180,
         }}
-        transition={{type:'spring', duration:.5}}
+        transition={{ type: "spring", duration: 0.5 }}
         onClick={isVisible ? scrollDown : scrollTop}
         className={`size-16 hidden xl:flex left-1/2 justify-center bottom-10  cursor-pointer z-10  items-center   border border-gray-300 rounded-full fixed  ${
           isVisible
@@ -309,10 +319,10 @@ function Home() {
 
         <section
           id="section-hero"
-          className="h-[75vh] relative xl:h-screen bg-black"
+          className="h-[75vh] relative xl:h-screen overflow-hidden bg-black"
         >
-          <div className="absolute w-full h-full">
-            <video className="w-full h-full object-fill" muted autoPlay loop>
+          <div className="absolute min-w-[1200px] overflow-hidden w-full h-full">
+            <video className="w-full  h-full object-fill" muted autoPlay loop>
               <source src={`/assets/img_placeholder/heroBg.mp4`}></source>
             </video>
           </div>
@@ -320,7 +330,7 @@ function Home() {
 
           <div className="global-container overflow-hidden relative z-5 w-full h-full flex flex-col justify-center items-start">
             <div className=" w-full">
-              <p className="text-gray-50 text-2xl  lg:text-6xl xxl:text-7xl"> 
+              <p className="text-gray-50 text-2xl  lg:text-6xl xxl:text-7xl">
                 We specialize in
               </p>
               <FlipWords
