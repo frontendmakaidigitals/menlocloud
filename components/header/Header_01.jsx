@@ -30,7 +30,7 @@ const Header_01 = () => {
       id='sticky-menu'
       className={`w-full site-header z-[999] transition-all duration-300 fixed ${
         !isVisible
-          ? "bg-gray-700 py-2 rounded-md bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-40 "
+          ? "!bg-gray-900 py-2  "
           : "py-3"
       }  `}
       

@@ -80,8 +80,6 @@ function Services() {
     },
   ];
 
-  
-
   const dummyContent = [
     {
       title: "Web Apps",
@@ -129,8 +127,7 @@ function Services() {
         </>
       ),
       badge: "Java",
-      image:
-        "https://ibrinfotech.b-cdn.net/uploads/erp-solution-1.png",
+      image: "https://ibrinfotech.b-cdn.net/uploads/erp-solution-1.png",
     },
   ];
   return (
@@ -142,28 +139,20 @@ function Services() {
             <HeroParallax products={products} />;
           </div>
         </main>
-        <section className="global-container flex flex-col items-center justify-center">
-          <div className="lg:w-2/3 flex flex-col items-center justify-center w-full">
-            <h2 className="text-center">Our Web Development Services</h2>
-            <p className="text-center mt-3 text-lg">
-              Whether you need a new web app, custom or CMS website, eCommerce
-              store, or an ERP solution, we can handle it all. Improve your
-              business processes and increase profits through our strategic web
-              development services.
-            </p>
+        <section className=" flex flex-col items-center justify-center">
+          <div className="global-container lg:w-2/3 flex flex-col items-center justify-center w-full">
+            <h2 className="text-center">Web Development Services</h2>
           </div>
-          <TracingBeam className="px-6 mt-10">
+          <TracingBeam className="px-12 lg:px-6 mt-10">
             <div className="max-w-2xl mx-auto antialiased pt-6 relative">
               {dummyContent.map((item, index) => (
                 <div key={`content-${index}`} className="mb-10">
-                  <div className="flex items-center mb-2 gap-4">
-                    <p className={"text-3xl text-Satoshi font-[600]"}>
-                      {item.title}
-                    </p>
-                    <h2 className="bg-lime-400 text-gray-900 rounded-full text-sm w-fit px-4 py-1">
-                      {item.badge}
-                    </h2>
-                  </div>
+                  <p className={"text-3xl text-Satoshi font-[600]"}>
+                    {item.title}
+                  </p>
+                  <h2 className="bg-lime-400 text-gray-900 rounded-full text-sm w-fit px-4 mb-4 mt-1 py-1">
+                    {item.badge}
+                  </h2>
 
                   <div className="text-sm prose prose-sm dark:prose-invert">
                     {item?.image && (
