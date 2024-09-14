@@ -26,7 +26,7 @@ const Footer_01 = () => {
               <span className="text-3xl font-bold font-Satoshi">
                 Menlo
                 <span className="text-sky-500 font-Clash font-[600]">
-                  cloud
+                  Cloud
                 </span>
               </span>
             </Link>
