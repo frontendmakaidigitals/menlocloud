@@ -208,14 +208,14 @@ function Home() {
   const [isTopVisible, setIsTop] = useState(false);
   const parentVariants = {
     hover: {
-      scale: 1.05, // Scale up the parent a bit
+      scale: 1.02, // Scale up the parent a bit
     },
   };
   const swiperRef = useRef(null);
   const headerVariant = {
     initial: {
       fontSize: "2.4rem",
-      y: 100, // Start below
+      y: 80, // Start below
     },
     hover: {
       y: 0,
@@ -409,10 +409,10 @@ function Home() {
                       variants={headerVariant}
                       className="w-full leading-snug"
                     >
-                      Web Development
+                      Data analytics
                     </motion.p>
 
-                    <div className="">
+                    <div className="w-full">
                       <motion.p
                         variants={contentVariant}
                         className=" text-sm font-medium"
@@ -442,10 +442,10 @@ function Home() {
                       variants={headerVariant}
                       className="w-full leading-snug"
                     >
-                      Digital Transformation
+                      Generative AI
                     </motion.p>
 
-                    <div className="">
+                    <div className="w-full">
                       <motion.p
                         variants={contentVariant}
                         className=" text-sm font-medium"
@@ -475,10 +475,10 @@ function Home() {
                       variants={headerVariant}
                       className="w-full leading-snug"
                     >
-                      White Label Services
+                      Cloud transformation
                     </motion.p>
 
-                    <div className="">
+                    <div className="w-full">
                       <motion.p
                         variants={contentVariant}
                         className=" text-sm font-medium"
@@ -508,10 +508,10 @@ function Home() {
                       variants={headerVariant}
                       className="w-full leading-snug"
                     >
-                      App Development
+                      Mobil App Dev
                     </motion.p>
 
-                    <div className="">
+                    <div className="w-full">
                       <motion.p
                         variants={contentVariant}
                         className=" text-sm font-medium"
@@ -541,11 +541,10 @@ function Home() {
                       variants={headerVariant}
                       className="w-full leading-snug"
                     >
-                      Hire <br />
-                      Developers
+                      Web development
                     </motion.p>
 
-                    <div className="">
+                    <div className="w-full">
                       <motion.p
                         variants={contentVariant}
                         className=" text-sm font-medium"
@@ -575,10 +574,10 @@ function Home() {
                       variants={headerVariant}
                       className="w-full  leading-snug"
                     >
-                      Hire <br /> Marketers
+                      Digital marketing
                     </motion.p>
 
-                    <div className="">
+                    <div className="w-full">
                       <motion.p
                         variants={contentVariant}
                         className=" text-sm font-medium"
@@ -608,44 +607,10 @@ function Home() {
                       variants={headerVariant}
                       className="w-full  leading-snug"
                     >
-                      Hire <br />
-                      Testers
+                      Staff augmentation (TBD)
                     </motion.p>
 
-                    <div className="">
-                      <motion.p
-                        variants={contentVariant}
-                        className=" text-sm font-medium"
-                      >
-                        Some random text written may be lorem ipsum{" "}
-                      </motion.p>
-                      <div className="w-full">
-                        <motion.button
-                          variants={buttonVariant}
-                          className="bg-blue-500 hover:bg-blue-400 font-Satoshi font-medium rounded-lg text-sm px-4 py-2 mt-2"
-                        >
-                          Learn More
-                        </motion.button>
-                      </div>
-                    </div>
-                  </motion.div>
-                </motion.li>
-                <motion.li
-                  variants={parentVariants}
-                  initial="initial"
-                  whileHover="hover"
-                  className="overflow-hidden group h-[400px ] lg:h-[450px] relative cursor-pointer   shadow-md border border-gray-400  rounded-[10px] w-full bg-red-500"
-                >
-                  <div className="w-full bg-no-repeat bg-center bg-cover h-full bg-[url('https://images.pexels.com/photos/6322370/pexels-photo-6322370.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] scale-[1.2] group-hover:scale-[1.5] duration-300  absolute top-0 left-0 transition-all"></div>
-                  <motion.div className="relative h-full flex flex-col justify-end  items-end z-3 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent text-gray-50 font-bold  font-Satoshi px-5 py-7 rounded-[10px] w-full ">
-                    <motion.p
-                      variants={headerVariant}
-                      className="w-full leading-snug"
-                    >
-                      Hire <br /> Designers
-                    </motion.p>
-
-                    <div className="">
+                    <div className="w-full">
                       <motion.p
                         variants={contentVariant}
                         className=" text-sm font-medium"
@@ -669,7 +634,7 @@ function Home() {
               <div className="w-full  overflow-hidden flex justify-center mt-6 relative">
                 <button className="button group rounded-[50px]  relative   bg-black py-3 text-white  ">
                   <div className="bg-blue-500  size-1 group-hover:scale-[50] transition-all duration-500 rounded-full absolute top-[110%] left-1/2 -translate-x-1/2  -translate-y-1/2"></div>
-                  <span className="relative z-5"> Explore more</span>
+                  <span className="relative z-5"> learn more</span>
                 </button>
               </div>
               {/* Service List */}
