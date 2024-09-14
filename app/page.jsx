@@ -358,7 +358,7 @@ function Home() {
                   className={`text-3xl lg:text-7xl font-[900] font-Satoshi`}
                   color={exp.color}
                 />
-                <p className="font-Satoshi text-md lg:text-xl font-medium">
+                <p className="font-Satoshi text-center text-sm lg:text-xl font-medium">
                   {exp.name}
                 </p>
               </div>
