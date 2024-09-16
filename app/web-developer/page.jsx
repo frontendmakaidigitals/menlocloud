@@ -6,8 +6,12 @@ import { TracingBeam } from "@/components/ui/tracing-beam";
 import { SwiperSlide, Swiper } from "swiper/react";
 import { twMerge } from "tailwind-merge";
 import "swiper/css";
+import { useState, useRef } from "react";
 import { Timeline } from "@/components/ui/timeline";
+import SwiperNavButtons from "@/components/SwiperNavButton";
+
 function Services() {
+  const swiperRef = useRef(null);
   const products = [
     {
       title: "Insight Vision",
@@ -198,7 +202,7 @@ function Services() {
 
           <div className="">
             <img
-              src="https://www.projectmanager.com/wp-content/uploads/2023/05/Resource-Optimization.jpg"
+              src="https://images.unsplash.com/photo-1622676666769-1a0407cf10a7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="startup template"
               className="rounded-lg object-cover h-60 md:h-44 lg:h-[30rem] w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
             />
@@ -217,7 +221,7 @@ function Services() {
 
           <div className="">
             <img
-              src="https://www.proclinical.com/img/dxMB0y2fUkX69QjW-32sXA/how+to+spot+a+great+candidate+at+interview.jpg?v=cbbb5d01d08ad7bdf659ba32cd053aa1"
+              src="https://images.unsplash.com/photo-1680016661694-1cd3faf31c3a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="startup template"
               className="rounded-lg object-cover h-60 md:h-44 lg:h-[30rem] w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
             />
@@ -237,7 +241,7 @@ function Services() {
 
           <div className="">
             <img
-              src="https://media.licdn.com/dms/image/D5612AQGqKDWRA3L23A/article-cover_image-shrink_720_1280/0/1692817692297?e=2147483647&v=beta&t=tFbcP3EjhgnYbOGsznY5O2KbnCP8Y8DPIKdWsH3q4UY"
+              src="https://images.unsplash.com/photo-1531497865144-0464ef8fb9a9?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="startup template"
               className="rounded-lg object-cover h-60 md:h-44 lg:h-[30rem] w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
             />
@@ -257,7 +261,7 @@ function Services() {
           <div className="mb-8"></div>
           <div className="">
             <img
-              src="https://www.firstlight.net/wp-content/uploads/2021/04/Monitoring-Header.png"
+              src="https://images.unsplash.com/photo-1528901166007-3784c7dd3653?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="hero template"
               className="rounded-lg object-cover h-60 md:h-44 lg:h-[30rem] w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
             />
@@ -266,6 +270,7 @@ function Services() {
       ),
     },
   ];
+
   return (
     <>
       <div className="page-wrapper relative">
@@ -341,19 +346,37 @@ function Services() {
           </div>
           <Timeline data={data} />
         </section>
-        <section className="global-container my-40">
-          <div className="w-full flex justify-center mb-14">
+        <section className="global-container my-40 ">
+          <div className="w-full flex justify-center items-end mb-14">
             <h2 className="text-center w-full xl:w-2/3">
               Web Development Capabilities
             </h2>
           </div>
-          <Swiper autoplay spaceBetween={50} slidesPerView={3}>
+          <div className="w-full hidden lg:flex justify-end mb-5">
+            <SwiperNavButtons swiperRef={swiperRef} />
+          </div>
+          <Swiper
+            ref={swiperRef}
+            spaceBetween={10}
+            loop={true}
+            breakpoints={{
+              320: {
+                slidesPerView: 1.1, // 2 slides for screens >= 640px
+              },
+              768: {
+                slidesPerView: 3, // 3 slides for screens >= 768px
+              },
+              1024: {
+                slidesPerView: 3, // 4 slides for screens >= 1024px
+              },
+            }}
+          >
             {capabilities.map((capability, index) => (
               <SwiperSlide
                 className="w-full group transition-all duration-500"
                 key={index}
               >
-                <div className="w-full h-full bg-neutral-200 relative hover:bg-black px-7 py-10 min-h-[300px] rounded-md">
+                <div className="w-full h-full bg-neutral-200 relative hover:bg-black px-7 py-10 min-h-[600px] lg:min-h-[400px] rounded-md">
                   <div className="relative z-10">
                     <h4 className="group-hover:text-blue-500 ">
                       {" "}
