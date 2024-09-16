@@ -1,13 +1,9 @@
 "use client";
 import Footer_01 from "@/components/footer/Footer_01";
 import Header_01 from "@/components/header/Header_01";
-import SwiperNavButtons from "@/components/SwiperNavButton";
-import { GoArrowUpRight } from "react-icons/go";
+
 import "swiper/css";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { useRef, useState } from "react";
-import { motion } from "framer-motion";
-import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+
 import { Timeline } from "@/components/ui/timeline";
 function Services() {
   const services = [
@@ -199,7 +195,9 @@ function Services() {
 
           <section className="mb-32">
             <div className="global-container flex flex-col justify-center items-center">
-              <h2 className="font-Satoshi font-[500] text-center">Why Partner with Us?</h2>
+              <h2 className="font-Satoshi font-[500] text-center">
+                Why Partner with Us?
+              </h2>
               <p className="text-sm xl:text-lg text-center mt-5 w-full lg:w-2/3 font-Satoshi">
                 Our staff augmentation services offer a seamless way to
                 integrate skilled professionals into your team, ensuring you get
@@ -294,7 +292,9 @@ function Services() {
           </section>
           <section className="mb-60">
             <div className="global-container flex justify-center">
-              <h2 className="font-Satoshi font-bold  text-center">Onboarding Process</h2>
+              <h2 className="font-Satoshi font-bold  text-center">
+                Onboarding Process
+              </h2>
             </div>
             <Timeline data={data} />
           </section>
