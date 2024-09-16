@@ -245,18 +245,18 @@ function Services() {
               })}
             </div>
           </div>
-          <div className="w-full px-4 lg:px-10 lg:h-full h-auto mt-20 justify-start gap-5 items-start flex flex-col md:flex-row ">
+          <div className="w-full px-4 lg:px-10 lg:h-full h-auto mt-10 lg:mt-20  justify-start gap-5 items-start flex flex-col md:flex-row ">
             <div className="w-auto max-w-[800px]">
-              <p className="text-3xl md:text-4xl xxl:text-5xl capitalize">
+              <p className="text-3xl text-center lg:text-start md:text-4xl xxl:text-5xl capitalize">
                 {tabs[tabSelected].name}
               </p>
-              <p className="text-sm !leading-loose xxl:text-lg  mt-3">
+              <p className="text-sm !leading-loose  text-center lg:text-start xxl:text-lg  mt-3">
                 {tabs[tabSelected].data}
               </p>
-              <p className="mt-5 text-lg  xxl:text-2xl font-semibold">
+              <p className="mt-5 text-lg  text-center lg:text-start xxl:text-2xl font-semibold">
                 Industires include:
               </p>
-              <div className="mt-2">
+              <div className="mt-2 w-full flex flex-col justify-center items-center lg:items-start">
                 {tabs[tabSelected].points.map((point, index) => (
                   <p className="text-sm xxl:text-lg mt-1" key={index}>
                     {point}
@@ -264,9 +264,11 @@ function Services() {
                 ))}
               </div>
 
-              <button className="button rounded-[50px] mt-10 border-2 border-black bg-transparent py-3 text-black after:bg-[#2962FF] hover:border-[#2962FF] hover:text-white">
-                Learn more
-              </button>
+              <div className="w-full flex justify-center lg:justify-start">
+                <button className="button rounded-[50px] mt-10 border-2 border-black bg-transparent py-3 text-black after:bg-[#2962FF] hover:border-[#2962FF] hover:text-white">
+                  Learn more
+                </button>
+              </div>
             </div>
             <div className="bg-gray-100 w-full lg:w-[21rem]  lg:mt-0 min-w-[350px] pb-7 rounded-xl ">
               <div className=" rounded-xl w-full bg-[url('https://images.unsplash.com/photo-1531538512164-e6c51ea63d20?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-no-repeat bg-center bg-cover h-[300px] lg:h-[330px]"></div>
@@ -283,11 +285,13 @@ function Services() {
         {/* Service Section */}
         <section className="mb-40 mt-20 global-container">
           <div>
-            <div className="flex  justify-between items-center">
-              <h2 className="text-gray-900">2024 Industry Outlooks </h2>
-              <div className="hidden lg:flex">
-                <SwiperNavButtons swiperRef={swiperRef} />
-              </div>
+            <div className="flex  justify-center items-center">
+              <h2 className="text-gray-900 text-center">
+                2024 Industry Outlooks{" "}
+              </h2>
+            </div>
+            <div className="w-full hidden lg:flex justify-end mb-5">
+              <SwiperNavButtons swiperRef={swiperRef} />
             </div>
             <Swiper
               ref={swiperRef}
