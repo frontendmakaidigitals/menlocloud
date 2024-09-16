@@ -189,11 +189,11 @@ function Services() {
           </p>
         </section>
         <div
-          className={`bg-blue-500 block  lg:hidden px-4 py-3 transition-all duration-200   w-full `}
+          className={`bg-sky-400 block  lg:hidden px-4 py-3 transition-all duration-200   w-full `}
         >
           <p
             onClick={() => setMobileTabs(!mobileTabs)}
-            className="flex w-full capitalize items-center gap-1"
+            className="flex w-full capitalize items-center gap-1 font-[700] font-Satoshi"
           >
             {tabs[tabSelected].name}
             <span>
@@ -217,7 +217,7 @@ function Services() {
                           setTabSelected(index);
                           setMobileTabs(false);
                         }}
-                        className="mt-5 text-[1rem] xxl:text-[.8vw]   hover:underline cursor-pointer uppercase"
+                        className={`mt-5 text-[1rem] xxl:text-[.8vw] hover:underline cursor-pointer font-Satoshi uppercase font-[500]`}
                       >
                         {service.name}
                       </p>

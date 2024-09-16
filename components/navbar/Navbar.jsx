@@ -250,7 +250,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                   </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <Link href="/" legacyBehavior passHref>
+                  <Link href="/contact" legacyBehavior passHref>
                     <NavigationMenuLink
                       className={`${navigationMenuTriggerStyle()} bg-transparent`}
                     >
@@ -265,7 +265,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
             <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="item-1">
                 <AccordionTrigger className={`tracking-tight`}>
-                  Services
+                  <Link href={"/services"}>Services</Link>
                 </AccordionTrigger>
                 <AccordionContent>
                   <div className="h-[400px] overflow-scroll">
@@ -298,7 +298,9 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                       </p>
                     </div>
                     <div className="px-5 py-5  hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
-                      <p className="text-md font-bold">Web Development</p>
+                      <Link href={"/web-developer"}>
+                        <p className="text-md font-bold">Web Development</p>
+                      </Link>
                       <p className="text-sm font-medium mt-1 text-gray-600">
                         Transforming business operations with next-generation
                         cloud modernization
@@ -311,7 +313,6 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                         precise implementation
                       </p>
                     </div>
-                 
                   </div>
                 </AccordionContent>
               </AccordionItem>
@@ -410,7 +411,9 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
               <p className="text-sm font-semibold py-4 border-b ">About us</p>
             </div>
             <div>
-              <p className="text-sm font-semibold py-4 border-b ">Contact</p>
+              <Link href={"/contact"}>
+                <p className="text-sm font-semibold py-4 border-b ">Contact</p>
+              </Link>
             </div>
           </div>
         </ul>
