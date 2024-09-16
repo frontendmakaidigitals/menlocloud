@@ -382,320 +382,261 @@ function Home() {
             {/* Section Container */}
             <div className="global-container">
               {/* Section Content Block */}
-              <div className="jos mb-10 lg:mb-16 xl:mb-20">
-                <div className="w-full flex justify-center ">
-                  <h2>Services</h2>
+              <div className="jos mb-10 lg:mb-10 xl:mb-10">
+                <div className="global-container">
+                  <h2 className="text-center">Services</h2>
                 </div>
               </div>
               {/* Section Content Block */}
               {/* Service List */}
-              <ul className="jos grid grid-cols-1 gap-[2px] overflow-hidden rounded-[10px] border-2 border-black bg-black sm:grid-cols-2 lg:grid-cols-3">
+
+              <ul className="jos py-4 bg-background  relative overflow-hidden grid grid-cols-1 gap-x-5 gap-y-5  sm:grid-cols-2 lg:grid-cols-4">
                 {/* Service Item */}
-                <li className="group bg-white p-[30px] transition-all duration-300 ease-in-out hover:bg-black">
-                  <div className="relative mb-9 h-[70px] w-[70px]">
-                    <img
-                      src="/assets/img_placeholder/th-1/service-icon-black-1.svg"
-                      alt=""
-                      width="70"
-                      height="70"
-                    />
-                    <img
-                      src="/assets/img_placeholder/th-1/service-icon-orange-1.svg"
-                      alt="service-icon-orange-1"
-                      width="70"
-                      height="70"
-                      className="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100"
-                    />
-                  </div>
-                  <h3 className="mb-4 block text-xl leading-tight -tracking-[0.5px] group-hover:text-white xl:text-2xl xxl:text-[28px]">
-                    <button
-                      href="/service-details"
-                      className="hover:text-blue-300"
+                <DotPattern
+                  className={cn(
+                    "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]"
+                  )}
+                />
+                <motion.li
+                  variants={parentVariants}
+                  initial="initial"
+                  whileHover="hover"
+                  className="overflow-hidden group h-[400px ] xl:h-[550px] relative cursor-pointer   shadow-md border border-gray-400  rounded-[10px] w-full bg-red-500"
+                >
+                  <div className="w-full bg-no-repeat bg-center bg-cover h-full bg-[url('https://images.pexels.com/photos/20500268/pexels-photo-20500268/free-photo-of-calculator.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] scale-[1.2] group-hover:scale-[1.5] duration-300  absolute top-0 left-0 transition-all"></div>
+                  <motion.div className="relative h-full flex flex-col justify-end  items-end z-3 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent text-gray-50 font-bold  font-Satoshi px-5 py-7 rounded-[10px] w-full ">
+                    <motion.p
+                      variants={headerVariant}
+                      className="w-full leading-snug"
                     >
                       Data analytics
-                    </button>
-                  </h3>
+                    </motion.p>
 
-                  <p className="mb-12 duration-300 group-hover:text-white">
-                    This is an excellent option for people & small businesses
-                    who are starting out.
-                  </p>
-
-                  <button
-                    href="/service-details"
-                    className="relative inline-block h-[30px] w-[30px] duration-300"
-                  >
-                    <img
-                      src="/assets/img_placeholder/th-1/arrow-right-black.svg"
-                      alt="arrow-right-black"
-                      width="30"
-                      height="30"
-                    />
-                    <img
-                      src="/assets/img_placeholder/th-1/arrow-right-orange.svg"
-                      alt="arrow-right-black"
-                      width="30"
-                      height="30"
-                      className="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100"
-                    />
-                  </button>
-                </li>
-                {/* Service Item */}
-                {/* Service Item */}
-                <li className="group bg-white p-[30px] transition-all duration-300 ease-in-out hover:bg-black">
-                  <div className="relative mb-9 h-[70px] w-[70px]">
-                    <img
-                      src="/assets/img_placeholder/th-1/service-icon-black-2.svg"
-                      alt="service-icon-black-2"
-                      width="70"
-                      height="70"
-                    />
-                    <img
-                      src="/assets/img_placeholder/th-1/service-icon-orange-2.svg"
-                      alt="service-icon-orange-1"
-                      width="70"
-                      height="70"
-                      className="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100"
-                    />
-                  </div>
-
-                  <h3 className="mb-4 block text-xl leading-tight -tracking-[0.5px] group-hover:text-white xl:text-2xl xxl:text-[28px]">
-                    <button
-                      href="/service-details"
-                      className="hover:text-blue-300"
+                    <div className="w-full">
+                      <motion.p
+                        variants={contentVariant}
+                        className=" text-sm font-medium"
+                      >
+                        Some random text written may be lorem ipsum{" "}
+                      </motion.p>
+                      <div className="w-full">
+                        <motion.button
+                          variants={buttonVariant}
+                          className="bg-blue-500 hover:bg-blue-400 font-Satoshi font-medium rounded-lg text-sm px-4 py-2 mt-2"
+                        >
+                          Learn More
+                        </motion.button>
+                      </div>
+                    </div>
+                  </motion.div>
+                </motion.li>
+                <motion.li
+                  variants={parentVariants}
+                  initial="initial"
+                  whileHover="hover"
+                  className="overflow-hidden group h-[400px ] xl:h-[550px] relative cursor-pointer   shadow-md border border-gray-400  rounded-[10px] w-full bg-red-500"
+                >
+                  <div className="w-full bg-no-repeat bg-center bg-cover h-full bg-[url('https://images.pexels.com/photos/18069491/pexels-photo-18069491/free-photo-of-an-artist-s-illustration-of-artificial-intelligence-ai-this-image-depicts-the-potential-of-ai-for-society-through-3d-visualisations-it-was-created-by-novoto-studio-as-part-of-the-visua.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] scale-[1.2] group-hover:scale-[1.5] duration-300  absolute top-0 left-0 transition-all"></div>
+                  <motion.div className="relative h-full flex flex-col justify-end  items-end z-3 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent text-gray-50 font-bold  font-Satoshi px-5 py-7 rounded-[10px] w-full ">
+                    <motion.p
+                      variants={headerVariant}
+                      className="w-full leading-snug"
                     >
                       Generative AI
-                    </button>
-                  </h3>
+                    </motion.p>
 
-                  <p className="mb-12 duration-300 group-hover:text-white">
-                    This is an excellent option for people & small businesses
-                    who are starting out.
-                  </p>
-
-                  <button
-                    href="/service-details"
-                    className="relative inline-block h-[30px] w-[30px] duration-300"
-                  >
-                    <img
-                      src="/assets/img_placeholder/th-1/arrow-right-black.svg"
-                      alt="arrow-right-black"
-                      width="30"
-                      height="30"
-                    />
-                    <img
-                      src="/assets/img_placeholder/th-1/arrow-right-orange.svg"
-                      alt="arrow-right-black"
-                      width="30"
-                      height="30"
-                      className="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100"
-                    />
-                  </button>
-                  {/* Features Item */}
-                  {/* Features Item */}
-                </li>
-                {/* Service Item */}
-                {/* Service Item */}
-                <li className="group bg-white p-[30px] transition-all duration-300 ease-in-out hover:bg-black">
-                  <div className="relative mb-9 h-[70px] w-[70px]">
-                    <img
-                      src="/assets/img_placeholder/th-1/service-icon-black-3.svg"
-                      alt="service-icon-black-3"
-                      width="70"
-                      height="70"
-                    />
-                    <img
-                      src="/assets/img_placeholder/th-1/service-icon-orange-3.svg"
-                      alt="service-icon-orange-3"
-                      width="70"
-                      height="70"
-                      className="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100"
-                    />
-                  </div>
-                  <h3 className="mb-4 block text-xl leading-tight -tracking-[0.5px] group-hover:text-white xl:text-2xl xxl:text-[28px]">
-                    <button
-                      href="/service-details"
-                      className="hover:text-blue-300"
+                    <div className="w-full">
+                      <motion.p
+                        variants={contentVariant}
+                        className=" text-sm font-medium"
+                      >
+                        Some random text written may be lorem ipsum{" "}
+                      </motion.p>
+                      <div className="w-full">
+                        <motion.button
+                          variants={buttonVariant}
+                          className="bg-blue-500 hover:bg-blue-400 font-Satoshi font-medium rounded-lg text-sm px-4 py-2 mt-2"
+                        >
+                          Learn More
+                        </motion.button>
+                      </div>
+                    </div>
+                  </motion.div>
+                </motion.li>
+                <motion.li
+                  variants={parentVariants}
+                  initial="initial"
+                  whileHover="hover"
+                  className="overflow-hidden group h-[400px ] xl:h-[550px] relative cursor-pointer   shadow-md border border-gray-400  rounded-[10px] w-full bg-red-500"
+                >
+                  <div className="w-full bg-no-repeat bg-center bg-cover h-full bg-[url('https://images.pexels.com/photos/1054397/pexels-photo-1054397.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] scale-[1.2] group-hover:scale-[1.5] duration-300  absolute top-0 left-0 transition-all"></div>
+                  <motion.div className="relative h-full flex flex-col justify-end  items-end z-3 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent text-gray-50 font-bold  font-Satoshi px-5 py-7 rounded-[10px] w-full ">
+                    <motion.p
+                      variants={headerVariant}
+                      className="w-full leading-snug"
                     >
                       Cloud transformation
-                    </button>
-                  </h3>
+                    </motion.p>
 
-                  <p className="mb-12 duration-300 group-hover:text-white">
-                    This is an excellent option for people & small businesses
-                    who are starting out.
-                  </p>
-
-                  <button
-                    href="/service-details"
-                    className="relative inline-block h-[30px] w-[30px] duration-300"
-                  >
-                    <img
-                      src="/assets/img_placeholder/th-1/arrow-right-black.svg"
-                      alt="arrow-right-black"
-                      width="30"
-                      height="30"
-                    />
-                    <img
-                      src="/assets/img_placeholder/th-1/arrow-right-orange.svg"
-                      alt="arrow-right-black"
-                      width="30"
-                      height="30"
-                      className="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100"
-                    />
-                  </button>
-                </li>
-                {/* Service Item */}
-                {/* Service Item */}
-                <li className="group bg-white p-[30px] transition-all duration-300 ease-in-out hover:bg-black">
-                  <div className="relative mb-9 h-[70px] w-[70px]">
-                    <img
-                      src="/assets/img_placeholder/th-1/service-icon-black-4.svg"
-                      alt="service-icon-black-4"
-                      width="70"
-                      height="70"
-                    />
-                    <img
-                      src="/assets/img_placeholder/th-1/service-icon-orange-4.svg"
-                      alt="service-icon-orange-4"
-                      width="70"
-                      height="70"
-                      className="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100"
-                    />
-                  </div>
-                  <h3 className="mb-4 block text-xl leading-tight -tracking-[0.5px] group-hover:text-white xl:text-2xl xxl:text-[28px]">
-                    <button
-                      href="/service-details"
-                      className="hover:text-blue-300"
+                    <div className="w-full">
+                      <motion.p
+                        variants={contentVariant}
+                        className=" text-sm font-medium"
+                      >
+                        Some random text written may be lorem ipsum{" "}
+                      </motion.p>
+                      <div className="w-full">
+                        <motion.button
+                          variants={buttonVariant}
+                          className="bg-blue-500 hover:bg-blue-400 font-Satoshi font-medium rounded-lg text-sm px-4 py-2 mt-2"
+                        >
+                          Learn More
+                        </motion.button>
+                      </div>
+                    </div>
+                  </motion.div>
+                </motion.li>
+                <motion.li
+                  variants={parentVariants}
+                  initial="initial"
+                  whileHover="hover"
+                  className="overflow-hidden group h-[400px ] xl:h-[550px] relative cursor-pointer   shadow-md border border-gray-400  rounded-[10px] w-full bg-red-500"
+                >
+                  <div className="w-full bg-no-repeat bg-right bg-cover h-full bg-[url('https://images.pexels.com/photos/5082578/pexels-photo-5082578.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] scale-[1.2] group-hover:scale-[1.5] duration-300  absolute top-0 left-0 transition-all"></div>
+                  <motion.div className="relative h-full flex flex-col justify-end  items-end z-3 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent text-gray-50 font-bold  font-Satoshi px-5 py-7 rounded-[10px] w-full ">
+                    <motion.p
+                      variants={headerVariant}
+                      className="w-full leading-snug"
                     >
-                      Mobile App Development
-                    </button>
-                  </h3>
+                      Mobil App Dev
+                    </motion.p>
 
-                  <p className="mb-12 duration-300 group-hover:text-white">
-                    This is an excellent option for people & small businesses
-                    who are starting out.
-                  </p>
-
-                  <button
-                    href="/service-details"
-                    className="relative inline-block h-[30px] w-[30px] duration-300"
-                  >
-                    <img
-                      src="/assets/img_placeholder/th-1/arrow-right-black.svg"
-                      alt="arrow-right-black"
-                      width="30"
-                      height="30"
-                    />
-                    <img
-                      src="/assets/img_placeholder/th-1/arrow-right-orange.svg"
-                      alt="arrow-right-black"
-                      width="30"
-                      height="30"
-                      className="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100"
-                    />
-                  </button>
-                </li>
-                <li className="group bg-white p-[30px] transition-all duration-300 ease-in-out hover:bg-black">
-                  <div className="relative mb-9 h-[60px] w-[60px]">
-                    <img
-                      src="/assets/img_placeholder/th-1/mobile-dev-blue.svg"
-                      alt="service-icon-black-4"
-                      width="60"
-                      height="60"
-                    />
-                    <img
-                      src="/assets/img_placeholder/th-1/mobile-dev-black.svg"
-                      alt="service-icon-orange-4"
-                      width="60"
-                      height="60"
-                      className="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100"
-                    />
-                  </div>
-                  <h3 className="mb-4 block text-xl leading-tight -tracking-[0.5px] group-hover:text-white xl:text-2xl xxl:text-[28px]">
-                    <button
-                      href="/service-details"
-                      className="hover:text-blue-300"
+                    <div className="w-full">
+                      <motion.p
+                        variants={contentVariant}
+                        className=" text-sm font-medium"
+                      >
+                        Some random text written may be lorem ipsum{" "}
+                      </motion.p>
+                      <div className="w-full">
+                        <motion.button
+                          variants={buttonVariant}
+                          className="bg-blue-500 hover:bg-blue-400 font-Satoshi font-medium rounded-lg text-sm px-4 py-2 mt-2"
+                        >
+                          Learn More
+                        </motion.button>
+                      </div>
+                    </div>
+                  </motion.div>
+                </motion.li>
+                <motion.li
+                  variants={parentVariants}
+                  initial="initial"
+                  whileHover="hover"
+                  className="overflow-hidden group h-[400px ] xl:h-[550px] relative cursor-pointer   shadow-md border border-gray-400  rounded-[10px] w-full bg-red-500"
+                >
+                  <div className="w-full bg-no-repeat bg-center bg-cover h-full bg-[url('https://images.pexels.com/photos/3861959/pexels-photo-3861959.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] scale-[1.2] group-hover:scale-[1.5] duration-300  absolute top-0 left-0 transition-all"></div>
+                  <motion.div className="relative h-full flex flex-col justify-end  items-end z-3 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent text-gray-50 font-bold  font-Satoshi px-5 py-7 rounded-[10px] w-full ">
+                    <motion.p
+                      variants={headerVariant}
+                      className="w-full leading-snug"
                     >
                       Web development
-                    </button>
-                  </h3>
+                    </motion.p>
 
-                  <p className="mb-12 duration-300 group-hover:text-white">
-                    This is an excellent option for people & small businesses
-                    who are starting out.
-                  </p>
-
-                  <button
-                    href="/service-details"
-                    className="relative inline-block h-[30px] w-[30px] duration-300"
-                  >
-                    <img
-                      src="/assets/img_placeholder/th-1/arrow-right-black.svg"
-                      alt="arrow-right-black"
-                      width="30"
-                      height="30"
-                    />
-                    <img
-                      src="/assets/img_placeholder/th-1/arrow-right-orange.svg"
-                      alt="arrow-right-black"
-                      width="30"
-                      height="30"
-                      className="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100"
-                    />
-                  </button>
-                </li>
-                <li className="group bg-white p-[30px] transition-all duration-300 ease-in-out hover:bg-black">
-                  <div className="relative mb-9 h-[60px] w-[60px]">
-                    <img
-                      src="/assets/img_placeholder/th-1/digital-black.svg"
-                      alt="service-icon-black-4"
-                      width="60"
-                      height="60"
-                    />
-                    <img
-                      src="/assets/img_placeholder/th-1/digital-blue.svg"
-                      alt="service-icon-orange-4"
-                      width="60"
-                      height="60"
-                      className="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100"
-                    />
-                  </div>
-                  <h3 className="mb-4 block text-xl leading-tight -tracking-[0.5px] group-hover:text-white xl:text-2xl xxl:text-[28px]">
-                    <button
-                      href="/service-details"
-                      className="hover:text-blue-300"
+                    <div className="w-full">
+                      <motion.p
+                        variants={contentVariant}
+                        className=" text-sm font-medium"
+                      >
+                        Some random text written may be lorem ipsum{" "}
+                      </motion.p>
+                      <div className="w-full">
+                        <motion.button
+                          variants={buttonVariant}
+                          className="bg-blue-500 hover:bg-blue-400 font-Satoshi font-medium rounded-lg text-sm px-4 py-2 mt-2"
+                        >
+                          Learn More
+                        </motion.button>
+                      </div>
+                    </div>
+                  </motion.div>
+                </motion.li>
+                <motion.li
+                  variants={parentVariants}
+                  initial="initial"
+                  whileHover="hover"
+                  className="overflow-hidden group h-[400px ] xl:h-[550px] relative cursor-pointer   shadow-md border border-gray-400  rounded-[10px] w-full bg-red-500"
+                >
+                  <div className="w-full bg-no-repeat bg-center bg-cover h-full bg-[url('https://images.pexels.com/photos/6476191/pexels-photo-6476191.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] scale-[1.2] group-hover:scale-[1.5] duration-300  absolute top-0 left-0 transition-all"></div>
+                  <motion.div className="relative h-full flex flex-col justify-end  items-end z-3 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent text-gray-50 font-bold  font-Satoshi px-5 py-7 rounded-[10px] w-full ">
+                    <motion.p
+                      variants={headerVariant}
+                      className="w-full  leading-snug"
                     >
-                      Digital marketing
-                    </button>
-                  </h3>
+                      Digital marketing
+                    </motion.p>
 
-                  <p className="mb-12 duration-300 group-hover:text-white">
-                    This is an excellent option for people & small businesses
-                    who are starting out.
-                  </p>
+                    <div className="w-full">
+                      <motion.p
+                        variants={contentVariant}
+                        className=" text-sm font-medium"
+                      >
+                        Some random text written may be lorem ipsum{" "}
+                      </motion.p>
+                      <div className="w-full">
+                        <motion.button
+                          variants={buttonVariant}
+                          className="bg-blue-500 hover:bg-blue-400 font-Satoshi font-medium rounded-lg text-sm px-4 py-2 mt-2"
+                        >
+                          Learn More
+                        </motion.button>
+                      </div>
+                    </div>
+                  </motion.div>
+                </motion.li>
+                <motion.li
+                  variants={parentVariants}
+                  initial="initial"
+                  whileHover="hover"
+                  className="overflow-hidden group h-[400px ] xl:h-[550px] relative cursor-pointer   shadow-md border border-gray-400  rounded-[10px] w-full bg-red-500"
+                >
+                  <div className="w-full bg-no-repeat bg-center bg-cover h-full bg-[url('https://images.pexels.com/photos/7731380/pexels-photo-7731380.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')] scale-[1.2] group-hover:scale-[1.5] duration-300  absolute top-0 left-0 transition-all"></div>
+                  <motion.div className="relative h-full flex flex-col justify-end  items-end z-3 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent text-gray-50 font-bold  font-Satoshi px-5 py-7 rounded-[10px] w-full ">
+                    <motion.p
+                      variants={headerVariant}
+                      className="w-full  leading-snug"
+                    >
+                      Staff augmentation (TBD)
+                    </motion.p>
 
-                  <button
-                    href="/service-details"
-                    className="relative inline-block h-[30px] w-[30px] duration-300"
-                  >
-                    <img
-                      src="/assets/img_placeholder/th-1/arrow-right-black.svg"
-                      alt="arrow-right-black"
-                      width="30"
-                      height="30"
-                    />
-                    <img
-                      src="/assets/img_placeholder/th-1/arrow-right-orange.svg"
-                      alt="arrow-right-black"
-                      width="30"
-                      height="30"
-                      className="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100"
-                    />
-                  </button>
-                </li>
+                    <div className="w-full">
+                      <motion.p
+                        variants={contentVariant}
+                        className=" text-sm font-medium"
+                      >
+                        Some random text written may be lorem ipsum{" "}
+                      </motion.p>
+                      <div className="w-full">
+                        <motion.button
+                          variants={buttonVariant}
+                          className="bg-blue-500 hover:bg-blue-400 font-Satoshi font-medium rounded-lg text-sm px-4 py-2 mt-2"
+                        >
+                          Learn More
+                        </motion.button>
+                      </div>
+                    </div>
+                  </motion.div>
+                </motion.li>
+
                 {/* Service Item */}
               </ul>
+              <div className="w-full  overflow-hidden flex justify-center mt-6 relative">
+                <button className="button group rounded-[50px]  relative   bg-black py-3 text-white  ">
+                  <div className="bg-blue-500  size-1 group-hover:scale-[50] transition-all duration-500 rounded-full absolute top-[110%] left-1/2 -translate-x-1/2  -translate-y-1/2"></div>
+                  <span className="relative z-5"> learn more</span>
+                </button>
+              </div>
               {/* Service List */}
             </div>
             {/* Section Container */}

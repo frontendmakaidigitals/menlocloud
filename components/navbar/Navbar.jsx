@@ -21,7 +21,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
   const [mobileSubMenu, setMobileSubMenu] = useState("");
   const [mobileSubMenuSub, setMobileSubMenuSub] = useState("");
   const [menuTitle, setMenuTitle] = useState("");
-  console.log(mobileMenu)
+  console.log(mobileMenu);
 
   const handleMenu = () => {
     setMobileMenu(false);
@@ -95,24 +95,22 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                     <Link href={`/services`}>Services</Link>
                   </NavigationMenuTrigger>
                   <NavigationMenuContent className="">
-                    <div className="grid gap-10 px-6   py-10 md:w-[400px] lg:w-[1100px] lg:grid-cols-3">
+                    <div className="grid gap-10 px-6   py-10 md:w-[400px] lg:w-[1100px] lg:grid-cols-2">
                       <div className="px-5 py-5   hover:bg-gray-200 text-gray-800 cursor-pointer rounded-xl">
-                        <p className="text-md font-bold">Web Development</p>
+                        <p className="text-md font-bold">Data analytics</p>
                         <p className="text-sm font-medium mt-1 text-gray-600 ">
                           Leveraging today’s data for a more promising future
                         </p>
                       </div>
                       <div className="px-5 py-5  hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
-                        <p className="text-md font-bold">
-                          Digital Transformation{" "}
-                        </p>
+                        <p className="text-md font-bold">Generative AI</p>
                         <p className="text-sm font-medium mt-1 text-gray-600">
                           Shaping the future through advanced AI
                         </p>
                       </div>
                       <div className="px-5 py-5  hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
                         <p className="text-md font-bold">
-                          White Label Services
+                          Cloud Transformation
                         </p>
                         <p className="text-sm font-medium mt-1 text-gray-600">
                           Bridging conventional and generative AI to deliver
@@ -120,45 +118,26 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                         </p>
                       </div>
                       <div className="px-5 py-5  hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
-                        <p className="text-md font-bold">App Development</p>
+                        <p className="text-md font-bold">
+                          Mobil App Development
+                        </p>
                         <p className="text-sm font-medium mt-1 text-gray-600">
                           Crafting robust and scalable systems through expert
                           software engineering.
                         </p>
                       </div>
                       <div className="px-5 py-5  hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
-                        <p className="text-md font-bold">Hire Developers</p>
+                        <p className="text-md font-bold">Web Development</p>
                         <p className="text-sm font-medium mt-1 text-gray-600">
                           Transforming business operations with next-generation
                           cloud modernization
                         </p>
                       </div>
                       <div className="px-5 py-5  hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
-                        <p className="text-md font-bold">Hire Marketers</p>
+                        <p className="text-md font-bold">Digital marketing</p>
                         <p className="text-sm font-medium mt-1 text-gray-600">
                           Transforming concepts into functional systems through
                           precise implementation
-                        </p>
-                      </div>
-                      <div className="px-5 py-5  hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
-                        <p className="text-md font-bold">Hire Testers</p>
-                        <p className="text-sm font-medium mt-1 text-gray-600">
-                          Guiding growth and innovation with a clear strategic
-                          vision
-                        </p>
-                      </div>
-                      <div className="px-5 py-5  hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
-                        <p className="text-md font-bold">Hire Designers</p>
-                        <p className="text-sm font-medium mt-1 text-gray-600">
-                          Safeguarding information with cutting-edge privacy and
-                          security practices
-                        </p>
-                      </div>
-                      <div className="px-5 py-5  hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
-                        <p className="text-md font-bold">Strategy</p>
-                        <p className="text-sm font-medium mt-1 text-gray-600">
-                          Enhancing company approach with top level cultural &
-                          hierarchy transformation
                         </p>
                       </div>
                     </div>
@@ -291,68 +270,48 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                 <AccordionContent>
                   <div className="h-[400px] overflow-scroll">
                     <div className="px-5 py-5  hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
-                      <p className="text-md font-bold">Web Development</p>
+                      <p className="text-md font-bold">Data analytics</p>
                       <p className="text-sm font-medium mt-1 text-gray-600">
                         Leveraging today’s data for a more promising future
                       </p>
                     </div>
                     <div className="px-5 py-5  hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
-                      <p className="text-md font-bold">
-                        Digital Transformation
-                      </p>
+                      <p className="text-md font-bold">Generative AI</p>
                       <p className="text-sm font-medium mt-1 text-gray-600">
                         Shaping the future through advanced AI
                       </p>
                     </div>
                     <div className="px-5 py-5  hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
-                      <p className="text-md font-bold">White Label Services</p>
+                      <p className="text-md font-bold">Cloud Transformation</p>
                       <p className="text-sm font-medium mt-1 text-gray-600">
                         Bridging conventional and generative AI to deliver
                         effective, real-world applications.
                       </p>
                     </div>
                     <div className="px-5 py-5  hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
-                      <p className="text-md font-bold">App Development</p>
+                      <p className="text-md font-bold">
+                        Mobile App Development
+                      </p>
                       <p className="text-sm font-medium mt-1 text-gray-600">
                         Crafting robust and scalable systems through expert
                         software engineering.
                       </p>
                     </div>
                     <div className="px-5 py-5  hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
-                      <p className="text-md font-bold">Hire Developers</p>
+                      <p className="text-md font-bold">Web Development</p>
                       <p className="text-sm font-medium mt-1 text-gray-600">
                         Transforming business operations with next-generation
                         cloud modernization
                       </p>
                     </div>
                     <div className="px-5 py-5  hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
-                      <p className="text-md font-bold">Hire Marketers</p>
+                      <p className="text-md font-bold">Digital marketing</p>
                       <p className="text-sm font-medium mt-1 text-gray-600">
                         Transforming concepts into functional systems through
                         precise implementation
                       </p>
                     </div>
-                    <div className="px-5 py-5  hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
-                      <p className="text-md font-bold">Hire Testers</p>
-                      <p className="text-sm font-medium mt-1 text-gray-600">
-                        Guiding growth and innovation with a clear strategic
-                        vision
-                      </p>
-                    </div>
-                    <div className="px-5 py-5  hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
-                      <p className="text-md font-bold">Hire Designers</p>
-                      <p className="text-sm font-medium mt-1 text-gray-600">
-                        Safeguarding information with cutting-edge privacy and
-                        security practices
-                      </p>
-                    </div>
-                    <div className="px-5 py-5  hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
-                      <p className="text-md font-bold">Strategy</p>
-                      <p className="text-sm font-medium mt-1 text-gray-600">
-                        Enhancing company approach with top level cultural &
-                        hierarchy transformation
-                      </p>
-                    </div>
+                 
                   </div>
                 </AccordionContent>
               </AccordionItem>
