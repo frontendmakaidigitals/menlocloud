@@ -205,7 +205,7 @@ function Services() {
           <div
             className={`transition-all duration-300 ${
               mobileTabs ? "max-h-[100vh] py-4 " : "max-h-0"
-            }  bg-blue-500 `}
+            }  bg-sky-400 `}
           >
             {mobileTabs
               ? tabs.map((service, index) => {

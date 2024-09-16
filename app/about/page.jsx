@@ -1,1120 +1,186 @@
+"use client";
 import Footer_01 from "@/components/footer/Footer_01";
 import Header_01 from "@/components/header/Header_01";
-import Image from "next/image";
-import Link from "next/link";
+import SwiperNavButtons from "@/components/SwiperNavButton";
 
-function About() {
-	return (
-		<>
-			<Header_01 />
-			<main className="main-wrapper relative overflow-hidden">
-				{/*...::: Breadcrumb Section Start :::... */}
-				<section id="section-breadcrumb">
-					{/* Section Spacer */}
-					<div className="breadcrumb-wrapper">
-						{/* Section Container */}
-						<div className="global-container">
-							<div className="breadcrumb-block">
-								<h1 className="breadcrumb-title">About Us</h1>
-								<ul className="breadcrumb-nav">
-									<li>
-										<Link href="/">Home</Link>
-									</li>
-									<li>About</li>
-								</ul>
-							</div>
-						</div>
-						{/* Section Container */}
-					</div>
-					{/* Section Spacer */}
-				</section>
-				{/*...::: Breadcrumb Section End :::... */}
-				{/*...::: About Us Section Start :::... */}
-				<section id="about-hero-section">
-					{/* Section Spacer */}
-					<div className="mb-20 lg:mb-24">
-						{/* Section Container */}
-						<div className="global-container">
-							{/* Section Content Block */}
-							<div className="jos mb-10 text-center lg:mb-12 xl:mb-20">
-								<div className="mx-auto md:max-w-xl lg:max-w-3xl xl:max-w-[950px]">
-									<h2>We are a trusted partner in our clients AI journey</h2>
-								</div>
-							</div>
-							{/* Section Content Block */}
-							{/* About Hero Image */}
-							<div
-								className="jos overflow-hidden rounded-3xl"
-								data-jos_animation="zoom"
-							>
-								<Image
-									src="/assets/img_placeholder/th-1/about-hero-image.jpg"
-									alt="about-hero-image"
-									width={1296}
-									height={650}
-									className="h-full w-full object-cover"
-								/>
-							</div>
-							{/* About Hero Image */}
-						</div>
-						{/* Section Container */}
-					</div>
-					{/* Section Spacer */}
-				</section>
-				{/*...::: About Us Section End :::... */}
-				{/*...::: About Funfact Start :::... */}
-				<section id="about-funfact-section">
-					{/* Section Container */}
-					<div className="global-container">
-						{/* Counter Scroll */}
-						<ul className="grid grid-cols-1 gap-10 gap-y-5 text-center sm:grid-cols-2 sm:text-left lg:grid-cols-4">
-							{/* Counter Items */}
-							<li className="jos" data-jos_delay="0.1">
-								<h3
-									className="text-5xl text-colorOrangyRed md:text-6xl lg:text-7xl xl:text-[80px]"
-									data-module="countup"
-								>
-									<span className="start-number" data-countup-number={2}>
-										2
-									</span>
-									K+
-								</h3>
-								<span className="block text-lg font-normal text-black">
-									Successful Implementations
-								</span>
-							</li>
-							{/* Counter Items */}
-							{/* Counter Items */}
-							<li className="jos" data-jos_delay="0.2">
-								<h3
-									className="text-5xl text-colorOrangyRed md:text-6xl lg:text-7xl xl:text-[80px]"
-									data-module="countup"
-								>
-									<span className="start-number" data-countup-number={95}>
-										95
-									</span>
-									%
-								</h3>
-								<span className="block text-lg font-normal text-black">
-									Client Satisfaction Rate
-								</span>
-							</li>
-							{/* Counter Items */}
-							{/* Counter Items */}
-							<li className="jos" data-jos_delay="0.3">
-								<h3
-									className="text-5xl text-colorOrangyRed md:text-6xl lg:text-7xl xl:text-[80px]"
-									data-module="countup"
-								>
-									<span className="start-number" data-countup-number={40}>
-										40
-									</span>
-									+
-								</h3>
-								<span className="block text-lg font-normal text-black">
-									Awards and Recognitions
-								</span>
-							</li>
-							{/* Counter Items */}
-							{/* Counter Items */}
-							<li className="jos" data-jos_delay="0.4">
-								<h3
-									className="text-5xl text-colorOrangyRed md:text-6xl lg:text-7xl xl:text-[80px]"
-									data-module="countup"
-								>
-									<span className="start-number" data-countup-number={73}>
-										73
-									</span>
-									+
-								</h3>
-								<span className="block text-lg font-normal text-black">
-									Growth and Expansion
-								</span>
-							</li>
-							{/* Counter Items */}
-						</ul>
-						{/* Counter Scroll */}
-					</div>
-					{/* Section Container */}
-				</section>
-				{/*...::: About Funfact Start :::... */}
-				{/*...::: Content Section Start :::... */}
-				<section id="content-section-2">
-					{/* Section Spacer */}
-					<div className="pb-20 pt-20 xl:pb-[150px] xl:pt-[130px]">
-						{/* Section Container */}
-						<div className="global-container">
-							<div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2 xl:grid-cols-[minmax(0,_1.3fr)_1fr]">
-								{/* Content Left Block */}
-								<div
-									className="jos order-2 overflow-hidden rounded-md"
-									data-jos_animation="fade-left"
-								>
-									<Image
-										src="/assets/img_placeholder/th-1/about-image.png"
-										alt="content-image-2"
-										width={526}
-										height={550}
-										className="h-auto w-full"
-									/>
-								</div>
-								{/* Content Left Block */}
-								{/* Content Right Block */}
-								<div className="jos order-1" data-jos_animation="fade-right">
-									{/* Section Content Block */}
-									<div className="mb-6">
-										<h2>Delivering the best solutions with AI</h2>
-									</div>
-									{/* Section Content Block */}
-									<div className="text-lg leading-[1.4] lg:text-[21px]">
-										<p className="mb-7 last:mb-0">
-											Our mission is to empower businesses with AI-powered
-											solutions that increase productivity, improve
-											decision-making and drive growth.
-										</p>
-										<p className="mb-7 last:mb-0">
-											Since 2016 we have been passionate about helping our
-											clients harness With a team of AI experts and data
-											scientists their full potential &amp; stay competitive in
-											an increasingly digital world.
-										</p>
-										<Link
-											href="/contact"
-											className="button mt-5 rounded-[50px] border-2 border-black bg-black py-4 text-white after:bg-colorOrangyRed hover:border-colorOrangyRed hover:text-white"
-										>
-											Get in touch
-										</Link>
-									</div>
-								</div>
-								{/* Content Right Block */}
-							</div>
-						</div>
-						{/* Section Container */}
-					</div>
-					{/* Section Spacer */}
-				</section>
-				{/*...::: Content Section End :::... */}
-				{/*...::: Core Value Section Start :::... */}
-				<section id="core-value">
-					{/* Section Spacer */}
-					<div className="jos mx-5 rounded-[50px] bg-black px-[20px] py-20 sm:px-[50px] md:mx-[50px] lg:px-[100px] xl:py-[130px]">
-						{/* Section Container */}
-						<div className="global-container">
-							{/* Section Content Block */}
-							<div className="mb-10 text-center lg:mb-12 xl:mb-20">
-								<div className="mx-auto md:max-w-xl lg:max-w-3xl xl:max-w-[745px]">
-									<h2 className="text-white">
-										The core values behind our work
-									</h2>
-								</div>
-							</div>
-							{/* Section Content Block */}
-							{/* Horizontal Separator */}
-							<div className="mb-6 h-[4px] w-full rounded bg-colorCodGray sm:mb-0" />
-							{/* Core Value list */}
-							<ul className="grid grid-cols-1 justify-between gap-6 md:grid-cols-2 xxl:flex xxl:flex-nowrap">
-								{/* Core Value Item */}
-								<li className="relative after:absolute after:-top-[3px] after:left-0 after:h-[5px] after:w-full after:scale-x-0 after:rounded-[5px] after:bg-colorOrangyRed after:transition-all after:duration-300 hover:after:scale-x-0 sm:pt-6 lg:pt-10 xxl:hover:after:scale-x-100">
-									<div className="mb-3 flex items-center gap-x-3 md:mb-6">
-										<div className="h-[30px] w-[30px]">
-											<Image
-												src="/assets/img_placeholder/th-1/core-value-icon-1.svg"
-												alt="core-value-icon-1"
-												width={30}
-												height={30}
-											/>
-										</div>
-										<h4 className="flex-1 text-white">Innovation</h4>
-									</div>
-									<p className="text-lg text-white lg:text-[21px]">
-										We’re committed to exploring new technologies, and finding
-									</p>
-								</li>
-								{/* Core Value Item */}
-								{/* Core Value Item */}
-								<li className="relative after:absolute after:-top-[3px] after:left-0 after:h-[5px] after:w-full after:scale-x-0 after:rounded-[5px] after:bg-colorOrangyRed after:transition-all after:duration-300 hover:after:scale-x-0 sm:pt-6 lg:pt-10 xxl:hover:after:scale-x-100">
-									<div className="mb-3 flex items-center gap-x-3 md:mb-6">
-										<div className="h-[30px] w-[30px]">
-											<Image
-												src="/assets/img_placeholder/th-1/core-value-icon-2.svg"
-												alt="core-value-icon-2"
-												width={30}
-												height={30}
-											/>
-										</div>
-										<h4 className="flex-1 text-white">Excellence</h4>
-									</div>
-									<p className="text-lg text-white lg:text-[21px]">
-										We set high standards for our work &amp; we are dedicated
-										team
-									</p>
-								</li>
-								{/* Core Value Item */}
-								{/* Core Value Item */}
-								<li className="relative after:absolute after:-top-[3px] after:left-0 after:h-[5px] after:w-full after:scale-x-0 after:rounded-[5px] after:bg-colorOrangyRed after:transition-all after:duration-300 hover:after:scale-x-0 sm:pt-6 lg:pt-10 xxl:hover:after:scale-x-100">
-									<div className="mb-3 flex items-center gap-x-3 md:mb-6">
-										<div className="h-[30px] w-[30px]">
-											<Image
-												src="/assets/img_placeholder/th-1/core-value-icon-3.svg"
-												alt="core-value-icon-3"
-												width={30}
-												height={30}
-											/>
-										</div>
-										<h4 className="flex-1 text-white">Collaboration</h4>
-									</div>
-									<p className="text-lg text-white lg:text-[21px]">
-										We believe in the power of collaboration, working closely
-									</p>
-								</li>
-								{/* Core Value Item */}
-								{/* Core Value Item */}
-								<li className="relative after:absolute after:-top-[3px] after:left-0 after:h-[5px] after:w-full after:scale-x-0 after:rounded-[5px] after:bg-colorOrangyRed after:transition-all after:duration-300 hover:after:scale-x-0 sm:pt-6 lg:pt-10 xxl:hover:after:scale-x-100">
-									<div className="mb-3 flex items-center gap-x-3 md:mb-6">
-										<div className="h-[30px] w-[30px]">
-											<Image
-												src="/assets/img_placeholder/th-1/core-value-icon-4.svg"
-												alt="core-value-icon-4"
-												width={30}
-												height={30}
-											/>
-										</div>
-										<h4 className="flex-1 text-white">Integrity</h4>
-									</div>
-									<p className="text-lg text-white lg:text-[21px]">
-										We uphold the highest ethical honesty in all our
-										interactions
-									</p>
-								</li>
-								{/* Core Value Item */}
-							</ul>
-							{/* Core Value list */}
-						</div>
-						{/* Section Container */}
-					</div>
-					{/* Section Spacer */}
-				</section>
-				{/*...::: Core Value Section End :::... */}
-				{/*...::: Team Section Start :::... */}
-				<section id="team-section">
-					{/* Section Spacer */}
-					<div className="py-20 xl:py-[130px]">
-						{/* Section Container */}
-						<div className="global-container">
-							{/* Section Content Block */}
-							<div className="jos mb-10 flex flex-wrap items-center justify-between lg:mb-12 xl:mb-20">
-								<div className="max-w-sm lg:max-w-3xl xl:max-w-[745px]">
-									<h2>Our team consists of a group of talents</h2>
-								</div>
-								<Link
-									href="/team"
-									className="button mt-5 rounded-[50px] border-2 border-black bg-black py-4 text-white after:bg-colorOrangyRed hover:border-colorOrangyRed hover:text-white"
-								>
-									Join our team
-								</Link>
-							</div>
-							{/* Section Content Block */}
-							{/* Team Member List */}
-							<ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-								{/* Team Member Item */}
-								<li
-									className="jos rounded-[20px] bg-colorLinenRuffle p-[20px]"
-									data-jos_animation="flip"
-									data-jos_delay="0.1"
-								>
-									<div className="xl:h[300px] w-full overflow-hidden rounded-[20px] xxl:h-[400px]">
-										<Image
-											src="/assets/img_placeholder/th-1/team-member-img-1.jpg"
-											alt="team-member-img-1"
-											width={376}
-											height={400}
-											className="h-full w-full object-cover"
-										/>
-									</div>
-									<div className="mt-5">
-										<Link
-											href="/team-details"
-											className="font-dmSans text-[26px] leading-[1.33] hover:text-colorOrangyRed xxl:text-[30px]"
-										>
-											Mr. Abraham Maslo
-										</Link>
-										<div className="mt-3 flex flex-col justify-between gap-3 xxl:flex-row xxl:flex-wrap xxl:items-center">
-											<span className="text-[21px]">Chief AI Officer</span>
-											<ul className="mt-auto flex gap-x-[15px]">
-												<li>
-													<Link
-														rel="noopener noreferrer"
-														href="http://www.facebook.com"
-														className="group relative flex h-[30px] w-[30px] items-center justify-center rounded-[50%] bg-black hover:bg-colorOrangyRed"
-													>
-														<Image
-															src="/assets/img_placeholder/th-1/facebook-icon-white.svg"
-															alt="facebook"
-															width={14}
-															height={14}
-															className="opacity-100 group-hover:opacity-0"
-														/>
-														<Image
-															src="/assets/img_placeholder/th-1/facebook-icon-black.svg"
-															alt="facebook"
-															width={14}
-															height={14}
-															className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100"
-														/>
-													</Link>
-												</li>
-												<li>
-													<Link
-														rel="noopener noreferrer"
-														href="http://www.twitter.com"
-														className="group relative flex h-[30px] w-[30px] items-center justify-center rounded-[50%] bg-black hover:bg-colorOrangyRed"
-													>
-														<Image
-															src="/assets/img_placeholder/th-1/twitter-icon-white.svg"
-															alt="twitter"
-															width={14}
-															height={14}
-															className="opacity-100 group-hover:opacity-0"
-														/>
-														<Image
-															src="/assets/img_placeholder/th-1/twitter-icon-black.svg"
-															alt="twitter"
-															width={14}
-															height={14}
-															className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100"
-														/>
-													</Link>
-												</li>
-												<li>
-													<Link
-														rel="noopener noreferrer"
-														href="http://www.linkedin.com"
-														className="group relative flex h-[30px] w-[30px] items-center justify-center rounded-[50%] bg-black hover:bg-colorOrangyRed"
-													>
-														<Image
-															src="/assets/img_placeholder/th-1/linkedin-icon-white.svg"
-															alt="linkedin"
-															width={14}
-															height={14}
-															className="opacity-100 group-hover:opacity-0"
-														/>
-														<Image
-															src="/assets/img_placeholder/th-1/linkedin-icon-black.svg"
-															alt="linkedin"
-															width={14}
-															height={14}
-															className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100"
-														/>
-													</Link>
-												</li>
-												<li>
-													<Link
-														rel="noopener noreferrer"
-														href="http://www.instagram.com"
-														className="group relative flex h-[30px] w-[30px] items-center justify-center rounded-[50%] bg-black hover:bg-colorOrangyRed"
-													>
-														<Image
-															src="/assets/img_placeholder/th-1/instagram-icon-white.svg"
-															alt="instagram"
-															width={14}
-															height={14}
-															className="opacity-100 group-hover:opacity-0"
-														/>
-														<Image
-															src="/assets/img_placeholder/th-1/instagram-icon-black.svg"
-															alt="instagram"
-															width={14}
-															height={14}
-															className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100"
-														/>
-													</Link>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</li>
-								{/* Team Member Item */}
-								{/* Team Member Item */}
-								<li
-									className="jos rounded-[20px] bg-colorLinenRuffle p-[20px]"
-									data-jos_animation="flip"
-									data-jos_delay="0.2"
-								>
-									<div className="xl:h[300px] w-full overflow-hidden rounded-[20px] xxl:h-[400px]">
-										<Image
-											src="/assets/img_placeholder/th-1/team-member-img-2.jpg"
-											alt="team-member-img-2"
-											width={376}
-											height={400}
-											className="h-full w-full object-cover"
-										/>
-									</div>
-									<div className="mt-5">
-										<Link
-											href="/team-details"
-											className="font-dmSans text-[26px] leading-[1.33] hover:text-colorOrangyRed xxl:text-[30px]"
-										>
-											Willium Robert
-										</Link>
-										<div className="mt-3 flex flex-col justify-between gap-3 xxl:flex-row xxl:flex-wrap xxl:items-center">
-											<span className="text-[21px]">Data Engineer</span>
-											<ul className="mt-auto flex gap-x-[15px]">
-												<li>
-													<Link
-														rel="noopener noreferrer"
-														href="http://www.facebook.com"
-														className="group relative flex h-[30px] w-[30px] items-center justify-center rounded-[50%] bg-black hover:bg-colorOrangyRed"
-													>
-														<Image
-															src="/assets/img_placeholder/th-1/facebook-icon-white.svg"
-															alt="facebook"
-															width={14}
-															height={14}
-															className="opacity-100 group-hover:opacity-0"
-														/>
-														<Image
-															src="/assets/img_placeholder/th-1/facebook-icon-black.svg"
-															alt="facebook"
-															width={14}
-															height={14}
-															className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100"
-														/>
-													</Link>
-												</li>
-												<li>
-													<Link
-														rel="noopener noreferrer"
-														href="http://www.twitter.com"
-														className="group relative flex h-[30px] w-[30px] items-center justify-center rounded-[50%] bg-black hover:bg-colorOrangyRed"
-													>
-														<Image
-															src="/assets/img_placeholder/th-1/twitter-icon-white.svg"
-															alt="twitter"
-															width={14}
-															height={14}
-															className="opacity-100 group-hover:opacity-0"
-														/>
-														<Image
-															src="/assets/img_placeholder/th-1/twitter-icon-black.svg"
-															alt="twitter"
-															width={14}
-															height={14}
-															className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100"
-														/>
-													</Link>
-												</li>
-												<li>
-													<Link
-														rel="noopener noreferrer"
-														href="http://www.linkedin.com"
-														className="group relative flex h-[30px] w-[30px] items-center justify-center rounded-[50%] bg-black hover:bg-colorOrangyRed"
-													>
-														<Image
-															src="/assets/img_placeholder/th-1/linkedin-icon-white.svg"
-															alt="linkedin"
-															width={14}
-															height={14}
-															className="opacity-100 group-hover:opacity-0"
-														/>
-														<Image
-															src="/assets/img_placeholder/th-1/linkedin-icon-black.svg"
-															alt="linkedin"
-															width={14}
-															height={14}
-															className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100"
-														/>
-													</Link>
-												</li>
-												<li>
-													<Link
-														rel="noopener noreferrer"
-														href="http://www.instagram.com"
-														className="group relative flex h-[30px] w-[30px] items-center justify-center rounded-[50%] bg-black hover:bg-colorOrangyRed"
-													>
-														<Image
-															src="/assets/img_placeholder/th-1/instagram-icon-white.svg"
-															alt="instagram"
-															width={14}
-															height={14}
-															className="opacity-100 group-hover:opacity-0"
-														/>
-														<Image
-															src="/assets/img_placeholder/th-1/instagram-icon-black.svg"
-															alt="instagram"
-															width={14}
-															height={14}
-															className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100"
-														/>
-													</Link>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</li>
-								{/* Team Member Item */}
-								{/* Team Member Item */}
-								<li
-									className="jos rounded-[20px] bg-colorLinenRuffle p-[20px]"
-									data-jos_animation="flip"
-									data-jos_delay="0.3"
-								>
-									<div className="xl:h[300px] w-full overflow-hidden rounded-[20px] xxl:h-[400px]">
-										<Image
-											src="/assets/img_placeholder/th-1/team-member-img-3.jpg"
-											alt="team-member-img-3"
-											width={376}
-											height={400}
-											className="h-full w-full object-cover"
-										/>
-									</div>
-									<div className="mt-5">
-										<Link
-											href="/team-details"
-											className="font-dmSans text-[26px] leading-[1.33] hover:text-colorOrangyRed xxl:text-[30px]"
-										>
-											Henry Fayol
-										</Link>
-										<div className="mt-3 flex flex-col justify-between gap-3 xxl:flex-row xxl:flex-wrap xxl:items-center">
-											<span className="text-[21px]">Research Scientist</span>
-											<ul className="mt-auto flex gap-x-[15px]">
-												<li>
-													<Link
-														rel="noopener noreferrer"
-														href="http://www.facebook.com"
-														className="group relative flex h-[30px] w-[30px] items-center justify-center rounded-[50%] bg-black hover:bg-colorOrangyRed"
-													>
-														<Image
-															src="/assets/img_placeholder/th-1/facebook-icon-white.svg"
-															alt="facebook"
-															width={14}
-															height={14}
-															className="opacity-100 group-hover:opacity-0"
-														/>
-														<Image
-															src="/assets/img_placeholder/th-1/facebook-icon-black.svg"
-															alt="facebook"
-															width={14}
-															height={14}
-															className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100"
-														/>
-													</Link>
-												</li>
-												<li>
-													<Link
-														rel="noopener noreferrer"
-														href="http://www.twitter.com"
-														className="group relative flex h-[30px] w-[30px] items-center justify-center rounded-[50%] bg-black hover:bg-colorOrangyRed"
-													>
-														<Image
-															src="/assets/img_placeholder/th-1/twitter-icon-white.svg"
-															alt="twitter"
-															width={14}
-															height={14}
-															className="opacity-100 group-hover:opacity-0"
-														/>
-														<Image
-															src="/assets/img_placeholder/th-1/twitter-icon-black.svg"
-															alt="twitter"
-															width={14}
-															height={14}
-															className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100"
-														/>
-													</Link>
-												</li>
-												<li>
-													<Link
-														rel="noopener noreferrer"
-														href="http://www.linkedin.com"
-														className="group relative flex h-[30px] w-[30px] items-center justify-center rounded-[50%] bg-black hover:bg-colorOrangyRed"
-													>
-														<Image
-															src="/assets/img_placeholder/th-1/linkedin-icon-white.svg"
-															alt="linkedin"
-															width={14}
-															height={14}
-															className="opacity-100 group-hover:opacity-0"
-														/>
-														<Image
-															src="/assets/img_placeholder/th-1/linkedin-icon-black.svg"
-															alt="linkedin"
-															width={14}
-															height={14}
-															className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100"
-														/>
-													</Link>
-												</li>
-												<li>
-													<Link
-														rel="noopener noreferrer"
-														href="http://www.instagram.com"
-														className="group relative flex h-[30px] w-[30px] items-center justify-center rounded-[50%] bg-black hover:bg-colorOrangyRed"
-													>
-														<Image
-															src="/assets/img_placeholder/th-1/instagram-icon-white.svg"
-															alt="instagram"
-															width={14}
-															height={14}
-															className="opacity-100 group-hover:opacity-0"
-														/>
-														<Image
-															src="/assets/img_placeholder/th-1/instagram-icon-black.svg"
-															alt="instagram"
-															width={14}
-															height={14}
-															className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100"
-														/>
-													</Link>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</li>
-								{/* Team Member Item */}
-								{/* Team Member Item */}
-								<li
-									className="jos rounded-[20px] bg-colorLinenRuffle p-[20px]"
-									data-jos_animation="flip"
-									data-jos_delay="0.4"
-								>
-									<div className="xl:h[300px] w-full overflow-hidden rounded-[20px] xxl:h-[400px]">
-										<Image
-											src="/assets/img_placeholder/th-1/team-member-img-4.jpg"
-											alt="team-member-img-4"
-											width={376}
-											height={400}
-											className="h-full w-full object-cover"
-										/>
-									</div>
-									<div className="mt-5">
-										<Link
-											href="/team-details"
-											className="font-dmSans text-[26px] leading-[1.33] hover:text-colorOrangyRed xxl:text-[30px]"
-										>
-											Henry Martine
-										</Link>
-										<div className="mt-3 flex flex-col justify-between gap-3 xxl:flex-row xxl:flex-wrap xxl:items-center">
-											<span className="text-[21px]">AI Researchers</span>
-											<ul className="mt-auto flex gap-x-[15px]">
-												<li>
-													<Link
-														rel="noopener noreferrer"
-														href="http://www.facebook.com"
-														className="group relative flex h-[30px] w-[30px] items-center justify-center rounded-[50%] bg-black hover:bg-colorOrangyRed"
-													>
-														<Image
-															src="/assets/img_placeholder/th-1/facebook-icon-white.svg"
-															alt="facebook"
-															width={14}
-															height={14}
-															className="opacity-100 group-hover:opacity-0"
-														/>
-														<Image
-															src="/assets/img_placeholder/th-1/facebook-icon-black.svg"
-															alt="facebook"
-															width={14}
-															height={14}
-															className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100"
-														/>
-													</Link>
-												</li>
-												<li>
-													<Link
-														rel="noopener noreferrer"
-														href="http://www.twitter.com"
-														className="group relative flex h-[30px] w-[30px] items-center justify-center rounded-[50%] bg-black hover:bg-colorOrangyRed"
-													>
-														<Image
-															src="/assets/img_placeholder/th-1/twitter-icon-white.svg"
-															alt="twitter"
-															width={14}
-															height={14}
-															className="opacity-100 group-hover:opacity-0"
-														/>
-														<Image
-															src="/assets/img_placeholder/th-1/twitter-icon-black.svg"
-															alt="twitter"
-															width={14}
-															height={14}
-															className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100"
-														/>
-													</Link>
-												</li>
-												<li>
-													<Link
-														rel="noopener noreferrer"
-														href="http://www.linkedin.com"
-														className="group relative flex h-[30px] w-[30px] items-center justify-center rounded-[50%] bg-black hover:bg-colorOrangyRed"
-													>
-														<Image
-															src="/assets/img_placeholder/th-1/linkedin-icon-white.svg"
-															alt="linkedin"
-															width={14}
-															height={14}
-															className="opacity-100 group-hover:opacity-0"
-														/>
-														<Image
-															src="/assets/img_placeholder/th-1/linkedin-icon-black.svg"
-															alt="linkedin"
-															width={14}
-															height={14}
-															className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100"
-														/>
-													</Link>
-												</li>
-												<li>
-													<Link
-														rel="noopener noreferrer"
-														href="http://www.instagram.com"
-														className="group relative flex h-[30px] w-[30px] items-center justify-center rounded-[50%] bg-black hover:bg-colorOrangyRed"
-													>
-														<Image
-															src="/assets/img_placeholder/th-1/instagram-icon-white.svg"
-															alt="instagram"
-															width={14}
-															height={14}
-															className="opacity-100 group-hover:opacity-0"
-														/>
-														<Image
-															src="/assets/img_placeholder/th-1/instagram-icon-black.svg"
-															alt="instagram"
-															width={14}
-															height={14}
-															className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100"
-														/>
-													</Link>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</li>
-								{/* Team Member Item */}
-								{/* Team Member Item */}
-								<li
-									className="jos rounded-[20px] bg-colorLinenRuffle p-[20px]"
-									data-jos_animation="flip"
-									data-jos_delay="0.5"
-								>
-									<div className="xl:h[300px] w-full overflow-hidden rounded-[20px] xxl:h-[400px]">
-										<Image
-											src="/assets/img_placeholder/th-1/team-member-img-5.jpg"
-											alt="team-member-img-5"
-											width={376}
-											height={400}
-											className="h-full w-full object-cover"
-										/>
-									</div>
-									<div className="mt-5">
-										<Link
-											href="/team-details"
-											className="font-dmSans text-[26px] leading-[1.33] hover:text-colorOrangyRed xxl:text-[30px]"
-										>
-											Jack Fox
-										</Link>
-										<div className="mt-3 flex flex-col justify-between gap-3 xxl:flex-row xxl:flex-wrap xxl:items-center">
-											<span className="text-[21px]">NLP Expert</span>
-											<ul className="mt-auto flex gap-x-[15px]">
-												<li>
-													<Link
-														rel="noopener noreferrer"
-														href="http://www.facebook.com"
-														className="group relative flex h-[30px] w-[30px] items-center justify-center rounded-[50%] bg-black hover:bg-colorOrangyRed"
-													>
-														<Image
-															src="/assets/img_placeholder/th-1/facebook-icon-white.svg"
-															alt="facebook"
-															width={14}
-															height={14}
-															className="opacity-100 group-hover:opacity-0"
-														/>
-														<Image
-															src="/assets/img_placeholder/th-1/facebook-icon-black.svg"
-															alt="facebook"
-															width={14}
-															height={14}
-															className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100"
-														/>
-													</Link>
-												</li>
-												<li>
-													<Link
-														rel="noopener noreferrer"
-														href="http://www.twitter.com"
-														className="group relative flex h-[30px] w-[30px] items-center justify-center rounded-[50%] bg-black hover:bg-colorOrangyRed"
-													>
-														<Image
-															src="/assets/img_placeholder/th-1/twitter-icon-white.svg"
-															alt="twitter"
-															width={14}
-															height={14}
-															className="opacity-100 group-hover:opacity-0"
-														/>
-														<Image
-															src="/assets/img_placeholder/th-1/twitter-icon-black.svg"
-															alt="twitter"
-															width={14}
-															height={14}
-															className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100"
-														/>
-													</Link>
-												</li>
-												<li>
-													<Link
-														rel="noopener noreferrer"
-														href="http://www.linkedin.com"
-														className="group relative flex h-[30px] w-[30px] items-center justify-center rounded-[50%] bg-black hover:bg-colorOrangyRed"
-													>
-														<Image
-															src="/assets/img_placeholder/th-1/linkedin-icon-white.svg"
-															alt="linkedin"
-															width={14}
-															height={14}
-															className="opacity-100 group-hover:opacity-0"
-														/>
-														<Image
-															src="/assets/img_placeholder/th-1/linkedin-icon-black.svg"
-															alt="linkedin"
-															width={14}
-															height={14}
-															className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100"
-														/>
-													</Link>
-												</li>
-												<li>
-													<Link
-														rel="noopener noreferrer"
-														href="http://www.instagram.com"
-														className="group relative flex h-[30px] w-[30px] items-center justify-center rounded-[50%] bg-black hover:bg-colorOrangyRed"
-													>
-														<Image
-															src="/assets/img_placeholder/th-1/instagram-icon-white.svg"
-															alt="instagram"
-															width={14}
-															height={14}
-															className="opacity-100 group-hover:opacity-0"
-														/>
-														<Image
-															src="/assets/img_placeholder/th-1/instagram-icon-black.svg"
-															alt="instagram"
-															width={14}
-															height={14}
-															className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100"
-														/>
-													</Link>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</li>
-								{/* Team Member Item */}
-								{/* Team Member Item */}
-								<li
-									className="jos rounded-[20px] bg-colorLinenRuffle p-[20px]"
-									data-jos_animation="flip"
-									data-jos_delay="0.6"
-								>
-									<div className="xl:h[300px] w-full overflow-hidden rounded-[20px] xxl:h-[400px]">
-										<Image
-											src="/assets/img_placeholder/th-1/team-member-img-6.jpg"
-											alt="team-member-img-6"
-											width={376}
-											height={400}
-											className="h-full w-full object-cover"
-										/>
-									</div>
-									<div className="mt-5">
-										<Link
-											href="/team-details"
-											className="font-dmSans text-[26px] leading-[1.33] hover:text-colorOrangyRed xxl:text-[30px]"
-										>
-											Adam Smith
-										</Link>
-										<div className="mt-3 flex flex-col justify-between gap-3 xxl:flex-row xxl:flex-wrap xxl:items-center">
-											<span className="text-[21px]">Project Manager</span>
-											<ul className="mt-auto flex gap-x-[15px]">
-												<li>
-													<Link
-														rel="noopener noreferrer"
-														href="http://www.facebook.com"
-														className="group relative flex h-[30px] w-[30px] items-center justify-center rounded-[50%] bg-black hover:bg-colorOrangyRed"
-													>
-														<Image
-															src="/assets/img_placeholder/th-1/facebook-icon-white.svg"
-															alt="facebook"
-															width={14}
-															height={14}
-															className="opacity-100 group-hover:opacity-0"
-														/>
-														<Image
-															src="/assets/img_placeholder/th-1/facebook-icon-black.svg"
-															alt="facebook"
-															width={14}
-															height={14}
-															className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100"
-														/>
-													</Link>
-												</li>
-												<li>
-													<Link
-														rel="noopener noreferrer"
-														href="http://www.twitter.com"
-														className="group relative flex h-[30px] w-[30px] items-center justify-center rounded-[50%] bg-black hover:bg-colorOrangyRed"
-													>
-														<Image
-															src="/assets/img_placeholder/th-1/twitter-icon-white.svg"
-															alt="twitter"
-															width={14}
-															height={14}
-															className="opacity-100 group-hover:opacity-0"
-														/>
-														<Image
-															src="/assets/img_placeholder/th-1/twitter-icon-black.svg"
-															alt="twitter"
-															width={14}
-															height={14}
-															className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100"
-														/>
-													</Link>
-												</li>
-												<li>
-													<Link
-														rel="noopener noreferrer"
-														href="http://www.linkedin.com"
-														className="group relative flex h-[30px] w-[30px] items-center justify-center rounded-[50%] bg-black hover:bg-colorOrangyRed"
-													>
-														<Image
-															src="/assets/img_placeholder/th-1/linkedin-icon-white.svg"
-															alt="linkedin"
-															width={14}
-															height={14}
-															className="opacity-100 group-hover:opacity-0"
-														/>
-														<Image
-															src="/assets/img_placeholder/th-1/linkedin-icon-black.svg"
-															alt="linkedin"
-															width={14}
-															height={14}
-															className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100"
-														/>
-													</Link>
-												</li>
-												<li>
-													<Link
-														rel="noopener noreferrer"
-														href="http://www.instagram.com"
-														className="group relative flex h-[30px] w-[30px] items-center justify-center rounded-[50%] bg-black hover:bg-colorOrangyRed"
-													>
-														<Image
-															src="/assets/img_placeholder/th-1/instagram-icon-white.svg"
-															alt="instagram"
-															width={14}
-															height={14}
-															className="opacity-100 group-hover:opacity-0"
-														/>
-														<Image
-															src="/assets/img_placeholder/th-1/instagram-icon-black.svg"
-															alt="instagram"
-															width={14}
-															height={14}
-															className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100"
-														/>
-													</Link>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</li>
-								{/* Team Member Item */}
-							</ul>
-							{/* Team Member List */}
-						</div>
-						{/* Section Container */}
-					</div>
-					{/* Section Spacer */}
-				</section>
-				{/*...::: Team Section End :::... */}
-				{/*...::: About Contact Section Start :::... */}
-				<section id="about-conact">
-					{/* Section Spacer */}
-					<div className="bg-black pb-40 pt-20 xl:pb-[200px] xl:pt-[130px]">
-						{/* Section Container */}
-						<div className="global-container">
-							<div className="grid grid-cols-1 items-center gap-14 md:grid-cols-[minmax(0,_1fr)_1.4fr]">
-								{/* Content Left Block */}
-								<div
-									className="jos order-2 overflow-hidden rounded-[20px] md:order-1"
-									data-jos_animation="fade-right"
-								>
-									<Image
-										src="/assets/img_placeholder/th-1/about-contact-img.jpg"
-										alt="about-contact-img"
-										width={526}
-										height={550}
-										className="h-auto w-full"
-									/>
-								</div>
-								{/* Content Left Block */}
-								{/* Content Right Block */}
-								<div
-									className="jos order-1 md:order-2"
-									data-jos_animation="fade-down"
-								>
-									{/* Section Content Block */}
-									<div className="mb-6 md:max-w-max">
-										<h2 className="text-white">
-											We always want to connect our clients
-										</h2>
-									</div>
-									{/* Section Content Block */}
-									<div className="text-left text-lg leading-[1.4] text-white lg:text-[21px]">
-										<p className="mb-7 last:mb-0">
-											AI accessible and beneficial for organizations, and we
-											look forward to partnering with businesses to achieve
-											their AI goals.
-										</p>
-									</div>
-									<ul className="mt-10 flex flex-col gap-6 font-dmSans text-[30px] tracking-[1.33] lg:mt-14 lg:gap-y-3 xl:mt-[70px]">
-										<li className="flex flex-col gap-x-2 leading-tight text-colorOrangyRed lg:flex-row lg:leading-normal">
-											Website:
-											<Link
-												rel="noopener noreferrer"
-												href="https://www.example.com"
-												className="text-white hover:text-colorOrangyRed"
-											>
-												www.example.com
-											</Link>
-										</li>
-										<li className="flex flex-col gap-x-2 leading-tight text-colorOrangyRed lg:flex-row lg:leading-normal">
-											Email:
-											<Link
-												href="mailto:yourmail@mail.com"
-												className="text-white hover:text-colorOrangyRed"
-											>
-												yourmail@mail.com
-											</Link>
-										</li>
-										<li className="flex flex-col gap-x-2 leading-tight text-colorOrangyRed lg:flex-row lg:leading-normal">
-											Phone:
-											<Link
-												href="tel:+1234567890"
-												className="text-white hover:text-colorOrangyRed"
-											>
-												(123) 456-7890
-											</Link>
-										</li>
-									</ul>
-								</div>
-								{/* Content Right Block */}
-							</div>
-						</div>
-						{/* Section Container */}
-					</div>
-					{/* Section Spacer */}
-				</section>
-				{/*...::: About Contact Section End :::... */}
-			</main>
-			<Footer_01/>
-		</>
-	);
+import "swiper/css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { useRef, useState } from "react";
+import { motion } from "framer-motion";
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+const data = [
+  {
+    img: "https://s7d9.scene7.com/is/image/slalom/insight-globalbas-turtle-finserv-thumb-520x490?fmt=webp-alpha",
+    title: "2024 industry outlook: Financial services",
+    hoverColor: "#F48FB1",
+  },
+  {
+    img: "https://s7d9.scene7.com/is/image/slalom/insight-globalbas-turtle-finserv-thumb-520x490?fmt=webp-alpha",
+    title: "2024 industry outlook: Financial services",
+    hoverColor: "#90CAF9",
+  },
+  {
+    img: "https://s7d9.scene7.com/is/image/slalom/insight-globalbas-turtle-finserv-thumb-520x490?fmt=webp-alpha",
+    title: "2024 industry outlook: Financial services",
+    hoverColor: "#B39DDB",
+  },
+  {
+    img: "https://s7d9.scene7.com/is/image/slalom/insight-globalbas-turtle-finserv-thumb-520x490?fmt=webp-alpha",
+    title: "2024 industry outlook: Financial services",
+    hoverColor: "#80CBC4",
+  },
+  {
+    img: "https://s7d9.scene7.com/is/image/slalom/insight-globalbas-turtle-finserv-thumb-520x490?fmt=webp-alpha",
+    title: "2024 industry outlook: Financial services",
+    hoverColor: "#E6EE9C",
+  },
+  {
+    img: "https://s7d9.scene7.com/is/image/slalom/insight-globalbas-turtle-finserv-thumb-520x490?fmt=webp-alpha",
+    title: "2024 industry outlook: Financial services",
+    hoverColor: "#FFF59D",
+  },
+  {
+    img: "https://s7d9.scene7.com/is/image/slalom/insight-globalbas-turtle-finserv-thumb-520x490?fmt=webp-alpha",
+    title: "2024 industry outlook: Financial services",
+    hoverColor: "#FFAB91",
+  },
+];
+
+const tabs = [
+  {
+    name: "Data & Analytics",
+    data: "Formulate the best data strategy and seamlessly deploy data solutions and technologies with MenloCloud expert guidance. Unlock the full potential of your data assets and drive informed decision-making. We offer a comprehensive range of services, from data collection and integration to advanced analytics and insights generation",
+    points: [
+      "Predictive Insights",
+      "Data Visualization",
+      "Business Intelligence",
+      "Analytical Reporting",
+      "Data Strategy",
+    ],
+  },
+  {
+    name: "Artificial Intelligence",
+    data: "Assisting you in leveraging AI to automate repetitive functions, push beyond traditional limitations, and transform user experiences in an ethical manner. Our expertise includes machine learning, natural language processing, computer vision, and robotic process automation. We start by understanding your unique business challenges and objectives, then design and implement AI solutions tailored to your needs.",
+    points: [
+      "Natural Language Processing",
+      "Predictive Analytics",
+      "Deep Learning",
+      "Robotic Process Automation",
+      "Smart Algorithms",
+    ],
+  },
+  {
+    name: "Applied AI ",
+    data: "Deploy conventional and generative AI to optimize existing processes, explore innovative solutions, and redefine user experiences responsibly. We combine Conventional and Generative AI and provide a holistic approach to solving complex challenges and unlocking new opportunities in the AI landscape. ",
+    points: [
+      "Conventional Models",
+      "Generative Adversarial Networks",
+      "Data Synthesis",
+      "Pattern Recognition",
+      "Algorithm Development",
+    ],
+  },
+  {
+    name: "Software Engineering",
+    data: "With our advanced software development efficiency, solve intricate technical problems, and create impactful, reliable software solutions. We provide custom applications, integration of third-party systems, and enhancement of existing software. We focus on delivering solutions that are user-friendly, secure, and optimized for performance. From web and mobile applications to enterprise software and cloud-based solutions, we provide expertise in a wide range of technologies and platforms.",
+    points: [
+      "System Design",
+      "Code Development",
+      "Quality Assurance",
+      "Version Control",
+      "User Experience",
+      "Debugging Processes",
+    ],
+  },
+  {
+    name: "Cloud Modernisation",
+    data: "With cloud modernization, transform your existing infrastructure into a robust, scalable, and agile environment. Our approach involves assessing your current systems, developing a strategic cloud migration plan, streamline operations, reduce costs and implementing cutting-edge cloud solutions that enhance performance and efficiency. ",
+    points: [
+      "Cloud Migration",
+      "Hybrid Cloud",
+      "Containerization Technologies",
+      "Serverless Computing",
+      "Automated Provisioning",
+    ],
+  },
+  {
+    name: "Systems Implementation",
+    data: "Our systems implementation services include the configuration and customization of software, migration of data, and integration with other systems. We apply industry best practices to ensure that the implementation is executed flawlessly, with attention to detail in every aspect of the process. This includes rigorous testing to validate functionality, performance, and security before the system goes live.",
+    points: [
+      "Deployment Planning",
+      "User Training",
+      "Operational Testing",
+      "Technical Support",
+      "System Customization",
+    ],
+  },
+  {
+    name: "Strategy",
+    data: "Our strategic approach encompasses various areas, including business transformation, market entry, digital strategy, and organizational development. We design tailored strategies that leverage your strengths, address weaknesses, and capitalize on emerging trends. Our goal is to create a strategic roadmap that not only guides your immediate actions but also positions you for long-term success and adaptability.",
+    points: [
+      "Strategic Planning",
+      "Market Analysis",
+      "Competitive Positioning",
+      "Long-Term Vision",
+      "Strategic Alignment",
+      "Risk Management",
+      "Tactical Execution",
+    ],
+  },
+  {
+    name: "Privacy & Security",
+    data: "We also focus on privacy management, Safeguarding information with cutting-edge privacy and security practices, establishing data governance frameworks, conducting privacy impact assessments, and ensuring transparent data collection and usage practices. A proactive approach to privacy and security that protects your organization and supports your business objectives.",
+    points: [
+      "Data Protection",
+      "Cybersecurity Measures",
+      "Access Control",
+      "Encryption Protocols",
+      "Security Audits",
+      "Threat Detection",
+      "Compliance Standards",
+    ],
+  },
+  {
+    name: "Organizational Change",
+    data: "Enhancing company approach with top level cultural & hierarchy transformation, We provide comprehensive support for implementing change initiatives, including process redesign, technology adoption, and cultural transformation. Our team assists with designing and executing effective training programs to equip your employees with the skills and knowledge needed to adapt to new systems and processes.",
+    points: [
+      "Change Management",
+      "Transformation Strategy",
+      "Process Improvement",
+      "Adaptation Strategies",
+      "Implementation Planning",
+    ],
+  },
+];
+function Services() {
+  const [mobileTabs, setMobileTabs] = useState(false);
+  const [tabSelected, setTabSelected] = useState(0);
+
+  const swiperRef = useRef(null);
+  return (
+    <>
+      <Header_01 />
+      <main className="main-wrapper relative overflow-hidden">
+        <div className="w-full mb-20  h-[85vh] xl:h-screen bg-no-repeat bg-center bg-cover bg-[url('https://images.pexels.com/photos/3991976/pexels-photo-3991976.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')]">
+          <div className="bg-gradient-to-b w-full h-full bg-gray-950/20">
+            <div className="global-container flex flex-col justify-around  w-full h-full">
+              <div></div>
+              <div></div>
+              <div className="mt-32 xl:mt-0">
+                <h1 className="font-dmSans text-start font-bold text-gray-50">
+                  <span className="text-sky-500">Passionate</span> <br /> and{" "}
+                  <br /> Sustainable
+                </h1>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Service Section */}
+      </main>
+      <Footer_01 />
+    </>
+  );
 }
 
-export default About;
+export default Services;
