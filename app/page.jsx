@@ -718,7 +718,7 @@ function Home() {
           <div className="w-full global-container mt-10 grid grid-cols-1  xl:grid-cols-4 gap-5">
             {industries.map((industry, index) => (
               <div
-                className="bg-gray-50 group relative shadow-sm cursor-pointer overflow-hidden rounded-xl px-5 py-7 flex flex-col justify-center items-center "
+                className="bg-white border border=gray-900  group relative shadow-sm cursor-pointer overflow-hidden rounded-xl px-5 py-7 flex flex-col justify-center items-center "
                 key={index}
               >
                 <div
