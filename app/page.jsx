@@ -13,7 +13,7 @@ import NumberTicker from "@/components/magicui/number-ticker";
 import { FlipWords } from "@/components/ui/flip-words";
 import SwiperNavButtons from "@/components/SwiperNavButton";
 import { HiOutlineArrowDown } from "react-icons/hi2";
-
+import { LampContainer } from "@/components/ui/lamp";
 const techLogos = [
   {
     username: "@jack",
@@ -303,7 +303,7 @@ function Home() {
           left: isVisible ? "50%" : "90%",
           rotate: isVisible ? 0 : 180,
         }}
-        transition={{ type: "spring", duration: 0.5 }}
+        transition={{ ease: "easeOut", duration: 0.5 }}
         onClick={isVisible ? scrollDown : scrollTop}
         className={`size-16 hidden xl:flex left-1/2 justify-center bottom-10  cursor-pointer z-10  items-center   border border-gray-300 rounded-full fixed  ${
           isVisible
@@ -346,7 +346,12 @@ function Home() {
         {/*...::: Hero Section End :::... */}
         <section className=" mt-14 xl:mt-32 ">
           <p className="global-container mb-10 text-xl lg:text-6xl tracking-tight font-Satoshi font-[600] w-full lg:w-2/3  text-center">
-            Our Tech Experties
+            Our{" "}
+            <span className="bg-gradient-to-r font-Telma from-blue-600 to-indigo-400 bg-clip-text text-transparent">
+              {" "}
+              Tech{" "}
+            </span>{" "}
+            Experties
           </p>
           <Marquee className=" [--duration:20s]">
             {firstRow.map((review) => (
@@ -356,8 +361,15 @@ function Home() {
         </section>
 
         <section className="bg-blue-50 py-16 mt-32 flex flex-col items-center justify-center">
-          <p className="global-container mb-10 text-xl lg:text-6xl tracking-tight font-Satoshi font-[600] w-full lg:w-2/3  text-center">
-            We Turn Good Ideas Into Great Things
+          <p className="global-container mb-3 text-xl lg:text-6xl tracking-tight font-Satoshi font-[600] w-full lg:w-2/3  text-center">
+            We Turn{" "}
+            <span className="bg-gradient-to-r font-Telma from-blue-600 to-indigo-400 bg-clip-text text-transparent">
+              Good Ideas
+            </span>{" "}
+            Into{" "}
+            <span className="bg-gradient-to-r font-Telma from-blue-600 to-indigo-400 bg-clip-text text-transparent">
+              Great Things
+            </span>
           </p>
           <div className="global-container  grid w-full  grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-5 place-items-between">
             {experiences.map((exp, index) => (
@@ -387,7 +399,12 @@ function Home() {
               <div className="jos mb-10 lg:mb-16 xl:mb-14">
                 <div className="w-full flex justify-center ">
                   <p className="global-container  text-xl lg:text-6xl tracking-tight font-Satoshi font-[600] w-full lg:w-2/3  text-center">
-                    Services
+                    Our{" "}
+                    <span className="bg-gradient-to-r font-Telma from-blue-600 to-indigo-400 bg-clip-text text-transparent">
+                      {" "}
+                      Service{" "}
+                    </span>{" "}
+                    Solutions
                   </p>
                 </div>
               </div>
@@ -718,7 +735,12 @@ function Home() {
           </div>
           <div className="global-container ">
             <p className="global-container text-xl lg:text-6xl tracking-tight font-Satoshi font-[600] w-full lg:w-2/3  text-center">
-              Broad Industry Usage
+              Broad
+              <span className="bg-gradient-to-r font-Telma from-blue-600 to-indigo-400 bg-clip-text text-transparent">
+                {" "}
+                Industry{" "}
+              </span>
+              Usage
             </p>
           </div>
           <div className="w-full global-container mt-10 grid grid-cols-1  xl:grid-cols-4 gap-5">
@@ -731,7 +753,10 @@ function Home() {
                   style={{ backgroundColor: industry.color }}
                   className="w-full relative rounded-xl h-60 "
                 >
-                  <img className="w-2/4 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  *:" src={industry.icon} />
+                  <img
+                    className="w-2/4 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  *:"
+                    src={industry.icon}
+                  />
                 </div>
                 <p className="font-[700] text-2xl capitalize px-4 mt-4 font-Satoshi relative z-5">
                   {industry.name}
@@ -757,22 +782,39 @@ function Home() {
           </Marquee>
         </section>
         {/*...::: FAQ Section Start :::... */}
-        <section className="mt-28 bg-black py-20">
-          <div className="w-full flex flex-col justify-center items-center">
-            <p className="global-container text-gray-100 mb-10 text-xl lg:text-6xl tracking-tight font-Satoshi font-[600] w-full lg:w-2/3  text-center">
-              We are
-            </p>
-            <h1 className=" font-[800] gradient-text w-fit animate-gradient">
-              Menlo<span className="font-Clash">Cloud</span>
-            </h1>
-
-            <div className="w-full overflow-hidden flex justify-center mt-6 relative">
-              <button className="overflow-hidden group rounded-[50px] px-7 font-satoshi relative bg-white  py-3 text-gray-900  ">
-                <div className="bg-blue-500  size-1 group-hover:scale-[50] transition-all duration-500 rounded-full absolute top-[110%] left-1/2 -translate-x-1/2  -translate-y-1/2"></div>
-                <span className="relative z-5 "> Join Our Team</span>
-              </button>
-            </div>
-          </div>
+        <section className="mt-28   bg-black  ">
+          <LampContainer>
+            <motion.p
+              initial={{ opacity: 0.5, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: 0.3,
+                duration: 0.8,
+                ease: "easeInOut",
+              }}
+              className=" bg-gradient-to-b from-slate-300 to-slate-500 bg-clip-text text-center font-Satoshi font-medium tracking-tight text-transparent md:text-7xl"
+            >
+              We are <br />{" "}
+              <span className="text-xl lg:text-8xl ">
+                Menlo
+                <span className="font-Clash bg-gradient-to-b from-blue-300 to-blue-500 bg-clip-text">
+                  Cloud
+                </span>
+              </span>
+            </motion.p>
+            <motion.button
+              initial={{ opacity: 0.5, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                delay: 0.4,
+                duration: 0.8,
+                ease: "easeInOut",
+              }}
+              className="text-center mt-4 px-4 py-2 bg-gradient-to-b from-slate-300 to-slate-500 rounded-md font-Satoshi font-medium tracking-tight text-2xl md:text-xl   !text-gray-900 "
+            >
+              learn more
+            </motion.button>
+          </LampContainer>
         </section>
         {/*...::: FAQ Section End :::... */}
         <section className="my-28 global-container">
