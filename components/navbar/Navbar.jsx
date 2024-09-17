@@ -94,8 +94,8 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                   <NavigationMenuTrigger className={``}>
                     <Link href={`/services`}>Services</Link>
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent className="">
-                    <div className="grid gap-10 px-6   py-10 md:w-[400px] lg:w-[1100px] lg:grid-cols-2">
+                  <NavigationMenuContent className="shadow-2xl">
+                    <div className="grid gap-5 px-6 py-10 md:w-[400px] lg:w-[700px] lg:grid-cols-2">
                       <div className="px-5 py-5   hover:bg-gray-200 text-gray-800 cursor-pointer rounded-xl">
                         <p className="text-md font-bold">Data analytics</p>
                         <p className="text-sm font-medium mt-1 text-gray-600 ">
