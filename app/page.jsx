@@ -773,7 +773,11 @@ function Home() {
         {/*...::: Awards Section starts :::... */}
         <section className="mt-28">
           <p className="global-container mb-10 text-3xl lg:text-6xl tracking-tight font-Satoshi font-[600] w-full lg:w-2/3  text-center">
-            Awards & Certifications
+            Our{" "}
+            <span className="bg-gradient-to-r font-Telma from-blue-600 to-indigo-400 bg-clip-text text-transparent">
+              {" "}
+              Clients{" "}
+            </span>
           </p>
           <Marquee reverse className=" [--duration:20s]">
             {firstRow.map((review) => (
@@ -819,7 +823,9 @@ function Home() {
 
         <section className="mt-20 block lg:hidden">
           <div className="w-full flex flex-col justify-center items-center">
-            <p className=" text-4xl font-Satoshi font-[500] my-5 lg:text-6xl">We are</p>
+            <p className=" text-4xl font-Satoshi font-[500] my-5 lg:text-6xl">
+              We are
+            </p>
             <h1 className=" font-[800] gradient-text w-fit animate-gradient">
               Menlo<span className="font-Clash">Cloud</span>
             </h1>

@@ -94,21 +94,21 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                   <NavigationMenuTrigger className={``}>
                     <Link href={`/services`}>Services</Link>
                   </NavigationMenuTrigger>
-                  <NavigationMenuContent className="shadow-2xl">
-                    <div className="grid gap-5 px-6 py-10 md:w-[400px] lg:w-[700px] lg:grid-cols-2">
-                      <div className="px-5 py-5   hover:bg-gray-200 text-gray-800 cursor-pointer rounded-xl">
+                  <NavigationMenuContent className="">
+                    <div className="grid xl:gap-6 xxl:gap-10 px-6 xl:py-6 xxl:py-10 md:w-[400px] lg:w-[700px] lg:grid-cols-2">
+                      <div className="xl:p-3  xxl:p-5 hover:bg-gray-200 text-gray-800 cursor-pointer rounded-xl">
                         <p className="text-md font-bold">Data analytics</p>
                         <p className="text-sm font-medium mt-1 text-gray-600 ">
                           Leveraging today’s data for a more promising future
                         </p>
                       </div>
-                      <div className="px-5 py-5  hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
+                      <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
                         <p className="text-md font-bold">Generative AI</p>
                         <p className="text-sm font-medium mt-1 text-gray-600">
                           Shaping the future through advanced AI
                         </p>
                       </div>
-                      <div className="px-5 py-5  hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
+                      <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
                         <p className="text-md font-bold">
                           Cloud Transformation
                         </p>
@@ -117,7 +117,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                           effective, real-world applications.
                         </p>
                       </div>
-                      <div className="px-5 py-5  hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
+                      <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
                         <p className="text-md font-bold">
                           Mobil App Development
                         </p>
@@ -126,14 +126,14 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                           software engineering.
                         </p>
                       </div>
-                      <div className="px-5 py-5  hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
+                      <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
                         <p className="text-md font-bold">Web Development</p>
                         <p className="text-sm font-medium mt-1 text-gray-600">
                           Transforming business operations with next-generation
                           cloud modernization
                         </p>
                       </div>
-                      <div className="px-5 py-5  hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
+                      <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
                         <p className="text-md font-bold">Digital marketing</p>
                         <p className="text-sm font-medium mt-1 text-gray-600">
                           Transforming concepts into functional systems through
@@ -148,8 +148,8 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                     Industries
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <div className="grid gap-10  px-6 py-10 md:w-[400px] lg:w-[1100px] lg:grid-cols-3">
-                      <div className="px-5 py-5  hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
+                    <div className="grid xl:gap-6 xxl:gap-10 px-6 xl:py-6 xxl py-10 md:w-[400px] lg:w-[1100px] lg:grid-cols-3">
+                      <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
                         <p className="text-md font-bold">
                           Life Science & Health Care
                         </p>
@@ -158,21 +158,21 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                           AI-powered research and diagnostics
                         </p>
                       </div>
-                      <div className="px-5 py-5  hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
+                      <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
                         <p className="text-md font-bold">Finance</p>
                         <p className="text-sm font-medium mt-1 text-gray-600">
                           Optimizing financial strategies and customer
                           experiences with AI
                         </p>
                       </div>
-                      <div className="px-5 py-5  hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
+                      <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
                         <p className="text-md font-bold">Technology</p>
                         <p className="text-sm font-medium mt-1 text-gray-600">
                           Leading the way with innovative technology and digital
                           transformation
                         </p>
                       </div>
-                      <div className="px-5 py-5  hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
+                      <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
                         <p className="text-md font-bold">
                           Media and Communications
                         </p>
@@ -181,7 +181,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                           drive impactful storytelling
                         </p>
                       </div>
-                      <div className="px-5 py-5  hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
+                      <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
                         <p className="text-md font-bold">
                           Travel Transport and Logistics
                         </p>
@@ -191,7 +191,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                           industry
                         </p>
                       </div>
-                      <div className="px-5 py-5  hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
+                      <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
                         <p className="text-md font-bold">
                           Educations and Learning
                         </p>
@@ -201,7 +201,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                           AI/ML solutions to achieve excellence.
                         </p>
                       </div>
-                      <div className="px-5 py-5  hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
+                      <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
                         <p className="text-md font-bold">
                           Retails and E-commerce
                         </p>
@@ -211,7 +211,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                           promotes innovation.
                         </p>
                       </div>
-                      <div className="px-5 py-5  hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
+                      <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
                         <p className="text-md font-bold">
                           Manufacturing & Distribution
                         </p>
@@ -220,7 +220,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                           distribution through smart technology and automation
                         </p>
                       </div>
-                      <div className="px-5 py-5  hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
+                      <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
                         <p className="text-md font-bold">Resource and Wealth</p>
                         <p className="text-sm font-medium mt-1 text-gray-600">
                           Transforming resource and wealth strategies to unlock
@@ -269,26 +269,26 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                 </AccordionTrigger>
                 <AccordionContent>
                   <div className="h-[400px] overflow-scroll">
-                    <div className="px-5 py-5  hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
+                    <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
                       <p className="text-md font-bold">Data analytics</p>
                       <p className="text-sm font-medium mt-1 text-gray-600">
                         Leveraging today’s data for a more promising future
                       </p>
                     </div>
-                    <div className="px-5 py-5  hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
+                    <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
                       <p className="text-md font-bold">Generative AI</p>
                       <p className="text-sm font-medium mt-1 text-gray-600">
                         Shaping the future through advanced AI
                       </p>
                     </div>
-                    <div className="px-5 py-5  hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
+                    <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
                       <p className="text-md font-bold">Cloud Transformation</p>
                       <p className="text-sm font-medium mt-1 text-gray-600">
                         Bridging conventional and generative AI to deliver
                         effective, real-world applications.
                       </p>
                     </div>
-                    <div className="px-5 py-5  hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
+                    <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
                       <p className="text-md font-bold">
                         Mobile App Development
                       </p>
@@ -297,7 +297,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                         software engineering.
                       </p>
                     </div>
-                    <div className="px-5 py-5  hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
+                    <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
                       <Link href={"/web-developer"}>
                         <p className="text-md font-bold">Web Development</p>
                       </Link>
@@ -306,7 +306,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                         cloud modernization
                       </p>
                     </div>
-                    <div className="px-5 py-5  hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
+                    <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
                       <p className="text-md font-bold">Digital marketing</p>
                       <p className="text-sm font-medium mt-1 text-gray-600">
                         Transforming concepts into functional systems through
@@ -322,7 +322,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                 </AccordionTrigger>
                 <AccordionContent>
                   <div className="h-[400px] overflow-scroll">
-                    <div className="px-5 py-5  hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
+                    <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
                       <p className="text-md font-bold">
                         Life Science & Health Care
                       </p>
@@ -331,21 +331,21 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                         AI-powered research and diagnostics
                       </p>
                     </div>
-                    <div className="px-5 py-5  hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
+                    <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
                       <p className="text-md font-bold">Finance</p>
                       <p className="text-sm font-medium mt-1 text-gray-600">
                         Optimizing financial strategies and customer experiences
                         with AI
                       </p>
                     </div>
-                    <div className="px-5 py-5  hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
+                    <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
                       <p className="text-md font-bold">Technology</p>
                       <p className="text-sm font-medium mt-1 text-gray-600">
                         Leading the way with innovative technology and digital
                         transformation
                       </p>
                     </div>
-                    <div className="px-5 py-5  hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
+                    <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
                       <p className="text-md font-bold">
                         Media and Communications
                       </p>
@@ -354,7 +354,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                         impactful storytelling
                       </p>
                     </div>
-                    <div className="px-5 py-5  hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
+                    <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
                       <p className="text-md font-bold">
                         Travel Transport and Logistics
                       </p>
@@ -364,7 +364,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                         industry
                       </p>
                     </div>
-                    <div className="px-5 py-5  hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
+                    <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
                       <p className="text-md font-bold">
                         Educations and Learning
                       </p>
@@ -374,7 +374,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                         solutions to achieve excellence.
                       </p>
                     </div>
-                    <div className="px-5 py-5  hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
+                    <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
                       <p className="text-md font-bold">
                         Retails and E-commerce
                       </p>
@@ -384,7 +384,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                         promotes innovation.
                       </p>
                     </div>
-                    <div className="px-5 py-5  hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
+                    <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
                       <p className="text-md font-bold">
                         Manufacturing & Distribution
                       </p>
@@ -393,7 +393,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                         distribution through smart technology and automation
                       </p>
                     </div>
-                    <div className="px-5 py-5  hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
+                    <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
                       <p className="text-md font-bold">Resource and Wealth</p>
                       <p className="text-sm font-medium mt-1 text-gray-600">
                         Transforming resource and wealth strategies to unlock

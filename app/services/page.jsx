@@ -2,12 +2,15 @@
 import Footer_01 from "@/components/footer/Footer_01";
 import Header_01 from "@/components/header/Header_01";
 import SwiperNavButtons from "@/components/SwiperNavButton";
-
+import "swiper/css/navigation";
+import { Navigation } from "swiper/modules";
 import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+import { MdOutlineArrowForwardIos } from "react-icons/md";
+import { MdArrowBackIosNew } from "react-icons/md";
 const data = [
   {
     img: "https://s7d9.scene7.com/is/image/slalom/insight-globalbas-turtle-finserv-thumb-520x490?fmt=webp-alpha",
@@ -154,14 +157,25 @@ const tabs = [
 ];
 function Services() {
   const [mobileTabs, setMobileTabs] = useState(false);
-  const [tabSelected, setTabSelected] = useState(0);
+  const [tabSelected, setTabSelected] = useState(2);
 
   const swiperRef = useRef(null);
+
+  const [swiperInstance, setSwiperInstance] = useState(null);
+  const [isBeginning, setIsBeginning] = useState(true);
+  const [isEnd, setIsEnd] = useState(false);
+
+  const handleSlideChange = () => {
+    if (swiperInstance) {
+      setIsBeginning(swiperInstance.isBeginning);
+      setIsEnd(swiperInstance.isEnd);
+    }
+  };
   return (
     <>
       <Header_01 />
       <main className="main-wrapper relative overflow-hidden">
-        <div className="w-full mb-20  h-[85vh] xl:h-screen bg-no-repeat bg-center bg-cover bg-[url('https://images.pexels.com/photos/5716052/pexels-photo-5716052.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')]">
+        <div className="w-full  h-[85vh] xl:h-screen bg-no-repeat bg-center bg-cover bg-[url('https://images.pexels.com/photos/5716052/pexels-photo-5716052.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')]">
           <div className="bg-gradient-to-b w-full h-full from-gray-800/50 via-transparent to-gray-700/40">
             <div className="global-container flex flex-col justify-around  w-full h-full">
               <div></div>
@@ -170,7 +184,7 @@ function Services() {
                 <h2 className="font-dmSans font-bold text-gray-50">
                   Our Services
                 </h2>
-                <p className="mt-3  leading-relaxed text-sm xl:text-lg text-gray-100 w-[80%] lg:w-2/4">
+                <p className="mt-3   leading-relaxed text-sm xl:text-lg text-gray-100 w-full lg:w-2/4">
                   With a relentless focus on “why,” we combine our services to
                   discover, design, and build the most impactful outcomes for
                   you. We don’t come with predetermined processes. Rather, we
@@ -181,117 +195,143 @@ function Services() {
             </div>
           </div>
         </div>
-        <section className="global-container mb-20">
-          <h2 className="w-full text-center">Industries and impact</h2>
-          <p className="text-md text-center mt-2">
-            Learn how we’re driving impact with organizations like yours across
-            key industry sectors.
-          </p>
-        </section>
-        <div
-          className={`bg-sky-400 block  lg:hidden px-4 py-3 transition-all duration-200   w-full `}
-        >
-          <p
-            onClick={() => setMobileTabs(!mobileTabs)}
-            className="flex w-full capitalize items-center gap-1 font-[700] font-Satoshi"
-          >
-            {tabs[tabSelected].name}
-            <span>
-              <MdOutlineKeyboardArrowDown
-                className={`text-2xl ${mobileTabs ? "rotate-180" : "rotate-0"}`}
-              />
-            </span>
-          </p>
+        <div className="bg-[url('/assets/img_placeholder/bg.jpg')] bg-top bg-cover bg-no-repeat py-32">
+          <section className="global-container ">
+            <p className="w-full text-3xl xl:text-6xl xxl:text-7xl font-Satoshi font-[500] text-start lg:text-center">
+              Industries and impact
+            </p>
+            <p className="text-lg xl:text-md xxl:text-lg text-start lg:text-center mt-2">
+              Learn how we’re driving impact with organizations like yours
+              across key industry sectors.
+            </p>
+          </section>
           <div
-            className={`transition-all duration-300 ${
-              mobileTabs ? "max-h-[100vh] py-4 " : "max-h-0"
-            }  bg-sky-400 `}
+            className={`bg-sky-400 block  lg:hidden px-4 py-3 transition-all duration-200   w-full `}
           >
-            {mobileTabs
-              ? tabs.map((service, index) => {
-                  if (tabSelected !== index) {
-                    return (
-                      <p
-                        key={index}
-                        onClick={() => {
-                          setTabSelected(index);
-                          setMobileTabs(false);
-                        }}
-                        className={`mt-5 text-[1rem] xxl:text-[.8vw] hover:underline cursor-pointer font-Satoshi uppercase font-[500]`}
-                      >
-                        {service.name}
-                      </p>
-                    );
-                  }
-                })
-              : null}
-          </div>
-        </div>
-        <section className=" w-full h-auto lg:h-screen lg:mb-20 flex flex-col lg:flex-row justify-between items-start">
-          <div className="bg-blue-400 h-full transition-all duration-200 xl:h-full w-full xl:w-1/3 max-w-[750px]  xl:px-14 xl:py-14 rounded-lg xl:rounded-r-[2rem]">
-            <div className="hidden lg:block">
-              {tabs.map((service, index) => {
-                return (
-                  <p
-                    key={index}
-                    onClick={() => setTabSelected(index)}
-                    className={`mt-5 text-sm xxl:text-lg  hover:underline cursor-pointer uppercase ${
-                      tabSelected == index ? "underline" : ""
-                    } `}
-                  >
-                    {service.name}
-                  </p>
-                );
-              })}
+            <p
+              onClick={() => setMobileTabs(!mobileTabs)}
+              className="flex w-full px-5 capitalize items-center gap-1 font-[700] font-Satoshi"
+            >
+              {tabs[tabSelected].name}
+              <span>
+                <MdOutlineKeyboardArrowDown
+                  className={`text-2xl ${
+                    mobileTabs ? "rotate-180" : "rotate-0"
+                  }`}
+                />
+              </span>
+            </p>
+            <div
+              className={`transition-all duration-300 ${
+                mobileTabs ? "max-h-[100vh] py-4 " : "max-h-0"
+              }  bg-sky-400 `}
+            >
+              {mobileTabs
+                ? tabs.map((service, index) => {
+                    if (tabSelected !== index) {
+                      return (
+                        <p
+                          key={index}
+                          onClick={() => {
+                            setTabSelected(index);
+                            setMobileTabs(false);
+                          }}
+                          className={`mt-5 px-5 text-[1rem] xxl:text-[.8vw] hover:underline cursor-pointer font-Satoshi uppercase font-[500]`}
+                        >
+                          {service.name}
+                        </p>
+                      );
+                    }
+                  })
+                : null}
             </div>
           </div>
-          <div className="w-full px-4 lg:px-10 lg:h-full h-auto mt-10 lg:mt-20  justify-start gap-5 items-start flex flex-col md:flex-row ">
-            <div className="w-auto max-w-[800px]">
-              <p className="text-3xl text-center lg:text-start md:text-4xl xxl:text-5xl capitalize">
-                {tabs[tabSelected].name}
-              </p>
-              <p className="text-sm !leading-loose  text-center lg:text-start xxl:text-lg  mt-3">
-                {tabs[tabSelected].data}
-              </p>
-              <p className="mt-5 text-lg  text-center lg:text-start xxl:text-2xl font-semibold">
-                Industires include:
-              </p>
-              <div className="mt-2 w-full flex flex-col justify-center items-center lg:items-start">
-                {tabs[tabSelected].points.map((point, index) => (
-                  <p className="text-sm xxl:text-lg mt-1" key={index}>
-                    {point}
+          <div className="relative hidden mt-5 lg:block global-container">
+            <Swiper
+              spaceBetween={10}
+              navigation={false}
+              modules={[Navigation]}
+              onSwiper={setSwiperInstance}
+              onSlideChange={handleSlideChange}
+              slidesPerView="auto"
+            >
+              {tabs.map((tab, index) => (
+                <SwiperSlide className="!w-auto" key={index}>
+                  <p
+                    onClick={() => setTabSelected(index)}
+                    className={` ${
+                      tabSelected == index
+                        ? "bg-gray-900 text-gray-100"
+                        : "bg-gray-300 text-gray-900"
+                    } xl:text-sm xxl:text-[1rem] px-4 py-2 rounded-full cursor-pointer`}
+                  >
+                    {tab.name}
                   </p>
-                ))}
-              </div>
-
-              <div className="w-full flex justify-center lg:justify-start">
-                <button className="button rounded-[50px] mt-10 border-2 border-black bg-transparent py-3 text-black after:bg-[#2962FF] hover:border-[#2962FF] hover:text-white">
-                  Learn more
+                </SwiperSlide>
+              ))}
+            </Swiper>
+            {!isBeginning && (
+              <div className="absolute top-1/2 -translate-y-1/2 left-8 z-[99] shadow-[0_0px_30px_45px_rgba(242,243,245)] rounded-full">
+                <button
+                  className="bg-lime-300  p-3 text-[1.1rem] rounded-full"
+                  onClick={() => swiperInstance.slidePrev()}
+                >
+                  <MdArrowBackIosNew />
                 </button>
               </div>
-            </div>
-            <div className="bg-gray-100 w-full lg:w-[21rem]  lg:mt-0 min-w-[350px] pb-7 rounded-xl ">
-              <div className=" rounded-xl w-full bg-[url('https://images.unsplash.com/photo-1531538512164-e6c51ea63d20?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-no-repeat bg-center bg-cover h-[300px] lg:h-[330px]"></div>
-              <div className="px-5">
-                <p className="mt-4 text-lg uppercase">customer story</p>
-                <p className="xxl:text-2xl mt-3 font-bold">
-                  Investing in a culture of innovation and Technology
-                </p>
-                <p className="mt-7">Nasdaq</p>
+            )}
+
+            {!isEnd && (
+              <div className="absolute top-1/2 -translate-y-1/2 right-8 z-[99] shadow-[0_0px_30px_45px_rgba(220,223,228)] rounded-full">
+                <button
+                  className="bg-lime-300 p-3  text-[1.1rem] rounded-full"
+                  onClick={() => swiperInstance.slideNext()}
+                >
+                  <MdOutlineArrowForwardIos />
+                </button>
               </div>
-            </div>
+            )}
           </div>
-        </section>
-        {/* Service Section */}
-        <section className="mb-40 mt-20 global-container">
-          <div>
-            <div className="flex  justify-center items-center">
-              <h2 className="text-gray-900 text-center">
-                2024 Industry Outlooks{" "}
-              </h2>
+          <div className="global-container mt-10 xl:mt-20 grid grid-cols-1  lg:grid-cols-2 px-0 xl:px-14 gap-8">
+            <div>
+              <p className="text-lg xl:text-4xl xxl:text-5xl font-Satoshi font-[600]">
+                {tabs[tabSelected].name}
+              </p>
+              <p className="text-md xl:text-sm xxl:text-lg font-Satoshi mt-4">
+                {tabs[tabSelected].data}
+              </p>
+              <p className="font-Satoshi font-[500] text-lg xl:text-xl xxl:text-2xl mt-5">
+                Industries included
+              </p>
+              <ul className="list-disc px-5 mt-2 w-full">
+                {tabs[tabSelected].points.map((point, index) => (
+                  <li key={index} className="text-md xl:text-sm xxl:text-lg">
+                    {point}
+                  </li>
+                ))}
+              </ul>
+              <button className="mt-5 px-5 py-2 bg-blue-500  text-md xl:text-sm xxl:text-lg rounded-md text-gray-200">
+                Learn More
+              </button>
             </div>
-            <div className="w-full hidden lg:flex justify-end mb-5">
-              <SwiperNavButtons swiperRef={swiperRef} />
+            <div
+              style={{
+                backgroundImage: `url('https://images.unsplash.com/photo-1531538512164-e6c51ea63d20?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
+              }}
+              className="w-full min-h-[400px] relative rounded-xl shadow-xl border border-gray-300 bg-no-repeat bg-[url('')] bg-center bg-cover"
+            ></div>
+          </div>
+        </div>
+        {/* Service Section */}
+        <section className="mb-20 py-20 ">
+          <div className="global-container">
+            <div className="flex  justify-between items-center">
+              <p className="text-3xl w-full text-start  lg:text-6xl tracking-tight font-Satoshi font-[600]  lg:w-2/3">
+                Discover Our Stories
+              </p>
+              <div className="hidden lg:flex">
+                <SwiperNavButtons swiperRef={swiperRef} />
+              </div>
             </div>
             <Swiper
               ref={swiperRef}
@@ -309,20 +349,20 @@ function Services() {
                   slidesPerView: 4, // 4 slides for screens >= 1024px
                 },
               }}
-              className="mt-10"
+              className=" mt-5 xl:mt-10"
             >
               {data.map((elem, index) => {
                 return (
                   <SwiperSlide key={index} className="  w-full cursor-pointer ">
                     <motion.div
                       whileHover={{ backgroundColor: elem.hoverColor }}
-                      className={`h-[30rem] rounded-xl bg-gray-100 `}
+                      className={` h-[25rem] xl:h-[30rem] rounded-xl bg-slate-200 `}
                     >
                       <div
                         className="w-full h-64 bg-no-repeat rounded-xl bg-center bg-cover "
                         style={{ backgroundImage: `url(${elem.img})` }}
                       ></div>
-                      <p className="text-3xl font-semibold mt-5 px-3">
+                      <p className=" text-2xl lg:text-3xl font-semibold mt-5 px-3">
                         {elem.title}
                         {index}
                       </p>
