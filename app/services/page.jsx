@@ -195,6 +195,24 @@ function Services() {
             </div>
           </div>
         </div>
+
+        <section className="w-full min-h-[80vh] py-20  bg-no-repeat bg-center bg-cover flex justify-center items-center bg-[url('/assets/img_placeholder/quote-bg.jpg')]">
+          <p className="text-slate-900 tracking-tight !leading-[4rem] font-Satoshi font-bold text-3xl xl:text-4xl xxl:text-5xl global-container text-center">
+            We make it easy for{" "}
+            <span className="rounded-full bg-[url('https://images.unsplash.com/photo-1517677129300-07b130802f46?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-no-repeat bg-center bg-cover text-transparent">
+              000
+            </span>{" "}
+            companies and their{" "}
+            <span className="rounded-full bg-[url('https://images.unsplash.com/photo-1517677129300-07b130802f46?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-no-repeat bg-center bg-cover text-transparent">
+              0000
+            </span>{" "}
+            employees to set-up, contribute and manage complex{" "}
+            <span className="rounded-full bg-[url('https://images.unsplash.com/photo-1517677129300-07b130802f46?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-no-repeat bg-center bg-cover text-transparent">
+              00
+            </span>{" "}
+            benefit
+          </p>
+        </section>
         <div className="bg-[url('/assets/img_placeholder/bg.jpg')] bg-top bg-cover bg-no-repeat py-32">
           <section className="global-container ">
             <p className="w-full text-3xl xl:text-6xl xxl:text-7xl font-Satoshi font-[500] text-start lg:text-center">
