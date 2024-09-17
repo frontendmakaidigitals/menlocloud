@@ -56,57 +56,57 @@ const techLogos = [
 const industries = [
   {
     name: "Healthcare",
-    icon: "/assets/img_placeholder/healthcare.png",
+    icon: "https://cdn3d.iconscout.com/3d/premium/thumb/healthcare-3d-icon-download-in-png-blend-fbx-gltf-file-formats--heart-love-hands-medical-caregiver-nursing-home-pack-icons-5700707.png?f=webp",
     color: "#FFCDD2",
     description:
       "you can transform healthcare with our cutting-edge solutions like telemedicine and AI tools, enhancing patient care and operational efficiency.",
   },
   {
     name: "Construction",
-    icon: "/assets/img_placeholder/hook.png",
+    icon: "https://icons.iconarchive.com/icons/microsoft/fluentui-emoji-3d/512/Building-Construction-3d-icon.png",
     color: "#FFECB3",
     description:
       "you can revolutionize construction with our smart building technologies and project management software, improving efficiency and safety on-site.",
   },
   {
     name: "Finance",
-    icon: "/assets/img_placeholder/budget.png",
-    color: "#CFD8DC",
+    icon: "https://cdn3d.iconscout.com/3d/premium/thumb/finance-3d-illustration-download-in-png-blend-fbx-gltf-file-formats--invoice-bill-receipt-online-money-service-pack-marketing-branding-illustrations-4159684.png?f=webp",
+    color: "#F5F5F5",
     description:
       "you can innovate finance with our advanced fintech solutions and AI-driven analytics, enhancing security, efficiency, and decision-making.",
   },
   {
     name: "transportation",
-    icon: "/assets/img_placeholder/delivery-truck.png",
-    color: "#FFCCBC",
+    icon: "https://static.vecteezy.com/system/resources/previews/047/398/260/original/cartoon-public-trolleybus-3d-icon-on-the-transparent-background-vehicles-for-transportation-concept-png.png",
+    color: "#D1C4E9",
     description:
       "you can transform transportation with our smart routing and autonomous vehicle technologies, enhancing efficiency and safety in transit systems.",
   },
   {
     name: "entertainment",
-    icon: "/assets/img_placeholder/popcorn.png",
-    color: "#B3E5FC",
+    icon: "https://static.vecteezy.com/system/resources/previews/016/407/496/original/3d-entertainment-website-icon-illustration-png.png",
+    color: "#E57373",
     description:
       "you can revolutionize entertainment with our immersive technologies and innovative content delivery systems, creating engaging and interactive experiences.",
   },
   {
     name: "retail",
-    icon: "/assets/img_placeholder/store.png",
+    icon: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/09dcac142853293.626f5704a3e61.png",
     color: "#FFAB91",
     description:
       "you can elevate retail with our smart analytics and seamless e-commerce solutions, enhancing customer experiences and operational efficiency.",
   },
   {
     name: "manufacturing",
-    icon: "/assets/img_placeholder/manufacturing.png",
-    color: "#E0E0E0",
+    icon: "https://cdn3d.iconscout.com/3d/premium/thumb/factory-3d-icon-download-in-png-blend-fbx-gltf-file-formats--industry-industrial-construction-building-pack-commercial-icons-9646402.png?f=webp",
+    color: "#FFB74D",
     description:
       "you can transform manufacturing with our advanced automation and IoT solutions, optimizing production processes and enhancing efficiency.",
   },
   {
     name: "automation",
-    icon: "/assets/img_placeholder/bot.png",
-    color: "#FFE082",
+    icon: "https://cdn3d.iconscout.com/3d/premium/thumb/nano-robots-3d-icon-download-in-png-blend-fbx-gltf-file-formats--robot-robotic-robotics-technology-future-things-pack-science-icons-6605347.png?f=webp",
+    color: "#B39DDB",
     description:
       "you can drive automation with our intelligent systems and robotics, boosting efficiency and accuracy across various industries.",
   },
@@ -724,23 +724,19 @@ function Home() {
           <div className="w-full global-container mt-10 grid grid-cols-1  xl:grid-cols-4 gap-5">
             {industries.map((industry, index) => (
               <div
-                className="bg-white border border=gray-900  group relative shadow-sm cursor-pointer overflow-hidden rounded-xl px-5 py-7 flex flex-col justify-center items-center "
+                className="bg-white border border=gray-900  group relative shadow-sm cursor-pointer overflow-hidden rounded-xl flex flex-col justify-start items-start px-1 pt-1 pb-5 "
                 key={index}
               >
                 <div
-                  className="size-2 transition-all duration-500 top-1/4 group-hover:scale-[70] absolute rounded-full "
                   style={{ backgroundColor: industry.color }}
-                ></div>
-                <div
-                  style={{ backgroundColor: industry.color }}
-                  className="relative z-5 size-24 flex justify-center items-center rounded-full  overflow-hidden"
+                  className="w-full relative rounded-xl h-60 "
                 >
-                  <img className="w-2/3" src={industry.icon} />
+                  <img className="w-2/4 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  *:" src={industry.icon} />
                 </div>
-                <p className="font-[700] text-2xl capitalize mt-2 font-Satoshi relative z-5">
+                <p className="font-[700] text-2xl capitalize px-4 mt-4 font-Satoshi relative z-5">
                   {industry.name}
                 </p>
-                <p className="text-center relative z-5 text-gray-500 text-sm mt-1 capitalize ">
+                <p className=" relative z-5 text-gray-500 px-4 text-sm mt-1 capitalize ">
                   {industry.description}{" "}
                 </p>
               </div>
