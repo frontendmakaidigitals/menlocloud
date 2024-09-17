@@ -345,7 +345,7 @@ function Home() {
         </section>
         {/*...::: Hero Section End :::... */}
         <section className=" mt-14 xl:mt-32 ">
-          <p className="global-container mb-10 text-xl lg:text-6xl tracking-tight font-Satoshi font-[600] w-full lg:w-2/3  text-center">
+          <p className="global-container mb-10 text-3xl lg:text-6xl tracking-tight font-Satoshi font-[600] w-full lg:w-2/3  text-center">
             Our{" "}
             <span className="bg-gradient-to-r font-Telma from-blue-600 to-indigo-400 bg-clip-text text-transparent">
               {" "}
@@ -360,8 +360,8 @@ function Home() {
           </Marquee>
         </section>
 
-        <section className="bg-blue-50 py-16 mt-32 flex flex-col items-center justify-center">
-          <p className="global-container mb-3 text-xl lg:text-6xl tracking-tight font-Satoshi font-[600] w-full lg:w-2/3  text-center">
+        <section className="bg-blue-50 py-16 mt-20 lg:mt-32 flex flex-col items-center justify-center">
+          <p className="global-container mb-3 text-3xl lg:text-6xl tracking-tight font-Satoshi font-[600] w-full lg:w-2/3  text-center">
             We Turn{" "}
             <span className="bg-gradient-to-r font-Telma from-blue-600 to-indigo-400 bg-clip-text text-transparent">
               Good Ideas
@@ -398,7 +398,7 @@ function Home() {
               {/* Section Content Block */}
               <div className="jos mb-10 lg:mb-16 xl:mb-14">
                 <div className="w-full flex justify-center ">
-                  <p className="global-container  text-xl lg:text-6xl tracking-tight font-Satoshi font-[600] w-full lg:w-2/3  text-center">
+                  <p className="global-container  text-4xl lg:text-6xl tracking-tight font-Satoshi font-[600] w-full lg:w-2/3  text-center">
                     Our{" "}
                     <span className="bg-gradient-to-r font-Telma from-blue-600 to-indigo-400 bg-clip-text text-transparent">
                       {" "}
@@ -734,7 +734,7 @@ function Home() {
             <div className="blue-gradient-2 absolute -left-[100px] top-[64%] -z-[1]  w-[160px] h-[160px] lg:h-[360px] lg:w-[360px] -rotate-[-9.022deg] rounded-[360px]"></div>
           </div>
           <div className="global-container ">
-            <p className="global-container text-xl lg:text-6xl tracking-tight font-Satoshi font-[600] w-full lg:w-2/3  text-center">
+            <p className="global-container text-3xl lg:text-6xl tracking-tight font-Satoshi font-[600] w-full lg:w-2/3  text-center">
               Broad
               <span className="bg-gradient-to-r font-Telma from-blue-600 to-indigo-400 bg-clip-text text-transparent">
                 {" "}
@@ -772,7 +772,7 @@ function Home() {
 
         {/*...::: Awards Section starts :::... */}
         <section className="mt-28">
-          <p className="global-container mb-10 text-xl lg:text-6xl tracking-tight font-Satoshi font-[600] w-full lg:w-2/3  text-center">
+          <p className="global-container mb-10 text-3xl lg:text-6xl tracking-tight font-Satoshi font-[600] w-full lg:w-2/3  text-center">
             Awards & Certifications
           </p>
           <Marquee reverse className=" [--duration:20s]">
@@ -782,7 +782,7 @@ function Home() {
           </Marquee>
         </section>
         {/*...::: FAQ Section Start :::... */}
-        <section className="mt-28   bg-black  ">
+        <section className="mt-20 hidden lg:block   bg-black  ">
           <LampContainer>
             <motion.p
               initial={{ opacity: 0.5, y: 100 }}
@@ -792,12 +792,12 @@ function Home() {
                 duration: 0.8,
                 ease: "easeInOut",
               }}
-              className=" bg-gradient-to-b from-slate-300 to-slate-500 bg-clip-text text-center font-Satoshi font-medium tracking-tight text-transparent md:text-7xl"
+              className=" bg-gradient-to-b from-cyan-100 to-slate-500 bg-clip-text text-center font-Satoshi font-medium tracking-tight text-transparent md:text-7xl"
             >
               We are <br />{" "}
               <span className="text-xl lg:text-8xl ">
                 Menlo
-                <span className="font-Clash bg-gradient-to-b from-blue-300 to-blue-500 bg-clip-text">
+                <span className="font-Clash bg-gradient-to-b from-cyan-200 to-blue-500 bg-clip-text">
                   Cloud
                 </span>
               </span>
@@ -810,17 +810,33 @@ function Home() {
                 duration: 0.8,
                 ease: "easeInOut",
               }}
-              className="text-center mt-4 px-4 py-2 bg-gradient-to-b from-slate-300 to-slate-500 rounded-md font-Satoshi font-medium tracking-tight text-2xl md:text-xl   !text-gray-900 "
+              className="text-center mt-8 px-4 py-2 bg-gradient-to-b from-slate-400 to-slate-500 rounded-md font-Satoshi font-medium tracking-tight text-2xl md:text-xl   !text-gray-900 "
             >
               learn more
             </motion.button>
           </LampContainer>
         </section>
+
+        <section className="mt-20 block lg:hidden">
+          <div className="w-full flex flex-col justify-center items-center">
+            <p className=" text-4xl font-Satoshi font-[500] my-5 lg:text-6xl">We are</p>
+            <h1 className=" font-[800] gradient-text w-fit animate-gradient">
+              Menlo<span className="font-Clash">Cloud</span>
+            </h1>
+
+            <div className="w-full overflow-hidden flex justify-center mt-6 relative">
+              <button className="overflow-hidden group rounded-[50px] px-5 font-satoshi relative bg-black py-2 text-white  text-sm md:text-xl">
+                <div className="bg-blue-500  size-1 group-hover:scale-[50] transition-all duration-500 rounded-full absolute top-[110%] left-1/2 -translate-x-1/2  -translate-y-1/2"></div>
+                <span className="relative z-5 "> Join Our Team</span>
+              </button>
+            </div>
+          </div>
+        </section>
         {/*...::: FAQ Section End :::... */}
         <section className="my-28 global-container">
           <div>
             <div className="flex  justify-between items-center">
-              <p className="text-xl lg:text-6xl tracking-tight font-Satoshi font-[600]  lg:w-2/3">
+              <p className="text-3xl w-full text-center lg:text-start  lg:text-6xl tracking-tight font-Satoshi font-[600]  lg:w-2/3">
                 Discover Our Stories
               </p>
               <div className="hidden lg:flex">
@@ -856,7 +872,7 @@ function Home() {
                         className="w-full h-64 bg-no-repeat rounded-xl bg-center bg-cover "
                         style={{ backgroundImage: `url(${elem.img})` }}
                       ></div>
-                      <p className="text-3xl font-semibold mt-5 px-3">
+                      <p className=" text-2xl lg:text-3xl font-semibold mt-5 px-3">
                         {elem.title}
                         {index}
                       </p>
@@ -1146,7 +1162,7 @@ const ReviewCard = ({ img, index }) => {
   return (
     <figure
       className={cn(
-        `relative size-40 flex justify-center items-center cursor-pointer overflow-hidden rounded-xl border p-4`,
+        `relative size-28 lg:size-40 flex justify-center items-center cursor-pointer overflow-hidden rounded-xl border p-4`,
         // light styles
         "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]"
         // dark styles
