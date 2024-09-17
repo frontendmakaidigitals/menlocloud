@@ -11,6 +11,8 @@ import { motion } from "framer-motion";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 import { MdArrowBackIosNew } from "react-icons/md";
+import Marquee from "@/components/magicui/marquee";
+import { cn } from "@/lib/utils";
 const data = [
   {
     img: "https://s7d9.scene7.com/is/image/slalom/insight-globalbas-turtle-finserv-thumb-520x490?fmt=webp-alpha",
@@ -46,6 +48,44 @@ const data = [
     img: "https://s7d9.scene7.com/is/image/slalom/insight-globalbas-turtle-finserv-thumb-520x490?fmt=webp-alpha",
     title: "2024 industry outlook: Financial services",
     hoverColor: "#FFAB91",
+  },
+];
+const techLogos = [
+  {
+    username: "@jack",
+
+    img: "https://www.netscout.com/sites/default/files/2022-02/17/images/cloud-lockup-logo-500px.png",
+  },
+  {
+    username: "@john",
+
+    img: "/assets/img_placeholder/Power_Bi.png",
+  },
+  {
+    username: "@jill",
+
+    img: "https://www.logo.wine/a/logo/Amazon_Web_Services/Amazon_Web_Services-Logo.wine.svg",
+  },
+  {
+    username: "@jane",
+
+    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Microsoft_Azure.svg/2048px-Microsoft_Azure.svg.png",
+  },
+
+  {
+    username: "@jack3",
+
+    img: "https://companieslogo.com/img/orig/SNOW-35164165.png?t=1720244494",
+  },
+  {
+    username: "@jack3",
+
+    img: "/assets/img_placeholder/qlik.png",
+  },
+  {
+    username: "@jack3",
+
+    img: "https://www.svgrepo.com/show/354012/looker-icon.svg",
   },
 ];
 
@@ -216,7 +256,15 @@ function Services() {
         <div className="bg-[url('/assets/img_placeholder/bg.jpg')] bg-top bg-cover bg-no-repeat py-32">
           <section className="global-container ">
             <p className="w-full text-3xl xl:text-6xl xxl:text-7xl font-Satoshi font-[500] text-start lg:text-center">
-              Industries and impact
+              <span className="bg-gradient-to-r font-Telma from-blue-600 to-indigo-400 bg-clip-text  text-transparent">
+                {" "}
+                Industries{" "}
+              </span>{" "}
+              and{" "}
+              <span className="bg-gradient-to-r font-Telma from-blue-600 to-indigo-400 bg-clip-text text-transparent">
+                {" "}
+                Impact{" "}
+              </span>
             </p>
             <p className="text-lg xl:text-md xxl:text-lg text-start lg:text-center mt-2">
               Learn how we’re driving impact with organizations like yours
@@ -340,6 +388,20 @@ function Services() {
             ></div>
           </div>
         </div>
+        <section className="mt-28">
+          <p className="global-container mb-10 text-3xl lg:text-6xl tracking-tight font-Satoshi font-[600] w-full lg:w-2/3  text-center">
+            Our{" "}
+            <span className="bg-gradient-to-r font-Telma from-blue-600 to-indigo-400 bg-clip-text text-transparent">
+              {" "}
+              Clients{" "}
+            </span>
+          </p>
+          <Marquee reverse className=" [--duration:20s]">
+            {firstRow.map((review) => (
+              <ReviewCard key={review.username} {...review} />
+            ))}
+          </Marquee>
+        </section>
         {/* Service Section */}
         <section className="mb-20 py-20 ">
           <div className="global-container">
@@ -398,3 +460,18 @@ function Services() {
 }
 
 export default Services;
+const firstRow = techLogos;
+const ReviewCard = ({ img, index }) => {
+  return (
+    <figure
+      className={cn(
+        `relative size-28 lg:size-40 flex justify-center items-center cursor-pointer overflow-hidden rounded-xl border p-4`,
+        // light styles
+        "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]"
+        // dark styles
+      )}
+    >
+      <img className=" " width="auto" alt="" src={img} />
+    </figure>
+  );
+};

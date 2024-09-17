@@ -1,11 +1,10 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { Swiper, SwiperSlide } from "swiper/react";
-import useAccordion from "@/components/hooks/useAccordion";
 import { useRef, useState, useEffect } from "react";
 import Header_01 from "@/components/header/Header_01";
 import Footer_01 from "@/components/footer/Footer_01";
-import DotPattern from "@/components/magicui/dot-pattern";
+ 
 import "/styles/globals.css";
 import Marquee from "@/components/magicui/marquee";
 import { AnimatePresence, color, motion } from "framer-motion";
@@ -347,7 +346,7 @@ function Home() {
         <section className=" mt-14 xl:mt-32 ">
           <p className="global-container mb-10 text-3xl lg:text-6xl tracking-tight font-Satoshi font-[600] w-full lg:w-2/3  text-center">
             Our{" "}
-            <span className="bg-gradient-to-r font-Telma from-blue-600 to-indigo-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
               {" "}
               Tech{" "}
             </span>{" "}
@@ -361,14 +360,14 @@ function Home() {
         </section>
 
         <section className="bg-blue-50 py-16 mt-20 lg:mt-32 flex flex-col items-center justify-center">
-          <p className="global-container mb-3 text-3xl lg:text-6xl tracking-tight font-Satoshi font-[600] w-full lg:w-2/3  text-center">
+          <p className="global-container mb-3 text-3xl lg:text-6xl  font-Satoshi font-[600] w-full lg:w-2/3  text-center">
             We Turn{" "}
-            <span className="bg-gradient-to-r font-Telma from-blue-600 to-indigo-400 bg-clip-text text-transparent">
-              Good Ideas
-            </span>{" "}
+            <span className="bg-gradient-to-r font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
+              Good Ideas{" "}
+            </span>
             Into{" "}
-            <span className="bg-gradient-to-r font-Telma from-blue-600 to-indigo-400 bg-clip-text text-transparent">
-              Great Things
+            <span className="bg-gradient-to-r font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
+              Great Things{" "}
             </span>
           </p>
           <div className="global-container  grid w-full  grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-5 place-items-between">
@@ -398,10 +397,9 @@ function Home() {
               {/* Section Content Block */}
               <div className="jos mb-10 lg:mb-16 xl:mb-14">
                 <div className="w-full flex justify-center ">
-                  <p className="global-container  text-4xl lg:text-6xl tracking-tight font-Satoshi font-[600] w-full lg:w-2/3  text-center">
+                  <p className="global-container text-4xl lg:text-6xl  font-Satoshi font-[600] w-full lg:w-2/3  text-center">
                     Our{" "}
-                    <span className="bg-gradient-to-r font-Telma from-blue-600 to-indigo-400 bg-clip-text text-transparent">
-                      {" "}
+                    <span className="bg-gradient-to-r font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
                       Service{" "}
                     </span>{" "}
                     Solutions
@@ -734,9 +732,9 @@ function Home() {
             <div className="blue-gradient-2 absolute -left-[100px] top-[64%] -z-[1]  w-[160px] h-[160px] lg:h-[360px] lg:w-[360px] -rotate-[-9.022deg] rounded-[360px]"></div>
           </div>
           <div className="global-container ">
-            <p className="global-container text-3xl lg:text-6xl tracking-tight font-Satoshi font-[600] w-full lg:w-2/3  text-center">
+            <p className="global-container text-3xl lg:text-6xl  font-Satoshi font-[600] w-full lg:w-2/3  text-center">
               Broad
-              <span className="bg-gradient-to-r font-Telma from-blue-600 to-indigo-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
                 {" "}
                 Industry{" "}
               </span>
@@ -772,9 +770,9 @@ function Home() {
 
         {/*...::: Awards Section starts :::... */}
         <section className="mt-28">
-          <p className="global-container mb-10 text-3xl lg:text-6xl tracking-tight font-Satoshi font-[600] w-full lg:w-2/3  text-center">
+          <p className="global-container mb-10 text-3xl lg:text-6xl font-Satoshi font-[600] w-full lg:w-2/3  text-center">
             Our{" "}
-            <span className="bg-gradient-to-r font-Telma from-blue-600 to-indigo-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
               {" "}
               Clients{" "}
             </span>
@@ -842,8 +840,11 @@ function Home() {
         <section className="my-28 global-container">
           <div>
             <div className="flex  justify-between items-center">
-              <p className="text-3xl w-full text-center lg:text-start  lg:text-6xl tracking-tight font-Satoshi font-[600]  lg:w-2/3">
-                Discover Our Stories
+              <p className="text-3xl w-full text-center lg:text-start  lg:text-6xl  font-Satoshi font-[600]  lg:w-2/3">
+                Discover Our{" "}
+                <span className="bg-gradient-to-r font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
+                  Stories{" "}
+                </span>{" "}
               </p>
               <div className="hidden lg:flex">
                 <SwiperNavButtons swiperRef={swiperRef} />
