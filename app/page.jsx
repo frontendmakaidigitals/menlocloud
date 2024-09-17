@@ -345,9 +345,9 @@ function Home() {
         </section>
         {/*...::: Hero Section End :::... */}
         <section className=" mt-14 xl:mt-32 ">
-          <h2 className="global-container mb-10 text-center">
+          <p className="global-container mb-10 text-xl lg:text-6xl tracking-tight font-Satoshi font-[600] w-full lg:w-2/3  text-center">
             Our Tech Experties
-          </h2>
+          </p>
           <Marquee className=" [--duration:20s]">
             {firstRow.map((review) => (
               <ReviewCard key={review.username} {...review} />
@@ -355,9 +355,11 @@ function Home() {
           </Marquee>
         </section>
 
-        <section className="global-container mt-32 flex flex-col items-center justify-center">
-          <h2 className="text-center">We Turn Good Ideas Into Great Things</h2>
-          <div className="grid w-full  grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-5 place-items-between">
+        <section className="bg-blue-50 py-16 mt-32 flex flex-col items-center justify-center">
+          <p className="global-container mb-10 text-xl lg:text-6xl tracking-tight font-Satoshi font-[600] w-full lg:w-2/3  text-center">
+            We Turn Good Ideas Into Great Things
+          </p>
+          <div className="global-container  grid w-full  grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-5 place-items-between">
             {experiences.map((exp, index) => (
               <div
                 className="mt-20 flex gap-1 flex-col items-center"
@@ -382,9 +384,11 @@ function Home() {
             {/* Section Container */}
             <div className="global-container">
               {/* Section Content Block */}
-              <div className="jos mb-10 lg:mb-16 xl:mb-20">
+              <div className="jos mb-10 lg:mb-16 xl:mb-14">
                 <div className="w-full flex justify-center ">
-                  <h2>Services</h2>
+                  <p className="global-container  text-xl lg:text-6xl tracking-tight font-Satoshi font-[600] w-full lg:w-2/3  text-center">
+                    Services
+                  </p>
                 </div>
               </div>
               {/* Section Content Block */}
@@ -705,7 +709,7 @@ function Home() {
 
         {/*...::: Service Section End :::... */}
 
-        <section className="my-16 relative">
+        <section className="mb-16 relative">
           <div className="overflow-hidden">
             <div className="blue-gradient-1 absolute -left-[15px] top-[61%] -z-[1] w-[200px] h-[200px] lg:h-[400px] lg:w-[400px] -rotate-[-9.022deg] rounded-[400px]"></div>
 
@@ -713,7 +717,9 @@ function Home() {
             <div className="blue-gradient-2 absolute -left-[100px] top-[64%] -z-[1]  w-[160px] h-[160px] lg:h-[360px] lg:w-[360px] -rotate-[-9.022deg] rounded-[360px]"></div>
           </div>
           <div className="global-container ">
-            <h2 className="text-center text-black">Broad Industry usage</h2>
+            <p className="global-container text-xl lg:text-6xl tracking-tight font-Satoshi font-[600] w-full lg:w-2/3  text-center">
+              Broad Industry Usage
+            </p>
           </div>
           <div className="w-full global-container mt-10 grid grid-cols-1  xl:grid-cols-4 gap-5">
             {industries.map((industry, index) => (
@@ -745,9 +751,9 @@ function Home() {
 
         {/*...::: Awards Section starts :::... */}
         <section className="mt-28">
-          <h2 className="global-container text-center mb-10">
+          <p className="global-container mb-10 text-xl lg:text-6xl tracking-tight font-Satoshi font-[600] w-full lg:w-2/3  text-center">
             Awards & Certifications
-          </h2>
+          </p>
           <Marquee reverse className=" [--duration:20s]">
             {firstRow.map((review) => (
               <ReviewCard key={review.username} {...review} />
@@ -755,26 +761,30 @@ function Home() {
           </Marquee>
         </section>
         {/*...::: FAQ Section Start :::... */}
-        <section className="mt-20">
+        <section className="mt-28 bg-black py-20">
           <div className="w-full flex flex-col justify-center items-center">
-            <p className=" text-2xl my-5 lg:text-6xl">We are</p>
+            <p className="global-container text-gray-100 mb-10 text-xl lg:text-6xl tracking-tight font-Satoshi font-[600] w-full lg:w-2/3  text-center">
+              We are
+            </p>
             <h1 className=" font-[800] gradient-text w-fit animate-gradient">
               Menlo<span className="font-Clash">Cloud</span>
             </h1>
 
             <div className="w-full overflow-hidden flex justify-center mt-6 relative">
-              <button className="overflow-hidden group rounded-[50px] px-7 font-satoshi relative bg-black py-3 text-white  ">
+              <button className="overflow-hidden group rounded-[50px] px-7 font-satoshi relative bg-white  py-3 text-gray-900  ">
                 <div className="bg-blue-500  size-1 group-hover:scale-[50] transition-all duration-500 rounded-full absolute top-[110%] left-1/2 -translate-x-1/2  -translate-y-1/2"></div>
-                <span className="relative z-5"> Join Our Team</span>
+                <span className="relative z-5 "> Join Our Team</span>
               </button>
             </div>
           </div>
         </section>
         {/*...::: FAQ Section End :::... */}
-        <section className="mb-40 mt-20 global-container">
+        <section className="my-28 global-container">
           <div>
             <div className="flex  justify-between items-center">
-              <h2 className="text-gray-900">2024 Industry Outlooks </h2>
+              <p className="text-xl lg:text-6xl tracking-tight font-Satoshi font-[600]  lg:w-2/3">
+                Discover Our Stories
+              </p>
               <div className="hidden lg:flex">
                 <SwiperNavButtons swiperRef={swiperRef} />
               </div>
@@ -820,7 +830,7 @@ function Home() {
           </div>
         </section>
         {/*...::: Testimonial Section Start :::... */}
-        <section className="testimonial-section overflow-hidden mt-60">
+        <section className="testimonial-section overflow-hidden mt-40">
           {/* Section Spacer */}
           <div className="bg-black pb-40 pt-20 xl:pb-[200px] xl:pt-[130px]">
             {/* Section Container */}
