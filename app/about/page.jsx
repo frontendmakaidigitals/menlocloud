@@ -6,7 +6,7 @@ import Link from "next/link";
 function About() {
   const data = [
     { name: "employees", number: "100+" },
-    { name: "countries", number: "10+" },
+
     { name: "project done", number: "30+" },
     { name: "offices", number: "20+" },
     { name: "project awards", number: "25+" },
@@ -70,13 +70,13 @@ function About() {
           <div className="breadcrumb-wrapper">
             {/* Section Container */}
             <div className="global-container flex flex-col justify-center items-center">
-              <div className="breadcrumb-block w-2/3 ">
-                <p className="text-3xl xl:text-4xl xxl:text-6xl font-Satoshi font-bold !text-gray-100">
+              <div className="breadcrumb-block w-full lg:w-2/3 ">
+                <p className="text-3xl  xl:text-4xl xxl:text-6xl font-Satoshi font-bold !text-gray-100">
                   Bringing Your Vision to life with Expertise and Dedication
                 </p>
               </div>
-              <div className="w-full h-[80vh] bg-green-400 mt-10 rounded-[40px]"></div>
-              <div className="flex bg-blue-100 w-full p-12 justify-around mt-10 rounded-[40px] items-center">
+              <div className="bg-no-repeat bg-center bg-cover bg-[url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] w-full h-[50vh] xl:h-[80vh] overflow-hidden bg-green-400 mt-10 rounded-[40px]"></div>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-5 place-items-center bg-blue-100 w-full p-6 xl:p-8 xxl:p-12 justify-around mt-10 rounded-[40px]">
                 {data.map((item, index) => (
                   <div
                     key={index}
@@ -85,7 +85,7 @@ function About() {
                     <p className="text-3xl text-blue-500 xl:text-4xl xxl:text-6xl font-bold">
                       {item.number}
                     </p>
-                    <p className="font-[500] capitalize text-blue-400 text-lg xl:text-xl xxl:text-2xl ">
+                    <p className="font-[500] capitalize text-blue-400 text-sm xl:text-xl xxl:text-2xl ">
                       {item.name}
                     </p>
                   </div>
@@ -95,10 +95,10 @@ function About() {
           </div>
           <div className="global-container mb-10">
             <div className="w-full flex flex-col justify-center items-center">
-              <p className="text-3xl xl:text-4xl xxl:text-6xl font-Satoshi font-bold !text-gray-900">
+              <p className="text-3xl  xl:text-4xl xxl:text-6xl text-center font-Satoshi font-bold !text-gray-900">
                 Our Mission and Values
               </p>
-              <p className="mt-2">
+              <p className="mt-2 text-center text-sm ">
                 Fostering a Culture of Excellence and Accountability Through Our
                 Mission and Core Values
               </p>
@@ -114,10 +114,10 @@ function About() {
                   <div className="size-20">
                     <img src={mission.icon} />
                   </div>
-                  <p className="xxl:text-3xl mt-10 font-bold font-Satoshi">
+                  <p className="text-2xl xxl:text-3xl mt-10 font-bold font-Satoshi">
                     {mission.title}
                   </p>
-                  <p className="xxl:text-lg mt-2 font-Satoshi font-medium">
+                  <p className="text-md xxl:text-lg mt-2 font-Satoshi font-medium">
                     {mission.description}
                   </p>
                   <button className="mt-3 text-blue-500 font-Satoshi font-semibold">
@@ -133,7 +133,7 @@ function About() {
               <p className="text-3xl xl:text-4xl w-2/3 xxl:text-6xl font-Satoshi font-bold !text-gray-900 text-center">
                 Our Team
               </p>
-              <p className="mt-2">
+              <p className="mt-2 text-center">
                 Fostering a Culture of Excellence and Accountability Through Our
                 Mission and Core Values
               </p>
@@ -141,10 +141,10 @@ function About() {
           </div>
 
           <div className=" w-full mb-20">
-            <div className="grid w-2/3 global-container grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-10">
+            <div className="grid px-10 w-full xl:w-2/3 global-container grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-10">
               {teams.map((team, index) => (
                 <div key={index} className="rounded-2xl overflow-hidden">
-                  <div className="w-full h-[250px] lg:h-[280px] xl:h-[320px]  bg-gray-400 rounded-2xl object-fit overflow-hidden">
+                  <div className="w-full h-[350px] lg:h-[280px] xl:h-[320px]  bg-gray-400 rounded-2xl object-fit overflow-hidden">
                     <img src={team.img} className="w-full " />
                   </div>
                   <p className="font-bold mt-2 font-Satoshi xxl:text-2xl">
