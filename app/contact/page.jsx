@@ -59,7 +59,7 @@ function Contact() {
                           href="mailto:yourmail@email.com"
                           className="text-2xl font-normal leading-loose hover:text-blue-500 lg:text-3xl"
                         >
-                          info@melapo.com
+                          info@menlocloud.com
                         </Link>
                       </li>
                       <li className="flex flex-col gap-y-4 text-2xl font-bold">
@@ -208,7 +208,7 @@ function Contact() {
                           type="email"
                           name="contact-email"
                           id="contact-email"
-                          placeholder="melapo@gmail.com"
+                          placeholder="adam@menlocloud.com"
                           className="rounded-[10px] border border-gray-300 bg-white px-6 py-[18px] font-bold text-black outline-none transition-all placeholder:text-slate-500 focus:border-blue-500"
                           required=""
                         />
@@ -248,7 +248,7 @@ function Contact() {
                           type="text"
                           name="contact-company"
                           id="contact-company"
-                          placeholder="EX Facebook"
+                          placeholder="facebook"
                           className="rounded-[10px] border border-gray-300 bg-white px-6 py-[18px] font-bold text-black outline-none transition-all placeholder:text-slate-500 focus:border-blue-500"
                           required=""
                         />
