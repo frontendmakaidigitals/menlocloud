@@ -19,12 +19,12 @@ export const wrap = (min, max, v) => {
 
 export function VelocityScroll({
   text,
-  default_velocity = 5,
+  default_velocity = 2,
   className
 }) {
   function ParallaxText({
     children,
-    baseVelocity = 100,
+    baseVelocity = 50,
     className
   }) {
     const baseX = useMotionValue(0);
@@ -59,7 +59,7 @@ export function VelocityScroll({
       return () => window.removeEventListener("resize", calculateRepetitions);
     }, [children]);
 
-    const x = useTransform(baseX, (v) => `${wrap(-100 / repetitions, 0, v)}%`);
+    const x = useTransform(baseX, (v) => `${wrap(-200 / repetitions, 0, v)}%`);
 
     const directionFactor = React.useRef(1);
     useAnimationFrame((t, delta) => {
