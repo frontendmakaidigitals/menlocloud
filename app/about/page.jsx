@@ -1,7 +1,6 @@
 import Footer_01 from "@/components/footer/Footer_01";
 import Header_01 from "@/components/header/Header_01";
-import Image from "next/image";
-import Link from "next/link";
+ 
 
 function About() {
   const data = [

@@ -7,13 +7,43 @@ import Header_01 from "@/components/header/Header_01";
 import Footer_01 from "@/components/footer/Footer_01";
 import DotPattern from "@/components/magicui/dot-pattern";
 import "/styles/globals.css";
-import Marquee from "@/components/magicui/marquee";
-import { AnimatePresence, color, motion } from "framer-motion";
-import NumberTicker from "@/components/magicui/number-ticker";
-import { FlipWords } from "@/components/ui/flip-words";
-import SwiperNavButtons from "@/components/SwiperNavButton";
-import { HiOutlineArrowDown } from "react-icons/hi2";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+const topics = [
+  "Digital Age",
+  "Transformation & Growth",
+  "Data & AI",
+  "Marketing & Advertising ",
+  "Technology ",
+  "Web & App Development",
+  "Industrial Innovations",
+  "Marketing & Strategy",
+];
 
+const services = [
+  "Data Analytics",
+  "Generative AI",
+  "Cloud Transformation ",
+  "Mobile App Development ",
+  "Web Development ",
+  "Digital Marketing",
+];
+const industries = [
+  "Health care",
+  "Finance",
+  "Technology",
+  "Media and Communications",
+  "Transport and Logistics",
+  "Educations and Learning",
+  "Retail and E-commerce",
+  "Manufacturing and Distribution",
+  "Resourc and Wealth",
+];
 function Insights() {
   return (
     <div className="relative   z-[1] bg-white ">
@@ -33,9 +63,6 @@ function Insights() {
           {/* Section Spacer */}
         </section>
 
-        <div className="global-container flex justify-center items-center">
-          <input className="w-2/3 bg-gray-400 rounded-full px-6 py-3" />
-        </div>
         <section className="global-container">
           <p className="text-lg xl:text-xl xxl:text-2xl font-Satoshi font-bold">
             Recent blog posts
@@ -159,8 +186,54 @@ function Insights() {
             </div>
           </div>
         </section>
-
-        <section className="global-container my-32">
+        <div className="global-container flex flex-col lg:flex-row  mt-40 mb-14 gap-5 justify-center items-center">
+          <input
+            className="w-full bg-white rounded-md shadow-sm px-6 py-2 font-Satoshi font-[500] border border-gray-300"
+            placeholder="Search..."
+          />
+          <div className="grid grid-cols-2 w-full lg:grid-cols-4 gap-5">
+            <Select>
+              <SelectTrigger className="w-full">
+                <SelectValue placeholder="Topics" />
+              </SelectTrigger>
+              <SelectContent>
+                {topics.map((topic, index) => (
+                  <SelectItem value={topic} key={index}>
+                    {topic}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+            <Select>
+              <SelectTrigger className="w-full">
+                <SelectValue placeholder="Services" />
+              </SelectTrigger>
+              <SelectContent>
+                {services.map((service, index) => (
+                  <SelectItem value={service} key={index}>
+                    {service}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+            <Select>
+              <SelectTrigger className="w-full">
+                <SelectValue placeholder="Industries" />
+              </SelectTrigger>
+              <SelectContent>
+                {industries.map((industry, index) => (
+                  <SelectItem value={industry} key={index}>
+                    {industry}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+            <button className="bg-blue-500  text-gray-100 px-4 rounded-md">
+              Clear
+            </button>
+          </div>
+        </div>
+        <section className="global-container mb-32 ">
           <p className="text-2xl xl:text-3xl font-Satoshi font-bold xxl:text-4xl">
             All blog posts
           </p>

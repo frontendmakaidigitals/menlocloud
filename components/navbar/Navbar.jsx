@@ -232,7 +232,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
-                  <Link href="/" legacyBehavior passHref>
+                  <Link href="/insights" legacyBehavior passHref>
                     <NavigationMenuLink
                       className={`${navigationMenuTriggerStyle()} bg-transparent`}
                     >
@@ -241,7 +241,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                   </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <Link href="/" legacyBehavior passHref>
+                  <Link href="/about" legacyBehavior passHref>
                     <NavigationMenuLink
                       className={`${navigationMenuTriggerStyle()} bg-transparent`}
                     >
@@ -405,10 +405,14 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
               </AccordionItem>
             </Accordion>
             <div>
-              <p className="text-sm font-semibold py-4 border-b ">Insights</p>
+              <Link href={`/insights`}>
+                <p className="text-sm font-semibold py-4 border-b ">Insights</p>
+              </Link>
             </div>
             <div>
-              <p className="text-sm font-semibold py-4 border-b ">About us</p>
+              <Link href={`/about`}>
+                <p className="text-sm font-semibold py-4 border-b ">About</p>
+              </Link>
             </div>
             <div>
               <Link href={"/contact"}>
