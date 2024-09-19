@@ -25,7 +25,7 @@ function Insights() {
             {/* Section Container */}
             <div className="global-container">
               <div className="breadcrumb-block">
-                <h1 className="breadcrumb-title !text-gray-100">Blogs</h1>
+                <h1 className="breadcrumb-title !text-gray-100">Insights</h1>
               </div>
             </div>
             {/* Section Container */}
@@ -33,6 +33,9 @@ function Insights() {
           {/* Section Spacer */}
         </section>
 
+        <div className="global-container flex justify-center items-center">
+          <input className="w-2/3 bg-gray-400 rounded-full px-6 py-3" />
+        </div>
         <section className="global-container">
           <p className="text-lg xl:text-xl xxl:text-2xl font-Satoshi font-bold">
             Recent blog posts
