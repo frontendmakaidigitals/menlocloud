@@ -50,45 +50,34 @@ const data = [
     hoverColor: "#FFAB91",
   },
 ];
+ 
+
 const techLogos = [
   {
     username: "@jack",
-
-    img: "https://www.netscout.com/sites/default/files/2022-02/17/images/cloud-lockup-logo-500px.png",
+    img: "/assets/img_placeholder/clients/Sharmin.png",
   },
   {
-    username: "@john",
-
-    img: "/assets/img_placeholder/Power_Bi.png",
+    username: "@jack",
+    img: "/assets/img_placeholder/clients/TeaVillaCafe.png",
   },
   {
-    username: "@jill",
-
-    img: "https://www.logo.wine/a/logo/Amazon_Web_Services/Amazon_Web_Services-Logo.wine.svg",
+    username: "@jack",
+    img: "/assets/img_placeholder/clients/BSHH.png",
   },
   {
-    username: "@jane",
-
-    img: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Microsoft_Azure.svg/2048px-Microsoft_Azure.svg.png",
-  },
-
-  {
-    username: "@jack3",
-
-    img: "https://companieslogo.com/img/orig/SNOW-35164165.png?t=1720244494",
+    username: "@jack",
+    img: "/assets/img_placeholder/clients/Roofsol1.png",
   },
   {
-    username: "@jack3",
-
-    img: "/assets/img_placeholder/qlik.png",
+    username: "@jack",
+    img: "/assets/img_placeholder/clients/MOD.png",
   },
   {
-    username: "@jack3",
-
-    img: "https://www.svgrepo.com/show/354012/looker-icon.svg",
+    username: "@jack",
+    img: "/assets/img_placeholder/clients/Zipro.png",
   },
 ];
-
 const tabs = [
   {
     name: "Data & Analytics",
