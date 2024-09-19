@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { useRef, useState, useEffect } from "react";
 import Header_01 from "@/components/header/Header_01";
 import Footer_01 from "@/components/footer/Footer_01";
- 
+
 import "/styles/globals.css";
 import Marquee from "@/components/magicui/marquee";
 import { AnimatePresence, color, motion } from "framer-motion";
@@ -49,6 +49,32 @@ const techLogos = [
     username: "@jack3",
 
     img: "https://www.svgrepo.com/show/354012/looker-icon.svg",
+  },
+];
+const clientLogo = [
+  {
+    username: "@jack",
+    img: "/assets/img_placeholder/clients/Sharmin.png",
+  },
+  {
+    username: "@jack",
+    img: "/assets/img_placeholder/clients/TeaVillaCafe.png",
+  },
+  {
+    username: "@jack",
+    img: "/assets/img_placeholder/clients/BSHH.png",
+  },
+  {
+    username: "@jack",
+    img: "/assets/img_placeholder/clients/Roofsol1.png",
+  },
+  {
+    username: "@jack",
+    img: "/assets/img_placeholder/clients/MOD.png",
+  },
+  {
+    username: "@jack",
+    img: "/assets/img_placeholder/clients/Zipro.png",
   },
 ];
 
@@ -778,7 +804,7 @@ function Home() {
             </span>
           </p>
           <Marquee reverse className=" [--duration:20s]">
-            {firstRow.map((review) => (
+            {secondRow.map((review) => (
               <ReviewCard key={review.username} {...review} />
             ))}
           </Marquee>
@@ -1175,7 +1201,22 @@ function Home() {
 
 export default Home;
 const firstRow = techLogos;
+const secondRow = clientLogo;
 const ReviewCard = ({ img, index }) => {
+  return (
+    <figure
+      className={cn(
+        `relative size-28 lg:size-40 flex justify-center items-center cursor-pointer overflow-hidden rounded-xl border p-4`,
+        // light styles
+        "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]"
+        // dark styles
+      )}
+    >
+      <img className=" " width="auto" alt="" src={img} />
+    </figure>
+  );
+};
+const clientCard = ({ img, index }) => {
   return (
     <figure
       className={cn(
