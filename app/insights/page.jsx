@@ -56,7 +56,7 @@ const industries = [
 ];
 function Insights() {
   return (
-    <div className="relative   z-[1] bg-white lg:bg-blue-300 xl:bg-red-500">
+    <div className="relative   z-[1] bg-white">
       <Header_01 />
       <main className="main-wrapper relative ">
         <section id="section-breadcrumb">
@@ -77,7 +77,7 @@ function Insights() {
           <p className="text-lg xl:text-xl xxl:text-2xl font-Satoshi font-bold">
             Recent blog posts
           </p>
-          <div className="grid grid-cols-1 mt-3 md:grid-cols-2 gap-10 ">
+          <div className="grid grid-cols-1 h-full mt-3 md:grid-cols-2 gap-10 ">
             <div>
               <div className="w-full overflow-hidden h-auto ">
                 <img
@@ -85,109 +85,101 @@ function Insights() {
                 />
               </div>
               <div>
-                <p className="text-sm font-Satoshi text-gray-600 mt-2 font-semibold">
+                <p className="text-sm xl:text-[.7rem] xxl:text-sm font-Satoshi text-gray-600 mt-2 font-semibold">
                   Olivia Rhye 20Jan 2024
                 </p>
-                <p className=" text-2xl font-Satoshi font-semibold mt-1">
+                <p className=" text-2xl xl:text-xl xxl:text-2xl font-Satoshi font-semibold mt-1">
                   Conversations wih London Makr & Co.
                 </p>
-                <p className=" text-md font-Satoshi tracking-tight mt-1 font-medium ">
+                <p className=" text-md xl:text-sm xxl:text-lg font-Satoshi tracking-tight mt-1 font-medium ">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
+                  do eiusmod tempor incididunt ut labore et dolore magna
+                  aliqua. consectetur adipiscing elit, sed do eiusmod tempor
+                  incididunt ut labore et dolore magna aliqua.adipiscing elit,
+                  sed do eiusmod tempor incididunt ut labore et dolore magna
+                  aliqua{" "}
                 </p>
-                <div className="flex justify-start gap-2 mt-2">
-                  <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm rounded-full w-fit">
+                <div className="flex justify-start items-center gap-2 mt-2">
+                  <p className="px-4 py-2 xl:px-3 xl:py-1 xxl:px-4 xxl:py-2 bg-lime-400 font-bold font-Satoshi text-sm xl:text-[.7rem] xxl:text-sm rounded-full w-fit">
                     Design
                   </p>
-                  <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm rounded-full w-fit">
+                  <p className="px-4 py-2 xl:px-3 xl:py-1 xxl:px-4 xxl:py-2 bg-lime-400 font-bold font-Satoshi text-sm xl:text-[.7rem] xxl:text-sm rounded-full w-fit">
                     Ui/Ux
                   </p>
                 </div>
               </div>
             </div>
-            <div className="flex w-full justify-between flex-col gap-1">
+            <div className="grid w-full grid-cols-1 gap-5">
               <div className="flex flex-col lg:flex-row gap-4">
-                <div className="w-full lg:w-[80%] overflow-hidden">
-                  <img
-                    src={`https://images.unsplash.com/photo-1557426272-fc759fdf7a8d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`}
-                  />
-                </div>
-                <div>
-                  <p className="text-sm font-Satoshi text-gray-600 font-semibold">
+                <div className="w-full bg-red-200 h-full overflow-hidden"></div>
+                <div className="flex flex-col justify-between items-start">
+                  <p className="text-sm xl:text-[.7rem] xxl:text-sm font-Satoshi text-gray-600 font-semibold">
                     Olivia Rhye 20 Jan 2024
                   </p>
-                  <p className=" text-xl font-Satoshi font-semibold mt-1">
+                  <p className="text-lg xl:text-md xxl:text-3xl font-Satoshi font-semibold">
                     Conversations wih London Makr & Co.
                   </p>
 
-                  <p className=" text-md font-Satoshi tracking-tight mt-1 font-medium ">
+                  <p className=" text-md  xl:text-sm xxl:text-lg font-Satoshi tracking-tight font-medium ">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua.{" "}
                   </p>
-                  <div className="flex justify-start gap-2 mt-2">
-                    <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm rounded-full w-fit">
+                  <div className="flex justify-start items-center gap-2">
+                    <p className="px-4 py-2 xl:px-3 xl:py-1 xxl:px-4 xxl:py-2 bg-lime-400 font-bold font-Satoshi text-sm xl:text-[.7rem] xxl:text-sm rounded-full w-fit">
                       Design
                     </p>
-                    <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm rounded-full w-fit">
+                    <p className="px-4 py-2 xl:px-3 xl:py-1 xxl:px-4 xxl:py-2 bg-lime-400 font-bold font-Satoshi text-sm xl:text-[.7rem] xxl:text-sm rounded-full w-fit">
                       Ui/Ux
                     </p>
                   </div>
                 </div>
               </div>
               <div className="flex flex-col lg:flex-row gap-4">
-                <div className="w-full lg:w-[80%] overflow-hidden">
-                  <img
-                    src={`https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?q=80&w=2047&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`}
-                  />
-                </div>
-                <div>
-                  <p className="text-sm font-Satoshi text-gray-600 font-semibold">
+                <div className="w-full bg-red-200 h-full overflow-hidden"></div>
+                <div className="flex flex-col justify-between items-start">
+                  <p className="text-sm xl:text-[.7rem] xxl:text-sm font-Satoshi text-gray-600 font-semibold">
                     Olivia Rhye 20 Jan 2024
                   </p>
-                  <p className=" text-xl font-Satoshi font-semibold mt-1">
+                  <p className="text-lg xl:text-md xxl:text-3xl font-Satoshi font-semibold">
                     Conversations wih London Makr & Co.
                   </p>
 
-                  <p className=" text-md font-Satoshi tracking-tight mt-1 font-medium ">
+                  <p className=" text-md  xl:text-sm xxl:text-lg font-Satoshi tracking-tight font-medium ">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua.{" "}
                   </p>
-                  <div className="flex justify-start gap-2 mt-2">
-                    <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm rounded-full w-fit">
+                  <div className="flex justify-start items-center gap-2">
+                    <p className="px-4 py-2 xl:px-3 xl:py-1 xxl:px-4 xxl:py-2 bg-lime-400 font-bold font-Satoshi text-sm xl:text-[.7rem] xxl:text-sm rounded-full w-fit">
                       Design
                     </p>
-                    <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm rounded-full w-fit">
+                    <p className="px-4 py-2 xl:px-3 xl:py-1 xxl:px-4 xxl:py-2 bg-lime-400 font-bold font-Satoshi text-sm xl:text-[.7rem] xxl:text-sm rounded-full w-fit">
                       Ui/Ux
                     </p>
                   </div>
                 </div>
               </div>
               <div className="flex flex-col lg:flex-row gap-4">
-                <div className="w-full lg:w-[80%] overflow-hidden">
-                  <img
-                    src={`https://images.unsplash.com/photo-1557426272-fc759fdf7a8d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`}
-                  />
-                </div>
-                <div>
-                  <p className="text-sm font-Satoshi text-gray-600 font-semibold">
+                <div className="w-full bg-red-200 h-full overflow-hidden"></div>
+                <div className="flex flex-col justify-between items-start">
+                  <p className="text-sm xl:text-[.7rem] xxl:text-sm font-Satoshi text-gray-600 font-semibold">
                     Olivia Rhye 20 Jan 2024
                   </p>
-                  <p className=" text-xl font-Satoshi font-semibold mt-1">
+                  <p className="text-lg xl:text-md xxl:text-3xl font-Satoshi font-semibold">
                     Conversations wih London Makr & Co.
                   </p>
 
-                  <p className=" text-md font-Satoshi tracking-tight mt-1 font-medium ">
+                  <p className=" text-md  xl:text-sm xxl:text-lg font-Satoshi tracking-tight font-medium ">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua.{" "}
                   </p>
-                  <div className="flex justify-start gap-2 mt-2">
-                    <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm rounded-full w-fit">
+                  <div className="flex justify-start items-center gap-2">
+                    <p className="px-4 py-2 xl:px-3 xl:py-1 xxl:px-4 xxl:py-2 bg-lime-400 font-bold font-Satoshi text-sm xl:text-[.7rem] xxl:text-sm rounded-full w-fit">
                       Design
                     </p>
-                    <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm rounded-full w-fit">
+                    <p className="px-4 py-2 xl:px-3 xl:py-1 xxl:px-4 xxl:py-2 bg-lime-400 font-bold font-Satoshi text-sm xl:text-[.7rem] xxl:text-sm rounded-full w-fit">
                       Ui/Ux
                     </p>
                   </div>
