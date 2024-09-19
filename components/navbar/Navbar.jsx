@@ -100,7 +100,9 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
             <NavigationMenu className={``}>
               <NavigationMenuList className={``}>
                 <NavigationMenuItem className="">
-                  <NavigationMenuTrigger className={``}>
+                  <NavigationMenuTrigger
+                    className={`xl:text-md xxl:text-lg`}
+                  >
                     <Link href={`/services`}>Services</Link>
                   </NavigationMenuTrigger>
                   <NavigationMenuContent className="">
@@ -153,7 +155,9 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                   </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className={`bg-transparent`}>
+                  <NavigationMenuTrigger
+                    className={`bg-transparent xl:text-md xxl:text-lg`}
+                  >
                     Industries
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
@@ -243,7 +247,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                 <NavigationMenuItem>
                   <Link href="/insights" legacyBehavior passHref>
                     <NavigationMenuLink
-                      className={`${navigationMenuTriggerStyle()} bg-transparent`}
+                      className={`${navigationMenuTriggerStyle()} bg-transparent xl:text-md xxl:text-lg`}
                     >
                       Insights
                     </NavigationMenuLink>
@@ -252,7 +256,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                 <NavigationMenuItem>
                   <Link href="/about" legacyBehavior passHref>
                     <NavigationMenuLink
-                      className={`${navigationMenuTriggerStyle()} bg-transparent`}
+                      className={`${navigationMenuTriggerStyle()} bg-transparent xl:text-md xxl:text-lg`}
                     >
                       About Us
                     </NavigationMenuLink>
@@ -261,7 +265,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                 <NavigationMenuItem>
                   <Link href="/contact" legacyBehavior passHref>
                     <NavigationMenuLink
-                      className={`${navigationMenuTriggerStyle()} bg-transparent`}
+                      className={`${navigationMenuTriggerStyle()} bg-transparent  xl:text-md xxl:text-lg`}
                     >
                       Contact
                     </NavigationMenuLink>

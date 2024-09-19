@@ -56,7 +56,7 @@ const industries = [
 ];
 function Insights() {
   return (
-    <div className="relative   z-[1] bg-white ">
+    <div className="relative   z-[1] bg-white lg:bg-blue-300 xl:bg-red-500">
       <Header_01 />
       <main className="main-wrapper relative ">
         <section id="section-breadcrumb">
@@ -248,7 +248,7 @@ function Insights() {
             All blog posts
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 mt-12 lg:mt-7 xxl:grid-cols-4 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-3  mt-12 lg:mt-7 xxl:grid-cols-4 gap-10">
             <div className="w-full">
               <div className="w-full overflow-hidden">
                 <img
@@ -257,210 +257,21 @@ function Insights() {
                   }
                 />
               </div>
-              <p className="text-sm font-Satoshi text-gray-600 mt-2 font-semibold">
+              <p className="lg:text-[.8rem] text-sm  font-Satoshi text-gray-600 mt-2 font-semibold">
                 Olivia Rhye 20Jan 2024
               </p>
-              <p className="text-2xl font-Satoshi text-gray-900 mt-2 font-semibold">
+              <p className="xl:text-lg xxl:text-2xl font-Satoshi text-gray-900 mt-2 font-semibold">
                 Conversations wih London Makr & Co.
               </p>
-              <p className=" text-md font-Satoshi tracking-tight mt-1 font-medium ">
+              <p className=" xl:text-sm xxl:text-lg font-Satoshi tracking-tight mt-1 font-medium ">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
               </p>
               <div className="flex justify-start gap-2 mt-2">
-                <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm rounded-full w-fit">
+                <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm xl:text-[.8rem] xxl:text-sm rounded-full w-fit">
                   Design
                 </p>
-                <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm rounded-full w-fit">
-                  Ui/Ux
-                </p>
-              </div>
-            </div>
-            <div className="w-full">
-              <div className="w-full overflow-hidden">
-                <img
-                  src={
-                    "https://images.unsplash.com/photo-1527689368864-3a821dbccc34?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  }
-                />
-              </div>
-              <p className="text-sm font-Satoshi text-gray-600 mt-2 font-semibold">
-                Olivia Rhye 20Jan 2024
-              </p>
-              <p className="text-2xl font-Satoshi text-gray-900 mt-2 font-semibold">
-                Conversations wih London Makr & Co.
-              </p>
-              <p className=" text-md font-Satoshi tracking-tight mt-1 font-medium ">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
-              </p>
-              <div className="flex justify-start gap-2 mt-2">
-                <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm rounded-full w-fit">
-                  Design
-                </p>
-                <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm rounded-full w-fit">
-                  Ui/Ux
-                </p>
-              </div>
-            </div>
-            <div className="w-full">
-              <div className="w-full overflow-hidden">
-                <img
-                  src={
-                    "https://images.unsplash.com/photo-1527689368864-3a821dbccc34?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  }
-                />
-              </div>
-              <p className="text-sm font-Satoshi text-gray-600 mt-2 font-semibold">
-                Olivia Rhye 20Jan 2024
-              </p>
-              <p className="text-2xl font-Satoshi text-gray-900 mt-2 font-semibold">
-                Conversations wih London Makr & Co.
-              </p>
-              <p className=" text-md font-Satoshi tracking-tight mt-1 font-medium ">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
-              </p>
-              <div className="flex justify-start gap-2 mt-2">
-                <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm rounded-full w-fit">
-                  Design
-                </p>
-                <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm rounded-full w-fit">
-                  Ui/Ux
-                </p>
-              </div>
-            </div>
-            <div className="w-full">
-              <div className="w-full overflow-hidden">
-                <img
-                  src={
-                    "https://images.unsplash.com/photo-1527689368864-3a821dbccc34?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  }
-                />
-              </div>
-              <p className="text-sm font-Satoshi text-gray-600 mt-2 font-semibold">
-                Olivia Rhye 20Jan 2024
-              </p>
-              <p className="text-2xl font-Satoshi text-gray-900 mt-2 font-semibold">
-                Conversations wih London Makr & Co.
-              </p>
-              <p className=" text-md font-Satoshi tracking-tight mt-1 font-medium ">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
-              </p>
-              <div className="flex justify-start gap-2 mt-2">
-                <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm rounded-full w-fit">
-                  Design
-                </p>
-                <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm rounded-full w-fit">
-                  Ui/Ux
-                </p>
-              </div>
-            </div>
-            <div className="w-full">
-              <div className="w-full overflow-hidden">
-                <img
-                  src={
-                    "https://images.unsplash.com/photo-1527689368864-3a821dbccc34?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  }
-                />
-              </div>
-              <p className="text-sm font-Satoshi text-gray-600 mt-2 font-semibold">
-                Olivia Rhye 20Jan 2024
-              </p>
-              <p className="text-2xl font-Satoshi text-gray-900 mt-2 font-semibold">
-                Conversations wih London Makr & Co.
-              </p>
-              <p className=" text-md font-Satoshi tracking-tight mt-1 font-medium ">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
-              </p>
-              <div className="flex justify-start gap-2 mt-2">
-                <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm rounded-full w-fit">
-                  Design
-                </p>
-                <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm rounded-full w-fit">
-                  Ui/Ux
-                </p>
-              </div>
-            </div>
-            <div className="w-full">
-              <div className="w-full overflow-hidden">
-                <img
-                  src={
-                    "https://images.unsplash.com/photo-1527689368864-3a821dbccc34?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  }
-                />
-              </div>
-              <p className="text-sm font-Satoshi text-gray-600 mt-2 font-semibold">
-                Olivia Rhye 20Jan 2024
-              </p>
-              <p className="text-2xl font-Satoshi text-gray-900 mt-2 font-semibold">
-                Conversations wih London Makr & Co.
-              </p>
-              <p className=" text-md font-Satoshi tracking-tight mt-1 font-medium ">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
-              </p>
-              <div className="flex justify-start gap-2 mt-2">
-                <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm rounded-full w-fit">
-                  Design
-                </p>
-                <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm rounded-full w-fit">
-                  Ui/Ux
-                </p>
-              </div>
-            </div>
-            <div className="w-full">
-              <div className="w-full overflow-hidden">
-                <img
-                  src={
-                    "https://images.unsplash.com/photo-1527689368864-3a821dbccc34?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  }
-                />
-              </div>
-              <p className="text-sm font-Satoshi text-gray-600 mt-2 font-semibold">
-                Olivia Rhye 20Jan 2024
-              </p>
-              <p className="text-2xl font-Satoshi text-gray-900 mt-2 font-semibold">
-                Conversations wih London Makr & Co.
-              </p>
-              <p className=" text-md font-Satoshi tracking-tight mt-1 font-medium ">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
-              </p>
-              <div className="flex justify-start gap-2 mt-2">
-                <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm rounded-full w-fit">
-                  Design
-                </p>
-                <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm rounded-full w-fit">
-                  Ui/Ux
-                </p>
-              </div>
-            </div>
-            <div className="w-full">
-              <div className="w-full overflow-hidden">
-                <img
-                  src={
-                    "https://images.unsplash.com/photo-1527689368864-3a821dbccc34?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  }
-                />
-              </div>
-              <p className="text-sm font-Satoshi text-gray-600 mt-2 font-semibold">
-                Olivia Rhye 20Jan 2024
-              </p>
-              <p className="text-2xl font-Satoshi text-gray-900 mt-2 font-semibold">
-                Conversations wih London Makr & Co.
-              </p>
-              <p className=" text-md font-Satoshi tracking-tight mt-1 font-medium ">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
-              </p>
-              <div className="flex justify-start gap-2 mt-2">
-                <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm rounded-full w-fit">
-                  Design
-                </p>
-                <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm rounded-full w-fit">
+                <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm xl:text-[.8rem] xxl:text-sm rounded-full w-fit">
                   Ui/Ux
                 </p>
               </div>
