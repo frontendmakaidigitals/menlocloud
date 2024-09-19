@@ -96,10 +96,10 @@ function Insights() {
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
                 </p>
                 <div className="flex justify-start gap-2 mt-2">
-                  <p className="px-4 py-2 border border-gray-900 text-sm rounded-full w-fit">
+                  <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm rounded-full w-fit">
                     Design
                   </p>
-                  <p className="px-4 py-2 border border-gray-900 text-sm rounded-full w-fit">
+                  <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm rounded-full w-fit">
                     Ui/Ux
                   </p>
                 </div>
@@ -126,10 +126,39 @@ function Insights() {
                     aliqua.{" "}
                   </p>
                   <div className="flex justify-start gap-2 mt-2">
-                    <p className="px-4 py-2 border border-gray-900 text-sm rounded-full w-fit">
+                    <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm rounded-full w-fit">
                       Design
                     </p>
-                    <p className="px-4 py-2 border border-gray-900 text-sm rounded-full w-fit">
+                    <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm rounded-full w-fit">
+                      Ui/Ux
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="flex flex-col lg:flex-row gap-4">
+                <div className="w-full lg:w-[80%] overflow-hidden">
+                  <img
+                    src={`https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?q=80&w=2047&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`}
+                  />
+                </div>
+                <div>
+                  <p className="text-sm font-Satoshi text-gray-600 font-semibold">
+                    Olivia Rhye 20 Jan 2024
+                  </p>
+                  <p className=" text-xl font-Satoshi font-semibold mt-1">
+                    Conversations wih London Makr & Co.
+                  </p>
+
+                  <p className=" text-md font-Satoshi tracking-tight mt-1 font-medium ">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua.{" "}
+                  </p>
+                  <div className="flex justify-start gap-2 mt-2">
+                    <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm rounded-full w-fit">
+                      Design
+                    </p>
+                    <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm rounded-full w-fit">
                       Ui/Ux
                     </p>
                   </div>
@@ -155,39 +184,10 @@ function Insights() {
                     aliqua.{" "}
                   </p>
                   <div className="flex justify-start gap-2 mt-2">
-                    <p className="px-4 py-2 border border-gray-900 text-sm rounded-full w-fit">
+                    <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm rounded-full w-fit">
                       Design
                     </p>
-                    <p className="px-4 py-2 border border-gray-900 text-sm rounded-full w-fit">
-                      Ui/Ux
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="flex flex-col lg:flex-row gap-4">
-                <div className="w-full lg:w-[80%] overflow-hidden">
-                  <img
-                    src={`https://images.unsplash.com/photo-1557426272-fc759fdf7a8d?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`}
-                  />
-                </div>
-                <div>
-                  <p className="text-sm font-Satoshi text-gray-600 font-semibold">
-                    Olivia Rhye 20 Jan 2024
-                  </p>
-                  <p className=" text-xl font-Satoshi font-semibold mt-1">
-                    Conversations wih London Makr & Co.
-                  </p>
-
-                  <p className=" text-md font-Satoshi tracking-tight mt-1 font-medium ">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua.{" "}
-                  </p>
-                  <div className="flex justify-start gap-2 mt-2">
-                    <p className="px-4 py-2 border border-gray-900 text-sm rounded-full w-fit">
-                      Design
-                    </p>
-                    <p className="px-4 py-2 border border-gray-900 text-sm rounded-full w-fit">
+                    <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm rounded-full w-fit">
                       Ui/Ux
                     </p>
                   </div>
@@ -268,10 +268,10 @@ function Insights() {
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
               </p>
               <div className="flex justify-start gap-2 mt-2">
-                <p className="px-4 py-2 border border-gray-900 text-sm rounded-full w-fit">
+                <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm rounded-full w-fit">
                   Design
                 </p>
-                <p className="px-4 py-2 border border-gray-900 text-sm rounded-full w-fit">
+                <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm rounded-full w-fit">
                   Ui/Ux
                 </p>
               </div>
@@ -295,10 +295,10 @@ function Insights() {
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
               </p>
               <div className="flex justify-start gap-2 mt-2">
-                <p className="px-4 py-2 border border-gray-900 text-sm rounded-full w-fit">
+                <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm rounded-full w-fit">
                   Design
                 </p>
-                <p className="px-4 py-2 border border-gray-900 text-sm rounded-full w-fit">
+                <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm rounded-full w-fit">
                   Ui/Ux
                 </p>
               </div>
@@ -322,10 +322,10 @@ function Insights() {
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
               </p>
               <div className="flex justify-start gap-2 mt-2">
-                <p className="px-4 py-2 border border-gray-900 text-sm rounded-full w-fit">
+                <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm rounded-full w-fit">
                   Design
                 </p>
-                <p className="px-4 py-2 border border-gray-900 text-sm rounded-full w-fit">
+                <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm rounded-full w-fit">
                   Ui/Ux
                 </p>
               </div>
@@ -349,10 +349,10 @@ function Insights() {
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
               </p>
               <div className="flex justify-start gap-2 mt-2">
-                <p className="px-4 py-2 border border-gray-900 text-sm rounded-full w-fit">
+                <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm rounded-full w-fit">
                   Design
                 </p>
-                <p className="px-4 py-2 border border-gray-900 text-sm rounded-full w-fit">
+                <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm rounded-full w-fit">
                   Ui/Ux
                 </p>
               </div>
@@ -376,10 +376,10 @@ function Insights() {
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
               </p>
               <div className="flex justify-start gap-2 mt-2">
-                <p className="px-4 py-2 border border-gray-900 text-sm rounded-full w-fit">
+                <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm rounded-full w-fit">
                   Design
                 </p>
-                <p className="px-4 py-2 border border-gray-900 text-sm rounded-full w-fit">
+                <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm rounded-full w-fit">
                   Ui/Ux
                 </p>
               </div>
@@ -403,10 +403,10 @@ function Insights() {
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
               </p>
               <div className="flex justify-start gap-2 mt-2">
-                <p className="px-4 py-2 border border-gray-900 text-sm rounded-full w-fit">
+                <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm rounded-full w-fit">
                   Design
                 </p>
-                <p className="px-4 py-2 border border-gray-900 text-sm rounded-full w-fit">
+                <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm rounded-full w-fit">
                   Ui/Ux
                 </p>
               </div>
@@ -430,10 +430,10 @@ function Insights() {
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
               </p>
               <div className="flex justify-start gap-2 mt-2">
-                <p className="px-4 py-2 border border-gray-900 text-sm rounded-full w-fit">
+                <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm rounded-full w-fit">
                   Design
                 </p>
-                <p className="px-4 py-2 border border-gray-900 text-sm rounded-full w-fit">
+                <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm rounded-full w-fit">
                   Ui/Ux
                 </p>
               </div>
@@ -457,10 +457,10 @@ function Insights() {
                 eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
               </p>
               <div className="flex justify-start gap-2 mt-2">
-                <p className="px-4 py-2 border border-gray-900 text-sm rounded-full w-fit">
+                <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm rounded-full w-fit">
                   Design
                 </p>
-                <p className="px-4 py-2 border border-gray-900 text-sm rounded-full w-fit">
+                <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm rounded-full w-fit">
                   Ui/Ux
                 </p>
               </div>
