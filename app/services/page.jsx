@@ -428,6 +428,9 @@ function Services() {
                 1024: {
                   slidesPerView: 4, // 4 slides for screens >= 1024px
                 },
+                1604: {
+                  slidesPerView: 5, // 4 slides for screens >= 1024px
+                },
               }}
               className=" mt-5 xl:mt-10"
             >
@@ -436,16 +439,23 @@ function Services() {
                   <SwiperSlide key={index} className="  w-full cursor-pointer ">
                     <motion.div
                       whileHover={{ backgroundColor: elem.hoverColor }}
-                      className={` h-[25rem] xl:h-[30rem] rounded-xl bg-slate-200 `}
+                      className={` rounded-xl bg-slate-100`}
                     >
                       <div
                         className="w-full h-64 bg-no-repeat rounded-xl bg-center bg-cover "
                         style={{ backgroundImage: `url(${elem.img})` }}
                       ></div>
-                      <p className=" text-2xl lg:text-3xl font-semibold mt-5 px-3">
-                        {elem.title}
-                        {index}
-                      </p>
+                      <div className="px-3 py-5">
+                        <p>Author name </p>
+                        <p className="xl:text-lg xxl:text-2xl font-Satoshi text-gray-900 mt-2 font-semibold">
+                          {elem.title}
+                        </p>
+                        <p className="xl:text-sm xxl:text-lg font-Satoshi tracking-tight mt-2 font-medium">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit, sed do eiusmod tempor incididunt ut labore et
+                          dolore magna aliqua.
+                        </p>
+                      </div>
                     </motion.div>
                   </SwiperSlide>
                 );
