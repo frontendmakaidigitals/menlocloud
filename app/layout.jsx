@@ -6,8 +6,8 @@ import { Inter } from "next/font/google";
 import JOS from "jos-animation";
 import "swiper/css";
 import "swiper/css/navigation";
-import "@/styles/globals.css";
-import "@/styles/vendors/menu.css";
+import "../styles/globals.css";
+import "../styles/vendors/menu.css";
 
 const DMSans = localFont({
   src: "../fonts/DMSans-Bold.woff2",
