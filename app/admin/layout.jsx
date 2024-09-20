@@ -98,9 +98,9 @@ const Sidebar = () => {
           </Link>
         ))}
       </div>
-      <div className=" px-10 absolute bottom-0 transiton-all py-5 duration-300 left-0 flex w-full  items-center hover:bg-red-400 gap-3 ">
-        <IoIosExit className="xl:text-2xl xxl:text-4xl rotate-180 text-gray-100" />
-        <p className="font-Satoshi text-gray-100 xl:text-sm xxl:text-md font-[500]">
+      <div className=" px-10 absolute bottom-0 transiton-all py-5 duration-300 left-0 flex w-full  items-center hover:bg-red-400 gap-3 hover:text-gray-900 text-gray-100 ">
+        <IoIosExit className="xl:text-2xl xxl:text-4xl rotate-180" />
+        <p className="font-Satoshi xl:text-sm xxl:text-md font-[500]">
           Logout
         </p>
       </div>
