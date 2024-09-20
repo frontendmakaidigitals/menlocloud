@@ -69,24 +69,18 @@ const invoices = [
 
 const page = () => {
   return (
-    <div className="relative flex justify-end">
-      <div
-        style={{ width: "calc(100% - 280px)" }}
-        className="w-full px-5  bg-slate-100 h-screen"
-      >
-        <p className="mt-4 font-Satoshi font-bold text-3xl">Blogs</p>
-        <div className="mt-8 w-full flex justify-between items-center">
-          <p className="font-Satoshi font-medium">Your Blog List</p>
+    <div className="w-full">
+      <div className="mt-8 w-full flex justify-between items-center">
+        <p className="font-Satoshi font-medium">Your Blog List</p>
 
-          <Link href="/admin/blogs/addBlogs">
-            <button className="bg-sky-400 hover:bg-sky-500 rounded-md px-3 py-1 font-Satoshi">
-              + Add Blog
-            </button>
-          </Link>
-        </div>
-        <div className="mt-1 bg-slate-50  p-3 rounded-xl">
-          <BlogList />
-        </div>
+        <Link href="/admin/blogs/addBlogs">
+          <button className="bg-sky-400 hover:bg-sky-500 rounded-md px-3 py-1 font-Satoshi">
+            + Add Blog
+          </button>
+        </Link>
+      </div>
+      <div className="mt-1 bg-slate-50  p-3 rounded-xl">
+        <BlogList />
       </div>
     </div>
   );
