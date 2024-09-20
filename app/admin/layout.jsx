@@ -1,15 +1,15 @@
 "use client";
-import { useEffect } from "react";
+ 
 import { usePathname } from "next/navigation";
-import { SiBlogger } from "react-icons/si";
-import { MdOutlineDashboard } from "react-icons/md";
+ 
 import { FaUserCircle } from "react-icons/fa";
 import { IoIosExit } from "react-icons/io";
 import { FaUser } from "react-icons/fa";
 import Link from "next/link";
 import { FaBloggerB } from "react-icons/fa";
 import { MdSpaceDashboard } from "react-icons/md";
-import LogoDark from "@/components/logo/LogoDark";
+ 
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
@@ -25,10 +25,12 @@ export default function RootLayout({ children }) {
         ></link>
       </head>
       <body>
-        <div>
-          <Sidebar />
-        </div>
-        {children}
+       
+          <div>
+            <Sidebar />
+          </div>
+          {children}
+      
       </body>
     </html>
   );
