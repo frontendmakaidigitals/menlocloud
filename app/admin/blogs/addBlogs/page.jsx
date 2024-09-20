@@ -34,7 +34,7 @@ const Blogform = () => {
         <div className="w-full h-screen max-h-screen fixed bg-gray-800/20 p-10 top-0 flex justify-center items-center left-0 z-[9999]">
           <RiCloseLargeLine
             onClick={() => setimageOpen(false)}
-            className="text-4xl absolute p-1 top-4 right-4 bg-black rounded-md cursor-pointer hover:bg-red-500 text-gray-100"
+            className="text-4xl absolute p-1 top-4 right-4 bg-black rounded-md cursor-pointer hover:bg-red-500 text-gray-50"
           />
           <div className="h-full">
             <img src={URL.createObjectURL(images[0])} className="h-full" />
