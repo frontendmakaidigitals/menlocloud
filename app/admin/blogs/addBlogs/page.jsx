@@ -10,7 +10,7 @@ const page = () => {
         className="w-full px-5  bg-slate-100 h-screen"
       >
         <p className="mt-4 font-Satoshi font-bold text-3xl">Add Blog</p>
-        <div className="mt-8 ">
+        <div className="mt-9 ">
           <Blogform />
         </div>
       </div>
