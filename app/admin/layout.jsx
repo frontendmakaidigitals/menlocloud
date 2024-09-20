@@ -86,7 +86,7 @@ const Sidebar = () => {
             href={menu.link}
             key={index}
             className={`flex px-10 hover:bg-blue-200 hover:text-gray-950 items-center font-Satoshi  transiton-all duration-300 gap-3 py-4 ${
-              path.toLowerCase() == menu.name.toLowerCase()
+              path?.toLowerCase() == menu.name.toLowerCase()
                 ? "text-sky-500 font-bold-bold"
                 : " font-semibold text-gray-100"
             }`}
