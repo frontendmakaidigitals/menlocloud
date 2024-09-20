@@ -2,7 +2,7 @@
 import React from "react";
 
 const page = () => {
-  const name = <span className="text-sky-500 font-Telma">Nouman Ali</span>;
+  const name = <span className="text-sky-500 font-Telma">Nouman Ali !</span>;
   return (
     <div className="relative flex justify-end">
       <div
