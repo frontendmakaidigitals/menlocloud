@@ -67,7 +67,7 @@ const Sidebar = () => {
             className={`flex px-5 items-center  transiton-all duration-300 gap-3 py-4 ${
               path.toLowerCase() == menu.name.toLowerCase()
                 ? "bg-sky-500 text-gray-100"
-                : "hover:bg-blue-200 hover:text-gray-950 text-gray-100"
+                : "hover:bg-blue-200 hover:text-gray-900 text-gray-100"
             }`}
           >
             <div className="xl:text-xl xxl:text-3xl ">{menu.icon}</div>
