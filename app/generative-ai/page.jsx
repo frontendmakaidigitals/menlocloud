@@ -3,6 +3,7 @@ import Footer_01 from "@/components/footer/Footer_01";
 import Header_01 from "@/components/header/Header_01";
 import "swiper/css/navigation";
 import "swiper/css";
+import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Timeline } from "@/components/ui/timeline";
