@@ -3,8 +3,10 @@ import Footer_01 from "@/components/footer/Footer_01";
 import Header_01 from "@/components/header/Header_01";
 import "swiper/css/navigation";
 import "swiper/css";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Timeline } from "@/components/ui/timeline";
+import SwiperNavButtons from "@/components/SwiperNavButton";
 const Aiservices = [
   {
     name: "Gen Ai Lanuchpad",
