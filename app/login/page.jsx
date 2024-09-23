@@ -80,11 +80,12 @@ const LoginTab = () => {
   const handleLogin = () => {
     if (validate()) {
       setLoader(true);
+      axios.get('https://admin.yatriclubs.com/sanctum/csrf-cookie', { withCredentials: true });
       axios
-        .post(`http://localhost:8000/api/admin/login`, {
+        .post(`https://admin.yatriclubs.com/api/admin/login`, {
           email: email,
           password: password,
-        })
+        },{ withCredentials: true })
         .then((res) => {
           console.log(res);
           const token = res.data?.token;
