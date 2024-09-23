@@ -193,6 +193,7 @@ const chatBot = [
   },
 ];
 function GenAI() {
+  const swiperRef = useRef(null);
   return (
     <>
       <Header_01 />
