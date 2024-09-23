@@ -50,7 +50,6 @@ const data = [
     hoverColor: "#FFAB91",
   },
 ];
- 
 
 const techLogos = [
   {
@@ -210,7 +209,7 @@ function Services() {
               <div></div>
               <div></div>
               <div className="mt-32 xl:mt-0">
-                <h2 className="font-dmSans font-bold text-gray-50">
+                <h2 className="font-dmSans font-bold text-gray-100">
                   Our Services
                 </h2>
                 <p className="mt-3   leading-relaxed text-sm xl:text-lg text-gray-100 w-full lg:w-2/4">
