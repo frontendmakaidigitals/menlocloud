@@ -29,7 +29,7 @@ const Header_01 = () => {
     <header
       id="sticky-menu"
       className={`w-full site-header z-[999] transition-all duration-300 fixed ${
-        !isVisible ? "!bg-gray-900 py-2  " : "py-3"
+        !isVisible ? "!bg-black py-2  " : "py-3"
       }  `}
     >
       <div className="global-container">
