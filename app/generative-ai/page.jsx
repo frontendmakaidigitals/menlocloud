@@ -401,6 +401,69 @@ function GenAI() {
             ))}
           </div>
         </section>
+        <section className="my-28 global-container">
+          <div>
+            <div className="flex  justify-between items-center">
+              <p className="text-3xl w-full text-center lg:text-start  lg:text-6xl  font-Satoshi font-[600]  lg:w-2/3">
+                Discover Our{" "}
+                <span className="bg-gradient-to-r font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
+                  Stories{" "}
+                </span>{" "}
+              </p>
+              <div className="hidden lg:flex">
+                <SwiperNavButtons swiperRef={swiperRef} />
+              </div>
+            </div>
+            <Swiper
+              ref={swiperRef}
+              spaceBetween={10}
+              slidesPerView={1.3}
+              loop={true}
+              breakpoints={{
+                320: {
+                  slidesPerView: 1.3, // 2 slides for screens >= 640px
+                },
+                768: {
+                  slidesPerView: 3, // 3 slides for screens >= 768px
+                },
+                1024: {
+                  slidesPerView: 4, // 4 slides for screens >= 1024px
+                },
+                1604: {
+                  slidesPerView: 5, // 4 slides for screens >= 1024px
+                },
+              }}
+              className=" mt-5 xl:mt-10"
+            >
+              {data.map((elem, index) => {
+                return (
+                  <SwiperSlide key={index} className="  w-full cursor-pointer ">
+                    <motion.div
+                      whileHover={{ backgroundColor: elem.hoverColor }}
+                      className={` rounded-xl bg-slate-100`}
+                    >
+                      <div
+                        className="w-full h-64 bg-no-repeat rounded-xl bg-center bg-cover "
+                        style={{ backgroundImage: `url(${elem.img})` }}
+                      ></div>
+                      <div className="px-3 py-5">
+                        <p>Author name </p>
+                        <p className="xl:text-lg xxl:text-2xl font-Satoshi text-gray-900 mt-2 font-semibold">
+                          {elem.title}
+                        </p>
+                        <p className="xl:text-sm xxl:text-lg font-Satoshi tracking-tight mt-2 font-medium">
+                          Lorem ipsum dolor sit amet, consectetur adipiscing
+                          elit, sed do eiusmod tempor incididunt ut labore et
+                          dolore magna aliqua.
+                        </p>
+                      </div>
+                    </motion.div>
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
+          </div>
+        </section>
       </main>
       <Footer_01 />
     </>
