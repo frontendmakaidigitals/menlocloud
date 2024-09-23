@@ -57,7 +57,7 @@ const data = [
         </p>
         <div className="w-full">
           <img
-            src="https://www.teced.com/wp-content/uploads/bigstock-Manager-leading-a-meeting-with-137595377.jpg"
+            src="https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="startup template"
             className="rounded-lg object-cover h-60 md:h-44 lg:h-[30rem] w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
           />
@@ -77,7 +77,7 @@ const data = [
 
         <div className="">
           <img
-            src="https://images.unsplash.com/photo-1622676666769-1a0407cf10a7?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            src="https://images.unsplash.com/photo-1581091877018-dac6a371d50f?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="startup template"
             className="rounded-lg object-cover h-60 md:h-44 lg:h-[30rem] w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
           />
@@ -97,7 +97,7 @@ const data = [
 
         <div className="">
           <img
-            src="https://images.unsplash.com/photo-1680016661694-1cd3faf31c3a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            src="https://images.unsplash.com/photo-1552581234-26160f608093?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="startup template"
             className="rounded-lg object-cover h-60 md:h-44 lg:h-[30rem] w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
           />
@@ -116,7 +116,7 @@ const data = [
 
         <div className="">
           <img
-            src="https://images.unsplash.com/photo-1531497865144-0464ef8fb9a9?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            src="https://images.unsplash.com/photo-1531297484001-80022131f5a1?q=80&w=1720&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="startup template"
             className="rounded-lg object-cover h-60 md:h-44 lg:h-[30rem] w-full shadow-[0_0_24px_rgba(34,_42,_53,_0.06),_0_1px_1px_rgba(0,_0,_0,_0.05),_0_0_0_1px_rgba(34,_42,_53,_0.04),_0_0_4px_rgba(34,_42,_53,_0.08),_0_16px_68px_rgba(47,_48,_55,_0.05),_0_1px_0_rgba(255,_255,_255,_0.1)_inset]"
           />
@@ -168,7 +168,28 @@ const roadmap = [
       "With a business requirements document, implementation plan, SOW, and communication plan",
   },
 ];
-
+const chatBot = [
+  {
+    name: "Efficiency and Accuracy",
+    description:
+      "Conversation and content creation capabilities are fine-tuned to meet specific business needs, understanding and generating text that aligns with your brand, messaging, processes, and industry jargon.",
+  },
+  {
+    name: "Privacy and Security",
+    description:
+      "Every input to and output from the chatbot remains securely within your organization’s domain.",
+  },
+  {
+    name: "Regulation Compliance",
+    description:
+      "Data is processed in the correct locale to comply with regulations around the storage, movement, and processing of data.",
+  },
+  {
+    name: "Jumpstart Gen AI Capabilities",
+    description:
+      "Quickly gain momentum and trust across the organization, remove mystery around Gen AI, and inspire new use cases.",
+  },
+];
 function GenAI() {
   return (
     <>
@@ -217,7 +238,7 @@ function GenAI() {
               <li className="text-md mt-1">
                 AI should be part of your solution, not the solution
               </li>
-              <li className="text-md mt-1">Data literacy is paramount </li>
+              <li className="text-md mt-1"> Data literacy is paramount </li>
             </ul>
           </div>
         </section>
@@ -301,7 +322,7 @@ function GenAI() {
               with AI.
             </p>
           </div>
-          <div className="global-container mt-16 grid  grid-cols-1 gap-4 lg:grid-cols-2 xxl:grid-cols-4">
+          <div className="global-container mt-16 grid  grid-cols-1 gap-4 lg:grid-cols-2 xxl:grid-cols-4 ">
             {roadmap.map((road, index) => (
               <div
                 key={index}
@@ -316,7 +337,34 @@ function GenAI() {
           </div>
         </section>
 
-        <section>
+        <section className=" py-20 w-full bg-center bg-no-repeat bg-cover bg-[url('https://images.unsplash.com/photo-1579546929518-9e396f3cc809?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] ">
+          <div className="global-container w-2/3 flex flex-col justify-center text-center">
+            <p className="text-gray-900 font-Satoshi font-bold text-2xl xl:text-4xl">
+              The Gen AI Chatbot QuickStart
+            </p>
+            <p className="text-md text-gray-900 font-Satoshi mt-5 leading-snug">
+              Leverage proprietary company information to address a specific Gen
+              AI use case, such as meeting prep, content creation, augmented
+              customer service, onboarding, and more.
+            </p>
+            <p className="text-2xl text-gray-900 mt-8 font-Satoshi font-semibold leading-snug">
+              Why utilize a custom, private chatbot rather than a public LLM
+              like ChatGPT?
+            </p>
+          </div>
+          <ul className="list-disc w-2/3 grid global-container mt-10 gap-5 place-items-start grid-cols-1 xxl:grid-cols-2 text-gray-900">
+            {chatBot.map((bot, index) => (
+              <div key={index} className=" px-10 ">
+                <li>
+                  <p className="text-lg font-Satoshi font-bold">{bot.name}</p>
+                  <p className="text-sm mt-1">{bot.description}</p>
+                </li>
+              </div>
+            ))}
+          </ul>
+        </section>
+
+        <section className="mt-20">
           <div className="w-full global-container lg:w-2/3 flex flex-col justify-center items-center">
             <p className="global-container text-3xl  lg:text-6xl  font-Satoshi font-[600] text-center">
               Work with a{" "}
@@ -332,17 +380,17 @@ function GenAI() {
               data analytics ecosystem.
             </p>
           </div>
-          <div className="global-container grid grid-cols-1 lg:grid-cols-3 place-items-center mb-28 mt-16">
+          <div className="global-container grid grid-cols-1 lg:grid-cols-3 place-items-start mb-28 mt-16">
             {steps.map((step, index) => (
               <div
                 key={index}
-                className="border-r px-6 py-10 border-dashed border-gray-700"
+                className="border-r px-6 py-10  border-dashed border-gray-700"
               >
                 <p className="font-Satoshi font-bold text-2xl">{index + 1}</p>
                 <p className="xxl:text-3xl font-bold font-Satoshi mt-5">
                   {step.title}
                 </p>
-                <p className="text-md font-Satoshi font-medium mt-2">
+                <p className="text-md font-Satoshi   font-medium mt-2">
                   {step.description}
                 </p>
 

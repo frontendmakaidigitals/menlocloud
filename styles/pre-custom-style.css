@@ -81,7 +81,7 @@
 .global-container {
   margin-left: auto;
   margin-right: auto;
-  max-width: 90%;
+  max-width: 1400px;
   padding-left: 1rem;
   padding-right: 1rem;
 }
