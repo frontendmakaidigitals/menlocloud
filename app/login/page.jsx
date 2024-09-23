@@ -11,7 +11,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Checkbox } from "@/components/ui/checkbox";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
 import { useRouter } from 'next/router'
 function Page() {
@@ -48,18 +48,11 @@ function Page() {
 export default Page;
 
 const LoginTab = () => {
-  const router = useRouter()
   const [loader, setLoader] = useState(false);
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [errors, setErrors] = useState({ email: "", password: "" });
   const [token, setToken] = useState("");
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      // This code will only run on the client
-      console.log(router.pathname); // Safe to access the router here
-    }
-  }, []);
   const validate = () => {
     let valid = true;
     let errors = { email: "", password: "" };
@@ -107,7 +100,7 @@ const LoginTab = () => {
             localStorage.setItem("authToken", token); // Store token in localStorage
             setToken(token); // Update the token state or context
           }
-        }).then(() => {router?.replace('/admin/dashboard')} )
+        }).then(() => {window.location.push('/admin/dashboard')} )
         .catch((error) => {
           console.error(error);
           // Optionally set an error state here
