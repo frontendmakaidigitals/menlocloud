@@ -13,9 +13,9 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useState } from "react";
 import axios from "axios";
-import { useRouter } from 'next/router'
+import { useRouter } from "next/router";
+
 function Page() {
-  
   return (
     <main className="w-screen h-screen flex justify-center items-center px-4 ">
       <Tabs defaultValue="account" className="w-[400px] ">
@@ -48,6 +48,7 @@ function Page() {
 export default Page;
 
 const LoginTab = () => {
+  const router = useRouter();
   const [loader, setLoader] = useState(false);
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
@@ -56,8 +57,6 @@ const LoginTab = () => {
   const validate = () => {
     let valid = true;
     let errors = { email: "", password: "" };
-
-    // Simple email validation
     if (!email) {
       errors.email = "Email is required";
       valid = false;
@@ -100,7 +99,10 @@ const LoginTab = () => {
             localStorage.setItem("authToken", token); // Store token in localStorage
             setToken(token); // Update the token state or context
           }
-        }).then(() => {window.location.push('/admin/dashboard')} )
+        })
+        .then(() => {
+          router.push("/admin/dashboard");
+        })
         .catch((error) => {
           console.error(error);
           // Optionally set an error state here
