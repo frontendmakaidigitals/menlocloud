@@ -110,7 +110,7 @@ function Services() {
           </p>
         </>
       ),
-      badge: "React",
+      badge: ["React", "Next js", "Astro"],
       image:
         "https://images.pexels.com/photos/1779487/pexels-photo-1779487.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     },
@@ -126,7 +126,7 @@ function Services() {
           </p>
         </>
       ),
-      badge: "Shopify",
+      badge: ["Shopify", "WooCommerce"],
       image:
         "https://images.pexels.com/photos/34577/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     },
@@ -143,7 +143,7 @@ function Services() {
           </p>
         </>
       ),
-      badge: "Java",
+      badge: ["Java", "Laravel", "Django"],
       image: "https://ibrinfotech.b-cdn.net/uploads/erp-solution-1.png",
     },
   ];
@@ -291,9 +291,16 @@ function Services() {
                   <p className={"text-3xl text-Satoshi font-[600]"}>
                     {item.title}
                   </p>
-                  <h2 className="bg-lime-400 text-gray-900 rounded-full text-sm w-fit px-4 mb-4 mt-1 py-1">
-                    {item.badge}
-                  </h2>
+                  <div className="flex items-center gap-2">
+                    {item.badge.map((tag, index) => (
+                      <p
+                        key={index}
+                        className="bg-lime-400 text-md font-Satoshi font-bold text-gray-900 rounded-full text-sm w-fit px-4 mb-4 mt-1 py-1"
+                      >
+                        {tag}
+                      </p>
+                    ))}
+                  </div>
 
                   <div className="text-sm prose prose-sm dark:prose-invert">
                     {item?.image && (
