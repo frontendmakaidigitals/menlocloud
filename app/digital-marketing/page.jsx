@@ -51,7 +51,7 @@ function About() {
             <div className="global-container flex flex-col justify-center items-center">
               <div className="breadcrumb-block w-full lg:w-2/3 ">
                 <p className="text-3xl  xl:text-4xl xxl:text-6xl font-Satoshi font-bold !text-gray-100">
-                  Let's start something really BIG!
+                  Let&apos;s start something really BIG!
                 </p>
               </div>
               <div className="h-[500px] grid grid-cols-1 grid-rows-2 py-2 gap-2 lg:grid-cols-4 w-full px-0 lg:px-14 mt-14">
