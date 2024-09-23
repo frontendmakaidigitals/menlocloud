@@ -13,6 +13,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Checkbox } from "@/components/ui/checkbox";
 import { useState } from "react";
 import axios from "axios";
+import { Router } from "next/router";
 function Page() {
   return (
     <main className="w-screen h-screen flex justify-center items-center px-4 ">
@@ -93,13 +94,12 @@ const LoginTab = () => {
           { withCredentials: true }
         )
         .then((res) => {
-          console.log(res);
           const token = res.data?.token;
           if (token) {
             localStorage.setItem("authToken", token); // Store token in localStorage
             setToken(token); // Update the token state or context
           }
-        })
+        }).then(() => { window.location.replace('/admin/dashboard')} )
         .catch((error) => {
           console.error(error);
           // Optionally set an error state here
