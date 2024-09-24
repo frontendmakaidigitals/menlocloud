@@ -15,10 +15,10 @@ export default function SwiperNavButtons({ swiperRef }) {
 
   return (
     <div className="flex items-center gap-3">
-      <button className="p-2 bg-gray-900 rounded-full text-3xl text-gray-50 " onClick={handlePrev}>
+      <button className="p-2 bg-gray-900 hover:bg-black rounded-full text-3xl text-gray-50 " onClick={handlePrev}>
         <GoArrowLeft />
       </button>
-      <button className="p-2 bg-gray-900 rounded-full text-3xl text-gray-50 " onClick={handleNext}>
+      <button className="p-2 bg-gray-900 hover:bg-black rounded-full text-3xl text-gray-50 " onClick={handleNext}>
         <GoArrowRight />
       </button>
     </div>
