@@ -11,110 +11,202 @@ import SwiperNavButtons from "@/components/SwiperNavButton";
 import Marquee from "@/components/magicui/marquee";
 const outcomes = [
   {
-    name: "Optimized Decision Making",
-    icon: "https://cdn3d.iconscout.com/3d/premium/thumb/healthcare-3d-icon-download-in-png-blend-fbx-gltf-file-formats--heart-love-hands-medical-caregiver-nursing-home-pack-icons-5700707.png?f=webp",
+    name: " Enhanced Innovation",
+    icon: "/assets/img_placeholder/outcome-1.png",
     color: "#FFCDD2",
-    description:
-      "Everyone is empowered to support your organization’s strategy, operations, and performance.",
+    description: "Unlock new opportunities through advanced analytics and AI.",
   },
   {
-    name: "Modernized Data Environment",
-    icon: "https://icons.iconarchive.com/icons/microsoft/fluentui-emoji-3d/512/Building-Construction-3d-icon.png",
+    name: "Operational Efficiency",
+    icon: "https://cdn3d.iconscout.com/3d/premium/thumb/business-productivity-3d-icon-download-in-png-blend-fbx-gltf-file-formats--efficiency-time-management-analytics-pack-icons-9820174.png?f=webp",
     color: "#FFECB3",
-    description:
-      "Reduce manual processes, spend less on technology, and data teams focus on the highest-value work.",
+    description: " Streamline processes through automation and data insights.",
   },
   {
-    name: "A Data Driven View of Customers",
-    icon: "https://cdn3d.iconscout.com/3d/premium/thumb/finance-3d-illustration-download-in-png-blend-fbx-gltf-file-formats--invoice-bill-receipt-online-money-service-pack-marketing-branding-illustrations-4159684.png?f=webp",
+    name: "Predictive Power",
+    icon: "https://cdn3d.iconscout.com/3d/premium/thumb/thunderbolt-3d-icon-download-in-png-blend-fbx-gltf-file-formats--lightning-thunder-weather-energy-power-essential-pack-user-interface-icons-8231196.png?f=webp",
     color: "#F5F5F5",
     description:
-      "Understand customer preferences to improve their experience, mitigate risks, and drive more revenue.",
+      " Leverage machine learning to anticipate business trends and customer needs.",
   },
   {
-    name: "Proactive Data Governance",
-    icon: "https://static.vecteezy.com/system/resources/previews/047/398/260/original/cartoon-public-trolleybus-3d-icon-on-the-transparent-background-vehicles-for-transportation-concept-png.png",
+    name: "Informed Decision-Making",
+    icon: "https://cdn3d.iconscout.com/3d/premium/thumb/right-decision-3d-icon-download-in-png-blend-fbx-gltf-file-formats--positive-making-solution-check-verify-planning-strategy-pack-business-icons-5059784.png?f=webp",
+    color: "#D1C4E9",
+    description: " Enable data-driven strategies for competitive advantage.",
+  },
+  {
+    name: "Customer Personalization",
+    icon: "https://cdn3d.iconscout.com/3d/premium/thumb/badge-3d-icon-download-in-png-blend-fbx-gltf-file-formats--recognition-badges-star-reward-and-pack-sports-games-icons-5431316.png",
     color: "#D1C4E9",
     description:
-      "Be ready for M&A, divestiture, investments, and expansion opportunities while managing risk.",
+      "Improve customer experiences through real-time, data-backed insights.",
   },
 ];
-const clientLogo = [
+const challenges = [
   {
-    username: "@jack",
-    img: "/assets/img_placeholder/clients/Sharmin.png",
+    name: "Siloed Data Across Multiple Systems",
+    icon: "/assets/img_placeholder/chall-1.png",
+    color: "#FFCDD2",
+    description:
+      "Disconnected data sources limit holistic business insights, making it difficult to gain a unified understanding of performance.",
   },
   {
-    username: "@jack",
-    img: "/assets/img_placeholder/clients/TeaVillaCafe.png",
+    name: "Manual and Inefficient Data Management",
+    icon: "/assets/img_placeholder/chall-2.png",
+    color: "#FFECB3",
+    description:
+      " Labor-intensive processes slow down data analysis, leading to delayed decisions and operational inefficiencies.",
   },
   {
-    username: "@jack",
-    img: "/assets/img_placeholder/clients/BSHH.png",
+    name: "Lack of Actionable, Data-Driven Insights",
+    icon: "/assets/img_placeholder/chall-3.png",
+    color: "#F5F5F5",
+    description:
+      " Without clear visibility into the data, leaders struggle to make timely, informed decisions that drive business growth.",
   },
   {
-    username: "@jack",
-    img: "/assets/img_placeholder/clients/Roofsol1.png",
+    name: "Difficulty Scaling with Growing Data Volumes",
+    icon: "/assets/img_placeholder/chall-4.png",
+    color: "#D1C4E9",
+    description:
+      " As data increases, manual processes and outdated systems fail to keep up, leading to bottlenecks and a need for scalable, automated solutions.",
   },
   {
-    username: "@jack",
-    img: "/assets/img_placeholder/clients/MOD.png",
+    name: "Untapped Potential in AI and Machine Learning:",
+    icon: "/assets/img_placeholder/chall-5.png",
+    color: "#D1C4E9",
+    description:
+      "Many businesses are not leveraging advanced analytics, AI, or ML to forecast trends or optimize decision-making, leaving valuable insights and opportunities unexplored.",
+  },
+];
+
+const benefits = [
+  {
+    name: "Data Ingestion",
+    icon: "https://cdn3d.iconscout.com/3d/premium/thumb/data-filtering-3d-icon-download-in-png-blend-fbx-gltf-file-formats--analytics-logo-seo-big-science-pack-network-communication-icons-7915324.png",
+    color: "#FFCDD2",
+    description:
+      "Seamlessly integrate data from multiple sources (databases, APIs, cloud).",
   },
   {
-    username: "@jack",
-    img: "/assets/img_placeholder/clients/Zipro.png",
+    name: "Data Pipelines for ML & Gen AI",
+    icon: "https://cdn3d.iconscout.com/3d/premium/thumb/data-3d-icon-download-in-png-blend-fbx-gltf-file-formats--storage-document-network-programming-and-development-pack-design-icons-7232746.png?f=webp",
+    color: "#FFECB3",
+    description:
+      " Build robust pipelines designed to handle AI workloads and machine learning models, ensuring data is clean, organized, and accessible.",
+  },
+  {
+    name: "Custom Dashboards & Reports",
+    icon: "https://static.vecteezy.com/system/resources/previews/014/919/437/original/dashboard-3d-render-icon-png.png",
+    color: "#F5F5F5",
+    description:
+      " Deliver real-time, visually appealing dashboards to provide actionable insights for decision-making.",
+  },
+  {
+    name: "Machine Learning and AI Integration",
+    icon: "https://cdn3d.iconscout.com/3d/premium/thumb/cloud-ai-3d-icon-download-in-png-blend-fbx-gltf-file-formats--processor-network-chip-gear-machine-learning-pack-science-technology-icons-6622077.png?f=webp",
+    color: "#D1C4E9",
+    description:
+      " Use predictive models and generative AI to unlock advanced analytics and forecasting capabilities",
+  },
+  {
+    name: "Scalable Infrastructure",
+    icon: "https://www.cloud.studio/wp-content/uploads/2022/08/Group-412-1.webp",
+    color: "#D1C4E9",
+    description:
+      "Create cloud-optimized data pipelines that scale as your data grows, ensuring high performance and low cost.",
+  },
+];
+
+const showcases = [
+  {
+    name: "Data Engineering & Analytics Expertise",
+    color: "#29B6F6",
+    description:
+      "Our team consists of seasoned data engineers and data scientists who specialize in building scalable, automated data solutions.",
+  },
+  {
+    name: "AI and ML Specialization",
+    icon: "https://icons.iconarchive.com/icons/microsoft/fluentui-emoji-3d/512/Building-Construction-3d-icon.png",
+    color: "#B388FF",
+    description:
+      " Ensure data accuracy, consistency, and reliability through comprehensive data validation processes, while continually refining methods to adapt to evolving data needs.",
+  },
+  {
+    name: "Industry Experience",
+    icon: "https://cdn3d.iconscout.com/3d/premium/thumb/finance-3d-illustration-download-in-png-blend-fbx-gltf-file-formats--invoice-bill-receipt-online-money-service-pack-marketing-branding-illustrations-4159684.png?f=webp",
+    color: "#FFFF00",
+    description:
+      " Implement machine learning models to turn historical data into predictive insights, helping you forecast trends and make data-driven decisions.",
+  },
+  {
+    name: "Proven Track Record",
+    icon: "https://static.vecteezy.com/system/resources/previews/047/398/260/original/cartoon-public-trolleybus-3d-icon-on-the-transparent-background-vehicles-for-transportation-concept-png.png",
+    color: "#64FFDA",
+    description:
+      "Leverage Generative AI to unlock new levels of innovation by enabling your business to create, simulate, and automate processes based on data patterns and insights.",
   },
 ];
 
 const data = [
   {
-    img: "https://s7d9.scene7.com/is/image/slalom/insight-globalbas-turtle-finserv-thumb-520x490?fmt=webp-alpha",
-    title: "Data Collection",
-    hoverColor: "#F48FB1",
+    title: "Robust Data Pipeline Design and Development",
+    img: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     description:
-      "The first step is collecting data from various sources like customer interactions, website traffic, social media, and internal databases. This can include both structured (e.g., sales figures) and unstructured data (e.g., social media posts), with the goal of gathering accurate, comprehensive information for analysis.",
+      "Build scalable, automated pipelines that integrate data from multiple sources for seamless analysis.",
   },
   {
-    img: "https://s7d9.scene7.com/is/image/slalom/insight-globalbas-turtle-finserv-thumb-520x490?fmt=webp-alpha",
-    title: "Data Cleaning and Preparation",
-    hoverColor: "#90CAF9",
+    title: "Comprehensive Data Quality Assurance",
+    img: "https://cdni.iconscout.com/illustration/premium/thumb/customer-support-assistant-illustration-download-in-svg-png-gif-file-formats--call-logo-technical-headset-information-technology-pack-business-illustrations-1800927.png",
     description:
-      "Raw data is often messy and incomplete. Data cleaning involves removing duplicates, filling in missing information, and fixing inconsistencies. This step is critical to ensure the data is reliable and ready for analysis.",
+      "Ensure data accuracy, consistency, and reliability through comprehensive data validation processes.",
   },
   {
-    img: "https://s7d9.scene7.com/is/image/slalom/insight-globalbas-turtle-finserv-thumb-520x490?fmt=webp-alpha",
-    title: "Data Exploration",
+    title: "Advanced Analytics & ML Integration.",
     hoverColor: "#B39DDB",
     description:
-      "Once the data is cleaned, analysts explore it to identify trends, patterns, and outliers. This stage, known as Exploratory Data Analysis (EDA), uses visual tools like graphs, histograms, and heatmaps to provide a preliminary understanding of the dataset.",
+      "Implement machine learning models to turn historical data into predictive insights, helping you forecast trends and make data-driven decisions.",
   },
   {
-    img: "https://s7d9.scene7.com/is/image/slalom/insight-globalbas-turtle-finserv-thumb-520x490?fmt=webp-alpha",
-    title: "Data Transformation",
-    hoverColor: "#80CBC4",
+    title: "Generative AI Solutions Integration.",
+    img: "https://strapi-wasabi-bucket.apyhi.com/What_is_AI_Vector_Generator_1_9dbca2ad63.webp",
     description:
-      "After exploration, the data may need to be transformed or structured in a way that is suitable for analysis. This can involve aggregating data, filtering unnecessary elements, and creating new metrics or features from the raw data.",
+      "Leverage Generative AI to unlock new levels of innovation by enabling your business to create, simulate, and automate processes based on data patterns and insights.",
   },
+
   {
-    img: "https://s7d9.scene7.com/is/image/slalom/insight-globalbas-turtle-finserv-thumb-520x490?fmt=webp-alpha",
-    title: "Data Analysis and Modeling",
-    hoverColor: "#E6EE9C",
-    description:
-      "Once the data is cleaned, analysts explore it to identify trends, patterns, and outliers. This stage, known as Exploratory Data Analysis (EDA), uses visual tools like graphs, histograms, and heatmaps to provide a preliminary understanding of the dataset.",
-  },
-  {
-    img: "https://s7d9.scene7.com/is/image/slalom/insight-globalbas-turtle-finserv-thumb-520x490?fmt=webp-alpha",
-    title: "Visualization",
+    title: "Actionable Dashboards and Real-Time Reporting",
     hoverColor: "#FFF59D",
     description:
-      "Raw data is often messy and incomplete. Data cleaning involves removing duplicates, filling in missing information, and fixing inconsistencies. This step is critical to ensure the data is reliable and ready for analysis.",
+      "Design intuitive dashboards that provide real-time visibility into key metrics, empowering decision-makers with up-to-date information.",
   },
   {
-    img: "https://s7d9.scene7.com/is/image/slalom/insight-globalbas-turtle-finserv-thumb-520x490?fmt=webp-alpha",
-    title: "Decision-Making",
+    title: "Cloud Optimization for Data and AI",
     hoverColor: "#FFAB91",
     description:
-      "The final step involves interpreting the analysis results and applying them to business strategies. Whether it's optimizing marketing campaigns, improving customer experiences, or forecasting sales, the insights derived from data analytics drive informed decision-making.",
+      "Optimize cloud infrastructure for cost-effective, scalable solutions that support growing data volumes and AI workloads.",
+  },
+];
+
+const cta = [
+  {
+    name: "Consultation",
+    img: "/assets/img_placeholder/consult.png",
+    description:
+      "We will meet to understand your business needs and data landscape.",
+  },
+  {
+    name: "Solution Proposal",
+    img: "/assets/img_placeholder/solution.png",
+    description:
+      "We will design a custom plan with a roadmap for your data transformation.",
+  },
+  {
+    name: "Implementation",
+    img: "/assets/img_placeholder/implementation.png",
+    description:
+      "From data pipelines to dashboards, we handle end-to-end implementation.",
   },
 ];
 
@@ -137,80 +229,84 @@ function Home() {
           <div className="global-container overflow-hidden relative z-5 w-full h-full flex flex-col justify-end items-start">
             <div className=" w-full lg:w-2/3">
               <p className="text-gray-50 font-Satoshi font-bold py-5 text-3xl  lg:text-6xl xxl:text-7xl">
-                Gain a strategic advantage with your Data.
+                Turn Your Data into Your Company's Strongest Asset
               </p>
               <p className="text-gray-100 text-xl">
-                Menlocloud data analytics consulting services will transform
-                your organization and set you up to make data-driven decisions.
+                <span className="text-lg xl:text-xl text-gray-800 font-bold font-Satoshi">
+                  Menlo
+                  <span className="text-sky-500 font-Clash font-[600]">
+                    cloud
+                  </span>
+                </span>{" "}
+                Transforming Data into Strategic Advantage
               </p>
             </div>
           </div>
         </section>
-        <section className="global-container mt-20">
-          <div className=" gap-8 grid place-items-center grid-cols-1 lg:grid-cols-2">
-            <div>
-              <p className="text-3xl  xxl:text-5xl font-Satoshi font-bold">
-                Unlock Your Business Potential with Data-Driven Insights and
-                Strategies
-              </p>
-              <p className="mt-8 font-Satoshi font-medium">
-                Harnessing data analytics empowers businesses to make informed
-                decisions, optimise operations, and enhance customer
-                experiences. By leveraging actionable insights, companies can
-                drive growth and stay ahead of the competition.
-              </p>
-              <ul className="list-disc mt-8 font-Satoshi font-semibold">
-                <div className="px-4">
-                  <li className="">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  </li>
-                  <li className="mt-2">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  </li>
-                  <li className="mt-2">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  </li>
-                </div>
-              </ul>
-            </div>
-            <div className="max-h-[600px] overflow-hidden rounded-xl">
-              <img
-                src="https://images.unsplash.com/photo-1642432556591-72cbc671b707?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                alt=""
-              />
-            </div>
-          </div>
-        </section>
+      
 
         <section className="my-10 py-24 bg-center bg-cover bg-no-repeat  ">
           <div className="">
             <p className="global-container mb-2 text-3xl lg:text-5xl tracking-tight font-Satoshi font-bold w-full lg:w-2/3 text-center">
-              Data Analytics Consulting{" "}
+              The Business Value of
               <span className="bg-gradient-to-r font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
                 {" "}
-                Services{" "}
+                Data Analytics
               </span>{" "}
-            </p>
-            <p className="text-center font-Satoshi text-md ">
-              We design, develop, and deploy solutions across all stages of the
-              data lifecycle.
             </p>
           </div>
 
-          <div className="w-full mt-10 global-container grid grid-cols-1 lg:grid-cols-4  gap-10 ">
+          <div className="w-full mt-10 global-container grid grid-cols-3 gap-5">
             {outcomes.map((outcome, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="w-full px-7 py-8 rounded-lg"
-                style={{
-                  backgroundColor: outcome.color,
-                }}
+                className={`w-full bg-gray-100 relative p-7 rounded-lg overflow-hidden`}
+                initial={{ opacity: 0, y: 20 }} // Starting state
+                animate={{ opacity: 1, y: 0 }} // End state
+                transition={{ duration: 0.5, delay: index * 0.1 }} // Transition timing
               >
-                <p className="text-xl font-Satoshi font-[600]">Planning</p>
-                <p className="text-4xl font-Satoshi font-[600] mt-5">
+                <div className="absolute top-1/2 left-1/2 opacity-[.2] -translate-x-1/2 -translate-y-1/2">
+                  <img src={outcome.icon} />
+                </div>
+                <p className="text-xl relative z-10 lg:text-2xl font-Satoshi font-[600] ">
                   {outcome.name}
                 </p>
-                <p className="mt-4">{outcome.description}</p>
+                <p className=" text-md font-Satoshi relative z-10 lg:text-lg">
+                  {outcome.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </section>
+        <section className="my-10 py-24   bg-no-repeat bg-center bg-cover bg-[url('https://img.freepik.com/free-vector/winter-blue-pink-gradient-background-vector_53876-117275.jpg?t=st=1727263918~exp=1727267518~hmac=baee65c2b8a027912f6643866ef0cda0cf4509c8dc6635623954698757fbbfd1&w=1060')]">
+          <div className="">
+            <p className="global-container mb-2   text-3xl lg:text-5xl tracking-tight font-Satoshi font-bold w-full lg:w-2/3 text-center">
+              Challenges Businesses Face with
+              <span className="bg-gradient-to-r font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
+                {" "}
+                Data
+              </span>{" "}
+            </p>
+          </div>
+
+          <div className="w-full  mt-20 global-container grid grid-cols-1 lg:grid-cols-3  gap-10 ">
+            {challenges.map((challenge, index) => (
+              <div
+                key={index}
+                className="w-full bg-slate-100 relative shadow-md px-7 py-8 rounded-lg"
+              >
+                <motion.div
+                  style={{
+                    backgroundColor: challenge.color,
+                  }}
+                  className="absolute overflow-hidden p-3 flex justify-center items-center -top-7 left-7 size-14 z-20   rounded-full"
+                >
+                  <img src={challenge.icon} className="w-full" />
+                </motion.div>
+                <p className="text-2xl text-gray-900 font-Satoshi font-[600] mt-5">
+                  {challenge.name}
+                </p>
+                <p className="mt-4 text-gray-800">{challenge.description}</p>
               </div>
             ))}
           </div>
@@ -220,10 +316,11 @@ function Home() {
           <div>
             <div className="flex  justify-between items-center">
               <p className="text-3xl w-full text-center lg:text-start  lg:text-6xl  font-Satoshi font-[600]  lg:w-2/3">
-                How it{" "}
+                How Our Data Analytics{" "}
                 <span className="bg-gradient-to-r font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
-                  Works{" "}
+                  Solutions
                 </span>{" "}
+                Help
               </p>
               <div className="hidden lg:flex">
                 <SwiperNavButtons swiperRef={swiperRef} />
@@ -249,14 +346,14 @@ function Home() {
               }}
               className=" mt-5 xl:mt-10"
             >
-              {data.map((elem, index) => {
+              {benefits.map((elem, index) => {
                 return (
                   <SwiperSlide key={index} className="  w-full cursor-grab ">
                     <motion.div
                       whileHover={{ backgroundColor: elem.hoverColor }}
                       className={` px-5 py-7 rounded-xl bg-slate-100 `}
                     >
-                      <div className="">
+                      <div className="min-h-[200px] ">
                         <p className="font-medium text-sky-950 font-Satoshi text-lg flex items-center gap-2">
                           Step {index + 1}{" "}
                           <span className="text-2xl">
@@ -264,11 +361,14 @@ function Home() {
                           </span>
                         </p>
                         <p className="xl:text-lg xxl:text-2xl font-Satoshi text-sky-900 mt-2 font-semibold">
-                          {elem.title}
+                          {elem.name}
                         </p>
-                        <p className="xl:text-sm min-h-[200px] xxl:text-lg font-Satoshi tracking-tight mt-2 font-medium">
+                        <p className="xl:text-sm  xxl:text-lg font-Satoshi tracking-tight mt-2 font-medium">
                           {elem.description}
                         </p>
+                      </div>
+                      <div className=" flex justify-center  w-full">
+                        <img src={elem.icon} className="w-2/3" />
                       </div>
                     </motion.div>
                   </SwiperSlide>
@@ -278,34 +378,72 @@ function Home() {
           </div>
         </section>
 
-        <section className="mt-28">
-          <p className="global-container mb-10 text-3xl lg:text-6xl font-Satoshi font-[600] w-full lg:w-2/3  text-center">
-            Our{" "}
-            <span className="bg-gradient-to-r font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
-              {" "}
-              Clients{" "}
-            </span>
-          </p>
-          <Marquee reverse className=" [--duration:20s]">
-            {secondRow.map((review) => (
-              <ReviewCard key={review.username} {...review} />
+        <section className="global-container my-28">
+          <div className="w-full flex justify-center mb-14">
+            <p className="text-3xl w-full text-center  lg:text-6xl  font-Satoshi font-[600]  lg:w-2/3">
+              Our
+              <span className="bg-gradient-to-r font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
+                Expertise
+              </span>{" "}
+              and
+              <span className="bg-gradient-to-r font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
+                Success
+              </span>{" "}
+            </p>
+          </div>
+          <div className="w-full grid grid-cols-1 lg:grid-cols-4  gap-5 ">
+            {showcases.map((exp, index) => (
+              <div
+                key={index}
+                className="w-full px-10 py-10 rounded-lg"
+                style={{
+                  backgroundColor: exp.color,
+                }}
+              >
+                <p className="text-xl lg:text-3xl font-Satoshi font-[600] mt-5">
+                  {exp.name}
+                </p>
+                <p className="mt-4">{exp.description}</p>
+              </div>
             ))}
-          </Marquee>
+          </div>
+        </section>
+        <section className="global-container my-28">
+          <div className="w-full flex justify-center mb-14">
+            <p className="text-3xl w-full text-center  lg:text-6xl  font-Satoshi font-[600]  lg:w-2/3">
+              A Showcase of Our
+              <span className="bg-gradient-to-r font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
+                Data Analytics
+              </span>{" "}
+              Services
+            </p>
+          </div>
+          <div className="w-full grid grid-cols-1 lg:grid-cols-3  gap-10 ">
+            {data.map((exp, index) => (
+              <div key={index} className="w-full p-6 rounded-lg bg-gray-200">
+                <p className="text-xl lg:text-3xl font-Satoshi font-[600] mt-5">
+                  {exp.title}
+                </p>
+                <p className="mt-4 font-Satoshi font-medium">
+                  {exp.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </section>
 
-        <section className="mt-10 py-24 bg-center bg-cover bg-no-repeat  bg-black ">
+        <section className="my-10 py-20 bg-center bg-cover bg-no-repeat rounded-2xl global-container bg-black">
           <div className="">
             <p className="global-container mb-2 text-3xl text-gray-100 lg:text-5xl tracking-tight font-Satoshi font-bold w-full lg:w-2/3 text-center">
-              Talk strategy with an{" "}
+              Schedule a consultation to assess your{" "}
               <span className="bg-gradient-to-r font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
                 {" "}
-                Expert{" "}
+                Data challenges.
               </span>{" "}
             </p>
             <p className="global-container text-center w-full lg:w-2/3 font-Satoshi text-md text-gray-200">
-              Sign up to meet with one of our analytics experts who will review
-              your data struggles and help map out steps to achieve data-driven
-              decision making.
+              Learn how we can tailor our data analytics solutions to unlock the
+              potential of your business’s data.
             </p>
           </div>
           <div className="mt-5  w-full flex justify-center ">
@@ -313,6 +451,35 @@ function Home() {
               <p className="relative z-10">Lets Connect</p>
               <div className="bg-sky-500 w-1 h-1 group-hover:scale-[50] absolute -bottom-1 left-1/2 -translate-1/2 rounded-full transition-all duration-300" />
             </button>
+          </div>
+        </section>
+        <section className="w-full  my-14 global-container">
+          <div className="w-full flex justify-center mb-14">
+            <p className="text-3xl w-full text-center  lg:text-6xl  font-Satoshi font-[600]  lg:w-2/3">
+              What Happens
+              <span className="bg-gradient-to-r font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
+                Next?
+              </span>{" "}
+            </p>
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 ">
+            {cta.map((elem, index) => (
+              <div
+                key={index}
+                className="w-full flex flex-col justify-center items-center"
+              >
+                <div className={"size-20  "}>
+                  <img src={elem.img} />
+                </div>
+                <p className="font-Satoshi font-bold text-center text-xl mt-5 lg:text-2xl">
+                  {elem.name}
+                </p>
+                <p className="text-md font-Satoshi font-medium text-center mt-2">
+                  {" "}
+                  {elem.description}
+                </p>
+              </div>
+            ))}
           </div>
         </section>
       </main>
@@ -323,19 +490,3 @@ function Home() {
 }
 
 export default Home;
-
-const secondRow = clientLogo;
-const ReviewCard = ({ img, index }) => {
-  return (
-    <figure
-      className={cn(
-        `relative size-28 lg:size-40 flex justify-center items-center cursor-pointer overflow-hidden rounded-xl border p-4`,
-        // light styles
-        "border-gray-950/[.1] bg-gray-950/[.01] hover:bg-gray-950/[.05]"
-        // dark styles
-      )}
-    >
-      <img className=" " width="auto" alt="" src={img} />
-    </figure>
-  );
-};
