@@ -100,56 +100,80 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
             <NavigationMenu className={``}>
               <NavigationMenuList className={``}>
                 <NavigationMenuItem className="">
-                  <NavigationMenuTrigger
-                    className={`xl:text-md xxl:text-lg`}
-                  >
+                  <NavigationMenuTrigger className={`xl:text-md xxl:text-lg`}>
                     <Link href={`/services`}>Services</Link>
                   </NavigationMenuTrigger>
                   <NavigationMenuContent className="">
-                    <div className="grid xl:gap-6 xxl:gap-10 px-6 xl:py-6 xxl:py-10 md:w-[400px] lg:w-[700px] lg:grid-cols-2">
+                    <div className="grid xl:gap-6 xxl:gap-8 px-6 xl:py-6 xxl:py-10 md:w-[400px] lg:w-[700px] lg:grid-cols-2">
                       <div className="xl:p-3  xxl:p-5 hover:bg-gray-200 text-gray-800 cursor-pointer rounded-xl">
-                        <p className="text-md font-bold">Data analytics</p>
-                        <p className="text-sm font-medium mt-1 text-gray-600 ">
-                          Leveraging today’s data for a more promising future
-                        </p>
+                        <Link href={"/data-Analytics"}>
+                          {" "}
+                          <div>
+                            <p className="text-md font-bold">Data analytics</p>
+                            <p className="text-sm font-medium mt-1 text-gray-600 ">
+                              Leveraging today’s data for a more promising
+                              future
+                            </p>
+                          </div>
+                        </Link>
                       </div>
                       <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
-                        <p className="text-md font-bold">Generative AI</p>
-                        <p className="text-sm font-medium mt-1 text-gray-600">
-                          Shaping the future through advanced AI
-                        </p>
+                        <Link href={`/generative-ai`}>
+                          <div>
+                            <p className="text-md font-bold">Generative AI</p>
+                            <p className="text-sm font-medium mt-1 text-gray-600">
+                              Shaping the future through advanced AI
+                            </p>
+                          </div>
+                        </Link>
                       </div>
                       <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
-                        <p className="text-md font-bold">
-                          Cloud Transformation
-                        </p>
-                        <p className="text-sm font-medium mt-1 text-gray-600">
-                          Bridging conventional and generative AI to deliver
-                          effective, real-world applications.
-                        </p>
+                        <Link href={`/cloud-transformation`}>
+                          <div>
+                            <p className="text-md font-bold">
+                              Cloud Transformation
+                            </p>
+                            <p className="text-sm font-medium mt-1 text-gray-600">
+                              Bridging conventional and generative AI to deliver
+                              effective, real-world applications.
+                            </p>
+                          </div>
+                        </Link>
                       </div>
                       <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
-                        <p className="text-md font-bold">
-                          Mobil App Development
-                        </p>
-                        <p className="text-sm font-medium mt-1 text-gray-600">
-                          Crafting robust and scalable systems through expert
-                          software engineering.
-                        </p>
+                        <div>
+                          <p className="text-md font-bold">
+                            Mobile App Development
+                          </p>
+                          <p className="text-sm font-medium mt-1 text-gray-600">
+                            Crafting robust and scalable systems through expert
+                            software engineering.
+                          </p>
+                        </div>
                       </div>
                       <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
-                        <p className="text-md font-bold">Web Development</p>
-                        <p className="text-sm font-medium mt-1 text-gray-600">
-                          Transforming business operations with next-generation
-                          cloud modernization
-                        </p>
+                        <Link href={`/web-developer`}>
+                          <div>
+                            <p className="text-md font-bold">Web Development</p>
+                            <p className="text-sm font-medium mt-1 text-gray-600">
+                              Transforming business operations with
+                              next-generation cloud modernization
+                            </p>
+                          </div>
+                        </Link>
                       </div>
                       <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
-                        <p className="text-md font-bold">Digital marketing</p>
-                        <p className="text-sm font-medium mt-1 text-gray-600">
-                          Transforming concepts into functional systems through
-                          precise implementation
-                        </p>
+                        <Link href={`/digital-marketing`}>
+                          <div>
+                            <p className="text-md font-bold">
+                              Digital marketing
+                            </p>
+                            <p className="text-sm font-medium mt-1 text-gray-600">
+                              Transforming concepts into functional systems
+                              through precise implementation
+                            </p>
+                          </div>
+                        </Link>
                       </div>
                     </div>
                   </NavigationMenuContent>
