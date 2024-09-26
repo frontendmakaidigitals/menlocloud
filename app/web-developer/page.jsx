@@ -281,8 +281,14 @@ function Services() {
           </div>
         </main>
         <section className=" flex flex-col items-center justify-center">
-          <div className="global-container lg:w-2/3 flex flex-col items-center justify-center w-full">
-            <h2 className="text-center">Web Development Services</h2>
+          <div className="w-full global-container lg:w-2/3 flex flex-col justify-center items-center">
+            <p className="global-container text-3xl  lg:text-6xl  font-Satoshi font-[600] text-center">
+              Web Development
+              <span className="bg-gradient-to-r  font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
+                {" "}
+                Services{" "}
+              </span>
+            </p>
           </div>
           <TracingBeam className="px-12 lg:px-6 mt-10">
             <div className="max-w-2xl mx-auto antialiased pt-6 relative">
@@ -320,8 +326,14 @@ function Services() {
           </TracingBeam>
         </section>
         <section className="global-container my-20">
-          <div className="w-full flex justify-center mb-14">
-            <h2>Work with the BEST!</h2>
+          <div className="w-full global-container lg:w-2/3 flex flex-col justify-center items-center">
+            <p className="global-container text-3xl  lg:text-6xl  font-Satoshi font-[600] text-center">
+              Work with the
+              <span className="bg-gradient-to-r  font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
+                {" "}
+                Best!{" "}
+              </span>
+            </p>
           </div>
           <div className="w-full grid grid-cols-1 lg:grid-cols-4  gap-10 ">
             {ourExp.map((exp, index) => (
@@ -346,18 +358,26 @@ function Services() {
           </div>
         </section>
         <section className="global-container">
-          <div className="w-full flex justify-center mb-14">
-            <h2 className="text-center w-full xl:w-2/3">
-              Our Web Development Process
-            </h2>
+          <div className="w-full global-container lg:w-2/3 flex flex-col justify-center items-center">
+            <p className="global-container text-3xl  lg:text-6xl  font-Satoshi font-[600] text-center">
+              Our Development
+              <span className="bg-gradient-to-r  font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
+                {" "}
+                Process{" "}
+              </span>
+            </p>
           </div>
           <Timeline data={data} />
         </section>
         <section className="global-container my-40 ">
-          <div className="w-full flex justify-center items-end mb-14">
-            <h2 className="text-center w-full xl:w-2/3">
-              Web Development Capabilities
-            </h2>
+          <div className="w-full global-container lg:w-2/3 flex flex-col justify-center items-center">
+            <p className="global-container text-3xl  lg:text-6xl  font-Satoshi font-[600] text-center">
+              Web Development
+              <span className="bg-gradient-to-r  font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
+                {" "}
+                Capabilities{" "}
+              </span>
+            </p>
           </div>
           <div className="w-full hidden lg:flex justify-end mb-5">
             <SwiperNavButtons swiperRef={swiperRef} />
