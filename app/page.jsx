@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { useRef, useState, useEffect } from "react";
 import Header_01 from "@/components/header/Header_01";
 import Footer_01 from "@/components/footer/Footer_01";
-
+import Link from "next/link";
 import "/styles/globals.css";
 import Marquee from "@/components/magicui/marquee";
 import { AnimatePresence, color, motion } from "framer-motion";
@@ -453,12 +453,12 @@ function Home() {
                     />
                   </div>
                   <h3 className="mb-4 block text-xl leading-tight -tracking-[0.5px] group-hover:text-white xl:text-2xl xxl:text-[28px]">
-                    <button
-                      href="/service-details"
+                    <Link
+                      href="/data-Analytics"
                       className="hover:text-blue-300"
                     >
                       Data analytics
-                    </button>
+                    </Link>
                   </h3>
 
                   <p className="mb-12 duration-300 group-hover:text-white">
@@ -466,8 +466,8 @@ function Home() {
                     who are starting out.
                   </p>
 
-                  <button
-                    href="/service-details"
+                  <Link
+                    href="/data-Analytics"
                     className="relative inline-block h-[30px] w-[30px] duration-300"
                   >
                     <img
@@ -483,7 +483,7 @@ function Home() {
                       height="30"
                       className="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100"
                     />
-                  </button>
+                  </Link>
                 </li>
                 {/* Service Item */}
                 {/* Service Item */}
@@ -505,12 +505,12 @@ function Home() {
                   </div>
 
                   <h3 className="mb-4 block text-xl leading-tight -tracking-[0.5px] group-hover:text-white xl:text-2xl xxl:text-[28px]">
-                    <button
-                      href="/service-details"
+                    <Link
+                      href="/generative-ai"
                       className="hover:text-blue-300"
                     >
                       Generative AI
-                    </button>
+                    </Link>
                   </h3>
 
                   <p className="mb-12 duration-300 group-hover:text-white">
@@ -518,8 +518,8 @@ function Home() {
                     who are starting out.
                   </p>
 
-                  <button
-                    href="/service-details"
+                  <Link
+                    href="/generative-ai"
                     className="relative inline-block h-[30px] w-[30px] duration-300"
                   >
                     <img
@@ -535,7 +535,7 @@ function Home() {
                       height="30"
                       className="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100"
                     />
-                  </button>
+                  </Link>
                   {/* Features Item */}
                   {/* Features Item */}
                 </li>
@@ -558,12 +558,12 @@ function Home() {
                     />
                   </div>
                   <h3 className="mb-4 block text-xl leading-tight -tracking-[0.5px] group-hover:text-white xl:text-2xl xxl:text-[28px]">
-                    <button
-                      href="/service-details"
+                    <Link
+                      href="/cloud-transformation"
                       className="hover:text-blue-300"
                     >
                       Cloud transformation
-                    </button>
+                    </Link>
                   </h3>
 
                   <p className="mb-12 duration-300 group-hover:text-white">
@@ -571,8 +571,8 @@ function Home() {
                     who are starting out.
                   </p>
 
-                  <button
-                    href="/service-details"
+                  <Link
+                    href="/cloud-transformation"
                     className="relative inline-block h-[30px] w-[30px] duration-300"
                   >
                     <img
@@ -588,7 +588,7 @@ function Home() {
                       height="30"
                       className="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100"
                     />
-                  </button>
+                  </Link>
                 </li>
                 {/* Service Item */}
                 {/* Service Item */}
@@ -658,12 +658,12 @@ function Home() {
                     />
                   </div>
                   <h3 className="mb-4 block text-xl leading-tight -tracking-[0.5px] group-hover:text-white xl:text-2xl xxl:text-[28px]">
-                    <button
-                      href="/service-details"
+                    <Link
+                      href="/web-developer"
                       className="hover:text-blue-300"
                     >
                       Web development
-                    </button>
+                    </Link>
                   </h3>
 
                   <p className="mb-12 duration-300 group-hover:text-white">
@@ -671,8 +671,8 @@ function Home() {
                     who are starting out.
                   </p>
 
-                  <button
-                    href="/service-details"
+                  <Link
+                    href="/web-developer"
                     className="relative inline-block h-[30px] w-[30px] duration-300"
                   >
                     <img
@@ -688,7 +688,7 @@ function Home() {
                       height="30"
                       className="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100"
                     />
-                  </button>
+                  </Link>
                 </li>
                 <li className="group bg-white p-[30px] transition-all duration-300 ease-in-out hover:bg-black">
                   <div className="relative mb-9 h-[60px] w-[60px]">
@@ -707,12 +707,12 @@ function Home() {
                     />
                   </div>
                   <h3 className="mb-4 block text-xl leading-tight -tracking-[0.5px] group-hover:text-white xl:text-2xl xxl:text-[28px]">
-                    <button
-                      href="/service-details"
+                    <Link
+                      href="/digital-marketing"
                       className="hover:text-blue-300"
                     >
                       Digital marketing
-                    </button>
+                    </Link>
                   </h3>
 
                   <p className="mb-12 duration-300 group-hover:text-white">
@@ -720,8 +720,8 @@ function Home() {
                     who are starting out.
                   </p>
 
-                  <button
-                    href="/service-details"
+                  <Link
+                    href="/digital-marketing"
                     className="relative inline-block h-[30px] w-[30px] duration-300"
                   >
                     <img
@@ -737,7 +737,7 @@ function Home() {
                       height="30"
                       className="absolute left-0 top-0 h-full w-full opacity-0 transition-all duration-300 ease-linear group-hover:opacity-100"
                     />
-                  </button>
+                  </Link>
                 </li>
                 {/* Service Item */}
               </ul>

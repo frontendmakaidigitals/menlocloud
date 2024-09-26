@@ -335,7 +335,7 @@ function Services() {
               </span>
             </p>
           </div>
-          <div className="w-full grid grid-cols-1 lg:grid-cols-4  gap-10 ">
+          <div className="w-full grid grid-cols-1 lg:grid-cols-4 mt-12 gap-10 ">
             {ourExp.map((exp, index) => (
               <div
                 key={index}
@@ -357,7 +357,7 @@ function Services() {
             ))}
           </div>
         </section>
-        <section className="global-container">
+        <section className="global-container mt-10">
           <div className="w-full global-container lg:w-2/3 flex flex-col justify-center items-center">
             <p className="global-container text-3xl  lg:text-6xl  font-Satoshi font-[600] text-center">
               Our Development
