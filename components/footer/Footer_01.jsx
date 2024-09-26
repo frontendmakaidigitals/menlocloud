@@ -7,13 +7,7 @@ const Footer_01 = () => {
   return (
     <footer className="relative z-[1]  overflow-hidden rounded-tl-[30px] rounded-tr-[30px] bg-colorLinenRuffle lg:rounded-tl-[50px] lg:rounded-tr-[50px]">
       {/* Footer Top */}
-      <div className="pt-20 pb-20">
-        <VelocityScroll
-          text="Intelligent Data Driven Solutions"
-          default_velocity={5}
-          className="font-display text-center text-4xl font-bold tracking-[-0.02em] text-black drop-shadow-sm dark:text-white md:text-7xl md:leading-[5rem]"
-        />
-      </div>
+     
       {/* Footer Text Slider */}
       {/* Footer Top */}
       <div className="global-container">
