@@ -83,39 +83,31 @@ const challenges = [
 
 const benefits = [
   {
-    name: "Data Ingestion",
+    name: "Enhanced scalability",
     icon: "https://cdn3d.iconscout.com/3d/premium/thumb/data-filtering-3d-icon-download-in-png-blend-fbx-gltf-file-formats--analytics-logo-seo-big-science-pack-network-communication-icons-7915324.png",
     color: "#FFCDD2",
     description:
-      "Seamlessly integrate data from multiple sources (databases, APIs, cloud).",
+      "Easily scale your resources up or down to meet changing demands.",
   },
   {
-    name: "Data Pipelines for ML & Gen AI",
+    name: "Reduced costs",
     icon: "https://cdn3d.iconscout.com/3d/premium/thumb/data-3d-icon-download-in-png-blend-fbx-gltf-file-formats--storage-document-network-programming-and-development-pack-design-icons-7232746.png?f=webp",
     color: "#FFECB3",
     description:
-      " Build robust pipelines designed to handle AI workloads and machine learning models, ensuring data is clean, organized, and accessible.",
+      " Optimize your IT infrastructure and reduce operational expenses.",
   },
   {
-    name: "Custom Dashboards & Reports",
+    name: "Improved agility",
     icon: "https://static.vecteezy.com/system/resources/previews/014/919/437/original/dashboard-3d-render-icon-png.png",
     color: "#F5F5F5",
-    description:
-      " Deliver real-time, visually appealing dashboards to provide actionable insights for decision-making.",
+    description: " Respond quickly to market changes and customer needs.",
   },
   {
-    name: "Machine Learning and AI Integration",
+    name: "Increased reliability",
     icon: "https://cdn3d.iconscout.com/3d/premium/thumb/cloud-ai-3d-icon-download-in-png-blend-fbx-gltf-file-formats--processor-network-chip-gear-machine-learning-pack-science-technology-icons-6622077.png?f=webp",
     color: "#D1C4E9",
     description:
-      " Use predictive models and generative AI to unlock advanced analytics and forecasting capabilities",
-  },
-  {
-    name: "Scalable Infrastructure",
-    icon: "https://www.cloud.studio/wp-content/uploads/2022/08/Group-412-1.webp",
-    color: "#D1C4E9",
-    description:
-      "Create cloud-optimized data pipelines that scale as your data grows, ensuring high performance and low cost.",
+      "Benefit from the reliability and security of cloud platforms.",
   },
 ];
 
@@ -229,29 +221,29 @@ function Home() {
           <div className="global-container overflow-hidden relative z-5 w-full h-full flex flex-col justify-end items-start">
             <div className=" w-full lg:w-2/3">
               <p className="text-gray-50 font-Satoshi font-bold py-5 text-2xl  lg:text-5xl xxl:text-6xl">
-              Accelerate Your Digital Journey with Cloud Transformation
+                Accelerate Your Digital Journey with Cloud Transformation
               </p>
               <p className="text-gray-100 text-xl">
-              Leverage cutting-edge cloud technology to drive innovation and efficiency.
+                Leverage cutting-edge cloud technology to drive innovation and
+                efficiency.
               </p>
             </div>
           </div>
         </section>
-      
-
         <section className="my-10 py-24 bg-center bg-cover bg-no-repeat  ">
           <div className="">
             <p className="global-container mb-2 text-3xl lg:text-5xl tracking-tight font-Satoshi font-bold w-full lg:w-2/3 text-center">
-              The Business Value of
+              Importance of
               <span className="bg-gradient-to-r font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
                 {" "}
-                Data Analytics
+                Cloud Transformation
               </span>{" "}
+              in Today’s Digital Landscape
             </p>
           </div>
 
-          <div className="w-full mt-10 global-container grid grid-cols-3 gap-5">
-            {outcomes.map((outcome, index) => (
+          <div className="w-full mt-10 global-container grid grid-cols-4 gap-5">
+            {benefits.map((elem, index) => (
               <motion.div
                 key={index}
                 className={`w-full bg-gray-100 relative p-7 rounded-lg overflow-hidden`}
@@ -259,19 +251,31 @@ function Home() {
                 animate={{ opacity: 1, y: 0 }} // End state
                 transition={{ duration: 0.5, delay: index * 0.1 }} // Transition timing
               >
-                <div className="absolute top-1/2 left-1/2 opacity-[.2] -translate-x-1/2 -translate-y-1/2">
-                  <img src={outcome.icon} />
-                </div>
                 <p className="text-xl relative z-10 lg:text-2xl font-Satoshi font-[600] ">
-                  {outcome.name}
+                  {elem.name}
                 </p>
                 <p className=" text-md font-Satoshi relative z-10 lg:text-lg">
-                  {outcome.description}
+                  {elem.description}
                 </p>
               </motion.div>
             ))}
           </div>
+          <div className="mt-16 ">
+            <p className=" mb-2 global-container text-lg lg:text-xl tracking-tight font-Satoshi font-bold w-full lg:w-2/3 text-center">
+              At MenloCloud, we specialize in helping businesses of all sizes
+              achieve their cloud transformation goals. Our team of experts has
+              the knowledge and experience to guide you through every step of
+              the process, from migration to optimization.
+            </p>
+            <div className="global-conatainer flex justify-center items-center">
+              <button className=" mt-5 px-4 py-2 bg-gray-200 rounded-xl">
+                Schedule a consultation
+              </button>
+            </div>
+          </div>
         </section>
+
+       
         <section className="my-10 py-24   bg-no-repeat bg-center bg-cover bg-[url('https://img.freepik.com/free-vector/winter-blue-pink-gradient-background-vector_53876-117275.jpg?t=st=1727263918~exp=1727267518~hmac=baee65c2b8a027912f6643866ef0cda0cf4509c8dc6635623954698757fbbfd1&w=1060')]">
           <div className="">
             <p className="global-container mb-2   text-3xl lg:text-5xl tracking-tight font-Satoshi font-bold w-full lg:w-2/3 text-center">

@@ -229,7 +229,7 @@ function Home() {
           <div className="global-container overflow-hidden relative z-5 w-full h-full flex flex-col justify-end items-start">
             <div className=" w-full lg:w-2/3">
               <p className="text-gray-50 font-Satoshi font-bold py-5 text-3xl  lg:text-6xl xxl:text-7xl">
-                Turn Your Data into Your Company's Strongest Asset
+                Turn Your Data into Your Company&apos;s Strongest Asset
               </p>
               <p className="text-gray-100 text-xl">
                 <span className="text-lg xl:text-xl text-gray-800 font-bold font-Satoshi">
