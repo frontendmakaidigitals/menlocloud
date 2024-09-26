@@ -88,20 +88,10 @@ const tabs = [
       "Analytical Reporting",
       "Data Strategy",
     ],
+    img: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    name: "Artificial Intelligence",
-    data: "Assisting you in leveraging AI to automate repetitive functions, push beyond traditional limitations, and transform user experiences in an ethical manner. Our expertise includes machine learning, natural language processing, computer vision, and robotic process automation. We start by understanding your unique business challenges and objectives, then design and implement AI solutions tailored to your needs.",
-    points: [
-      "Natural Language Processing",
-      "Predictive Analytics",
-      "Deep Learning",
-      "Robotic Process Automation",
-      "Smart Algorithms",
-    ],
-  },
-  {
-    name: "Applied AI ",
+    name: "Generative AI ",
     data: "Deploy conventional and generative AI to optimize existing processes, explore innovative solutions, and redefine user experiences responsibly. We combine Conventional and Generative AI and provide a holistic approach to solving complex challenges and unlocking new opportunities in the AI landscape. ",
     points: [
       "Conventional Models",
@@ -110,21 +100,11 @@ const tabs = [
       "Pattern Recognition",
       "Algorithm Development",
     ],
+    img: "https://images.unsplash.com/photo-1717501217911-a598ed4c4023?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
+
   {
-    name: "Software Engineering",
-    data: "With our advanced software development efficiency, solve intricate technical problems, and create impactful, reliable software solutions. We provide custom applications, integration of third-party systems, and enhancement of existing software. We focus on delivering solutions that are user-friendly, secure, and optimized for performance. From web and mobile applications to enterprise software and cloud-based solutions, we provide expertise in a wide range of technologies and platforms.",
-    points: [
-      "System Design",
-      "Code Development",
-      "Quality Assurance",
-      "Version Control",
-      "User Experience",
-      "Debugging Processes",
-    ],
-  },
-  {
-    name: "Cloud Modernisation",
+    name: "Cloud Transformation",
     data: "With cloud modernization, transform your existing infrastructure into a robust, scalable, and agile environment. Our approach involves assessing your current systems, developing a strategic cloud migration plan, streamline operations, reduce costs and implementing cutting-edge cloud solutions that enhance performance and efficiency. ",
     points: [
       "Cloud Migration",
@@ -133,54 +113,43 @@ const tabs = [
       "Serverless Computing",
       "Automated Provisioning",
     ],
+    img: "https://cyntexa.com/wp-content/uploads/2024/07/cloud-transformation-benefits-types-challenges-explained-banner.webp",
   },
   {
-    name: "Systems Implementation",
-    data: "Our systems implementation services include the configuration and customization of software, migration of data, and integration with other systems. We apply industry best practices to ensure that the implementation is executed flawlessly, with attention to detail in every aspect of the process. This includes rigorous testing to validate functionality, performance, and security before the system goes live.",
+    name: "Mobile App Developement",
+    data: "With cloud modernization, transform your existing infrastructure into a robust, scalable, and agile environment. Our approach involves assessing your current systems, developing a strategic cloud migration plan, streamline operations, reduce costs and implementing cutting-edge cloud solutions that enhance performance and efficiency. ",
     points: [
-      "Deployment Planning",
-      "User Training",
-      "Operational Testing",
-      "Technical Support",
-      "System Customization",
+      "Cloud Migration",
+      "Hybrid Cloud",
+      "Containerization Technologies",
+      "Serverless Computing",
+      "Automated Provisioning",
     ],
+    img: "https://images.unsplash.com/photo-1595675024853-0f3ec9098ac7?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
-    name: "Strategy",
-    data: "Our strategic approach encompasses various areas, including business transformation, market entry, digital strategy, and organizational development. We design tailored strategies that leverage your strengths, address weaknesses, and capitalize on emerging trends. Our goal is to create a strategic roadmap that not only guides your immediate actions but also positions you for long-term success and adaptability.",
+    name: "Web App Developement",
+    data: "With cloud modernization, transform your existing infrastructure into a robust, scalable, and agile environment. Our approach involves assessing your current systems, developing a strategic cloud migration plan, streamline operations, reduce costs and implementing cutting-edge cloud solutions that enhance performance and efficiency. ",
     points: [
-      "Strategic Planning",
-      "Market Analysis",
-      "Competitive Positioning",
-      "Long-Term Vision",
-      "Strategic Alignment",
-      "Risk Management",
-      "Tactical Execution",
+      "Cloud Migration",
+      "Hybrid Cloud",
+      "Containerization Technologies",
+      "Serverless Computing",
+      "Automated Provisioning",
     ],
+    img: "https://images.pexels.com/photos/177598/pexels-photo-177598.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   },
   {
-    name: "Privacy & Security",
-    data: "We also focus on privacy management, Safeguarding information with cutting-edge privacy and security practices, establishing data governance frameworks, conducting privacy impact assessments, and ensuring transparent data collection and usage practices. A proactive approach to privacy and security that protects your organization and supports your business objectives.",
+    name: "Digital Marketing",
+    data: "With cloud modernization, transform your existing infrastructure into a robust, scalable, and agile environment. Our approach involves assessing your current systems, developing a strategic cloud migration plan, streamline operations, reduce costs and implementing cutting-edge cloud solutions that enhance performance and efficiency. ",
     points: [
-      "Data Protection",
-      "Cybersecurity Measures",
-      "Access Control",
-      "Encryption Protocols",
-      "Security Audits",
-      "Threat Detection",
-      "Compliance Standards",
+      "Cloud Migration",
+      "Hybrid Cloud",
+      "Containerization Technologies",
+      "Serverless Computing",
+      "Automated Provisioning",
     ],
-  },
-  {
-    name: "Organizational Change",
-    data: "Enhancing company approach with top level cultural & hierarchy transformation, We provide comprehensive support for implementing change initiatives, including process redesign, technology adoption, and cultural transformation. Our team assists with designing and executing effective training programs to equip your employees with the skills and knowledge needed to adapt to new systems and processes.",
-    points: [
-      "Change Management",
-      "Transformation Strategy",
-      "Process Improvement",
-      "Adaptation Strategies",
-      "Implementation Planning",
-    ],
+    img: "https://www.chitkara.edu.in/blogs/wp-content/uploads/2022/11/Digital-Marketing.jpg",
   },
 ];
 function Services() {
@@ -300,51 +269,21 @@ function Services() {
                 : null}
             </div>
           </div>
-          <div className="relative hidden mt-5 lg:block global-container">
-            <Swiper
-              spaceBetween={10}
-              navigation={false}
-              modules={[Navigation]}
-              onSwiper={setSwiperInstance}
-              onSlideChange={handleSlideChange}
-              slidesPerView="auto"
-            >
-              {tabs.map((tab, index) => (
-                <SwiperSlide className="!w-auto" key={index}>
-                  <p
-                    onClick={() => setTabSelected(index)}
-                    className={` ${
-                      tabSelected == index
-                        ? "bg-gray-900 text-gray-100"
-                        : "bg-gray-300 text-gray-900"
-                    } xl:text-sm xxl:text-[1rem] px-4 py-2 rounded-full cursor-pointer`}
-                  >
-                    {tab.name}
-                  </p>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-            {!isBeginning && (
-              <div className="absolute top-1/2 -translate-y-1/2 left-8 z-[99] shadow-[0_0px_30px_45px_rgba(242,243,245)] rounded-full">
-                <button
-                  className="bg-lime-300  p-3 text-[1.1rem] rounded-full"
-                  onClick={() => swiperInstance.slidePrev()}
+          <div className="relative hidden mt-5 lg:flex flex-row gap-5 justify-center items-center global-container">
+            {tabs.map((tab, index) => (
+              <div className="!w-auto" key={index}>
+                <p
+                  onClick={() => setTabSelected(index)}
+                  className={` ${
+                    tabSelected == index
+                      ? "bg-gray-900 text-gray-100"
+                      : "bg-gray-300 text-gray-900"
+                  } xl:text-sm xxl:text-[1rem] px-4 py-2 rounded-full cursor-pointer`}
                 >
-                  <MdArrowBackIosNew />
-                </button>
+                  {tab.name}
+                </p>
               </div>
-            )}
-
-            {!isEnd && (
-              <div className="absolute top-1/2 -translate-y-1/2 right-8 z-[99] shadow-[0_0px_30px_45px_rgba(220,223,228)] rounded-full">
-                <button
-                  className="bg-lime-300 p-3  text-[1.1rem] rounded-full"
-                  onClick={() => swiperInstance.slideNext()}
-                >
-                  <MdOutlineArrowForwardIos />
-                </button>
-              </div>
-            )}
+            ))}
           </div>
           <div className="global-container mt-10 xl:mt-20 grid grid-cols-1  lg:grid-cols-2 px-0 xl:px-14 gap-8">
             <div>
@@ -370,7 +309,7 @@ function Services() {
             </div>
             <div
               style={{
-                backgroundImage: `url('https://images.unsplash.com/photo-1531538512164-e6c51ea63d20?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
+                backgroundImage: `url('${tabs[tabSelected].img}')`,
               }}
               className="w-full min-h-[400px] relative rounded-xl shadow-xl border border-gray-300 bg-no-repeat bg-[url('')] bg-center bg-cover"
             ></div>

@@ -251,10 +251,10 @@ function Home() {
                 animate={{ opacity: 1, y: 0 }} // End state
                 transition={{ duration: 0.5, delay: index * 0.1 }} // Transition timing
               >
-                <p className="text-xl relative z-10 lg:text-2xl font-Satoshi font-[600] ">
+                <p className="text-xl relative z-10 text-center lg:text-2xl font-Satoshi font-[600] ">
                   {elem.name}
                 </p>
-                <p className=" text-md font-Satoshi relative z-10 lg:text-lg">
+                <p className=" text-md font-Satoshi relative z-10 text-center lg:text-lg">
                   {elem.description}
                 </p>
               </motion.div>
