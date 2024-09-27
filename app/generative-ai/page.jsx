@@ -330,7 +330,7 @@ function GenAI() {
             {roadmap.map((road, index) => (
               <div
                 key={index}
-                className="px-3 py-6 shadow-md bg-gray-200 rounded-xl"
+                className="px-6 py-6 shadow-md bg-gray-200 rounded-xl"
               >
                 <p className="font-Satoshi font-bold text-lg">{road.name}</p>
                 <p className="font-Satoshi font-medium text-md mt-2">
