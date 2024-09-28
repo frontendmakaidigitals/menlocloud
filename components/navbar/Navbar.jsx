@@ -393,7 +393,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                         with AI
                       </p>
                     </div>
-                    <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
+                    <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-900  cursor-pointer rounded-xl">
                       <p className="text-md font-bold">Technology</p>
                       <p className="text-sm font-medium mt-1 text-gray-600">
                         Leading the way with innovative technology and digital
