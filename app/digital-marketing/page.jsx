@@ -1,6 +1,14 @@
+"use client";
 import Footer_01 from "@/components/footer/Footer_01";
 import Header_01 from "@/components/header/Header_01";
 import { AnimatePresence, motion } from "framer-motion";
+import { IoBulbOutline } from "react-icons/io5";
+import { MdDesignServices } from "react-icons/md";
+import { IoBuildOutline } from "react-icons/io5";
+import { TbTruckDelivery } from "react-icons/tb";
+import useAccordion from "@/components/hooks/useAccordion";
+import useTabs from "@/components/hooks/useTabs";
+import Link from "next/link";
 function About() {
   const services = [
     {
@@ -39,6 +47,9 @@ function About() {
       color: "#64DD17",
     },
   ];
+  const [activeIndex, handleAccordion] = useAccordion(0);
+
+  const [activeTab, handleTab] = useTabs();
   return (
     <>
       <Header_01 />
@@ -101,6 +112,59 @@ function About() {
             </div>
           </div>
         </section>
+
+        <section className="my-20 global-container grid grid-cols-1 gap-10 lg:grid-cols-2 place-items-center">
+          <div>
+            <img
+              src={`https://images.unsplash.com/photo-1642427749670-f20e2e76ed8c?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`}
+            />
+          </div>
+          <div>
+            <p className="capitalize text-3xl lg:text-6xl font-Satoshi  font-bold">
+              Get IT Solutions{" "}
+              <span className="bg-gradient-to-r font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
+                {" "}
+                experts
+              </span>{" "}
+              consultants
+            </p>
+            <p className="font-Satoshi font-medium text-lg  mt-4">
+              In the rapidly evolving world of digital marketing, having the
+              right IT solutions is crucial for maximizing your online presence
+              and achieving your business objectives. At [Your Company Name],
+              our expert consultants specialize in integrating advanced IT
+              solutions that enhance your digital marketing efforts and drive
+              results.
+            </p>
+            <p className="font-Satoshi font-semibold text-xl mt-6">
+              Tailored Digital Marketing Technology Solutions
+            </p>
+            <p className="font-Satoshi font-medium text-lg mt-5">
+              We offer a comprehensive suite of IT services designed to support
+              your digital marketing strategies, including:
+            </p>
+            <ul className="mt-2 list-disc">
+              <div className="px-5">
+                <li className="font-Satoshi font-semibold text-lg ">
+                  Marketing Automation
+                </li>
+                <li className="font-Satoshi font-semibold text-lg mt-1">
+                  Data Analytics and Reporting
+                </li>
+                <li className="font-Satoshi font-semibold text-lg mt-1">
+                  Customer Relationship Management (CRM)
+                </li>
+                <li className="font-Satoshi font-semibold text-lg mt-1">
+                  Content Management Systems (CMS)
+                </li>
+                <li className="font-Satoshi font-semibold text-lg mt-1">
+                  E-commerce Solutions
+                </li>
+              </div>
+            </ul>
+          </div>
+        </section>
+
         <section className=" mb-20">
           <div className="w-full global-container lg:w-2/3 flex flex-col justify-center items-center">
             <p className="global-container text-3xl  lg:text-6xl  font-Satoshi font-[600] text-center">
@@ -143,6 +207,222 @@ function About() {
               </div>
             ))}
           </div>
+        </section>
+        <section className="bg-blue-950 h-[1700px] lg:h-[550px]  py-20">
+          <div className="global-container flex flex-col justify-center items-center">
+            <p className="text-slate-100  font-Satoshi font-[400]">
+              Our Process
+            </p>
+            <p className="text-3xl lg:text-6xl font-Satoshi font-bold text-gray-100">
+              We Follow our Process
+            </p>
+
+            <div className="relative w-full h-full flex flex-col lg:flex-row justify-between items-center mt-14">
+              <div className="flex flex-col mt-8 mb-28 lg:mt-6 lg:mb-0 justify-center items-center">
+                <div className="size-20 flex justify-center items-center bg-slate-100/50 rounded-xl">
+                  <IoBulbOutline className={`text-gray-100 text-5xl`} />
+                </div>
+                <div className="relative">
+                  <p className="font-Satoshi font-bold text-gray-100 mt-1 text-2xl">
+                    Research
+                  </p>
+                  <p className="w-60 top-full left-1/2 -translate-x-1/2 font-Satoshi absolute text-gray-100 mt-1 text-center text-lg">
+                    We analyze your goals and digital presence to create a
+                    customized strategy.
+                  </p>
+                </div>
+              </div>
+              <div className="w-4 h-4 bg-gray-300/60 rounded-full lg:ml-5"></div>
+              <div className="flex-grow border-l lg:border-t h-20 lg:h-0 border-dashed border-gray-500 mx-2"></div>
+              <div className="w-4 h-4 bg-gray-300/60 rounded-full lg:mr-5"></div>
+              <div className="flex flex-col mt-8 mb-28 lg:mt-6 lg:mb-0  justify-center items-center">
+                <div className="size-20 flex justify-center items-center bg-slate-100/50  rounded-xl">
+                  <MdDesignServices className={`text-gray-100 text-5xl`} />
+                </div>
+                <div className="relative">
+                  <p className="font-Satoshi font-bold text-gray-100 mt-1 text-2xl">
+                    Designing
+                  </p>
+                  <p className="w-60 top-full left-1/2 -translate-x-1/2 font-Satoshi absolute text-gray-100 mt-1 text-center text-lg">
+                    Our team implements the strategy using best practices for
+                    maximum impact.
+                  </p>
+                </div>
+              </div>
+              <div className="w-4 h-4 bg-gray-300/60 rounded-full lg:ml-5"></div>
+              <div className="flex-grow border-l lg:border-t h-20 lg:h-0 border-dashed border-gray-500 mx-2"></div>
+              <div className="w-4 h-4 bg-gray-300/60 rounded-full lg:mr-5"></div>
+              <div className="flex flex-col mt-8 mb-28 lg:mt-6 lg:mb-0 justify-center items-center">
+                <div className="size-20 flex justify-center items-center bg-slate-100/50  rounded-xl">
+                  <IoBuildOutline className={`text-gray-100 text-5xl`} />
+                </div>
+                <div className="relative">
+                  <p className="font-Satoshi font-bold text-gray-100 mt-1 text-2xl">
+                    Building
+                  </p>
+                  <p className="w-60 top-full left-1/2 -translate-x-1/2 font-Satoshi absolute text-gray-100 mt-1 text-center text-lg">
+                    We monitor performance and make data-driven adjustments to
+                    optimize results..
+                  </p>
+                </div>
+              </div>
+              <div className="w-4 h-4 bg-gray-300/60 rounded-full lg:ml-5"></div>
+              <div className="flex-grow border-l lg:border-t h-20 lg:h-0 border-dashed border-gray-500 mx-2"></div>
+              <div className="w-4 h-4 bg-gray-300/60 rounded-full lg:mr-5"></div>
+              <div className="flex flex-col mt-8 mb-28 lg:mt-6 lg:mb-0 justify-center items-center">
+                <div className="size-20 flex justify-center items-center bg-slate-100/50  rounded-xl">
+                  <TbTruckDelivery className={`text-gray-100 text-5xl`} />
+                </div>
+                <div className="relative">
+                  <p className="font-Satoshi font-bold text-gray-100 mt-1 text-2xl">
+                    Delivered
+                  </p>
+                  <p className="w-60 top-full left-1/2 -translate-x-1/2 font-Satoshi absolute text-gray-100 mt-1 text-center text-lg">
+                    Receive transparent reports that highlight progress and key
+                    metrics.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="faq-section">
+          {/* Section Spacer */}
+          <div className="py-32 xl:pb-[150px]">
+            {/* Section Container */}
+            <div className="global-container">
+              <div className="grid grid-cols-1 gap-y-10 md:grid-cols-2">
+                {/* FAQ Left Block */}
+                <div
+                  className="jos flex flex-col"
+                  data-jos_animation="fade-right"
+                >
+                  {/* Section Content Block */}
+                  <div className="mb-6">
+                    <div className="mx-auto md:mx-0 md:max-w-none">
+                      <h2>Freely ask us for more information</h2>
+                    </div>
+                  </div>
+                  {/* Section Content Block */}
+                  <div className="text-lg leading-[1.4] lg:text-[21px]">
+                    <p className="mb-7 last:mb-0">
+                      Our AI SaaS solutions can be quickly deployed, enabling
+                      users to start benefiting from AI capabilities without
+                      lengthy setup and development times in fast-paced
+                      industries.
+                    </p>
+                    <div className="mt-5  w-full flex justify-start ">
+                      <button className="text-gray-100 overflow-hidden group rounded-lg relative font-Satoshi font-semibold py-2 px-5 bg-gray-950">
+                        <p className="relative z-10">Lets Connect</p>
+                        <div className="bg-sky-500 w-1 h-1 group-hover:scale-[50] absolute -bottom-1 left-1/2 -translate-1/2 rounded-full transition-all duration-300" />
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                {/* FAQ Left Block */}
+
+                {/* FAQ Right Block */}
+                <div
+                  className="jos md:ml-10 lg:ml-20 xl:ml-32"
+                  data-jos_animation="fade-left"
+                >
+                  {/* Accordion*/}
+                  <ul className="accordion">
+                    {/* Accordion items */}
+                    <li
+                      className={`accordion-item border-b-[1px] border-[#DBD6CF] pb-6 pt-6 first:pt-0 last:border-b-0 last:pb-0 ${
+                        activeIndex === 0 ? "active" : ""
+                      }`}
+                      onClick={() => handleAccordion(0)}
+                    >
+                      <div className="accordion-header flex items-center justify-between font-dmSans text-xl font-bold leading-[1.2] -tracking-[0.5px] text-black lg:text-[28px]">
+                        <p>What is digital marketing?</p>
+                        <div className="accordion-icon">
+                          <img
+                            src="/assets/img_placeholder/plus.svg"
+                            width={24}
+                            height={24}
+                            alt="plus"
+                          />
+                        </div>
+                      </div>
+                      <div className="accordion-content text-[#2C2C2C]">
+                        <p>
+                          Digital marketing encompasses all marketing efforts
+                          that use the internet or electronic devices. This
+                          includes social media marketing, email marketing, SEO
+                          (search engine optimization), content marketing, PPC
+                          (pay-per-click advertising), and more.
+                        </p>
+                      </div>
+                    </li>
+                    {/* Accordion items */}
+                    {/* Accordion items */}
+                    <li
+                      className={`accordion-item border-b-[1px] border-[#DBD6CF] pb-6 pt-6 first:pt-0 last:border-b-0 last:pb-0 ${
+                        activeIndex === 1 ? "active" : ""
+                      }`}
+                      onClick={() => handleAccordion(1)}
+                    >
+                      <div className="accordion-header flex items-center justify-between font-dmSans text-xl font-bold leading-[1.2] -tracking-[0.5px] text-black lg:text-[28px]">
+                        <p>Why is digital marketing important?</p>
+                        <div className="accordion-icon">
+                          <img
+                            src="/assets/img_placeholder/plus.svg"
+                            width={24}
+                            height={24}
+                            alt="plus"
+                          />
+                        </div>
+                      </div>
+                      <div className="accordion-content text-[#2C2C2C]">
+                        <p>
+                          Digital marketing allows businesses to reach a broader
+                          audience, engage with customers in real-time, and
+                          track the effectiveness of campaigns through data
+                          analytics. It’s often more cost-effective than
+                          traditional marketing methods.
+                        </p>
+                      </div>
+                    </li>
+                    {/* Accordion items */}
+                    {/* Accordion items */}
+                    <li
+                      className={`accordion-item border-b-[1px] border-[#DBD6CF] pb-6 pt-6 first:pt-0 last:border-b-0 last:pb-0 ${
+                        activeIndex === 2 ? "active" : ""
+                      }`}
+                      onClick={() => handleAccordion(2)}
+                    >
+                      <div className="accordion-header flex items-center justify-between font-dmSans text-xl font-bold leading-[1.2] -tracking-[0.5px] text-black lg:text-[28px]">
+                        <p> What is SEO, and why is it important?</p>
+                        <div className="accordion-icon">
+                          <img
+                            src="/assets/img_placeholder/plus.svg"
+                            width={24}
+                            height={24}
+                            alt="plus"
+                          />
+                        </div>
+                      </div>
+                      <div className="accordion-content text-[#2C2C2C]">
+                        <p>
+                          SEO (Search Engine Optimization) is the process of
+                          optimizing your website to rank higher in search
+                          engine results. It’s important because higher rankings
+                          lead to increased visibility, traffic, and potential
+                          sales.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
+                  {/* Accordion*/}
+                </div>
+                {/* FAQ Right Block */}
+              </div>
+            </div>
+            {/* Section Container */}
+          </div>
+          {/* Section Spacer */}
         </section>
         <section className="my-10 py-20 bg-center bg-cover bg-no-repeat rounded-2xl global-container bg-black">
           <div className="">
