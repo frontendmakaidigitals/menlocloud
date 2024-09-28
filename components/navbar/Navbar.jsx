@@ -308,7 +308,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                   <div className="h-[400px] overflow-scroll">
                     <Link
                       href="/data-Analytics"
-                      className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl"
+                      className="p-5 xl:p-3  xxl:p-5    text-gray-800  cursor-pointer rounded-xl"
                     >
                       <p className="text-md font-bold">Data analytics</p>
                       <p className="text-sm font-medium mt-1 text-gray-600">
@@ -317,14 +317,14 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                     </Link>
                     <Link
                       href={`/generative-ai`}
-                      className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl"
+                      className="p-5 xl:p-3  xxl:p-5     text-gray-800  cursor-pointer rounded-xl"
                     >
                       <p className="text-md font-bold">Generative AI</p>
                       <p className="text-sm font-medium mt-1 text-gray-600">
                         Shaping the future through advanced AI
                       </p>
                     </Link>
-                    <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
+                    <div className="xl:p-3  xxl:p-5     text-gray-800  cursor-pointer rounded-xl">
                       <p className="text-md font-bold">Cloud Transformation</p>
                       <p className="text-sm font-medium mt-1 text-gray-600">
                         Bridging conventional and generative AI to deliver
@@ -333,7 +333,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                     </div>
                     <Link
                       href={`/mobile-Development`}
-                      className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl"
+                      className="p-5 xl:p-3  xxl:p-5     text-gray-800  cursor-pointer rounded-xl"
                     >
                       <p className="text-md font-bold">
                         Mobile App Development
@@ -345,7 +345,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                     </Link>
                     <Link
                       href={"/web-developer"}
-                      className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl"
+                      className="p-5 xl:p-3  xxl:p-5     text-gray-800  cursor-pointer rounded-xl"
                     >
                       <p className="text-md font-bold">Web Development</p>
 
@@ -356,7 +356,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                     </Link>
                     <Link
                       href="/digital-marketing"
-                      className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl"
+                      className="p-5 xl:p-3  xxl:p-5     text-gray-800  cursor-pointer rounded-xl"
                     >
                       <p className="text-md font-bold">Digital marketing</p>
                       <p className="text-sm font-medium mt-1 text-gray-600">
