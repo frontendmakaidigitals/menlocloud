@@ -8,6 +8,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Timeline } from "@/components/ui/timeline";
 import SwiperNavButtons from "@/components/SwiperNavButton";
+import Link from "next/link";
 const Aiservices = [
   {
     name: "Gen Ai Lanuchpad",
@@ -388,7 +389,7 @@ function GenAI() {
             {steps.map((step, index) => (
               <div
                 key={index}
-                className="border-b lg:border-r px-6 py-10  border-dashed border-gray-700"
+                className="border-b lg:border-b-0 lg:border-r px-6 py-10  border-dashed border-gray-700"
               >
                 <p className="font-Satoshi font-bold text-2xl">{index + 1}</p>
                 <p className="xxl:text-3xl font-bold font-Satoshi mt-5">
@@ -468,6 +469,32 @@ function GenAI() {
             </Swiper>
           </div>
         </section>
+
+        <section className="my-10 py-20 bg-center bg-cover bg-no-repeat rounded-2xl global-container bg-black">
+          <div className="">
+            <p className="global-container mb-2 text-3xl text-gray-100 lg:text-5xl tracking-tight font-Satoshi font-bold w-full lg:w-2/3 text-center">
+              Schedule a consultation to assess your{" "}
+              <span className="bg-gradient-to-r font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
+                {" "}
+                Data challenges.
+              </span>{" "}
+            </p>
+            <p className="global-container text-center w-full lg:w-2/3 font-Satoshi text-md text-gray-200">
+              Learn how we can tailor our data analytics solutions to unlock the
+              potential of your business’s data.
+            </p>
+          </div>
+          <div className="mt-5  w-full flex justify-center ">
+            <Link href={`/contact`}>
+              {" "}
+              <button className="text-gray-900 overflow-hidden group rounded-lg relative font-Satoshi font-semibold py-2 px-5 bg-gray-200">
+                <p className="relative z-10">Lets Connect</p>
+                <div className="bg-sky-500 w-1 h-1 group-hover:scale-[50] absolute -bottom-1 left-1/2 -translate-1/2 rounded-full transition-all duration-300" />
+              </button>
+            </Link>
+          </div>
+        </section>
+       
       </main>
       <Footer_01 />
     </>

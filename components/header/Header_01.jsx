@@ -5,6 +5,7 @@ import LogoDark from "../logo/LogoDark";
 import { cn } from "@/lib/utils";
 import AnimatedShinyText from "@/components/magicui/animated-shiny-text";
 import { FiMenu } from "react-icons/fi";
+import Link from "next/link";
 const Header_01 = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
@@ -49,7 +50,7 @@ const Header_01 = () => {
             >
               <div className="bg-blue-500  size-1 group-hover:scale-[50] transition-all duration-500 rounded-full absolute top-[110%] left-1/2 -translate-x-1/2  -translate-y-1/2"></div>
               <AnimatedShinyText className="relative z-10 inline-flex font-semibold group-hover:text-gray-900  items-center justify-center px-6 py-2 ">
-                <span>✨ Lets connect</span>
+                <Link href={`/contact`}>✨ Lets connect</Link>
               </AnimatedShinyText>
             </div>
             {/* Responsive Off-canvas Menu Button */}

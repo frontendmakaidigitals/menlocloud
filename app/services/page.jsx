@@ -3,7 +3,7 @@ import Footer_01 from "@/components/footer/Footer_01";
 import Header_01 from "@/components/header/Header_01";
 import SwiperNavButtons from "@/components/SwiperNavButton";
 import "swiper/css/navigation";
-import { Navigation } from "swiper/modules";
+import Link from "next/link";
 import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { useRef, useState } from "react";
@@ -304,7 +304,7 @@ function Services() {
                 ))}
               </ul>
               <button className="mt-5 px-5 py-2 bg-blue-500  text-md xl:text-sm xxl:text-lg rounded-md text-gray-200">
-                Learn More
+                <Link href={'/contact'}>Learn More</Link>
               </button>
             </div>
             <div

@@ -93,12 +93,18 @@ export const Header = () => {
       <h1 className="text-2xl md:text-7xl font-bold text-gray-100">
         Web Development <br /> Services
       </h1>
-      <p className="max-w-2xl text-base md:text-xl mt-8 text-gray-100">
+      <p className="max-w-2xl text-base mb-5 md:text-xl mt-8 text-gray-100">
         We build beautiful products with the latest technologies and frameworks.
         We are a team of passionate developers and designers that love to build
         amazing products.
       </p>
-      <button className="text-gray-900 px-7 hover:bg-blue-600 mt-3 py-2 bg-blue-500 rounded-full">Contact Us</button>
+
+      <Link href={`/contact`} className="">
+        <button className="text-gray-900  overflow-hidden group rounded-lg relative font-Satoshi font-semibold py-2 px-5 bg-gray-200">
+          <p className="relative z-10">Lets Connect</p>
+          <div className="bg-sky-500 w-1 h-1 group-hover:scale-[50] absolute -bottom-1 left-1/2 -translate-1/2 rounded-full transition-all duration-300" />
+        </button>
+      </Link>
     </div>
   );
 };

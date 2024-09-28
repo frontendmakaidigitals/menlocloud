@@ -9,58 +9,84 @@ import { GoArrowRight } from "react-icons/go";
 import SwiperNavButtons from "@/components/SwiperNavButton";
 import { motion } from "framer-motion";
 import { Timeline } from "@/components/ui/timeline";
+import Link from "next/link";
 const sectors = [
   {
     name: "E-Learning App",
     color: "#FFCDD2",
     tags: ["Native-IOS", "Android"],
+    img: "/assets/img_placeholder/app-image/Elearning.png",
   },
   {
     name: "Dating App",
     color: "#FFCDD2",
     tags: ["React Native", "Node Js", "React Js"],
+    img: "/assets/img_placeholder/app-image/Dating.png",
   },
   {
     name: "Fitness Tracking App",
     color: "#FFCDD2",
     tags: ["Native-IOS", "Android"],
+    img: "/assets/img_placeholder/app-image/Fitness Tracker.png",
   },
   {
     name: "Social Media App",
     color: "#FFCDD2",
     tags: ["React Native", "Node Js", "React Js"],
+    img: "/assets/img_placeholder/app-image/SocialMedia.png",
   },
   {
     name: "Fintech",
     color: "#FFCDD2",
     tags: ["Native-IOS", "Android"],
+    img: "/assets/img_placeholder/app-image/Fintech.png",
   },
   {
     name: "Healthcare App",
     color: "#FFCDD2",
     tags: ["React Native"],
+    img: "/assets/img_placeholder/app-image/Healthcare.png",
   },
   {
     name: "Agritech App",
     color: "#FFCDD2",
     tags: ["React Native", "Node Js"],
+    img: "/assets/img_placeholder/app-image/Aggriculture.png",
   },
 ];
 const industryTabs = [
-  "Edtech",
-
-  "Dating",
-  "Agritech",
-
-  "Social Media",
-
-  "Gaming",
-  "Fintech",
-  "Enterprise",
-  "Hospital & Healthcare",
-  "OTT",
-  "Logistics & Transportation",
-  "Health, Wellness & Fitness",
+  {
+    name: "Edtech",
+    img: "/assets/img_placeholder/app-image/Elearning.png",
+  },
+  {
+    name: "Dating",
+    img: "/assets/img_placeholder/app-image/Dating.png",
+  },
+  {
+    name: "Agritech",
+    img: "/assets/img_placeholder/app-image/Aggriculture.png",
+  },
+  {
+    name: "Social Media",
+    img: "/assets/img_placeholder/app-image/SocialMedia.png",
+  },
+  { name: "Gaming" },
+  {
+    name: "Fintech",
+    img: "/assets/img_placeholder/app-image/Fintech.png",
+  },
+  { name: "Enterprise" },
+  {
+    name: "Hospital & Healthcare",
+    img: "/assets/img_placeholder/app-image/Healthcare.png",
+  },
+  { name: "OTT" },
+  { name: "Logistics & Transportation" },
+  {
+    name: "Health, Wellness & Fitness",
+    img: "/assets/img_placeholder/app-image/Fitness Tracker.png",
+  },
 ];
 const mobileServices = [
   {
@@ -198,28 +224,32 @@ function GenAI() {
     <>
       <Header_01 />
       <main className="main-wrapper relative ">
-        <div className="w-full  h-[85vh] xl:h-screen bg-no-repeat bg-center bg-cover bg-[url('https://img.freepik.com/free-vector/white-abstract-background-3d-paper-style_23-2148403777.jpg?t=st=1727430799~exp=1727434399~hmac=3771cb4fc6a037df42da22cca671df6dc2f461ccdd02b7f4c77e68b204c3f452&w=1380')]">
+        <div className="w-full h-auto lg:h-[85vh] xl:h-screen bg-no-repeat bg-center bg-cover bg-[url('https://img.freepik.com/free-vector/white-abstract-background-3d-paper-style_23-2148403777.jpg?t=st=1727430799~exp=1727434399~hmac=3771cb4fc6a037df42da22cca671df6dc2f461ccdd02b7f4c77e68b204c3f452&w=1380')]">
           <div className="bg-gradient-to-b w-full h-full from-gray-800/50 via-transparent to-gray-700/40">
-            <div className="global-container flex items-center justify-around  w-full h-full">
-              <div className="mt-32 xl:mt-0 w-2/3">
-                <p className="font-Satoshi text-3xl xl:text-4xl xxl:text-6xl font-bold text-black">
+            <div className="global-container flex flex-col lg:flex-row items-center justify-around  w-full h-full">
+              <div className="mt-32 xl:mt-0 w-full lg:w-2/3">
+                <p className="font-Satoshi text-3xl xl:text-4xl xxl:text-6xl w-full lg:w-2/3 font-bold text-center lg:text-start text-black">
                   Custom Mobile App Development Services
                 </p>
-                <p className="mt-3 font-Satoshi font-semibold leading-relaxed text-sm xl:text-lg text-gray-800 w-full lg:w-2/4">
+                <p className="mt-3 font-Satoshi font-semibold leading-relaxed text-sm xl:text-lg text-gray-800 text-center lg:text-start w-full lg:w-2/4">
                   Building highly scalable apps may not be easy, but using them
                   should be
                 </p>
 
-                <button className="text-gray-100 overflow-hidden group rounded-lg relative  py-2 px-5 bg-sky-500   mt-5">
-                  <span className="relative z-10 font-Satoshi font-medium text-xl">
-                    Lets talk
-                  </span>
-                  <div className="size-3 bg-black absolute top-full group-hover:scale-[60] transition-all duration-300 left-1/2 -translate-x-1/2 rounded-full" />
-                </button>
+                <div className="w-full flex justify-center lg:justify-start">
+                  <Link href={`/contact`}>
+                    <button className="text-gray-100 overflow-hidden group rounded-lg relative  py-2 px-5 bg-sky-500   mt-5">
+                      <span className="relative z-10 font-Satoshi font-medium text-xl">
+                        Know more
+                      </span>
+                      <div className="size-3 bg-black absolute top-full group-hover:scale-[60] transition-all duration-500 left-1/2 -translate-x-1/2 rounded-full" />
+                    </button>
+                  </Link>
+                </div>
               </div>
 
               <div
-                className="w-full xl:w-[300px] xxl:w-[350px] relative
+                className="w-full xl:w-[230px] xxl:w-[350px] mt-10 lg:m-0 relative
               "
               >
                 <img
@@ -283,13 +313,13 @@ function GenAI() {
                   slidesPerView: 1.3, // 2 slides for screens >= 640px
                 },
                 768: {
-                  slidesPerView: 2.3, // 3 slides for screens >= 768px
+                  slidesPerView: 3.3, // 3 slides for screens >= 768px
                 },
                 1024: {
-                  slidesPerView: 2.3, // 4 slides for screens >= 1024px
+                  slidesPerView: 3.3, // 4 slides for screens >= 1024px
                 },
                 1604: {
-                  slidesPerView: 2.3, // 4 slides for screens >= 1024px
+                  slidesPerView: 3.3, // 4 slides for screens >= 1024px
                 },
               }}
               className=" mt-5 xl:mt-10"
@@ -303,7 +333,7 @@ function GenAI() {
                     >
                       <div className="min-h-[200px] ">
                         <p className="font-medium text-sky-950 font-Satoshi text-lg flex items-center gap-2">
-                          Step {index + 1}{" "}
+                          Industry {index + 1}{" "}
                           <span className="text-2xl">
                             <GoArrowRight />
                           </span>
@@ -326,9 +356,12 @@ function GenAI() {
                         whileInView={{ y: [200, 0] }}
                         viewport={{ once: true }}
                         transition={{ staggerChildren: 0.5 }}
-                        className="w-full xl:w-[300px] xxl:w-[250px]"
+                        className="w-full flex justify-center items-center"
                       >
-                        <img src={`/assets/img_placeholder/iphone.png`} />
+                        <img
+                          className="xl:w-[220px] xxl:w-[250px]"
+                          src={elem.img}
+                        />
                       </motion.div>
                     </motion.div>
                   </SwiperSlide>
@@ -340,10 +373,7 @@ function GenAI() {
         <section className="mt-28 bg-gradient-to-bl from-rose-100 py-20 to-teal-100">
           <div className="global-container w-full place-items-center grid grid-cols-1 gap-y-7 lg:gap-7 lg:grid-cols-4">
             <motion.div className="w-full  order-last lg:order-1 ">
-              <img
-                className="xl:w-[250px] xxl:w-[280px]"
-                src={`/assets/img_placeholder/iphone.png`}
-              />
+              <img src={industryTabs[tabId].img} />
             </motion.div>
             <div className="col-span-3 ">
               <p className="text-3xl w-full text-center lg:text-start  lg:text-6xl  font-Satoshi font-bold">
@@ -364,7 +394,7 @@ function GenAI() {
                     <span
                       className={`relative z-10  ${tabId == index ? "text-slate-100" : "group-hover:text-slate-100"}`}
                     >
-                      {elem}
+                      {elem.name}
                     </span>
                     <div className="size-1 absolute top-full bg-sky-500  rounded-full transition-all duration-500 group-hover:scale-[90]  left-1/2 -translate-x-1/2" />
                   </button>
@@ -382,13 +412,15 @@ function GenAI() {
               <p className="mt-5 text-center lg:text-start font-Satoshi text-gray-200 font-medium text-xl lg:text-2xl">
                 Explore Our Development Options
               </p>
-              <div className="w-full flex justify-center">
-                <button className="text-gray-100 overflow-hidden group rounded-lg relative  py-2 px-5 bg-slate-100  mt-5">
-                  <span className="relative text-black z-10 font-Satoshi font-medium text-xl">
-                    Lets talk
-                  </span>
-                  <div className="size-3 bg-sky-500 absolute top-full group-hover:scale-[60] transition-all duration-300 left-1/2 -translate-x-1/2 rounded-full" />
-                </button>
+              <div className="w-full flex  justify-center lg:justify-start">
+                <Link href={"/contact"}>
+                  <button className="text-gray-100 overflow-hidden group rounded-lg relative  py-2 px-5 bg-slate-100  mt-5">
+                    <span className="relative text-black z-10 font-Satoshi font-medium text-xl">
+                      Know more
+                    </span>
+                    <div className="size-3 bg-sky-500 absolute top-full group-hover:scale-[60] transition-all duration-300 left-1/2 -translate-x-1/2 rounded-full" />
+                  </button>
+                </Link>
               </div>
             </div>
 
@@ -463,10 +495,12 @@ function GenAI() {
             </p>
           </div>
           <div className="mt-5  w-full flex justify-center ">
-            <button className="text-gray-900 overflow-hidden group rounded-lg relative font-Satoshi font-semibold py-2 px-5 bg-gray-200">
-              <p className="relative z-10">Lets Connect</p>
-              <div className="bg-sky-500 w-1 h-1 group-hover:scale-[50] absolute -bottom-1 left-1/2 -translate-1/2 rounded-full transition-all duration-300" />
-            </button>
+            <Link href={`/contact`}>
+              <button className="text-gray-900 overflow-hidden group rounded-lg relative font-Satoshi font-semibold py-2 px-5 bg-gray-200">
+                <p className="relative z-10">Lets Connect</p>
+                <div className="bg-sky-500 w-1 h-1 group-hover:scale-[50] absolute -bottom-1 left-1/2 -translate-1/2 rounded-full transition-all duration-300" />
+              </button>
+            </Link>
           </div>
         </section>
       </main>

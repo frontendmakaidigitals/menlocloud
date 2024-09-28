@@ -505,10 +505,7 @@ function Home() {
                   </div>
 
                   <h3 className="mb-4 block text-xl leading-tight -tracking-[0.5px] group-hover:text-white xl:text-2xl xxl:text-[28px]">
-                    <Link
-                      href="/generative-ai"
-                      className="hover:text-blue-300"
-                    >
+                    <Link href="/generative-ai" className="hover:text-blue-300">
                       Generative AI
                     </Link>
                   </h3>
@@ -658,10 +655,7 @@ function Home() {
                     />
                   </div>
                   <h3 className="mb-4 block text-xl leading-tight -tracking-[0.5px] group-hover:text-white xl:text-2xl xxl:text-[28px]">
-                    <Link
-                      href="/web-developer"
-                      className="hover:text-blue-300"
-                    >
+                    <Link href="/web-developer" className="hover:text-blue-300">
                       Web development
                     </Link>
                   </h3>
@@ -840,7 +834,7 @@ function Home() {
               }}
               className="text-center mt-8 px-4 py-2 bg-gradient-to-b from-slate-400 to-slate-500 rounded-md font-Satoshi font-medium tracking-tight text-2xl md:text-xl   !text-gray-900 "
             >
-              learn more
+              <Link href={`/contact`}>learn more</Link>
             </motion.button>
           </LampContainer>
         </section>

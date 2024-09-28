@@ -9,6 +9,7 @@ import "swiper/css";
 import { useState, useRef } from "react";
 import { Timeline } from "@/components/ui/timeline";
 import SwiperNavButtons from "@/components/SwiperNavButton";
+import Link from "next/link";
 
 function Services() {
   const swiperRef = useRef(null);
@@ -417,6 +418,32 @@ function Services() {
               </SwiperSlide>
             ))}
           </Swiper>
+        </section>
+
+        <section className="my-10 py-20 bg-center bg-cover bg-no-repeat rounded-2xl global-container bg-black">
+          <div className="">
+            <p className="global-container mb-2 text-3xl text-gray-100 lg:text-5xl tracking-tight font-Satoshi font-bold w-full lg:w-2/3 text-center">
+              Ready to Transform Your{" "}
+              <span className="bg-gradient-to-r font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
+                {" "}
+                Digital
+              </span>{" "}
+              Presence?
+            </p>
+            <p className="global-container text-center w-full lg:w-2/3 font-Satoshi text-md text-gray-200">
+              Let’s Create a Strategy That Works for You! Contact us today for a
+              free consultation and discover how our tailored digital marketing
+              solutions can help you achieve your business goals.
+            </p>
+          </div>
+          <div className="mt-5  w-full flex justify-center ">
+            <Link href={`/contact`}>
+              <button className="text-gray-900 overflow-hidden group rounded-lg relative font-Satoshi font-semibold py-2 px-5 bg-gray-200">
+                <p className="relative z-10">Lets Connect</p>
+                <div className="bg-sky-500 w-1 h-1 group-hover:scale-[50] absolute -bottom-1 left-1/2 -translate-1/2 rounded-full transition-all duration-300" />
+              </button>
+            </Link>
+          </div>
         </section>
         <Footer_01 />
       </div>

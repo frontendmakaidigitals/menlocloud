@@ -8,7 +8,7 @@ import "/styles/globals.css";
 import { AnimatePresence, color, motion } from "framer-motion";
 import { GoArrowRight } from "react-icons/go";
 import SwiperNavButtons from "@/components/SwiperNavButton";
-import Marquee from "@/components/magicui/marquee";
+import Link from "next/link";
 const outcomes = [
   {
     name: " Enhanced Innovation",
@@ -243,7 +243,6 @@ function Home() {
             </div>
           </div>
         </section>
-      
 
         <section className="my-10 py-24 bg-center bg-cover bg-no-repeat  ">
           <div className="">
@@ -447,10 +446,13 @@ function Home() {
             </p>
           </div>
           <div className="mt-5  w-full flex justify-center ">
-            <button className="text-gray-900 overflow-hidden group rounded-lg relative font-Satoshi font-semibold py-2 px-5 bg-gray-200">
-              <p className="relative z-10">Lets Connect</p>
-              <div className="bg-sky-500 w-1 h-1 group-hover:scale-[50] absolute -bottom-1 left-1/2 -translate-1/2 rounded-full transition-all duration-300" />
-            </button>
+            <Link href={`/contact`}>
+              {" "}
+              <button className="text-gray-900 overflow-hidden group rounded-lg relative font-Satoshi font-semibold py-2 px-5 bg-gray-200">
+                <p className="relative z-10">Lets Connect</p>
+                <div className="bg-sky-500 w-1 h-1 group-hover:scale-[50] absolute -bottom-1 left-1/2 -translate-1/2 rounded-full transition-all duration-300" />
+              </button>
+            </Link>
           </div>
         </section>
         <section className="w-full  my-14 global-container">
