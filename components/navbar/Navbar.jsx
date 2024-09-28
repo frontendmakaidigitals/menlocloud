@@ -400,7 +400,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                         transformation
                       </p>
                     </div>
-                    <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
+                    <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-900  cursor-pointer rounded-xl">
                       <p className="text-md font-bold">
                         Media and Communications
                       </p>
