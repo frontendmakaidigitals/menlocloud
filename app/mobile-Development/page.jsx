@@ -48,16 +48,19 @@ const sectors = [
 ];
 const industryTabs = [
   "Edtech",
-  "Health, Wellness & Fitness",
+
   "Dating",
   "Agritech",
-  "Hospital & Healthcare",
+
   "Social Media",
-  "OTT",
-  "Logistics & Transportation",
+
   "Gaming",
   "Fintech",
   "Enterprise",
+  "Hospital & Healthcare",
+  "OTT",
+  "Logistics & Transportation",
+  "Health, Wellness & Fitness",
 ];
 const mobileServices = [
   {
@@ -237,11 +240,11 @@ function GenAI() {
             <motion.div
               whileInView={{ x: [200, 0] }}
               transition={{ delay: 0.1 }}
-              className="bg-teal-300 w-full xl:w-[250px] xxl:w-[280px] h-[500px]"
+              className="bg-teal-300 w-full hidden lg:block xl:w-[250px] xxl:w-[280px] h-[500px]"
             />
             <motion.div
               whileInView={{ x: [200, 0] }}
-              className=" bg-sky-300 w-full xl:w-[250px] xxl:w-[280px] h-[500px]"
+              className=" bg-sky-300 w-full hidden lg:block xl:w-[250px] xxl:w-[280px] h-[500px]"
             />
 
             <motion.div className="w-full xl:w-[250px] xxl:w-[280px]">
@@ -250,12 +253,12 @@ function GenAI() {
 
             <motion.div
               whileInView={{ x: [-200, 0] }}
-              className="bg-red-500 w-full xl:w-[250px] xxl:w-[280px] h-[500px]"
+              className="bg-red-500 w-full hidden lg:block xl:w-[250px] xxl:w-[280px] h-[500px]"
             />
             <motion.div
               whileInView={{ x: [-200, 0] }}
               transition={{ delay: 0.1 }}
-              className="bg-sky-400 w-full xl:w-[250px] xxl:w-[280px] h-[500px]"
+              className="bg-sky-400 w-full hidden lg:block xl:w-[250px] xxl:w-[280px] h-[500px]"
             />
           </div>
         </section>
@@ -276,7 +279,7 @@ function GenAI() {
             <Swiper
               ref={swiperRef}
               spaceBetween={20}
-              slidesPerView={1.3}
+              slidesPerView={1.1}
               breakpoints={{
                 320: {
                   slidesPerView: 1.3, // 2 slides for screens >= 640px
@@ -310,7 +313,7 @@ function GenAI() {
                         <p className="xl:text-lg xxl:text-2xl font-Satoshi text-sky-900 mt-2 font-semibold">
                           {elem.name}
                         </p>
-                        <div className="flex items-center gap-3 mt-4">
+                        <div className="flex items-center flex-wrap gap-3 mt-4">
                           {elem.tags.map((tag, index) => (
                             <p
                               key={index}
@@ -336,21 +339,24 @@ function GenAI() {
             </Swiper>
           </div>
         </section>
-        <section className="mt-28 bg-gradient-to-bl from-rose-100 to-teal-100">
-          <div className="global-container h-[80vh] w-full place-items-center grid grid-cols-1 gap-7 lg:grid-cols-4">
-            <motion.div className="w-full xl:w-[250px] xxl:w-[280px]">
-              <img src={`/assets/img_placeholder/iphone.png`} />
+        <section className="mt-28 bg-gradient-to-bl from-rose-100 py-20 to-teal-100">
+          <div className="global-container w-full place-items-center grid grid-cols-1 gap-y-7 lg:gap-7 lg:grid-cols-4">
+            <motion.div className="w-full  order-last lg:order-1 ">
+              <img
+                className="xl:w-[250px] xxl:w-[280px]"
+                src={`/assets/img_placeholder/iphone.png`}
+              />
             </motion.div>
-            <div className="col-span-3">
-              <p className="text-3xl w-full text-center lg:text-start  lg:text-6xl  font-Satoshi font-[600]">
+            <div className="col-span-3 ">
+              <p className="text-3xl w-full text-center lg:text-start  lg:text-6xl  font-Satoshi font-bold">
                 Industries We Serve
               </p>
-              <p className="font-Satoshi font-medium text-lg mt-5">
+              <p className="font-Satoshi text-center lg:text-start font-medium text-lg mt-5">
                 We’ve worked with hundreds of clients across the globe, served
                 them our mobile app development services and our major clientele
                 belongs to the following industries:
               </p>
-              <div className="flex flex-wrap items-center gap-3 mt-10">
+              <div className="flex flex-wrap justify-center items-center gap-3 mt-10">
                 {industryTabs.map((elem, index) => (
                   <button
                     key={index}
@@ -369,21 +375,23 @@ function GenAI() {
             </div>
           </div>
         </section>
-        <section className="mb-28  bg-black">
+        <section className="mb-28 py-20 bg-black">
           <div className="global-container grid grid-cols-1 lg:grid-cols-2 place-items-center gap-7">
             <div>
-              <p className="text-3xl lg:text-6xl text-gray-50 font-Satoshi font-[600]">
+              <p className="text-3xl text-center lg:text-start lg:text-6xl text-gray-50 font-Satoshi font-[600]">
                 Your App, Your Way
               </p>
-              <p className="mt-5 font-Satoshi text-gray-200 font-medium text-xl lg:text-2xl">
+              <p className="mt-5 text-center lg:text-start font-Satoshi text-gray-200 font-medium text-xl lg:text-2xl">
                 Explore Our Development Options
               </p>
-              <button className="text-gray-100 overflow-hidden group rounded-lg relative  py-2 px-5 bg-slate-100  mt-5">
-                <span className="relative text-black z-10 font-Satoshi font-medium text-xl">
-                  Lets talk
-                </span>
-                <div className="size-3 bg-sky-500 absolute top-full group-hover:scale-[60] transition-all duration-300 left-1/2 -translate-x-1/2 rounded-full" />
-              </button>
+              <div className="w-full flex justify-center">
+                <button  className="text-gray-100 overflow-hidden group rounded-lg relative  py-2 px-5 bg-slate-100  mt-5">
+                  <span className="relative text-black z-10 font-Satoshi font-medium text-xl">
+                    Lets talk
+                  </span>
+                  <div className="size-3 bg-sky-500 absolute top-full group-hover:scale-[60] transition-all duration-300 left-1/2 -translate-x-1/2 rounded-full" />
+                </button>
+              </div>
             </div>
 
             <div className="">
@@ -420,7 +428,7 @@ function GenAI() {
                 </div>
               ))}
             </div>
-            <div className=" sticky top-0 transition-all duration-700  w-full xl:w-[300px] xxl:w-[350px]">
+            <div className=" sticky right-0 top-0 transition-all duration-700  w-full xl:w-[300px] xxl:w-[350px]">
               <img src={`/assets/img_placeholder/iphone.png`} />
             </div>
           </div>

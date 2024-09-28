@@ -319,7 +319,7 @@ function GenAI() {
             </p>
           </div>
           <Timeline data={data} />
-          <div className="global-container text-center w-2/3 mt-32">
+          <div className="global-container text-center w-full  lg:w-2/3 mt-32">
             <p className="text-center mb-10 text-xl font-Satoshi font-semibold">
               At the conclusion of the Enhanced Gen AI Strategy, you will get a
               use case roadmap and a framework for driving organizational change
@@ -342,7 +342,7 @@ function GenAI() {
         </section>
 
         <section className=" py-20 w-full bg-center bg-no-repeat bg-cover bg-[url('https://images.unsplash.com/photo-1579546929518-9e396f3cc809?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] ">
-          <div className="global-container w-2/3 flex flex-col justify-center text-center">
+          <div className="global-container w-full lg:w-2/3 flex flex-col justify-center text-center">
             <p className="text-gray-900 font-Satoshi font-bold text-2xl xl:text-4xl">
               The Gen AI Chatbot QuickStart
             </p>
@@ -356,7 +356,7 @@ function GenAI() {
               like ChatGPT?
             </p>
           </div>
-          <ul className="list-disc w-2/3 grid global-container mt-10 gap-5 place-items-start grid-cols-1 xxl:grid-cols-2 text-gray-900">
+          <ul className="list-disc w-full lg:w-2/3 grid global-container mt-10 gap-5 place-items-start grid-cols-1 xxl:grid-cols-2 text-gray-900">
             {chatBot.map((bot, index) => (
               <div key={index} className=" px-10 ">
                 <li>
@@ -388,7 +388,7 @@ function GenAI() {
             {steps.map((step, index) => (
               <div
                 key={index}
-                className="border-r px-6 py-10  border-dashed border-gray-700"
+                className="border-b lg:border-r px-6 py-10  border-dashed border-gray-700"
               >
                 <p className="font-Satoshi font-bold text-2xl">{index + 1}</p>
                 <p className="xxl:text-3xl font-bold font-Satoshi mt-5">
