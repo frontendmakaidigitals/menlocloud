@@ -256,7 +256,7 @@ function Home() {
             </p>
           </div>
 
-          <div className="w-full mt-10 global-container grid grid-cols-3 gap-5">
+          <div className="w-full mt-10 global-container grid grid-cols-1 lg:grid-cols-3 gap-5">
             {outcomes.map((outcome, index) => (
               <motion.div
                 key={index}
