@@ -338,11 +338,13 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                       <p className="text-md font-bold">
                         Mobile App Development
                       </p>
+
                       <p className="text-sm font-medium mt-1 text-gray-600">
                         Crafting robust and scalable systems through expert
                         software engineering.
                       </p>
                     </Link>
+
                     <Link
                       href={"/web-developer"}
                       className="p-5 xl:p-3  xxl:p-5     text-gray-800  cursor-pointer rounded-xl"
