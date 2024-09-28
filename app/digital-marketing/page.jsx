@@ -56,10 +56,10 @@ function About() {
               </div>
               <div className="h-[500px] grid grid-cols-1 grid-rows-2 py-2 gap-2 lg:grid-cols-4 w-full px-0 lg:px-14 mt-14">
                 <div className="w-full p-7 h-full bg-yellow-300 relative rounded-xl">
-                  <p className="font-Satoshi font-bold text-2xl xl:text-5xl">
+                  <p className="font-Satoshi font-bold text-black text-2xl xl:text-5xl">
                     200+
                   </p>
-                  <p className="font-Satoshi font-medium text-xl xl:text-3xl mt-2">
+                  <p className="font-Satoshi font-medium  text-xl xl:text-3xl mt-2">
                     Awards
                   </p>
                   <div className="size-28 absolute -bottom-1 left-1/2 -translate-x-1/2">
@@ -67,7 +67,7 @@ function About() {
                   </div>
                 </div>
                 <div className="w-full relative p-7 h-full bg-lime-400  rounded-xl">
-                  <p className="font-Satoshi font-bold text-2xl xl:text-5xl">
+                  <p className="font-Satoshi font-bold text-black text-2xl xl:text-5xl">
                     10+
                   </p>
                   <p className="font-Satoshi font-medium text-xl xl:text-3xl mt-2">
@@ -87,7 +87,7 @@ function About() {
                   </video>
                 </div>
                 <div className="w-full relative  p-7 h-full bg-orange-400 col-span-2 rounded-xl">
-                  <p className="font-Satoshi font-bold text-2xl xl:text-4xl">
+                  <p className="font-Satoshi text-black font-bold text-2xl xl:text-4xl">
                     Start Project
                   </p>
                   <button className="bg-black text-gray-100 px-6 py-2 rounded-lg mt-4 font-Satoshi font-medium">
@@ -101,9 +101,21 @@ function About() {
             </div>
           </div>
         </section>
-        <section className="global-container mb-20">
-          <h2 className="w-full text-center">Services</h2>
-          <div className="grid place-items-center grid-cols-1 lg:grid-cols-2 xl:grid-cols-4">
+        <section className=" mb-20">
+          <div className="w-full global-container lg:w-2/3 flex flex-col justify-center items-center">
+            <p className="global-container text-3xl  lg:text-6xl  font-Satoshi font-[600] text-center">
+              Our
+              <span className="bg-gradient-to-r   font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
+                {" "}
+                Services{" "}
+              </span>
+            </p>
+            <p className="text-center font-Satoshi font-semibold mt-1 text-md">
+              Optimize your website and improve your rankings in search engines
+              to attract organic traffic.
+            </p>
+          </div>
+          <div className="grid global-container place-items-center grid-cols-1 lg:grid-cols-2 xl:grid-cols-4">
             {services.map((service, index) => (
               <div
                 key={index}
@@ -130,6 +142,29 @@ function About() {
                 </div>
               </div>
             ))}
+          </div>
+        </section>
+        <section className="my-10 py-20 bg-center bg-cover bg-no-repeat rounded-2xl global-container bg-black">
+          <div className="">
+            <p className="global-container mb-2 text-3xl text-gray-100 lg:text-5xl tracking-tight font-Satoshi font-bold w-full lg:w-2/3 text-center">
+              Ready to Transform Your{" "}
+              <span className="bg-gradient-to-r font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
+                {" "}
+                Digital
+              </span>{" "}
+              Presence?
+            </p>
+            <p className="global-container text-center w-full lg:w-2/3 font-Satoshi text-md text-gray-200">
+              Let’s Create a Strategy That Works for You! Contact us today for a
+              free consultation and discover how our tailored digital marketing
+              solutions can help you achieve your business goals.
+            </p>
+          </div>
+          <div className="mt-5  w-full flex justify-center ">
+            <button className="text-gray-900 overflow-hidden group rounded-lg relative font-Satoshi font-semibold py-2 px-5 bg-gray-200">
+              <p className="relative z-10">Lets Connect</p>
+              <div className="bg-sky-500 w-1 h-1 group-hover:scale-[50] absolute -bottom-1 left-1/2 -translate-1/2 rounded-full transition-all duration-300" />
+            </button>
           </div>
         </section>
       </main>

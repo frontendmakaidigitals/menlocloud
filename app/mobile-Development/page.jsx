@@ -218,8 +218,14 @@ function GenAI() {
                 </button>
               </div>
 
-              <div className="w-full xl:w-[300px] xxl:w-[350px]">
-                <img src={`/assets/img_placeholder/iphone.png`} />
+              <div
+                className="w-full xl:w-[300px] xxl:w-[350px] relative
+              "
+              >
+                <img
+                  className="relative z-[10]"
+                  src={`/assets/img_placeholder/heroIphone.png`}
+                />
               </div>
             </div>
           </div>
@@ -236,30 +242,22 @@ function GenAI() {
             </p>
           </div>
 
-          <div className="w-full global-container flex justify-center items-center gap-5 mt-20">
+          <div className="w-full global-container flex justify-center items-center gap-14 mt-20">
             <motion.div
-              whileInView={{ x: [200, 0] }}
-              transition={{ delay: 0.1 }}
-              className="bg-teal-300 w-full hidden lg:block xl:w-[250px] xxl:w-[280px] h-[500px]"
-            />
-            <motion.div
-              whileInView={{ x: [200, 0] }}
-              className=" bg-sky-300 w-full hidden lg:block xl:w-[250px] xxl:w-[280px] h-[500px]"
-            />
-
-            <motion.div className="w-full xl:w-[250px] xxl:w-[280px]">
-              <img src={`/assets/img_placeholder/iphone.png`} />
+              whileInView={{ opacity: [0, 1], x: [200, 0] }}
+              className="w-full xl:w-[230px] xxl:w-[260px]"
+            >
+              <img src={`/assets/img_placeholder/sec-2-img-1.png`} />
             </motion.div>
-
+            <motion.div className="w-full xl:w-[250px] xxl:w-[280px]">
+              <img src={`/assets/img_placeholder/sec-2-img-2.png`} />
+            </motion.div>
             <motion.div
-              whileInView={{ x: [-200, 0] }}
-              className="bg-red-500 w-full hidden lg:block xl:w-[250px] xxl:w-[280px] h-[500px]"
-            />
-            <motion.div
-              whileInView={{ x: [-200, 0] }}
-              transition={{ delay: 0.1 }}
-              className="bg-sky-400 w-full hidden lg:block xl:w-[250px] xxl:w-[280px] h-[500px]"
-            />
+              whileInView={{ opacity: [0, 1], x: [-200, 0] }}
+              className="w-full xl:w-[230px] xxl:w-[260px]"
+            >
+              <img src={`/assets/img_placeholder/sec-2-img-3.png`} />
+            </motion.div>
           </div>
         </section>
 
@@ -356,7 +354,7 @@ function GenAI() {
                 them our mobile app development services and our major clientele
                 belongs to the following industries:
               </p>
-              <div className="flex flex-wrap justify-center items-center gap-3 mt-10">
+              <div className="flex flex-wrap justify-center lg:justify-start items-center gap-3 mt-10">
                 {industryTabs.map((elem, index) => (
                   <button
                     key={index}
@@ -385,7 +383,7 @@ function GenAI() {
                 Explore Our Development Options
               </p>
               <div className="w-full flex justify-center">
-                <button  className="text-gray-100 overflow-hidden group rounded-lg relative  py-2 px-5 bg-slate-100  mt-5">
+                <button className="text-gray-100 overflow-hidden group rounded-lg relative  py-2 px-5 bg-slate-100  mt-5">
                   <span className="relative text-black z-10 font-Satoshi font-medium text-xl">
                     Lets talk
                   </span>
