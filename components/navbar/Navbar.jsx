@@ -332,7 +332,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                       </p>
                     </div>
                     <Link
-                      href={`/mobile-Development`}
+                      href={"/mobile-Development"}
                       className="p-5 xl:p-3  xxl:p-5     text-gray-800  cursor-pointer rounded-xl"
                     >
                       <p className="text-md font-bold">
