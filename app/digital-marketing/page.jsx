@@ -306,10 +306,10 @@ function About() {
                   {/* Section Content Block */}
                   <div className="text-lg leading-[1.4] lg:text-[21px]">
                     <p className="mb-7 last:mb-0">
-                      Our AI SaaS solutions can be quickly deployed, enabling
-                      users to start benefiting from AI capabilities without
-                      lengthy setup and development times in fast-paced
-                      industries.
+                      At MenloCloud, our AI SaaS solutions enable rapid
+                      deployment, allowing users to harness AI capabilities
+                      instantly without lengthy setup times. Elevate your
+                      business in today's fast-paced environment!
                     </p>
                     <div className="mt-5  w-full flex justify-start ">
                       <button className="text-gray-100 overflow-hidden group rounded-lg relative font-Satoshi font-semibold py-2 px-5 bg-gray-950">
