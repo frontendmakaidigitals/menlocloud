@@ -438,7 +438,7 @@ function GenAI() {
               Development Services
             </p>
           </div>
-          <div className="global-container  grid grid-cols-1 lg:grid-cols-3 place-items-end">
+          <div className="global-container grid grid-cols-1 lg:grid-cols-3 place-items-end">
             <div className=" flex flex-col gap-10 col-span-2">
               {mobileServices.map((elem, index) => (
                 <div key={index} className="">
@@ -458,8 +458,10 @@ function GenAI() {
                 </div>
               ))}
             </div>
-            <div className=" sticky right-0 top-0 transition-all duration-700  w-full xl:w-[300px] xxl:w-[350px]">
-              <img src={`/assets/img_placeholder/iphone.png`} />
+            <div className=" transition-all duration-700  w-full xl:w-[300px] xxl:w-[350px]">
+              <img
+                src={"/assets/img_placeholder/app-image/Fitness Tracker.png"}
+              />
             </div>
           </div>
         </section>
