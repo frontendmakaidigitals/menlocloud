@@ -65,26 +65,33 @@ function About() {
                   Let&apos;s start something really BIG!
                 </p>
               </div>
-              <div className="h-[500px] grid grid-cols-1 grid-rows-2 py-2 gap-2 lg:grid-cols-4 w-full px-0 lg:px-14 mt-14">
-                <div className="w-full p-7 h-full bg-yellow-300 relative rounded-xl">
+              <div className="min-h-[500px] relative grid grid-cols-1 grid-rows-1 lg:grid-rows-2 py-2 gap-2 lg:grid-cols-4 w-full px-0 lg:px-14 mt-14">
+                <motion.div
+                  animate={{ rotate: [0, 360] }}
+                  transition={{ repeat: Infinity, ease: "linear", duration: 6 }}
+                  className="absolute bg-sky-400/30 p-2 hidden lg:block -top-7 right-5 rounded-full"
+                >
+                  <img src="/assets/img_placeholder/circle.png" />
+                </motion.div>
+                <div className="w-full p-7 h-full overflow-hidden bg-yellow-300 relative rounded-xl">
                   <p className="font-Satoshi font-bold text-black text-2xl xl:text-5xl">
                     200+
                   </p>
-                  <p className="font-Satoshi font-medium  text-xl xl:text-3xl mt-2">
+                  <p className="font-Satoshi relative z-[10] font-medium  text-xl xl:text-3xl mt-0 lg:mt-2">
                     Awards
                   </p>
-                  <div className="size-28 absolute -bottom-1 left-1/2 -translate-x-1/2">
+                  <div className="size-[60px] lg:size-28 absolute -bottom-1 right-1  lg:left-1/2 lg:-translate-x-1/2">
                     <img src={"/assets/img_placeholder/trophy.png"} />
                   </div>
                 </div>
-                <div className="w-full relative p-7 h-full bg-lime-400  rounded-xl">
+                <div className="w-full relative p-7 h-full overflow-hidden bg-lime-400  rounded-xl">
                   <p className="font-Satoshi font-bold text-black text-2xl xl:text-5xl">
                     10+
                   </p>
-                  <p className="font-Satoshi font-medium text-xl xl:text-3xl mt-2">
+                  <p className="font-Satoshi relative z-[10] font-medium text-xl xl:text-3xl lg:mt-2">
                     Ongoing Projects
                   </p>
-                  <div className="size-28 absolute -bottom-1 left-1/2 -translate-x-1/2">
+                  <div className="hidden lg:block size-20 lg:size-28 absolute  lg:-bottom-1 left-1/2 -translate-x-1/2">
                     <img src={"/assets/img_placeholder/project.png"} />
                   </div>
                 </div>
@@ -97,14 +104,18 @@ function About() {
                     />
                   </video>
                 </div>
-                <div className="w-full relative  p-7 h-full bg-orange-400 col-span-2 rounded-xl">
+
+                <div className="w-full relative p-7  h-full bg-orange-400 col-span-2 rounded-xl overflow-hidden">
                   <p className="font-Satoshi text-black font-bold text-2xl xl:text-4xl">
                     Start Project
                   </p>
                   <button className="bg-black text-gray-100 px-6 py-2 rounded-lg mt-4 font-Satoshi font-medium">
                     Lets talk
                   </button>
-                  <div className="size-24 absolute left-1/2 -translate-x-1/2 ">
+                  <div
+                    className="
+                  size-24 absolute top-1/2 -translate-y-1/2 lg:top-auto lg:translate-y-auto left-2/3 -translate-x-1/2 "
+                  >
                     <img src={`/assets/img_placeholder/star.png`} />
                   </div>
                 </div>
@@ -116,7 +127,7 @@ function About() {
         <section className="my-20 global-container grid grid-cols-1 gap-10 lg:grid-cols-2 place-items-center">
           <div>
             <img
-              src={`https://images.unsplash.com/photo-1642427749670-f20e2e76ed8c?q=80&w=2080&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D`}
+              src={`https://images.pexels.com/photos/17483848/pexels-photo-17483848/free-photo-of-an-artist-s-illustration-of-artificial-intelligence-ai-this-image-depicts-a-look-inside-how-ai-microchips-are-designed-it-was-created-by-champ-panupong-techawongthawon-as-part-of-the-v.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1`}
             />
           </div>
           <div>
@@ -309,7 +320,7 @@ function About() {
                       At MenloCloud, our AI SaaS solutions enable rapid
                       deployment, allowing users to harness AI capabilities
                       instantly without lengthy setup times. Elevate your
-                      business in today's fast-paced environment!
+                      business in today`s fast-paced environment!
                     </p>
                     <div className="mt-5  w-full flex justify-start ">
                       <button className="text-gray-100 overflow-hidden group rounded-lg relative font-Satoshi font-semibold py-2 px-5 bg-gray-950">
