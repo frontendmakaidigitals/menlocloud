@@ -415,7 +415,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                         industry
                       </p>
                     </div>
-                    <div className="xl:p-3  xxl:p-5     text-gray-800  cursor-pointer rounded-xl">
+                    <div className="xl:p-3  xxl:p-5     text-gray-900  cursor-pointer rounded-xl">
                       <p className="text-md font-bold">
                         Educations and Learning
                       </p>
