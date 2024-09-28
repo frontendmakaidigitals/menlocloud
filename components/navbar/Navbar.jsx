@@ -141,15 +141,17 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                         </Link>
                       </div>
                       <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
-                        <div>
-                          <p className="text-md font-bold">
-                            Mobile App Development
-                          </p>
-                          <p className="text-sm font-medium mt-1 text-gray-600">
-                            Crafting robust and scalable systems through expert
-                            software engineering.
-                          </p>
-                        </div>
+                        <Link href={`/mobile-Development`}>
+                          <div>
+                            <p className="text-md font-bold">
+                              Mobile App Development
+                            </p>
+                            <p className="text-sm font-medium mt-1 text-gray-600">
+                              Crafting robust and scalable systems through
+                              expert software engineering.
+                            </p>
+                          </div>
+                        </Link>
                       </div>
                       <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
                         <Link href={`/web-developer`}>
