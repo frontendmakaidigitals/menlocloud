@@ -306,18 +306,24 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                 </AccordionTrigger>
                 <AccordionContent>
                   <div className="h-[400px] overflow-scroll">
-                    <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
+                    <Link
+                      href="/data-Analytics"
+                      className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl"
+                    >
                       <p className="text-md font-bold">Data analytics</p>
                       <p className="text-sm font-medium mt-1 text-gray-600">
                         Leveraging today’s data for a more promising future
                       </p>
-                    </div>
-                    <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
+                    </Link>
+                    <Link
+                      href={`/generative-ai`}
+                      className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl"
+                    >
                       <p className="text-md font-bold">Generative AI</p>
                       <p className="text-sm font-medium mt-1 text-gray-600">
                         Shaping the future through advanced AI
                       </p>
-                    </div>
+                    </Link>
                     <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
                       <p className="text-md font-bold">Cloud Transformation</p>
                       <p className="text-sm font-medium mt-1 text-gray-600">
@@ -325,7 +331,10 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                         effective, real-world applications.
                       </p>
                     </div>
-                    <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
+                    <Link
+                      href={`/mobile-Development`}
+                      className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl"
+                    >
                       <p className="text-md font-bold">
                         Mobile App Development
                       </p>
@@ -333,23 +342,28 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                         Crafting robust and scalable systems through expert
                         software engineering.
                       </p>
-                    </div>
-                    <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
-                      <Link href={"/web-developer"}>
-                        <p className="text-md font-bold">Web Development</p>
-                      </Link>
+                    </Link>
+                    <Link
+                      href={"/web-developer"}
+                      className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl"
+                    >
+                      <p className="text-md font-bold">Web Development</p>
+
                       <p className="text-sm font-medium mt-1 text-gray-600">
                         Transforming business operations with next-generation
                         cloud modernization
                       </p>
-                    </div>
-                    <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
+                    </Link>
+                    <Link
+                      href="/digital-marketing"
+                      className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl"
+                    >
                       <p className="text-md font-bold">Digital marketing</p>
                       <p className="text-sm font-medium mt-1 text-gray-600">
                         Transforming concepts into functional systems through
                         precise implementation
                       </p>
-                    </div>
+                    </Link>
                   </div>
                 </AccordionContent>
               </AccordionItem>
