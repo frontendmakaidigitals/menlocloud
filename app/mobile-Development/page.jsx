@@ -226,7 +226,7 @@ function GenAI() {
       <main className="main-wrapper relative ">
         <div className="w-full h-auto lg:h-[85vh] xl:h-screen bg-no-repeat bg-center bg-cover bg-[url('https://img.freepik.com/free-vector/white-abstract-background-3d-paper-style_23-2148403777.jpg?t=st=1727430799~exp=1727434399~hmac=3771cb4fc6a037df42da22cca671df6dc2f461ccdd02b7f4c77e68b204c3f452&w=1380')]">
           <div className="bg-gradient-to-b w-full h-full from-gray-800/50 via-transparent to-gray-700/40">
-            <div className="global-container flex flex-col lg:flex-row items-center justify-around  w-full h-full">
+            <div className="global-container  flex flex-col lg:flex-row items-center justify-around  w-full h-full">
               <div className="mt-32 xl:mt-0 w-full lg:w-2/3">
                 <p className="font-Satoshi text-3xl xl:text-4xl xxl:text-6xl w-full lg:w-2/3 font-bold text-center lg:text-start text-black">
                   Custom Mobile App Development Services
@@ -249,7 +249,7 @@ function GenAI() {
               </div>
 
               <div
-                className="w-full xl:w-[230px] xxl:w-[350px] mt-10 lg:m-0 relative
+                className="w-full xl:w-[230px] xxl:w-[280px] lg:m-0 relative
               "
               >
                 <img
