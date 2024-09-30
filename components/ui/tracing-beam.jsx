@@ -11,18 +11,20 @@ export const TracingBeam = ({ children, className }) => {
   });
 
   const contentRef = useRef(null);
-  const [svgHeight, setSvgHeight] = useState(0);
+  const [svgHeight, setSvgHeight] = useState(2100);
 
   const updateSvgHeight = () => {
-    if (contentRef.current) {
-      setSvgHeight(contentRef.current.offsetHeight);
+    if (contentRef.current && svgHeight > 2600) {
+      const newHeight = contentRef.current.offsetHeight;
+      console.log("Updated SVG Height:", newHeight);
+      setSvgHeight(newHeight);
     }
   };
 
   useEffect(() => {
     updateSvgHeight();
     window.addEventListener("resize", updateSvgHeight);
-    
+
     // Clean up the event listener on unmount
     return () => {
       window.removeEventListener("resize", updateSvgHeight);
