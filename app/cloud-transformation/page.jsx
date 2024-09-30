@@ -41,6 +41,8 @@ const tabs = [
   {
     name: "Cloud Advisory Services",
     title: "Your Trusted Guide to Cloud Success",
+    gradient: "bg-gradient-to-tr from-gray-300 via-yellow-500 to-amber-400",
+    img: "/assets/img_placeholder/advisory-img.jpg",
     description:
       "Cloud advisory services provide expert guidance and strategic insights to help businesses navigate the complex landscape of cloud computing. Our team of seasoned professionals offers tailored advice to optimize your cloud adoption journey, ensuring maximum value and return on investment.",
     benefit: [
@@ -100,6 +102,251 @@ const tabs = [
     description2:
       "Ready to leverage the power of cloud computing? Contact our cloud advisory experts today to discuss your specific needs and learn how we can help you achieve your goals.",
   },
+  {
+    name: "Cloud Foundation Services",
+    title: "The Building Blocks of Your Cloud Journey",
+    gradient: "bg-gradient-to-br from-purple-200 via-indigo-400 to-violet-600",
+    img: "/assets/img_placeholder/foundation.jpg",
+    description:
+      "Cloud foundation services provide the essential infrastructure and platform components that form the bedrock of your cloud environment. These services are crucial for establishing a solid foundation for your cloud initiatives and ensuring a successful transition to the cloud.",
+    benefit: [
+      {
+        title: "Reliable Infrastructure",
+        description:
+          " Benefit from a robust and scalable cloud infrastructure that can handle your growing workloads.",
+      },
+      {
+        title: "Platform Flexibility:",
+        description:
+          " Choose the right cloud platforms and services to meet your specific needs.",
+      },
+      {
+        title: "Enhanced Security",
+        description:
+          " Protect your data and applications with state-of-the-art security measures.",
+      },
+      {
+        title: "Cost Optimization",
+        description:
+          " Optimize resource utilization and reduce costs through efficient infrastructure management.",
+      },
+      {
+        title: "Scalability and Flexibility",
+        description:
+          " Easily scale your resources up or down to meet changing demands.",
+      },
+    ],
+    our: [
+      {
+        title: "Infrastructure as a Service (IaaS)",
+        description:
+          " Provision virtual servers, storage, and networking resources on demand.",
+      },
+      {
+        title: "Platform as a Service (PaaS)",
+        description:
+          "  Develop and deploy applications on a pre-configured platform.",
+      },
+      {
+        title: "Database as a Service (DBaaS)",
+        description:
+          "  Manage databases efficiently and securely in the cloud.",
+      },
+      {
+        title: "Container Orchestration",
+        description: " Deploy and manage containerized applications at scale",
+      },
+      {
+        title: "Network Services",
+        description:
+          " Establish secure and reliable network connections for your cloud environment.",
+      },
+    ],
+    description2:
+      "Ready to build a strong foundation for your cloud journey? Contact our cloud foundation experts today to discuss your specific needs and learn how we can help you achieve your goals.",
+  },
+  {
+    name: "Cloud Migration Services",
+    title: "Accelerate Your Digital Transformation",
+    gradient: "bg-gradient-to-tr from-red-200 via-rose-400 to-pink-600",
+    img: "/assets/img_placeholder/migration.jpg",
+    description:
+      "Cloud migration is the process of transferring data, applications, and infrastructure from a traditional on-premises environment to a cloud-based platform. This transition offers numerous benefits for businesses, including increased scalability, improved flexibility, reduced costs, and enhanced security.",
+    benefit: [
+      {
+        title: "Scalability",
+        description:
+          "  Easily scale your resources up or down to meet fluctuating demand, ensuring optimal performance and cost-efficiency.",
+      },
+      {
+        title: "Flexibility",
+        description:
+          " Adapt to changing business needs and market conditions with agility.",
+      },
+      {
+        title: "Reduced Costs",
+        description:
+          "Optimize your IT infrastructure and reduce operational expenses.",
+      },
+      {
+        title: "Enhanced Security",
+        description:
+          " Benefit from the robust security measures provided by cloud providers.",
+      },
+    ],
+    our: [
+      {
+        title: "Assessment",
+        description:
+          " Evaluate your current IT environment and identify potential challenges.",
+      },
+      {
+        title: "Planning",
+        description:
+          "  : Develop a tailored migration strategy, outlining timelines and resources.",
+      },
+      {
+        title: "Migration",
+        description:
+          " Transfer data, applications, and infrastructure to the cloud.",
+      },
+      {
+        title: "Testing",
+        description: "Rigorously test to ensure seamless functionality",
+      },
+      {
+        title: "Optimization",
+        description:
+          "  Fine-tune your cloud environment for optimal performance.",
+      },
+    ],
+    description2:
+      "Ready to embark on your cloud journey? Contact our experts today to discuss your specific needs and learn how cloud migration can transform your business.",
+  },
+  {
+    name: "Cloud Modernization Services",
+    title: "Elevate Your Digital Transformation",
+    gradient: "bg-gradient-to-br from-lime-200 via-green-400 to-emerald-600",
+    img: "https://virtualization.network/Images/News/d997ec3f-1dea-4362-b641-fd6233cd964f_VMware-Delivers-the-Next-Wave.jpg",
+    description:
+      "Cloud modernization is the process of optimizing existing applications and infrastructure to fully leverage the benefits of cloud computing. By modernizing your IT environment, you can improve performance, enhance scalability, reduce costs, and drive innovation.",
+
+    benefit: [
+      {
+        title: "Improved Performance",
+        description:
+          " Evaluate your current IT environment and identify potential challenges.",
+      },
+      {
+        title: "Enhanced Scalability",
+        description:
+          "Develop a tailored migration strategy, outlining timelines and resources.",
+      },
+      {
+        title: "Reduced Costs",
+        description:
+          " Transfer data, applications, and infrastructure to the cloud.",
+      },
+      {
+        title: "Increased Innovation",
+        description:
+          "Accelerate development cycles and bring new products and services to market faster.",
+      },
+    ],
+    our: [
+      {
+        title: "Application Modernization",
+        description:
+          " Refactor legacy applications to improve performance, scalability, and maintainability in the cloud.",
+      },
+      {
+        title: "Infrastructure Optimization",
+        description:
+          "Optimize your cloud infrastructure for maximum efficiency and cost-effectiveness.",
+      },
+      {
+        title: "Data Migration",
+        description: " Migrate data to the cloud seamlessly and securely.",
+      },
+      {
+        title: "DevOps Transformation",
+        description:
+          "Adopt DevOps practices to streamline development, testing, and deployment processes.",
+      },
+      {
+        title: "Containerization",
+        description:
+          " Utilize containers to package applications and their dependencies, enabling portability and scalability.",
+      },
+    ],
+    description2:
+      "eady to unlock the full potential of your cloud environment? Contact our experts today to discuss your specific needs and learn how cloud modernization can transform your business.",
+  },
+  {
+    name: "Cloud Infrastructure Services",
+    title: "The Foundation of Your Digital Transformation",
+    gradient: "bg-gradient-to-r from-yellow-200 via-lime-400 to-green-600",
+    img: "/assets/img_placeholder/infra.jpg",
+    description:
+      "Cloud infrastructure services provide the essential building blocks for your cloud environment, enabling you to deploy and manage applications and data in a scalable, flexible, and secure manner. These services form the foundation of your digital transformation, empowering you to innovate, improve efficiency, and drive business growth.",
+
+    benefit: [
+      {
+        title: "Scalability",
+        description:
+          "Easily scale your resources up or down to meet changing demands, ensuring optimal performance and cost-efficiency.",
+      },
+      {
+        title: "Flexibility",
+        description:
+          "Choose from a wide range of infrastructure options to meet your specific needs and preferences.",
+      },
+      {
+        title: "Reliability",
+        description:
+          "Benefit from the reliability and redundancy of cloud infrastructure, minimizing downtime and disruptions.",
+      },
+      {
+        title: "Security",
+        description:
+          "Protect your data and applications with advanced security measures provided by cloud providers.",
+      },
+      {
+        title: "Cost-Efficiency",
+        description:
+          "Optimize resource utilization and reduce IT infrastructure costs through pay-as-you-go pricing models.",
+      },
+    ],
+    our: [
+      {
+        title: "Compute",
+        description:
+          " Provision virtual servers (VMs) and other compute resources to run your applications.",
+      },
+      {
+        title: "Storage",
+        description:
+          "Store data securely and reliably in various storage options, including object storage, block storage, and file storage.",
+      },
+      {
+        title: "Networking",
+        description:
+          "Establish secure and reliable network connections between your cloud resources and on-premises environments.",
+      },
+      {
+        title: "Database",
+        description:
+          "Manage databases efficiently and securely in the cloud, using options like relational databases, NoSQL databases, and data warehouses.",
+      },
+      {
+        title: "Container Orchestration",
+        description:
+          " Deploy and manage containerized applications at scale using tools like Kubernetes.",
+      },
+    ],
+    description2:
+      "Ready to build a robust and scalable cloud infrastructure? Contact our cloud infrastructure experts today to discuss your specific needs and learn how we can help you achieve your goals.",
+  },
 ];
 function Home() {
   const swiperRef = useRef(null);
@@ -142,7 +389,7 @@ function Home() {
             </p>
           </div>
 
-          <div className="w-full mt-10 global-container grid grid-cols-4 gap-5">
+          <div className="w-full mt-10 global-container grid grid-cols-1 lg:grid-cols-4 gap-5">
             {benefits.map((elem, index) => (
               <motion.div
                 key={index}
@@ -175,7 +422,16 @@ function Home() {
             </div>
           </div>
         </section>
-        <div className="bg-[url('/assets/img_placeholder/bg.jpg')] bg-top bg-cover bg-no-repeat py-32">
+        <div className={`${tabs[tabSelected].gradient} py-16`}>
+          <div className="mb-10">
+            <p className="global-container mb-2 text-3xl lg:text-5xl tracking-tight font-Satoshi font-bold w-full lg:w-2/3 text-center">
+              Unlocking the Power of
+              <span className="bg-gradient-to-r font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
+                {" "}
+                Cloud
+              </span>{" "}
+            </p>
+          </div>
           <div
             className={`bg-sky-400 block  lg:hidden px-4 py-3 transition-all duration-200   w-full `}
           >
@@ -225,7 +481,7 @@ function Home() {
                   className={` ${
                     tabSelected == index
                       ? "bg-gray-900 text-gray-100"
-                      : "bg-gray-300 text-gray-900"
+                      : "bg-gray-100 hover:bg-blue-100 text-gray-900"
                   } xl:text-sm xxl:text-[1rem] px-4 py-2 rounded-full cursor-pointer`}
                 >
                   {tab.name}
@@ -236,16 +492,17 @@ function Home() {
           <div className="global-container mt-10 xl:mt-20 grid grid-cols-1 px-0 xl:px-14 gap-8">
             <div>
               <p className="text-lg text-start xl:text-2xl xxl:text-3xl font-Satoshi font-[600]">
-                {tabs[tabSelected].name}{" :"}
+                {tabs[tabSelected].name}
+                {" :"}
                 <span className="font-medium"> {tabs[tabSelected].title}</span>
               </p>
               <p className="text-md xl:text-sm xxl:text-lg font-Satoshi mt-4">
                 {tabs[tabSelected].description}
               </p>
 
-              <div className="grid grid-cols-1 mt-12 lg:grid-cols-2 gap-5 place-items-center">
-                <div className="border-r border-dashed border-gray-900">
-                  <p className="font-Satoshi  font-[500] text-lg xl:text-xl xxl:text-2xl mt-5">
+              <div className="grid grid-cols-1 mt-12 lg:grid-cols-2 gap-x-5 gap-y-10 place-items-center">
+                <div className="border-b lg:border-r border-dashed border-gray-900 py-10">
+                  <p className="font-Satoshi font-bold text-lg xl:text-xl xxl:text-2xl mt-5">
                     Key Benefits of {tabs[tabSelected].name}
                   </p>
                   <ul className="list-disc px-5 mt-2 w-full">
@@ -261,11 +518,11 @@ function Home() {
                   </ul>
                 </div>
                 <div>
-                  <p className="font-Satoshi font-[500] text-lg xl:text-xl xxl:text-2xl mt-5">
-                    Key Benefits of {tabs[tabSelected].name}
+                  <p className="font-Satoshi font-bold text-lg xl:text-xl xxl:text-2xl mt-5">
+                    Our {tabs[tabSelected].name} Include:
                   </p>
                   <ul className="list-disc px-5 mt-2 w-full">
-                    {tabs[tabSelected].benefit.map((point, index) => (
+                    {tabs[tabSelected].our.map((point, index) => (
                       <li
                         key={index}
                         className="text-md mt-1 xl:text-sm font-Satoshi font-bold xxl:text-lg"
@@ -280,13 +537,13 @@ function Home() {
             </div>
           </div>
           <div className=" global-container">
-          <div
-            style={{
-              backgroundImage: `url('${tabs[tabSelected].img}')`,
-            }}
-            className="w-full mt-14 relative min-h-[550px] rounded-xl shadow-xl border border-gray-300 bg-no-repeat bg-green-300 bg-center bg-cover"
-          ></div>
-         </div>
+            <div
+              style={{
+                backgroundImage: `url('${tabs[tabSelected].img}')`,
+              }}
+              className="w-full mt-14 relative h-[400px] lg:h-[600px] rounded-xl shadow-xl border border-gray-300 bg-no-repeat bg-green-300 bg-center bg-cover"
+            ></div>
+          </div>
           <p className="global-container font-Satoshi text-lg font-medium mt-16 text-center">
             {tabs[tabSelected].description2}
           </p>

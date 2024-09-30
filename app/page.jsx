@@ -13,6 +13,7 @@ import { FlipWords } from "@/components/ui/flip-words";
 import SwiperNavButtons from "@/components/SwiperNavButton";
 import { HiOutlineArrowDown } from "react-icons/hi2";
 import { LampContainer } from "@/components/ui/lamp";
+import { IoIosArrowRoundForward } from "react-icons/io";
 const techLogos = [
   {
     username: "@jack",
@@ -228,6 +229,32 @@ const data = [
   },
 ];
 
+const specialize = [
+  {
+    title: "Data Analysts",
+    color: "#FFD54F",
+    link: "/data-Analytics",
+    img: "https://static.vecteezy.com/system/resources/previews/012/628/423/original/data-3d-render-icon-illustration-png.png",
+    description:
+      "Data analysts interpret data to provide insights that drive informed decision-making in organizations.",
+  },
+  {
+    title: "Artificial Intelligence",
+    color: "#EEEEEE",
+    link: "/generative-ai",
+    img: "https://static.vecteezy.com/system/resources/previews/021/820/175/original/computer-chip-with-ai-letters-3d-artificial-intelligence-icon-png.png",
+    description:
+      " Artificial Intelligence (AI) involves the simulation of human intelligence in machines to perform tasks such as learning, reasoning, and problem-solving.",
+  },
+  {
+    title: "Cloud Transformation",
+    color: "#FF7043",
+    link: "/cloud-transformation",
+    img: "https://cdn3d.iconscout.com/3d/premium/thumb/cloud-computing-3d-icon-download-in-png-blend-fbx-gltf-file-formats--network-hosting-connection-technology-pack-communication-icons-4668604.png?f=webp",
+    description:
+      "Cloud transformation is the process of migrating data and applications to cloud-based platforms to enhance flexibility, scalability, and efficiency.",
+  },
+];
 function Home() {
   const [isVisible, setIsVisible] = useState(true);
   const [isTopVisible, setIsTop] = useState(false);
@@ -383,6 +410,43 @@ function Home() {
               <ReviewCard key={review.username} {...review} />
             ))}
           </Marquee>
+        </section>
+        <section className="my-28 global-container">
+          <p className="global-container mb-3 text-3xl lg:text-6xl  font-Satoshi font-[600] w-full lg:w-2/3  text-center">
+            We{" "}
+            <span className="bg-gradient-to-r font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
+              Specialize{" "}
+            </span>
+            in{" "}
+          </p>
+          <div className="grid grid-cols-1 gap-10 lg:grid-cols-3 mt-14">
+            {specialize.map((elem, index) => (
+              <motion.div
+                whileHover={{ scale: 1.1 }}
+                key={index}
+                className="px-6 py-6 shadow-md rounded-xl flex flex-col justify-between items-start"
+                style={{ backgroundColor: elem.color }}
+              >
+                <div className="size-16  ">
+                  <img src={elem.img} />
+                </div>
+                <p className="font-satoshi font-bold text-2xl mt-6">
+                  {elem.title}
+                </p>
+                <p className="font-satoshi font-medium text-lg mt-3">
+                  {elem.description}
+                </p>
+                <div className="w-full flex justify-start mt-7">
+                  <Link href={elem.link}>
+                    <button className="text-gray-50 overflow-hidden group rounded-lg relative font-Satoshi font-medium py-2 text-md px-5 bg-gray-900">
+                      <p className="relative z-10">Lets Connect</p>
+                      <div className="bg-sky-500 w-1 h-1 group-hover:scale-[50] absolute -bottom-1 left-1/2 -translate-1/2 rounded-full transition-all duration-300" />
+                    </button>
+                  </Link>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </section>
 
         <section className="bg-blue-50 py-16 mt-20 lg:mt-32 flex flex-col items-center justify-center">

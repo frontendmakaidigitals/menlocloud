@@ -71,18 +71,21 @@ const industryTabs = [
     name: "Social Media",
     img: "/assets/img_placeholder/app-image/SocialMedia.png",
   },
-  { name: "Gaming" },
+  { name: "Gaming", img: "/assets/img_placeholder/app-image/Gaming.png" },
   {
     name: "Fintech",
     img: "/assets/img_placeholder/app-image/Fintech.png",
   },
-  { name: "Enterprise" },
+  { name: "Enterprise", img: "/assets/img_placeholder/app-image/Enterprises.png" },
   {
     name: "Hospital & Healthcare",
     img: "/assets/img_placeholder/app-image/Healthcare.png",
   },
-  { name: "OTT" },
-  { name: "Logistics & Transportation" },
+  { name: "OTT", img: "/assets/img_placeholder/app-image/OTT.png" },
+  {
+    name: "Logistics & Transportation",
+    img: "/assets/img_placeholder/app-image/Logistics.png",
+  },
   {
     name: "Health, Wellness & Fitness",
     img: "/assets/img_placeholder/app-image/Fitness Tracker.png",
