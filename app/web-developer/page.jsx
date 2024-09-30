@@ -336,7 +336,7 @@ function Services() {
               </span>
             </p>
           </div>
-          <div className="w-full grid grid-cols-1 lg:grid-cols-4 mt-12 gap-10 ">
+          <div className="w-full grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 xxl:grid-cols-4 mt-12 gap-10 ">
             {ourExp.map((exp, index) => (
               <div
                 key={index}
