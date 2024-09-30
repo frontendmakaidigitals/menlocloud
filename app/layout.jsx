@@ -35,7 +35,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export default function RootLayout({ children }) {
   const pathname = usePathname();
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const jos_options = {
     passive: false,
     once: true,
@@ -56,7 +56,13 @@ export default function RootLayout({ children }) {
     JOS.refresh();
   }, [pathname]);
 
-  
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false); // Set loading to false after 2 seconds
+    }, 2000); // Adjust this time as necessary
+
+    return () => clearTimeout(timer); // Cleanup the timer on unmount
+  }, []);
 
   return (
     <html lang="en">
@@ -74,7 +80,7 @@ export default function RootLayout({ children }) {
       <body
         className={`${DMSans.variable} ${ClashDisplay.variable} ${Raleway.variable} ${SpaceGrotesk.variable} ${inter.variable}`}
       >
-        { loading && <Loader /> }
+        {loading ? <Loader /> : null}
         {children}
       </body>
     </html>
