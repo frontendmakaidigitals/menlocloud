@@ -279,12 +279,14 @@ function Home() {
               </div>
             </div>
           </div>
+          <div className=" global-container">
           <div
             style={{
               backgroundImage: `url('${tabs[tabSelected].img}')`,
             }}
-            className="w-full mt-14 global-container relative min-h-[550px] rounded-xl shadow-xl border border-gray-300 bg-no-repeat bg-green-300 bg-center bg-cover"
+            className="w-full mt-14 relative min-h-[550px] rounded-xl shadow-xl border border-gray-300 bg-no-repeat bg-green-300 bg-center bg-cover"
           ></div>
+         </div>
           <p className="global-container font-Satoshi text-lg font-medium mt-16 text-center">
             {tabs[tabSelected].description2}
           </p>
