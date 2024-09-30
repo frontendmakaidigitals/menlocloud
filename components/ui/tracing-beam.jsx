@@ -13,10 +13,20 @@ export const TracingBeam = ({ children, className }) => {
   const contentRef = useRef(null);
   const [svgHeight, setSvgHeight] = useState(0);
 
-  useEffect(() => {
+  const updateSvgHeight = () => {
     if (contentRef.current) {
       setSvgHeight(contentRef.current.offsetHeight);
     }
+  };
+
+  useEffect(() => {
+    updateSvgHeight();
+    window.addEventListener("resize", updateSvgHeight);
+    
+    // Clean up the event listener on unmount
+    return () => {
+      window.removeEventListener("resize", updateSvgHeight);
+    };
   }, []);
 
   const y1 = useSpring(
