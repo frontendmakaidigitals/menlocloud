@@ -501,7 +501,7 @@ function Home() {
               </p>
 
               <div className="grid grid-cols-1 mt-12 lg:grid-cols-2 gap-x-5 gap-y-10 place-items-center">
-                <div className="border-b lg:border-r border-dashed border-gray-900 py-10">
+                <div className="border-b lg:border-b-0 lg:border-r border-dashed border-gray-900 py-10">
                   <p className="font-Satoshi font-bold text-lg xl:text-xl xxl:text-2xl mt-5">
                     Key Benefits of {tabs[tabSelected].name}
                   </p>
