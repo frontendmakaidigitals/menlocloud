@@ -390,7 +390,7 @@ function Home() {
           </div>
           <div className="">
             <p className=" mb-2 global-container text-lg lg:text-xl tracking-tight font-Satoshi font-medium w-full lg:w-2/3 text-center">
-              In today's rapidly evolving digital landscape, businesses are
+              In today&apos;s rapidly evolving digital landscape, businesses are
               under immense pressure to innovate and adapt. Cloud transformation
               offers a powerful solution to meet these challenges. By migrating
               your applications and data to the cloud, you can unlock a host of
