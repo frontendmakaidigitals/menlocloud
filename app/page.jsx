@@ -962,6 +962,7 @@ function Home() {
                       whileHover={{ backgroundColor: elem.hoverColor }}
                       className={` rounded-xl bg-slate-100`}
                     >
+                      <Link href='/blog-details'>
                       <div
                         className="w-full h-64 bg-no-repeat rounded-xl bg-center bg-cover "
                         style={{ backgroundImage: `url(${elem.img})` }}
@@ -976,7 +977,7 @@ function Home() {
                           elit, sed do eiusmod tempor incididunt ut labore et
                           dolore magna aliqua.
                         </p>
-                      </div>
+                      </div></Link>
                     </motion.div>
                   </SwiperSlide>
                 );

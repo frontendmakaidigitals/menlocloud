@@ -33,9 +33,9 @@ function BlogDetails() {
                   <div className="flex flex-col gap-6">
                     {/* Blog Post Text Area */}
                     <article className="jos overflow-hidden bg-white">
-                      <div className="mb-7 block overflow-hidden rounded-[10px]">
+                      <div className="mb-7 shadow-md border border-gray-200 block overflow-hidden rounded-[10px]">
                         <img
-                          src="https://images.unsplash.com/photo-1592495989226-03f88104f8cc?q=80&w=1824&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                          src="https://images.unsplash.com/photo-1543286386-713bdd548da4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                           alt="blog-main-1"
                           width={856}
                           height={540}
