@@ -1,7 +1,6 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-
 import { FaUserCircle } from "react-icons/fa";
 import { IoIosExit } from "react-icons/io";
 import { FaUser } from "react-icons/fa";
@@ -10,40 +9,25 @@ import { FaBloggerB } from "react-icons/fa";
 import { MdSpaceDashboard } from "react-icons/md";
 
 export default function RootLayout({ children }) {
+  const pathname = usePathname();
+  const path = pathname.split("/")[2];
   return (
-    <html lang="en">
-      <head>
-        <link
-          href="https://api.fontshare.com/v2/css?f[]=telma@300,400,500&f[]=clash-grotesk@200,300,400,500,600,700&f[]=satoshi@300,400,500,700,900&display=swap"
-          rel="stylesheet"
-        />
-        <link
-          rel="icon"
-          type="image/x-icon"
-          href="/assets/img_placeholder/logo-icon.png"
-        ></link>
-      </head>
-      <body>
-        <div className="w-full  flex justify-end">
-          <Sidebar />
-          <div
-            style={{ width: "calc(100% - 250px)" }}
-            className="w-full p-5  relative"
-          >
-            <div className="w-full ">
-              <Navbar />
-            </div>
-            {children}
-          </div>
+    <div className="w-full flex justify-end">
+      <Sidebar path={path} />
+      <div
+        style={{ width: "calc(100% - 250px)" }}
+        className="w-full p-5 relative"
+      >
+        <div className="w-full">
+          <Navbar path={path} />
         </div>
-      </body>
-    </html>
+        {children}
+      </div>
+    </div>
   );
 }
 
-const Navbar = () => {
-  const pathname = usePathname();
-  const path = pathname.split("/")[2];
+const Navbar = ({ path }) => {
   const img =
     "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
   return (
@@ -65,10 +49,8 @@ const Navbar = () => {
     </div>
   );
 };
-const Sidebar = () => {
-  const pathname = usePathname();
-  const path = pathname.split("/")[2];
 
+const Sidebar = ({ path }) => {
   const menus = [
     {
       name: "Dashboard",
@@ -86,16 +68,13 @@ const Sidebar = () => {
       link: "/admin/blogs",
     },
   ];
+  
   return (
-    <div className="h-screen fixed z-[999] top-0 py-5 left-0 w-[250px] bg-black overflow-hidden ">
-      {" "}
+    <div className="h-screen fixed z-[999] top-0 py-5 left-0 w-[250px] bg-black overflow-hidden">
       <div className="px-10 mt-4">
-        <Link
-          href="/"
-          className="flex xl:text-lg xxl:text-xl items-center gap-1"
-        >
+        <Link href="/" className="flex xl:text-lg xxl:text-xl items-center gap-1">
           <img src={"/assets/img_placeholder/logo-icon.png"} width={40} />
-          <p className="  text-gray-200 font-bold font-Satoshi">
+          <p className="text-gray-200 font-bold font-Satoshi">
             Menlo
             <span className="text-sky-500 font-Clash font-[600]">Cloud</span>
           </p>
@@ -106,24 +85,24 @@ const Sidebar = () => {
           <Link
             href={menu.link}
             key={index}
-            className={`flex relative px-10 hover:bg-blue-200 hover:text-gray-950 items-center font-Satoshi  transiton-all duration-300 gap-3 py-3 ${
-              path?.toLowerCase() == menu.name.toLowerCase()
+            className={`flex relative px-10 hover:bg-blue-200 hover:text-gray-950 items-center font-Satoshi transiton-all duration-300 gap-3 py-3 ${
+              path?.toLowerCase() === menu.name.toLowerCase()
                 ? "text-sky-200 font-bold-bold"
-                : " font-semibold text-gray-100"
+                : "font-semibold text-gray-100"
             }`}
           >
-            {path?.toLowerCase() == menu.name.toLowerCase() ? (
-              <div className="w-1 absolute  h-1/2 top-1/2 -translate-y-1/2 left-0 bg-sky-200"></div>
+            {path?.toLowerCase() === menu.name.toLowerCase() ? (
+              <div className="w-1 absolute h-1/2 top-1/2 -translate-y-1/2 left-0 bg-sky-200"></div>
             ) : null}
 
-            <div className="xl:text-xl xxl:text-2xl ">{menu.icon}</div>
-            <p className="font-Satoshi xl:text-sm xxl:text-lg  font-[500]">
+            <div className="xl:text-xl xxl:text-2xl">{menu.icon}</div>
+            <p className="font-Satoshi xl:text-sm xxl:text-lg font-[500]">
               {menu.name}
             </p>
           </Link>
         ))}
       </div>
-      <div className=" px-10 absolute bottom-0 transiton-all py-5 duration-300 left-0 flex w-full  items-center hover:bg-red-400 gap-3 hover:text-gray-900 text-gray-100 ">
+      <div className="px-10 absolute bottom-0 transiton-all py-5 duration-300 left-0 flex w-full items-center hover:bg-red-400 gap-3 hover:text-gray-900 text-gray-100">
         <IoIosExit className="xl:text-2xl xxl:text-4xl rotate-180" />
         <p className="font-Satoshi xl:text-sm xxl:text-md font-[500]">Logout</p>
       </div>

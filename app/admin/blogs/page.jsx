@@ -90,59 +90,61 @@ export default page;
 
 const BlogList = () => {
   return (
-    <Table>
-      <TableCaption>A list of your Blogs.</TableCaption>
-      <TableHeader>
-        <TableRow className={`bg-gray-200 hover:bg-gray-200 `}>
-          <TableHead className=" text-gray-900 text-lg font-Satoshi font-bold rounded-l-xl pl-4">
-            No.
-          </TableHead>
-          <TableHead className=" text-gray-900 text-lg font-Satoshi font-bold">
-            Blog Title
-          </TableHead>
-          <TableHead className=" text-gray-900 text-lg font-Satoshi font-bold">
-            Blog Description
-          </TableHead>
-          <TableHead className=" text-gray-900 text-lg font-Satoshi font-bold">
-            Meta Description
-          </TableHead>
-          <TableHead className=" text-gray-900 text-lg font-Satoshi font-bold rounded-r-xl">
-            Actions
-          </TableHead>
-        </TableRow>
-      </TableHeader>
-      <TableBody>
-        {invoices.map((invoice, index) => (
-          <TableRow key={index} className={`hover:bg-gray-50`}>
-            <TableCell className={`pl-4 py-3`}>{index + 1}</TableCell>
-            <TableCell className={`font-Satoshi font-medium py-3`}>
-              {invoice.title}
-            </TableCell>
-            <TableCell className={`font-Satoshi font-medium py-3`}>
-              {invoice.description}
-            </TableCell>
-            <TableCell className={`font-Satoshi font-medium py-3`}>
-              {invoice.metaDescription}
-            </TableCell>
-            <TableCell className={`py-3`}>
-              <div className="flex items-center gap-2">
-                <div className="relative group cursor-pointer">
-                  <p className="hidden group-hover:block w-auto text-nowrap z-[9999] bg-gray-300 shadow-lg rounded-full px-4 py-1 absolute bottom-full left-1/2 -translate-x-1/2">
-                    Edit blog
-                  </p>
-                  <RiEdit2Fill className="text-xl relative " />
-                </div>
-                <div className="relative group cursor-pointer">
-                  <p className="hidden group-hover:block w-auto text-nowrap z-[9999] bg-red-500 shadow-lg text-gray-100 rounded-full px-4 py-1 absolute bottom-full left-1/2 -translate-x-1/2">
-                    Delete blog
-                  </p>
-                  <MdDeleteForever className="text-red-500 text-xl relative" />
-                </div>
-              </div>
-            </TableCell>
+    <>
+      <Table>
+        <TableCaption>A list of your Blogs.</TableCaption>
+        <TableHeader>
+          <TableRow className={`bg-gray-200 hover:bg-gray-200 `}>
+            <TableHead className=" text-gray-900 text-lg font-Satoshi font-bold rounded-l-xl pl-4">
+              No.
+            </TableHead>
+            <TableHead className=" text-gray-900 text-lg font-Satoshi font-bold">
+              Blog Title
+            </TableHead>
+            <TableHead className=" text-gray-900 text-lg font-Satoshi font-bold">
+              Blog Description
+            </TableHead>
+            <TableHead className=" text-gray-900 text-lg font-Satoshi font-bold">
+              Meta Description
+            </TableHead>
+            <TableHead className=" text-gray-900 text-lg font-Satoshi font-bold rounded-r-xl">
+              Actions
+            </TableHead>
           </TableRow>
-        ))}
-      </TableBody>
-    </Table>
+        </TableHeader>
+        <TableBody>
+          {invoices.map((invoice, index) => (
+            <TableRow key={index} className={`hover:bg-gray-50`}>
+              <TableCell className={`pl-4 py-3`}>{index + 1}</TableCell>
+              <TableCell className={`font-Satoshi font-medium py-3`}>
+                {invoice.title}
+              </TableCell>
+              <TableCell className={`font-Satoshi font-medium py-3`}>
+                {invoice.description}
+              </TableCell>
+              <TableCell className={`font-Satoshi font-medium py-3`}>
+                {invoice.metaDescription}
+              </TableCell>
+              <TableCell className={`py-3`}>
+                <div className="flex items-center gap-2">
+                  <div className="relative group cursor-pointer">
+                    <p className="hidden group-hover:block w-auto text-nowrap z-[9999] bg-gray-300 shadow-lg rounded-full px-4 py-1 absolute bottom-full left-1/2 -translate-x-1/2">
+                      Edit blog
+                    </p>
+                    <RiEdit2Fill className="text-xl relative " />
+                  </div>
+                  <div className="relative group cursor-pointer">
+                    <p className="hidden group-hover:block w-auto text-nowrap z-[9999] bg-red-500 shadow-lg text-gray-100 rounded-full px-4 py-1 absolute bottom-full left-1/2 -translate-x-1/2">
+                      Delete blog
+                    </p>
+                    <MdDeleteForever className="text-red-500 text-xl relative" />
+                  </div>
+                </div>
+              </TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </>
   );
 };
