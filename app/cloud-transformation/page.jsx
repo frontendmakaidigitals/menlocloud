@@ -482,7 +482,7 @@ function Home() {
                     tabSelected == index
                       ? "bg-gray-900 text-gray-100"
                       : "bg-gray-100 hover:bg-blue-100 text-gray-900"
-                  } xl:text-sm xxl:text-[1rem] px-4 py-2 rounded-full cursor-pointer`}
+                  } xl:text-[.7rem] xxl:text-sm px-4 py-2 rounded-full cursor-pointer`}
                 >
                   {tab.name}
                 </p>
