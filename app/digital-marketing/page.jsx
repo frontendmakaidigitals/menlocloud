@@ -309,14 +309,14 @@ function About() {
                   data-jos_animation="fade-right"
                 >
                   {/* Section Content Block */}
-                  <div className="mb-6">
+                  <div className="mb-6 ">
                     <div className="mx-auto md:mx-0 md:max-w-none">
-                      <h2>Freely ask us for more information</h2>
+                      <h2 className="!font-Satoshi font-bold">Freely ask us for more information</h2>
                     </div>
                   </div>
                   {/* Section Content Block */}
                   <div className="text-lg leading-[1.4] lg:text-[21px]">
-                    <p className="mb-7 last:mb-0">
+                    <p className="mb-7 last:mb-0 !font-Satoshi font-medium">
                       At MenloCloud, our AI SaaS solutions enable rapid
                       deployment, allowing users to harness AI capabilities
                       instantly without lengthy setup times. Elevate your

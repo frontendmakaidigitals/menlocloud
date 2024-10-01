@@ -212,7 +212,7 @@ function Services() {
         </section>
         <div className="bg-[url('/assets/img_placeholder/bg.jpg')] bg-top bg-cover bg-no-repeat py-32">
           <section className="global-container ">
-            <p className="w-full text-3xl xl:text-6xl xxl:text-7xl font-Satoshi font-[500] text-start lg:text-center">
+            <p className="w-full text-3xl lg:text-6xl  font-Satoshi font-bold text-start lg:text-center">
               <span className="bg-gradient-to-r font-Telma from-blue-600 to-indigo-400 bg-clip-text  text-transparent">
                 {" "}
                 Industries{" "}
@@ -316,7 +316,7 @@ function Services() {
           </div>
         </div>
         <section className="mt-28">
-          <p className="global-container mb-10 text-3xl lg:text-6xl tracking-tight font-Satoshi font-[600] w-full lg:w-2/3  text-center">
+          <p className="w-full text-3xl lg:text-6xl font-Satoshi font-bold text-start lg:text-center global-container">
             Our{" "}
             <span className="bg-gradient-to-r font-Telma from-blue-600 to-indigo-400 bg-clip-text text-transparent">
               {" "}

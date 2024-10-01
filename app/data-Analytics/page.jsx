@@ -246,7 +246,7 @@ function Home() {
 
         <section className="my-10 py-24 bg-center bg-cover bg-no-repeat  ">
           <div className="">
-            <p className="global-container mb-2 text-3xl lg:text-5xl tracking-tight font-Satoshi font-bold w-full lg:w-2/3 text-center">
+            <p className="global-container mb-2 text-3xl lg:text-6xl tracking-tight font-Satoshi font-bold w-full lg:w-2/3 text-center">
               The Business Value of
               <span className="bg-gradient-to-r font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
                 {" "}
@@ -279,7 +279,7 @@ function Home() {
         </section>
         <section className="my-10 py-24   bg-no-repeat bg-center bg-cover bg-[url('https://img.freepik.com/free-vector/winter-blue-pink-gradient-background-vector_53876-117275.jpg?t=st=1727263918~exp=1727267518~hmac=baee65c2b8a027912f6643866ef0cda0cf4509c8dc6635623954698757fbbfd1&w=1060')]">
           <div className="">
-            <p className="global-container mb-2   text-3xl lg:text-5xl tracking-tight font-Satoshi font-bold w-full lg:w-2/3 text-center">
+            <p className="global-container mb-2   text-3xl lg:text-6xl tracking-tight font-Satoshi font-bold w-full lg:w-2/3 text-center">
               Challenges Businesses Face with
               <span className="bg-gradient-to-r font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
                 {" "}
@@ -314,7 +314,7 @@ function Home() {
         <section className="my-28 global-container">
           <div>
             <div className="flex  justify-between items-center">
-              <p className="text-3xl w-full text-center lg:text-start  lg:text-6xl  font-Satoshi font-[600]  lg:w-2/3">
+              <p className="text-3xl w-full text-center lg:text-start lg:text-6xl  font-Satoshi font-[600]  lg:w-2/3">
                 How Our Data Analytics{" "}
                 <span className="bg-gradient-to-r font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
                   Solutions

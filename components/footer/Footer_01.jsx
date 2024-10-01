@@ -1,13 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
 import { VelocityScroll } from "@/components/magicui/scroll-based-velocity";
-import { FaXTwitter, FaInstagram, FaLinkedin } from "react-icons/fa6";
+import {
+  FaXTwitter,
+  FaInstagram,
+  FaLinkedin,
+  FaFacebook,
+} from "react-icons/fa6";
 
 const Footer_01 = () => {
   return (
     <footer className="relative z-[1]  overflow-hidden rounded-tl-[30px] rounded-tr-[30px] bg-colorLinenRuffle lg:rounded-tl-[50px] lg:rounded-tr-[50px]">
       {/* Footer Top */}
-     
+
       {/* Footer Text Slider */}
       {/* Footer Top */}
       <div className="global-container">
@@ -111,6 +116,12 @@ const Footer_01 = () => {
                   LinkedIn
                 </button>
               </li>
+              <li>
+                <button className="flex items-center gap-2 group">
+                  <FaFacebook className="group-hover:text-blue-500 transition-all duration-200" />{" "}
+                  Facebook
+                </button>
+              </li>
             </ul>
           </div>
           {/* Footer Widget */}
@@ -156,8 +167,8 @@ const Footer_01 = () => {
           <p>
             Powered by insightvision.marketing © Copyright{" "}
             {new Date().getFullYear()}, All Rights Reserved by{" "}
-            <span className="text-xl font-bold">
-              menlo<span className="text-sky-500 italic">cloud</span>
+            <span className="text-xl font-Satoshi font-bold">
+              Menlo<span className="text-sky-500 font-Clash">Cloud</span>
             </span>
           </p>
         </div>

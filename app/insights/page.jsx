@@ -66,7 +66,7 @@ function Insights() {
             {/* Section Container */}
             <div className="global-container">
               <div className="breadcrumb-block">
-                <h1 className="breadcrumb-title !text-gray-100">Insights</h1>
+                <h1 className="breadcrumb-title !font-Satoshi font-bold !text-gray-100">Insights</h1>
                 <ul className="breadcrumb-nav !text-gray-50">
                   <li>
                     <Link className="!text-gray-100" href="/">

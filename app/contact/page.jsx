@@ -15,7 +15,7 @@ function Contact() {
             {/* Section Container */}
             <div className="global-container">
               <div className="breadcrumb-block">
-                <h1 className="breadcrumb-title !text-gray-100">Contact Us</h1>
+                <h1 className="breadcrumb-title !font-Satoshi font-bold !text-gray-100">Contact Us</h1>
                 <ul className="breadcrumb-nav !text-gray-50">
                   <li>
                     <Link className="!text-gray-100" href="/">
@@ -305,12 +305,14 @@ function Contact() {
           <div className="w-full flex justify-center   mt-10">
             <div className="w-[80%] min-h-[300px] xl:min-h-[600px] overflow-hidden rounded-xl border-2 border-blue-500">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.399066162812!2d-122.40211302358695!3d37.78068651181868!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085807e4c5e1f79%3A0xc58005d61e285437!2s400-408%204th%20St%2C%20San%20Francisco%2C%20CA%2094107%2C%20USA!5e0!3m2!1sen!2sin!4v1726642387022!5m2!1sen!2sin"
+               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d41446.0113600952!2d-122.09736922137861!3d37.37188977756141!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb0d23f5f9685%3A0x23377a57616b5d8!2sMountain%20View%2C%20CA%2094040%2C%20USA!5e0!3m2!1sen!2sin!4v1727774169479!5m2!1sen!2sin"
                 className="w-full h-full"
                 allowfullscreen=""
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
               />
+
+             
             </div>
           </div>
         </section>

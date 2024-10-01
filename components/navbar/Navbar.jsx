@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import {
   Accordion,
   AccordionContent,
@@ -16,22 +17,13 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import {
-  Pagination,
-  PaginationContent,
-  PaginationEllipsis,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
-} from "@/components/ui/pagination";
 
 const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
   const [mobileSubMenu, setMobileSubMenu] = useState("");
   const [mobileSubMenuSub, setMobileSubMenuSub] = useState("");
   const [menuTitle, setMenuTitle] = useState("");
-  console.log(mobileMenu);
-
+  const pathname = usePathname(); 
+   
   const handleMenu = () => {
     setMobileMenu(false);
     setMobileSubMenu("");
@@ -73,7 +65,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
       return;
     }
   };
-
+console.log(pathname)
   return (
     <div className="menu-block-wrapper">
       <div
@@ -114,7 +106,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                               Leveraging today’s data for a more promising
                               future
                             </p>
-                          </div>
+                          </div> 
                         </Link>
                       </div>
                       <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
@@ -273,16 +265,16 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                 <NavigationMenuItem>
                   <Link href="/insights" legacyBehavior passHref>
                     <NavigationMenuLink
-                      className={`${navigationMenuTriggerStyle()} bg-transparent xl:text-md xxl:text-lg`}
+                      className={`${navigationMenuTriggerStyle()} ${pathname == '/insights' ?  '!bg-sky-100 text-black' : 'bg-trasparent' }  xl:text-md xxl:text-lg`}
                     >
                       Insights
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
-                <NavigationMenuItem>
+                <NavigationMenuItem >
                   <Link href="/about" legacyBehavior passHref>
                     <NavigationMenuLink
-                      className={`${navigationMenuTriggerStyle()} bg-transparent xl:text-md xxl:text-lg`}
+                      className={`${navigationMenuTriggerStyle()} ${pathname == '/about' ?  '!bg-sky-100 text-black' : 'bg-trasparent' }  xl:text-md xxl:text-lg`}
                     >
                       About Us
                     </NavigationMenuLink>
@@ -291,7 +283,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                 <NavigationMenuItem>
                   <Link href="/contact" legacyBehavior passHref>
                     <NavigationMenuLink
-                      className={`${navigationMenuTriggerStyle()} bg-transparent  xl:text-md xxl:text-lg`}
+                      className={`${navigationMenuTriggerStyle()} ${pathname == '/contact' ?  '!bg-sky-100 text-black' : 'bg-trasparent' } xl:text-md xxl:text-lg`}
                     >
                       Contact
                     </NavigationMenuLink>
