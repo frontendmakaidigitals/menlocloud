@@ -557,7 +557,7 @@ function Home() {
             {tabs[tabSelected].description2}
           </p>
 
-          <div className="mt-5  w-full flex justify-center ">
+          <div className="mt-6 w-full flex justify-center ">
             <button className="text-gray-50 overflow-hidden group rounded-lg relative font-Satoshi font-semibold py-2 px-5 bg-gray-900">
               <p className="relative z-10">Lets Connect</p>
               <div className="bg-sky-500 w-1 h-1 group-hover:scale-[50] absolute -bottom-1 left-1/2 -translate-1/2 rounded-full transition-all duration-300" />
