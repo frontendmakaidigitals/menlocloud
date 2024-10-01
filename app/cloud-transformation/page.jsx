@@ -377,8 +377,8 @@ function Home() {
             </div>
           </div>
         </section>
-        <section className="my-10 py-24 bg-center bg-cover bg-no-repeat  ">
-          <div className="">
+        <section className="mb-5 py-24 bg-center bg-cover bg-no-repeat  ">
+          <div className="hidden">
             <p className="global-container mb-2 text-3xl lg:text-5xl tracking-tight font-Satoshi font-bold w-full lg:w-2/3 text-center">
               Importance of
               <span className="bg-gradient-to-r font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
@@ -388,27 +388,36 @@ function Home() {
               in Today’s Digital Landscape
             </p>
           </div>
+          <div className="">
+            <p className=" mb-2 global-container text-lg lg:text-xl tracking-tight font-Satoshi font-medium w-full lg:w-2/3 text-center">
+              In today's rapidly evolving digital landscape, businesses are
+              under immense pressure to innovate and adapt. Cloud transformation
+              offers a powerful solution to meet these challenges. By migrating
+              your applications and data to the cloud, you can unlock a host of
+              benefits, including:
+            </p>
 
-          <div className="w-full mt-10 global-container grid grid-cols-1 lg:grid-cols-4 gap-5">
-            {benefits.map((elem, index) => (
-              <motion.div
-                key={index}
-                className={`w-full bg-gray-100 relative p-7 rounded-lg overflow-hidden`}
-                initial={{ opacity: 0, y: 20 }} // Starting state
-                animate={{ opacity: 1, y: 0 }} // End state
-                transition={{ duration: 0.5, delay: index * 0.1 }} // Transition timing
-              >
-                <p className="text-xl relative z-10 text-center lg:text-2xl font-Satoshi font-[600] ">
-                  {elem.name}
-                </p>
-                <p className=" text-md font-Satoshi relative z-10 text-center lg:text-lg">
-                  {elem.description}
-                </p>
-              </motion.div>
-            ))}
+            <div className="w-full mt-10 global-container grid grid-cols-1 lg:grid-cols-4 gap-5">
+              {benefits.map((elem, index) => (
+                <motion.div
+                  key={index}
+                  className={`w-full bg-[#18FFFF]  relative p-7 rounded-lg overflow-hidden`}
+                  initial={{ opacity: 0, y: 20 }} // Starting state
+                  animate={{ opacity: 1, y: 0 }} // End state
+                  transition={{ duration: 0.5, delay: index * 0.1 }} // Transition timing
+                >
+                  <p className="text-xl relative z-10 text-center lg:text-2xl font-Satoshi font-[600] ">
+                    {elem.name}
+                  </p>
+                  <p className=" text-md font-Satoshi mt-2 relative z-10 text-center lg:text-lg">
+                    {elem.description}
+                  </p>
+                </motion.div>
+              ))}
+            </div>
           </div>
           <div className="mt-16 ">
-            <p className=" mb-2 global-container text-lg lg:text-xl tracking-tight font-Satoshi font-bold w-full lg:w-2/3 text-center">
+            <p className=" mb-2 global-container text-lg lg:text-xl tracking-tight font-Satoshi font-medium w-full lg:w-2/3 text-center">
               At MenloCloud, we specialize in helping businesses of all sizes
               achieve their cloud transformation goals. Our team of experts has
               the knowledge and experience to guide you through every step of
