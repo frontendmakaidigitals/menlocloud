@@ -401,7 +401,7 @@ function Home() {
               {benefits.map((elem, index) => (
                 <motion.div
                   key={index}
-                  className={`w-full bg-[#18FFFF]  relative p-7 rounded-lg overflow-hidden`}
+                  className={`w-full bg-slate-200  relative p-7 rounded-lg overflow-hidden`}
                   initial={{ opacity: 0, y: 20 }} // Starting state
                   animate={{ opacity: 1, y: 0 }} // End state
                   transition={{ duration: 0.5, delay: index * 0.1 }} // Transition timing
