@@ -319,11 +319,11 @@ console.log(pathname)
                       </p>
                     </Link>
                     <div className="xl:p-3  xxl:p-5     text-gray-800  cursor-pointer rounded-xl">
-                      <p className="text-md font-bold">Cloud Transformation</p>
+                      <Link href={ '/cloud-Transformation'}>  <p className="text-md font-bold">Cloud Transformation</p>
                       <p className="text-sm font-medium mt-1 text-gray-600">
                         Bridging conventional and generative AI to deliver
                         effective, real-world applications.
-                      </p>
+                      </p></Link>
                     </div>
                     <Link
                       href={"/mobile-Development"}
