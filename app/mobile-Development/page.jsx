@@ -76,7 +76,10 @@ const industryTabs = [
     name: "Fintech",
     img: "/assets/img_placeholder/app-image/Fintech.png",
   },
-  { name: "Enterprise", img: "/assets/img_placeholder/app-image/Enterprises.png" },
+  {
+    name: "Enterprise",
+    img: "/assets/img_placeholder/app-image/Enterprises.png",
+  },
   {
     name: "Hospital & Healthcare",
     img: "/assets/img_placeholder/app-image/Healthcare.png",
@@ -252,7 +255,7 @@ function GenAI() {
               </div>
 
               <div
-                className="w-full xl:w-[230px] xxl:w-[280px] lg:m-0 relative
+                className="w-full my-10 lg:my-0 xl:w-[230px] xxl:w-[280px] lg:m-0 relative
               "
               >
                 <img
@@ -392,10 +395,18 @@ function GenAI() {
                   <button
                     key={index}
                     onClick={() => setTabId(index)}
-                    className={`px-5 overflow-hidden font-Satoshi font-[400] text-xl relative group py-2 border  delay-100 rounded-full ${tabId == index ? "bg-sky-400" : "border-gray-900 hover:border-transparent"}`}
+                    className={`px-5 overflow-hidden font-Satoshi font-[400] text-xl relative group py-2 border  delay-100 rounded-full ${
+                      tabId == index
+                        ? "bg-sky-400"
+                        : "border-gray-900 hover:border-transparent"
+                    }`}
                   >
                     <span
-                      className={`relative z-10  ${tabId == index ? "text-slate-100" : "group-hover:text-slate-100"}`}
+                      className={`relative z-10  ${
+                        tabId == index
+                          ? "text-slate-100"
+                          : "group-hover:text-slate-100"
+                      }`}
                     >
                       {elem.name}
                     </span>
