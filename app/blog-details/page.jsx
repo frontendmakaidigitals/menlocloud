@@ -37,9 +37,7 @@ function BlogDetails() {
                         <img
                           src="https://images.unsplash.com/photo-1543286386-713bdd548da4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                           alt="blog-main-1"
-                          width={856}
-                          height={540}
-                          className="h-auto w-full scale-100 object-cover"
+                          className="h-[300px] lg:h-[700px] w-full  object-cover"
                         />
                       </div>
                       {/* Blog Post Meta */}
