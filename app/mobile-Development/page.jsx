@@ -259,7 +259,7 @@ function GenAI() {
               "
               >
                 <img
-                  className="relative z-[10]"
+                  className="relative z-[12]"
                   src={`/assets/img_placeholder/heroIphone.png`}
                 />
               </div>
