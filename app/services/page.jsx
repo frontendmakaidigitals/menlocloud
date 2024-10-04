@@ -174,7 +174,7 @@ function Services() {
       <main className="main-wrapper relative overflow-hidden">
         <div className="w-full  h-[85vh] xl:h-screen bg-no-repeat bg-center bg-cover bg-[url('https://images.pexels.com/photos/5716052/pexels-photo-5716052.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')]">
           <div className="bg-gradient-to-b w-full h-full from-gray-800/50 via-transparent to-gray-700/40">
-            <div className="global-container flex flex-col justify-around  w-full h-full">
+            <div className="global-container flex flex-col justify-around h-full">
               <div></div>
               <div></div>
               <div className="mt-32 xl:mt-0">

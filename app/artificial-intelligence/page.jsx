@@ -69,7 +69,7 @@ function About() {
             {/* Section Container */}
             <div className="global-container flex flex-col justify-center items-center">
               <div className="breadcrumb-block w-full ">
-                <p className="text-3xl  xl:text-4xl text-start leading-loose xxl:text-7xl w-2/3 font-Satoshi font-bold !text-gray-100">
+                <p className="text-3xl xl:text-4xl text-start leading-loose xxl:text-7xl w-2/3 font-Satoshi font-bold !text-gray-100">
                   Innovating{" "}
                   <span className="text-blue-500 font-Clash">Intelligence</span>{" "}
                   for a Smarter World

@@ -365,7 +365,7 @@ function Home() {
         >
           <div className="absolute min-w-[1200px] overflow-hidden w-full h-full "></div>
           <div className="w-full h-full bg-gradient-to-b from-gray-900/40 to-gray-900/10 absolute top-0 left-0" />
-          <div className="global-container overflow-hidden relative z-5 w-full h-full flex flex-col justify-end items-start">
+          <div className="global-container overflow-hidden relative z-5 h-full flex flex-col justify-end items-start">
             <div className=" w-full lg:w-2/3">
               <p className="text-gray-50 font-Satoshi font-bold py-5 text-2xl  lg:text-5xl xxl:text-6xl">
                 Accelerate Your Digital Journey with Cloud Transformation

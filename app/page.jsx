@@ -380,7 +380,7 @@ function Home() {
           </div>
           <div className="w-full h-full z-4 overflow-hidden absolute top-0 left-0 bg-gradient-to-t from-gray-900/60 to-transparent"></div>
 
-          <div className="global-container overflow-hidden relative z-5 w-full h-full flex flex-col justify-center items-start">
+          <div className="global-container overflow-hidden relative z-5 h-full flex flex-col justify-center items-start">
             <div className=" w-full">
               <p className="text-gray-50 text-2xl  lg:text-6xl xxl:text-7xl">
                 We specialize in
@@ -962,22 +962,23 @@ function Home() {
                       whileHover={{ backgroundColor: elem.hoverColor }}
                       className={` rounded-xl bg-slate-100`}
                     >
-                      <Link href='/blog-details'>
-                      <div
-                        className="w-full h-64 bg-no-repeat rounded-xl bg-center bg-cover "
-                        style={{ backgroundImage: `url(${elem.img})` }}
-                      ></div>
-                      <div className="px-3 py-5">
-                        <p>Author name </p>
-                        <p className="xl:text-lg xxl:text-2xl font-Satoshi text-gray-900 mt-2 font-semibold">
-                          {elem.title}
-                        </p>
-                        <p className="xl:text-sm xxl:text-lg font-Satoshi tracking-tight mt-2 font-medium">
-                          Lorem ipsum dolor sit amet, consectetur adipiscing
-                          elit, sed do eiusmod tempor incididunt ut labore et
-                          dolore magna aliqua.
-                        </p>
-                      </div></Link>
+                      <Link href="/blog-details">
+                        <div
+                          className="w-full h-64 bg-no-repeat rounded-xl bg-center bg-cover "
+                          style={{ backgroundImage: `url(${elem.img})` }}
+                        ></div>
+                        <div className="px-3 py-5">
+                          <p>Author name </p>
+                          <p className="xl:text-lg xxl:text-2xl font-Satoshi text-gray-900 mt-2 font-semibold">
+                            {elem.title}
+                          </p>
+                          <p className="xl:text-sm xxl:text-lg font-Satoshi tracking-tight mt-2 font-medium">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing
+                            elit, sed do eiusmod tempor incididunt ut labore et
+                            dolore magna aliqua.
+                          </p>
+                        </div>
+                      </Link>
                     </motion.div>
                   </SwiperSlide>
                 );

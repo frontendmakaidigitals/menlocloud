@@ -199,10 +199,10 @@ function GenAI() {
   return (
     <>
       <Header_01 />
-      <main className="main-wrapper relative ">
-        <div className="w-full  h-[85vh] xl:h-screen bg-no-repeat bg-center bg-cover bg-[url('https://images.unsplash.com/photo-1636690424408-4330adc3e583?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')]">
+      <main className="main-wrapper relative">
+        <div className="w-full h-[85vh] xl:h-screen bg-no-repeat bg-center bg-cover bg-[url('https://images.unsplash.com/photo-1636690424408-4330adc3e583?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')]">
           <div className="bg-gradient-to-b w-full h-full from-gray-800/50 via-transparent to-gray-700/40">
-            <div className="global-container flex flex-col justify-around  w-full h-full">
+            <div className="global-container flex flex-col justify-around h-full">
               <div></div>
               <div></div>
               <div className="mt-32 xl:mt-0">
@@ -494,7 +494,6 @@ function GenAI() {
             </Link>
           </div>
         </section>
-       
       </main>
       <Footer_01 />
     </>

@@ -83,9 +83,9 @@ function Industries() {
       <Header_01 />
       <main className="main-wrapper relative ">
         <div className="w-full h-auto lg:h-[85vh] xl:h-screen bg-no-repeat bg-center bg-cover bg-[url('https://images.unsplash.com/photo-1725203574073-79922f64110a?q=80&w=2012&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')]">
-          <div className="bg-gradient-to-b w-full h-full from-gray-800/50 via-transparent to-gray-700/40">
-            <div className="global-container  flex  lg:flex-row items-end py-32 justify-start  w-full h-full">
-              <div className="mt-32 xl:mt-0 w-full lg:w-2/3">
+          <div className="  bg-gradient-to-b w-full h-full from-gray-800/50 via-transparent to-gray-700/40">
+            <div className="global-container flex lg:flex-row items-end py-32 justify-start h-full">
+              <div className=" mt-32 xl:mt-0 w-full lg:w-2/3 ">
                 <p className="font-Satoshi text-3xl xl:text-4xl xxl:text-6xl w-full font-bold text-center lg:text-start text-black">
                   Empowering Industries Through Proven Solutions
                 </p>
