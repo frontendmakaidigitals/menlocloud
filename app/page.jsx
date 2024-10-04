@@ -14,6 +14,7 @@ import SwiperNavButtons from "@/components/SwiperNavButton";
 import { HiOutlineArrowDown } from "react-icons/hi2";
 import { LampContainer } from "@/components/ui/lamp";
 import { IoIosArrowRoundForward } from "react-icons/io";
+import Form from "@/components/PopUp-form/form";
 const techLogos = [
   {
     username: "@jack",
@@ -258,6 +259,7 @@ const specialize = [
 function Home() {
   const [isVisible, setIsVisible] = useState(true);
   const [isTopVisible, setIsTop] = useState(false);
+  const [isOpen, setisOpen] = useState(false);
   const parentVariants = {
     hover: {
       scale: 1.02, // Scale up the parent a bit
@@ -308,7 +310,8 @@ function Home() {
   const words = [
     "Software Development",
     "Digital Strategies",
-    "Talent Solutions",
+    "Generative AI",
+    "Cloud Transformation",
   ];
   useEffect(() => {
     // Function to handle scroll events
@@ -349,6 +352,7 @@ function Home() {
   return (
     <div className="page-wrapper relative z-[1] bg-white">
       <Header_01 />
+      {isOpen ? <Form setIsOpen={setisOpen} /> : null}
       <motion.div
         animate={{
           x: isVisible ? "-50%" : 0,
@@ -437,12 +441,13 @@ function Home() {
                   {elem.description}
                 </p>
                 <div className="w-full flex justify-start mt-7">
-                  <Link href={elem.link}>
-                    <button className="text-gray-50 overflow-hidden group rounded-lg relative font-Satoshi font-medium py-2 text-md px-5 bg-gray-900">
-                      <p className="relative z-10">Lets Connect</p>
-                      <div className="bg-sky-500 w-1 h-1 group-hover:scale-[50] absolute -bottom-1 left-1/2 -translate-1/2 rounded-full transition-all duration-300" />
-                    </button>
-                  </Link>
+                  <button
+                    onClick={() => setisOpen(true)}
+                    className="text-gray-50 overflow-hidden group rounded-lg relative font-Satoshi font-medium py-2 text-md px-5 bg-gray-900"
+                  >
+                    <p className="relative z-10">Lets Connect</p>
+                    <div className="bg-sky-500 w-1 h-1 group-hover:scale-[50] absolute -bottom-1 left-1/2 -translate-1/2 rounded-full transition-all duration-300" />
+                  </button>
                 </div>
               </motion.div>
             ))}
@@ -898,7 +903,7 @@ function Home() {
               }}
               className="text-center mt-8 px-4 py-2 bg-gradient-to-b from-slate-400 to-slate-500 rounded-md font-Satoshi font-medium tracking-tight text-2xl md:text-xl   !text-gray-900 "
             >
-              <Link href={`/contact`}>learn more</Link>
+              <Link href={`/about`}>learn more</Link>
             </motion.button>
           </LampContainer>
         </section>
