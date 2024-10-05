@@ -8,6 +8,9 @@ import {
   CreateLink,
   InsertThematicBreak,
   UndoRedo,
+  linkDialogPlugin,
+  listsPlugin,
+  BlockTypeSelect,
 } from "@mdxeditor/editor";
 import "@mdxeditor/editor/style.css";
 import { on } from "events";
@@ -26,9 +29,12 @@ const Editor = ({ onChange, markdown, editorRef }) => {
               <CreateLink />
               <InsertThematicBreak />
               <UndoRedo />
+              <BlockTypeSelect />
             </>
           ),
         }),
+        linkDialogPlugin(),
+        listsPlugin(),
       ]}
     />
   );

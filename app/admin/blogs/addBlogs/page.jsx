@@ -6,6 +6,9 @@ import { HiMiniEye } from "react-icons/hi2";
 import { RiCloseLargeLine } from "react-icons/ri";
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
+import { ToastAction } from "@/components/ui/toast";
+import axios from "axios";
+
 const EditorComp = dynamic(() => import("@/components/MDXEditor"), {
   ssr: false,
 });
@@ -56,7 +59,33 @@ const Blogform = () => {
   const { images } = watch();
   const [blogDetail, setBlogDetail] = useState(null);
   const [imageOpen, setimageOpen] = useState(false);
-  const onSubmit = (data) => console.log(data?.images[0]?.name);
+  const onSubmit = (data) => {
+    if (true) {
+      axios.get("https://admin.yatriclubs.com/sanctum/csrf-cookie", {
+        withCredentials: true,
+      });
+      axios
+        .post(
+          `https://admin.yatriclubs.com/api/blog`,
+          {
+            data,
+            blogDetail,
+            tags,
+          },
+          { withCredentials: true }
+        )
+        .then((res) => {
+          console.log(res);
+        })
+
+        .catch((error) => {
+          console.error(error);
+        })
+        .finally(() => {
+          console.log("finally");
+        });
+    }
+  };
   return (
     <>
       <form onSubmit={handleSubmit(onSubmit)} className="w-full relative">
@@ -66,6 +95,7 @@ const Blogform = () => {
               onClick={() => setimageOpen(false)}
               className="text-4xl absolute p-1 top-4 right-4 bg-black rounded-md cursor-pointer hover:bg-red-500 text-gray-50"
             />
+            ~``
             <div className="h-full">
               <img src={URL.createObjectURL(images[0])} className="h-full" />
             </div>
@@ -90,7 +120,7 @@ const Blogform = () => {
           </div>
         </div>
 
-        <div className="w-full mt-2">
+        <div className="w-full mt-4">
           <p className="font-Satoshi font-medium"> Meta Description</p>
           <input
             placeholder="Meta Description"
@@ -135,7 +165,7 @@ const Blogform = () => {
               </div>
             </div>
           </div>
-          <div className="w-full ">
+          <div className="w-full mt-4">
             <p className="font-Satoshi font-medium"> Tags </p>
             <div className="relative bg-gray-200 rounded-md  flex items-center gap-3">
               <div
@@ -171,7 +201,7 @@ const Blogform = () => {
           </div>
         </div>
 
-        <div className="w-full mt-2">
+        <div className="w-full mt-4">
           <p className="font-Satoshi font-medium">Description</p>
           <div className=" bg-gray-200 rounded-md">
             <Suspense fallback={null}>
