@@ -4,6 +4,16 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { HiMiniEye } from "react-icons/hi2";
 import { RiCloseLargeLine } from "react-icons/ri";
+import dynamic from "next/dynamic";
+import { Suspense } from "react";
+const EditorComp = dynamic(() => import("@/components/MDXEditor"), {
+  ssr: false,
+});
+
+const markdown = `
+Write your blog here
+`;
+
 const page = () => {
   return (
     <div className="relative">
@@ -18,6 +28,25 @@ const page = () => {
 export default page;
 
 const Blogform = () => {
+  const [tags, setTags] = useState([]);
+  const [inputValue, setInputValue] = useState("");
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter" && inputValue.trim()) {
+      e.preventDefault(); // Prevent form submission
+      const newTags = [...tags, inputValue.trim()];
+      setTags(newTags);
+      setInputValue("", newTags); // Update the form state with the tags
+      setInputValue(""); // Clear the input
+    }
+  };
+
+  const removeTag = (tagToRemove) => {
+    const newTags = tags.filter((tag) => tag !== tagToRemove);
+    setTags(newTags);
+    setInputValue("", newTags); // Update the form state with the new tags
+  };
+
   const {
     register,
     handleSubmit,
@@ -25,7 +54,7 @@ const Blogform = () => {
     formState: { errors, isSubmitting },
   } = useForm();
   const { images } = watch();
-
+  const [blogDetail, setBlogDetail] = useState(null);
   const [imageOpen, setimageOpen] = useState(false);
   const onSubmit = (data) => console.log(data?.images[0]?.name);
   return (
@@ -69,54 +98,97 @@ const Blogform = () => {
             className="px-3 w-full py-1 block mt-1 bg-gray-200 placeholder:text-gray-600 rounded-md"
           />
         </div>
-        <div className="w-full mt-2">
-          <p className="font-Satoshi font-medium">Description</p>
-          <textarea
-            placeholder="Description"
-            {...register("description")}
-            className="px-3 min-h-40 resize-none w-full py-1 block mt-1 bg-gray-200 placeholder:text-gray-600 rounded-md"
-          />
-        </div>
 
-        <div className="w-full mt-2 ">
-          <p className="font-Satoshi font-medium">Add Image</p>
-          <div className="flex w-full items-center gap-2">
-            <div className=" bg-gray-200 w-full relative flex items-center py-3 justify-between pl-3 pr-10 rounded-md">
-              <div className="w-full">
-                <p className="text-sm truncate">
-                  {images ? images[0]?.name : "No image selected"}
-                </p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 place-items-center">
+          <div className="w-full ">
+            <p className="font-Satoshi font-medium">Add Image</p>
+            <div className="flex w-full items-center gap-2">
+              <div className=" bg-gray-200 w-full relative flex items-center py-3 justify-between pl-3 pr-10 rounded-md">
+                <div className="w-full">
+                  <p className="text-sm truncate">
+                    {images?.length > 0 ? images[0]?.name : "No image selected"}
+                  </p>
+                </div>
+                <label
+                  htmlFor="image"
+                  className="absolute top-1/2 -translate-y-1/2 right-2 cursor-pointer hover:bg-sky-400 bg-sky-300 px-2 rounded-md font-Satoshi font-bold text-2xl"
+                >
+                  +
+                </label>
+                <input
+                  className="hidden"
+                  id="image"
+                  {...register("images")}
+                  type="file"
+                  accept=".jpg, .jpeg, .png"
+                />
               </div>
-              <label
-                htmlFor="image"
-                className="absolute top-1/2 -translate-y-1/2 right-2 cursor-pointer hover:bg-sky-400 bg-sky-300 px-2 rounded-md font-Satoshi font-bold text-2xl"
+              <div
+                onClick={images ? () => setimageOpen(true) : null}
+                className={`p-2  rounded-md ${
+                  images
+                    ? "text-gray-900 hover:bg-gray-300 cursor-pointer"
+                    : "text-gray-600 cursor-not-allowed"
+                }`}
               >
-                +
-              </label>
-              <input
-                className="hidden"
-                id="image"
-                {...register("images")}
-                type="file"
-                accept=".jpg, .jpeg, .png"
-              />
+                <HiMiniEye className={`text-xl `} />
+              </div>
             </div>
-            <div
-              onClick={images ? () => setimageOpen(true) : null}
-              className={`p-2  rounded-md ${
-                images
-                  ? "text-gray-900 hover:bg-gray-300 cursor-pointer"
-                  : "text-gray-600 cursor-not-allowed"
-              }`}
-            >
-              <HiMiniEye className={`text-xl `} />
+          </div>
+          <div className="w-full ">
+            <p className="font-Satoshi font-medium"> Tags </p>
+            <div className="relative bg-gray-200 rounded-md  flex items-center gap-3">
+              <div
+                className={`flex flex-wrapf gap-3 justify-start ${tags.length === 0 ? "ml-0" : "ml-2"}`}
+              >
+                {tags.map((tag, index) => (
+                  <div
+                    key={index}
+                    className="bg-lime-400 text-black px-4 py-1 rounded-full flex items-center"
+                  >
+                    {tag}
+                    <button
+                      onClick={() => removeTag(tag)}
+                      className="ml-2 text-white"
+                    >
+                      &times;
+                    </button>
+                  </div>
+                ))}
+              </div>
+              <input
+                type="text"
+                value={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
+                onKeyDown={handleKeyPress}
+                placeholder={tags.length === 0 ? "Add a tag" : ""}
+                className=" py-2 bg-transparent focus:outline-none"
+                style={{
+                  paddingLeft: tags.length > 0 ? ".5rem" : "4px",
+                }}
+              />
             </div>
           </div>
         </div>
-        <input
+
+        <div className="w-full mt-2">
+          <p className="font-Satoshi font-medium">Description</p>
+          <div className=" bg-gray-200 rounded-md">
+            <Suspense fallback={null}>
+              <EditorComp
+                markdown={markdown}
+                onChange={(value) => setBlogDetail(value)}
+              />
+            </Suspense>
+          </div>
+        </div>
+
+        <button
           type="submit"
-          className="px-5 py-1 cursor-pointer font-Satoshi mt-8 font-semibold bg-sky-400 rounded-md text-gray-900"
-        />
+          className="px-5 py-1 cursor-pointer font-Satoshi mt-8 font-semibold bg-sky-300 hover:bg-sky-500 rounded-md text-gray-900"
+        >
+          {isSubmitting ? "Submitting..." : "Submit"}
+        </button>
       </form>
     </>
   );
