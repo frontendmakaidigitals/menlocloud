@@ -1,5 +1,4 @@
 "use client";
-
 import {
   MDXEditor,
   BoldItalicUnderlineToggles,
@@ -8,14 +7,16 @@ import {
   CreateLink,
   InsertThematicBreak,
   UndoRedo,
+  BlockTypeSelect,
   linkDialogPlugin,
   listsPlugin,
-  BlockTypeSelect,
+  thematicBreakPlugin,
+  InsertFrontmatter,
 } from "@mdxeditor/editor";
 import "@mdxeditor/editor/style.css";
-import { on } from "events";
 
 const Editor = ({ onChange, markdown, editorRef }) => {
+  console.log(markdown ? markdown : "");
   return (
     <MDXEditor
       onChange={onChange}
@@ -27,15 +28,16 @@ const Editor = ({ onChange, markdown, editorRef }) => {
             <>
               <BoldItalicUnderlineToggles />
               <ListsToggle />
+              <BlockTypeSelect />
               <CreateLink />
               <InsertThematicBreak />
               <UndoRedo />
-              <BlockTypeSelect />
             </>
           ),
         }),
         linkDialogPlugin(),
         listsPlugin(),
+        thematicBreakPlugin(),
       ]}
     />
   );

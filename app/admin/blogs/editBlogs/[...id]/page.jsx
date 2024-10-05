@@ -1,7 +1,7 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import React from "react";
-import { useForm } from "react-hook-form";
+
 import { HiMiniEye } from "react-icons/hi2";
 import { RiCloseLargeLine } from "react-icons/ri";
 import dynamic from "next/dynamic";
@@ -18,20 +18,21 @@ const markdown = `
 Write your blog here
 `;
 
-const page = () => {
+const Page = ({ params }) => {
+  const id = params.id[0];
   return (
     <div className="relative">
-      <p className="mt-6 font-Satoshi font-medium text-2xl">Add Blog</p>
+      <p className="mt-6 font-Satoshi font-medium text-2xl">Edit Blog</p>
       <div className="mt-4 w-full ">
-        <Blogform />
+        <Blogform id={id} />
       </div>
     </div>
   );
 };
 
-export default page;
+export default Page;
 
-const Blogform = () => {
+const Blogform = ({ id }) => {
   const router = useRouter();
   const [tags, setTags] = useState([]);
   const [inputValue, setInputValue] = useState("");
@@ -67,8 +68,40 @@ const Blogform = () => {
   const [image, setImage] = useState(null);
   const [blogDetail, setBlogDetail] = useState(null);
   const [imageOpen, setimageOpen] = useState(false);
+  const imageURL = "https://admin.yatriclubs.com/";
+  const getBlog = () => {
+    if (true) {
+      axios.get("https://admin.yatriclubs.com/sanctum/csrf-cookie", {
+        withCredentials: true,
+      });
+      axios
+        .get(`https://admin.yatriclubs.com/api/editblog/${id}`, {
+          withCredentials: true,
+        })
+        .then((res) => {
+          console.log(res.data);
+          setTitle(res.data.Name);
+          setMetaDiscription(res.data.metaDiscription);
+          setMetaTag(res.data.metaTag);
+          setTags(res.data.tags.replace(/^"|"$|\\/g, "").split(","));
+          setBlogDetail(res.data.description);
+          setImage(res.data.image);
+        })
 
-  const submitBlog = () => {
+        .catch((error) => {
+          console.error(error);
+        })
+        .finally(() => {
+          console.log("finally");
+        });
+    }
+  };
+  useEffect(() => {
+    getBlog();
+  }, []);
+
+  const submitBlog = (e) => {
+    e.preventDefault();
     if (true) {
       const formData = new FormData();
       formData.append("title", title);
@@ -77,15 +110,15 @@ const Blogform = () => {
       formData.append("blogDetail", blogDetail);
       formData.append("tags", tags);
 
-      if (image && image.length > 0) {
-        formData.append("image", image[0]); // Only append the first image
+      if (image && image.length > 0 && image[0] instanceof File) {
+        formData.append("image", image[0]);
       }
       setIsSubmitting(true);
       axios.get("https://admin.yatriclubs.com/sanctum/csrf-cookie", {
         withCredentials: true,
       });
       axios
-        .post(`https://admin.yatriclubs.com/api/blog`, formData, {
+        .post(`https://admin.yatriclubs.com/api/updateblog/${id}`, formData, {
           withCredentials: true,
           headers: { "Content-Type": "multipart/form-data" },
         })
@@ -117,7 +150,14 @@ const Blogform = () => {
             />
             ~``
             <div className="h-full">
-              <img src={URL.createObjectURL(image[0])} className="h-full" />
+              <img
+                src={
+                  typeof image === "string"
+                    ? imageURL + image
+                    : URL.createObjectURL(image[0])
+                }
+                className="h-full"
+              />
             </div>
           </div>
         ) : null}
@@ -159,7 +199,11 @@ const Blogform = () => {
               <div className=" bg-gray-200 w-full relative flex items-center py-3 justify-between pl-3 pr-10 rounded-md">
                 <div className="w-full">
                   <p className="text-sm truncate">
-                    {image?.length > 0 ? image[0]?.name : "No image selected"}
+                    {typeof image == "string"
+                      ? image?.split("/").pop()
+                      : image
+                        ? image[0]?.name
+                        : null}
                   </p>
                 </div>
                 <label
@@ -192,12 +236,12 @@ const Blogform = () => {
             <p className="font-Satoshi font-medium"> Tags </p>
             <div className="relative bg-gray-200 rounded-md  flex items-center gap-3">
               <div
-                className={`flex flex-wrapf gap-3 justify-start ${tags.length === 0 ? "ml-0" : "ml-2"}`}
+                className={`flex flex-wrap gap-3 justify-start ${tags.length === 0 ? "ml-0" : "ml-2"}`}
               >
                 {tags.map((tag, index) => (
                   <div
                     key={index}
-                    className="bg-lime-400 text-black px-4 py-1 rounded-full flex items-center"
+                    className="bg-lime-400 text-black px-4 py-1 rounded-md text-sm flex items-center"
                   >
                     {tag}
                     <button
@@ -226,10 +270,10 @@ const Blogform = () => {
 
         <div className="w-full mt-4">
           <p className="font-Satoshi font-medium">Description</p>
-          <div className=" bg-gray-200 rounded-md">
+          <div className=" border border-black rounded-md">
             <Suspense fallback={null}>
               <EditorComp
-                markdown={markdown}
+                markdown={blogDetail ? blogDetail : ""}
                 onChange={(value) => setBlogDetail(value)}
               />
             </Suspense>
@@ -237,8 +281,8 @@ const Blogform = () => {
         </div>
 
         <button
-          onClick={submitBlog}
           disabled={isSubmitting}
+          onClick={submitBlog}
           className={`px-5 py-1 cursor-pointer font-Satoshi mt-8 font-semibold  ${isSubmitting ? "bg-gray-500" : "bg-sky-300 hover:bg-sky-500"} ${status === "success" ? "bg-green-500" : "bg-red-500"}  rounded-md text-gray-900`}
         >
           {isSubmitting ? (
