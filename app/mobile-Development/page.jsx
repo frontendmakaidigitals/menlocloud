@@ -456,7 +456,7 @@ function GenAI() {
             <div className=" flex flex-col gap-10 col-span-2">
               {mobileServices.map((elem, index) => (
                 <div key={index} className="">
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-4">
                     <div className="size-16 p-3 overflow-hidden bg-lime-300 rounded-full">
                       <img src={elem.icon} />
                     </div>
