@@ -2,8 +2,10 @@
 import Footer_01 from "@/components/footer/Footer_01";
 import Header_01 from "@/components/header/Header_01";
 import "swiper/css/navigation";
+import { FaArrowRightLong } from "react-icons/fa6";
 import "swiper/css";
-import { useRef } from "react";
+import { useEffect, useState } from "react";
+import { BsHandIndexThumbFill } from "react-icons/bs";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Timeline } from "@/components/ui/timeline";
@@ -15,24 +17,28 @@ const Aiservices = [
     color: "#FF5252",
     img: "https://static.vecteezy.com/system/resources/previews/011/781/824/original/healthcare-3d-render-icon-illustration-png.png",
     description: "Accurate and timely diagnosis",
+    sol: "Ai-assisted medical imaging analysis",
   },
   {
     name: "Finance",
     color: "#7C4DFF",
     img: "https://cdn3d.iconscout.com/3d/premium/thumb/finance-3d-illustration-download-in-png-blend-fbx-gltf-file-formats--invoice-bill-receipt-online-money-service-pack-marketing-branding-illustrations-4159684.png",
     description: "Risk Management and  fraud detection",
+    sol: "Ai-powered predictive analytics",
   },
   {
     name: "Retail",
     color: "#64B5F6",
     img: "https://cdn3d.iconscout.com/3d/premium/thumb/shopping-store-3d-illustration-download-in-png-blend-fbx-gltf-file-formats--shop-e-commerce-pack-illustrations-3728231.png",
     description: "Personlized customer experience",
+    sol: "Ai-driven recommendation engines",
   },
   {
     name: "Manufacturing",
     color: "#EF9A9A",
     img: "https://static.vecteezy.com/system/resources/previews/019/031/202/original/factory-3d-illustration-icon-png.png",
     description: "Predictive maintenance and quality control",
+    sol: "Ai-powered predictive maintenance",
   },
 ];
 const expertise = [
@@ -68,12 +74,6 @@ const titleAnimate = {
   initial: { fontSize: "2.3rem" },
   whileHover: { fontSize: "1.8rem", transition: { duration: 0.3 } },
   exit: { scale: 0 },
-};
-
-const childAnimate = {
-  initial: { maxHeight: 0, opacity: 0 },
-  whileHover: { maxHeight: 100, opacity: 1, transition: { duration: 0.3 } },
-  exit: { maxHeight: 0, opacity: 0 },
 };
 
 const data = [
@@ -184,6 +184,22 @@ const advantages = [
 ];
 
 function GenAI() {
+  const [childAnimate, setChildAnimate] = useState({});
+  useEffect(() => {
+    const isMobile = window ? window.innerWidth < 768 : null;
+    if (!isMobile) {
+      setChildAnimate({
+        initial: { maxHeight: 0, opacity: 0 },
+        whileHover: {
+          maxHeight: 100,
+          opacity: 1,
+          transition: { duration: 0.3 },
+        },
+        exit: { maxHeight: 0, opacity: 0 },
+      });
+    }
+  }, []);
+
   return (
     <>
       <Header_01 />
@@ -257,17 +273,21 @@ function GenAI() {
                   <div className="size-4 group-hover:scale-[80] xxl:group-hover:scale-[110]  absolute transition-all duration-700  -top-4 -left-4 bg-gray-200 rounded-full"></div>
                   <div className="size-3 group-hover:scale-[90] xxl:group-hover:scale-[120] absolute transition-all duration-700 -top-4 -left-4 bg-white delay-200 rounded-full"></div>
                   <div className="w-full relative   z-10 h-full flex py-5 px-5 flex-col justify-end items-start">
-                    <motion.p
-                      variants={titleAnimate}
-                      className="  pr-8 font-bold font-Satoshi leading-snug group-hover:text-gray-900 transition-all duration-500 text-gray-100"
-                    >
-                      {service.name}
-                    </motion.p>
+                    <motion.div variants={titleAnimate}>
+                      <p className="  pr-8 font-bold font-Satoshi leading-snug group-hover:text-gray-900 transition-all duration-500 text-gray-100">
+                        {service.name}
+                      </p>
+                      <p className="text-sm font-Satoshi font-semibold text-gray-100 group-hover:text-gray-800">
+                        {service.description}?
+                      </p>
+                    </motion.div>
+
                     <motion.p
                       variants={childAnimate}
-                      className="leading-snug  mt-1 overflow-hidden text-sm text-gray-200 group-hover:text-gray-800  transition-all duration-500"
+                      className="leading-snug flex items-start gap-2  mt-1 overflow-hidden text-sm text-gray-200 group-hover:text-gray-800  transition-all duration-500"
                     >
-                      {service.description}
+                      <BsHandIndexThumbFill className="rotate-90 text-orange-500 text-lg" />
+                      {service.sol}
                     </motion.p>
                     <div className="w-full flex justify-between items-center">
                       <button className="px-4 bg-lime-300 py-2 font-Satoshi font-semibold text-sm mt-2   rounded-full">

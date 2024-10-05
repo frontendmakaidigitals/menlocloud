@@ -20,6 +20,7 @@ const Editor = ({ onChange, markdown, editorRef }) => {
     <MDXEditor
       onChange={onChange}
       markdown={markdown}
+      contentEditableClassName="prose"
       plugins={[
         toolbarPlugin({
           toolbarContents: () => (

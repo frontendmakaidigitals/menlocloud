@@ -129,7 +129,7 @@ const Blogform = () => {
           />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 place-items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 place-items-center mt-4">
           <div className="w-full ">
             <p className="font-Satoshi font-medium">Add Image</p>
             <div className="flex w-full items-center gap-2">
@@ -154,9 +154,9 @@ const Blogform = () => {
                 />
               </div>
               <div
-                onClick={images ? () => setimageOpen(true) : null}
+                onClick={images?.length > 0 ? () => setimageOpen(true) : null}
                 className={`p-2  rounded-md ${
-                  images
+                  images?.length > 0
                     ? "text-gray-900 hover:bg-gray-300 cursor-pointer"
                     : "text-gray-600 cursor-not-allowed"
                 }`}
@@ -165,7 +165,7 @@ const Blogform = () => {
               </div>
             </div>
           </div>
-          <div className="w-full mt-4">
+          <div className="w-full ">
             <p className="font-Satoshi font-medium"> Tags </p>
             <div className="relative bg-gray-200 rounded-md  flex items-center gap-3">
               <div

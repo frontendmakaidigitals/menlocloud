@@ -68,11 +68,14 @@ const Sidebar = ({ path }) => {
       link: "/admin/blogs",
     },
   ];
-  
+
   return (
     <div className="h-screen fixed z-[999] top-0 py-5 left-0 w-[250px] bg-black overflow-hidden">
       <div className="px-10 mt-4">
-        <Link href="/" className="flex xl:text-lg xxl:text-xl items-center gap-1">
+        <Link
+          href="/"
+          className="flex xl:text-lg xxl:text-xl items-center gap-1"
+        >
           <img src={"/assets/img_placeholder/logo-icon.png"} width={40} />
           <p className="text-gray-200 font-bold font-Satoshi">
             Menlo
