@@ -11,9 +11,11 @@ import {
   linkDialogPlugin,
   listsPlugin,
   thematicBreakPlugin,
-  InsertFrontmatter,
+   quotePlugin ,
+  headingsPlugin,
 } from "@mdxeditor/editor";
 import "@mdxeditor/editor/style.css";
+import "../styles/globals.css"; 
 
 const Editor = ({ onChange, markdown, editorRef }) => {
   console.log(markdown ? markdown : "");
@@ -38,6 +40,8 @@ const Editor = ({ onChange, markdown, editorRef }) => {
         linkDialogPlugin(),
         listsPlugin(),
         thematicBreakPlugin(),
+        headingsPlugin(),
+        quotePlugin ()
       ]}
     />
   );

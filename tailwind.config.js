@@ -146,7 +146,7 @@ module.exports = {
         },
         gradient: {
           "0%": { backgroundPosition: "0% 50%" },
-          "100%": { backgroundPosition : '100% 50%' },
+          "100%": { backgroundPosition: "100% 50%" },
         },
       },
       animation: {
@@ -160,9 +160,9 @@ module.exports = {
         third: "moveInCircle 40s linear infinite",
         fourth: "moveHorizontal 40s ease infinite",
         fifth: "moveInCircle 20s ease infinite",
-        gradient : "gradient 6s linear infinite",
+        gradient: "gradient 6s linear infinite",
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 };
