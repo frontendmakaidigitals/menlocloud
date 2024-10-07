@@ -7,7 +7,7 @@ import { FaUser } from "react-icons/fa";
 import Link from "next/link";
 import { FaBloggerB } from "react-icons/fa";
 import { MdSpaceDashboard } from "react-icons/md";
-
+import { MdOutlineQueryStats } from "react-icons/md";
 export default function RootLayout({ children }) {
   const pathname = usePathname();
   const path = pathname.split("/")[2];
@@ -66,6 +66,11 @@ const Sidebar = ({ path }) => {
       name: "Profile",
       icon: <FaUser />,
       link: "/admin/blogs",
+    },
+    {
+      name: "Queries",
+      icon: <MdOutlineQueryStats />,
+      link: "/admin/queries",
     },
   ];
 

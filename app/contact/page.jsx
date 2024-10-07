@@ -1,9 +1,16 @@
+"use client";
 import Footer_01 from "@/components/footer/Footer_01";
 import Header_01 from "@/components/header/Header_01";
 import Image from "next/image";
 import Link from "next/link";
+import { useState, useEffect } from "react";
 
 function Contact() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [company, setCompany] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
   return (
     <>
       <Header_01 />
@@ -15,7 +22,9 @@ function Contact() {
             {/* Section Container */}
             <div className="global-container">
               <div className="breadcrumb-block">
-                <h1 className="breadcrumb-title !font-Satoshi font-bold !text-gray-100">Contact Us</h1>
+                <h1 className="breadcrumb-title !font-Satoshi font-bold !text-gray-100">
+                  Contact Us
+                </h1>
                 <ul className="breadcrumb-nav !text-gray-50">
                   <li>
                     <Link className="!text-gray-100" href="/">
@@ -188,11 +197,13 @@ function Contact() {
                         </label>
                         <input
                           type="text"
+                          value={name}
+                          onChange={(e) => setName(e.target.value)}
                           name="contact-name"
                           id="contact-name"
                           placeholder="Adam Smith"
                           className="rounded-[10px] border border-gray-300 bg-white px-6 py-[18px] font-bold text-black outline-none transition-all placeholder:text-slate-500 focus:border-blue-500"
-                          required=""
+                          required
                         />
                       </div>
                       {/* Form Single Input */}
@@ -207,10 +218,12 @@ function Contact() {
                         <input
                           type="email"
                           name="contact-email"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
                           id="contact-email"
                           placeholder="adam@menlocloud.com"
                           className="rounded-[10px] border border-gray-300 bg-white px-6 py-[18px] font-bold text-black outline-none transition-all placeholder:text-slate-500 focus:border-blue-500"
-                          required=""
+                          required
                         />
                       </div>
                       {/* Form Single Input */}
@@ -228,11 +241,13 @@ function Contact() {
                         </label>
                         <input
                           type="tel"
+                          value={phone}
+                          onChange={(e) => setPhone(e.target.value)}
                           name="contact-phone"
                           id="contact-phone"
                           placeholder="12345 67890"
                           className="rounded-[10px] border border-gray-300 bg-white px-6 py-[18px] font-bold text-black outline-none transition-all placeholder:text-slate-500 focus:border-blue-500"
-                          required=""
+                          required
                         />
                       </div>
                       {/* Form Single Input */}
@@ -247,10 +262,12 @@ function Contact() {
                         <input
                           type="text"
                           name="contact-company"
+                          value={company}
+                          onChange={(e) => setCompany(e.target.value)}
                           id="contact-company"
                           placeholder="facebook"
                           className="rounded-[10px] border border-gray-300 bg-white px-6 py-[18px] font-bold text-black outline-none transition-all placeholder:text-slate-500 focus:border-blue-500"
-                          required=""
+                          required
                         />
                       </div>
                       {/* Form Single Input */}
@@ -269,9 +286,11 @@ function Contact() {
                         <textarea
                           name="contact-message"
                           id="contact-message"
+                          value={message}
+                          onChange={(e) => setMessage(e.target.value)}
                           className="min-h-[180px] rounded-[10px] border border-gray-300 bg-white px-6 py-[18px] font-bold text-black outline-none transition-all placeholder:text-slate-500 focus:border-blue-500"
                           placeholder="Write your message here..."
-                          required=""
+                          required
                         />
                       </div>
                       {/* Form Single Input */}
@@ -305,14 +324,12 @@ function Contact() {
           <div className="w-full flex justify-center   mt-10">
             <div className="w-[80%] min-h-[300px] xl:min-h-[600px] overflow-hidden rounded-xl border-2 border-blue-500">
               <iframe
-               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d41446.0113600952!2d-122.09736922137861!3d37.37188977756141!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb0d23f5f9685%3A0x23377a57616b5d8!2sMountain%20View%2C%20CA%2094040%2C%20USA!5e0!3m2!1sen!2sin!4v1727774169479!5m2!1sen!2sin"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d41446.0113600952!2d-122.09736922137861!3d37.37188977756141!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb0d23f5f9685%3A0x23377a57616b5d8!2sMountain%20View%2C%20CA%2094040%2C%20USA!5e0!3m2!1sen!2sin!4v1727774169479!5m2!1sen!2sin"
                 className="w-full h-full"
                 allowfullscreen=""
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
               />
-
-             
             </div>
           </div>
         </section>

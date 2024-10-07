@@ -16,14 +16,13 @@ import {
 } from "@mdxeditor/editor";
 import "@mdxeditor/editor/style.css";
 import "../styles/globals.css";
-
-const Editor = ({ onChange, markdown, editorRef }) => {
-  console.log(markdown ? markdown : "");
+import { useEffect } from "react";
+const Editor = ({ onChange, markdown }) => {
   return (
-    <div className="editor-container px-2 min-h-[100px]">
+    <div className="editor-container min-h-[100px]">
       <MDXEditor
         onChange={onChange}
-        markdown={markdown}
+        markdown={markdown && markdown}
         contentEditableClassName="prose"
         plugins={[
           toolbarPlugin({

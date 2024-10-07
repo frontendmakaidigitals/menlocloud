@@ -46,10 +46,15 @@ const Blogform = () => {
   const handleKeyPress = (e) => {
     if (e.key === "Enter" && inputValue.trim()) {
       e.preventDefault(); // Prevent form submission
-      const newTags = [...tags, inputValue.trim()];
-      setTags(newTags);
-      setInputValue("", newTags); // Update the form state with the tags
-      setInputValue(""); // Clear the input
+
+      if (tags.length < 3) {
+        // Check if current tags are less than 3
+        const newTags = [...tags, inputValue.trim()];
+        setTags(newTags);
+        setInputValue(""); // Clear the input
+      } else {
+        alert("You can only add up to 3 tags."); // Notify the user
+      }
     }
   };
 
@@ -71,6 +76,7 @@ const Blogform = () => {
   const [imageOpen, setimageOpen] = useState(false);
 
   const submitBlog = () => {
+    setStatus(null);
     if (true) {
       const formData = new FormData();
       formData.append("title", title);
@@ -79,7 +85,7 @@ const Blogform = () => {
       formData.append("blogDetail", blogDetail);
       formData.append("tags", tags);
       formData.append("subTitle", subTitle);
-      formData.append("priority", options);
+      formData.append("priority", selectedOption);
 
       if (image && image.length > 0) {
         formData.append("image", image[0]); // Only append the first image
@@ -101,19 +107,18 @@ const Blogform = () => {
           router.push("/admin/blogs");
         })
         .catch((error) => {
-          console.error(error);
           setStatus("failed");
         })
         .finally(() => {
-          console.log("finally");
           setIsSubmitting(false);
         });
     }
   };
-  console.log(status);
+  
   return (
     <>
       <form className="w-full relative">
+        
         {imageOpen ? (
           <div className="w-full h-screen max-h-screen fixed bg-gray-800/20 p-10 top-0 flex justify-center items-center left-0 z-[9999]">
             <RiCloseLargeLine
@@ -125,14 +130,14 @@ const Blogform = () => {
             </div>
           </div>
         ) : null}
-        <div className="flex w-full gap-10 items-center">
+        <div className="flex w-full gap-10 items-center  mt-6">
           <div className="w-full ">
             <p className="font-Satoshi font-medium">Blog Title</p>
             <input
               placeholder="Title"
               onChange={(e) => setTitle(e.target.value)}
               value={title}
-              className="px-3 w-full py-1 block mt-1 bg-gray-200 placeholder:text-gray-600 rounded-md"
+              className="px-3 w-full py-2 block mt-1 bg-transparent border border-gray-600 placeholder:text-gray-400 rounded-md"
             />
           </div>
           <div className="w-full  ">
@@ -141,19 +146,20 @@ const Blogform = () => {
               placeholder="Sub Title"
               value={subTitle}
               onChange={(e) => setSubTitle(e.target.value)}
-              className="px-3 w-full py-1 block mt-1 bg-gray-200 placeholder:text-gray-600 rounded-md"
+              className="px-3 w-full py-2 block mt-1 bg-transparent border border-gray-600 placeholder:text-gray-400 rounded-md"
             />
           </div>
         </div>
 
-        <div className="flex w-full gap-10 items-center">
+        <div className="flex w-full gap-10 items-center mt-6">
           <div className="w-full  ">
             <p className="font-Satoshi font-medium"> Meta Description</p>
             <input
               placeholder="Meta Description"
+              required
               value={metaDiscription}
               onChange={(e) => setMetaDiscription(e.target.value)}
-              className="px-3 w-full py-1 block mt-1 bg-gray-200 placeholder:text-gray-600 rounded-md"
+              className="px-3 w-full py-2  block mt-1 bg-transparent border border-gray-600 placeholder:text-gray-400 rounded-md"
             />
           </div>
 
@@ -161,20 +167,21 @@ const Blogform = () => {
             <p className="font-Satoshi font-medium">Meta Tag</p>
             <input
               placeholder="Meta Tag"
+              required
               value={metaTag}
               onChange={(e) => setMetaTag(e.target.value)}
-              className="px-3 w-full py-1 block mt-1 bg-gray-200 placeholder:text-gray-600 rounded-md"
+              className="px-3 w-full py-2 block mt-1 bg-transparent border border-gray-600 placeholder:text-gray-400 rounded-md"
             />
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 place-items-center mt-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 place-items-center mt-6">
           <div className="w-full ">
             <p className="font-Satoshi font-medium">Add Image</p>
             <div className="flex w-full items-center gap-2">
-              <div className=" bg-gray-200 w-full relative flex items-center py-3 justify-between pl-3 pr-10 rounded-md">
+              <div className=" bg-transparent border border-gray-600 placeholder:text-gray-400 w-full relative flex items-center py-3 justify-between pl-3 pr-10 rounded-md">
                 <div className="w-full">
-                  <p className="text-sm truncate">
+                  <p className="text-sm truncate font-Satoshi font-[500]">
                     {image?.length > 0 ? image[0]?.name : "No image selected"}
                   </p>
                 </div>
@@ -188,6 +195,7 @@ const Blogform = () => {
                   className="hidden"
                   id="image"
                   onChange={handleImageChange}
+                  required
                   type="file"
                   accept=".jpg, .jpeg, .png"
                 />
@@ -206,9 +214,9 @@ const Blogform = () => {
           </div>
           <div className="w-full ">
             <p className="font-Satoshi font-medium"> Tags </p>
-            <div className="relative bg-gray-200 rounded-md  flex items-center gap-3">
+            <div className="relative bg-transparent border border-gray-600 placeholder:text-gray-400 rounded-md  flex items-center gap-3">
               <div
-                className={`flex flex-wrapf gap-3 justify-start ${tags.length === 0 ? "ml-0" : "ml-2"}`}
+                className={`flex flex-wrap gap-3 justify-start ${tags.length === 0 ? "ml-0" : "ml-2"}`}
               >
                 {tags.map((tag, index) => (
                   <div
@@ -232,6 +240,7 @@ const Blogform = () => {
                 onKeyDown={handleKeyPress}
                 placeholder={tags.length === 0 ? "Add a tag" : ""}
                 className=" py-2 bg-transparent focus:outline-none"
+                required
                 style={{
                   paddingLeft: tags.length > 0 ? ".5rem" : "4px",
                 }}
@@ -239,9 +248,9 @@ const Blogform = () => {
             </div>
           </div>
         </div>
-        <div className="w-full mt-4">
+        <div className="w-full mt-6">
           <p className="font-Satoshi font-medium">Description</p>
-          <div className=" bg-gray-200 rounded-md">
+          <div className=" bg-transparent border border-gray-600  rounded-md">
             <Suspense fallback={null}>
               <EditorComp
                 markdown={markdown}
@@ -263,7 +272,7 @@ const Blogform = () => {
           <button
             onClick={submitBlog}
             disabled={isSubmitting}
-            className={`px-5 py-1 cursor-pointer font-Satoshi  font-semibold  ${isSubmitting && "bg-sky-300 hover:bg-sky-500"} ${status != "failed" ? "bg-green-400" : "bg-red-500"}  rounded-md text-gray-900`}
+            className={`px-5 py-1 cursor-pointer font-Satoshi font-semibold rounded-md text-gray-900 ${isSubmitting ? "bg-gray-300" : status === "success" ? "bg-green-400" : status === "failed" ? "bg-red-500" : "bg-sky-300 hover:bg-sky-500"}`}
           >
             {isSubmitting ? (
               <div className="flex items-center gap-3">
@@ -291,8 +300,12 @@ const Blogform = () => {
                     className="text-gray-900"
                   ></path>
                 </svg>
-                Submitting...
+                <span>Submitting...</span>
               </div>
+            ) : status === "success" ? (
+              "Blog Submitted"
+            ) : status === "failed" ? (
+              "Something Went Wrong!"
             ) : (
               "Submit"
             )}

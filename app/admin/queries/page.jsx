@@ -1,6 +1,5 @@
 "use client";
 import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 import React from "react";
 import axios from "axios";
@@ -31,14 +30,20 @@ const Page = () => {
       axios
         .get(`https://admin.yatriclubs.com/api/blog`, { withCredentials: true })
         .then((res) => {
+          console.log(res.data);
           setBlogs(res.data);
           setStatus("success");
           setIsLoading(false);
         })
+        .then(() => {
+          router.push("/admin/blogs");
+        })
         .catch((error) => {
+          console.error(error);
           setStatus("failed");
         })
         .finally(() => {
+          console.log("finally");
           setIsLoading(false);
         });
     }
@@ -46,23 +51,14 @@ const Page = () => {
   useEffect(() => {
     getBlogs();
   }, []);
-  const myFunc = () => {
-    router.refresh();
-  };
+
   return (
     <div className="w-full">
       <div className="mt-8 w-full flex justify-between items-center">
-        <p className="font-Satoshi font-medium">Your Blog List</p>
-
-        <Link href="/admin/blogs/addBlogs">
-          <button className="bg-sky-400 hover:bg-sky-500 rounded-md px-3 py-1 font-Satoshi">
-            + Add Blog
-          </button>
-        </Link>
+        <p className="font-Satoshi font-medium">Total Queries</p>
       </div>
-
       <div className="mt-1 bg-slate-50  p-3 rounded-xl">
-        <BlogList blogs={blogs} />
+        <Queries blogs={blogs} />
       </div>
     </div>
   );
@@ -70,24 +66,8 @@ const Page = () => {
 
 export default Page;
 
-const BlogList = ({ blogs }) => {
-  const router = useRouter();
+const Queries = ({ blogs }) => {
   const imageURL = "https://admin.yatriclubs.com/";
-
-  const deleteBlog = (id) => {
-    axios.get("https://admin.yatriclubs.com/sanctum/csrf-cookie", {
-      withCredentials: true,
-    });
-    axios
-      .delete(`https://admin.yatriclubs.com/api/blog/${id}`, {
-        withCredentials: true,
-      })
-      .then((res) => {
-        window.location.reload();
-      })
-      .finally(() => console.log("finally"));
-  };
-
   return (
     <>
       <Table>
@@ -146,10 +126,7 @@ const BlogList = ({ blogs }) => {
                     <p className="hidden group-hover:block w-auto text-nowrap z-[9999] bg-red-500 shadow-lg text-gray-100 rounded-full px-4 py-1 absolute bottom-full left-1/2 -translate-x-1/2">
                       Delete blog
                     </p>
-                    <MdDeleteForever
-                      onClick={() => deleteBlog(invoice.id)}
-                      className="text-red-500 text-xl relative"
-                    />
+                    <MdDeleteForever className="text-red-500 text-xl relative" />
                   </div>
                 </div>
               </TableCell>

@@ -5,18 +5,14 @@ import React from "react";
 import { HiMiniEye } from "react-icons/hi2";
 import { RiCloseLargeLine } from "react-icons/ri";
 import dynamic from "next/dynamic";
-import { Suspense } from "react";
-import { ToastAction } from "@/components/ui/toast";
+
 import axios from "axios";
+import Dropdown from "@/components/dropdown";
 import { useRouter } from "next/navigation";
 
 const EditorComp = dynamic(() => import("@/components/MDXEditor"), {
   ssr: false,
 });
-
-const markdown = `
-Write your blog here
-`;
 
 const Page = ({ params }) => {
   const id = params.id[0];
@@ -41,14 +37,20 @@ const Blogform = ({ id }) => {
   const [title, setTitle] = useState("");
   const [metaDiscription, setMetaDiscription] = useState("");
   const [metaTag, setMetaTag] = useState("");
-
+  const [subTitle, setSubTitle] = useState("");
+  const [selectedOption, setSelectedOption] = useState("Select Priority");
+  const options = ["1", "2", "3", "4", "5"];
   const handleKeyPress = (e) => {
+    e.preventDefault();
     if (e.key === "Enter" && inputValue.trim()) {
-      e.preventDefault(); // Prevent form submission
-      const newTags = [...tags, inputValue.trim()];
-      setTags(newTags);
-      setInputValue("", newTags); // Update the form state with the tags
-      setInputValue(""); // Clear the input
+      if (tags.length < 3) {
+        // Check if current tags are less than 3
+        const newTags = [...tags, inputValue.trim()];
+        setTags(newTags);
+        setInputValue(""); // Clear the input
+      } else {
+        alert("You can only add up to 3 tags."); // Notify the user
+      }
     }
   };
 
@@ -80,15 +82,22 @@ const Blogform = ({ id }) => {
           withCredentials: true,
         })
         .then((res) => {
-          console.log(res.data);
-          setTitle(res.data.Name);
-          setMetaDiscription(res.data.metaDiscription);
+          setTitle(res.data.name);
+          setMetaDiscription(res.data.metaDescription);
           setMetaTag(res.data.metaTag);
           setTags(res.data.tags.replace(/^"|"$|\\/g, "").split(","));
           setBlogDetail(res.data.description);
           setImage(res.data.image);
+          setSelectedOption(res.data.priority);
+          setSubTitle(res.data.sub_title);
         })
-
+        .then(() => {
+          if (blogDetail) {
+            return blogDetail;
+          } else {
+            router.refresh();
+          }
+        })
         .catch((error) => {
           console.error(error);
         })
@@ -110,6 +119,8 @@ const Blogform = ({ id }) => {
       formData.append("metadescription", metaDiscription);
       formData.append("blogDetail", blogDetail);
       formData.append("tags", tags);
+      formData.append("subTitle", subTitle);
+      formData.append("priority", selectedOption);
 
       if (image && image.length > 0 && image[0] instanceof File) {
         formData.append("image", image[0]);
@@ -162,42 +173,58 @@ const Blogform = ({ id }) => {
             </div>
           </div>
         ) : null}
-        <div className="flex w-full gap-10 items-center">
+        <div className="flex w-full gap-10 items-center  mt-6">
           <div className="w-full ">
             <p className="font-Satoshi font-medium">Blog Title</p>
             <input
               placeholder="Title"
               onChange={(e) => setTitle(e.target.value)}
+              required
               value={title}
-              className="px-3 w-full py-1 block mt-1 bg-gray-200 placeholder:text-gray-600 rounded-md"
+              className="px-3 w-full py-2 block mt-1 bg-transparent border border-gray-600 placeholder:text-gray-400 rounded-md"
             />
           </div>
+          <div className="w-full  ">
+            <p className="font-Satoshi font-medium"> Sub Heading</p>
+            <input
+              placeholder="Sub Title"
+              value={subTitle}
+              required
+              onChange={(e) => setSubTitle(e.target.value)}
+              className="px-3 w-full py-2 block mt-1 bg-transparent border border-gray-600 placeholder:text-gray-400 rounded-md"
+            />
+          </div>
+        </div>
+
+        <div className="flex w-full gap-10 items-center mt-6">
+          <div className="w-full  ">
+            <p className="font-Satoshi font-medium"> Meta Description</p>
+            <input
+              placeholder="Meta Description"
+              value={metaDiscription}
+              required
+              onChange={(e) => setMetaDiscription(e.target.value)}
+              className="px-3 w-full py-2  block mt-1 bg-transparent border border-gray-600 placeholder:text-gray-400 rounded-md"
+            />
+          </div>
+
           <div className="w-full">
             <p className="font-Satoshi font-medium">Meta Tag</p>
             <input
               placeholder="Meta Tag"
               value={metaTag}
+              required
               onChange={(e) => setMetaTag(e.target.value)}
-              className="px-3 w-full py-1 block mt-1 bg-gray-200 placeholder:text-gray-600 rounded-md"
+              className="px-3 w-full py-2 block mt-1 bg-transparent border border-gray-600 placeholder:text-gray-400 rounded-md"
             />
           </div>
-        </div>
-
-        <div className="w-full mt-4">
-          <p className="font-Satoshi font-medium"> Meta Description</p>
-          <input
-            placeholder="Meta Description"
-            value={metaDiscription}
-            onChange={(e) => setMetaDiscription(e.target.value)}
-            className="px-3 w-full py-1 block mt-1 bg-gray-200 placeholder:text-gray-600 rounded-md"
-          />
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 place-items-center mt-4">
           <div className="w-full ">
             <p className="font-Satoshi font-medium">Add Image</p>
             <div className="flex w-full items-center gap-2">
-              <div className=" bg-gray-200 w-full relative flex items-center py-3 justify-between pl-3 pr-10 rounded-md">
+              <div className=" bg-transparent border border-gray-600 placeholder:text-gray-400 w-full relative flex items-center py-3 justify-between pl-3 pr-10 rounded-md">
                 <div className="w-full">
                   <p className="text-sm truncate">
                     {typeof image == "string"
@@ -217,6 +244,7 @@ const Blogform = ({ id }) => {
                   className="hidden"
                   id="image"
                   onChange={handleImageChange}
+                  required
                   type="file"
                   accept=".jpg, .jpeg, .png"
                 />
@@ -235,7 +263,7 @@ const Blogform = ({ id }) => {
           </div>
           <div className="w-full ">
             <p className="font-Satoshi font-medium"> Tags </p>
-            <div className="relative bg-gray-200 rounded-md  flex items-center gap-3">
+            <div className="relative bg-transparent border border-gray-600 placeholder:text-gray-400 rounded-md  flex items-center gap-3">
               <div
                 className={`flex flex-wrap gap-3 justify-start ${tags.length === 0 ? "ml-0" : "ml-2"}`}
               >
@@ -279,43 +307,57 @@ const Blogform = ({ id }) => {
           </div>
         </div>
 
-        <button
-          disabled={isSubmitting}
-          onClick={submitBlog}
-          className={`px-5 py-1 cursor-pointer font-Satoshi mt-8 font-semibold  ${isSubmitting ? "bg-gray-500" : "bg-sky-300 hover:bg-sky-500"} ${status === "success" ? "bg-green-500" : "bg-red-500"}  rounded-md text-gray-900`}
-        >
-          {isSubmitting ? (
-            <div className="flex items-center gap-3">
-              <svg
-                className="w-6 h-6 text-gray-300 animate-spin"
-                viewBox="0 0 64 64"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-              >
-                <path
-                  d="M32 3C35.8083 3 39.5794 3.75011 43.0978 5.20749C46.6163 6.66488 49.8132 8.80101 52.5061 11.4939C55.199 14.1868 57.3351 17.3837 58.7925 20.9022C60.2499 24.4206 61 28.1917 61 32C61 35.8083 60.2499 39.5794 58.7925 43.0978C57.3351 46.6163 55.199 49.8132 52.5061 52.5061C49.8132 55.199 46.6163 57.3351 43.0978 58.7925C39.5794 60.2499 35.8083 61 32 61C28.1917 61 24.4206 60.2499 20.9022 58.7925C17.3837 57.3351 14.1868 55.199 11.4939 52.5061C8.801 49.8132 6.66487 46.6163 5.20749 43.0978C3.7501 39.5794 3 35.8083 3 32C3 28.1917 3.75011 24.4206 5.2075 20.9022C6.66489 17.3837 8.80101 14.1868 11.4939 11.4939C14.1868 8.80099 17.3838 6.66487 20.9022 5.20749C24.4206 3.7501 28.1917 3 32 3L32 3Z"
-                  stroke="currentColor"
-                  strokeWidth="5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                ></path>
-                <path
-                  d="M32 3C36.5778 3 41.0906 4.08374 45.1692 6.16256C49.2477 8.24138 52.7762 11.2562 55.466 14.9605C58.1558 18.6647 59.9304 22.9531 60.6448 27.4748C61.3591 31.9965 60.9928 36.6232 59.5759 40.9762"
-                  stroke="currentColor"
-                  strokeWidth="5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="text-gray-900"
-                ></path>
-              </svg>
-              Submitting...
-            </div>
-          ) : (
-            "Submit"
-          )}
-        </button>
+        <div className="flex items-center gap-5 mt-9">
+          <div className="w-auto ">
+            <Dropdown
+              selectedOption={selectedOption}
+              setSelectedOption={setSelectedOption}
+              options={options}
+            />
+          </div>
+
+          <button
+            onClick={submitBlog}
+            disabled={isSubmitting}
+            className={`px-5 py-1 cursor-pointer font-Satoshi font-semibold rounded-md text-gray-900 ${isSubmitting ? "bg-gray-300" : status === "success" ? "bg-green-400" : status === "failed" ? "bg-red-500" : "bg-sky-300 hover:bg-sky-500"}`}
+          >
+            {isSubmitting ? (
+              <div className="flex items-center gap-3">
+                <svg
+                  className="w-6 h-6 text-gray-300 animate-spin"
+                  viewBox="0 0 64 64"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                >
+                  <path
+                    d="M32 3C35.8083 3 39.5794 3.75011 43.0978 5.20749C46.6163 6.66488 49.8132 8.80101 52.5061 11.4939C55.199 14.1868 57.3351 17.3837 58.7925 20.9022C60.2499 24.4206 61 28.1917 61 32C61 35.8083 60.2499 39.5794 58.7925 43.0978C57.3351 46.6163 55.199 49.8132 52.5061 52.5061C49.8132 55.199 46.6163 57.3351 43.0978 58.7925C39.5794 60.2499 35.8083 61 32 61C28.1917 61 24.4206 60.2499 20.9022 58.7925C17.3837 57.3351 14.1868 55.199 11.4939 52.5061C8.801 49.8132 6.66487 46.6163 5.20749 43.0978C3.7501 39.5794 3 35.8083 3 32C3 28.1917 3.75011 24.4206 5.2075 20.9022C6.66489 17.3837 8.80101 14.1868 11.4939 11.4939C14.1868 8.80099 17.3838 6.66487 20.9022 5.20749C24.4206 3.7501 28.1917 3 32 3L32 3Z"
+                    stroke="currentColor"
+                    strokeWidth="5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  ></path>
+                  <path
+                    d="M32 3C36.5778 3 41.0906 4.08374 45.1692 6.16256C49.2477 8.24138 52.7762 11.2562 55.466 14.9605C58.1558 18.6647 59.9304 22.9531 60.6448 27.4748C61.3591 31.9965 60.9928 36.6232 59.5759 40.9762"
+                    stroke="currentColor"
+                    strokeWidth="5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="text-gray-900"
+                  ></path>
+                </svg>
+                <span>Submitting...</span>
+              </div>
+            ) : status === "success" ? (
+              "Blog Submitted"
+            ) : status === "failed" ? (
+              "Something Went Wrong!"
+            ) : (
+              "Submit"
+            )}
+          </button>
+        </div>
       </form>
     </>
   );

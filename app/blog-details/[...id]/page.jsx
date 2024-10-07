@@ -108,7 +108,7 @@ function BlogDetails({ params }) {
                               <div className="size-10 rounded-full overflow-hidden border border-gray-400 bg-gray-400">
                                 <img
                                   src={
-                                    "https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=1780&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                    "https://cdn3d.iconscout.com/3d/premium/thumb/man-3d-icon-download-in-png-blend-fbx-gltf-file-formats--male-person-happy-people-human-avatar-pack-icons-7590876.png?f=webp"
                                   }
                                   alt="Profile image"
                                 />
