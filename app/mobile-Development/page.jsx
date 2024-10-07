@@ -484,7 +484,7 @@ function GenAI() {
           <div className="w-full global-container lg:w-2/3 flex flex-col justify-center items-center">
             <h2 className=" text-3xl  lg:text-6xl  font-Satoshi font-[600] text-center">
               Our Process - Your{" "}
-              <span className="bg-gradient-to-r  font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r  font-Telma px-1 from-blue-500 to-indigo-400 bg-clip-text text-transparent">
                 {" "}
                 App Projects{" "}
               </span>{" "}
