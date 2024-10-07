@@ -46,9 +46,7 @@ const Page = () => {
   useEffect(() => {
     getBlogs();
   }, []);
-  const myFunc = () => {
-    router.refresh();
-  };
+ 
   return (
     <div className="w-full">
       <div className="mt-8 w-full flex justify-between items-center">
@@ -116,17 +114,17 @@ const BlogList = ({ blogs }) => {
             <TableRow key={index} className={`hover:bg-gray-50`}>
               <TableCell className={`pl-4 py-3`}>{index + 1}</TableCell>
               <TableCell className={`font-Satoshi font-medium text-lg py-3`}>
-                {invoice.name}
+                <p className="max-w-[300px]">{invoice.name}</p>
               </TableCell>
 
               <TableCell className={`font-Satoshi font-medium py-3`}>
                 {invoice.metaDescription}
               </TableCell>
               <TableCell className={`font-Satoshi font-medium py-3`}>
-                <div className="size-28  flex items-center justify-center ">
+                <div className="w-32 h-[130px]   flex items-center justify-center ">
                   <img
                     src={imageURL + invoice.image}
-                    className="w-full h-auto "
+                    className=" h-full"
                     alt="image"
                   />
                 </div>

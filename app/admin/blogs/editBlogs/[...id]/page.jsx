@@ -254,7 +254,7 @@ const Blogform = ({ id }) => {
                 className={`p-2  rounded-md ${
                   image?.length > 0
                     ? "text-gray-900 hover:bg-gray-300 cursor-pointer"
-                    : "text-gray-600 cursor-not-allowed"
+                    : "text-gray-600 bg-gray-200 cursor-not-allowed"
                 }`}
               >
                 <HiMiniEye className={`text-xl `} />

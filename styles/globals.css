@@ -202,12 +202,12 @@ h5 {
 .mdx-editor {
   width: 100%; /* Make sure the editor itself is full width */
   box-sizing: border-box;
-/* Include padding and border in element's total width */
+  /* Include padding and border in element's total width */
 }
 
 /* If you have specific styles for contentEditableClassName */
 .prose {
   width: 100%;
   max-width: none;
-    padding: 0px 0px;  /* Remove any max-width constraints */
+  padding: 0px 8px; /* Remove any max-width constraints */
 }

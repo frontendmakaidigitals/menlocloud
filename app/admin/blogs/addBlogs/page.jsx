@@ -118,7 +118,6 @@ const Blogform = () => {
   return (
     <>
       <form className="w-full relative">
-        
         {imageOpen ? (
           <div className="w-full h-screen max-h-screen fixed bg-gray-800/20 p-10 top-0 flex justify-center items-center left-0 z-[9999]">
             <RiCloseLargeLine
@@ -205,7 +204,7 @@ const Blogform = () => {
                 className={`p-2  rounded-md ${
                   image?.length > 0
                     ? "text-gray-900 hover:bg-gray-300 cursor-pointer"
-                    : "text-gray-600 cursor-not-allowed"
+                    : "text-gray-600 bg-gray-200 cursor-not-allowed"
                 }`}
               >
                 <HiMiniEye className={`text-xl `} />
