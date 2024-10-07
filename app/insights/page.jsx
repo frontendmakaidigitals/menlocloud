@@ -88,6 +88,7 @@ function Insights() {
   return (
     <div className="relative   z-[1] bg-white">
       <Header_01 />
+
       <main className="main-wrapper relative ">
         <section id="section-breadcrumb">
           {/* Section Spacer */}
@@ -120,7 +121,7 @@ function Insights() {
           <div className="grid grid-cols-1 h-full mt-3 md:grid-cols-2 gap-10 ">
             {blogs.map(
               (blog) =>
-                blog.priority === 1 && (
+                blog.priority === "1" && (
                   <div key={blog.id}>
                     <div className="w-full flex justify-center rounded-xl items-center overflow-hidden h-[400px] lg:h-[55vh]">
                       <img
@@ -137,7 +138,7 @@ function Insights() {
                       <p className=" text-2xl xl:text-xl xxl:text-2xl font-Satoshi font-semibold mt-1">
                         {blog.name}
                       </p>
-                      
+
                       <div className="flex justify-start items-center gap-2 mt-2">
                         {blog?.tags
                           .replace(/^"|"$|\\/g, "")
@@ -157,7 +158,7 @@ function Insights() {
             )}
             <div className="grid w-full grid-cols-1 gap-5">
               {blogs
-                .filter((blog) => [2, 3, 4].includes(blog.priority)) // Filter by priority
+                .filter((blog) => ["2", "3", "4"].includes(blog.priority)) // Filter by priority
                 .map((blog) => (
                   <div key={blog.id} className="flex w-full lg:flex-row gap-4">
                     <div className="flex-shrink-0 w-[230px] h-[180px] overflow-hidden rounded-lg">
@@ -176,7 +177,6 @@ function Insights() {
                       <p className="text-lg xl:text-md xxl:text-2xl font-Satoshi font-semibold">
                         {blog.name}
                       </p>
-                      
                       <div className="flex justify-start items-center gap-2">
                         {blog?.tags
                           .replace(/^"|"$|\\/g, "")
@@ -250,7 +250,7 @@ function Insights() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 mt-12 lg:mt-7 xxl:grid-cols-4 gap-10">
             {blogs
-              .filter((blog) => [2, 3, 4].includes(blog.priority)) // Filter by priority
+              .filter((blog) => ['2', '3', '4'].includes(blog.priority)) // Filter by priority
               .map((blog) => (
                 <div key={blog.id} className="w-full flex flex-col h-full">
                   <div className="w-full overflow-hidden flex-grow">
@@ -298,7 +298,7 @@ function Insights() {
                   1
                 </PaginationLink>
               </PaginationItem>
-              
+
               <PaginationItem>
                 <PaginationNext href="#" />
               </PaginationItem>
