@@ -11,11 +11,11 @@ import {
   linkDialogPlugin,
   listsPlugin,
   thematicBreakPlugin,
-   quotePlugin ,
+  quotePlugin,
   headingsPlugin,
 } from "@mdxeditor/editor";
 import "@mdxeditor/editor/style.css";
-import "../styles/globals.css"; 
+import "../styles/globals.css";
 
 const Editor = ({ onChange, markdown, editorRef }) => {
   console.log(markdown ? markdown : "");
@@ -28,12 +28,12 @@ const Editor = ({ onChange, markdown, editorRef }) => {
         toolbarPlugin({
           toolbarContents: () => (
             <>
+              <UndoRedo />
               <BoldItalicUnderlineToggles />
               <ListsToggle />
               <BlockTypeSelect />
               <CreateLink />
               <InsertThematicBreak />
-              <UndoRedo />
             </>
           ),
         }),
@@ -41,7 +41,7 @@ const Editor = ({ onChange, markdown, editorRef }) => {
         listsPlugin(),
         thematicBreakPlugin(),
         headingsPlugin(),
-        quotePlugin ()
+        quotePlugin(),
       ]}
     />
   );

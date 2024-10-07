@@ -52,7 +52,8 @@ const Blogform = ({ id }) => {
     }
   };
 
-  const removeTag = (tagToRemove) => {
+  const removeTag = (tagToRemove, e) => {
+    e.preventDefault();
     const newTags = tags.filter((tag) => tag !== tagToRemove);
     setTags(newTags);
     setInputValue("", newTags); // Update the form state with the new tags
@@ -245,7 +246,7 @@ const Blogform = ({ id }) => {
                   >
                     {tag}
                     <button
-                      onClick={() => removeTag(tag)}
+                      onClick={(e) => removeTag(tag, e)}
                       className="ml-2 text-white"
                     >
                       &times;
