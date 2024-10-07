@@ -38,8 +38,8 @@ const Blogform = ({ id }) => {
   const [metaDiscription, setMetaDiscription] = useState("");
   const [metaTag, setMetaTag] = useState("");
   const [subTitle, setSubTitle] = useState("");
-  const [selectedOption, setSelectedOption] = useState("Select Priority");
-  const options = ["1", "2", "3", "4", "5"];
+  const [selectedOption, setSelectedOption] = useState("default");
+  const options = ["1", "2", "3", "4", "default"];
   const handleKeyPress = (e) => {
     e.preventDefault();
     if (e.key === "Enter" && inputValue.trim()) {
@@ -116,7 +116,7 @@ const Blogform = ({ id }) => {
       const formData = new FormData();
       formData.append("title", title);
       formData.append("metaTag", metaTag);
-      formData.append("metadescription", metaDiscription);
+      formData.append("metaDescription", metaDiscription);
       formData.append("blogDetail", blogDetail);
       formData.append("tags", tags);
       formData.append("subTitle", subTitle);

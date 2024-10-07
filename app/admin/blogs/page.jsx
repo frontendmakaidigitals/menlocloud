@@ -98,9 +98,7 @@ const BlogList = ({ blogs }) => {
             <TableHead className=" text-gray-900 text-lg font-Satoshi font-bold">
               Blog Title
             </TableHead>
-            <TableHead className=" text-gray-900 text-lg font-Satoshi font-bold">
-              Meta Description
-            </TableHead>
+             
             <TableHead className=" text-gray-900 text-lg font-Satoshi font-bold">
               Blog Image
             </TableHead>
@@ -114,12 +112,10 @@ const BlogList = ({ blogs }) => {
             <TableRow key={index} className={`hover:bg-gray-50`}>
               <TableCell className={`pl-4 py-3`}>{index + 1}</TableCell>
               <TableCell className={`font-Satoshi font-medium text-lg py-3`}>
-                <p className="max-w-[300px]">{invoice.name}</p>
+                <p className="">{invoice.name}</p>
               </TableCell>
 
-              <TableCell className={`font-Satoshi font-medium py-3`}>
-                {invoice.metaDescription}
-              </TableCell>
+               
               <TableCell className={`font-Satoshi font-medium py-3`}>
                 <div className="w-32 h-[130px]   flex items-center justify-center ">
                   <img

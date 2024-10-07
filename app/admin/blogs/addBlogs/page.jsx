@@ -41,8 +41,8 @@ const Blogform = () => {
   const [metaDiscription, setMetaDiscription] = useState("");
   const [metaTag, setMetaTag] = useState("");
   const [subTitle, setSubTitle] = useState("");
-  const [selectedOption, setSelectedOption] = useState("Select Priority");
-  const options = ["1", "2", "3", "4", "5"];
+  const [selectedOption, setSelectedOption] = useState("default");
+  const options = ["1", "2", "3", "4", "default"];
   const handleKeyPress = (e) => {
     if (e.key === "Enter" && inputValue.trim()) {
       e.preventDefault(); // Prevent form submission
@@ -81,7 +81,7 @@ const Blogform = () => {
       const formData = new FormData();
       formData.append("title", title);
       formData.append("metaTag", metaTag);
-      formData.append("metadescription", metaDiscription);
+      formData.append("metaDescription", metaDiscription);
       formData.append("blogDetail", blogDetail);
       formData.append("tags", tags);
       formData.append("subTitle", subTitle);
@@ -90,6 +90,7 @@ const Blogform = () => {
       if (image && image.length > 0) {
         formData.append("image", image[0]); // Only append the first image
       }
+
       setIsSubmitting(true);
       axios.get("https://admin.yatriclubs.com/sanctum/csrf-cookie", {
         withCredentials: true,
@@ -114,7 +115,7 @@ const Blogform = () => {
         });
     }
   };
-  
+
   return (
     <>
       <form className="w-full relative">
