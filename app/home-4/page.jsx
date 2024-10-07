@@ -46,7 +46,7 @@ const Home_4 = () => {
                     />
                     <button
                       type='submit'
-                      className='button absolute right-0 top-0 inline-block h-full rounded border-none bg-colorGreen py-0 text-black after:border-none after:bg-white'
+                      className='button absolute right-1 top-1 inline-block h-full rounded border-none bg-colorGreen py-0 text-black after:border-none after:bg-white'
                     >
                       Get Started
                     </button>
