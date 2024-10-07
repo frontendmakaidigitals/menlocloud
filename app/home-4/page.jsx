@@ -41,7 +41,7 @@ const Home_4 = () => {
                     <input
                       type='email'
                       placeholder='Enter your email...'
-                      className='h-full w-full bg-colorCodGray px-6 pr-[150px]'
+                      className='h-full w-full bg-colorCodGray px-7 pr-[150px]'
                       required=''
                     />
                     <button
