@@ -20,30 +20,32 @@ import "../styles/globals.css";
 const Editor = ({ onChange, markdown, editorRef }) => {
   console.log(markdown ? markdown : "");
   return (
-    <MDXEditor
-      onChange={onChange}
-      markdown={markdown}
-      contentEditableClassName="prose"
-      plugins={[
-        toolbarPlugin({
-          toolbarContents: () => (
-            <>
-              <UndoRedo />
-              <BoldItalicUnderlineToggles />
-              <ListsToggle />
-              <BlockTypeSelect />
-              <CreateLink />
-              <InsertThematicBreak />
-            </>
-          ),
-        }),
-        linkDialogPlugin(),
-        listsPlugin(),
-        thematicBreakPlugin(),
-        headingsPlugin(),
-        quotePlugin(),
-      ]}
-    />
+    <div className="editor-container px-2 min-h-[100px]">
+      <MDXEditor
+        onChange={onChange}
+        markdown={markdown}
+        contentEditableClassName="prose"
+        plugins={[
+          toolbarPlugin({
+            toolbarContents: () => (
+              <>
+                <UndoRedo />
+                <BoldItalicUnderlineToggles />
+                <ListsToggle />
+                <BlockTypeSelect />
+                <CreateLink />
+                <InsertThematicBreak />
+              </>
+            ),
+          }),
+          linkDialogPlugin(),
+          listsPlugin(),
+          thematicBreakPlugin(),
+          headingsPlugin(),
+          quotePlugin(),
+        ]}
+      />
+    </div>
   );
 };
 

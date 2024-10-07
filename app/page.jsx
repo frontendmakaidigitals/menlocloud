@@ -13,7 +13,7 @@ import { FlipWords } from "@/components/ui/flip-words";
 import SwiperNavButtons from "@/components/SwiperNavButton";
 import { HiOutlineArrowDown } from "react-icons/hi2";
 import { LampContainer } from "@/components/ui/lamp";
-import { IoIosArrowRoundForward } from "react-icons/io";
+import axios from "axios";
 import Form from "@/components/PopUp-form/form";
 const techLogos = [
   {
@@ -38,17 +38,17 @@ const techLogos = [
   },
 
   {
-    username: "@jack3",
+    username: "@jack34",
 
     img: "https://companieslogo.com/img/orig/SNOW-35164165.png?t=1720244494",
   },
   {
-    username: "@jack3",
+    username: "@jack23",
 
     img: "/assets/img_placeholder/qlik.png",
   },
   {
-    username: "@jack3",
+    username: "@jack43",
 
     img: "https://www.svgrepo.com/show/354012/looker-icon.svg",
   },
@@ -59,23 +59,23 @@ const clientLogo = [
     img: "/assets/img_placeholder/clients/Sharmin.png",
   },
   {
-    username: "@jack",
+    username: "@track",
     img: "/assets/img_placeholder/clients/TeaVillaCafe.png",
   },
   {
-    username: "@jack",
+    username: "@black",
     img: "/assets/img_placeholder/clients/BSHH.png",
   },
   {
-    username: "@jack",
+    username: "@red",
     img: "/assets/img_placeholder/clients/Roofsol1.png",
   },
   {
-    username: "@jack",
+    username: "@mat",
     img: "/assets/img_placeholder/clients/MOD.png",
   },
   {
-    username: "@jack",
+    username: "@rat",
     img: "/assets/img_placeholder/clients/Zipro.png",
   },
 ];
@@ -192,43 +192,6 @@ const content = [
     ),
   },
 ];
-const data = [
-  {
-    img: "https://s7d9.scene7.com/is/image/slalom/insight-globalbas-turtle-finserv-thumb-520x490?fmt=webp-alpha",
-    title: "2024 industry outlook: Financial services",
-    hoverColor: "#F48FB1",
-  },
-  {
-    img: "https://s7d9.scene7.com/is/image/slalom/insight-globalbas-turtle-finserv-thumb-520x490?fmt=webp-alpha",
-    title: "2024 industry outlook: Financial services",
-    hoverColor: "#90CAF9",
-  },
-  {
-    img: "https://s7d9.scene7.com/is/image/slalom/insight-globalbas-turtle-finserv-thumb-520x490?fmt=webp-alpha",
-    title: "2024 industry outlook: Financial services",
-    hoverColor: "#B39DDB",
-  },
-  {
-    img: "https://s7d9.scene7.com/is/image/slalom/insight-globalbas-turtle-finserv-thumb-520x490?fmt=webp-alpha",
-    title: "2024 industry outlook: Financial services",
-    hoverColor: "#80CBC4",
-  },
-  {
-    img: "https://s7d9.scene7.com/is/image/slalom/insight-globalbas-turtle-finserv-thumb-520x490?fmt=webp-alpha",
-    title: "2024 industry outlook: Financial services",
-    hoverColor: "#E6EE9C",
-  },
-  {
-    img: "https://s7d9.scene7.com/is/image/slalom/insight-globalbas-turtle-finserv-thumb-520x490?fmt=webp-alpha",
-    title: "2024 industry outlook: Financial services",
-    hoverColor: "#FFF59D",
-  },
-  {
-    img: "https://s7d9.scene7.com/is/image/slalom/insight-globalbas-turtle-finserv-thumb-520x490?fmt=webp-alpha",
-    title: "2024 industry outlook: Financial services",
-    hoverColor: "#FFAB91",
-  },
-];
 
 const specialize = [
   {
@@ -260,11 +223,13 @@ function Home() {
   const [isVisible, setIsVisible] = useState(true);
   const [isTopVisible, setIsTop] = useState(false);
   const [isOpen, setisOpen] = useState(false);
+  const [status, setStatus] = useState(false);
   const parentVariants = {
     hover: {
       scale: 1.02, // Scale up the parent a bit
     },
   };
+  const imageURL = "https://admin.yatriclubs.com/";
   const swiperRef = useRef(null);
   const headerVariant = {
     initial: {
@@ -349,6 +314,38 @@ function Home() {
       behavior: "smooth", // Smooth scrolling
     });
   };
+
+  const [blogs, setBlogs] = useState([]);
+  const [loading, setIsLoading] = useState(false);
+  const getBlogs = (data) => {
+    if (true) {
+      setIsLoading(true);
+      axios.get("https://admin.yatriclubs.com/sanctum/csrf-cookie", {
+        withCredentials: true,
+      });
+      axios
+        .get(`https://admin.yatriclubs.com/api/blog`, {
+          withCredentials: true,
+        })
+        .then((res) => {
+          console.log(res.data);
+          setBlogs(res.data);
+          setStatus("success");
+          setIsLoading(false);
+        })
+        .catch((error) => {
+          console.error(error);
+          setStatus("failed");
+        })
+        .finally(() => {
+          console.log("finally");
+          setIsLoading(false);
+        });
+    }
+  };
+  useEffect(() => {
+    getBlogs();
+  }, []);
   return (
     <div className="page-wrapper relative z-[1] bg-white">
       <Header_01 />
@@ -960,17 +957,22 @@ function Home() {
               }}
               className=" mt-5 xl:mt-10"
             >
-              {data.map((elem, index) => {
+              {blogs.map((elem, index) => {
                 return (
-                  <SwiperSlide key={index} className="  w-full cursor-pointer ">
+                  <SwiperSlide
+                    key={elem.id}
+                    className="  w-full cursor-pointer "
+                  >
                     <motion.div
                       whileHover={{ backgroundColor: elem.hoverColor }}
                       className={` rounded-xl bg-slate-100`}
                     >
-                      <Link href="/blog-details">
+                      <Link href={`/blog-details/${elem.id}`}>
                         <div
                           className="w-full h-64 bg-no-repeat rounded-xl bg-center bg-cover "
-                          style={{ backgroundImage: `url(${elem.img})` }}
+                          style={{
+                            backgroundImage: `url(${imageURL + elem.image})`,
+                          }}
                         ></div>
                         <div className="px-3 py-5">
                           <p>Author name </p>

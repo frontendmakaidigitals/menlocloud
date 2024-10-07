@@ -1,10 +1,61 @@
+"use client";
 import Footer_01 from "@/components/footer/Footer_01";
 import Header_01 from "@/components/header/Header_01";
-import Image from "next/image";
 import Link from "next/link";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 import { SlCalender } from "react-icons/sl";
-function BlogDetails() {
+import { useState, useEffect } from "react";
+import axios from "axios";
+import dynamic from "next/dynamic";
+import { Suspense } from "react";
+
+function BlogDetails({ params }) {
+  const EditorComp = dynamic(() => import("@/components/MDXViewer"), {
+    ssr: false,
+  });
+  const [tags, setTags] = useState([]);
+  const [status, setStatus] = useState(null);
+  const [title, setTitle] = useState("");
+  const [metaDiscription, setMetaDiscription] = useState("");
+  const [metaTag, setMetaTag] = useState("");
+  const [blogDetail, setBlogDetail] = useState("");
+  const [date, setDate] = useState("");
+  const [image, setImage] = useState("");
+  const id = params.id[0];
+  const imageURL = "https://admin.yatriclubs.com/";
+
+  const getBlog = () => {
+    if (true) {
+      axios.get("https://admin.yatriclubs.com/sanctum/csrf-cookie", {
+        withCredentials: true,
+      });
+      axios
+        .get(`https://admin.yatriclubs.com/api/editblog/${id}`, {
+          withCredentials: true,
+        })
+        .then((res) => {
+          setTitle(res.data.Name);
+          setMetaDiscription(res.data.metaDiscription);
+          setMetaTag(res.data.metaTag);
+          setTags(res.data.tags.replace(/^"|"$|\\/g, "").split(","));
+          setBlogDetail(res.data.description);
+          setImage(res.data.image);
+          const dateForm = new Date(res.data.created_at);
+          const options = { year: "numeric", month: "long", day: "numeric" };
+          setDate(dateForm.toLocaleDateString(undefined, options));
+        })
+
+        .catch((error) => {
+          console.error(error);
+        })
+        .finally(() => {
+          console.log("finally");
+        });
+    }
+  };
+  useEffect(() => {
+    getBlog();
+  }, []);
   return (
     <>
       <Header_01 />
@@ -33,27 +84,23 @@ function BlogDetails() {
                   <div className="flex flex-col gap-6">
                     {/* Blog Post Text Area */}
                     <article className="jos overflow-hidden bg-white">
-                      <div className="mb-7 shadow-md border border-gray-200 block overflow-hidden rounded-[10px]">
+                      <div className="mb-7 h-[300px] lg:h-[74vh] flex justify-center items-center shadow-md border border-gray-200  overflow-hidden rounded-[10px]">
                         <img
-                          src="https://images.unsplash.com/photo-1543286386-713bdd548da4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                          src={imageURL + image}
                           alt="blog-main-1"
-                          className="h-[300px] lg:h-[700px] w-full  object-cover"
+                          className="h-full"
                         />
                       </div>
-                      {/* Blog Post Meta */}
 
                       <div className="w-full flex flex-col-reverse lg:flex-row items-start lg:items-center justify-between gap-7 lg:gap-0">
                         <ul className=" flex flex-wrap items-center gap-2">
-                          <li className="relative font-semibold ">
-                            <p className="bg-lime-400 px-5 py-1 font-Satoshi rounded-full">
-                              Business
-                            </p>
-                          </li>
-                          <li className="relative font-semibold">
-                            <p className="bg-lime-400 px-5 py-1 font-Satoshi rounded-full">
-                              Design
-                            </p>
-                          </li>
+                          {tags.map((elem, index) => (
+                            <li key={index} className="relative font-semibold ">
+                              <p className="bg-lime-400 px-5 py-1 font-Satoshi rounded-full">
+                                {elem}
+                              </p>
+                            </li>
+                          ))}
                         </ul>
                         <ul className="flex w-full lg:w-auto items-center justify-between lg:gap-12 mb-5">
                           <li className="relative font-semibold ">
@@ -76,111 +123,23 @@ function BlogDetails() {
                               <span>
                                 <SlCalender />
                               </span>{" "}
-                              16 February 2024
+                              {date}
                             </p>
                           </li>
                         </ul>
                       </div>
 
                       {/* Blog Post Meta */}
-                      <h5 className="mb-3 mt-10">
-                        10 ways to supercharge your startup with AI integration:
-                        unlock exponential growth
-                      </h5>
-                      <p className="mb-7 last:mb-0">
-                        The rapid advancements in AI have paved the way for
-                        startups to revolutionize their businesses. This article
-                        explores 10 key ways AI can be integrated into startups
-                        and provides real-world examples of its tangible impact
-                        across industries.
-                      </p>
-                      <ul className="mb-7 flex flex-col gap-7 last:mb-0">
-                        <li>
-                          <div className="font-semibold">
-                            1. AI-Powered Customer Support
-                          </div>
-                          <p className="mb-7 last:mb-0">
-                            AI chatbots and virtual assistants can handle
-                            routine queries, troubleshoot issues, and guide
-                            users, improving response times. This frees up human
-                            agents to tackle complex tasks, enhancing user
-                            experience.
-                          </p>
-                        </li>
-                        <li>
-                          <div className="font-semibold">
-                            2. Predictive Maintenance
-                          </div>
-                          <p className="mb-7 last:mb-0">
-                            By analyzing usage patterns, ML algorithms can
-                            predict failures, enabling proactive maintenance and
-                            minimizing downtime.
-                          </p>
-                        </li>
-                        <li>
-                          <div className="font-semibold">
-                            3. Enhanced Cybersecurity
-                          </div>
-                          <p className="mb-7 last:mb-0">
-                            AI anomaly detection, behavior analysis, and
-                            intrusion prevention boost security and data
-                            protection. This safeguards infrastructure and
-                            builds user trust.
-                          </p>
-                        </li>
+                      <h5 className="mb-3 mt-10">{title}</h5>
 
-                        <li>
-                          <div className="font-semibold">
-                            4. Personalized User Experiences
-                          </div>
-                          <p className="mb-7 last:mb-0">
-                            By analyzing behavior and preferences, AI tailors
-                            interfaces and features. This improves satisfaction
-                            and encourages retention.
-                          </p>
-                        </li>
-                        <li>
-                          <div className="font-semibold">
-                            5. Automated Workflows
-                          </div>
-                          <p className="mb-7 last:mb-0">
-                            Automating tasks like software updates and license
-                            management with AI reduces manual efforts and
-                            minimizes errors.
-                          </p>
-                        </li>
-                      </ul>
-                      <div className="font-semibold">
-                        Key Takeaways for Founders
+                      <div className="w-full">
+                        <Suspense fallback={null}>
+                          <EditorComp
+                            markdown={blogDetail ? blogDetail : ""}
+                            onChange={(value) => setBlogDetail(value)}
+                          />
+                        </Suspense>
                       </div>
-                      <ul className="mb-7 last:mb-0">
-                        <li className="relative pl-[30px] after:absolute after:left-[10px] after:top-3 after:h-[5px] after:w-[5px] after:rounded-[50%] after:bg-black">
-                          Start with chatbot, workflow automation, and basic
-                          analytics.
-                        </li>
-                        <li className="relative pl-[30px] after:absolute after:left-[10px] after:top-3 after:h-[5px] after:w-[5px] after:rounded-[50%] after:bg-black">
-                          Gradually scale AI adoption as the business matures.
-                        </li>
-                        <li className="relative pl-[30px] after:absolute after:left-[10px] after:top-3 after:h-[5px] after:w-[5px] after:rounded-[50%] after:bg-black">
-                          Identify the right AI use cases to solve pressing
-                          needs.
-                        </li>
-                        <li className="relative pl-[30px] after:absolute after:left-[10px] after:top-3 after:h-[5px] after:w-[5px] after:rounded-[50%] after:bg-black">
-                          Integrate AI into workflows and processes seamlessly.
-                        </li>
-                        <li className="relative pl-[30px] after:absolute after:left-[10px] after:top-3 after:h-[5px] after:w-[5px] after:rounded-[50%] after:bg-black">
-                          Get creative — leverage partnerships and talent from
-                          outside.
-                        </li>
-                      </ul>
-                      <p className="mb-7 last:mb-0">
-                        The key to startup success is focusing AI efforts on the
-                        applications that will differentiate your business and
-                        have the biggest impact at each stage of growth. With
-                        the right strategy, AI can unlock transformation
-                        opportunities and exponential value creation.
-                      </p>
-                      <p className="mb-7 last:mb-0">Thanks for reading ❤</p>
                     </article>
                     {/* Blog Post Text Area */}
                     {/* Blog Events */}

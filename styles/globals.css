@@ -191,6 +191,23 @@ h5 {
   }
 }
 
-.mdxeditor-popup-container{
+.mdxeditor-popup-container {
   z-index: 99999 !important;
+}
+
+.editor-container {
+  width: 100%; /* Make sure the container is full width */
+}
+
+.mdx-editor {
+  width: 100%; /* Make sure the editor itself is full width */
+  box-sizing: border-box;
+/* Include padding and border in element's total width */
+}
+
+/* If you have specific styles for contentEditableClassName */
+.prose {
+  width: 100%;
+  max-width: none;
+    padding: 0px 0px;  /* Remove any max-width constraints */
 }

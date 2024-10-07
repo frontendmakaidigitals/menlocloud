@@ -149,7 +149,7 @@ const Blogform = ({ id }) => {
               onClick={() => setimageOpen(false)}
               className="text-4xl absolute p-1 top-4 right-4 bg-black rounded-md cursor-pointer hover:bg-red-500 text-gray-50"
             />
-            ~``
+
             <div className="h-full">
               <img
                 src={
@@ -272,12 +272,10 @@ const Blogform = ({ id }) => {
         <div className="w-full mt-4">
           <p className="font-Satoshi font-medium">Description</p>
           <div className=" border border-black rounded-md">
-            <Suspense fallback={null}>
-              <EditorComp
-                markdown={blogDetail ? blogDetail : ""}
-                onChange={(value) => setBlogDetail(value)}
-              />
-            </Suspense>
+            <EditorComp
+              markdown={blogDetail ? blogDetail : ""}
+              onChange={(value) => setBlogDetail(value)}
+            />
           </div>
         </div>
 
