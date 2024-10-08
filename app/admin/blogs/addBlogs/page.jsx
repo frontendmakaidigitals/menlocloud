@@ -33,6 +33,7 @@ export default page;
 
 const Blogform = () => {
   const router = useRouter();
+
   const [tags, setTags] = useState([]);
   const [inputValue, setInputValue] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -40,9 +41,10 @@ const Blogform = () => {
   const [title, setTitle] = useState("");
   const [metaDiscription, setMetaDiscription] = useState("");
   const [metaTag, setMetaTag] = useState("");
-  const [subTitle, setSubTitle] = useState("");
+  const [author, setAuthor] = useState("");
   const [selectedOption, setSelectedOption] = useState("default");
   const options = ["1", "2", "3", "4", "default"];
+
   const handleKeyPress = (e) => {
     if (e.key === "Enter" && inputValue.trim()) {
       e.preventDefault(); // Prevent form submission
@@ -84,7 +86,7 @@ const Blogform = () => {
       formData.append("metaDescription", metaDiscription);
       formData.append("blogDetail", blogDetail);
       formData.append("tags", tags);
-      formData.append("subTitle", subTitle);
+      formData.append("author", author);
       formData.append("priority", selectedOption);
 
       if (image && image.length > 0) {
@@ -141,11 +143,11 @@ const Blogform = () => {
             />
           </div>
           <div className="w-full  ">
-            <p className="font-Satoshi font-medium"> Sub Heading</p>
+            <p className="font-Satoshi font-medium"> Author</p>
             <input
-              placeholder="Sub Title"
-              value={subTitle}
-              onChange={(e) => setSubTitle(e.target.value)}
+              placeholder="Author"
+              value={author}
+              onChange={(e) => setAuthor(e.target.value)}
               className="px-3 w-full py-2 block mt-1 bg-transparent border border-gray-600 placeholder:text-gray-400 rounded-md"
             />
           </div>
@@ -216,7 +218,7 @@ const Blogform = () => {
             <p className="font-Satoshi font-medium"> Tags </p>
             <div className="relative bg-transparent border border-gray-600 placeholder:text-gray-400 rounded-md  flex items-center gap-3">
               <div
-                className={`flex flex-wrap gap-3 justify-start ${tags.length === 0 ? "ml-0" : "ml-2"}`}
+                className={`flex gap-3 justify-start ${tags.length === 0 ? "ml-0" : "ml-2"}`}
               >
                 {tags.map((tag, index) => (
                   <div

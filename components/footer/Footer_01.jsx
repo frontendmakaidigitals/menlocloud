@@ -70,14 +70,7 @@ const Footer_01 = () => {
                   Services
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/"
-                  className="transition-all duration-300 ease-linear hover:text-colorOrangyRed"
-                >
-                  pricing
-                </Link>
-              </li>
+            
               <li>
                 <Link
                   href="/"

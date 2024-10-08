@@ -46,7 +46,7 @@ const Page = () => {
   useEffect(() => {
     getBlogs();
   }, []);
- 
+
   return (
     <div className="w-full">
       <div className="mt-8 w-full flex justify-between items-center">
@@ -98,8 +98,11 @@ const BlogList = ({ blogs }) => {
             <TableHead className=" text-gray-900 text-lg font-Satoshi font-bold">
               Blog Title
             </TableHead>
-             
-            <TableHead className=" text-gray-900 text-lg font-Satoshi font-bold">
+            <TableHead className=" text-gray-900 text-lg text-center font-Satoshi font-bold">
+              Priority
+            </TableHead>
+
+            <TableHead className=" text-gray-900  text-lg font-Satoshi font-bold">
               Blog Image
             </TableHead>
             <TableHead className=" text-gray-900 text-lg font-Satoshi font-bold rounded-r-xl">
@@ -114,13 +117,17 @@ const BlogList = ({ blogs }) => {
               <TableCell className={`font-Satoshi font-medium text-lg py-3`}>
                 <p className="">{invoice.name}</p>
               </TableCell>
+              <TableCell
+                className={`font-Satoshi font-medium text-center text-lg py-3`}
+              >
+                <p className="">{invoice.priority}</p>
+              </TableCell>
 
-               
               <TableCell className={`font-Satoshi font-medium py-3`}>
-                <div className="w-32 h-[130px]   flex items-center justify-center ">
+                <div className="w-32 h-[130px] flex items-center justify-center ">
                   <img
                     src={imageURL + invoice.image}
-                    className=" h-full"
+                    className=" max-h-full min-h-auto"
                     alt="image"
                   />
                 </div>

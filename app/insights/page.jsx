@@ -57,6 +57,7 @@ function Insights() {
   const [isLoading, setIsLoading] = useState(false);
   const [status, setStatus] = useState(false);
   const [blogs, setBlogs] = useState([]);
+  console.log(blogs);
   const imageURL = "https://admin.yatriclubs.com/";
   const getBlogs = () => {
     if (true) {
@@ -122,76 +123,83 @@ function Insights() {
             {blogs.map(
               (blog) =>
                 blog.priority === "1" && (
-                  <div key={blog.id}>
-                    <div className="w-full flex justify-center rounded-xl items-center overflow-hidden h-[400px] lg:h-[55vh]">
-                      <img
-                        className="  rounded-lg object-cover"
-                        src={imageURL + blog.image}
-                        alt="Descriptive Alt Text"
-                      />
-                    </div>
-
+                  <Link key={blog.id} href={`/blog-details/${blog.id}`}>
                     <div>
-                      <p className="text-sm xl:text-[.7rem] xxl:text-sm font-Satoshi text-gray-600 mt-2 font-semibold">
-                        Olivia Rhye {new Date(blog.created_at).toDateString()}
-                      </p>
-                      <p className=" text-2xl xl:text-xl xxl:text-2xl font-Satoshi font-semibold mt-1">
-                        {blog.name}
-                      </p>
+                      <div className="w-full flex justify-center rounded-xl items-center overflow-hidden h-[400px] lg:h-[55vh]">
+                        <img
+                          className="  rounded-lg object-cover"
+                          src={imageURL + blog.image}
+                          alt="Descriptive Alt Text"
+                        />
+                      </div>
 
-                      <div className="flex justify-start items-center gap-2 mt-2">
-                        {blog?.tags
-                          .replace(/^"|"$|\\/g, "")
-                          .split(",")
-                          .map((tag, index) => (
-                            <p
-                              key={index}
-                              className="px-4 py-2 xl:px-3 xl:py-1 xxl:px-4 xxl:py-2 bg-lime-400 font-bold font-Satoshi text-sm xl:text-[.7rem] xxl:text-sm rounded-full w-fit"
-                            >
-                              {tag}
-                            </p>
-                          ))}
+                      <div>
+                        <p className="text-sm xl:text-[.7rem] xxl:text-sm font-Satoshi text-gray-600 mt-2 font-semibold">
+                          Olivia Rhye {new Date(blog.created_at).toDateString()}
+                        </p>
+                        <p className=" text-2xl xl:text-xl xxl:text-2xl font-Satoshi font-semibold mt-1">
+                          {blog.name}
+                        </p>
+
+                        <div className="flex justify-start items-center gap-2 mt-2">
+                          {blog?.tags
+                            .replace(/^"|"$|\\/g, "")
+                            .split(",")
+                            .map((tag, index) => (
+                              <p
+                                key={index}
+                                className="px-4 py-2 xl:px-3 xl:py-1 xxl:px-4 xxl:py-2 bg-lime-400 font-bold font-Satoshi text-sm xl:text-[.7rem] xxl:text-sm rounded-full w-fit"
+                              >
+                                {tag}
+                              </p>
+                            ))}
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 )
             )}
             <div className="grid w-full grid-cols-1 gap-5">
               {blogs
-                .filter((blog) => ["2", "3", "4"].includes(blog.priority)) // Filter by priority
+                .filter((blog) => ["2", "3", "4"].includes(blog.priority))
+                .sort((a, b) => parseInt(a.priority) - parseInt(b.priority)) // Sort by priority
                 .map((blog) => (
-                  <div key={blog.id} className="flex w-full lg:flex-row gap-4">
-                    <div className="flex-shrink-0 w-[230px] h-[180px] overflow-hidden rounded-lg">
-                      <img
-                        className="w-full h-full object-cover"
-                        src={imageURL + blog.image}
-                        alt={blog.name}
-                      />
-                    </div>
-                    <div className="flex flex-col justify-between flex-grow">
-                      {" "}
-                      {/* Allow this div to take the remaining space */}
-                      <p className="text-sm xl:text-[.7rem] xxl:text-sm font-Satoshi text-gray-600 font-semibold">
-                        Olivia Rhye {new Date(blog.created_at).toDateString()}{" "}
-                      </p>
-                      <p className="text-lg xl:text-md xxl:text-2xl font-Satoshi font-semibold">
-                        {blog.name}
-                      </p>
-                      <div className="flex justify-start items-center gap-2">
-                        {blog?.tags
-                          .replace(/^"|"$|\\/g, "")
-                          .split(",")
-                          .map((tag, index) => (
-                            <p
-                              key={index}
-                              className="px-4 py-2 xl:px-3 xl:py-1 xxl:px-4 xxl:py-2 bg-lime-400 font-bold font-Satoshi text-sm xl:text-[.7rem] xxl:text-sm rounded-full w-fit"
-                            >
-                              {tag}
-                            </p>
-                          ))}
+                  <Link key={blog.id} href={`/blog-details/${blog.id}`}>
+                    <div
+                      key={blog.id}
+                      className="flex w-full lg:flex-row gap-4"
+                    >
+                      <div className="flex-shrink-0 w-[230px] h-[180px] overflow-hidden rounded-lg">
+                        <img
+                          className="w-full h-full object-cover"
+                          src={imageURL + blog.image}
+                          alt={blog.name}
+                        />
+                      </div>
+                      <div className="flex flex-col justify-between flex-grow">
+                        <p className="text-sm xl:text-[.7rem] xxl:text-sm font-Satoshi text-gray-600 font-semibold">
+                          {blog.author}{" "}
+                          {new Date(blog.created_at).toDateString()}
+                        </p>
+                        <p className="text-lg xl:text-md xxl:text-2xl font-Satoshi font-semibold">
+                          {blog.name}
+                        </p>
+                        <div className="flex justify-start items-center gap-2">
+                          {blog?.tags
+                            .replace(/^"|"$|\\/g, "")
+                            .split(",")
+                            .map((tag, index) => (
+                              <p
+                                key={index}
+                                className="px-4 py-2 xl:px-3 xl:py-1 xxl:px-4 xxl:py-2 bg-lime-400 font-bold font-Satoshi text-sm xl:text-[.7rem] xxl:text-sm rounded-full w-fit"
+                              >
+                                {tag}
+                              </p>
+                            ))}
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 ))}
             </div>
           </div>
@@ -250,40 +258,44 @@ function Insights() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 mt-12 lg:mt-7 xxl:grid-cols-4 gap-10">
             {blogs
-              .filter((blog) => ['2', '3', '4'].includes(blog.priority)) // Filter by priority
+              .filter((blog) => ["2", "3", "4"].includes(blog.priority)) // Filter by priority
+              .sort((a, b) => parseInt(a.priority) - parseInt(b.priority)) // Sort by priority
               .map((blog) => (
-                <div key={blog.id} className="w-full flex flex-col h-full">
-                  <div className="w-full overflow-hidden flex-grow">
-                    <img
-                      src={imageURL + blog.image}
-                      className="w-full h-64 object-cover"
-                      alt={blog.title}
-                    />
-                  </div>
-                  <div className="flex flex-col flex-grow justify-between">
-                    <div>
-                      <p className="lg:text-[.8rem] text-sm font-Satoshi text-gray-600 mt-2 font-semibold">
-                        Olivia Rhye {new Date(blog.created_at).toDateString()}{" "}
-                      </p>
-                      <p className="xl:text-lg h-[150px] overflow-hidden overflow-ellipsis  xxl:text-2xl font-Satoshi text-gray-900 mt-2 font-semibold line-clamp-4">
-                        {blog.name}
-                      </p>
+                <Link key={blog.id} href={`/blog-details/${blog.id}`}>
+                  <div key={blog.id} className="w-full flex flex-col h-full">
+                    <div className="w-full overflow-hidden flex-grow">
+                      <img
+                        src={imageURL + blog.image}
+                        className="w-full h-64 object-cover"
+                        alt={blog.title}
+                      />
                     </div>
-                    <div className="flex justify-start gap-2 mt-2">
-                      {blog?.tags
-                        .replace(/^"|"$|\\/g, "")
-                        .split(",")
-                        .map((tag, index) => (
-                          <p
-                            key={index}
-                            className="px-4 py-2 xl:px-3 xl:py-1 xxl:px-4 xxl:py-2 bg-lime-400 font-bold font-Satoshi text-sm xl:text-[.7rem] xxl:text-sm rounded-full w-fit"
-                          >
-                            {tag}
-                          </p>
-                        ))}
+                    <div className="flex flex-col flex-grow justify-between">
+                      <div>
+                        <p className="lg:text-[.8rem] text-sm font-Satoshi text-gray-600 mt-2 font-semibold">
+                          {blog.author}{" "}
+                          {new Date(blog.created_at).toDateString()}
+                        </p>
+                        <p className="xl:text-lg h-[150px] overflow-hidden overflow-ellipsis xxl:text-2xl font-Satoshi text-gray-900 mt-2 font-semibold line-clamp-4">
+                          {blog.name}
+                        </p>
+                      </div>
+                      <div className="flex justify-start gap-2 mt-2">
+                        {blog?.tags
+                          .replace(/^"|"$|\\/g, "")
+                          .split(",")
+                          .map((tag, index) => (
+                            <p
+                              key={index}
+                              className="px-4 py-2 xl:px-3 xl:py-1 xxl:px-4 xxl:py-2 bg-lime-400 font-bold font-Satoshi text-sm xl:text-[.7rem] xxl:text-sm rounded-full w-fit"
+                            >
+                              {tag}
+                            </p>
+                          ))}
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               ))}
           </div>
         </section>

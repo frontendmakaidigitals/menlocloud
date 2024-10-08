@@ -218,6 +218,22 @@ const specialize = [
     description:
       "Cloud transformation is the process of migrating data and applications to cloud-based platforms to enhance flexibility, scalability, and efficiency.",
   },
+  {
+    title: "Talent Hunt",
+    color: "#F06292",
+    link: "/cloud-transformation",
+    img: "https://cdn-icons-png.freepik.com/512/12820/12820680.png",
+    description:
+      "Cloud transformation is the process of migrating data and applications to cloud-based platforms to enhance flexibility, scalability, and efficiency.",
+  },
+  {
+    title: "Staff Augmentation",
+    color: "#64B5F6",
+    link: "/cloud-transformation",
+    img: "https://cdn3d.iconscout.com/3d/premium/thumb/staff-management-3d-icon-download-in-png-blend-fbx-gltf-file-formats--employee-human-resource-team-corporate-business-pack-icons-4755478.png?f=webp",
+    description:
+      "Cloud transformation is the process of migrating data and applications to cloud-based platforms to enhance flexibility, scalability, and efficiency.",
+  },
 ];
 function Home() {
   const [isVisible, setIsVisible] = useState(true);
@@ -273,10 +289,12 @@ function Home() {
   };
 
   const words = [
-    "Software Development",
-    "Digital Strategies",
-    "Generative AI",
+    "Staff",
+    "Talent",
     "Cloud Transformation",
+    "Generative AI",
+    "Data Analytics",
+    "Digital marketing",
   ];
   useEffect(() => {
     // Function to handle scroll events
@@ -420,7 +438,7 @@ function Home() {
             </span>
             in{" "}
           </p>
-          <div className="grid grid-cols-1 gap-10 lg:grid-cols-3 mt-14">
+          <div className="grid grid-cols-1 gap-10 xl:grid-cols-3 xxl:grid-cols-5 mt-14">
             {specialize.map((elem, index) => (
               <motion.div
                 whileHover={{ scale: 1.1 }}
@@ -428,16 +446,18 @@ function Home() {
                 className="px-6 py-6 shadow-md rounded-xl flex flex-col justify-between items-start"
                 style={{ backgroundColor: elem.color }}
               >
-                <div className="size-16  ">
-                  <img src={elem.img} />
+                <div className=" flex justify-center w-full  ">
+                  <div className="size-16">
+                    <img src={elem.img} />
+                  </div>
                 </div>
-                <p className="font-satoshi font-bold text-2xl mt-6">
+                <p className="font-satoshi w-full text-center font-bold text-2xl mt-6">
                   {elem.title}
                 </p>
-                <p className="font-satoshi font-medium text-lg mt-3">
+                <p className="w-full font-satoshi text-center font-medium text-lg mt-3">
                   {elem.description}
                 </p>
-                <div className="w-full flex justify-start mt-7">
+                <div className="w-full flex justify-center mt-7">
                   <button
                     onClick={() => setisOpen(true)}
                     className="text-gray-50 overflow-hidden group rounded-lg relative font-Satoshi font-medium py-2 text-md px-5 bg-gray-900"

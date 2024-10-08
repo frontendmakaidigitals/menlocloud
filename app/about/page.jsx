@@ -100,8 +100,9 @@ function About() {
                 Our Mission and Values
               </p>
               <p className="mt-2 text-center text-sm ">
-                Fostering a Culture of Excellence and Accountability Through Our
-                Mission and Core Values
+                Our mission is to empower businesses with top-tier IT talent,
+                delivering exceptional solutions that drive innovation and
+                success.
               </p>
             </div>
           </div>

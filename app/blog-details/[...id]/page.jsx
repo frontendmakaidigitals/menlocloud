@@ -8,21 +8,24 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
+import Head from "next/head";
 
 function BlogDetails({ params }) {
   const EditorComp = dynamic(() => import("@/components/MDXViewer"), {
     ssr: false,
   });
+  const serverURL = "https://admin.yatriclubs.com/";
   const [tags, setTags] = useState([]);
   const [status, setStatus] = useState(null);
   const [title, setTitle] = useState("");
+  const [blogs, setBlogs] = useState([]);
+  const [author, setAuthor] = useState("");
   const [metaDiscription, setMetaDiscription] = useState("");
   const [metaTag, setMetaTag] = useState("");
   const [blogDetail, setBlogDetail] = useState("");
   const [date, setDate] = useState("");
   const [image, setImage] = useState("");
   const id = params.id[0];
-  const imageURL = "https://admin.yatriclubs.com/";
 
   const getBlog = () => {
     if (true) {
@@ -34,12 +37,13 @@ function BlogDetails({ params }) {
           withCredentials: true,
         })
         .then((res) => {
-          setTitle(res.data.Name);
+          setTitle(res.data.name);
           setMetaDiscription(res.data.metaDiscription);
           setMetaTag(res.data.metaTag);
           setTags(res.data.tags.replace(/^"|"$|\\/g, "").split(","));
           setBlogDetail(res.data.description);
           setImage(res.data.image);
+          setAuthor(res.data.author);
           const dateForm = new Date(res.data.created_at);
           const options = { year: "numeric", month: "long", day: "numeric" };
           setDate(dateForm.toLocaleDateString(undefined, options));
@@ -53,12 +57,35 @@ function BlogDetails({ params }) {
         });
     }
   };
+
+  const getAllBlogs = (data) => {
+    if (true) {
+      axios.get(`${serverURL}sanctum/csrf-cookie`, {
+        withCredentials: true,
+      });
+      axios
+        .get(`${serverURL}api/blog`, { withCredentials: true })
+        .then((res) => {
+          setBlogs(res.data);
+        });
+    }
+  };
+
   useEffect(() => {
     getBlog();
+    getAllBlogs();
   }, []);
+
   return (
     <>
+      {title && (
+        <Head>
+          <title>{title}</title>
+          <meta name="description" content={metaDiscription} />
+        </Head>
+      )}
       <Header_01 />
+
       <main className="main-wrapper relative overflow-hidden">
         {/*...::: Breadcrumb Section Start :::... */}
         <section id="section-breadcrumb">
@@ -86,9 +113,9 @@ function BlogDetails({ params }) {
                     <article className="jos overflow-hidden bg-white">
                       <div className="mb-7 h-[300px] lg:h-[74vh] flex justify-center items-center shadow-md border border-gray-200  overflow-hidden rounded-[10px]">
                         <img
-                          src={imageURL + image}
+                          src={serverURL + image}
                           alt="blog-main-1"
-                          className="h-full"
+                          className="min-h-auto object-cover"
                         />
                       </div>
 
@@ -114,7 +141,7 @@ function BlogDetails({ params }) {
                                 />
                               </div>
                               <p className=" font-Satoshi rounded-full">
-                                by Andrew
+                                by {author}
                               </p>
                             </div>
                           </li>
@@ -161,222 +188,46 @@ function BlogDetails({ params }) {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3  mt-12 lg:mt-7 xxl:grid-cols-4 gap-10">
-            <div className="w-full">
-              <div className="w-full overflow-hidden">
-                <img
-                  src={
-                    "https://images.unsplash.com/photo-1527689368864-3a821dbccc34?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  }
-                />
-              </div>
-              <p className="lg:text-[.8rem] text-sm  font-Satoshi text-gray-600 mt-2 font-semibold">
-                Olivia Rhye 20Jan 2024
-              </p>
-              <p className="xl:text-lg xxl:text-2xl font-Satoshi text-gray-900 mt-2 font-semibold">
-                Conversations wih London Makr & Co.
-              </p>
-              <p className=" xl:text-sm xxl:text-lg font-Satoshi tracking-tight mt-1 font-medium ">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
-              </p>
-              <div className="flex justify-start gap-2 mt-2">
-                <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm xl:text-[.8rem] xxl:text-sm rounded-full w-fit">
-                  Design
-                </p>
-                <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm xl:text-[.8rem] xxl:text-sm rounded-full w-fit">
-                  Ui/Ux
-                </p>
-              </div>
-            </div>
-            <div className="w-full">
-              <div className="w-full overflow-hidden">
-                <img
-                  src={
-                    "https://images.unsplash.com/photo-1527689368864-3a821dbccc34?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  }
-                />
-              </div>
-              <p className="lg:text-[.8rem] text-sm  font-Satoshi text-gray-600 mt-2 font-semibold">
-                Olivia Rhye 20Jan 2024
-              </p>
-              <p className="xl:text-lg xxl:text-2xl font-Satoshi text-gray-900 mt-2 font-semibold">
-                Conversations wih London Makr & Co.
-              </p>
-              <p className=" xl:text-sm xxl:text-lg font-Satoshi tracking-tight mt-1 font-medium ">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
-              </p>
-              <div className="flex justify-start gap-2 mt-2">
-                <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm xl:text-[.8rem] xxl:text-sm rounded-full w-fit">
-                  Design
-                </p>
-                <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm xl:text-[.8rem] xxl:text-sm rounded-full w-fit">
-                  Ui/Ux
-                </p>
-              </div>
-            </div>
-            <div className="w-full">
-              <div className="w-full overflow-hidden">
-                <img
-                  src={
-                    "https://images.unsplash.com/photo-1527689368864-3a821dbccc34?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  }
-                />
-              </div>
-              <p className="lg:text-[.8rem] text-sm  font-Satoshi text-gray-600 mt-2 font-semibold">
-                Olivia Rhye 20Jan 2024
-              </p>
-              <p className="xl:text-lg xxl:text-2xl font-Satoshi text-gray-900 mt-2 font-semibold">
-                Conversations wih London Makr & Co.
-              </p>
-              <p className=" xl:text-sm xxl:text-lg font-Satoshi tracking-tight mt-1 font-medium ">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
-              </p>
-              <div className="flex justify-start gap-2 mt-2">
-                <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm xl:text-[.8rem] xxl:text-sm rounded-full w-fit">
-                  Design
-                </p>
-                <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm xl:text-[.8rem] xxl:text-sm rounded-full w-fit">
-                  Ui/Ux
-                </p>
-              </div>
-            </div>
-            <div className="w-full">
-              <div className="w-full overflow-hidden">
-                <img
-                  src={
-                    "https://images.unsplash.com/photo-1527689368864-3a821dbccc34?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  }
-                />
-              </div>
-              <p className="lg:text-[.8rem] text-sm  font-Satoshi text-gray-600 mt-2 font-semibold">
-                Olivia Rhye 20Jan 2024
-              </p>
-              <p className="xl:text-lg xxl:text-2xl font-Satoshi text-gray-900 mt-2 font-semibold">
-                Conversations wih London Makr & Co.
-              </p>
-              <p className=" xl:text-sm xxl:text-lg font-Satoshi tracking-tight mt-1 font-medium ">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
-              </p>
-              <div className="flex justify-start gap-2 mt-2">
-                <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm xl:text-[.8rem] xxl:text-sm rounded-full w-fit">
-                  Design
-                </p>
-                <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm xl:text-[.8rem] xxl:text-sm rounded-full w-fit">
-                  Ui/Ux
-                </p>
-              </div>
-            </div>
-            <div className="w-full">
-              <div className="w-full overflow-hidden">
-                <img
-                  src={
-                    "https://images.unsplash.com/photo-1527689368864-3a821dbccc34?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  }
-                />
-              </div>
-              <p className="lg:text-[.8rem] text-sm  font-Satoshi text-gray-600 mt-2 font-semibold">
-                Olivia Rhye 20Jan 2024
-              </p>
-              <p className="xl:text-lg xxl:text-2xl font-Satoshi text-gray-900 mt-2 font-semibold">
-                Conversations wih London Makr & Co.
-              </p>
-              <p className=" xl:text-sm xxl:text-lg font-Satoshi tracking-tight mt-1 font-medium ">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
-              </p>
-              <div className="flex justify-start gap-2 mt-2">
-                <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm xl:text-[.8rem] xxl:text-sm rounded-full w-fit">
-                  Design
-                </p>
-                <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm xl:text-[.8rem] xxl:text-sm rounded-full w-fit">
-                  Ui/Ux
-                </p>
-              </div>
-            </div>
-            <div className="w-full">
-              <div className="w-full overflow-hidden">
-                <img
-                  src={
-                    "https://images.unsplash.com/photo-1527689368864-3a821dbccc34?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  }
-                />
-              </div>
-              <p className="lg:text-[.8rem] text-sm  font-Satoshi text-gray-600 mt-2 font-semibold">
-                Olivia Rhye 20Jan 2024
-              </p>
-              <p className="xl:text-lg xxl:text-2xl font-Satoshi text-gray-900 mt-2 font-semibold">
-                Conversations wih London Makr & Co.
-              </p>
-              <p className=" xl:text-sm xxl:text-lg font-Satoshi tracking-tight mt-1 font-medium ">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
-              </p>
-              <div className="flex justify-start gap-2 mt-2">
-                <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm xl:text-[.8rem] xxl:text-sm rounded-full w-fit">
-                  Design
-                </p>
-                <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm xl:text-[.8rem] xxl:text-sm rounded-full w-fit">
-                  Ui/Ux
-                </p>
-              </div>
-            </div>
-            <div className="w-full">
-              <div className="w-full overflow-hidden">
-                <img
-                  src={
-                    "https://images.unsplash.com/photo-1527689368864-3a821dbccc34?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  }
-                />
-              </div>
-              <p className="lg:text-[.8rem] text-sm  font-Satoshi text-gray-600 mt-2 font-semibold">
-                Olivia Rhye 20Jan 2024
-              </p>
-              <p className="xl:text-lg xxl:text-2xl font-Satoshi text-gray-900 mt-2 font-semibold">
-                Conversations wih London Makr & Co.
-              </p>
-              <p className=" xl:text-sm xxl:text-lg font-Satoshi tracking-tight mt-1 font-medium ">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
-              </p>
-              <div className="flex justify-start gap-2 mt-2">
-                <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm xl:text-[.8rem] xxl:text-sm rounded-full w-fit">
-                  Design
-                </p>
-                <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm xl:text-[.8rem] xxl:text-sm rounded-full w-fit">
-                  Ui/Ux
-                </p>
-              </div>
-            </div>
-            <div className="w-full">
-              <div className="w-full overflow-hidden">
-                <img
-                  src={
-                    "https://images.unsplash.com/photo-1527689368864-3a821dbccc34?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  }
-                />
-              </div>
-              <p className="lg:text-[.8rem] text-sm  font-Satoshi text-gray-600 mt-2 font-semibold">
-                Olivia Rhye 20Jan 2024
-              </p>
-              <p className="xl:text-lg xxl:text-2xl font-Satoshi text-gray-900 mt-2 font-semibold">
-                Conversations wih London Makr & Co.
-              </p>
-              <p className=" xl:text-sm xxl:text-lg font-Satoshi tracking-tight mt-1 font-medium ">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
-              </p>
-              <div className="flex justify-start gap-2 mt-2">
-                <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm xl:text-[.8rem] xxl:text-sm rounded-full w-fit">
-                  Design
-                </p>
-                <p className="px-4 py-2 bg-lime-400 font-bold font-Satoshi text-sm xl:text-[.8rem] xxl:text-sm rounded-full w-fit">
-                  Ui/Ux
-                </p>
-              </div>
-            </div>
+            {blogs
+              .filter((blog) => ["2", "3", "4"].includes(blog.priority)) // Filter by priority
+              .sort((a, b) => parseInt(a.priority) - parseInt(b.priority)) // Sort by priority
+              .map((blog) => (
+                <Link key={blog.id} href={`/blog-details/${blog.id}`}>
+                  <div key={blog.id} className="w-full flex flex-col h-full">
+                    <div className="w-full overflow-hidden flex-grow">
+                      <img
+                        src={serverURL + blog.image}
+                        className="w-full h-64 object-cover"
+                        alt={blog.title}
+                      />
+                    </div>
+                    <div className="flex flex-col flex-grow justify-between">
+                      <div>
+                        <p className="lg:text-[.8rem] text-sm font-Satoshi text-gray-600 mt-2 font-semibold">
+                          {blog.author}{" "}
+                          {new Date(blog.created_at).toDateString()}
+                        </p>
+                        <p className="xl:text-lg h-[150px] overflow-hidden overflow-ellipsis xxl:text-2xl font-Satoshi text-gray-900 mt-2 font-semibold line-clamp-4">
+                          {blog.name}
+                        </p>
+                      </div>
+                      <div className="flex justify-start gap-2 mt-2">
+                        {blog?.tags
+                          .replace(/^"|"$|\\/g, "")
+                          .split(",")
+                          .map((tag, index) => (
+                            <p
+                              key={index}
+                              className="px-4 py-2 xl:px-3 xl:py-1 xxl:px-4 xxl:py-2 bg-lime-400 font-bold font-Satoshi text-sm xl:text-[.7rem] xxl:text-sm rounded-full w-fit"
+                            >
+                              {tag}
+                            </p>
+                          ))}
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              ))}
           </div>
         </section>
       </main>
