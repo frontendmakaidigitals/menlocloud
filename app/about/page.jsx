@@ -68,9 +68,12 @@ function About() {
           <div className="breadcrumb-wrapper">
             {/* Section Container */}
             <div className="global-container flex flex-col justify-center items-center">
-              <div className="breadcrumb-block w-full lg:w-2/3 ">
-                <p className="text-3xl  xl:text-4xl xxl:text-6xl font-Satoshi font-bold !text-gray-100">
-                  Bringing Your Vision to life with Expertise and Dedication
+              <div className="breadcrumb-block w-full  ">
+                <p className="text-2xl  xl:text-3xl xxl:text-5xl font-Satoshi font-bold !text-gray-100">
+                  Accelerate your business with top talent.
+                </p>
+                <p className="text-2xl  xl:text-3xl xxl:text-5xl font-Satoshi font-bold !text-gray-100">
+                  Your success, our mission.
                 </p>
               </div>
               <div className="bg-no-repeat bg-center bg-cover bg-[url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] w-full h-[50vh] xl:h-[80vh] overflow-hidden bg-green-400 mt-10 rounded-[40px]"></div>

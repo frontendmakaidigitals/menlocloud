@@ -11,6 +11,43 @@ function Contact() {
   const [company, setCompany] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
+
+  const submitBlog = (e) => {
+    e.preventDefault();
+    if (true) {
+      const formData = new FormData();
+      formData.append("name", name);
+      formData.append("email", email);
+      formData.append("company", company);
+      formData.append("phone", phone);
+      formData.append("message", message);
+
+      setIsSubmitting(true);
+      axios.get("https://admin.yatriclubs.com/sanctum/csrf-cookie", {
+        withCredentials: true,
+      });
+      axios
+        .post(`https://admin.yatriclubs.com/api/`, formData, {
+          withCredentials: true,
+          headers: { "Content-Type": "multipart/form-data" },
+        })
+        .then((res) => {
+          setStatus("success");
+          setIsSubmitting(false);
+        })
+        .then(() => {
+          router.push("/admin/blogs");
+        })
+        .catch((error) => {
+          console.error(error);
+          setStatus("failed");
+        })
+        .finally(() => {
+          console.log("finally");
+          setIsSubmitting(false);
+        });
+    }
+  };
   return (
     <>
       <Header_01 />
@@ -68,7 +105,7 @@ function Contact() {
                           href="mailto:yourmail@email.com"
                           className="text-2xl font-normal leading-loose hover:text-blue-500 lg:text-3xl"
                         >
-                          info@menlocloud.com
+                          info@menlocloud.ai
                         </Link>
                       </li>
                       <li className="flex flex-col gap-y-4 text-2xl font-bold">
@@ -297,6 +334,7 @@ function Contact() {
                     </div>
                     <div>
                       <button
+                        onClick={submitBlog}
                         type="submit"
                         className="button mt-5 rounded-[50px] border-2 border-black bg-black py-4 text-white after:bg-blue-500 hover:border-blue-500 hover:text-white"
                       >
