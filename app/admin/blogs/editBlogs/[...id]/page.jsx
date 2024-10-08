@@ -5,22 +5,21 @@ import React from "react";
 import { HiMiniEye } from "react-icons/hi2";
 import { RiCloseLargeLine } from "react-icons/ri";
 import dynamic from "next/dynamic";
-
+import { Suspense } from "react";
 import axios from "axios";
 import Dropdown from "@/components/dropdown";
 import { useRouter } from "next/navigation";
 
-const EditorComp = dynamic(() => import("@/components/MDXEditor"), {
-  ssr: false,
-});
-
 const Page = ({ params }) => {
+  const EditorComp = dynamic(() => import("@/components/MDXEditor"), {
+    ssr: false,
+  });
   const id = params.id[0];
   return (
     <div className="relative">
       <p className="mt-6 font-Satoshi font-medium text-2xl">Edit Blog</p>
       <div className="mt-4 w-full ">
-        <Blogform id={id} />
+        <Blogform id={id} EditorComp={EditorComp} />
       </div>
     </div>
   );
@@ -28,7 +27,7 @@ const Page = ({ params }) => {
 
 export default Page;
 
-const Blogform = ({ id }) => {
+const Blogform = ({ id, EditorComp }) => {
   const router = useRouter();
   const [tags, setTags] = useState([]);
   const [inputValue, setInputValue] = useState("");
@@ -40,28 +39,30 @@ const Blogform = ({ id }) => {
   const [author, setAuthor] = useState("");
   const [selectedOption, setSelectedOption] = useState("default");
   const options = ["1", "2", "3", "4", "default"];
-  console.log(tags, "input");
-  const handleKeyPress = (e) => {
-    if (e.key === "Enter" && inputValue.trim()) {
-      e.preventDefault(); // Prevent form submission
 
-      if (tags.length < 3) {
-        // Check if current tags are less than 3
-        const newTags = [...tags, inputValue.trim()];
-        setTags(newTags);
-        setInputValue(""); // Clear the input
-      } else {
-        alert("You can only add up to 3 tags.");
-        setInputValue(""); // Notify the user
+  const handleKeyPress = (e) => {
+    if (inputValue.length > 1) {
+      if (e.key === "Enter" && inputValue.trim()) {
+        e.preventDefault(); // Prevent form submission
+        if (tags.length < 3) {
+          // Check if current tags are less than 3
+          const newTags = [...tags, inputValue.trim()];
+          setTags(newTags);
+          setInputValue(""); // Clear the input
+        } else {
+          alert("You can only add up to 3 tags.");
+          setInputValue(""); // Notify the user
+        }
       }
     }
   };
 
   const removeTag = (tagToRemove, e) => {
-    e.preventDefault();
-    const newTags = tags.filter((tag) => tag !== tagToRemove);
-    setTags(newTags);
-    setInputValue("", newTags); // Update the form state with the new tags
+    e.stopPropagation();
+    if (inputValue.length === 0) {
+      const newTags = tags.filter((tag) => tag !== tagToRemove);
+      setTags(newTags);
+    }
   };
 
   const handleImageChange = (event) => {
@@ -298,10 +299,12 @@ const Blogform = ({ id }) => {
         <div className="w-full mt-4">
           <p className="font-Satoshi font-medium">Description</p>
           <div className=" border border-black rounded-md">
-            <EditorComp
-              onChange={(value) => setBlogDetail(value)}
-              markdown={blogDetail}
-            />
+            <Suspense fallback={null}>
+              <EditorComp
+                onChange={(value) => setBlogDetail(value)}
+                markdown={blogDetail ? blogDetail : ""}
+              />
+            </Suspense>
           </div>
         </div>
 

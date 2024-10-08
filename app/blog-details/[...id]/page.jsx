@@ -115,7 +115,7 @@ function BlogDetails({ params }) {
                         <img
                           src={serverURL + image}
                           alt="blog-main-1"
-                          className="min-h-auto object-cover"
+                          className=" object-cover"
                         />
                       </div>
 
@@ -161,10 +161,7 @@ function BlogDetails({ params }) {
 
                       <div className="w-full">
                         <Suspense fallback={null}>
-                          <EditorComp
-                            markdown={blogDetail ? blogDetail : ""}
-                            onChange={(value) => setBlogDetail(value)}
-                          />
+                          <EditorComp markdown={blogDetail ? blogDetail : ""} />
                         </Suspense>
                       </div>
                     </article>
@@ -189,7 +186,7 @@ function BlogDetails({ params }) {
 
           <div className="grid grid-cols-1 md:grid-cols-3  mt-12 lg:mt-7 xxl:grid-cols-4 gap-10">
             {blogs
-              .filter((blog) => ["2", "3", "4"].includes(blog.priority)) // Filter by priority
+              .filter((blog) => ["default"].includes(blog.priority)) // Filter by priority
               .sort((a, b) => parseInt(a.priority) - parseInt(b.priority)) // Sort by priority
               .map((blog) => (
                 <Link key={blog.id} href={`/blog-details/${blog.id}`}>

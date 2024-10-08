@@ -135,7 +135,8 @@ function Insights() {
 
                       <div>
                         <p className="text-sm xl:text-[.7rem] xxl:text-sm font-Satoshi text-gray-600 mt-2 font-semibold">
-                          Olivia Rhye {new Date(blog.created_at).toDateString()}
+                          {blog.author}{" "}
+                          {new Date(blog.created_at).toDateString()}
                         </p>
                         <p className=" text-2xl xl:text-xl xxl:text-2xl font-Satoshi font-semibold mt-1">
                           {blog.name}
@@ -258,7 +259,7 @@ function Insights() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 mt-12 lg:mt-7 xxl:grid-cols-4 gap-10">
             {blogs
-              .filter((blog) => ["2", "3", "4"].includes(blog.priority)) // Filter by priority
+              .filter((blog) => ["default"].includes(blog.priority)) // Filter by priority
               .sort((a, b) => parseInt(a.priority) - parseInt(b.priority)) // Sort by priority
               .map((blog) => (
                 <Link key={blog.id} href={`/blog-details/${blog.id}`}>
