@@ -3,51 +3,14 @@ import Footer_01 from "@/components/footer/Footer_01";
 import Header_01 from "@/components/header/Header_01";
 import "swiper/css/navigation";
 import "swiper/css";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { GoArrowRight } from "react-icons/go";
 import SwiperNavButtons from "@/components/SwiperNavButton";
 import { motion } from "framer-motion";
 import { Timeline } from "@/components/ui/timeline";
 import Link from "next/link";
-
-const blogs = [
-  {
-    img: "https://s7d9.scene7.com/is/image/slalom/insight-globalbas-turtle-finserv-thumb-520x490?fmt=webp-alpha",
-    title: "2024 industry outlook: Financial services",
-    hoverColor: "#F48FB1",
-  },
-  {
-    img: "https://s7d9.scene7.com/is/image/slalom/insight-globalbas-turtle-finserv-thumb-520x490?fmt=webp-alpha",
-    title: "2024 industry outlook: Financial services",
-    hoverColor: "#90CAF9",
-  },
-  {
-    img: "https://s7d9.scene7.com/is/image/slalom/insight-globalbas-turtle-finserv-thumb-520x490?fmt=webp-alpha",
-    title: "2024 industry outlook: Financial services",
-    hoverColor: "#B39DDB",
-  },
-  {
-    img: "https://s7d9.scene7.com/is/image/slalom/insight-globalbas-turtle-finserv-thumb-520x490?fmt=webp-alpha",
-    title: "2024 industry outlook: Financial services",
-    hoverColor: "#80CBC4",
-  },
-  {
-    img: "https://s7d9.scene7.com/is/image/slalom/insight-globalbas-turtle-finserv-thumb-520x490?fmt=webp-alpha",
-    title: "2024 industry outlook: Financial services",
-    hoverColor: "#E6EE9C",
-  },
-  {
-    img: "https://s7d9.scene7.com/is/image/slalom/insight-globalbas-turtle-finserv-thumb-520x490?fmt=webp-alpha",
-    title: "2024 industry outlook: Financial services",
-    hoverColor: "#FFF59D",
-  },
-  {
-    img: "https://s7d9.scene7.com/is/image/slalom/insight-globalbas-turtle-finserv-thumb-520x490?fmt=webp-alpha",
-    title: "2024 industry outlook: Financial services",
-    hoverColor: "#FFAB91",
-  },
-];
+import axios from "axios";
 
 const points = [
   {
@@ -77,7 +40,37 @@ const points = [
 ];
 function Industries() {
   const swiperRef = useRef(null);
-  const [tabId, setTabId] = useState(0);
+  const imageURL = "https://admin.yatriclubs.com/";
+  const [blogs, setBlogs] = useState([]);
+  const [loading, setIsLoading] = useState(false);
+    const [isBlogLoaded, setIsBlogLoaded] = useState(false);
+  const getBlogs = (data) => {
+    if (true) {
+      setIsLoading(true);
+      axios.get("https://admin.yatriclubs.com/sanctum/csrf-cookie", {
+        withCredentials: true,
+      });
+      axios
+        .get(`https://admin.yatriclubs.com/api/blog`, {
+          withCredentials: true,
+        })
+        .then((res) => {
+          setBlogs(res.data);
+          setIsBlogLoaded("success");
+          setIsLoading(false);
+        })
+        .catch((error) => {
+          setIsBlogLoaded("failed");
+        })
+        .finally(() => {
+          setIsLoading(false);
+        });
+    }
+  };
+  useEffect(() => {
+    getBlogs();
+  }, []);
+
   return (
     <>
       <Header_01 />
@@ -192,7 +185,6 @@ function Industries() {
               ref={swiperRef}
               spaceBetween={10}
               slidesPerView={1.3}
-              loop={true}
               breakpoints={{
                 320: {
                   slidesPerView: 1.3, // 2 slides for screens >= 640px
@@ -204,32 +196,34 @@ function Industries() {
                   slidesPerView: 4, // 4 slides for screens >= 1024px
                 },
                 1604: {
-                  slidesPerView: 4, // 4 slides for screens >= 1024px
+                  slidesPerView: 5, // 4 slides for screens >= 1024px
                 },
               }}
               className=" mt-5 xl:mt-10"
             >
               {blogs.map((elem, index) => {
                 return (
-                  <SwiperSlide key={index} className="  w-full cursor-pointer ">
+                  <SwiperSlide
+                    key={elem.id}
+                    className="  w-full cursor-pointer "
+                  >
                     <motion.div
                       whileHover={{ backgroundColor: elem.hoverColor }}
                       className={` rounded-xl bg-slate-100`}
                     >
-                      <Link href="/blog-details">
+                      <Link href={`/blog-details/${elem.id}`}>
                         <div
                           className="w-full h-64 bg-no-repeat rounded-xl bg-center bg-cover "
-                          style={{ backgroundImage: `url(${elem.img})` }}
+                          style={{
+                            backgroundImage: `url(${imageURL + elem.image})`,
+                          }}
                         ></div>
                         <div className="px-3 py-5">
-                          <p>Author name </p>
+                          <div className="w-full flex justify-between items-center">
+                            <p>by {elem.author} </p>
+                          </div>
                           <p className="xl:text-lg xxl:text-2xl font-Satoshi text-gray-900 mt-2 font-semibold">
-                            {elem.title}
-                          </p>
-                          <p className="xl:text-sm xxl:text-lg font-Satoshi tracking-tight mt-2 font-medium">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua.
+                            {elem.name}
                           </p>
                         </div>
                       </Link>

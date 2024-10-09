@@ -1,7 +1,7 @@
 "use client";
 import Footer_01 from "@/components/footer/Footer_01";
 import Header_01 from "@/components/header/Header_01";
-
+import { BsHandIndexThumbFill } from "react-icons/bs";
 import "swiper/css";
 
 import { Timeline } from "@/components/ui/timeline";
@@ -135,6 +135,138 @@ function Services() {
       ),
     },
   ];
+
+  const coreValues = [
+    {
+      name: "Client Focus",
+      img: "https://cdn3d.iconscout.com/3d/premium/thumb/target-people-3d-icon-download-in-png-blend-fbx-gltf-file-formats--audience-user-marketing-pack-seo-web-icons-7049741.png?f=webp",
+      color: "#512DA8",
+      points: [
+        {
+          name: "Partnership",
+          img: "/assets/img_placeholder/web.png",
+          color: "#512DA8",
+          description:
+            " Building strong, collaborative partnerships with clients.",
+        },
+        {
+          name: "Understanding",
+          img: "/assets/img_placeholder/web.png",
+          color: "#512DA8",
+          description: "Deeply understanding clients' unique needs and goals.",
+        },
+        {
+          name: "Customization",
+          img: "/assets/img_placeholder/web.png",
+          color: "#512DA8",
+          description: " Tailoring solutions to meet specific requirements.",
+        },
+      ],
+    },
+    {
+      name: "Talent Quality",
+      img: "/assets/img_placeholder/web.png",
+      color: "#512DA8",
+      points: [
+        {
+          name: "Expertise",
+          img: "/assets/img_placeholder/web.png",
+          color: "#512DA8",
+          description:
+            " Sourcing highly skilled professionals with relevant experience.",
+        },
+        {
+          name: "Vetting",
+          img: "/assets/img_placeholder/web.png",
+          color: "#512DA8",
+          description: "Rigorous screening and evaluation processes.",
+        },
+        {
+          name: "Alignment",
+          img: "/assets/img_placeholder/web.png",
+          color: "#512DA8",
+          description:
+            " Matching talent with clients' cultural and project needs.",
+        },
+      ],
+    },
+    {
+      name: "Service Excellence",
+      img: "/assets/img_placeholder/web.png",
+      color: "#512DA8",
+      points: [
+        {
+          name: "Responsiveness",
+          img: "/assets/img_placeholder/web.png",
+          color: "#512DA8",
+          description: " Prompt and efficient communication",
+        },
+        {
+          name: "Reliability",
+          img: "/assets/img_placeholder/web.png",
+          color: "#512DA8",
+          description: "Delivering on commitments consistently.",
+        },
+        {
+          name: "Flexibility",
+          img: "/assets/img_placeholder/web.png",
+          color: "#512DA8",
+          description: " Adapting to changing client needs.",
+        },
+      ],
+    },
+    {
+      name: "Ethical Conduct",
+      img: "/assets/img_placeholder/web.png",
+      color: "#512DA8",
+      points: [
+        {
+          name: "Responsiveness",
+          img: "/assets/img_placeholder/web.png",
+          color: "#512DA8",
+          description: " Adhering to ethical business practices",
+        },
+        {
+          name: "Reliability",
+          img: "/assets/img_placeholder/web.png",
+          color: "#512DA8",
+          description: "Open and honest communication.",
+        },
+        {
+          name: "Flexibility",
+          img: "/assets/img_placeholder/web.png",
+          color: "#512DA8",
+          description: " Complying with all relevant laws and regulations.",
+        },
+      ],
+    },
+    {
+      name: "Innovation",
+      img: "/assets/img_placeholder/web.png",
+      color: "#512DA8",
+      points: [
+        {
+          name: "Adaptability",
+          img: "/assets/img_placeholder/web.png",
+          color: "#512DA8",
+          description: " Embracing new technologies and trends. ",
+        },
+        {
+          name: "Continuous Improvement",
+          img: "/assets/img_placeholder/web.png",
+          color: "#512DA8",
+          description: "Striving for excellence in all areas.",
+        },
+        {
+          name: "Creativity",
+          img: "/assets/img_placeholder/web.png",
+          color: "#512DA8",
+          description:
+            " Thinking outside the box to find innovative solutions.",
+        },
+      ],
+    },
+  ];
   return (
     <>
       <div className="page-wrapper relative">
@@ -161,14 +293,21 @@ function Services() {
               </div>
             </div>
           </div>
-          <section className="global-container mb-20">
-            <h2 className="w-full text-center">Talent we Provide</h2>
-            <div className="grid place-items-center grid-cols-1 lg:grid-cols-2 xl:grid-cols-4">
+          <section className="global-container mb-20 ">
+            <div className="w-full flex justify-center">
+              <p className="mb-3 text-3xl lg:text-6xl font-Satoshi font-[600] w-full text-center">
+                <span className="bg-gradient-to-r font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
+                  Talent{" "}
+                </span>
+                we provide
+              </p>
+            </div>
+            <div className="grid place-items-center grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-5">
               {services.map((service, index) => (
                 <div
                   key={index}
                   style={{ backgroundColor: service?.color }}
-                  className="mt-10 border-[10px] cursor-pointer border-gray-200 group  rounded-2xl w-full lg:w-[300px] h-[400px]  relative overflow-hidden"
+                  className="mt-10 border-[10px] cursor-pointer border-gray-200 group  rounded-2xl w-full  h-[400px]  relative overflow-hidden"
                 >
                   <div className="size-28   absolute top-16 -translate-x-1/2 left-1/2 -translate-y-0">
                     <img className="w-full" src={service.img} />
@@ -193,12 +332,66 @@ function Services() {
             </div>
           </section>
 
+          <section className="global-container mb-20">
+            <p className="mb-3 text-3xl lg:text-6xl font-Satoshi font-[600] w-full text-center">
+              Core Values of a
+              <span className="bg-gradient-to-r font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
+                Staff Augmentation{" "}
+              </span>
+              Company
+            </p>
+
+            <p className="text-sm xl:text-lg text-center mt-5 w-full  font-Satoshi">
+              A staff augmentation company&apos;s core values should reflect their
+              commitment to providing high-quality talent and exceptional
+              service. Here are some key values to consider:
+            </p>
+            <div className="grid mt-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {coreValues.map((value, index) => (
+                <div
+                  key={index}
+                  className="bg-sky-100 relative p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105"
+                >
+                  <div>
+                    <h3 className="text-2xl text-center font-semibold text-sky-500 mb-4">
+                      {value.name}
+                    </h3>
+                    <ul className="list-inside space-y-2">
+                      {value.points.map((point, idx) => (
+                        <li
+                          key={idx}
+                          className="text-gray-800 flex items-start gap-3 font-satoshi font-bold"
+                        >
+                          <div className="mt-2">
+                            <BsHandIndexThumbFill className="rotate-90 text-orange-500 text-lg" />
+                          </div>
+                          <div>
+                            {point.name}:{" "}
+                            <span className="font-medium font-Satoshi">
+                              {point.description}
+                            </span>
+                          </div>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
           <section className="mb-32">
             <div className="global-container flex flex-col justify-center items-center">
-              <h2 className="font-Satoshi font-[500] text-center">
-                Why Partner with Us?
-              </h2>
-              <p className="text-sm xl:text-lg text-center mt-5 w-full lg:w-2/3 font-Satoshi">
+              <div className="w-full flex justify-center">
+                <p className="mb-3 text-3xl lg:text-6xl font-Satoshi   font-[600] w-full text-center">
+                  Why
+                  <span className="bg-gradient-to-r font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
+                    Partner
+                  </span>
+                  with Us?
+                </p>
+              </div>
+              <p className="text-sm xl:text-lg text-center mt-5 w-full  font-Satoshi">
                 Our staff augmentation services offer a seamless way to
                 integrate skilled professionals into your team, ensuring you get
                 the expertise you need when you need it. Here &apos;s why we
@@ -292,9 +485,14 @@ function Services() {
           </section>
           <section className="mb-60">
             <div className="global-container flex justify-center">
-              <h2 className="font-Satoshi font-bold  text-center">
-                Onboarding Process
-              </h2>
+              <div className="w-full flex justify-center">
+                <p className="mb-3 text-3xl lg:text-6xl font-Satoshi  font-[600] w-full text-center">
+                  <span className="bg-gradient-to-r font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
+                    Onboarding{" "}
+                  </span>
+                  Process
+                </p>
+              </div>
             </div>
             <Timeline data={data} />
           </section>
