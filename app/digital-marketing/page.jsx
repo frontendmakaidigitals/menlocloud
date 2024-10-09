@@ -131,7 +131,7 @@ function About() {
             />
           </div>
           <div>
-            <p className="capitalize text-3xl lg:text-6xl font-Satoshi  font-bold">
+            <p className="capitalize text-3xl xl:text-5xl xxl:text-6xl font-Satoshi  font-bold">
               Get IT Solutions{" "}
               <span className="bg-gradient-to-r font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
                 {" "}
@@ -190,12 +190,12 @@ function About() {
               to attract organic traffic.
             </p>
           </div>
-          <div className="grid global-container place-items-center grid-cols-1 lg:grid-cols-2 xl:grid-cols-4">
+          <div className="grid global-container place-items-center grid-cols-1 lg:grid-cols-2 xl:grid-cols-4 gap-6">
             {services.map((service, index) => (
               <div
                 key={index}
                 style={{ backgroundColor: service?.color }}
-                className="mt-10 border-[10px] cursor-pointer border-gray-200 group  rounded-2xl w-full lg:w-[300px] h-[400px]  relative overflow-hidden"
+                className="mt-10 border-[10px] cursor-pointer border-gray-200 group  rounded-2xl w-full  h-[400px]  relative overflow-hidden"
               >
                 <div className="size-40 absolute top-16 -translate-x-1/2 left-1/2 -translate-y-0">
                   <img className="w-full" src={service.img} />
@@ -228,7 +228,7 @@ function About() {
               We Follow our Process
             </p>
 
-            <div className="relative w-full h-full flex flex-col lg:flex-row justify-between items-center mt-14">
+            <div className="relative global-container h-full flex flex-col lg:flex-row justify-between items-center mt-14">
               <div className="flex flex-col mt-8 mb-28 lg:mt-6 lg:mb-0 justify-center items-center">
                 <div className="size-20 flex justify-center items-center bg-slate-100/50 rounded-xl">
                   <IoBulbOutline className={`text-gray-100 text-5xl`} />
@@ -311,7 +311,9 @@ function About() {
                   {/* Section Content Block */}
                   <div className="mb-6 ">
                     <div className="mx-auto md:mx-0 md:max-w-none">
-                      <h2 className="!font-Satoshi font-bold">Freely ask us for more information</h2>
+                      <h2 className="!font-Satoshi font-bold">
+                        Freely ask us for more information
+                      </h2>
                     </div>
                   </div>
                   {/* Section Content Block */}

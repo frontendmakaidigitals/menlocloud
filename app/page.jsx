@@ -15,6 +15,9 @@ import { HiOutlineArrowDown } from "react-icons/hi2";
 import { LampContainer } from "@/components/ui/lamp";
 import axios from "axios";
 import Form from "@/components/PopUp-form/form";
+
+import { useToast } from "@/hooks/use-toast";
+
 const techLogos = [
   {
     username: "@jack",
@@ -224,7 +227,7 @@ const specialize = [
     link: "/cloud-transformation",
     img: "https://cdn-icons-png.freepik.com/512/12820/12820680.png",
     description:
-      "Cloud transformation is the process of migrating data and applications to cloud-based platforms to enhance flexibility, scalability, and efficiency.",
+      "Showcase your talent and shine bright at our Talent Hunt! Join us for a chance to share your skills and win amazing prizes!",
   },
   {
     title: "Staff Augmentation",
@@ -232,14 +235,16 @@ const specialize = [
     link: "/cloud-transformation",
     img: "https://cdn3d.iconscout.com/3d/premium/thumb/staff-management-3d-icon-download-in-png-blend-fbx-gltf-file-formats--employee-human-resource-team-corporate-business-pack-icons-4755478.png?f=webp",
     description:
-      "Cloud transformation is the process of migrating data and applications to cloud-based platforms to enhance flexibility, scalability, and efficiency.",
+      "Boost your team with our expert staff augmentation services! Access top-tier talent on demand to meet project needs and drive success.",
   },
 ];
 function Home() {
+  const { toast } = useToast();
   const [isVisible, setIsVisible] = useState(true);
   const [isTopVisible, setIsTop] = useState(false);
   const [isOpen, setisOpen] = useState(false);
-  const [status, setStatus] = useState(false);
+  const [status, setStatus] = useState(null);
+  const [isBlogLoaded, setIsBlogLoaded] = useState(false);
   const parentVariants = {
     hover: {
       scale: 1.02, // Scale up the parent a bit
@@ -256,33 +261,6 @@ function Home() {
       y: 0,
       fontSize: "2rem",
       transition: {
-        ease: [0.33, 1, 0.68, 1],
-      },
-    },
-  };
-
-  const contentVariant = {
-    initial: {
-      y: 150, // Start below
-      opacity: 0,
-    },
-    hover: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        delay: 0.2,
-        ease: [0.33, 1, 0.68, 1],
-      },
-    },
-  };
-  const buttonVariant = {
-    initial: {
-      y: 120,
-    },
-    hover: {
-      y: 0,
-      transition: {
-        delay: 0.3,
         ease: [0.33, 1, 0.68, 1],
       },
     },
@@ -346,17 +324,14 @@ function Home() {
           withCredentials: true,
         })
         .then((res) => {
-          console.log(res.data);
           setBlogs(res.data);
-          setStatus("success");
+          setIsBlogLoaded("success");
           setIsLoading(false);
         })
         .catch((error) => {
-          console.error(error);
-          setStatus("failed");
+          setIsBlogLoaded("failed");
         })
         .finally(() => {
-          console.log("finally");
           setIsLoading(false);
         });
     }
@@ -364,10 +339,29 @@ function Home() {
   useEffect(() => {
     getBlogs();
   }, []);
+
+  useEffect(() => {
+    if (status === "success") {
+      toast({
+        variant: "success",
+        title: "Form Submitted Successfully",
+        description: "Our team will reach out to you soon",
+      });
+    } else if (status === "failed") {
+      toast({
+        variant: "destructive",
+        title: "Uh oh! Something went wrong.",
+        description: "There was a problem with your request.",
+      });
+    }
+  }, [status]);
   return (
     <div className="page-wrapper relative z-[1] bg-white">
+      {}
       <Header_01 />
-      {isOpen ? <Form setIsOpen={setisOpen} /> : null}
+      {isOpen ? (
+        <Form setIsOpen={setisOpen} setStatus={setStatus} status={status} />
+      ) : null}
       <motion.div
         animate={{
           x: isVisible ? "-50%" : 0,
@@ -847,7 +841,7 @@ function Home() {
               Usage
             </p>
           </div>
-          <div className="w-full global-container mt-10 grid grid-cols-1  xl:grid-cols-4 gap-5">
+          <div className=" global-container mt-10 grid grid-cols-1  xl:grid-cols-4 gap-5">
             {industries.map((industry, index) => (
               <div
                 className="bg-white border border=gray-900  group relative shadow-sm cursor-pointer overflow-hidden rounded-xl flex flex-col justify-start items-start px-1 pt-1 pb-5 "
@@ -865,7 +859,7 @@ function Home() {
                 <p className="font-[700] text-2xl capitalize px-4 mt-4 font-Satoshi relative z-5">
                   {industry.name}
                 </p>
-                <p className=" relative z-5 text-gray-500 px-4 text-sm mt-1 capitalize ">
+                <p className=" relative text-md xl:text-[.8rem] xxl:text-md z-5 text-gray-500 px-4 text-sm mt-1 capitalize ">
                   {industry.description}{" "}
                 </p>
               </div>
@@ -960,7 +954,6 @@ function Home() {
               ref={swiperRef}
               spaceBetween={10}
               slidesPerView={1.3}
-              loop={true}
               breakpoints={{
                 320: {
                   slidesPerView: 1.3, // 2 slides for screens >= 640px
@@ -995,14 +988,11 @@ function Home() {
                           }}
                         ></div>
                         <div className="px-3 py-5">
-                          <p>Author name </p>
+                          <div className="w-full flex justify-between items-center">
+                            <p>by {elem.author} </p>
+                          </div>
                           <p className="xl:text-lg xxl:text-2xl font-Satoshi text-gray-900 mt-2 font-semibold">
-                            {elem.title}
-                          </p>
-                          <p className="xl:text-sm xxl:text-lg font-Satoshi tracking-tight mt-2 font-medium">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing
-                            elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua.
+                            {elem.name}
                           </p>
                         </div>
                       </Link>

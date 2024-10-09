@@ -22,8 +22,52 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
   const [mobileSubMenu, setMobileSubMenu] = useState("");
   const [mobileSubMenuSub, setMobileSubMenuSub] = useState("");
   const [menuTitle, setMenuTitle] = useState("");
-  const pathname = usePathname(); 
-   
+  const pathname = usePathname();
+  const serviceMenus = [
+    {
+      name: "Data Analytics",
+      subTitle: "  Leveraging today’s data for a more promising future",
+      Link: "/data-Analytics",
+    },
+    {
+      name: "Generative AI",
+      subTitle: "  Shaping the future through advanced AI",
+      Link: "/generative-ai",
+    },
+    {
+      name: " Cloud Transformation",
+      subTitle: "  Leveraging today’s data for a more promising future",
+      Link: "/cloud-transformation",
+    },
+    {
+      name: " Mobile App Development",
+      subTitle:
+        "  Bridging conventional and generative AI to deliver effective, real-world applications",
+      Link: "/mobile-Development",
+    },
+    {
+      name: "Web Development",
+      subTitle:
+        " Transforming business operations with next-generation cloud modernization",
+      Link: "/web-developer",
+    },
+    {
+      name: " Digital marketing",
+      subTitle:
+        " Transforming concepts into functional systems through precise implementation",
+      Link: "/digital-marketing",
+    },
+    {
+      name: "Talent Hunt",
+      subTitle: "  Leveraging today’s data for a more promising future",
+      Link: null,
+    },
+    {
+      name: "Staff Augmentation",
+      subTitle: "  Leveraging today’s data for a more promising future",
+      Link: "/staffAugumentation",
+    },
+  ];
   const handleMenu = () => {
     setMobileMenu(false);
     setMobileSubMenu("");
@@ -65,7 +109,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
       return;
     }
   };
-console.log(pathname)
+  console.log(pathname);
   return (
     <div className="menu-block-wrapper">
       <div
@@ -97,78 +141,22 @@ console.log(pathname)
                   </NavigationMenuTrigger>
                   <NavigationMenuContent className="">
                     <div className="grid xl:gap-6 xxl:gap-8 px-6 xl:py-6 xxl:py-10 md:w-[400px] lg:w-[700px] lg:grid-cols-2">
-                      <div className="xl:p-3  xxl:p-5 hover:bg-gray-200 text-gray-800 cursor-pointer rounded-xl">
-                        <Link href={"/data-Analytics"}>
-                          {" "}
-                          <div>
-                            <p className="text-md font-bold">Data analytics</p>
-                            <p className="text-sm font-medium mt-1 text-gray-600 ">
-                              Leveraging today’s data for a more promising
-                              future
-                            </p>
-                          </div> 
-                        </Link>
-                      </div>
-                      <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
-                        <Link href={`/generative-ai`}>
-                          <div>
-                            <p className="text-md font-bold">Generative AI</p>
-                            <p className="text-sm font-medium mt-1 text-gray-600">
-                              Shaping the future through advanced AI
-                            </p>
-                          </div>
-                        </Link>
-                      </div>
-                      <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
-                        <Link href={`/cloud-transformation`}>
-                          <div>
-                            <p className="text-md font-bold">
-                              Cloud Transformation
-                            </p>
-                            <p className="text-sm font-medium mt-1 text-gray-600">
-                              Bridging conventional and generative AI to deliver
-                              effective, real-world applications.
-                            </p>
-                          </div>
-                        </Link>
-                      </div>
-                      <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
-                        <Link href={`/mobile-Development`}>
-                          <div>
-                            <p className="text-md font-bold">
-                              Mobile App Development
-                            </p>
-                            <p className="text-sm font-medium mt-1 text-gray-600">
-                              Crafting robust and scalable systems through
-                              expert software engineering.
-                            </p>
-                          </div>
-                        </Link>
-                      </div>
-                      <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
-                        <Link href={`/web-developer`}>
-                          <div>
-                            <p className="text-md font-bold">Web Development</p>
-                            <p className="text-sm font-medium mt-1 text-gray-600">
-                              Transforming business operations with
-                              next-generation cloud modernization
-                            </p>
-                          </div>
-                        </Link>
-                      </div>
-                      <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
-                        <Link href={`/digital-marketing`}>
-                          <div>
-                            <p className="text-md font-bold">
-                              Digital marketing
-                            </p>
-                            <p className="text-sm font-medium mt-1 text-gray-600">
-                              Transforming concepts into functional systems
-                              through precise implementation
-                            </p>
-                          </div>
-                        </Link>
-                      </div>
+                      {serviceMenus.map((menu, index) => (
+                        <div
+                          key={index}
+                          className="xl:p-3  xxl:p-5 hover:bg-gray-200 text-gray-800 cursor-pointer rounded-xl"
+                        >
+                          <Link href={menu.Link ? menu.Link : "/"}>
+                            {" "}
+                            <div>
+                              <p className="text-md font-bold">{menu.name}</p>
+                              <p className="text-sm font-medium mt-1 text-gray-600 ">
+                                {menu.subTitle}
+                              </p>
+                            </div>
+                          </Link>
+                        </div>
+                      ))}
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
@@ -265,16 +253,16 @@ console.log(pathname)
                 <NavigationMenuItem>
                   <Link href="/insights" legacyBehavior passHref>
                     <NavigationMenuLink
-                      className={`${navigationMenuTriggerStyle()} ${pathname == '/insights' ?  '!bg-sky-100 text-black' : 'bg-trasparent' }  xl:text-md xxl:text-lg`}
+                      className={`${navigationMenuTriggerStyle()} ${pathname == "/insights" ? "!bg-sky-100 text-black" : "bg-trasparent"}  xl:text-md xxl:text-lg`}
                     >
                       Insights
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
-                <NavigationMenuItem >
+                <NavigationMenuItem>
                   <Link href="/about" legacyBehavior passHref>
                     <NavigationMenuLink
-                      className={`${navigationMenuTriggerStyle()} ${pathname == '/about' ?  '!bg-sky-100 text-black' : 'bg-trasparent' }  xl:text-md xxl:text-lg`}
+                      className={`${navigationMenuTriggerStyle()} ${pathname == "/about" ? "!bg-sky-100 text-black" : "bg-trasparent"}  xl:text-md xxl:text-lg`}
                     >
                       About Us
                     </NavigationMenuLink>
@@ -283,7 +271,7 @@ console.log(pathname)
                 <NavigationMenuItem>
                   <Link href="/contact" legacyBehavior passHref>
                     <NavigationMenuLink
-                      className={`${navigationMenuTriggerStyle()} ${pathname == '/contact' ?  '!bg-sky-100 text-black' : 'bg-trasparent' } xl:text-md xxl:text-lg`}
+                      className={`${navigationMenuTriggerStyle()} ${pathname == "/contact" ? "!bg-sky-100 text-black" : "bg-trasparent"} xl:text-md xxl:text-lg`}
                     >
                       Contact
                     </NavigationMenuLink>
@@ -319,11 +307,16 @@ console.log(pathname)
                       </p>
                     </Link>
                     <div className="xl:p-3  xxl:p-5     text-gray-800  cursor-pointer rounded-xl">
-                      <Link href={ '/cloud-transformation'}>  <p className="text-md font-bold">Cloud Transformation</p>
-                      <p className="text-sm font-medium mt-1 text-gray-600">
-                        Bridging conventional and generative AI to deliver
-                        effective, real-world applications.
-                      </p></Link>
+                      <Link href={"/cloud-transformation"}>
+                        {" "}
+                        <p className="text-md font-bold">
+                          Cloud Transformation
+                        </p>
+                        <p className="text-sm font-medium mt-1 text-gray-600">
+                          Bridging conventional and generative AI to deliver
+                          effective, real-world applications.
+                        </p>
+                      </Link>
                     </div>
                     <Link
                       href={"/mobile-Development"}

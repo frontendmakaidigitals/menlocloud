@@ -282,7 +282,7 @@ function Services() {
           </div>
         </main>
         <section className=" flex flex-col items-center justify-center">
-          <div className="w-full global-container lg:w-2/3 flex flex-col justify-center items-center">
+          <div className=" global-container lg:w-2/3 flex flex-col justify-center items-center">
             <p className="global-container text-3xl  lg:text-6xl  font-Satoshi font-[600] text-center">
               Web Development
               <span className="bg-gradient-to-r  font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
@@ -386,7 +386,7 @@ function Services() {
           <Swiper
             ref={swiperRef}
             spaceBetween={10}
-            loop={true}
+            
             breakpoints={{
               320: {
                 slidesPerView: 1.1, // 2 slides for screens >= 640px

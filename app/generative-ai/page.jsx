@@ -70,11 +70,6 @@ const parentAnimate = {
   whileHover: { scale: 1.05, transition: { duration: 0.3 } },
   exit: { scale: 0 },
 };
-const titleAnimate = {
-  initial: { fontSize: "2.3rem" },
-  whileHover: { fontSize: "1.8rem", transition: { duration: 0.3 } },
-  exit: { scale: 0 },
-};
 
 const data = [
   {
@@ -184,22 +179,6 @@ const advantages = [
 ];
 
 function GenAI() {
-  const [childAnimate, setChildAnimate] = useState({});
-  useEffect(() => {
-    const isMobile = window ? window.innerWidth < 768 : null;
-    if (!isMobile) {
-      setChildAnimate({
-        initial: { maxHeight: 0, opacity: 0 },
-        whileHover: {
-          maxHeight: 100,
-          opacity: 1,
-          transition: { duration: 0.3 },
-        },
-        exit: { maxHeight: 0, opacity: 0 },
-      });
-    }
-  }, []);
-
   return (
     <>
       <Header_01 />
@@ -259,13 +238,9 @@ function GenAI() {
             <AnimatePresence mode="wait">
               {Aiservices.map((service, index) => (
                 <motion.div
-                  variants={parentAnimate}
-                  initial="initial"
-                  whileHover="whileHover"
-                  exit="exit"
                   key={index}
                   style={{ backgroundColor: service?.color }}
-                  className="mt-10 border-[10px] cursor-pointer border-gray-200 group  rounded-2xl w-full lg:w-[300px] h-[430px]  relative overflow-hidden"
+                  className="mt-10 border-[10px] cursor-pointer border-gray-200 group  rounded-2xl w-full  h-[430px]  relative overflow-hidden"
                 >
                   <div className="size-36   absolute top-16 -translate-x-1/2 left-1/2 -translate-y-0">
                     <img className="w-full" src={service.img} />
@@ -273,8 +248,8 @@ function GenAI() {
                   <div className="size-4 group-hover:scale-[80] xxl:group-hover:scale-[110]  absolute transition-all duration-700  -top-4 -left-4 bg-gray-200 rounded-full"></div>
                   <div className="size-3 group-hover:scale-[90] xxl:group-hover:scale-[120] absolute transition-all duration-700 -top-4 -left-4 bg-white delay-200 rounded-full"></div>
                   <div className="w-full relative   z-10 h-full flex py-5 px-5 flex-col justify-end items-start">
-                    <motion.div variants={titleAnimate}>
-                      <p className="  pr-8 font-bold font-Satoshi leading-snug group-hover:text-gray-900 transition-all duration-500 text-gray-100">
+                    <motion.div>
+                      <p className=" text-2xl pr-8 font-bold font-Satoshi leading-snug group-hover:text-gray-900 transition-all duration-500 text-gray-100">
                         {service.name}
                       </p>
                       <p className="text-sm font-Satoshi font-semibold text-gray-100 group-hover:text-gray-800">
@@ -282,10 +257,7 @@ function GenAI() {
                       </p>
                     </motion.div>
 
-                    <motion.p
-                      variants={childAnimate}
-                      className="leading-snug flex items-start gap-2  mt-1 overflow-hidden text-sm text-gray-200 group-hover:text-gray-800  transition-all duration-500"
-                    >
+                    <motion.p className="leading-snug flex items-start gap-2  mt-1 overflow-hidden text-sm  text-gray-200 group-hover:text-gray-800  transition-all duration-500">
                       <BsHandIndexThumbFill className="rotate-90 text-orange-500 text-lg" />
                       {service.sol}
                     </motion.p>

@@ -379,7 +379,7 @@ function Home() {
         </section>
         <section className="mb-5 py-24 bg-center bg-cover bg-no-repeat  ">
           <div className="hidden">
-            <p className="global-container mb-2 text-3xl lg:text-5xl tracking-tight font-Satoshi font-bold w-full lg:w-2/3 text-center">
+            <p className="global-container mb-2 text-3xl lg:text-5xl tracking-tight font-Satoshi font-bold  lg:w-2/3 text-center">
               Importance of
               <span className="bg-gradient-to-r font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
                 {" "}
@@ -397,7 +397,7 @@ function Home() {
               benefits, including:
             </p>
 
-            <div className="w-full mt-10 global-container grid grid-cols-1 lg:grid-cols-4 gap-5">
+            <div className=" mt-10 global-container grid grid-cols-1 lg:grid-cols-4 gap-5">
               {benefits.map((elem, index) => (
                 <motion.div
                   key={index}

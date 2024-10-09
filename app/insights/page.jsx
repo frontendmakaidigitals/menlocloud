@@ -119,23 +119,27 @@ function Insights() {
           <p className="text-lg xl:text-xl xxl:text-2xl font-Satoshi font-bold">
             Recent blog posts
           </p>
-          <div className="grid grid-cols-1 h-full mt-3 md:grid-cols-2 gap-10 ">
+          <div className="grid grid-cols-1 mt-3 md:grid-cols-2 gap-10 place-items-start ">
             {blogs.map(
               (blog) =>
                 blog.priority === "1" && (
-                  <Link key={blog.id} href={`/blog-details/${blog.id}`}>
+                  <Link
+                    key={blog.id}
+                    href={`/blog-details/${blog.id}`}
+                    className="hover:bg-slate-200 transition-all duration-300 py-3 px-2 rounded-lg h-full"
+                  >
                     <div>
-                      <div className="w-full flex justify-center rounded-xl items-center overflow-hidden h-[400px] lg:h-[55vh]">
+                      <div className="w-full bg-red-500 flex justify-center rounded-xl items-center overflow-hidden h-[400px] xxl:h-[50vh] max-h-[500px]">
                         <img
-                          className="  rounded-lg object-cover"
+                          className="w-full h-full object-cover rounded-lg" // Ensure the image covers the container fully
                           src={imageURL + blog.image}
-                          alt="Descriptive Alt Text"
+                          alt={`${blog.name} image`} // Use descriptive alt text
                         />
                       </div>
 
                       <div>
                         <p className="text-sm xl:text-[.7rem] xxl:text-sm font-Satoshi text-gray-600 mt-2 font-semibold">
-                          {blog.author}{" "}
+                          by {blog.author}{" "}
                           {new Date(blog.created_at).toDateString()}
                         </p>
                         <p className=" text-2xl xl:text-xl xxl:text-2xl font-Satoshi font-semibold mt-1">
@@ -160,17 +164,21 @@ function Insights() {
                   </Link>
                 )
             )}
-            <div className="grid w-full grid-cols-1 gap-5">
+            <div className="grid w-full h-full grid-cols-1 gap-3">
               {blogs
                 .filter((blog) => ["2", "3", "4"].includes(blog.priority))
                 .sort((a, b) => parseInt(a.priority) - parseInt(b.priority)) // Sort by priority
                 .map((blog) => (
-                  <Link key={blog.id} href={`/blog-details/${blog.id}`}>
+                  <Link
+                    key={blog.id}
+                    href={`/blog-details/${blog.id}`}
+                    className="hover:bg-slate-200 transition-all duration-300 py-3 px-2 rounded-lg"
+                  >
                     <div
                       key={blog.id}
                       className="flex w-full lg:flex-row gap-4"
                     >
-                      <div className="flex-shrink-0 w-[230px] h-[180px] overflow-hidden rounded-lg">
+                      <div className="flex-shrink-0 w-[230px] h-[180px] xl:w-[180px] xl:h-[140px] xxl:w-[230px]  xxl:h-[180px] overflow-hidden rounded-lg">
                         <img
                           className="w-full h-full object-cover"
                           src={imageURL + blog.image}
@@ -179,7 +187,7 @@ function Insights() {
                       </div>
                       <div className="flex flex-col justify-between flex-grow">
                         <p className="text-sm xl:text-[.7rem] xxl:text-sm font-Satoshi text-gray-600 font-semibold">
-                          {blog.author}{" "}
+                          by {blog.author}{" "}
                           {new Date(blog.created_at).toDateString()}
                         </p>
                         <p className="text-lg xl:text-md xxl:text-2xl font-Satoshi font-semibold">
@@ -262,7 +270,11 @@ function Insights() {
               .filter((blog) => ["default"].includes(blog.priority)) // Filter by priority
               .sort((a, b) => parseInt(a.priority) - parseInt(b.priority)) // Sort by priority
               .map((blog) => (
-                <Link key={blog.id} href={`/blog-details/${blog.id}`}>
+                <Link
+                  key={blog.id}
+                  href={`/blog-details/${blog.id}`}
+                  className="hover:bg-slate-200 transition-all duration-300 py-3 px-2 rounded-lg"
+                >
                   <div key={blog.id} className="w-full flex flex-col h-full">
                     <div className="w-full overflow-hidden flex-grow">
                       <img
@@ -274,10 +286,10 @@ function Insights() {
                     <div className="flex flex-col flex-grow justify-between">
                       <div>
                         <p className="lg:text-[.8rem] text-sm font-Satoshi text-gray-600 mt-2 font-semibold">
-                          {blog.author}{" "}
+                          by {blog.author}{" "}
                           {new Date(blog.created_at).toDateString()}
                         </p>
-                        <p className="xl:text-lg h-[150px] overflow-hidden overflow-ellipsis xxl:text-2xl font-Satoshi text-gray-900 mt-2 font-semibold line-clamp-4">
+                        <p className="xl:text-lg h-auto overflow-hidden overflow-ellipsis xxl:text-2xl font-Satoshi text-gray-900 mt-2 font-semibold">
                           {blog.name}
                         </p>
                       </div>

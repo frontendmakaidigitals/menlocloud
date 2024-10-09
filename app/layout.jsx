@@ -11,6 +11,7 @@ import "../styles/globals.css";
 import "../styles/vendors/menu.css";
 import Loader from "./loading";
 
+import { Toaster } from "@/components/ui/toaster";
 const DMSans = localFont({
   src: "../fonts/DMSans-Bold.woff2",
   variable: "--font-DMSans",
@@ -34,6 +35,7 @@ const SpaceGrotesk = localFont({
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export default function RootLayout({ children }) {
+ 
   const pathname = usePathname();
   const [loading, setLoading] = useState(true);
   const jos_options = {
@@ -82,6 +84,7 @@ export default function RootLayout({ children }) {
       >
         {loading ? <Loader /> : null}
         {children}
+        <Toaster />
       </body>
     </html>
   );

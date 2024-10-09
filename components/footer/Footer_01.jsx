@@ -70,7 +70,7 @@ const Footer_01 = () => {
                   Services
                 </Link>
               </li>
-            
+
               <li>
                 <Link
                   href="/"
@@ -168,9 +168,9 @@ const Footer_01 = () => {
         {/* Footer Bottom */}
       </div>
       {/* Footer Background Shape 1  */}
-      <div className="blue-gradient-2 absolute -top-[290px] right-[90px] -z-[1] h-[406px] w-[406px] -rotate-[58deg] rounded-[406px]"></div>
+      <div className="blue-gradient-2 hidden lg:block absolute -top-[290px] right-[90px] -z-[1] h-[406px] w-[406px] -rotate-[58deg] rounded-[406px]"></div>
       {/* Footer Background Shape 2  */}
-      <div className="blue-gradient-1 absolute -right-[200px] -top-[205px] -z-[1] h-[451px] w-[451px] -rotate-[58deg] rounded-[451px]"></div>
+      <div className="blue-gradient-1 hidden lg:block absolute -right-[200px] -top-[205px] -z-[1] h-[451px] w-[451px] -rotate-[58deg] rounded-[451px]"></div>
     </footer>
   );
 };

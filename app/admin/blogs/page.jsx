@@ -88,76 +88,78 @@ const BlogList = ({ blogs }) => {
 
   return (
     <>
-      <Table>
-        <TableCaption>A list of your Blogs.</TableCaption>
-        <TableHeader>
-          <TableRow className={`bg-gray-200 hover:bg-gray-200 `}>
-            <TableHead className=" text-gray-900 text-lg font-Satoshi font-bold rounded-l-xl pl-4">
-              No.
-            </TableHead>
-            <TableHead className=" text-gray-900 text-lg font-Satoshi font-bold">
-              Blog Title
-            </TableHead>
-            <TableHead className=" text-gray-900 text-lg text-center font-Satoshi font-bold">
-              Priority
-            </TableHead>
+      <div className="h-[78vh] overflow-auto relative`">
+        <Table>
+          <TableCaption>A list of your Blogs.</TableCaption>
+          <TableHeader className="sticky top-0 left-0 bg-slate-50 z-10">
+            <TableRow className={`bg-gray-200  hover:bg-gray-200`}>
+              <TableHead className=" text-gray-900 text-lg font-Satoshi font-bold rounded-l-xl pl-4">
+                No.
+              </TableHead>
+              <TableHead className=" text-gray-900 text-lg font-Satoshi font-bold">
+                Blog Title
+              </TableHead>
+              <TableHead className=" text-gray-900 text-lg text-center font-Satoshi font-bold">
+                Priority
+              </TableHead>
 
-            <TableHead className=" text-gray-900  text-lg font-Satoshi font-bold">
-              Blog Image
-            </TableHead>
-            <TableHead className=" text-gray-900 text-lg font-Satoshi font-bold rounded-r-xl">
-              Actions
-            </TableHead>
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          {blogs.map((invoice, index) => (
-            <TableRow key={index} className={`hover:bg-gray-50`}>
-              <TableCell className={`pl-4 py-3`}>{index + 1}</TableCell>
-              <TableCell className={`font-Satoshi font-medium text-lg py-3`}>
-                <p className="">{invoice.name}</p>
-              </TableCell>
-              <TableCell
-                className={`font-Satoshi font-medium text-center text-lg py-3`}
-              >
-                <p className="">{invoice.priority}</p>
-              </TableCell>
+              <TableHead className=" text-gray-900  text-lg font-Satoshi font-bold">
+                Blog Image
+              </TableHead>
+              <TableHead className=" text-gray-900 text-lg font-Satoshi font-bold rounded-r-xl">
+                Actions
+              </TableHead>
+            </TableRow>
+          </TableHeader>
+          <TableBody>
+            {blogs.map((invoice, index) => (
+              <TableRow key={index} className={`hover:bg-gray-100`}>
+                <TableCell className={`pl-4 py-3`}>{index + 1}</TableCell>
+                <TableCell className={`font-Satoshi font-medium text-lg py-3`}>
+                  <p className="">{invoice.name}</p>
+                </TableCell>
+                <TableCell
+                  className={`font-Satoshi font-medium text-center text-lg py-3`}
+                >
+                  <p className="">{invoice.priority}</p>
+                </TableCell>
 
-              <TableCell className={`font-Satoshi font-medium py-3`}>
-                <div className="w-32 h-[130px] flex items-center justify-center ">
-                  <img
-                    src={imageURL + invoice.image}
-                    className=" max-h-full min-h-auto"
-                    alt="image"
-                  />
-                </div>
-              </TableCell>
-              <TableCell className={`py-3`}>
-                <div className="flex items-center gap-2">
-                  <div className="relative group cursor-pointer">
-                    <p className="hidden group-hover:block w-auto text-nowrap z-[9999] bg-gray-300 shadow-lg rounded-full px-4 py-1 absolute bottom-full left-1/2 -translate-x-1/2">
-                      Edit blog
-                    </p>
-                    <Link href={`/admin/blogs/editBlogs/${invoice.id}`}>
-                      {" "}
-                      <RiEdit2Fill className="text-xl relative " />
-                    </Link>
-                  </div>
-                  <div className="relative group cursor-pointer">
-                    <p className="hidden group-hover:block w-auto text-nowrap z-[9999] bg-red-500 shadow-lg text-gray-100 rounded-full px-4 py-1 absolute bottom-full left-1/2 -translate-x-1/2">
-                      Delete blog
-                    </p>
-                    <MdDeleteForever
-                      onClick={() => deleteBlog(invoice.id)}
-                      className="text-red-500 text-xl relative"
+                <TableCell className={`font-Satoshi font-medium py-3`}>
+                  <div className="w-32 h-[130px] flex items-center justify-center ">
+                    <img
+                      src={imageURL + invoice.image}
+                      className=" max-h-full min-h-auto"
+                      alt="image"
                     />
                   </div>
-                </div>
-              </TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
+                </TableCell>
+                <TableCell className={`py-3`}>
+                  <div className="flex items-center gap-2">
+                    <div className="relative group cursor-pointer">
+                      <p className="hidden group-hover:block w-auto text-nowrap z-[9999] bg-gray-300 shadow-lg rounded-full px-4 py-1 absolute bottom-full left-1/2 -translate-x-1/2">
+                        Edit blog
+                      </p>
+                      <Link href={`/admin/blogs/editBlogs/${invoice.id}`}>
+                        {" "}
+                        <RiEdit2Fill className="text-xl relative " />
+                      </Link>
+                    </div>
+                    <div className="relative group cursor-pointer">
+                      <p className="hidden group-hover:block w-auto text-nowrap z-[9999] bg-red-500 shadow-lg text-gray-100 rounded-full px-4 py-1 absolute bottom-full left-1/2 -translate-x-1/2">
+                        Delete blog
+                      </p>
+                      <MdDeleteForever
+                        onClick={() => deleteBlog(invoice.id)}
+                        className="text-red-500 text-xl relative"
+                      />
+                    </div>
+                  </div>
+                </TableCell>
+              </TableRow>
+            ))}
+          </TableBody>
+        </Table>
+      </div>
     </>
   );
 };

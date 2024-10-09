@@ -377,7 +377,7 @@ function GenAI() {
           </div>
         </section>
         <section className="mt-28 bg-gradient-to-bl from-rose-100 py-20 to-teal-100">
-          <div className="global-container w-full place-items-center grid grid-cols-1 gap-y-7 lg:gap-7 lg:grid-cols-4">
+          <div className="global-container place-items-center grid grid-cols-1 gap-y-7 lg:gap-7 lg:grid-cols-4">
             <motion.div className="w-full  order-last lg:order-1 ">
               <img src={industryTabs[tabId].img} />
             </motion.div>

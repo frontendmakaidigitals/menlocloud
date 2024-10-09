@@ -226,7 +226,7 @@ function Home() {
         >
           <div className="absolute min-w-[1200px] overflow-hidden w-full h-full "></div>
           <div className="w-full h-full bg-gradient-to-b from-gray-900/40 to-gray-900/10 absolute top-0 left-0" />
-          <div className="global-container overflow-hidden relative z-5 w-full h-full flex flex-col justify-end items-start">
+          <div className="global-container overflow-hidden relative z-5  h-full flex flex-col justify-end items-start">
             <div className=" w-full lg:w-2/3">
               <p className="text-gray-50 font-Satoshi font-bold py-5 text-3xl  lg:text-6xl xxl:text-7xl">
                 Turn Your Data into Your Company&apos;s Strongest Asset
@@ -255,7 +255,7 @@ function Home() {
             </p>
           </div>
 
-          <div className="w-full mt-10 global-container grid grid-cols-1 lg:grid-cols-3 gap-5">
+          <div className=" mt-10 global-container grid grid-cols-1 lg:grid-cols-3 gap-5">
             {outcomes.map((outcome, index) => (
               <motion.div
                 key={index}
@@ -288,7 +288,7 @@ function Home() {
             </p>
           </div>
 
-          <div className="w-full  mt-20 global-container grid grid-cols-1 lg:grid-cols-3  gap-10 ">
+          <div className=" mt-20 global-container grid grid-cols-1 lg:grid-cols-3  gap-10 ">
             {challenges.map((challenge, index) => (
               <div
                 key={index}
@@ -343,30 +343,30 @@ function Home() {
                   slidesPerView: 4, // 4 slides for screens >= 1024px
                 },
               }}
-              className=" mt-5 xl:mt-10"
+              className=" mt-10 xl:mt-10"
             >
               {benefits.map((elem, index) => {
                 return (
                   <SwiperSlide key={index} className="  w-full cursor-grab ">
                     <motion.div
                       whileHover={{ backgroundColor: elem.hoverColor }}
-                      className={` px-5 py-7 rounded-xl bg-slate-100 `}
+                      className={` px-5 py-7 min-h-[500px] flex flex-col justify-between items-start rounded-xl bg-slate-100 `}
                     >
-                      <div className="min-h-[200px] ">
+                      <div className=" ">
                         <p className="font-medium text-sky-950 font-Satoshi text-lg flex items-center gap-2">
                           Step {index + 1}{" "}
                           <span className="text-2xl">
                             <GoArrowRight />
                           </span>
                         </p>
-                        <p className="xl:text-lg xxl:text-2xl font-Satoshi text-sky-900 mt-2 font-semibold">
+                        <p className="text-2xl  xl:text-lg xxl:text-2xl font-Satoshi text-sky-900 mt-2 font-semibold">
                           {elem.name}
                         </p>
                         <p className="xl:text-sm  xxl:text-lg font-Satoshi tracking-tight mt-2 font-medium">
                           {elem.description}
                         </p>
                       </div>
-                      <div className=" flex justify-center  w-full">
+                      <div className="flex justify-center mt-5  w-full">
                         <img src={elem.icon} className="w-2/3" />
                       </div>
                     </motion.div>
@@ -399,10 +399,12 @@ function Home() {
                   backgroundColor: exp.color,
                 }}
               >
-                <p className="text-xl lg:text-3xl font-Satoshi font-[600] mt-5">
+                <p className="text-3xl xl:text-2xl xxl:text-3xl font-Satoshi font-[600] mt-5">
                   {exp.name}
                 </p>
-                <p className="mt-4">{exp.description}</p>
+                <p className="mt-4 text-md xl:text-sm xxl:text-md">
+                  {exp.description}
+                </p>
               </div>
             ))}
           </div>
@@ -455,7 +457,7 @@ function Home() {
             </Link>
           </div>
         </section>
-        <section className="w-full  my-14 global-container">
+        <section className="  my-14 global-container">
           <div className="w-full flex justify-center mb-14">
             <p className="text-3xl w-full text-center  lg:text-6xl  font-Satoshi font-[600]  lg:w-2/3">
               What Happens
