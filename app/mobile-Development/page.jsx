@@ -10,6 +10,7 @@ import SwiperNavButtons from "@/components/SwiperNavButton";
 import { motion } from "framer-motion";
 import { Timeline } from "@/components/ui/timeline";
 import Link from "next/link";
+import BlogSwiper from "@/components/blogSwiper";
 const sectors = [
   {
     name: "E-Learning App",
@@ -495,6 +496,7 @@ function GenAI() {
           </div>
           <Timeline data={data} />
         </section>
+        <BlogSwiper />
 
         <section className="my-10 py-20 bg-center bg-cover bg-no-repeat rounded-2xl global-container bg-black">
           <div className="">

@@ -17,6 +17,7 @@ import axios from "axios";
 import Form from "@/components/PopUp-form/form";
 
 import { useToast } from "@/hooks/use-toast";
+import BlogSwiper from "@/components/blogSwiper";
 
 const techLogos = [
   {
@@ -207,7 +208,7 @@ const specialize = [
   },
   {
     title: "Artificial Intelligence",
-    color: "#EEEEEE",
+    color: "#FF8A65",
     link: "/generative-ai",
     img: "https://static.vecteezy.com/system/resources/previews/021/820/175/original/computer-chip-with-ai-letters-3d-artificial-intelligence-icon-png.png",
     description:
@@ -215,7 +216,7 @@ const specialize = [
   },
   {
     title: "Cloud Transformation",
-    color: "#FF7043",
+    color: "#EEEEEE",
     link: "/cloud-transformation",
     img: "https://cdn3d.iconscout.com/3d/premium/thumb/cloud-computing-3d-icon-download-in-png-blend-fbx-gltf-file-formats--network-hosting-connection-technology-pack-communication-icons-4668604.png?f=webp",
     description:
@@ -223,7 +224,7 @@ const specialize = [
   },
   {
     title: "Talent Hunt",
-    color: "#F06292",
+    color: "#F48FB1",
     link: "/cloud-transformation",
     img: "https://cdn-icons-png.freepik.com/512/12820/12820680.png",
     description:
@@ -237,6 +238,22 @@ const specialize = [
     description:
       "Boost your team with our expert staff augmentation services! Access top-tier talent on demand to meet project needs and drive success.",
   },
+  {
+    title: "Digital Marketing",
+    color: "#FFEB3B",
+    link: "/cloud-transformation",
+    img: "https://cdn3d.iconscout.com/3d/premium/thumb/digital-marketing-3d-illustration-download-in-png-blend-fbx-gltf-file-formats--online-business-promotion-mobile-and-strategy-megaphone-pack-illustrations-4596633.png",
+    description:
+      "Mobile app development is the process of creating software for mobile devices, involving design, coding, testing, and deployment to deliver functional and user-friendly apps.",
+  },
+  {
+    title: "Mobile App Development",
+    color: "#7E57C2",
+    link: "/cloud-transformation",
+    img: "https://cdn3d.iconscout.com/3d/premium/thumb/app-development-3d-icon-download-in-png-blend-fbx-gltf-file-formats--programming-coding-application-software-web-pack-design-icons-5618483.png",
+    description:
+      "Mobile app development is the process of creating software for mobile devices, involving design, coding, testing, and deployment to deliver functional and user-friendly apps.",
+  },
 ];
 function Home() {
   const { toast } = useToast();
@@ -244,14 +261,15 @@ function Home() {
   const [isTopVisible, setIsTop] = useState(false);
   const [isOpen, setisOpen] = useState(false);
   const [status, setStatus] = useState(null);
-  const [isBlogLoaded, setIsBlogLoaded] = useState(false);
+
   const parentVariants = {
     hover: {
       scale: 1.02, // Scale up the parent a bit
     },
   };
-  const imageURL = "https://admin.yatriclubs.com/";
+
   const swiperRef = useRef(null);
+
   const headerVariant = {
     initial: {
       fontSize: "2.4rem",
@@ -267,12 +285,12 @@ function Home() {
   };
 
   const words = [
-    "Staff",
-    "Talent",
+    "Staff Augumentation",
+    "Talent Hunt",
     "Cloud Transformation",
     "Generative AI",
     "Data Analytics",
-    "Digital marketing",
+    "Digital Marketing",
   ];
   useEffect(() => {
     // Function to handle scroll events
@@ -310,35 +328,6 @@ function Home() {
       behavior: "smooth", // Smooth scrolling
     });
   };
-
-  const [blogs, setBlogs] = useState([]);
-  const [loading, setIsLoading] = useState(false);
-  const getBlogs = (data) => {
-    if (true) {
-      setIsLoading(true);
-      axios.get("https://admin.yatriclubs.com/sanctum/csrf-cookie", {
-        withCredentials: true,
-      });
-      axios
-        .get(`https://admin.yatriclubs.com/api/blog`, {
-          withCredentials: true,
-        })
-        .then((res) => {
-          setBlogs(res.data);
-          setIsBlogLoaded("success");
-          setIsLoading(false);
-        })
-        .catch((error) => {
-          setIsBlogLoaded("failed");
-        })
-        .finally(() => {
-          setIsLoading(false);
-        });
-    }
-  };
-  useEffect(() => {
-    getBlogs();
-  }, []);
 
   useEffect(() => {
     if (status === "success") {
@@ -425,44 +414,71 @@ function Home() {
           </Marquee>
         </section>
         <section className="my-28 global-container">
-          <p className="global-container mb-3 text-3xl lg:text-6xl  font-Satoshi font-[600] w-full lg:w-2/3  text-center">
-            We{" "}
-            <span className="bg-gradient-to-r font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
-              Specialize{" "}
-            </span>
-            in{" "}
-          </p>
-          <div className="grid grid-cols-1 gap-10 xl:grid-cols-3 xxl:grid-cols-5 mt-14">
-            {specialize.map((elem, index) => (
-              <motion.div
-                whileHover={{ scale: 1.1 }}
-                key={index}
-                className="px-6 py-6 shadow-md rounded-xl flex flex-col justify-between items-start"
-                style={{ backgroundColor: elem.color }}
-              >
-                <div className=" flex justify-center w-full  ">
-                  <div className="size-16">
-                    <img src={elem.img} />
-                  </div>
-                </div>
-                <p className="font-satoshi w-full text-center font-bold text-2xl mt-6">
-                  {elem.title}
-                </p>
-                <p className="w-full font-satoshi text-center font-medium text-lg mt-3">
-                  {elem.description}
-                </p>
-                <div className="w-full flex justify-center mt-7">
-                  <button
-                    onClick={() => setisOpen(true)}
-                    className="text-gray-50 overflow-hidden group rounded-lg relative font-Satoshi font-medium py-2 text-md px-5 bg-gray-900"
-                  >
-                    <p className="relative z-10">Lets Connect</p>
-                    <div className="bg-sky-500 w-1 h-1 group-hover:scale-[50] absolute -bottom-1 left-1/2 -translate-1/2 rounded-full transition-all duration-300" />
-                  </button>
-                </div>
-              </motion.div>
-            ))}
+          <div className="flex  justify-between items-center">
+            <p className="global-container mb-3 text-3xl lg:text-6xl  font-Satoshi font-[600] w-full lg:w-2/3  text-center">
+              We{" "}
+              <span className="bg-gradient-to-r font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
+                Specialize{" "}
+              </span>
+              in{" "}
+            </p>
+            <div className="hidden lg:flex">
+              <SwiperNavButtons swiperRef={swiperRef} />
+            </div>
           </div>
+
+          <Swiper
+            ref={swiperRef}
+            spaceBetween={10}
+            slidesPerView={1.3}
+            breakpoints={{
+              320: {
+                slidesPerView: 1.3, // 2 slides for screens >= 640px
+              },
+              768: {
+                slidesPerView: 3, // 3 slides for screens >= 768px
+              },
+              1024: {
+                slidesPerView: 4, // 4 slides for screens >= 1024px
+              },
+              1604: {
+                slidesPerView: 4, // 4 slides for screens >= 1024px
+              },
+            }}
+            className=" mt-5 xl:mt-10"
+          >
+            {specialize.map((elem) => {
+              return (
+                <SwiperSlide key={elem.id} className="w-full flex-grow">
+                  <motion.div
+                    className="px-6 py-6  shadow-md rounded-xl flex flex-col justify-between items-start xl:min-h-[600px] xxl:min-h-[400px]"
+                    style={{ backgroundColor: elem.color }}
+                  >
+                    <div className="flex justify-start w-full">
+                      <div className="size-20">
+                        <img src={elem.img} />
+                      </div>
+                    </div>
+                    <p className="font-satoshi w-full font-bold text-2xl mt-6">
+                      {elem.title}
+                    </p>
+                    <p className="w-full font-satoshi font-medium text-lg mt-3">
+                      {elem.description}
+                    </p>
+                    <div className="w-full flex justify-start mt-7">
+                      <button
+                        onClick={() => setisOpen(true)}
+                        className="text-gray-50 overflow-hidden group rounded-lg relative font-Satoshi font-medium py-2 text-md px-5 bg-black"
+                      >
+                        <p className="relative z-10">Lets Connect</p>
+                        <div className="bg-sky-500 w-1 h-1 group-hover:scale-[50] absolute -bottom-1 left-1/2 -translate-1/2 rounded-full transition-all duration-300" />
+                      </button>
+                    </div>
+                  </motion.div>
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
         </section>
 
         <section className="bg-blue-50 py-16 mt-20 lg:mt-32 flex flex-col items-center justify-center">
@@ -937,72 +953,7 @@ function Home() {
           </div>
         </section>
         {/*...::: FAQ Section End :::... */}
-        <section className="my-28 global-container">
-          <div>
-            <div className="flex  justify-between items-center">
-              <p className="text-3xl w-full text-center lg:text-start  lg:text-6xl  font-Satoshi font-[600]  lg:w-2/3">
-                Discover Our{" "}
-                <span className="bg-gradient-to-r font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
-                  Stories{" "}
-                </span>{" "}
-              </p>
-              <div className="hidden lg:flex">
-                <SwiperNavButtons swiperRef={swiperRef} />
-              </div>
-            </div>
-            <Swiper
-              ref={swiperRef}
-              spaceBetween={10}
-              slidesPerView={1.3}
-              breakpoints={{
-                320: {
-                  slidesPerView: 1.3, // 2 slides for screens >= 640px
-                },
-                768: {
-                  slidesPerView: 3, // 3 slides for screens >= 768px
-                },
-                1024: {
-                  slidesPerView: 4, // 4 slides for screens >= 1024px
-                },
-                1604: {
-                  slidesPerView: 5, // 4 slides for screens >= 1024px
-                },
-              }}
-              className=" mt-5 xl:mt-10"
-            >
-              {blogs.map((elem, index) => {
-                return (
-                  <SwiperSlide
-                    key={elem.id}
-                    className="  w-full cursor-pointer "
-                  >
-                    <motion.div
-                      whileHover={{ backgroundColor: elem.hoverColor }}
-                      className={` rounded-xl bg-slate-100`}
-                    >
-                      <Link href={`/blog-details/${elem.id}`}>
-                        <div
-                          className="w-full h-64 bg-no-repeat rounded-xl bg-center bg-cover "
-                          style={{
-                            backgroundImage: `url(${imageURL + elem.image})`,
-                          }}
-                        ></div>
-                        <div className="px-3 py-5">
-                          <div className="w-full flex justify-between items-center">
-                            <p>by {elem.author} </p>
-                          </div>
-                          <p className="xl:text-lg xxl:text-2xl font-Satoshi text-gray-900 mt-2 font-semibold">
-                            {elem.name}
-                          </p>
-                        </div>
-                      </Link>
-                    </motion.div>
-                  </SwiperSlide>
-                );
-              })}
-            </Swiper>
-          </div>
-        </section>
+        <BlogSwiper />
         {/*...::: Testimonial Section Start :::... */}
         <section className="testimonial-section overflow-hidden mt-40">
           {/* Section Spacer */}

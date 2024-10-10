@@ -38,12 +38,25 @@ const points = [
       "Our state-of-the-art hardware components are designed for durability and performance, ensuring that your systems run efficiently and effectively.",
   },
 ];
-function Industries() {
+function Industries({ params }) {
+  const { name } = params;
   const swiperRef = useRef(null);
   const imageURL = "https://admin.yatriclubs.com/";
   const [blogs, setBlogs] = useState([]);
+  const [data, setData] = useState();
   const [loading, setIsLoading] = useState(false);
-    const [isBlogLoaded, setIsBlogLoaded] = useState(false);
+  const [isBlogLoaded, setIsBlogLoaded] = useState(false);
+
+  useEffect(() => {
+    axios.get("/industries.json").then((res) => {
+      res.data.map((item, index) => {
+        if (index == name[0]) {
+          setData(item);
+        }
+      });
+    });
+  }, []);
+  console.log(data);
   const getBlogs = (data) => {
     if (true) {
       setIsLoading(true);
@@ -80,12 +93,10 @@ function Industries() {
             <div className="global-container flex lg:flex-row items-end py-32 justify-start h-full">
               <div className=" mt-32 xl:mt-0 w-full lg:w-2/3 ">
                 <p className="font-Satoshi text-3xl xl:text-4xl xxl:text-6xl w-full font-bold text-center lg:text-start text-black">
-                  Empowering Industries Through Proven Solutions
+                  {data?.title}
                 </p>
                 <p className="mt-3 font-Satoshi font-semibold leading-relaxed text-sm xl:text-lg text-gray-800 text-center lg:text-start w-full lg:w-2/4">
-                  Discover how our innovative solutions have driven success
-                  across various sectors, tackling unique challenges and
-                  delivering impactful results.
+                  {data?.subTitle}
                 </p>
                 <div className="w-full flex justify-center lg:justify-start">
                   <Link href={`/contact`}>
@@ -105,24 +116,17 @@ function Industries() {
         <section className="my-28 global-container">
           <p className="mb-3 text-3xl lg:text-6xl font-Satoshi font-[600] w-full text-start lg:text-center">
             <span className="bg-gradient-to-r font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
-              Technology
+              {data?.name}
             </span>
           </p>
 
           <div className="w-full grid grid-cols-1 mt-14 gap-x-10 gap-y-14 lg:grid-cols-2 place-items-center">
             <div className="flex flex-col gap-3">
               <p className="text-xl lg:text-4xl  font-Satoshi font-[600]">
-                Empowering Industries with Next-Gen Technology
+                {data?.contentHead}
               </p>
               <p className="text-lg mt-2 font-Satoshi font-medium">
-                At MenloCloud, we leverage cutting-edge technology to deliver
-                exceptional solutions tailored to the unique needs of our
-                clients. From advanced manufacturing techniques to smart
-                automation and data analytics, our technological expertise
-                empowers industries to enhance efficiency, reduce costs, and
-                drive innovation. We are committed to staying at the forefront
-                of technological advancements, ensuring that our clients benefit
-                from the best tools and practices available in the market.
+                {data?.contentDescription}
               </p>
               <div className="w-full flex justify-center lg:justify-start">
                 <Link href={`/contact`}>
@@ -145,7 +149,7 @@ function Industries() {
           </div>
 
           <div className="grid mt-16 grid-cols-1 lg:grid-cols-4 gap-x-5 gap-y-10">
-            {points.map((elem, index) => (
+            {data?.points.map((elem, index) => (
               <div
                 key={index}
                 className="w-full rounded-lg overflow-hidden h-auto bg-gray-100"

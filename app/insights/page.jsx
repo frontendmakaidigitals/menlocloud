@@ -142,11 +142,7 @@ function Insights() {
                           by {blog.author}{" "}
                           {new Date(blog.created_at).toDateString()}
                         </p>
-                        <p className=" text-2xl xl:text-xl xxl:text-2xl font-Satoshi font-semibold mt-1">
-                          {blog.name}
-                        </p>
-
-                        <div className="flex justify-start items-center gap-2 mt-2">
+                        <div className="flex flex-wrap justify-start items-center gap-2 mt-2">
                           {blog?.tags
                             .replace(/^"|"$|\\/g, "")
                             .split(",")
@@ -159,6 +155,9 @@ function Insights() {
                               </p>
                             ))}
                         </div>
+                        <p className=" text-2xl xl:text-xl xxl:text-2xl font-Satoshi font-semibold mt-5">
+                          {blog.name}
+                        </p>
                       </div>
                     </div>
                   </Link>
@@ -185,27 +184,29 @@ function Insights() {
                           alt={blog.name}
                         />
                       </div>
-                      <div className="flex flex-col justify-between flex-grow">
-                        <p className="text-sm xl:text-[.7rem] xxl:text-sm font-Satoshi text-gray-600 font-semibold">
-                          by {blog.author}{" "}
-                          {new Date(blog.created_at).toDateString()}
-                        </p>
-                        <p className="text-lg xl:text-md xxl:text-2xl font-Satoshi font-semibold">
+                      <div className="flex flex-col justify-start flex-grow">
+                        <div>
+                          <p className="text-sm xl:text-[.7rem] xxl:text-sm font-Satoshi text-gray-600 font-semibold">
+                            by {blog.author}{" "}
+                            {new Date(blog.created_at).toDateString()}
+                          </p>
+                          <div className="flex mt-2 flex-wrap justify-start items-center gap-2">
+                            {blog?.tags
+                              .replace(/^"|"$|\\/g, "")
+                              .split(",")
+                              .map((tag, index) => (
+                                <p
+                                  key={index}
+                                  className="px-4 py-2 xl:px-3 xl:py-1 xxl:px-4 xxl:py-2 bg-lime-400 font-bold font-Satoshi text-sm xl:text-[.7rem] xxl:text-sm rounded-full w-fit"
+                                >
+                                  {tag}
+                                </p>
+                              ))}
+                          </div>
+                        </div>
+                        <p className="text-lg xl:text-md xxl:text-2xl font-Satoshi font-semibold mt-4">
                           {blog.name}
                         </p>
-                        <div className="flex justify-start items-center gap-2">
-                          {blog?.tags
-                            .replace(/^"|"$|\\/g, "")
-                            .split(",")
-                            .map((tag, index) => (
-                              <p
-                                key={index}
-                                className="px-4 py-2 xl:px-3 xl:py-1 xxl:px-4 xxl:py-2 bg-lime-400 font-bold font-Satoshi text-sm xl:text-[.7rem] xxl:text-sm rounded-full w-fit"
-                              >
-                                {tag}
-                              </p>
-                            ))}
-                        </div>
                       </div>
                     </div>
                   </Link>
@@ -289,22 +290,22 @@ function Insights() {
                           by {blog.author}{" "}
                           {new Date(blog.created_at).toDateString()}
                         </p>
+                        <div className="flex flex-wrap justify-start gap-2 mt-2">
+                          {blog?.tags
+                            .replace(/^"|"$|\\/g, "")
+                            .split(",")
+                            .map((tag, index) => (
+                              <p
+                                key={index}
+                                className="px-4 py-2 xl:px-3 xl:py-1 xxl:px-4 xxl:py-2 bg-lime-400 font-bold font-Satoshi text-sm xl:text-[.7rem] xxl:text-sm rounded-full w-fit"
+                              >
+                                {tag}
+                              </p>
+                            ))}
+                        </div>
                         <p className="xl:text-lg h-auto overflow-hidden overflow-ellipsis xxl:text-2xl font-Satoshi text-gray-900 mt-2 font-semibold">
                           {blog.name}
                         </p>
-                      </div>
-                      <div className="flex justify-start gap-2 mt-2">
-                        {blog?.tags
-                          .replace(/^"|"$|\\/g, "")
-                          .split(",")
-                          .map((tag, index) => (
-                            <p
-                              key={index}
-                              className="px-4 py-2 xl:px-3 xl:py-1 xxl:px-4 xxl:py-2 bg-lime-400 font-bold font-Satoshi text-sm xl:text-[.7rem] xxl:text-sm rounded-full w-fit"
-                            >
-                              {tag}
-                            </p>
-                          ))}
                       </div>
                     </div>
                   </div>

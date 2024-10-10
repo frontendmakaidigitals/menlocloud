@@ -10,7 +10,7 @@ import {
 
 const Footer_01 = () => {
   return (
-    <footer className="relative z-[1]  overflow-hidden rounded-tl-[30px] rounded-tr-[30px] bg-colorLinenRuffle lg:rounded-tl-[50px] lg:rounded-tr-[50px]">
+    <footer className="relative z-[1]  overflow-hidden  bg-colorLinenRuffle ">
       {/* Footer Top */}
 
       {/* Footer Text Slider */}

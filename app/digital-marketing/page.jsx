@@ -9,6 +9,7 @@ import { TbTruckDelivery } from "react-icons/tb";
 import useAccordion from "@/components/hooks/useAccordion";
 import useTabs from "@/components/hooks/useTabs";
 import Link from "next/link";
+import BlogSwiper from "@/components/blogSwiper";
 function About() {
   const services = [
     {
@@ -437,6 +438,7 @@ function About() {
           </div>
           {/* Section Spacer */}
         </section>
+        <BlogSwiper />
         <section className="my-10 py-20 bg-center bg-cover bg-no-repeat rounded-2xl global-container bg-black">
           <div className="">
             <p className="global-container mb-2 text-3xl text-gray-100 lg:text-5xl tracking-tight font-Satoshi font-bold w-full lg:w-2/3 text-center">

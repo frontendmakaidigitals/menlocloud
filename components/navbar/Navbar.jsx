@@ -68,6 +68,62 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
       Link: "/staffAugumentation",
     },
   ];
+  const industriesMenus = [
+    {
+      name: " Life Science & Health Care",
+      subTitle:
+        " Revolutionizing life sciences and Healthcare through AI-powered research and diagnostics",
+      Link: "/data-Analytics",
+    },
+    {
+      name: "Finance",
+      subTitle:
+        " Optimizing financial strategies and customer experiences with AI",
+      Link: "/generative-ai",
+    },
+    {
+      name: "Technology",
+      subTitle:
+        " Leading the way with innovative technology and digital transformation",
+      Link: "/cloud-transformation",
+    },
+    {
+      name: " Media and Communications",
+      subTitle:
+        "  Leveraging AI and ML to tailor communications and drive impactful storytelling",
+      Link: "/mobile-Development",
+    },
+    {
+      name: " Travel Transport and Logistics",
+      subTitle:
+        "  Deliver tangible business results by enhancing profitability and customer experience in the TTL industry ",
+      Link: "/web-developer",
+    },
+    {
+      name: "Educations and Learning",
+      subTitle:
+        "Speed up modernization in the EdTech industry by leveraging cloud-based infrastructure and advanced AI/ML solutions to achieve excellence.",
+      Link: "/digital-marketing",
+    },
+    {
+      name: "Retails and E-commerce",
+      subTitle:
+        " A robust selection of wide solutions equips retailers with a competitive advantage, accelerates growth, and promotes innovation. ",
+      Link: null,
+    },
+    {
+      name: "Manufacturing & Distribution",
+      subTitle:
+        "  Driving growth and efficiency in manufacturing and distribution through smart technology and automation",
+      Link: "/staffAugumentation",
+    },
+    {
+      name: "Resource and Wealth",
+      subTitle:
+        " Transforming resource and wealth strategies to unlock new opportunities and drive financial success",
+      Link: "/staffAugumentation",
+    },
+  ];
   const handleMenu = () => {
     setMobileMenu(false);
     setMobileSubMenu("");
@@ -109,7 +165,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
       return;
     }
   };
-  console.log(pathname);
+  
   return (
     <div className="menu-block-wrapper">
       <div
@@ -168,84 +224,21 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="grid xl:gap-6 xxl:gap-10 px-6 xl:py-6 xxl py-10 md:w-[400px] lg:w-[1100px] lg:grid-cols-3">
-                      <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
-                        <p className="text-md font-bold">
-                          Life Science & Health Care
-                        </p>
-                        <p className="text-sm font-medium mt-1 text-gray-600">
-                          Revolutionizing life sciences and Healthcare through
-                          AI-powered research and diagnostics
-                        </p>
-                      </div>
-                      <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
-                        <p className="text-md font-bold">Finance</p>
-                        <p className="text-sm font-medium mt-1 text-gray-600">
-                          Optimizing financial strategies and customer
-                          experiences with AI
-                        </p>
-                      </div>
-                      <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
-                        <p className="text-md font-bold">Technology</p>
-                        <p className="text-sm font-medium mt-1 text-gray-600">
-                          Leading the way with innovative technology and digital
-                          transformation
-                        </p>
-                      </div>
-                      <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
-                        <p className="text-md font-bold">
-                          Media and Communications
-                        </p>
-                        <p className="text-sm font-medium mt-1 text-gray-600">
-                          Leveraging AI and ML to tailor communications and
-                          drive impactful storytelling
-                        </p>
-                      </div>
-                      <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
-                        <p className="text-md font-bold">
-                          Travel Transport and Logistics
-                        </p>
-                        <p className="text-sm font-medium mt-1 text-gray-600">
-                          Deliver tangible business results by enhancing
-                          profitability and customer experience in the TTL
-                          industry
-                        </p>
-                      </div>
-                      <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
-                        <p className="text-md font-bold">
-                          Educations and Learning
-                        </p>
-                        <p className="text-sm font-medium mt-1 text-gray-600">
-                          Speed up modernization in the EdTech industry by
-                          leveraging cloud-based infrastructure and advanced
-                          AI/ML solutions to achieve excellence.
-                        </p>
-                      </div>
-                      <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
-                        <p className="text-md font-bold">
-                          Retails and E-commerce
-                        </p>
-                        <p className="text-sm font-medium mt-1 text-gray-600">
-                          A robust selection of wide solutions equips retailers
-                          with a competitive advantage, accelerates growth, and
-                          promotes innovation.
-                        </p>
-                      </div>
-                      <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
-                        <p className="text-md font-bold">
-                          Manufacturing & Distribution
-                        </p>
-                        <p className="text-sm font-medium mt-1 text-gray-600">
-                          Driving growth and efficiency in manufacturing and
-                          distribution through smart technology and automation
-                        </p>
-                      </div>
-                      <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
-                        <p className="text-md font-bold">Resource and Wealth</p>
-                        <p className="text-sm font-medium mt-1 text-gray-600">
-                          Transforming resource and wealth strategies to unlock
-                          new opportunities and drive financial success
-                        </p>
-                      </div>
+                      {industriesMenus.map((menu, index) => (
+                        <div
+                          key={index}
+                          className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl"
+                        >
+                          <Link href={`/industries/${index}/${menu.name}`}>
+                            <div>
+                              <p className="text-md font-bold">{menu.name}</p>
+                              <p className="text-sm font-medium mt-1 text-gray-600">
+                                {menu.subTitle}
+                              </p>
+                            </div>
+                          </Link>
+                        </div>
+                      ))}
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
@@ -288,71 +281,20 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                 </AccordionTrigger>
                 <AccordionContent>
                   <div className="h-[400px] overflow-scroll">
-                    <Link
-                      href="/data-Analytics"
-                      className="p-5 xl:p-3  xxl:p-5    text-gray-800  cursor-pointer rounded-xl"
-                    >
-                      <p className="text-md font-bold">Data analytics</p>
-                      <p className="text-sm font-medium mt-1 text-gray-600">
-                        Leveraging today’s data for a more promising future
-                      </p>
-                    </Link>
-                    <Link
-                      href={`/generative-ai`}
-                      className="p-5 xl:p-3  xxl:p-5     text-gray-800  cursor-pointer rounded-xl"
-                    >
-                      <p className="text-md font-bold">Generative AI</p>
-                      <p className="text-sm font-medium mt-1 text-gray-600">
-                        Shaping the future through advanced AI
-                      </p>
-                    </Link>
-                    <div className="xl:p-3  xxl:p-5     text-gray-800  cursor-pointer rounded-xl">
-                      <Link href={"/cloud-transformation"}>
-                        {" "}
-                        <p className="text-md font-bold">
-                          Cloud Transformation
-                        </p>
-                        <p className="text-sm font-medium mt-1 text-gray-600">
-                          Bridging conventional and generative AI to deliver
-                          effective, real-world applications.
-                        </p>
+                    {serviceMenus.map((menu, index) => (
+                      <Link
+                        key={index}
+                        href={`/industries/${index}/${menu.name}`}
+                        className="p-5 xl:p-3 xxl:p-5 text-gray-800  cursor-pointer rounded-xl"
+                      >
+                        <div>
+                          <p className="text-md font-bold">{menu.name}</p>
+                          <p className="text-sm font-medium mt-1 text-gray-600">
+                            {menu.subTitle}
+                          </p>
+                        </div>
                       </Link>
-                    </div>
-                    <Link
-                      href={"/mobile-Development"}
-                      className="p-5 xl:p-3  xxl:p-5     text-gray-800  cursor-pointer rounded-xl"
-                    >
-                      <p className="text-md font-bold">
-                        Mobile App Development
-                      </p>
-
-                      <p className="text-sm font-medium mt-1 text-gray-600">
-                        Crafting robust and scalable systems through expert
-                        software engineering.
-                      </p>
-                    </Link>
-
-                    <Link
-                      href={"/web-developer"}
-                      className="p-5 xl:p-3  xxl:p-5     text-gray-800  cursor-pointer rounded-xl"
-                    >
-                      <p className="text-md font-bold">Web Development</p>
-
-                      <p className="text-sm font-medium mt-1 text-gray-600">
-                        Transforming business operations with next-generation
-                        cloud modernization
-                      </p>
-                    </Link>
-                    <Link
-                      href="/digital-marketing"
-                      className="p-5 xl:p-3  xxl:p-5     text-gray-800  cursor-pointer rounded-xl"
-                    >
-                      <p className="text-md font-bold">Digital marketing</p>
-                      <p className="text-sm font-medium mt-1 text-gray-600">
-                        Transforming concepts into functional systems through
-                        precise implementation
-                      </p>
-                    </Link>
+                    ))}
                   </div>
                 </AccordionContent>
               </AccordionItem>
@@ -362,84 +304,20 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                 </AccordionTrigger>
                 <AccordionContent>
                   <div className="h-[400px] overflow-scroll">
-                    <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
-                      <p className="text-md font-bold">
-                        Life Science & Health Care
-                      </p>
-                      <p className="text-sm font-medium mt-1 text-gray-600">
-                        Revolutionizing life sciences and Healthcare through
-                        AI-powered research and diagnostics
-                      </p>
-                    </div>
-                    <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
-                      <p className="text-md font-bold">Finance</p>
-                      <p className="text-sm font-medium mt-1 text-gray-600">
-                        Optimizing financial strategies and customer experiences
-                        with AI
-                      </p>
-                    </div>
-                    <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-900  cursor-pointer rounded-xl">
-                      <p className="text-md font-bold">Technology</p>
-                      <p className="text-sm font-medium mt-1 text-gray-600">
-                        Leading the way with innovative technology and digital
-                        transformation
-                      </p>
-                    </div>
-                    <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-900  cursor-pointer rounded-xl">
-                      <p className="text-md font-bold">
-                        Media and Communications
-                      </p>
-                      <p className="text-sm font-medium mt-1 text-gray-600">
-                        Leveraging AI and ML to tailor communications and drive
-                        impactful storytelling
-                      </p>
-                    </div>
-                    <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-900  cursor-pointer rounded-xl">
-                      <p className="text-md font-bold">
-                        Travel Transport and Logistics
-                      </p>
-                      <p className="text-sm font-medium mt-1 text-gray-600">
-                        Deliver tangible business results by enhancing
-                        profitability and customer experience in the TTL
-                        industry
-                      </p>
-                    </div>
-                    <div className="xl:p-3  xxl:p-5     text-gray-900  cursor-pointer rounded-xl">
-                      <p className="text-md font-bold">
-                        Educations and Learning
-                      </p>
-                      <p className="text-sm font-medium mt-1 text-gray-600">
-                        Speed up modernization in the EdTech industry by
-                        leveraging cloud-based infrastructure and advanced AI/ML
-                        solutions to achieve excellence.
-                      </p>
-                    </div>
-                    <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
-                      <p className="text-md font-bold">
-                        Retails and E-commerce
-                      </p>
-                      <p className="text-sm font-medium mt-1 text-gray-600">
-                        A robust selection of wide solutions equips retailers
-                        with a competitive advantage, accelerates growth, and
-                        promotes innovation.
-                      </p>
-                    </div>
-                    <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
-                      <p className="text-md font-bold">
-                        Manufacturing & Distribution
-                      </p>
-                      <p className="text-sm font-medium mt-1 text-gray-600">
-                        Driving growth and efficiency in manufacturing and
-                        distribution through smart technology and automation
-                      </p>
-                    </div>
-                    <div className="xl:p-3  xxl:p-5   hover:bg-gray-200  text-gray-800  cursor-pointer rounded-xl">
-                      <p className="text-md font-bold">Resource and Wealth</p>
-                      <p className="text-sm font-medium mt-1 text-gray-600">
-                        Transforming resource and wealth strategies to unlock
-                        new opportunities and drive financial success
-                      </p>
-                    </div>
+                    {industriesMenus.map((menu, index) => (
+                      <Link
+                        key={index}
+                        href={`/industries/${menu.name}`}
+                        className="p-5 xl:p-3  xxl:p-5    text-gray-800  cursor-pointer rounded-xl"
+                      >
+                        <div>
+                          <p className="text-md font-bold">{menu.name}</p>
+                          <p className="text-sm font-medium mt-1 text-gray-600">
+                            {menu.subTitle}
+                          </p>
+                        </div>
+                      </Link>
+                    ))}
                   </div>
                 </AccordionContent>
               </AccordionItem>

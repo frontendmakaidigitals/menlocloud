@@ -9,6 +9,7 @@ import { AnimatePresence, color, motion } from "framer-motion";
 import { GoArrowRight } from "react-icons/go";
 import SwiperNavButtons from "@/components/SwiperNavButton";
 import Link from "next/link";
+import BlogSwiper from "@/components/blogSwiper";
 const outcomes = [
   {
     name: " Enhanced Innovation",
@@ -212,7 +213,6 @@ const cta = [
 
 function Home() {
   const swiperRef = useRef(null);
-
   return (
     <div className="page-wrapper relative z-[1] bg-white">
       <Header_01 />
@@ -432,6 +432,7 @@ function Home() {
             ))}
           </div>
         </section>
+        <BlogSwiper />
 
         <section className="my-10 py-20 bg-center bg-cover bg-no-repeat rounded-2xl global-container bg-black">
           <div className="">
@@ -457,6 +458,7 @@ function Home() {
             </Link>
           </div>
         </section>
+
         <section className="  my-14 global-container">
           <div className="w-full flex justify-center mb-14">
             <p className="text-3xl w-full text-center  lg:text-6xl  font-Satoshi font-[600]  lg:w-2/3">

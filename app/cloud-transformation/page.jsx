@@ -8,6 +8,7 @@ import "/styles/globals.css";
 import { AnimatePresence, color, motion } from "framer-motion";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import Link from "next/link";
+import BlogSwiper from "@/components/blogSwiper";
 const benefits = [
   {
     name: "Enhanced scalability",
@@ -564,6 +565,8 @@ function Home() {
             </button>
           </div>
         </div>
+
+        <BlogSwiper />
 
         <section className="my-10 py-20 bg-center bg-cover bg-no-repeat rounded-2xl global-container bg-black">
           <div className="">

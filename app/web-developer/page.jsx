@@ -10,6 +10,7 @@ import { useState, useRef } from "react";
 import { Timeline } from "@/components/ui/timeline";
 import SwiperNavButtons from "@/components/SwiperNavButton";
 import Link from "next/link";
+import BlogSwiper from "@/components/blogSwiper";
 
 function Services() {
   const swiperRef = useRef(null);
@@ -386,7 +387,6 @@ function Services() {
           <Swiper
             ref={swiperRef}
             spaceBetween={10}
-            
             breakpoints={{
               320: {
                 slidesPerView: 1.1, // 2 slides for screens >= 640px
@@ -419,6 +419,7 @@ function Services() {
             ))}
           </Swiper>
         </section>
+        <BlogSwiper />
 
         <section className="my-10 py-20 bg-center bg-cover bg-no-repeat rounded-2xl global-container bg-black">
           <div className="">

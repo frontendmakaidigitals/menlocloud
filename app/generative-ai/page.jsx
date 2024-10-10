@@ -10,7 +10,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Timeline } from "@/components/ui/timeline";
 import SwiperNavButtons from "@/components/SwiperNavButton";
+import axios from "axios";
 import Link from "next/link";
+import BlogSwiper from "@/components/blogSwiper";
 const Aiservices = [
   {
     name: "Healthcare",
@@ -179,6 +181,35 @@ const advantages = [
 ];
 
 function GenAI() {
+    const [isBlogLoaded, setIsBlogLoaded] = useState(false);
+    const [blogs, setBlogs] = useState([]);
+    const [loading, setIsLoading] = useState(false);
+    const getBlogs = (data) => {
+      if (true) {
+        setIsLoading(true);
+        axios.get("https://admin.yatriclubs.com/sanctum/csrf-cookie", {
+          withCredentials: true,
+        });
+        axios
+          .get(`https://admin.yatriclubs.com/api/blog`, {
+            withCredentials: true,
+          })
+          .then((res) => {
+            setBlogs(res.data);
+            setIsBlogLoaded("success");
+            setIsLoading(false);
+          })
+          .catch((error) => {
+            setIsBlogLoaded("failed");
+          })
+          .finally(() => {
+            setIsLoading(false);
+          });
+      }
+    };
+    useEffect(() => {
+      getBlogs();
+    }, []);
   return (
     <>
       <Header_01 />
@@ -366,6 +397,7 @@ function GenAI() {
             ))}
           </div>
         </section>
+        <BlogSwiper />
 
         <section className="my-10 py-20 bg-center bg-cover bg-no-repeat rounded-2xl global-container bg-black">
           <div className="">
