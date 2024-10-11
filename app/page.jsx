@@ -451,7 +451,7 @@ function Home() {
               return (
                 <SwiperSlide key={elem.id} className="w-full flex-grow">
                   <motion.div
-                    className="px-6 py-6  shadow-md rounded-xl flex flex-col justify-between items-start xl:min-h-[600px] xxl:min-h-[500px]"
+                    className="px-6 py-6  shadow-md rounded-xl flex flex-col justify-between items-start min-h-[550px] xl:min-h-[600px] xxl:min-h-[500px]"
                     style={{ backgroundColor: elem.color }}
                   >
                     <div className="flex justify-start w-full">
@@ -482,7 +482,7 @@ function Home() {
         </section>
 
         <section className="bg-blue-50 py-16 mt-20 lg:mt-32 flex flex-col items-center justify-center">
-          <p className="global-container mb-3 text-3xl lg:text-6xl  font-Satoshi font-[600] w-full lg:w-2/3  text-center">
+          <p className="global-container mb-3 text-3xl lg:text-6xl  font-Satoshi font-[600] w-full   text-center">
             We Turn{" "}
             <span className="bg-gradient-to-r font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
               Good Ideas{" "}
@@ -519,7 +519,7 @@ function Home() {
               {/* Section Content Block */}
               <div className="jos mb-10 lg:mb-16 xl:mb-14">
                 <div className="w-full flex justify-center ">
-                  <p className="global-container text-4xl lg:text-6xl  font-Satoshi font-[600] w-full lg:w-2/3  text-center">
+                  <p className="global-container text-4xl lg:text-6xl  font-Satoshi font-[600] w-full  text-center">
                     Our{" "}
                     <span className="bg-gradient-to-r font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
                       Service{" "}
@@ -851,7 +851,7 @@ function Home() {
             <div className="blue-gradient-2 absolute -left-[100px] top-[64%] -z-[1]  w-[160px] h-[160px] lg:h-[360px] lg:w-[360px] -rotate-[-9.022deg] rounded-[360px]"></div>
           </div>
           <div className="global-container ">
-            <p className="global-container text-3xl lg:text-6xl  font-Satoshi font-[600] w-full lg:w-2/3  text-center">
+            <p className="global-container text-3xl lg:text-6xl  font-Satoshi font-[600] w-full   text-center">
               Broad
               <span className="bg-gradient-to-r font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
                 {" "}
@@ -889,7 +889,7 @@ function Home() {
 
         {/*...::: Awards Section starts :::... */}
         <section className="mt-28">
-          <p className="global-container mb-10 text-3xl lg:text-6xl font-Satoshi font-[600] w-full lg:w-2/3  text-center">
+          <p className="global-container mb-10 text-3xl lg:text-6xl font-Satoshi font-[600] w-full   text-center">
             Our{" "}
             <span className="bg-gradient-to-r font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
               {" "}
