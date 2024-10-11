@@ -11,6 +11,7 @@ import { motion } from "framer-motion";
 import { Timeline } from "@/components/ui/timeline";
 import Link from "next/link";
 import axios from "axios";
+import BlogSwiper from "@/components/blogSwiper";
 
 const points = [
   {
@@ -172,72 +173,7 @@ function Industries({ params }) {
           </div>
         </section>
 
-        <section className="my-28 global-container">
-          <div>
-            <div className="flex  justify-between items-center">
-              <p className="text-3xl w-full text-center lg:text-start  lg:text-6xl  font-Satoshi font-[600]  lg:w-2/3">
-                Discover Our{" "}
-                <span className="bg-gradient-to-r font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
-                  Stories{" "}
-                </span>{" "}
-              </p>
-              <div className="hidden lg:flex">
-                <SwiperNavButtons swiperRef={swiperRef} />
-              </div>
-            </div>
-            <Swiper
-              ref={swiperRef}
-              spaceBetween={10}
-              slidesPerView={1.3}
-              breakpoints={{
-                320: {
-                  slidesPerView: 1.3, // 2 slides for screens >= 640px
-                },
-                768: {
-                  slidesPerView: 3, // 3 slides for screens >= 768px
-                },
-                1024: {
-                  slidesPerView: 4, // 4 slides for screens >= 1024px
-                },
-                1604: {
-                  slidesPerView: 5, // 4 slides for screens >= 1024px
-                },
-              }}
-              className=" mt-5 xl:mt-10"
-            >
-              {blogs.map((elem, index) => {
-                return (
-                  <SwiperSlide
-                    key={elem.id}
-                    className="  w-full cursor-pointer "
-                  >
-                    <motion.div
-                      whileHover={{ backgroundColor: elem.hoverColor }}
-                      className={` rounded-xl bg-slate-100`}
-                    >
-                      <Link href={`/blog-details/${elem.id}`}>
-                        <div
-                          className="w-full h-64 bg-no-repeat rounded-xl bg-center bg-cover "
-                          style={{
-                            backgroundImage: `url(${imageURL + elem.image})`,
-                          }}
-                        ></div>
-                        <div className="px-3 py-5">
-                          <div className="w-full flex justify-between items-center">
-                            <p>by {elem.author} </p>
-                          </div>
-                          <p className="xl:text-lg xxl:text-2xl font-Satoshi text-gray-900 mt-2 font-semibold">
-                            {elem.name}
-                          </p>
-                        </div>
-                      </Link>
-                    </motion.div>
-                  </SwiperSlide>
-                );
-              })}
-            </Swiper>
-          </div>
-        </section>
+        <BlogSwiper />
         <section className="my-10 py-20 bg-center bg-cover bg-no-repeat rounded-2xl global-container bg-black">
           <div className="">
             <p className="global-container mb-2 text-3xl text-gray-100 lg:text-5xl tracking-tight font-Satoshi font-bold w-full lg:w-2/3 text-center">

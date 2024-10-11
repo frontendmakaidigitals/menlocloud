@@ -6,6 +6,8 @@ import SwiperNavButtons from "@/components/SwiperNavButton";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { motion } from "framer-motion";
+import Markdown from "react-markdown";
+import BlogDetails from "@/app/blog-details/[...id]/page";
 const BlogSwiper = () => {
   const swiperBlogRef = useRef(null);
   const imageURL = "https://admin.yatriclubs.com/";
@@ -74,23 +76,32 @@ const BlogSwiper = () => {
         >
           {blogs.map((elem, index) => {
             return (
-              <SwiperSlide key={elem.id} className="  w-full cursor-pointer ">
+              <SwiperSlide key={elem.id} className="w-full cursor-pointer">
                 <motion.div
                   whileHover={{ backgroundColor: elem.hoverColor }}
-                  className={` min-h-[500px] rounded-xl bg-slate-100`}
+                  className="min-h-[500px] max-h-[500px] rounded-xl bg-slate-100 flex flex-col"
                 >
-                  <Link href={`/blog-details/${elem.id}`}>
+                  <Link
+                    href={`/blog-details/${elem.id}`}
+                    className="flex flex-col h-full"
+                  >
                     <div
-                      className="w-full h-64 bg-no-repeat rounded-xl bg-center bg-cover "
+                      className="w-full h-[250px] max-h-[250px] bg-no-repeat rounded-t-xl bg-center bg-cover"
                       style={{
                         backgroundImage: `url(${imageURL + elem.image})`,
                       }}
                     ></div>
-                    <div className="px-3 py-5">
+                    <div className="flex-grow px-3 py-5 flex flex-col">
                       <div className="w-full flex justify-between items-center">
-                        <p className="font-Satoshi">
-                          by <span className="capitalize">{elem.author}</span>{" "}
-                        </p>
+                        <div className="w-full text-sm flex font-Satoshi justify-between items-center">
+                          <p>
+                            by{" "}
+                            <span className="capitalize font-medium">
+                              {elem.author}
+                            </span>
+                          </p>
+                          <p>{new Date(elem.created_at).toDateString()}</p>
+                        </div>
                       </div>
                       <div className="flex flex-wrap justify-start gap-2 mt-2">
                         {elem?.tags
@@ -99,15 +110,18 @@ const BlogSwiper = () => {
                           .map((tag, index) => (
                             <p
                               key={index}
-                              className="px-4 py-2 xl:px-3 xl:py-1 xxl:px-4 xxl:py-2 bg-lime-400 font-bold font-Satoshi text-sm xl:text-[.7rem] xxl:text-sm rounded-full w-fit"
+                              className="px-4 py-2 xl:py-1 gap-3 bg-lime-400 font-bold font-Satoshi text-[.7rem] rounded-full w-fit"
                             >
                               {tag}
                             </p>
                           ))}
                       </div>
-                      <p className="xl:text-lg xxl:text-2xl font-Satoshi text-gray-900 mt-5 font-semibold">
+                      <p className="xl:text-lg xxl:text-xl font-Satoshi text-gray-900 mt-3 font-semibold">
                         {elem.name}
                       </p>
+                      <Markdown className="line-clamp-3 text-[1rem] text-ellipsis mt-1">
+                        {elem.description}
+                      </Markdown>
                     </div>
                   </Link>
                 </motion.div>

@@ -7,11 +7,9 @@ import { SlCalender } from "react-icons/sl";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import dynamic from "next/dynamic";
-import { Suspense } from "react";
-import Head from "next/head";
 
 function BlogDetails({ params }) {
-  const EditorComp = dynamic(() => import("@/components/MDXViewer"), {
+  const Viewer = dynamic(() => import("@/components/MDXViewer"), {
     ssr: false,
   });
   const serverURL = "https://admin.yatriclubs.com/";
@@ -78,14 +76,7 @@ function BlogDetails({ params }) {
 
   return (
     <>
-      {title && (
-        <Head>
-          <title>{title}</title>
-          <meta name="description" content={metaDiscription} />
-        </Head>
-      )}
       <Header_01 />
-
       <main className="main-wrapper relative overflow-hidden">
         {/*...::: Breadcrumb Section Start :::... */}
         <section id="section-breadcrumb">
@@ -110,61 +101,56 @@ function BlogDetails({ params }) {
                   {/* Blog Post Details */}
                   <div className="flex flex-col gap-6">
                     {/* Blog Post Text Area */}
-                    <article className="jos overflow-hidden bg-white">
-                      <div className="mb-7 h-[300px] lg:h-[74vh] flex justify-center items-center shadow-md border border-gray-200  overflow-hidden rounded-[10px]">
-                        <img
-                          src={serverURL + image}
-                          alt="blog-main-1"
-                          className=" object-cover"
-                        />
-                      </div>
 
-                      <div className="w-full flex flex-col-reverse lg:flex-row items-start lg:items-center justify-between gap-7 lg:gap-0">
-                        <ul className=" flex flex-wrap items-center gap-2">
-                          {tags.map((elem, index) => (
-                            <li key={index} className="relative font-semibold ">
-                              <p className="bg-lime-400 px-5 py-1 font-Satoshi rounded-full">
-                                {elem}
-                              </p>
-                            </li>
-                          ))}
-                        </ul>
-                        <ul className="flex w-full lg:w-auto items-center justify-between lg:gap-12 mb-5">
-                          <li className="relative font-semibold ">
-                            <div className="flex items-center gap-2">
-                              <div className="size-10 rounded-full overflow-hidden border border-gray-400 bg-gray-400">
-                                <img
-                                  src={
-                                    "https://cdn3d.iconscout.com/3d/premium/thumb/man-3d-icon-download-in-png-blend-fbx-gltf-file-formats--male-person-happy-people-human-avatar-pack-icons-7590876.png?f=webp"
-                                  }
-                                  alt="Profile image"
-                                />
-                              </div>
-                              <p className=" font-Satoshi rounded-full">
-                                by {author}
-                              </p>
-                            </div>
-                          </li>
-                          <li className="relative font-semibold">
-                            <p className="flex items-center gap-2 font-Satoshi rounded-full">
-                              <span>
-                                <SlCalender />
-                              </span>{" "}
-                              {date}
+                    <div
+                      style={{ backgroundImage: `url(${serverURL + image})` }}
+                      className="bg-no-repeat bg-cover mb-7 h-[300px] lg:h-[74vh] flex justify-center items-center shadow-md border border-gray-200  overflow-hidden rounded-[10px]"
+                    ></div>
+
+                    <div className="w-full flex flex-col-reverse lg:flex-row items-start lg:items-center justify-between gap-7 lg:gap-0">
+                      <ul className=" flex flex-wrap items-center gap-2">
+                        {tags.map((elem, index) => (
+                          <li key={index} className="relative font-semibold ">
+                            <p className="bg-lime-400 px-5 py-1 font-Satoshi rounded-full">
+                              {elem}
                             </p>
                           </li>
-                        </ul>
-                      </div>
+                        ))}
+                      </ul>
+                      <ul className="flex w-full lg:w-auto items-center justify-between lg:gap-12 mb-5">
+                        <li className="relative font-semibold ">
+                          <div className="flex items-center gap-2">
+                            <div className="size-10 rounded-full overflow-hidden border border-gray-400 bg-gray-400">
+                              <img
+                                src={
+                                  "https://cdn3d.iconscout.com/3d/premium/thumb/man-3d-icon-download-in-png-blend-fbx-gltf-file-formats--male-person-happy-people-human-avatar-pack-icons-7590876.png?f=webp"
+                                }
+                                alt="Profile image"
+                              />
+                            </div>
+                            <p className=" font-Satoshi rounded-full">
+                              by {author}
+                            </p>
+                          </div>
+                        </li>
+                        <li className="relative font-semibold">
+                          <p className="flex items-center gap-2 font-Satoshi rounded-full">
+                            <span>
+                              <SlCalender />
+                            </span>{" "}
+                            {date}
+                          </p>
+                        </li>
+                      </ul>
+                    </div>
 
-                      {/* Blog Post Meta */}
-                      <h5 className="mb-3 mt-10">{title}</h5>
+                    {/* Blog Post Meta */}
+                    <h5 className="mb-3 mt-10">{title}</h5>
 
-                      <div className="w-full">
-                        <Suspense fallback={null}>
-                          <EditorComp markdown={blogDetail ? blogDetail : ""} />
-                        </Suspense>
-                      </div>
-                    </article>
+                    <div className="w-full">
+                      <Viewer markdown={blogDetail} />
+                    </div>
+
                     {/* Blog Post Text Area */}
                     {/* Blog Events */}
 

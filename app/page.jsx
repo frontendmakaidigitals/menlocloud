@@ -15,7 +15,6 @@ import { HiOutlineArrowDown } from "react-icons/hi2";
 import { LampContainer } from "@/components/ui/lamp";
 import axios from "axios";
 import Form from "@/components/PopUp-form/form";
-
 import { useToast } from "@/hooks/use-toast";
 import BlogSwiper from "@/components/blogSwiper";
 
@@ -451,7 +450,7 @@ function Home() {
               return (
                 <SwiperSlide key={elem.id} className="w-full flex-grow">
                   <motion.div
-                    className="px-6 py-6  shadow-md rounded-xl flex flex-col justify-between items-start xl:min-h-[600px] xxl:min-h-[400px]"
+                    className="px-6 py-6  shadow-md rounded-xl flex flex-col justify-between items-start xl:min-h-[600px] xxl:min-h-[500px]"
                     style={{ backgroundColor: elem.color }}
                   >
                     <div className="flex justify-start w-full">

@@ -104,7 +104,7 @@ const Queries = ({
   selectedOption,
 }) => {
   const [isQuerySubmitting, setIsQuerySubmitting] = useState(false);
-  const [queryStatus, setQueryStatus] = useState(null);
+  const [queryStatus, setQueryStatus] = useState(null);``
   const [submitId, setSubmitId] = useState(null);
   const filteredQueries = querys.filter((query) => {
     const matchesSearchTerm =
