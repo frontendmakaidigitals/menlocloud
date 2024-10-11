@@ -1,44 +1,42 @@
-import { useSwiper } from "swiper/react";
-import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 import { useEffect, useState } from "react";
+import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 
 export default function SwiperNavButtons({ swiperRef }) {
   const [isFirstSlide, setIsFirstSlide] = useState(true);
   const [isLastSlide, setIsLastSlide] = useState(false);
-  const swiper = swiperRef.current?.swiper;
 
   const handlePrev = () => {
-    if (swiper) {
-      swiper.slidePrev();
+    if (swiperRef.current) {
+      swiperRef.current.swiper.slidePrev();
     }
   };
 
   const handleNext = () => {
-    if (swiper) {
-      swiper.slideNext();
+    if (swiperRef.current) {
+      swiperRef.current.swiper.slideNext();
     }
   };
 
   const updateSlideState = () => {
-    if (swiper) {
-      setIsFirstSlide(swiper.isBeginning);
-      setIsLastSlide(swiper.isEnd);
+    if (swiperRef.current) {
+      setIsFirstSlide(swiperRef.current.swiper.isBeginning);
+      setIsLastSlide(swiperRef.current.swiper.isEnd);
     }
   };
 
   useEffect(() => {
+    const swiper = swiperRef.current?.swiper;
     if (swiper) {
       updateSlideState();
-      swiper.on('slideChange', updateSlideState);
+      swiper.on("slideChange", updateSlideState);
     }
 
-    // Clean up the event listener on unmount
     return () => {
       if (swiper) {
-        swiper.off('slideChange', updateSlideState);
+        swiper.off("slideChange", updateSlideState);
       }
     };
-  }, [swiper]);
+  }, [swiperRef]);
 
   return (
     <div className="flex items-center gap-3">

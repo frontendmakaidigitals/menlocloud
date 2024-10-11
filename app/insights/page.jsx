@@ -1,5 +1,5 @@
 "use client";
-
+import Markdown from "react-markdown";
 import { useRef, useState, useEffect } from "react";
 import Header_01 from "@/components/header/Header_01";
 import Footer_01 from "@/components/footer/Footer_01";
@@ -22,6 +22,7 @@ import {
   PaginationPrevious,
 } from "@/components/ui/pagination";
 import axios from "axios";
+import Marked from "@/components/marked";
 
 const topics = [
   "Digital Age",
@@ -57,7 +58,7 @@ function Insights() {
   const [isLoading, setIsLoading] = useState(false);
   const [status, setStatus] = useState(false);
   const [blogs, setBlogs] = useState([]);
-  console.log(blogs);
+
   const imageURL = "https://admin.yatriclubs.com/";
   const getBlogs = () => {
     if (true) {
@@ -129,7 +130,7 @@ function Insights() {
                     className="hover:bg-slate-200 transition-all duration-300 py-3 px-2 rounded-lg h-full"
                   >
                     <div>
-                      <div className="w-full bg-red-500 flex justify-center rounded-xl items-center overflow-hidden h-[400px] xxl:h-[50vh] max-h-[500px]">
+                      <div className="w-full bg-red-500 flex justify-center rounded-xl items-center overflow-hidden h-[400px] xxl:h-[53vh] max-h-[530px]">
                         <img
                           className="w-full h-full object-cover rounded-lg" // Ensure the image covers the container fully
                           src={imageURL + blog.image}
@@ -138,10 +139,14 @@ function Insights() {
                       </div>
 
                       <div>
-                        <p className="text-sm xl:text-[.7rem] xxl:text-sm font-Satoshi text-gray-600 mt-2 font-semibold">
-                          by {blog.author}{" "}
-                          {new Date(blog.created_at).toDateString()}
-                        </p>
+                        <div className="w-full flex items-center justify-between">
+                          <p className="text-sm xl:text-[.7rem] xxl:text-sm font-Satoshi text-gray-600 mt-2 font-semibold">
+                            by {blog.author}{" "}
+                          </p>
+                          <p className="text-sm xl:text-[.7rem] xxl:text-sm font-Satoshi text-gray-600 mt-2 font-semibold">
+                            {new Date(blog.created_at).toDateString()}
+                          </p>
+                        </div>
                         <div className="flex flex-wrap justify-start items-center gap-2 mt-2">
                           {blog?.tags
                             .replace(/^"|"$|\\/g, "")
@@ -149,7 +154,7 @@ function Insights() {
                             .map((tag, index) => (
                               <p
                                 key={index}
-                                className="px-4 py-2 xl:px-3 xl:py-1 xxl:px-4 xxl:py-2 bg-lime-400 font-bold font-Satoshi text-sm xl:text-[.7rem] xxl:text-sm rounded-full w-fit"
+                                className="px-4 py-2 xl:py-1 gap-3 bg-lime-400 font-bold font-Satoshi text-[.7rem] rounded-full w-fit"
                               >
                                 {tag}
                               </p>
@@ -158,6 +163,7 @@ function Insights() {
                         <p className=" text-2xl xl:text-xl xxl:text-2xl font-Satoshi font-semibold mt-5">
                           {blog.name}
                         </p>
+                        <Marked markdown={blog.description} />
                       </div>
                     </div>
                   </Link>
@@ -173,23 +179,23 @@ function Insights() {
                     href={`/blog-details/${blog.id}`}
                     className="hover:bg-slate-200 transition-all duration-300 py-3 px-2 rounded-lg"
                   >
-                    <div
-                      key={blog.id}
-                      className="flex w-full lg:flex-row gap-4"
-                    >
-                      <div className="flex-shrink-0 w-[230px] h-[180px] xl:w-[180px] xl:h-[140px] xxl:w-[230px]  xxl:h-[180px] overflow-hidden rounded-lg">
-                        <img
-                          className="w-full h-full object-cover"
-                          src={imageURL + blog.image}
-                          alt={blog.name}
-                        />
-                      </div>
+                    <div className="flex w-full lg:flex-row gap-4">
+                      <div
+                        style={{
+                          backgroundImage: `url('${imageURL + blog.image}')`,
+                        }}
+                        className="bg-no-repeat bg-center bg-cover flex-shrink-0 w-[230px] h-[180px] xl:w-[180px] xl:h-[220px] xxl:w-[230px] xxl:h-[210px] overflow-hidden rounded-lg"
+                      ></div>
                       <div className="flex flex-col justify-start flex-grow">
                         <div>
-                          <p className="text-sm xl:text-[.7rem] xxl:text-sm font-Satoshi text-gray-600 font-semibold">
-                            by {blog.author}{" "}
-                            {new Date(blog.created_at).toDateString()}
-                          </p>
+                          <div className="w-full flex items-center justify-between">
+                            <p className="text-sm xl:text-[.7rem] xxl:text-sm font-Satoshi text-gray-600  font-semibold">
+                              by {blog.author}
+                            </p>
+                            <p className="text-sm xl:text-[.7rem] xxl:text-sm font-Satoshi text-gray-600  font-semibold">
+                              {new Date(blog.created_at).toDateString()}
+                            </p>
+                          </div>
                           <div className="flex mt-2 flex-wrap justify-start items-center gap-2">
                             {blog?.tags
                               .replace(/^"|"$|\\/g, "")
@@ -197,16 +203,18 @@ function Insights() {
                               .map((tag, index) => (
                                 <p
                                   key={index}
-                                  className="px-4 py-2 xl:px-3 xl:py-1 xxl:px-4 xxl:py-2 bg-lime-400 font-bold font-Satoshi text-sm xl:text-[.7rem] xxl:text-sm rounded-full w-fit"
+                                  className="px-4 py-2 xl:py-1 gap-3 bg-lime-400 font-bold font-Satoshi text-[.7rem] rounded-full w-fit"
                                 >
                                   {tag}
                                 </p>
                               ))}
                           </div>
                         </div>
-                        <p className="text-lg xl:text-md xxl:text-2xl font-Satoshi font-semibold mt-4">
+                        <p className="text-lg xl:text-md xxl:text-2xl font-Satoshi font-semibold mt-2">
                           {blog.name}
                         </p>
+                        <p className="line-clamp-3 text-[1rem] text-ellipsis mt-1"></p>
+                        <Marked markdown={blog.description} />
                       </div>
                     </div>
                   </Link>
@@ -268,16 +276,16 @@ function Insights() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 mt-12 lg:mt-7 xxl:grid-cols-4 gap-10">
             {blogs
-              .filter((blog) => ["default"].includes(blog.priority)) // Filter by priority
-              .sort((a, b) => parseInt(a.priority) - parseInt(b.priority)) // Sort by priority
+              .filter((blog) => ["default"].includes(blog.priority))
+              .sort((a, b) => parseInt(a.priority) - parseInt(b.priority))
               .map((blog) => (
                 <Link
                   key={blog.id}
                   href={`/blog-details/${blog.id}`}
                   className="hover:bg-slate-200 transition-all duration-300 py-3 px-2 rounded-lg"
                 >
-                  <div key={blog.id} className="w-full flex flex-col h-full">
-                    <div className="w-full overflow-hidden flex-grow">
+                  <div className="w-full flex flex-col h-full">
+                    <div className="w-full overflow-hidden ">
                       <img
                         src={imageURL + blog.image}
                         className="w-full h-64 object-cover"
@@ -286,10 +294,14 @@ function Insights() {
                     </div>
                     <div className="flex flex-col flex-grow justify-between">
                       <div>
-                        <p className="lg:text-[.8rem] text-sm font-Satoshi text-gray-600 mt-2 font-semibold">
-                          by {blog.author}{" "}
-                          {new Date(blog.created_at).toDateString()}
-                        </p>
+                        <div className="w-full flex items-center justify-between mt-2">
+                          <p className="text-sm xl:text-[.7rem] xxl:text-sm font-Satoshi text-gray-600 font-semibold">
+                            by {blog.author}
+                          </p>
+                          <p className="text-sm xl:text-[.7rem] xxl:text-sm font-Satoshi text-gray-600 font-semibold">
+                            {new Date(blog.created_at).toDateString()}
+                          </p>
+                        </div>
                         <div className="flex flex-wrap justify-start gap-2 mt-2">
                           {blog?.tags
                             .replace(/^"|"$|\\/g, "")
@@ -297,7 +309,7 @@ function Insights() {
                             .map((tag, index) => (
                               <p
                                 key={index}
-                                className="px-4 py-2 xl:px-3 xl:py-1 xxl:px-4 xxl:py-2 bg-lime-400 font-bold font-Satoshi text-sm xl:text-[.7rem] xxl:text-sm rounded-full w-fit"
+                                className="px-4 py-2 xl:py-1 bg-lime-400 font-bold font-Satoshi text-[.7rem] rounded-full w-fit"
                               >
                                 {tag}
                               </p>
@@ -306,6 +318,13 @@ function Insights() {
                         <p className="xl:text-lg h-auto overflow-hidden overflow-ellipsis xxl:text-2xl font-Satoshi text-gray-900 mt-2 font-semibold">
                           {blog.name}
                         </p>
+                        {blog.description ? (
+                          <Marked markdown={blog.description} />
+                        ) : (
+                          <p className="text-gray-500 mt-2">
+                            No description available.
+                          </p>
+                        )}
                       </div>
                     </div>
                   </div>

@@ -4,13 +4,11 @@ import Header_01 from "@/components/header/Header_01";
 import "swiper/css/navigation";
 import { FaArrowRightLong } from "react-icons/fa6";
 import "swiper/css";
+import Form from "@/components/PopUp-form/form";
 import { useEffect, useState } from "react";
 import { BsHandIndexThumbFill } from "react-icons/bs";
-import { Swiper, SwiperSlide } from "swiper/react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Timeline } from "@/components/ui/timeline";
-import SwiperNavButtons from "@/components/SwiperNavButton";
-import axios from "axios";
 import Link from "next/link";
 import BlogSwiper from "@/components/blogSwiper";
 const Aiservices = [
@@ -181,38 +179,14 @@ const advantages = [
 ];
 
 function GenAI() {
-    const [isBlogLoaded, setIsBlogLoaded] = useState(false);
-    const [blogs, setBlogs] = useState([]);
-    const [loading, setIsLoading] = useState(false);
-    const getBlogs = (data) => {
-      if (true) {
-        setIsLoading(true);
-        axios.get("https://admin.yatriclubs.com/sanctum/csrf-cookie", {
-          withCredentials: true,
-        });
-        axios
-          .get(`https://admin.yatriclubs.com/api/blog`, {
-            withCredentials: true,
-          })
-          .then((res) => {
-            setBlogs(res.data);
-            setIsBlogLoaded("success");
-            setIsLoading(false);
-          })
-          .catch((error) => {
-            setIsBlogLoaded("failed");
-          })
-          .finally(() => {
-            setIsLoading(false);
-          });
-      }
-    };
-    useEffect(() => {
-      getBlogs();
-    }, []);
+  const [isOpen, setisOpen] = useState(false);
+  const [status, setStatus] = useState(null);
   return (
     <>
       <Header_01 />
+      {isOpen ? (
+        <Form setIsOpen={setisOpen} setStatus={setStatus} status={status} />
+      ) : null}
       <main className="main-wrapper relative">
         <div className="w-full h-[85vh] xl:h-screen bg-no-repeat bg-center bg-cover bg-[url('https://images.unsplash.com/photo-1636690424408-4330adc3e583?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')]">
           <div className="bg-gray-900/40 w-full h-full ">
@@ -293,7 +267,10 @@ function GenAI() {
                       {service.sol}
                     </motion.p>
                     <div className="w-full flex justify-between items-center">
-                      <button className="px-4 bg-lime-300 py-2 font-Satoshi font-semibold text-sm mt-2   rounded-full">
+                      <button
+                        onClick={() => setisOpen(true)}
+                        className="px-4 bg-lime-300 py-2 font-Satoshi font-semibold text-sm mt-2   rounded-full"
+                      >
                         Learn more
                       </button>
                     </div>
@@ -384,13 +361,14 @@ function GenAI() {
                     {elem.description}
                   </p>
                   <div className="mt-5">
-                    <Link href={`/contact`}>
-                      {" "}
-                      <button className="text-gray-900 overflow-hidden group rounded-lg relative font-Satoshi font-semibold py-2 px-5 bg-gray-50">
-                        <p className="relative z-10">Lets Connect</p>
-                        <div className="bg-sky-500 w-1 h-1 group-hover:scale-[50] absolute -bottom-1 left-1/2 -translate-1/2 rounded-full transition-all duration-300" />
-                      </button>
-                    </Link>
+                    {" "}
+                    <button
+                      onClick={() => setisOpen(true)}
+                      className="text-gray-900 overflow-hidden group rounded-lg relative font-Satoshi font-semibold py-2 px-5 bg-gray-50"
+                    >
+                      <p className="relative z-10">Lets Connect</p>
+                      <div className="bg-sky-500 w-1 h-1 group-hover:scale-[50] absolute -bottom-1 left-1/2 -translate-1/2 rounded-full transition-all duration-300" />
+                    </button>
                   </div>
                 </div>
               </div>
@@ -414,13 +392,13 @@ function GenAI() {
             </p>
           </div>
           <div className="mt-5  w-full flex justify-center ">
-            <Link href={`/contact`}>
-              {" "}
-              <button className="text-gray-900 overflow-hidden group rounded-lg relative font-Satoshi font-semibold py-2 px-5 bg-gray-200">
-                <p className="relative z-10">Lets Connect</p>
-                <div className="bg-sky-500 w-1 h-1 group-hover:scale-[50] absolute -bottom-1 left-1/2 -translate-1/2 rounded-full transition-all duration-300" />
-              </button>
-            </Link>
+            <button
+              onClick={() => setisOpen(true)}
+              className="text-gray-900 overflow-hidden group rounded-lg relative font-Satoshi font-semibold py-2 px-5 bg-gray-200"
+            >
+              <p className="relative z-10">Lets Connect</p>
+              <div className="bg-sky-500 w-1 h-1 group-hover:scale-[50] absolute -bottom-1 left-1/2 -translate-1/2 rounded-full transition-all duration-300" />
+            </button>
           </div>
         </section>
       </main>

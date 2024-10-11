@@ -51,7 +51,7 @@ const Dropdown = ({ setSelectedOption, selectedOption, options }) => {
         </button>
       </div>
       {isOpen && (
-        <div className="absolute z-10 mt-2 w-full rounded-md bg-white shadow-lg">
+        <div className="absolute bottom-full z-10 mt-2 w-fit rounded-md bg-white shadow-lg">
           <ul
             className="py-1"
             role="menu"

@@ -7,6 +7,7 @@ import Footer_01 from "@/components/footer/Footer_01";
 import "/styles/globals.css";
 import { AnimatePresence, color, motion } from "framer-motion";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+import Form from "@/components/PopUp-form/form";
 import Link from "next/link";
 import BlogSwiper from "@/components/blogSwiper";
 const benefits = [
@@ -353,10 +354,15 @@ function Home() {
   const swiperRef = useRef(null);
   const [tabSelected, setTabSelected] = useState(0);
   const [mobileTabs, setMobileTabs] = useState(false);
+
+  const [isOpen, setisOpen] = useState(false);
+  const [status, setStatus] = useState(null);
   return (
     <div className="page-wrapper relative z-[1] bg-white">
       <Header_01 />
-
+      {isOpen ? (
+        <Form setIsOpen={setisOpen} setStatus={setStatus} status={status} />
+      ) : null}
       <main className="main-wrapper relative ">
         {/*...::: Hero Section Start :::... */}
 
@@ -425,7 +431,10 @@ function Home() {
               the process, from migration to optimization.
             </p>
             <div className="mt-5  w-full flex justify-center ">
-              <button className="text-gray-900 overflow-hidden group rounded-lg relative font-Satoshi font-semibold py-2 px-5 bg-gray-200">
+              <button
+                onClick={() => setisOpen(true)}
+                className="text-gray-900 overflow-hidden group rounded-lg relative font-Satoshi font-semibold py-2 px-5 bg-gray-200"
+              >
                 <p className="relative z-10">Schedule a consultation</p>
                 <div className="bg-sky-500 w-1 h-1 group-hover:scale-[70] absolute -bottom-1 left-1/2 -translate-1/2 rounded-full transition-all duration-300" />
               </button>
@@ -559,7 +568,10 @@ function Home() {
           </p>
 
           <div className="mt-6 w-full flex justify-center ">
-            <button className="text-gray-50 overflow-hidden group rounded-lg relative font-Satoshi font-semibold py-2 px-5 bg-gray-900">
+            <button
+              onClick={() => setisOpen(true)}
+              className="text-gray-50 overflow-hidden group rounded-lg relative font-Satoshi font-semibold py-2 px-5 bg-gray-900"
+            >
               <p className="relative z-10">Lets Connect</p>
               <div className="bg-sky-500 w-1 h-1 group-hover:scale-[50] absolute -bottom-1 left-1/2 -translate-1/2 rounded-full transition-all duration-300" />
             </button>
@@ -583,7 +595,10 @@ function Home() {
             </p>
           </div>
           <div className="mt-5  w-full flex justify-center ">
-            <button className="text-gray-900 overflow-hidden group rounded-lg relative font-Satoshi font-semibold py-2 px-5 bg-gray-200">
+            <button
+              onClick={() => setisOpen(true)}
+              className="text-gray-900 overflow-hidden group rounded-lg relative font-Satoshi font-semibold py-2 px-5 bg-gray-200"
+            >
               <p className="relative z-10">Lets Connect</p>
               <div className="bg-sky-500 w-1 h-1 group-hover:scale-[50] absolute -bottom-1 left-1/2 -translate-1/2 rounded-full transition-all duration-300" />
             </button>

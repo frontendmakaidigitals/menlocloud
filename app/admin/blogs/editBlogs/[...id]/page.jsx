@@ -221,7 +221,13 @@ const Blogform = ({ id, EditorComp }) => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 place-items-center mt-4">
           <div className="w-full ">
-            <p className="font-Satoshi font-medium">Add Image</p>
+            <p className="font-Satoshi font-medium">
+              Add Image{" "}
+              <span className="text-gray-500">
+                <span className="text-red-500 font-Satoshi font-bold">*</span>
+                Image size should not exceed 2mb.
+              </span>
+            </p>
             <div className="flex w-full items-center gap-2">
               <div className=" bg-transparent border border-gray-600 placeholder:text-gray-400 w-full relative flex items-center py-3 justify-between pl-3 pr-10 rounded-md">
                 <div className="w-full">
@@ -309,12 +315,15 @@ const Blogform = ({ id, EditorComp }) => {
         </div>
 
         <div className="flex items-center gap-5 mt-9">
-          <div className="w-auto ">
-            <Dropdown
-              selectedOption={selectedOption}
-              setSelectedOption={setSelectedOption}
-              options={options}
-            />
+          <div className="flex items-center gap-2">
+            <p>Priority:</p>
+            <div className="w-auto ">
+              <Dropdown
+                selectedOption={selectedOption}
+                setSelectedOption={setSelectedOption}
+                options={options}
+              />
+            </div>
           </div>
 
           <button

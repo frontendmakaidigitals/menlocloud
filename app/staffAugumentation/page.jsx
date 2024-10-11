@@ -6,6 +6,8 @@ import "swiper/css";
 import Link from "next/link";
 import { Timeline } from "@/components/ui/timeline";
 import BlogSwiper from "@/components/blogSwiper";
+import Form from "@/components/PopUp-form/form";
+import { useState } from "react";
 function Services() {
   const services = [
     {
@@ -268,10 +270,15 @@ function Services() {
       ],
     },
   ];
+  const [isOpen, setisOpen] = useState(false);
+  const [status, setStatus] = useState(null);
   return (
     <>
       <div className="page-wrapper relative">
         <Header_01 />
+        {isOpen ? (
+          <Form setIsOpen={setisOpen} setStatus={setStatus} status={status} />
+        ) : null}
         <main className="main-wrapper">
           <div className="w-full mb-20  h-[85vh] xl:h-screen bg-no-repeat bg-center bg-cover bg-[url('/assets/img_placeholder/staff.jpg')]">
             <div className="bg-gradient-to-b w-full h-full from-gray-800/40 to-gray-700/30">
@@ -323,7 +330,10 @@ function Services() {
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     </p>
                     <div className="w-full flex justify-between items-center">
-                      <button className="px-4 bg-lime-300 py-2 font-Satoshi font-semibold text-sm mt-2   rounded-full">
+                      <button
+                        onClick={() => setisOpen(true)}
+                        className="px-4 bg-lime-300 py-2 font-Satoshi font-semibold text-sm mt-2   rounded-full"
+                      >
                         Learn more
                       </button>
                     </div>
@@ -341,7 +351,6 @@ function Services() {
               </span>
               Company
             </p>
-
             <p className="text-sm xl:text-lg text-center mt-5 w-full  font-Satoshi">
               A staff augmentation company&apos;s core values should reflect
               their commitment to providing high-quality talent and exceptional
@@ -379,6 +388,12 @@ function Services() {
                 </div>
               ))}
             </div>
+
+            <p className="text-sm xl:text-lg text-center mt-10 w-full  font-Satoshi">
+              By embodying these core values, a staff augmentation company can
+              establish trust, build a strong reputation, and provide
+              exceptional value to its clients.
+            </p>
           </section>
 
           <section className="mb-32">
@@ -515,12 +530,13 @@ function Services() {
               </p>
             </div>
             <div className="mt-5  w-full flex justify-center ">
-              <Link href={`/contact`}>
-                <button className="text-gray-900 overflow-hidden group rounded-lg relative font-Satoshi font-semibold py-2 px-5 bg-gray-200">
-                  <p className="relative z-10">Lets Connect</p>
-                  <div className="bg-sky-500 w-1 h-1 group-hover:scale-[50] absolute -bottom-1 left-1/2 -translate-1/2 rounded-full transition-all duration-300" />
-                </button>
-              </Link>
+              <button
+                onClick={() => setisOpen(true)}
+                className="text-gray-900 overflow-hidden group rounded-lg relative font-Satoshi font-semibold py-2 px-5 bg-gray-200"
+              >
+                <p className="relative z-10">Lets Connect</p>
+                <div className="bg-sky-500 w-1 h-1 group-hover:scale-[50] absolute -bottom-1 left-1/2 -translate-1/2 rounded-full transition-all duration-300" />
+              </button>
             </div>
           </section>
         </main>

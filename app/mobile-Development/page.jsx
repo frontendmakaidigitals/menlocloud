@@ -3,7 +3,7 @@ import Footer_01 from "@/components/footer/Footer_01";
 import Header_01 from "@/components/header/Header_01";
 import "swiper/css/navigation";
 import "swiper/css";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { GoArrowRight } from "react-icons/go";
 import SwiperNavButtons from "@/components/SwiperNavButton";
@@ -11,6 +11,7 @@ import { motion } from "framer-motion";
 import { Timeline } from "@/components/ui/timeline";
 import Link from "next/link";
 import BlogSwiper from "@/components/blogSwiper";
+import Form from "@/components/PopUp-form/form";
 const sectors = [
   {
     name: "E-Learning App",
@@ -227,9 +228,20 @@ const data = [
 function GenAI() {
   const swiperRef = useRef(null);
   const [tabId, setTabId] = useState(0);
+  const [isOpen, setisOpen] = useState(false);
+  const [status, setStatus] = useState(null);
+  useEffect(() => {
+    const swiper = swiperRef.current?.swiper;
+    if (swiper) {
+      swiper.update();
+    }
+  }, []);
   return (
     <>
       <Header_01 />
+      {isOpen ? (
+        <Form setIsOpen={setisOpen} setStatus={setStatus} status={status} />
+      ) : null}
       <main className="main-wrapper relative ">
         <div className="w-full h-auto lg:h-[85vh] xl:h-screen bg-no-repeat bg-center bg-cover bg-[url('https://img.freepik.com/free-vector/white-abstract-background-3d-paper-style_23-2148403777.jpg?t=st=1727430799~exp=1727434399~hmac=3771cb4fc6a037df42da22cca671df6dc2f461ccdd02b7f4c77e68b204c3f452&w=1380')]">
           <div className="bg-gradient-to-b w-full h-full from-gray-800/50 via-transparent to-gray-700/40">
@@ -244,14 +256,15 @@ function GenAI() {
                 </p>
 
                 <div className="w-full flex justify-center lg:justify-start">
-                  <Link href={`/contact`}>
-                    <button className="text-gray-100 overflow-hidden group rounded-lg relative  py-2 px-5 bg-sky-500   mt-5">
-                      <span className="relative z-10 font-Satoshi font-medium text-xl">
-                        Know more
-                      </span>
-                      <div className="size-3 bg-black absolute top-full group-hover:scale-[60] transition-all duration-500 left-1/2 -translate-x-1/2 rounded-full" />
-                    </button>
-                  </Link>
+                  <button
+                    onClick={() => setisOpen(true)}
+                    className="text-gray-100 overflow-hidden group rounded-lg relative  py-2 px-5 bg-sky-500   mt-5"
+                  >
+                    <span className="relative z-10 font-Satoshi font-medium text-xl">
+                      Learn more
+                    </span>
+                    <div className="size-3 bg-black absolute top-full group-hover:scale-[60] transition-all duration-500 left-1/2 -translate-x-1/2 rounded-full" />
+                  </button>
                 </div>
               </div>
 
@@ -428,14 +441,15 @@ function GenAI() {
                 Explore Our Development Options
               </p>
               <div className="w-full flex  justify-center lg:justify-start">
-                <Link href={"/contact"}>
-                  <button className="text-gray-100 overflow-hidden group rounded-lg relative  py-2 px-5 bg-slate-100  mt-5">
-                    <span className="relative text-black z-10 font-Satoshi font-medium text-xl">
-                      Know more
-                    </span>
-                    <div className="size-3 bg-sky-500 absolute top-full group-hover:scale-[60] transition-all duration-300 left-1/2 -translate-x-1/2 rounded-full" />
-                  </button>
-                </Link>
+                <button
+                  onClick={() => setisOpen(true)}
+                  className="text-gray-100 overflow-hidden group rounded-lg relative  py-2 px-5 bg-slate-100  mt-5"
+                >
+                  <span className="relative text-black z-10 font-Satoshi font-medium text-xl">
+                    Know more
+                  </span>
+                  <div className="size-3 bg-sky-500 absolute top-full group-hover:scale-[60] transition-all duration-300 left-1/2 -translate-x-1/2 rounded-full" />
+                </button>
               </div>
             </div>
 
@@ -513,12 +527,12 @@ function GenAI() {
             </p>
           </div>
           <div className="mt-5  w-full flex justify-center ">
-            <Link href={`/contact`}>
-              <button className="text-gray-900 overflow-hidden group rounded-lg relative font-Satoshi font-semibold py-2 px-5 bg-gray-200">
+        
+              <button  onClick={() => setisOpen(true)} className="text-gray-900 overflow-hidden group rounded-lg relative font-Satoshi font-semibold py-2 px-5 bg-gray-200">
                 <p className="relative z-10">Lets Connect</p>
                 <div className="bg-sky-500 w-1 h-1 group-hover:scale-[50] absolute -bottom-1 left-1/2 -translate-1/2 rounded-full transition-all duration-300" />
               </button>
-            </Link>
+      
           </div>
         </section>
       </main>

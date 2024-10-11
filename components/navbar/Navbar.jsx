@@ -25,6 +25,16 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
   const pathname = usePathname();
   const serviceMenus = [
     {
+      name: "Talent Hunt",
+      subTitle: "  Leveraging today’s data for a more promising future",
+      Link: null,
+    },
+    {
+      name: "Staff Augmentation",
+      subTitle: "  Leveraging today’s data for a more promising future",
+      Link: "/staffAugumentation",
+    },
+    {
       name: "Data Analytics",
       subTitle: "  Leveraging today’s data for a more promising future",
       Link: "/data-Analytics",
@@ -56,16 +66,6 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
       subTitle:
         " Transforming concepts into functional systems through precise implementation",
       Link: "/digital-marketing",
-    },
-    {
-      name: "Talent Hunt",
-      subTitle: "  Leveraging today’s data for a more promising future",
-      Link: null,
-    },
-    {
-      name: "Staff Augmentation",
-      subTitle: "  Leveraging today’s data for a more promising future",
-      Link: "/staffAugumentation",
     },
   ];
   const industriesMenus = [
@@ -165,7 +165,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
       return;
     }
   };
-  
+
   return (
     <div className="menu-block-wrapper">
       <div
@@ -196,7 +196,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                     <Link href={`/services`}>Services</Link>
                   </NavigationMenuTrigger>
                   <NavigationMenuContent className="">
-                    <div className="grid xl:gap-6 xxl:gap-8 px-6 xl:py-6 xxl:py-10 md:w-[400px] lg:w-[700px] lg:grid-cols-2">
+                    <div className="grid xl:gap-6 xxl:gap-8 px-6 xl:py-6 xxl:py-10 md:w-[400px] lg:w-[1100px] lg:grid-cols-3">
                       {serviceMenus.map((menu, index) => (
                         <div
                           key={index}

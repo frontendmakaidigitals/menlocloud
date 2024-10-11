@@ -1,6 +1,7 @@
+"use client";
 import Footer_01 from "@/components/footer/Footer_01";
 import Header_01 from "@/components/header/Header_01";
-
+import { BsHandIndexThumbFill } from "react-icons/bs";
 function About() {
   const data = [
     { name: "employees", number: "100+" },
@@ -11,28 +12,138 @@ function About() {
   ];
   const missiondData = [
     {
-      title: "Integrity",
+      title: "Client Focus",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       icon: "/assets/img_placeholder/integrity.png",
+      points: [
+        {
+          name: "Partnership",
+          img: "/assets/img_placeholder/web.png",
+          color: "#512DA8",
+          description:
+            " Building strong, collaborative partnerships with clients.",
+        },
+        {
+          name: "Understanding",
+          img: "/assets/img_placeholder/web.png",
+          color: "#512DA8",
+          description: "Deeply understanding clients' unique needs and goals.",
+        },
+        {
+          name: "Customization",
+          img: "/assets/img_placeholder/web.png",
+          color: "#512DA8",
+          description: " Tailoring solutions to meet specific requirements.",
+        },
+      ],
     },
     {
-      title: "Excellence",
+      title: "Talent Quality",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       icon: "/assets/img_placeholder/excellence.png",
+      points: [
+        {
+          name: "Expertise",
+          img: "/assets/img_placeholder/web.png",
+          color: "#512DA8",
+          description:
+            " Sourcing highly skilled professionals with relevant experience.",
+        },
+        {
+          name: "Vetting",
+          img: "/assets/img_placeholder/web.png",
+          color: "#512DA8",
+          description: "Rigorous screening and evaluation processes.",
+        },
+        {
+          name: "Alignment",
+          img: "/assets/img_placeholder/web.png",
+          color: "#512DA8",
+          description:
+            " Matching talent with clients' cultural and project needs.",
+        },
+      ],
     },
     {
-      title: "Collaboration",
+      title: "Service Excellence",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       icon: "/assets/img_placeholder/collaboration.png",
+      points: [
+        {
+          name: "Responsiveness",
+          img: "/assets/img_placeholder/web.png",
+          color: "#512DA8",
+          description: " Prompt and efficient communication",
+        },
+        {
+          name: "Reliability",
+          img: "/assets/img_placeholder/web.png",
+          color: "#512DA8",
+          description: "Delivering on commitments consistently.",
+        },
+        {
+          name: "Flexibility",
+          img: "/assets/img_placeholder/web.png",
+          color: "#512DA8",
+          description: " Adapting to changing client needs.",
+        },
+      ],
+    },
+    {
+      title: "Ethical Conduct",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
+      icon: "https://cdn3d.iconscout.com/3d/premium/thumb/hacker-3d-icon-download-in-png-blend-fbx-gltf-file-formats--hacking-cyber-crime-spy-ethical-crimes-pack-security-icons-5379587.png?f=webp",
+      points: [
+        {
+          name: "Responsiveness",
+          img: "/assets/img_placeholder/web.png",
+          color: "#512DA8",
+          description: " Adhering to ethical business practices",
+        },
+        {
+          name: "Reliability",
+          img: "/assets/img_placeholder/web.png",
+          color: "#512DA8",
+          description: "Open and honest communication.",
+        },
+        {
+          name: "Flexibility",
+          img: "/assets/img_placeholder/web.png",
+          color: "#512DA8",
+          description: " Complying with all relevant laws and regulations.",
+        },
+      ],
     },
     {
       title: "Innovation",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. ",
       icon: "/assets/img_placeholder/innovation.png",
+      points: [
+        {
+          name: "Adaptability",
+          img: "/assets/img_placeholder/web.png",
+          color: "#512DA8",
+          description: " Embracing new technologies and trends. ",
+        },
+        {
+          name: "Continuous Improvement",
+          img: "/assets/img_placeholder/web.png",
+          color: "#512DA8",
+          description: "Striving for excellence in all areas.",
+        },
+        {
+          name: "Creativity",
+          img: "/assets/img_placeholder/web.png",
+          color: "#512DA8",
+          description:
+            " Thinking outside the box to find innovative solutions.",
+        },
+      ],
     },
   ];
 
@@ -94,20 +205,21 @@ function About() {
               </div>
             </div>
           </div>
-          <div className="global-container mb-10">
-            <div className="w-full flex flex-col justify-center items-center">
-              <p className="text-3xl  xl:text-4xl xxl:text-6xl text-center font-Satoshi font-bold !text-gray-900">
-                Our Mission and Values
-              </p>
-              <p className="mt-2 text-center text-sm ">
-                Our mission is to empower businesses with top-tier IT talent,
-                delivering exceptional solutions that drive innovation and
-                success.
-              </p>
-            </div>
-          </div>
+
           <div className="bg-blue-100 py-20 mb-20">
-            <div className="grid global-container grid-cols-1  md:grid-cols-2 gap-10 place-items-center xxl:grid-cols-4">
+            <div className="global-container mb-10">
+              <div className="w-full flex flex-col justify-center items-center">
+                <p className="text-3xl  xl:text-4xl xxl:text-6xl text-center font-Satoshi font-bold !text-gray-900">
+                  Our Mission and Values
+                </p>
+                <p className="mt-2 text-center text-sm ">
+                  Our mission is to empower businesses with top-tier IT talent,
+                  delivering exceptional solutions that drive innovation and
+                  success.
+                </p>
+              </div>
+            </div>
+            <div className="grid global-container grid-cols-1  md:grid-cols-2 gap-10 place-items-center xxl:grid-cols-3">
               {missiondData.map((mission, index) => (
                 <div
                   key={index}
@@ -119,12 +231,24 @@ function About() {
                   <p className="text-2xl xxl:text-3xl mt-10 font-bold font-Satoshi">
                     {mission.title}
                   </p>
-                  <p className="text-md xxl:text-lg mt-2 font-Satoshi font-medium">
-                    {mission.description}
-                  </p>
-                  <button className="mt-3 text-blue-500 font-Satoshi font-semibold">
-                    Learn more
-                  </button>
+                  <ul className="list-inside space-y-2 mt-5">
+                    {mission.points.map((point, idx) => (
+                      <li
+                        key={idx}
+                        className="text-gray-800 flex items-start gap-3 font-satoshi font-bold"
+                      >
+                        <div className="mt-2">
+                          <BsHandIndexThumbFill className="rotate-90 text-orange-500 text-lg" />
+                        </div>
+                        <div>
+                          {point.name}:{" "}
+                          <span className="font-medium font-Satoshi">
+                            {point.description}
+                          </span>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               ))}
             </div>

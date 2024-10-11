@@ -10,6 +10,8 @@ import useAccordion from "@/components/hooks/useAccordion";
 import useTabs from "@/components/hooks/useTabs";
 import Link from "next/link";
 import BlogSwiper from "@/components/blogSwiper";
+import Form from "@/components/PopUp-form/form";
+import { useState } from "react";
 function About() {
   const services = [
     {
@@ -49,11 +51,14 @@ function About() {
     },
   ];
   const [activeIndex, handleAccordion] = useAccordion(0);
-
-  const [activeTab, handleTab] = useTabs();
+  const [isOpen, setisOpen] = useState(false);
+  const [status, setStatus] = useState(null);
   return (
     <>
       <Header_01 />
+      {isOpen ? (
+        <Form setIsOpen={setisOpen} setStatus={setStatus} status={status} />
+      ) : null}
       <main className="main-wrapper relative overflow-hidden">
         {/*...::: Breadcrumb Section Start :::... */}
         <section id="section-breadcrumb">
@@ -211,7 +216,10 @@ function About() {
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   </p>
                   <div className="w-full flex justify-between items-center">
-                    <button className="px-4 bg-lime-300 py-2 font-Satoshi font-semibold text-sm mt-2   rounded-full">
+                    <button
+                      onClick={() => setisOpen(true)}
+                      className="px-4 bg-lime-300 py-2 font-Satoshi font-semibold text-sm mt-2   rounded-full"
+                    >
                       Learn more
                     </button>
                   </div>
@@ -326,7 +334,10 @@ function About() {
                       business in today`s fast-paced environment!
                     </p>
                     <div className="mt-5  w-full flex justify-start ">
-                      <button className="text-gray-100 overflow-hidden group rounded-lg relative font-Satoshi font-semibold py-2 px-5 bg-gray-950">
+                      <button
+                        onClick={() => setisOpen(true)}
+                        className="text-gray-100 overflow-hidden group rounded-lg relative font-Satoshi font-semibold py-2 px-5 bg-gray-950"
+                      >
                         <p className="relative z-10">Lets Connect</p>
                         <div className="bg-sky-500 w-1 h-1 group-hover:scale-[50] absolute -bottom-1 left-1/2 -translate-1/2 rounded-full transition-all duration-300" />
                       </button>
@@ -456,12 +467,13 @@ function About() {
             </p>
           </div>
           <div className="mt-5  w-full flex justify-center ">
-            <Link href={`/contact`}>
-              <button className="text-gray-900 overflow-hidden group rounded-lg relative font-Satoshi font-semibold py-2 px-5 bg-gray-200">
-                <p className="relative z-10">Lets Connect</p>
-                <div className="bg-sky-500 w-1 h-1 group-hover:scale-[50] absolute -bottom-1 left-1/2 -translate-1/2 rounded-full transition-all duration-300" />
-              </button>
-            </Link>
+            <button
+              onClick={() => setisOpen(true)}
+              className="text-gray-900 overflow-hidden group rounded-lg relative font-Satoshi font-semibold py-2 px-5 bg-gray-200"
+            >
+              <p className="relative z-10">Lets Connect</p>
+              <div className="bg-sky-500 w-1 h-1 group-hover:scale-[50] absolute -bottom-1 left-1/2 -translate-1/2 rounded-full transition-all duration-300" />
+            </button>
           </div>
         </section>
       </main>

@@ -10,6 +10,7 @@ import { GoArrowRight } from "react-icons/go";
 import SwiperNavButtons from "@/components/SwiperNavButton";
 import Link from "next/link";
 import BlogSwiper from "@/components/blogSwiper";
+import Form from "@/components/PopUp-form/form";
 const outcomes = [
   {
     name: " Enhanced Innovation",
@@ -213,10 +214,14 @@ const cta = [
 
 function Home() {
   const swiperRef = useRef(null);
+  const [isOpen, setisOpen] = useState(false);
+  const [status, setStatus] = useState(null);
   return (
     <div className="page-wrapper relative z-[1] bg-white">
       <Header_01 />
-
+      {isOpen ? (
+        <Form setIsOpen={setisOpen} setStatus={setStatus} status={status} />
+      ) : null}
       <main className="main-wrapper relative ">
         {/*...::: Hero Section Start :::... */}
 
@@ -277,7 +282,7 @@ function Home() {
             ))}
           </div>
         </section>
-        <section className="my-10 py-24   bg-no-repeat bg-center bg-cover bg-[url('https://img.freepik.com/free-vector/winter-blue-pink-gradient-background-vector_53876-117275.jpg?t=st=1727263918~exp=1727267518~hmac=baee65c2b8a027912f6643866ef0cda0cf4509c8dc6635623954698757fbbfd1&w=1060')]">
+        <section className="my-10 py-24   bg-no-repeat bg-center bg-cover bg-[url('https://img.freepik.com/premium-photo/blur-background-sky-gradient-with-noise-grain-effect_644842-1517.jpg')]">
           <div className="">
             <p className="global-container mb-2   text-3xl lg:text-6xl tracking-tight font-Satoshi font-bold w-full lg:w-2/3 text-center">
               Challenges Businesses Face with
@@ -449,13 +454,14 @@ function Home() {
             </p>
           </div>
           <div className="mt-5  w-full flex justify-center ">
-            <Link href={`/contact`}>
-              {" "}
-              <button className="text-gray-900 overflow-hidden group rounded-lg relative font-Satoshi font-semibold py-2 px-5 bg-gray-200">
-                <p className="relative z-10">Lets Connect</p>
-                <div className="bg-sky-500 w-1 h-1 group-hover:scale-[50] absolute -bottom-1 left-1/2 -translate-1/2 rounded-full transition-all duration-300" />
-              </button>
-            </Link>
+            {" "}
+            <button
+              onClick={() => setisOpen(true)}
+              className="text-gray-900 overflow-hidden group rounded-lg relative font-Satoshi font-semibold py-2 px-5 bg-gray-200"
+            >
+              <p className="relative z-10">Lets Connect</p>
+              <div className="bg-sky-500 w-1 h-1 group-hover:scale-[50] absolute -bottom-1 left-1/2 -translate-1/2 rounded-full transition-all duration-300" />
+            </button>
           </div>
         </section>
 

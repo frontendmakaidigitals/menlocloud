@@ -3,12 +3,14 @@ import React from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-
+import Form from "@/components/PopUp-form/form";
+import { useState } from "react";
 export const HeroParallax = ({ products }) => {
   const firstRow = products.slice(0, 5);
   const secondRow = products.slice(5, 10);
   const thirdRow = products.slice(10, 15);
   const ref = React.useRef(null);
+
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start start", "end start"],
@@ -88,8 +90,13 @@ export const HeroParallax = ({ products }) => {
 };
 
 export const Header = () => {
+  const [isOpen, setisOpen] = useState(false);
+  const [status, setStatus] = useState(null);
   return (
     <div className="global-container max-w-7xl relative mx-auto py-20 md:py-40 px-4  left-0 top-0">
+      {isOpen ? (
+        <Form setIsOpen={setisOpen} setStatus={setStatus} status={status} />
+      ) : null}
       <h1 className="text-2xl md:text-7xl font-bold text-gray-100">
         Web Development <br /> Services
       </h1>
@@ -99,12 +106,13 @@ export const Header = () => {
         amazing products.
       </p>
 
-      <Link href={`/contact`} className="">
-        <button className="text-gray-900  overflow-hidden group rounded-lg relative font-Satoshi font-semibold py-2 px-5 bg-gray-200">
-          <p className="relative z-10">Lets Connect</p>
-          <div className="bg-sky-500 w-1 h-1 group-hover:scale-[50] absolute -bottom-1 left-1/2 -translate-1/2 rounded-full transition-all duration-300" />
-        </button>
-      </Link>
+      <button
+        onClick={() => setisOpen(true)}
+        className="text-gray-900  overflow-hidden group rounded-lg relative font-Satoshi font-semibold py-2 px-5 bg-gray-200"
+      >
+        <p className="relative z-10">Lets Connect</p>
+        <div className="bg-sky-500 w-1 h-1 group-hover:scale-[50] absolute -bottom-1 left-1/2 -translate-1/2 rounded-full transition-all duration-300" />
+      </button>
     </div>
   );
 };

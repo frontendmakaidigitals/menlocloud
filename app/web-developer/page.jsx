@@ -11,7 +11,7 @@ import { Timeline } from "@/components/ui/timeline";
 import SwiperNavButtons from "@/components/SwiperNavButton";
 import Link from "next/link";
 import BlogSwiper from "@/components/blogSwiper";
-
+import Form from "@/components/PopUp-form/form";
 function Services() {
   const swiperRef = useRef(null);
   const products = [
@@ -272,10 +272,15 @@ function Services() {
       ),
     },
   ];
+  const [isOpen, setisOpen] = useState(false);
+  const [status, setStatus] = useState(null);
 
   return (
     <>
       <div className="page-wrapper relative">
+        {isOpen ? (
+          <Form setIsOpen={setisOpen} setStatus={setStatus} status={status} />
+        ) : null}
         <Header_01 />
         <main className="main-wrapper">
           <div className="w-full mb-20 ">
@@ -438,12 +443,13 @@ function Services() {
             </p>
           </div>
           <div className="mt-5  w-full flex justify-center ">
-            <Link href={`/contact`}>
-              <button className="text-gray-900 overflow-hidden group rounded-lg relative font-Satoshi font-semibold py-2 px-5 bg-gray-200">
-                <p className="relative z-10">Lets Connect</p>
-                <div className="bg-sky-500 w-1 h-1 group-hover:scale-[50] absolute -bottom-1 left-1/2 -translate-1/2 rounded-full transition-all duration-300" />
-              </button>
-            </Link>
+            <button
+              onClick={() => setisOpen(true)}
+              className="text-gray-900 overflow-hidden group rounded-lg relative font-Satoshi font-semibold py-2 px-5 bg-gray-200"
+            >
+              <p className="relative z-10">Lets Connect</p>
+              <div className="bg-sky-500 w-1 h-1 group-hover:scale-[50] absolute -bottom-1 left-1/2 -translate-1/2 rounded-full transition-all duration-300" />
+            </button>
           </div>
         </section>
         <Footer_01 />

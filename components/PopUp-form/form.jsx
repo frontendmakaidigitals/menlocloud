@@ -72,7 +72,7 @@ const Form = ({ setIsOpen, setStatus, status }) => {
                 {...register("name")}
                 placeholder="Adam Smith"
                 className="rounded-[10px] border border-gray-300 bg-white px-4 py-2 font-medium text-black outline-none transition-all placeholder:text-slate-500 focus:border-blue-500"
-                required=""
+                required
               />
             </div>
             {/* Form Single Input */}
@@ -89,7 +89,7 @@ const Form = ({ setIsOpen, setStatus, status }) => {
                 {...register("email")}
                 placeholder="adam@menlocloud.ai"
                 className="rounded-[10px] border border-gray-300 bg-white px-4 py-2 font-medium text-black outline-none transition-all placeholder:text-slate-500 focus:border-blue-500"
-                required=""
+                required
               />
             </div>
             {/* Form Single Input */}
@@ -110,7 +110,7 @@ const Form = ({ setIsOpen, setStatus, status }) => {
                 {...register("phone")}
                 placeholder="12345 67890"
                 className="rounded-[10px] border border-gray-300 bg-white px-4 py-2 font-medium text-black outline-none transition-all placeholder:text-slate-500 focus:border-blue-500"
-                required=""
+                required
               />
             </div>
             {/* Form Single Input */}
@@ -127,7 +127,7 @@ const Form = ({ setIsOpen, setStatus, status }) => {
                 {...register("company")}
                 placeholder="facebook"
                 className="rounded-[10px] border border-gray-300 bg-white px-4 py-2 font-medium text-black outline-none transition-all placeholder:text-slate-500 focus:border-blue-500"
-                required=""
+                required
               />
             </div>
             {/* Form Single Input */}

@@ -198,6 +198,22 @@ const content = [
 
 const specialize = [
   {
+    title: "Talent Hunt",
+    color: "#F48FB1",
+    link: "/cloud-transformation",
+    img: "https://cdn-icons-png.freepik.com/512/12820/12820680.png",
+    description:
+      "Showcase your talent and shine bright at our Talent Hunt! Join us for a chance to share your skills and win amazing prizes!",
+  },
+  {
+    title: "Staff Augmentation",
+    color: "#64B5F6",
+    link: "/cloud-transformation",
+    img: "https://cdn3d.iconscout.com/3d/premium/thumb/staff-management-3d-icon-download-in-png-blend-fbx-gltf-file-formats--employee-human-resource-team-corporate-business-pack-icons-4755478.png?f=webp",
+    description:
+      "Boost your team with our expert staff augmentation services! Access top-tier talent on demand to meet project needs and drive success.",
+  },
+  {
     title: "Data Analysts",
     color: "#FFD54F",
     link: "/data-Analytics",
@@ -221,22 +237,7 @@ const specialize = [
     description:
       "Cloud transformation is the process of migrating data and applications to cloud-based platforms to enhance flexibility, scalability, and efficiency.",
   },
-  {
-    title: "Talent Hunt",
-    color: "#F48FB1",
-    link: "/cloud-transformation",
-    img: "https://cdn-icons-png.freepik.com/512/12820/12820680.png",
-    description:
-      "Showcase your talent and shine bright at our Talent Hunt! Join us for a chance to share your skills and win amazing prizes!",
-  },
-  {
-    title: "Staff Augmentation",
-    color: "#64B5F6",
-    link: "/cloud-transformation",
-    img: "https://cdn3d.iconscout.com/3d/premium/thumb/staff-management-3d-icon-download-in-png-blend-fbx-gltf-file-formats--employee-human-resource-team-corporate-business-pack-icons-4755478.png?f=webp",
-    description:
-      "Boost your team with our expert staff augmentation services! Access top-tier talent on demand to meet project needs and drive success.",
-  },
+
   {
     title: "Digital Marketing",
     color: "#FFEB3B",
@@ -523,7 +524,10 @@ function Home() {
                     <span className="bg-gradient-to-r font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
                       Service{" "}
                     </span>{" "}
-                    Solutions
+                    and
+                    <span className="bg-gradient-to-r font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
+                      Solutions{" "}
+                    </span>{" "}
                   </p>
                 </div>
               </div>
@@ -920,6 +924,7 @@ function Home() {
               </span>
             </motion.p>
             <motion.button
+              onClick={() => setisOpen(true)}
               initial={{ opacity: 0.5, y: 100 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{
@@ -929,7 +934,7 @@ function Home() {
               }}
               className="text-center mt-8 px-4 py-2 bg-gradient-to-b from-slate-400 to-slate-500 rounded-md font-Satoshi font-medium tracking-tight text-2xl md:text-xl   !text-gray-900 "
             >
-              <Link href={`/about`}>learn more</Link>
+              learn more
             </motion.button>
           </LampContainer>
         </section>
