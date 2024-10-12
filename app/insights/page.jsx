@@ -154,7 +154,7 @@ function Insights() {
           {/* Section Spacer */}
         </section>
 
-        <section className="global-container">
+        <section className=" px-4 lg:global-container">
           <p className="text-lg xl:text-xl xxl:text-2xl font-Satoshi font-bold">
             Recent blog posts
           </p>
@@ -168,7 +168,7 @@ function Insights() {
                     className="hover:bg-slate-200 transition-all duration-300 py-3 px-2 rounded-lg h-full"
                   >
                     <div>
-                      <div className="w-full bg-red-500 flex justify-center rounded-xl items-center overflow-hidden h-[400px] xxl:h-[53vh] max-h-[530px]">
+                      <div className="w-full bg-slate-200 flex justify-center rounded-xl items-center overflow-hidden h-[350px] xxl:h-[53vh] max-h-[530px]">
                         <img
                           className="w-full h-full object-cover rounded-lg" // Ensure the image covers the container fully
                           src={imageURL + blog.image}
@@ -217,12 +217,12 @@ function Insights() {
                     href={`/blog-details/${blog.id}`}
                     className="hover:bg-slate-200 transition-all duration-300 py-3 px-2 rounded-lg"
                   >
-                    <div className="flex w-full lg:flex-row gap-4">
+                    <div className="flex w-full flex-col lg:flex-row gap-4">
                       <div
                         style={{
                           backgroundImage: `url('${imageURL + blog.image}')`,
                         }}
-                        className="bg-no-repeat bg-center bg-cover flex-shrink-0 w-[230px] h-[180px] xl:w-[180px] xl:h-[180px] xxl:w-[230px] xxl:h-[180px] overflow-hidden rounded-lg"
+                        className="bg-no-repeat bg-center bg-cover flex-shrink-0 w-full h-[180px] xl:w-[180px] xl:h-[180px] xxl:w-[230px] xxl:h-[180px] overflow-hidden rounded-lg"
                       ></div>
                       <div className="flex flex-col justify-start flex-grow">
                         <div>
@@ -263,14 +263,14 @@ function Insights() {
             </div>
           </div>
         </section>
-        <div className="global-container   mt-40 mb-14 gap-5  grid grid-cols-2">
+        <div className="global-container  mt-40 mb-14 gap-5  grid grid-cosl-1 lg:grid-cols-2">
           <input
             className="w-full bg-white rounded-md shadow-sm px-6 py-2 font-Satoshi font-[500] border border-gray-300"
             placeholder="Search..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
-          <div className=" flex justify-between  w-full gap-5">
+          <div className=" flex justify-between flex-wrap w-full gap-5">
             <Select onValueChange={setSelectedTopic}>
               <SelectTrigger className="w-full">
                 <SelectValue placeholder="All Topics" />
