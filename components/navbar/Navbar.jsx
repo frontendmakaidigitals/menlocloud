@@ -284,7 +284,7 @@ const Navbar = ({ mobileMenu, setMobileMenu, color }) => {
                     {serviceMenus.map((menu, index) => (
                       <Link
                         key={index}
-                        href={`/industries/${index}/${menu.name}`}
+                        href={menu.Link ? menu.Link : "/"}
                         className="p-5 xl:p-3 xxl:p-5 text-gray-800  cursor-pointer rounded-xl"
                       >
                         <div>
