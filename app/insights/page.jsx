@@ -25,6 +25,7 @@ import axios from "axios";
 import Marked from "@/components/marked";
 
 const topics = [
+  "All Topics",
   "Digital Age",
   "Transformation & Growth",
   "Data & AI",
@@ -36,6 +37,7 @@ const topics = [
 ];
 
 const services = [
+  "All Services",
   "Data Analytics",
   "Generative AI",
   "Cloud Transformation ",
@@ -44,6 +46,7 @@ const services = [
   "Digital Marketing",
 ];
 const industries = [
+  "All Industries",
   "Health care",
   "Finance",
   "Technology",
@@ -52,12 +55,17 @@ const industries = [
   "Educations and Learning",
   "Retail and E-commerce",
   "Manufacturing and Distribution",
-  "Resourc and Wealth",
+  "Resource and Wealth",
 ];
 function Insights() {
   const [isLoading, setIsLoading] = useState(false);
   const [status, setStatus] = useState(false);
   const [blogs, setBlogs] = useState([]);
+
+  const [searchTerm, setSearchTerm] = useState("");
+  const [selectedTopic, setSelectedTopic] = useState("All Topics");
+  const [selectedService, setSelectedService] = useState("All Services");
+  const [selectedIndustry, setSelectedIndustry] = useState("All Industries");
 
   const imageURL = "https://admin.yatriclubs.com/";
   const getBlogs = () => {
@@ -86,6 +94,36 @@ function Insights() {
   useEffect(() => {
     getBlogs();
   }, []);
+
+  const handleFilter = () => {
+    let filteredBlogs = blogs;
+
+    if (selectedTopic !== "All Topics") {
+      filteredBlogs = filteredBlogs.filter(
+        (blog) => blog.topic === selectedTopic
+      ); // Adjust this condition based on your blog data structure
+    }
+
+    if (selectedService !== "All Services") {
+      filteredBlogs = filteredBlogs.filter(
+        (blog) => blog.service === selectedService
+      ); // Adjust this condition based on your blog data structure
+    }
+
+    if (selectedIndustry !== "All Industries") {
+      filteredBlogs = filteredBlogs.filter(
+        (blog) => blog.industry === selectedIndustry
+      ); // Adjust this condition based on your blog data structure
+    }
+
+    if (searchTerm) {
+      filteredBlogs = filteredBlogs.filter((blog) =>
+        blog.name.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }
+
+    return filteredBlogs;
+  };
 
   return (
     <div className="relative   z-[1] bg-white">
@@ -214,7 +252,10 @@ function Insights() {
                           {blog.name}
                         </p>
                         <p className="line-clamp-3 text-[1rem] text-ellipsis mt-1"></p>
-                        <Marked markdown={blog.description} className={'!line-clamp-2'} />
+                        <Marked
+                          markdown={blog.description}
+                          className={"!line-clamp-2"}
+                        />
                       </div>
                     </div>
                   </Link>
@@ -222,15 +263,17 @@ function Insights() {
             </div>
           </div>
         </section>
-        <div className="global-container flex flex-col lg:flex-row  mt-40 mb-14 gap-5 justify-center items-center">
+        <div className="global-container   mt-40 mb-14 gap-5  grid grid-cols-2">
           <input
             className="w-full bg-white rounded-md shadow-sm px-6 py-2 font-Satoshi font-[500] border border-gray-300"
             placeholder="Search..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
           />
-          <div className="grid grid-cols-2 w-full lg:grid-cols-4 gap-5">
-            <Select>
+          <div className=" flex justify-between  w-full gap-5">
+            <Select onValueChange={setSelectedTopic}>
               <SelectTrigger className="w-full">
-                <SelectValue placeholder="Topics" />
+                <SelectValue placeholder="All Topics" />
               </SelectTrigger>
               <SelectContent>
                 {topics.map((topic, index) => (
@@ -240,9 +283,9 @@ function Insights() {
                 ))}
               </SelectContent>
             </Select>
-            <Select>
+            <Select onValueChange={setSelectedService}>
               <SelectTrigger className="w-full">
-                <SelectValue placeholder="Services" />
+                <SelectValue placeholder="All Services" />
               </SelectTrigger>
               <SelectContent>
                 {services.map((service, index) => (
@@ -252,9 +295,9 @@ function Insights() {
                 ))}
               </SelectContent>
             </Select>
-            <Select>
+            <Select onValueChange={setSelectedIndustry}>
               <SelectTrigger className="w-full">
-                <SelectValue placeholder="Industries" />
+                <SelectValue placeholder="All Industries" />
               </SelectTrigger>
               <SelectContent>
                 {industries.map((industry, index) => (
@@ -264,9 +307,6 @@ function Insights() {
                 ))}
               </SelectContent>
             </Select>
-            <button className="bg-blue-500  text-gray-100 px-4 rounded-md">
-              Clear
-            </button>
           </div>
         </div>
         <section className="global-container mb-32 ">
@@ -276,6 +316,27 @@ function Insights() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 mt-12 lg:mt-7 xxl:grid-cols-4 gap-10">
             {blogs
+              .filter((blog) => {
+                const matchesTopic =
+                  selectedTopic === "All Topics" ||
+                  blog.topic === selectedTopic;
+                const matchesService =
+                  selectedService === "All Services" ||
+                  blog.service === selectedService;
+                const matchesIndustry =
+                  selectedIndustry === "All Industries" ||
+                  blog.industry === selectedIndustry;
+                const matchesSearch = blog.name
+                  .toLowerCase()
+                  .includes(searchTerm.toLowerCase());
+
+                return (
+                  matchesTopic &&
+                  matchesService &&
+                  matchesIndustry &&
+                  matchesSearch
+                );
+              })
               .filter((blog) => ["default"].includes(blog.priority))
               .sort((a, b) => parseInt(a.priority) - parseInt(b.priority))
               .map((blog) => (
