@@ -16,7 +16,7 @@ const Home_4 = () => {
       <main className='main-wrapper relative overflow-hidden'>
         {/*...::: Hero Section Start :::... */}
         <section id='hero-section'>
-          <div className='relative z-[1] overflow-hidden text-center text-slate-100'>
+          <div className='relative z-[2] overflow-hidden text-center text-slate-100'>
             {/* Section Spacer */}
             <div className="bg-[url('/assets/img_placeholder/th-4/hero-bg.jpg')] bg-cover bg-no-repeat pb-20 pt-28 md:pb-[265px] md:pt-40 lg:pt-44 xl:pt-[230px]">
               {/* Section Container */}
