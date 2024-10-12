@@ -13,7 +13,6 @@ import { FlipWords } from "@/components/ui/flip-words";
 import SwiperNavButtons from "@/components/SwiperNavButton";
 import { HiOutlineArrowDown } from "react-icons/hi2";
 import { LampContainer } from "@/components/ui/lamp";
-import axios from "axios";
 import Form from "@/components/PopUp-form/form";
 import { useToast } from "@/hooks/use-toast";
 import BlogSwiper from "@/components/blogSwiper";

@@ -3,7 +3,6 @@ import { IoMdClose } from "react-icons/io";
 import { useState } from "react";
 import axios from "axios";
 import { useForm } from "react-hook-form";
-import Link from "next/link";
 const Form = ({ setIsOpen, setStatus, status }) => {
   const { register, handleSubmit } = useForm();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -35,6 +34,9 @@ const Form = ({ setIsOpen, setStatus, status }) => {
         .catch((error) => {
           console.error(error);
           setStatus("failed");
+           setTimeout(() => {
+             setStatus(null);
+           }, 2000);
         })
         .finally(() => {
           console.log("finally");

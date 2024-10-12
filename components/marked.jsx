@@ -16,12 +16,12 @@ const markdownToPlainText = (markdown) => {
     .trim(); // Trim leading/trailing whitespace
 };
 
-const Marked = ({ markdown }) => {
+const Marked = ({ markdown, className }) => {
   const plainText = markdownToPlainText(markdown);
 
   return (
     <div>
-      <p className={`line-clamp-3 text-[1rem] text-ellipsis mt-1`}>
+      <p className={`line-clamp-3 text-[1rem] text-ellipsis mt-1 ${className}`}>
         {plainText}
       </p>
     </div>

@@ -11,7 +11,7 @@ const Page = () => {
   return (
     <div className=" font-Satoshi text-xl ">
       <p>Hello {name}</p>
-      <div className="w-1/2 grid grid-cols-2 gap-20 mt-4">
+      <div className=" grid xl:grid-cols-2 xxl:grid-cols-3 gap-20 mt-4">
         <BlogsCard />
         <QueryCard />
       </div>

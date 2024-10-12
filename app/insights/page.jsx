@@ -184,7 +184,7 @@ function Insights() {
                         style={{
                           backgroundImage: `url('${imageURL + blog.image}')`,
                         }}
-                        className="bg-no-repeat bg-center bg-cover flex-shrink-0 w-[230px] h-[180px] xl:w-[180px] xl:h-[220px] xxl:w-[230px] xxl:h-[210px] overflow-hidden rounded-lg"
+                        className="bg-no-repeat bg-center bg-cover flex-shrink-0 w-[230px] h-[180px] xl:w-[180px] xl:h-[180px] xxl:w-[230px] xxl:h-[180px] overflow-hidden rounded-lg"
                       ></div>
                       <div className="flex flex-col justify-start flex-grow">
                         <div>
@@ -214,7 +214,7 @@ function Insights() {
                           {blog.name}
                         </p>
                         <p className="line-clamp-3 text-[1rem] text-ellipsis mt-1"></p>
-                        <Marked markdown={blog.description} />
+                        <Marked markdown={blog.description} className={'!line-clamp-2'} />
                       </div>
                     </div>
                   </Link>
@@ -332,7 +332,6 @@ function Insights() {
               ))}
           </div>
         </section>
-      
       </main>
 
       <Footer_01 />
