@@ -79,69 +79,70 @@ const Blogform = () => {
   const [blogDetail, setBlogDetail] = useState(null);
   const [imageOpen, setimageOpen] = useState(false);
 
-const submitBlog = () => {
-  setStatus(null);
+  const submitBlog = () => {
+    setStatus(null);
 
-  if (
-    selectedOption == 1 ||
-    selectedOption == 2 ||
-    selectedOption == 3 ||
-    selectedOption == 4
-  ) {
-    setIsPopUpOpen(true);
-  } else {
-    const formData = new FormData();
-    formData.append("title", title);
-    formData.append("metaTag", metaTag);
-    formData.append("metaDescription", metaDiscription);
-    formData.append("blogDetail", blogDetail);
-    formData.append("tags", tags);
-    formData.append("author", author);
-    formData.append("priority", selectedOption);
+    if (
+      selectedOption == 1 ||
+      selectedOption == 2 ||
+      selectedOption == 3 ||
+      selectedOption == 4
+    ) {
+      setIsPopUpOpen(true);
+    } else {
+      const formData = new FormData();
+      formData.append("title", title);
+      formData.append("metaTag", metaTag);
+      formData.append("metaDescription", metaDiscription);
+      formData.append("blogDetail", blogDetail);
+      formData.append("tags", tags);
+      formData.append("author", author);
+      formData.append("priority", selectedOption);
 
-    if (image && image.length > 0) {
-      formData.append("image", image[0]); // Only append the first image
-    }
+      if (image && image.length > 0) {
+        formData.append("image", image[0]); // Only append the first image
+      }
 
-    setIsSubmitting(true);
+      setIsSubmitting(true);
 
-    // First, make the CSRF cookie request
-    axios
-      .get("https://admin.yatriclubs.com/sanctum/csrf-cookie", {
-        withCredentials: true,
-      })
-      .then(() => {
-        // Then make the blog submission POST request
-        return axios.post(`https://admin.yatriclubs.com/api/blog`, formData, {
+      // First, make the CSRF cookie request
+      axios
+        .get("https://admin.yatriclubs.com/sanctum/csrf-cookie", {
           withCredentials: true,
-          headers: { "Content-Type": "multipart/form-data" },
+        })
+        .then(() => {
+          // Then make the blog submission POST request
+          return axios.post(`https://admin.yatriclubs.com/api/blog`, formData, {
+            withCredentials: true,
+            headers: { "Content-Type": "multipart/form-data" },
+          });
+        })
+        .then((res) => {
+          // On success
+          setStatus("success");
+          setIsSubmitting(false);
+          router.push("/admin/blogs");
+        })
+        .catch((error) => {
+          // On failure
+          console.error("Error submitting blog:", error);
+          setStatus("failed");
+        })
+        .finally(() => {
+          // Always reset submission state
+          setIsSubmitting(false);
         });
-      })
-      .then((res) => {
-        // On success
-        setStatus("success");
-        setIsSubmitting(false);
-        router.push("/admin/blogs");
-      })
-      .catch((error) => {
-        // On failure
-        console.error("Error submitting blog:", error);
-        setStatus("failed");
-      })
-      .finally(() => {
-        // Always reset submission state
-        setIsSubmitting(false);
-      });
-  }
-};
-
-
+    }
+  };
 
   return (
     <>
       <form className="w-full relative">
-         {isPopUpOpen ? (
-          <DeletePopUp setIsPopUpOpen={setIsPopUpOpen} selectedOption={selectedOption} />
+        {isPopUpOpen ? (
+          <DeletePopUp
+            setIsPopUpOpen={setIsPopUpOpen}
+            selectedOption={selectedOption}
+          />
         ) : null}
         {imageOpen ? (
           <div className="w-full h-screen max-h-screen fixed bg-gray-800/20 p-10 top-0 flex justify-center items-center left-0 z-[9999]">
