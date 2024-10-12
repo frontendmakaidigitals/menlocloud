@@ -66,18 +66,21 @@ export default function RootLayout({ children }) {
   }, []);
   useEffect(() => {
     // Declare Tawk_API here to avoid reference errors
-    var Tawk_API = Tawk_API || {},
-      Tawk_LoadStart = new Date();
-    (function () {
-      var s1 = document.createElement("script");
-      var s0 = document.getElementsByTagName("script")[0];
-      s1.async = true;
-      s1.src = "https://embed.tawk.to/67066fcbcec6d0125df3e8b6/1i9oi9d51";
-      s1.charset = "UTF-8";
-      s1.setAttribute("crossorigin", "*");
-      s0.parentNode.insertBefore(s1, s0);
-    })();
+    if (pathname?.split("/")[1] != "admin") {
+      var Tawk_API = Tawk_API || {},
+        Tawk_LoadStart = new Date();
+      (function () {
+        var s1 = document.createElement("script");
+        var s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = "https://embed.tawk.to/67066fcbcec6d0125df3e8b6/1i9oi9d51";
+        s1.charset = "UTF-8";
+        s1.setAttribute("crossorigin", "*");
+        s0.parentNode.insertBefore(s1, s0);
+      })();
+    }
   }, []);
+  console.log(pathname.split("/")[1]);
 
   return (
     <html lang="en">

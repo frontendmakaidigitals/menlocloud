@@ -5,6 +5,7 @@ import Link from "next/link";
 import React from "react";
 import axios from "axios";
 import { MdDeleteForever } from "react-icons/md";
+import { IoMdClose } from "react-icons/io";
 import { RiEdit2Fill } from "react-icons/ri";
 import {
   Table,
@@ -16,6 +17,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { set } from "lodash";
 
 const Page = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -72,23 +74,42 @@ const BlogList = ({ blogs }) => {
   const router = useRouter();
   const imageURL = "https://admin.yatriclubs.com/";
 
+  const [isPopUpOpen, setIsPopUpOpen] = useState(false);
+  const [blogPriority, setBlogPriority] = useState(0);
   const deleteBlog = (id) => {
-    axios.get("https://admin.yatriclubs.com/sanctum/csrf-cookie", {
-      withCredentials: true,
-    });
-    axios
-      .delete(`https://admin.yatriclubs.com/api/blog/${id}`, {
+    const blog = blogs.find((blog) => blog.id === id);
+    setBlogPriority(blog.priority);
+    if (
+      blog.priority == 1 ||
+      blog.priority == 2 ||
+      blog.priority == 3 ||
+      blog.priority == 4
+    ) {
+      setIsPopUpOpen(true);
+    } else {
+      axios.get("https://admin.yatriclubs.com/sanctum/csrf-cookie", {
         withCredentials: true,
-      })
-      .then((res) => {
-        window.location.reload();
-      })
-      .finally(() => console.log("finally"));
+      });
+      axios
+        .delete(`https://admin.yatriclubs.com/api/blog/${id}`, {
+          withCredentials: true,
+        })
+        .then((res) => {
+          window.location.reload();
+        })
+        .finally(() => console.log("finally"));
+    }
   };
 
   return (
     <>
       <div className="h-[78vh] overflow-auto relative`">
+        {isPopUpOpen ? (
+          <DeletePopUp
+            setIsPopUpOpen={setIsPopUpOpen}
+            blogPriority={blogPriority}
+          />
+        ) : null}
         <Table>
           <TableCaption>A list of your Blogs.</TableCaption>
           <TableHeader className="sticky top-0 left-0 bg-slate-50 z-10">
@@ -164,4 +185,29 @@ const BlogList = ({ blogs }) => {
   );
 };
 
- 
+const DeletePopUp = ({ id, setIsPopUpOpen, blogPriority }) => {
+  return (
+    <div className="w-full h-screen fixed flex justify-center items-center top-0 left-0 z-[999] bg-gray-900/30">
+      <div className="rounded-xl w-[350px] px-7 py-3 bg-white">
+        <div className="flex justify-between items-center gap-3">
+          <p className="text-xl font-satoshi font-semibold text-gray-800">
+            Deletion Error{" "}
+          </p>
+          <button
+            onClick={() => setIsPopUpOpen(false)}
+            className="text-red-500 text-xl"
+          >
+            <IoMdClose />
+          </button>
+        </div>
+        <p className="font-Satoshi mt-2 py-2">
+          <span className="font-semibold">Action denied:</span> Blogs with{" "}
+          <span className="font-semibold underline">
+            Priority {blogPriority}
+          </span>{" "}
+          are protected and cannot be deleted, but you can still edit them.
+        </p>
+      </div>
+    </div>
+  );
+};

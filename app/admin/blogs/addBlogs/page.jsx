@@ -10,6 +10,7 @@ import { ToastAction } from "@/components/ui/toast";
 import axios from "axios";
 import { useRouter } from "next/navigation";
 import Dropdown from "@/components/dropdown";
+import { IoMdClose } from "react-icons/io";
 const EditorComp = dynamic(() => import("@/components/MDXEditor"), {
   ssr: false,
 });
@@ -44,6 +45,7 @@ const Blogform = () => {
   const [author, setAuthor] = useState("");
   const [selectedOption, setSelectedOption] = useState("default");
   const options = ["1", "2", "3", "4", "default"];
+  const [isPopUpOpen, setIsPopUpOpen] = useState(false);
 
   const handleKeyPress = (e) => {
     if (e.key === "Enter" && inputValue.trim()) {
@@ -77,50 +79,70 @@ const Blogform = () => {
   const [blogDetail, setBlogDetail] = useState(null);
   const [imageOpen, setimageOpen] = useState(false);
 
-  const submitBlog = () => {
-    setStatus(null);
-    if (true) {
-      const formData = new FormData();
-      formData.append("title", title);
-      formData.append("metaTag", metaTag);
-      formData.append("metaDescription", metaDiscription);
-      formData.append("blogDetail", blogDetail);
-      formData.append("tags", tags);
-      formData.append("author", author);
-      formData.append("priority", selectedOption);
+const submitBlog = () => {
+  setStatus(null);
 
-      if (image && image.length > 0) {
-        formData.append("image", image[0]); // Only append the first image
-      }
+  if (
+    selectedOption == 1 ||
+    selectedOption == 2 ||
+    selectedOption == 3 ||
+    selectedOption == 4
+  ) {
+    setIsPopUpOpen(true);
+  } else {
+    const formData = new FormData();
+    formData.append("title", title);
+    formData.append("metaTag", metaTag);
+    formData.append("metaDescription", metaDiscription);
+    formData.append("blogDetail", blogDetail);
+    formData.append("tags", tags);
+    formData.append("author", author);
+    formData.append("priority", selectedOption);
 
-      setIsSubmitting(true);
-      axios.get("https://admin.yatriclubs.com/sanctum/csrf-cookie", {
+    if (image && image.length > 0) {
+      formData.append("image", image[0]); // Only append the first image
+    }
+
+    setIsSubmitting(true);
+
+    // First, make the CSRF cookie request
+    axios
+      .get("https://admin.yatriclubs.com/sanctum/csrf-cookie", {
         withCredentials: true,
-      });
-      axios
-        .post(`https://admin.yatriclubs.com/api/blog`, formData, {
+      })
+      .then(() => {
+        // Then make the blog submission POST request
+        return axios.post(`https://admin.yatriclubs.com/api/blog`, formData, {
           withCredentials: true,
           headers: { "Content-Type": "multipart/form-data" },
-        })
-        .then((res) => {
-          setStatus("success");
-          setIsSubmitting(false);
-        })
-        .then(() => {
-          router.push("/admin/blogs");
-        })
-        .catch((error) => {
-          setStatus("failed");
-        })
-        .finally(() => {
-          setIsSubmitting(false);
         });
-    }
-  };
+      })
+      .then((res) => {
+        // On success
+        setStatus("success");
+        setIsSubmitting(false);
+        router.push("/admin/blogs");
+      })
+      .catch((error) => {
+        // On failure
+        console.error("Error submitting blog:", error);
+        setStatus("failed");
+      })
+      .finally(() => {
+        // Always reset submission state
+        setIsSubmitting(false);
+      });
+  }
+};
+
+
 
   return (
     <>
       <form className="w-full relative">
+         {isPopUpOpen ? (
+          <DeletePopUp setIsPopUpOpen={setIsPopUpOpen} selectedOption={selectedOption} />
+        ) : null}
         {imageOpen ? (
           <div className="w-full h-screen max-h-screen fixed bg-gray-800/20 p-10 top-0 flex justify-center items-center left-0 z-[9999]">
             <RiCloseLargeLine
@@ -324,5 +346,32 @@ const Blogform = () => {
         </div>
       </form>
     </>
+  );
+};
+
+const DeletePopUp = ({ setIsPopUpOpen, selectedOption }) => {
+  return (
+    <div className="w-full h-screen fixed flex justify-center items-center top-0 left-0 z-[999] bg-gray-900/30">
+      <div className="rounded-xl w-[350px] px-7 py-3 bg-white">
+        <div className="flex justify-between items-center gap-3">
+          <p className="text-xl font-satoshi font-semibold text-gray-800">
+            Deletion Error{" "}
+          </p>
+          <button
+            onClick={() => setIsPopUpOpen(false)}
+            className="text-red-500 text-xl"
+          >
+            <IoMdClose />
+          </button>
+        </div>
+        <p className="font-Satoshi mt-2 py-2">
+          <span className="font-semibold">Action denied:</span> Blog with{" "}
+          <span className="font-semibold underline">
+            Priority {selectedOption}
+          </span>{" "}
+          already exists. Please choose another priority.
+        </p>
+      </div>
+    </div>
   );
 };

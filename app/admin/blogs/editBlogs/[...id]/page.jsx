@@ -9,7 +9,7 @@ import { Suspense } from "react";
 import axios from "axios";
 import Dropdown from "@/components/dropdown";
 import { useRouter } from "next/navigation";
-
+import { IoMdClose } from "react-icons/io";
 const Page = ({ params }) => {
   const EditorComp = dynamic(() => import("@/components/MDXEditor"), {
     ssr: false,
@@ -76,6 +76,8 @@ const Blogform = ({ id, EditorComp }) => {
   const [blogDetail, setBlogDetail] = useState(null);
   const [imageOpen, setimageOpen] = useState(false);
   const imageURL = "https://admin.yatriclubs.com/";
+  const [isPopUpOpen, setIsPopUpOpen] = useState(false);
+  const [blog, setBlog] = useState([]);
   const getBlog = () => {
     if (true) {
       axios.get("https://admin.yatriclubs.com/sanctum/csrf-cookie", {
@@ -94,6 +96,7 @@ const Blogform = ({ id, EditorComp }) => {
           setImage(res.data.image);
           setSelectedOption(res.data.priority);
           setAuthor(res.data.author);
+          setBlog(res.data);
         })
 
         .catch((error) => {
@@ -108,9 +111,17 @@ const Blogform = ({ id, EditorComp }) => {
     getBlog();
   }, []);
 
-  const submitBlog = (e) => {
+  const updateBlog = (e) => {
     e.preventDefault();
-    if (true) {
+
+    if (
+      (blog.priority == 1 && selectedOption == "default") ||
+      (blog.priority == 2 && selectedOption == "default") ||
+      (blog.priority == 3 && selectedOption == "default") ||
+      (blog.priority == 4 && selectedOption == "default")
+    ) {
+      setIsPopUpOpen(true);
+    } else {
       const formData = new FormData();
       formData.append("title", title);
       formData.append("metaTag", metaTag);
@@ -153,6 +164,9 @@ const Blogform = ({ id, EditorComp }) => {
   return (
     <>
       <form className="w-full relative">
+        {isPopUpOpen ? (
+          <DeletePopUp setIsPopUpOpen={setIsPopUpOpen} blog={blog} />
+        ) : null}
         {imageOpen ? (
           <div className="w-full h-screen max-h-screen fixed bg-gray-800/20 p-10 top-0 flex justify-center items-center left-0 z-[9999]">
             <RiCloseLargeLine
@@ -327,7 +341,7 @@ const Blogform = ({ id, EditorComp }) => {
           </div>
 
           <button
-            onClick={submitBlog}
+            onClick={updateBlog}
             disabled={isSubmitting}
             className={`px-5 py-1 cursor-pointer font-Satoshi font-semibold rounded-md text-gray-900 ${isSubmitting ? "bg-gray-300" : status === "success" ? "bg-green-400" : status === "failed" ? "bg-red-500" : "bg-sky-300 hover:bg-sky-500"}`}
           >
@@ -370,5 +384,32 @@ const Blogform = ({ id, EditorComp }) => {
         </div>
       </form>
     </>
+  );
+};
+
+const DeletePopUp = ({ setIsPopUpOpen, blog }) => {
+  return (
+    <div className="w-full h-screen fixed flex justify-center items-center top-0 left-0 z-[999] bg-gray-900/30">
+      <div className="rounded-xl w-[350px] px-7 py-3 bg-white">
+        <div className="flex justify-between items-center gap-3">
+          <p className="text-xl font-satoshi font-semibold text-gray-800">
+            Deletion Error{" "}
+          </p>
+          <button
+            onClick={() => setIsPopUpOpen(false)}
+            className="text-red-500 text-xl"
+          >
+            <IoMdClose />
+          </button>
+        </div>
+        <p className="font-Satoshi mt-2 py-2">
+          <span className="font-semibold">Action denied:</span> Blogs with{" "}
+          <span className="font-semibold underline">
+            Priority {blog?.priority}
+          </span>{" "}
+          are protected and cannot be changed to Default.
+        </p>
+      </div>
+    </div>
   );
 };
