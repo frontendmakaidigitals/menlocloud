@@ -1,19 +1,20 @@
 "use client";
 import Footer_01 from "@/components/footer/Footer_01";
 import Header_01 from "@/components/header/Header_01";
-import SwiperNavButtons from "@/components/SwiperNavButton";
-import "swiper/css/navigation";
+import { useEffect } from "react";
 import Link from "next/link";
-import "swiper/css";
-import { Swiper, SwiperSlide } from "swiper/react";
+
 import { useRef, useState } from "react";
-import { motion } from "framer-motion";
+
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 import { MdArrowBackIosNew } from "react-icons/md";
 import Marquee from "@/components/magicui/marquee";
 import { cn } from "@/lib/utils";
 import BlogSwiper from "@/components/blogSwiper";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
 const data = [
   {
     img: "https://s7d9.scene7.com/is/image/slalom/insight-globalbas-turtle-finserv-thumb-520x490?fmt=webp-alpha",
@@ -152,23 +153,74 @@ const tabs = [
     ],
     img: "https://www.chitkara.edu.in/blogs/wp-content/uploads/2022/11/Digital-Marketing.jpg",
   },
+  {
+    name: "Talent Hunt",
+    data: "With cloud modernization, transform your existing infrastructure into a robust, scalable, and agile environment. Our approach involves assessing your current systems, developing a strategic cloud migration plan, streamline operations, reduce costs and implementing cutting-edge cloud solutions that enhance performance and efficiency. ",
+    points: [
+      "Cloud Migration",
+      "Hybrid Cloud",
+      "Containerization Technologies",
+      "Serverless Computing",
+      "Automated Provisioning",
+    ],
+    img: "https://www.chitkara.edu.in/blogs/wp-content/uploads/2022/11/Digital-Marketing.jpg",
+  },
+  {
+    name: "Staff Augmentation",
+    data: "With cloud modernization, transform your existing infrastructure into a robust, scalable, and agile environment. Our approach involves assessing your current systems, developing a strategic cloud migration plan, streamline operations, reduce costs and implementing cutting-edge cloud solutions that enhance performance and efficiency. ",
+    points: [
+      "Cloud Migration",
+      "Hybrid Cloud",
+      "Containerization Technologies",
+      "Serverless Computing",
+      "Automated Provisioning",
+    ],
+    img: "https://www.chitkara.edu.in/blogs/wp-content/uploads/2022/11/Digital-Marketing.jpg",
+  },
 ];
 function Services() {
   const [mobileTabs, setMobileTabs] = useState(false);
   const [tabSelected, setTabSelected] = useState(2);
 
   const swiperRef = useRef(null);
-
   const [swiperInstance, setSwiperInstance] = useState(null);
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
+const handlePrev = () => {
+  if (swiperRef.current) {
+    swiperRef.current.slidePrev(); // Call slidePrev on the swiper instance
+    updateSlideState(); // Update state after sliding
+  }
+};
 
-  const handleSlideChange = () => {
-    if (swiperInstance) {
-      setIsBeginning(swiperInstance.isBeginning);
-      setIsEnd(swiperInstance.isEnd);
-    }
-  };
+const handleNext = () => {
+  if (swiperRef.current) {
+    swiperRef.current.slideNext(); // Call slideNext on the swiper instance
+    updateSlideState(); // Update state after sliding
+  }
+};
+const updateSlideState = () => {
+  if (swiperInstance) {
+    setIsBeginning(swiperInstance.isBeginning);
+    setIsEnd(swiperInstance.isEnd);
+  }
+};
+
+useEffect(() => {
+  if (swiperInstance) {
+    // Update the slide state on initialization
+    updateSlideState();
+
+    // Attach the event listener
+    swiperInstance.on("slideChange", updateSlideState);
+
+    // Cleanup function to remove the event listener
+    return () => {
+      swiperInstance.off("slideChange", updateSlideState);
+    };
+  }
+}, [swiperInstance]);
+
   return (
     <>
       <Header_01 />
@@ -270,21 +322,53 @@ function Services() {
                 : null}
             </div>
           </div>
-          <div className="relative hidden mt-5 lg:flex flex-row gap-5 justify-center items-center global-container">
-            {tabs.map((tab, index) => (
-              <div className="!w-auto" key={index}>
-                <p
-                  onClick={() => setTabSelected(index)}
-                  className={` ${
-                    tabSelected == index
-                      ? "bg-gray-900 text-gray-100"
-                      : "bg-gray-300 text-gray-900"
-                  } xl:text-sm xxl:text-[1rem] px-4 py-2 rounded-full cursor-pointer`}
+          <div className="relative mt-5 lg:flex flex-row gap-5 justify-center items-center global-container">
+            {!isBeginning && (
+              <button
+                onClick={handlePrev}
+                className="absolute left-0 text-black bg-lime-400 size-10 flex justify-center items-center z-[99] rounded-full"
+              >
+                <MdArrowBackIosNew />
+              </button>
+            )}
+
+            <Swiper
+              spaceBetween={20} // Reduce space between slides for a better fit
+              slidesPerView="auto" // Auto width for slides based on content
+              onSwiper={(swiper) => {
+                swiperRef.current = swiper; // Set the current reference to the swiper instance
+                setSwiperInstance(swiper); // Optionally store the swiper instance in state for debugging
+              }}
+            >
+              {tabs.map((tab, index) => (
+                <SwiperSlide
+                  key={index}
+                  className="!w-auto flex justify-center" // Flex container to prevent full width
                 >
-                  {tab.name}
-                </p>
-              </div>
-            ))}
+                  <div className="!w-auto inline-block">
+                    <p
+                      onClick={() => setTabSelected(index)}
+                      className={`${
+                        tabSelected == index
+                          ? "bg-gray-900 text-gray-100"
+                          : "bg-gray-300 text-gray-900"
+                      } xl:text-sm xxl:text-[1rem] px-4 py-2 rounded-full cursor-pointer whitespace-nowrap`}
+                    >
+                      {tab.name}
+                    </p>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+
+            {!isEnd && (
+              <button
+                onClick={handleNext}
+                className="absolute right-0 text-black bg-lime-400 hover:bg-lime-600 size-10 flex justify-center items-center  z-[99] rounded-full"
+              >
+                <MdOutlineArrowForwardIos />
+              </button>
+            )}
           </div>
           <div className="global-container mt-10 xl:mt-20 grid grid-cols-1  lg:grid-cols-2 px-0 xl:px-14 gap-8">
             <div>

@@ -1,30 +1,26 @@
 [
   {
     "name": "Life Science & Health Care",
-    "title": "Empowering Industries Through Proven Solutions",
-    "subTitle": "Discover how our innovative solutions have driven success across various sectors, tackling unique challenges and delivering impactful results.",
+    "title": "Resilient healthcare system",
+    "subTitle": "Our solutions go deeper for the healthcare domain. Through our efforts, we have helped accelerate R&D, clinical trials and portfolio strategy and more.",
     "contentHead": "Empowering Industries with Next-Gen Technology",
-    "contentDescription": "At MenloCloud, we leverage cutting-edge technology to deliver exceptional solutions tailored to the unique needs of our clients. From advanced manufacturing techniques to smart automation and data analytics, our technological expertise empowers industries to enhance efficiency, reduce costs, and drive innovation. We are committed to staying at the forefront of technological advancements, ensuring that our clients benefit from the best tools and practices available in the market.",
+    "contentDescription": "We leverage the most advanced solutions for life sciences and healthcare domain and generate practices that lead the change. Our services make intelligent use of technology to deliver surprising alternatives that surpass existing ways and add in the gamut of offering for the vertical.",
     "points": [
       {
-        "name": "Hardware",
+        "name": "Research & development",
         "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/circuit-board-3d-icon-download-in-png-blend-fbx-gltf-file-formats--microchip-microprocessor-chip-motherboard-electrician-tools-pack-industry-icons-9741473.png?f=webp",
-        "description": "Our state-of-the-art hardware components are designed for durability and performance, ensuring that your systems run efficiently and effectively."
+        "description": "We aid the R&D process through technology outcomes that are life changing for the people and the world."
       },
       {
-        "name": "Semiconductor",
+        "name": "Clinical trials",
         "icon": "https://static.vecteezy.com/system/resources/previews/024/683/392/original/3d-icon-processor-component-computer-hardware-illustration-concept-icon-render-png.png",
-        "description": "Our state-of-the-art hardware components are designed for durability and performance, ensuring that your systems run efficiently and effectively."
+        "description": "Our AI powered data analysis helps in working on clinical trials that help the pharma industries offer potent solutions."
       },
+
       {
-        "name": "Software",
-        "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/software-development-3d-icon-download-in-png-blend-fbx-gltf-file-formats--programming-coding-web-pack-design-icons-5618482.png",
-        "description": "Our state-of-the-art hardware components are designed for durability and performance, ensuring that your systems run efficiently and effectively."
-      },
-      {
-        "name": "Professional services",
+        "name": "Commercial strategy",
         "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/consulting-creative-idea-3d-icon-download-in-png-blend-fbx-gltf-file-formats--chat-speech-bubble-digital-nomad-pack-business-icons-6166279.png?f=webp",
-        "description": "Our state-of-the-art hardware components are designed for durability and performance, ensuring that your systems run efficiently and effectively."
+        "description": "Through efficient marketing strategy, we enable you to lead. We help you cover the last mile customers."
       }
     ]
   },

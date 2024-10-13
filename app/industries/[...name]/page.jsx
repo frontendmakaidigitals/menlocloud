@@ -13,40 +13,10 @@ import Link from "next/link";
 import axios from "axios";
 import BlogSwiper from "@/components/blogSwiper";
 
-const points = [
-  {
-    name: "Hardware",
-    icon: "https://cdn3d.iconscout.com/3d/premium/thumb/circuit-board-3d-icon-download-in-png-blend-fbx-gltf-file-formats--microchip-microprocessor-chip-motherboard-electrician-tools-pack-industry-icons-9741473.png?f=webp",
-    description:
-      "Our state-of-the-art hardware components are designed for durability and performance, ensuring that your systems run efficiently and effectively.",
-  },
-  {
-    name: "Semiconductor",
-    icon: "https://static.vecteezy.com/system/resources/previews/024/683/392/original/3d-icon-processor-component-computer-hardware-illustration-concept-icon-render-png.png",
-    description:
-      "Our state-of-the-art hardware components are designed for durability and performance, ensuring that your systems run efficiently and effectively.",
-  },
-  {
-    name: "Software",
-    icon: "https://cdn3d.iconscout.com/3d/premium/thumb/software-development-3d-icon-download-in-png-blend-fbx-gltf-file-formats--programming-coding-web-pack-design-icons-5618482.png",
-    description:
-      "Our state-of-the-art hardware components are designed for durability and performance, ensuring that your systems run efficiently and effectively.",
-  },
-  {
-    name: "Professional services",
-    icon: "https://cdn3d.iconscout.com/3d/premium/thumb/consulting-creative-idea-3d-icon-download-in-png-blend-fbx-gltf-file-formats--chat-speech-bubble-digital-nomad-pack-business-icons-6166279.png?f=webp",
-    description:
-      "Our state-of-the-art hardware components are designed for durability and performance, ensuring that your systems run efficiently and effectively.",
-  },
-];
 function Industries({ params }) {
   const { name } = params;
-  const swiperRef = useRef(null);
-  const imageURL = "https://admin.yatriclubs.com/";
-  const [blogs, setBlogs] = useState([]);
+
   const [data, setData] = useState();
-  const [loading, setIsLoading] = useState(false);
-  const [isBlogLoaded, setIsBlogLoaded] = useState(false);
 
   useEffect(() => {
     axios.get("/industries.json").then((res) => {
@@ -58,32 +28,6 @@ function Industries({ params }) {
     });
   }, []);
   console.log(data);
-  const getBlogs = (data) => {
-    if (true) {
-      setIsLoading(true);
-      axios.get("https://admin.yatriclubs.com/sanctum/csrf-cookie", {
-        withCredentials: true,
-      });
-      axios
-        .get(`https://admin.yatriclubs.com/api/blog`, {
-          withCredentials: true,
-        })
-        .then((res) => {
-          setBlogs(res.data);
-          setIsBlogLoaded("success");
-          setIsLoading(false);
-        })
-        .catch((error) => {
-          setIsBlogLoaded("failed");
-        })
-        .finally(() => {
-          setIsLoading(false);
-        });
-    }
-  };
-  useEffect(() => {
-    getBlogs();
-  }, []);
 
   return (
     <>
@@ -140,7 +84,7 @@ function Industries({ params }) {
                 </Link>
               </div>
             </div>
-            <div className="bg-red-500 h-full overflow-hidden rounded-xl">
+            <div className="bg-slate-200 h-full overflow-hidden rounded-xl">
               <img
                 src={
                   "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -149,18 +93,18 @@ function Industries({ params }) {
             </div>
           </div>
 
-          <div className="grid mt-16 grid-cols-1 lg:grid-cols-4 gap-x-5 gap-y-10">
+          <div className="grid mt-16 grid-cols-1 lg:grid-cols-4 gap-x-5 place-items-center gap-y-10">
             {data?.points.map((elem, index) => (
               <div
                 key={index}
-                className="w-full rounded-lg overflow-hidden h-auto bg-gray-100"
+                className="w-full rounded-lg min-h-[450px] flex flex-col justify-between overflow-hidden h-auto bg-gray-100"
               >
                 <div className="p-2">
                   <div className="w-full flex justify-center items-center overflow-hidden rounded-lg h-[230px] bg-gray-200">
                     <img className="size-60" src={elem.icon} />
                   </div>
                 </div>
-                <div className=" px-2 pb-5">
+                <div className="px-2 pb-5 flex-1">
                   <p className="font-Satoshi mt-2 text-xl font-bold">
                     {elem.name}
                   </p>
