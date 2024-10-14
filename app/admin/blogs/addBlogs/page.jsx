@@ -11,6 +11,14 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import Dropdown from "@/components/dropdown";
 import { IoMdClose } from "react-icons/io";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+
 const EditorComp = dynamic(() => import("@/components/MDXEditor"), {
   ssr: false,
 });
@@ -18,6 +26,38 @@ const EditorComp = dynamic(() => import("@/components/MDXEditor"), {
 const markdown = `
 Write your blog here
 `;
+
+const topics = [
+  "Digital Age",
+  "Transformation & Growth",
+  "Data & AI",
+  "Marketing & Advertising",
+  "Technology",
+  "Web & App Development",
+  "Industrial Innovations",
+  "Marketing & Strategy",
+];
+
+const services = [
+  "Data Analytics",
+  "Generative AI",
+  "Cloud Transformation",
+  "Mobile App Development",
+  "Web Development",
+  "Digital Marketing",
+];
+const industries = [
+  "Health care",
+  "Finance",
+  "Technology",
+  "Media and Communications",
+  "Transport and Logistics",
+  "Educations and Learning",
+  "Retail and E-commerce",
+  "Manufacturing and Distribution",
+  "Resource and Wealth",
+];
+const Priority = ["1", "2", "3", "4", "Default"];
 
 const page = () => {
   return (
@@ -43,8 +83,8 @@ const Blogform = () => {
   const [metaDiscription, setMetaDiscription] = useState("");
   const [metaTag, setMetaTag] = useState("");
   const [author, setAuthor] = useState("");
-  const [selectedOption, setSelectedOption] = useState("default");
-  const options = ["1", "2", "3", "4", "default"];
+  const [selectedOption, setSelectedOption] = useState("Default");
+
   const [isPopUpOpen, setIsPopUpOpen] = useState(false);
 
   const handleKeyPress = (e) => {
@@ -78,11 +118,23 @@ const Blogform = () => {
   const [image, setImage] = useState(null);
   const [blogDetail, setBlogDetail] = useState(null);
   const [imageOpen, setimageOpen] = useState(false);
-
+  const [selectedTopic, setSelectedTopic] = useState("");
+  const [selectedService, setSelectedService] = useState("");
+  const [selectedIndustry, setSelectedIndustry] = useState("");
+  
   const submitBlog = () => {
     setStatus(null);
     if (!image) {
       return alert("Please add an image");
+    }
+    if (selectedService.length == 0) {
+      return alert("Please select Service");
+    }
+    if (selectedIndustry.length == 0) {
+      return alert("Please select Industry");
+    }
+    if (selectedTopic.length == 0) {
+      return alert("Please select Topic");
     }
     if (tags.length == 0) {
       return alert("Please add at least one tag");
@@ -103,6 +155,9 @@ const Blogform = () => {
       formData.append("tags", tags);
       formData.append("author", author);
       formData.append("priority", selectedOption);
+      formData.append("topic", selectedTopic);
+      formData.append("service", selectedService);
+      formData.append("industry", selectedIndustry);
 
       if (image && image.length > 0) {
         formData.append("image", image[0]); // Only append the first image
@@ -284,6 +339,72 @@ const Blogform = () => {
             </div>
           </div>
         </div>
+
+        <div className=" grid grid-cols-2 w-full gap-10 mt-6">
+          <div className="w-full">
+            <p className="font-Satoshi font-medium">Topic</p>
+            <Select onValueChange={setSelectedTopic} value={selectedTopic}>
+              <SelectTrigger className="w-full border border-gray-700">
+                <SelectValue placeholder="Select Topic" />
+              </SelectTrigger>
+              <SelectContent>
+                {topics.map((topic, index) => (
+                  <SelectItem value={topic} key={index}>
+                    {topic}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+          <div className="w-full">
+            <p className="font-Satoshi font-medium">Service</p>
+            <Select onValueChange={setSelectedService} value={selectedService}>
+              <SelectTrigger className="w-full border border-gray-700">
+                <SelectValue placeholder="Select Service" />
+              </SelectTrigger>
+              <SelectContent>
+                {services.map((service, index) => (
+                  <SelectItem value={service} key={index}>
+                    {service}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+          <div className="w-full">
+            <p className="font-Satoshi font-medium">Industry</p>
+            <Select
+              onValueChange={setSelectedIndustry}
+              value={selectedIndustry}
+            >
+              <SelectTrigger className="w-full border border-gray-700">
+                <SelectValue placeholder="Select Industry" />
+              </SelectTrigger>
+              <SelectContent>
+                {industries.map((industry, index) => (
+                  <SelectItem value={industry} key={index}>
+                    {industry}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+          <div className="w-full">
+            <p className="font-Satoshi font-medium">Priority</p>
+            <Select onValueChange={setSelectedOption} value={selectedOption}>
+              <SelectTrigger className="w-full border border-gray-700">
+                <SelectValue placeholder="Select Priority" />
+              </SelectTrigger>
+              <SelectContent>
+                {Priority.map((priority, index) => (
+                  <SelectItem value={priority} key={index}>
+                    {priority}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+        </div>
         <div className="w-full mt-6">
           <p className="font-Satoshi font-medium">Description</p>
           <div className=" bg-transparent border border-gray-600  rounded-md">
@@ -297,17 +418,6 @@ const Blogform = () => {
         </div>
 
         <div className="flex items-center gap-5 mt-9">
-          <div className="flex items-center gap-2">
-            <p>Priority:</p>
-            <div className="w-auto ">
-              <Dropdown
-                selectedOption={selectedOption}
-                setSelectedOption={setSelectedOption}
-                options={options}
-              />
-            </div>
-          </div>
-
           <button
             onClick={submitBlog}
             disabled={isSubmitting}

@@ -17,7 +17,6 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { set } from "lodash";
 
 const Page = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -25,25 +24,23 @@ const Page = () => {
   const [blogs, setBlogs] = useState([]);
 
   const getBlogs = (data) => {
-    if (true) {
-      setIsLoading(true);
-      axios.get("https://admin.yatriclubs.com/sanctum/csrf-cookie", {
-        withCredentials: true,
+    setIsLoading(true);
+    axios.get("https://admin.yatriclubs.com/sanctum/csrf-cookie", {
+      withCredentials: true,
+    });
+    axios
+      .get(`https://admin.yatriclubs.com/api/blog`, { withCredentials: true })
+      .then((res) => {
+        setBlogs(res.data);
+        setStatus("success");
+        setIsLoading(false);
+      })
+      .catch((error) => {
+        setStatus("failed");
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
-      axios
-        .get(`https://admin.yatriclubs.com/api/blog`, { withCredentials: true })
-        .then((res) => {
-          setBlogs(res.data);
-          setStatus("success");
-          setIsLoading(false);
-        })
-        .catch((error) => {
-          setStatus("failed");
-        })
-        .finally(() => {
-          setIsLoading(false);
-        });
-    }
   };
   useEffect(() => {
     getBlogs();

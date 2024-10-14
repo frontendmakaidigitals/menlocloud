@@ -2,15 +2,21 @@
 import Footer_01 from "@/components/footer/Footer_01";
 import Header_01 from "@/components/header/Header_01";
 import "swiper/css/navigation";
-import { FaArrowRightLong } from "react-icons/fa6";
+import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css";
+import { MdArrowBackIosNew } from "react-icons/md";
 import Form from "@/components/PopUp-form/form";
-import { useEffect, useState } from "react";
-import { BsHandIndexThumbFill } from "react-icons/bs";
-import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useState, useRef } from "react";
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
+import { MdOutlineArrowForwardIos } from "react-icons/md";
 import { Timeline } from "@/components/ui/timeline";
 import Link from "next/link";
+import { FaCircleCheck } from "react-icons/fa6";
 import BlogSwiper from "@/components/blogSwiper";
+import { IoWarningOutline } from "react-icons/io5";
+import { PiSealWarningFill } from "react-icons/pi";
 const Aiservices = [
   {
     name: "Healthcare and Life Sciences",
@@ -117,11 +123,51 @@ const expertise = [
   },
 ];
 
-const parentAnimate = {
-  initial: { scale: 1 },
-  whileHover: { scale: 1.05, transition: { duration: 0.3 } },
-  exit: { scale: 0 },
-};
+const tabs = [
+  {
+    name: "Automated Documentation and Technical Writing",
+    img: "/assets/img_placeholder/genImage/technical.png",
+    prob: "Creating comprehensive and up-to-date documentation is a time-consuming and resource-intensive task for many industries",
+    sol: "GenAI can be employed to generate technical documentation, user manuals, standard operating procedures, and compliance reports by analyzing existing data and following predefined templates or guidelines. This can significantly reduce the workload on technical writers and ensure consistent, accurate, and up-to-date documentation",
+  },
+  {
+    name: "Personalized Customer Communications",
+    img: "/assets/img_placeholder/genImage/customer.png",
+    prob: "Providing personalized and relevant communications to customers is a challenge for businesses, particularly in industries with diverse customer bases and complex product offerings",
+    sol: "GenAI can be used to generate tailored marketing materials, product recommendations, and customer service responses based on individual customer data, preferences, and behavior. This can enhance customer engagement, increase customer satisfaction, and drive sales",
+  },
+
+  {
+    name: "Data Analysis and Insight Generation",
+    img: "/assets/img_placeholder/genImage/data-Analytics.png",
+    prob: "Extracting meaningful insights from large and complex datasets is a time-consuming and resource-intensive process for many industries",
+    sol: "GenAI can be employed to analyze structured and unstructured data, identify patterns and trends, and generate concise summaries and reports highlighting key insights. This can accelerate decision-making processes, uncover new opportunities, and improve data-driven strategies across various industries",
+  },
+  {
+    name: "Creative Content Generation",
+    img: "/assets/img_placeholder/genImage/creative.jpg",
+    prob: "Creating high-quality, engaging, and diverse content for marketing, advertising, or entertainment purposes can be challenging and resource-intensive",
+    sol: " GenAI can be used to generate creative content such as blog posts, social media updates, advertising copy, scripts, and even visual content like images and videos. This can help businesses streamline content creation processes, improve consistency, and tap into new creative avenues",
+  },
+  {
+    name: "Intelligent Virtual Assistants and Chatbots",
+    img: "/assets/img_placeholder/genImage/chatBot.png",
+    prob: "Providing efficient and personalized customer service and support can be challenging, especially for industries with high customer volumes or complex product offerings",
+    sol: " GenAI can be used to develop intelligent virtual assistants and chatbots that can understand natural language queries, provide personalized responses, and assist with various tasks such as customer support, sales, and information retrieval. This can improve customer experiences, reduce response times, and optimize resource allocation",
+  },
+  {
+    name: "Automated Code Generation and Software Development",
+    img: "/assets/img_placeholder/genImage/software.png",
+    prob: "Software development and coding can be time-consuming and prone to errors, especially for complex projects or legacy systems",
+    sol: " GenAI can be used to generate code snippets, software documentation, and even entire applications based on natural language prompts or specifications. This can accelerate development processes, improve code quality, and facilitate the maintenance and modernization of existing systems",
+  },
+  {
+    name: "Research and Knowledge Synthesis",
+    img: "/assets/img_placeholder/genImage/data-Analytics.png",
+    prob: "Keeping up with the latest research, trends, and developments in rapidly evolving fields can be challenging for industries that rely on cutting-edge knowledge",
+    sol: "GenAI can be used to analyze and synthesize large volumes of research papers, reports, and data sources, generating summaries, insights, and recommendations tailored to specific domains or industries. This can aid in accelerating research and development efforts, identifying emerging trends, and staying ahead of the competition",
+  },
+];
 
 const data = [
   {
@@ -233,6 +279,48 @@ const advantages = [
 function GenAI() {
   const [isOpen, setisOpen] = useState(false);
   const [status, setStatus] = useState(null);
+  const [mobileTabs, setMobileTabs] = useState(false);
+  const [tabSelected, setTabSelected] = useState(2);
+
+  const swiperRef = useRef(null);
+  const [swiperInstance, setSwiperInstance] = useState(null);
+  const [isBeginning, setIsBeginning] = useState(true);
+  const [isEnd, setIsEnd] = useState(false);
+
+  const handlePrev = () => {
+    if (swiperRef.current) {
+      swiperRef.current.slidePrev(); // Call slidePrev on the swiper instance
+      updateSlideState(); // Update state after sliding
+    }
+  };
+
+  const handleNext = () => {
+    if (swiperRef.current) {
+      swiperRef.current.slideNext(); // Call slideNext on the swiper instance
+      updateSlideState(); // Update state after sliding
+    }
+  };
+  const updateSlideState = () => {
+    if (swiperInstance) {
+      setIsBeginning(swiperInstance.isBeginning);
+      setIsEnd(swiperInstance.isEnd);
+    }
+  };
+
+  useEffect(() => {
+    if (swiperInstance) {
+      // Update the slide state on initialization
+      updateSlideState();
+
+      // Attach the event listener
+      swiperInstance.on("slideChange", updateSlideState);
+
+      // Cleanup function to remove the event listener
+      return () => {
+        swiperInstance.off("slideChange", updateSlideState);
+      };
+    }
+  }, [swiperInstance]);
   return (
     <>
       <Header_01 />
@@ -275,59 +363,144 @@ function GenAI() {
           </div>
         </div>
 
-        <section className="my-28">
-          <div className="w-full global-container lg:w-2/3 flex flex-col justify-center items-center">
-            <p className="global-container text-3xl lg:text-6xl font-Satoshi font-[600] text-center">
-              Industry
-              <span className="bg-gradient-to-r  font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
+        <div className="bg-[url('/assets/img_placeholder/bg.jpg')] bg-top bg-cover bg-no-repeat py-32">
+          <section className="global-container ">
+            <p className="w-full text-3xl lg:text-6xl  font-Satoshi font-bold text-start lg:text-center">
+              <span className="bg-gradient-to-r font-Telma from-blue-600 to-indigo-400 bg-clip-text  text-transparent">
                 {" "}
-                Challenges{" "}
-              </span>
-              and
-              <span className="bg-gradient-to-r  font-Telma px-1 from-blue-600 to-indigo-400 bg-clip-text text-transparent">
-                {" "}
-                Solutions{" "}
+                Generative Ai{" "}
+              </span>{" "}
+            </p>
+            <p className="text-lg xl:text-md xxl:text-lg text-start lg:text-center mt-2">
+              Learn how we’re driving impact with organizations like yours
+              across key industry sectors.
+            </p>
+          </section>
+          <div
+            className={`bg-sky-400 block  lg:hidden px-4 py-3 transition-all duration-200   w-full `}
+          >
+            <p
+              onClick={() => setMobileTabs(!mobileTabs)}
+              className="flex w-full px-5 capitalize items-center gap-1 font-[700] font-Satoshi"
+            >
+              {tabs[tabSelected].name}
+              <span>
+                <MdOutlineKeyboardArrowDown
+                  className={`text-2xl ${
+                    mobileTabs ? "rotate-180" : "rotate-0"
+                  }`}
+                />
               </span>
             </p>
+            <div
+              className={`transition-all duration-300 ${
+                mobileTabs ? "max-h-[100vh] py-4 " : "max-h-0"
+              }  bg-sky-400 `}
+            >
+              {mobileTabs
+                ? tabs.map((service, index) => {
+                    if (tabSelected !== index) {
+                      return (
+                        <p
+                          key={index}
+                          onClick={() => {
+                            setTabSelected(index);
+                            setMobileTabs(false);
+                          }}
+                          className={`mt-5 px-5 text-[1rem] xxl:text-[.8vw] hover:underline cursor-pointer font-Satoshi uppercase font-[500]`}
+                        >
+                          {service.name}
+                        </p>
+                      );
+                    }
+                  })
+                : null}
+            </div>
           </div>
+          <div className="relative mt-5 lg:flex flex-row gap-5 justify-center items-center global-container">
+            {!isBeginning && (
+              <button
+                onClick={handlePrev}
+                className="absolute left-0 text-black shadow-[0px_0px_12px_12px_rgba(250,250,250,.5)] bg-lime-400 size-10 flex justify-center items-center z-[99] rounded-full"
+              >
+                <MdArrowBackIosNew />
+              </button>
+            )}
 
-          <div className="global-container grid place-items-center grid-cols-1 gap-x-7 gap-y-10 lg:grid-cols-2 xl:grid-cols-4">
-            <AnimatePresence mode="wait">
-              {Aiservices.map((service, index) => (
-                <motion.div
+            <Swiper
+              spaceBetween={20} // Reduce space between slides for a better fit
+              slidesPerView="auto" // Auto width for slides based on content
+              onSwiper={(swiper) => {
+                swiperRef.current = swiper; // Set the current reference to the swiper instance
+                setSwiperInstance(swiper); // Optionally store the swiper instance in state for debugging
+              }}
+            >
+              {tabs.map((tab, index) => (
+                <SwiperSlide
                   key={index}
-                  style={{ backgroundColor: service?.color }}
-                  className="mt-10 border-[10px] cursor-pointer border-gray-200 group  rounded-2xl w-full  h-[430px]  relative overflow-hidden"
+                  className="!w-auto flex justify-center" // Flex container to prevent full width
                 >
-                  <div className="size-36   absolute top-16 -translate-x-1/2 left-1/2 -translate-y-0">
-                    <img className="w-full" src={service.img} />
+                  <div className="!w-auto inline-block">
+                    <p
+                      onClick={() => setTabSelected(index)}
+                      className={`${
+                        tabSelected == index
+                          ? "bg-gray-900 text-gray-100"
+                          : "bg-gray-300 text-gray-900"
+                      } xl:text-sm xxl:text-[1rem] px-4 py-2 rounded-full cursor-pointer whitespace-nowrap`}
+                    >
+                      {tab.name}
+                    </p>
                   </div>
-                  <div className="size-4 group-hover:scale-[80] xxl:group-hover:scale-[110]  absolute transition-all duration-700  -top-4 -left-4 bg-gray-200 rounded-full"></div>
-                  <div className="size-3 group-hover:scale-[90] xxl:group-hover:scale-[120] absolute transition-all duration-700 -top-4 -left-4 bg-white delay-200 rounded-full"></div>
-                  <div className="w-full relative   z-10 h-full flex py-5 px-5 flex-col justify-end items-start">
-                    <motion.div>
-                      <p className=" text-2xl pr-8 font-bold font-Satoshi leading-snug group-hover:text-gray-900 transition-all duration-500 text-gray-100">
-                        {service.name}
-                      </p>
-                      <p className="text-sm font-Satoshi font-semibold text-gray-100 group-hover:text-gray-800">
-                        {service.description}?
-                      </p>
-                    </motion.div>
-
-                    <div className="w-full flex justify-between items-center">
-                      <button
-                        onClick={() => setisOpen(true)}
-                        className="px-4 bg-lime-300 py-2 font-Satoshi font-semibold text-sm mt-2   rounded-full"
-                      >
-                        Learn more
-                      </button>
-                    </div>
-                  </div>
-                </motion.div>
+                </SwiperSlide>
               ))}
-            </AnimatePresence>
+            </Swiper>
+
+            {!isEnd && (
+              <button
+                onClick={handleNext}
+                className="absolute shadow-[0px_0px_12px_12px_rgba(250,250,250,.5)] right-0 text-black bg-lime-400 hover:bg-lime-600 size-10 flex justify-center items-center  z-[99] rounded-full"
+              >
+                <MdOutlineArrowForwardIos />
+              </button>
+            )}
           </div>
-        </section>
+          <div className="global-container mt-10 xl:mt-20 grid grid-cols-1  lg:grid-cols-2 px-0 xl:px-14 gap-8">
+            <div>
+              <p className="text-lg xl:text-4xl xxl:text-5xl font-Satoshi font-[600]">
+                {tabs[tabSelected].name}
+              </p>
+              <div className="flex mt-3 items-start gap-2">
+                <div className="mt-5">
+                  <PiSealWarningFill className="text-yellow-500 text-xl" />
+                </div>
+                <p className=" text-md xl:text-sm xxl:text-lg font-Satoshi mt-4 font-medium">
+                  {tabs[tabSelected].prob}
+                </p>
+              </div>
+              <div className="flex items-start gap-2">
+                <div className="mt-5">
+                  <FaCircleCheck className="text-green-500 text-lg" />
+                </div>
+                <p className=" text-md xl:text-sm xxl:text-lg font-Satoshi mt-4">
+                  {tabs[tabSelected].sol}
+                </p>
+              </div>
+
+              <button
+                onClick={() => setisOpen(true)}
+                className="mt-5 px-5 py-2 bg-blue-500  text-md xl:text-sm xxl:text-lg rounded-md text-gray-200"
+              >
+                Learn More
+              </button>
+            </div>
+            <div
+              style={{ backgroundImage: `url('${tabs[tabSelected].img}')` }}
+              className="w-full min-h-[400px] relative rounded-xl shadow-xl border border-gray-300 bg-no-repeat bg-center bg-cover"
+            ></div>
+          </div>
+        </div>
+
         <section className="my-28">
           <div className="w-full global-container lg:w-2/3 flex flex-col justify-center items-center">
             <p className="global-container text-3xl lg:text-6xl font-Satoshi font-[600] text-center">

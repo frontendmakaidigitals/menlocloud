@@ -29,8 +29,8 @@ const topics = [
   "Digital Age",
   "Transformation & Growth",
   "Data & AI",
-  "Marketing & Advertising ",
-  "Technology ",
+  "Marketing & Advertising",
+  "Technology",
   "Web & App Development",
   "Industrial Innovations",
   "Marketing & Strategy",
@@ -40,9 +40,9 @@ const services = [
   "All Services",
   "Data Analytics",
   "Generative AI",
-  "Cloud Transformation ",
-  "Mobile App Development ",
-  "Web Development ",
+  "Cloud Transformation",
+  "Mobile App Development",
+  "Web Development",
   "Digital Marketing",
 ];
 const industries = [
@@ -154,7 +154,7 @@ function Insights() {
           {/* Section Spacer */}
         </section>
 
-        <section className=" px-4 lg:global-container">
+        <section className=" global-container">
           <p className="text-lg xl:text-xl xxl:text-2xl font-Satoshi font-bold">
             Recent blog posts
           </p>
@@ -337,7 +337,7 @@ function Insights() {
                   matchesSearch
                 );
               })
-              .filter((blog) => ["default"].includes(blog.priority))
+              .filter((blog) => ["Default"].includes(blog.priority))
               .sort((a, b) => parseInt(a.priority) - parseInt(b.priority))
               .map((blog) => (
                 <Link

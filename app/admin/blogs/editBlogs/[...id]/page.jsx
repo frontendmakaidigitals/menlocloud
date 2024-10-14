@@ -10,6 +10,45 @@ import axios from "axios";
 import Dropdown from "@/components/dropdown";
 import { useRouter } from "next/navigation";
 import { IoMdClose } from "react-icons/io";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+
+const topics = [
+  "Digital Age",
+  "Transformation & Growth",
+  "Data & AI",
+  "Marketing & Advertising",
+  "Technology",
+  "Web & App Development",
+  "Industrial Innovations",
+  "Marketing & Strategy",
+];
+
+const services = [
+  "Data Analytics",
+  "Generative AI",
+  "Cloud Transformation",
+  "Mobile App Development",
+  "Web Development",
+  "Digital Marketing",
+];
+const industries = [
+  "Health care",
+  "Finance",
+  "Technology",
+  "Media and Communications",
+  "Transport and Logistics",
+  "Educations and Learning",
+  "Retail and E-commerce",
+  "Manufacturing and Distribution",
+  "Resource and Wealth",
+];
+const Priority = ["1", "2", "3", "4", "Default"];
 const Page = ({ params }) => {
   const EditorComp = dynamic(() => import("@/components/MDXEditor"), {
     ssr: false,
@@ -37,8 +76,10 @@ const Blogform = ({ id, EditorComp }) => {
   const [metaDiscription, setMetaDiscription] = useState("");
   const [metaTag, setMetaTag] = useState("");
   const [author, setAuthor] = useState("");
-  const [selectedOption, setSelectedOption] = useState("default");
-  const options = ["1", "2", "3", "4", "default"];
+  const [selectedOption, setSelectedOption] = useState("Default");
+  const [selectedTopic, setSelectedTopic] = useState("");
+  const [selectedService, setSelectedService] = useState("");
+  const [selectedIndustry, setSelectedIndustry] = useState("");
 
   const handleKeyPress = (e) => {
     if (inputValue.length > 1) {
@@ -78,6 +119,7 @@ const Blogform = ({ id, EditorComp }) => {
   const imageURL = "https://admin.yatriclubs.com/";
   const [isPopUpOpen, setIsPopUpOpen] = useState(false);
   const [blog, setBlog] = useState([]);
+
   const getBlog = () => {
     if (true) {
       axios.get("https://admin.yatriclubs.com/sanctum/csrf-cookie", {
@@ -97,6 +139,10 @@ const Blogform = ({ id, EditorComp }) => {
           setSelectedOption(res.data.priority);
           setAuthor(res.data.author);
           setBlog(res.data);
+
+          setSelectedIndustry(res.data.industry);
+          setSelectedService(res.data.service);
+          setSelectedTopic(res.data.topic);
         })
 
         .catch((error) => {
@@ -131,10 +177,11 @@ const Blogform = ({ id, EditorComp }) => {
       formData.append("metaDescription", metaDiscription);
       formData.append("blogDetail", blogDetail);
       formData.append("tags", tags);
-
       formData.append("author", author);
       formData.append("priority", selectedOption);
-
+      formData.append("topic", selectedTopic);
+      formData.append("service", selectedService);
+      formData.append("industry", selectedIndustry);
       if (image && image.length > 0 && image[0] instanceof File) {
         formData.append("image", image[0]);
       }
@@ -318,8 +365,72 @@ const Blogform = ({ id, EditorComp }) => {
             </div>
           </div>
         </div>
-
-        <div className="w-full mt-4">
+        <div className=" grid grid-cols-2 w-full gap-10 mt-5">
+          <div className="w-full">
+            <p className="font-Satoshi font-medium">Topic</p>
+            <Select onValueChange={setSelectedTopic} value={selectedTopic}>
+              <SelectTrigger className="w-full border border-gray-700">
+                <SelectValue placeholder="Select Topic" />
+              </SelectTrigger>
+              <SelectContent>
+                {topics.map((topic, index) => (
+                  <SelectItem value={topic} key={index}>
+                    {topic}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+          <div className="w-full">
+            <p className="font-Satoshi font-medium">Service</p>
+            <Select onValueChange={setSelectedService} value={selectedService}>
+              <SelectTrigger className="w-full border border-gray-700">
+                <SelectValue placeholder="Select Service" />
+              </SelectTrigger>
+              <SelectContent>
+                {services.map((service, index) => (
+                  <SelectItem value={service} key={index}>
+                    {service}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+          <div className="w-full">
+            <p className="font-Satoshi font-medium">Industry</p>
+            <Select
+              onValueChange={setSelectedIndustry}
+              value={selectedIndustry}
+            >
+              <SelectTrigger className="w-full border border-gray-700">
+                <SelectValue placeholder="Select Industry" />
+              </SelectTrigger>
+              <SelectContent>
+                {industries.map((industry, index) => (
+                  <SelectItem value={industry} key={index}>
+                    {industry}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+          <div className="w-full">
+            <p className="font-Satoshi font-medium">Priority</p>
+            <Select onValueChange={setSelectedOption} value={selectedOption}>
+              <SelectTrigger className="w-full border border-gray-700">
+                <SelectValue placeholder="Select Priority" />
+              </SelectTrigger>
+              <SelectContent>
+                {Priority.map((priority, index) => (
+                  <SelectItem value={priority} key={index}>
+                    {priority}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+        </div>
+        <div className="w-full mt-6">
           <p className="font-Satoshi font-medium">Description</p>
           <div className=" border border-black rounded-md">
             <Suspense fallback={null}>
@@ -332,17 +443,6 @@ const Blogform = ({ id, EditorComp }) => {
         </div>
 
         <div className="flex items-center gap-5 mt-9">
-          <div className="flex items-center gap-2">
-            <p>Priority:</p>
-            <div className="w-auto ">
-              <Dropdown
-                selectedOption={selectedOption}
-                setSelectedOption={setSelectedOption}
-                options={options}
-              />
-            </div>
-          </div>
-
           <button
             onClick={updateBlog}
             disabled={isSubmitting}

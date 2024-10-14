@@ -3,9 +3,7 @@ import Footer_01 from "@/components/footer/Footer_01";
 import Header_01 from "@/components/header/Header_01";
 import { useEffect } from "react";
 import Link from "next/link";
-
 import { useRef, useState } from "react";
-
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { MdOutlineArrowForwardIos } from "react-icons/md";
 import { MdArrowBackIosNew } from "react-icons/md";
@@ -14,6 +12,7 @@ import { cn } from "@/lib/utils";
 import BlogSwiper from "@/components/blogSwiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import Form from "@/components/PopUp-form/form";
 import "swiper/css/navigation";
 const data = [
   {
@@ -181,7 +180,8 @@ const tabs = [
 function Services() {
   const [mobileTabs, setMobileTabs] = useState(false);
   const [tabSelected, setTabSelected] = useState(2);
-
+  const [isOpen, setisOpen] = useState(false);
+  const [status, setStatus] = useState(null);
   const swiperRef = useRef(null);
   const [swiperInstance, setSwiperInstance] = useState(null);
   const [isBeginning, setIsBeginning] = useState(true);
@@ -224,6 +224,9 @@ function Services() {
   return (
     <>
       <Header_01 />
+      {isOpen ? (
+        <Form setIsOpen={setisOpen} setStatus={setStatus} status={status} />
+      ) : null}
       <main className="main-wrapper relative overflow-hidden">
         <div className="w-full  h-[85vh] xl:h-screen bg-no-repeat bg-center bg-cover bg-[url('https://images.pexels.com/photos/5716052/pexels-photo-5716052.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')]">
           <div className="bg-gradient-to-b w-full h-full from-gray-800/50 via-transparent to-gray-700/40">
@@ -388,8 +391,11 @@ function Services() {
                   </li>
                 ))}
               </ul>
-              <button className="mt-5 px-5 py-2 bg-blue-500  text-md xl:text-sm xxl:text-lg rounded-md text-gray-200">
-                <Link href={"/contact"}>Learn More</Link>
+              <button
+                onClick={() => setisOpen(true)}
+                className="mt-5 px-5 py-2 bg-blue-500  text-md xl:text-sm xxl:text-lg rounded-md text-gray-200"
+              >
+                Learn More
               </button>
             </div>
             <div

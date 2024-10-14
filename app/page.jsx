@@ -88,56 +88,56 @@ const industries = [
     icon: "https://cdn3d.iconscout.com/3d/premium/thumb/healthcare-3d-icon-download-in-png-blend-fbx-gltf-file-formats--heart-love-hands-medical-caregiver-nursing-home-pack-icons-5700707.png?f=webp",
     color: "#FFCDD2",
     description:
-      "you can transform healthcare with our cutting-edge solutions like telemedicine and AI tools, enhancing patient care and operational efficiency.",
+      "Bring the best of modern practices to patient health, emergencies and medical equipment and more with generative AI.",
   },
   {
     name: "Construction",
     icon: "https://icons.iconarchive.com/icons/microsoft/fluentui-emoji-3d/512/Building-Construction-3d-icon.png",
     color: "#FFECB3",
     description:
-      "you can revolutionize construction with our smart building technologies and project management software, improving efficiency and safety on-site.",
+      "Multiply mega structures and add a distinct character to every project with strong  IT backed backend techniques.",
   },
   {
     name: "Finance",
     icon: "https://cdn3d.iconscout.com/3d/premium/thumb/finance-3d-illustration-download-in-png-blend-fbx-gltf-file-formats--invoice-bill-receipt-online-money-service-pack-marketing-branding-illustrations-4159684.png?f=webp",
     color: "#F5F5F5",
     description:
-      "you can innovate finance with our advanced fintech solutions and AI-driven analytics, enhancing security, efficiency, and decision-making.",
+      "Compute, analyze and transform internal processes while building robust systems for external audiences.",
   },
   {
-    name: "transportation",
+    name: "Transportation",
     icon: "https://static.vecteezy.com/system/resources/previews/047/398/260/original/cartoon-public-trolleybus-3d-icon-on-the-transparent-background-vehicles-for-transportation-concept-png.png",
     color: "#D1C4E9",
     description:
-      "you can transform transportation with our smart routing and autonomous vehicle technologies, enhancing efficiency and safety in transit systems.",
+      "Operate seamlessly within a connected ecosystem. Create what simplifies the regional presence.",
   },
   {
-    name: "entertainment",
+    name: "Entertainment",
     icon: "https://static.vecteezy.com/system/resources/previews/016/407/496/original/3d-entertainment-website-icon-illustration-png.png",
     color: "#E57373",
     description:
-      "you can revolutionize entertainment with our immersive technologies and innovative content delivery systems, creating engaging and interactive experiences.",
+      "Stream personalized choices, make content easy to consume and leave a wider impact with fast and agile IT solutions.",
   },
   {
     name: "retail",
     icon: "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/09dcac142853293.626f5704a3e61.png",
     color: "#FFAB91",
     description:
-      "you can elevate retail with our smart analytics and seamless e-commerce solutions, enhancing customer experiences and operational efficiency.",
+      "Attract customers and enhance the experience through an array of offerings built for customers and end-users.",
   },
   {
     name: "manufacturing",
     icon: "https://cdn3d.iconscout.com/3d/premium/thumb/factory-3d-icon-download-in-png-blend-fbx-gltf-file-formats--industry-industrial-construction-building-pack-commercial-icons-9646402.png?f=webp",
     color: "#FFB74D",
     description:
-      "you can transform manufacturing with our advanced automation and IoT solutions, optimizing production processes and enhancing efficiency.",
+      "Generate and innovate processes that lead the change in the consumer markets and help your idea climb up.",
   },
   {
     name: "automation",
     icon: "https://cdn3d.iconscout.com/3d/premium/thumb/nano-robots-3d-icon-download-in-png-blend-fbx-gltf-file-formats--robot-robotic-robotics-technology-future-things-pack-science-icons-6605347.png?f=webp",
     color: "#B39DDB",
     description:
-      "you can drive automation with our intelligent systems and robotics, boosting efficiency and accuracy across various industries.",
+      "Charge up the environment, make it faster and error-free with zero manual intervention and achieve bigger results.",
   },
 ];
 const experiences = [
@@ -560,8 +560,7 @@ function Home() {
                   </h3>
 
                   <p className="mb-12 duration-300 group-hover:text-white">
-                    This is an excellent option for people & small businesses
-                    who are starting out.
+                    Gain insights and make informed business decisions
                   </p>
 
                   <Link
@@ -609,8 +608,7 @@ function Home() {
                   </h3>
 
                   <p className="mb-12 duration-300 group-hover:text-white">
-                    This is an excellent option for people & small businesses
-                    who are starting out.
+                    Decode automation like never before
                   </p>
 
                   <Link
@@ -662,8 +660,7 @@ function Home() {
                   </h3>
 
                   <p className="mb-12 duration-300 group-hover:text-white">
-                    This is an excellent option for people & small businesses
-                    who are starting out.
+                    Introduce dependable processes to make changes happen
                   </p>
 
                   <Link
@@ -713,8 +710,7 @@ function Home() {
                   </h3>
 
                   <p className="mb-12 duration-300 group-hover:text-white">
-                    This is an excellent option for people & small businesses
-                    who are starting out.
+                    Take your business to millions
                   </p>
 
                   <button
@@ -759,8 +755,7 @@ function Home() {
                   </h3>
 
                   <p className="mb-12 duration-300 group-hover:text-white">
-                    This is an excellent option for people & small businesses
-                    who are starting out.
+                    Launch focused products and make it big
                   </p>
 
                   <Link
@@ -808,8 +803,7 @@ function Home() {
                   </h3>
 
                   <p className="mb-12 duration-300 group-hover:text-white">
-                    This is an excellent option for people & small businesses
-                    who are starting out.
+                    Take your business to best online channels
                   </p>
 
                   <Link
@@ -990,8 +984,9 @@ function Home() {
                     />
                   </div>
                   <p>
-                    “This AI SaaS tool has revolutionized the way we process and
-                    analyze data. This is a game-changer for our business.”
+                    “We have a fully dynamic website, thanks to the team. We are
+                    able to seamlessly work on our digital queries and serve our
+                    clients and customers better.”
                   </p>
                   <div className="flex items-center gap-x-4">
                     <div className="h-[60px] w-[60px] overflow-hidden rounded-full">
@@ -1005,7 +1000,7 @@ function Home() {
                     </div>
                     <div className="flex flex-col gap-y-1">
                       <span className="block text-lg font-semibold leading-[1.6]">
-                        Max Weber
+                        Zippro International
                       </span>
                       <span className="block text-sm font-light leading-[1.4]">
                         HR Manager
@@ -1029,9 +1024,9 @@ function Home() {
                     />
                   </div>
                   <p>
-                    It answers immediately, and we ve seen a significant
-                    reduction in response time. Our customers love it and so do
-                    we!
+                    Our customer inflow has spiked with a great website in
+                    place. Thankful to Menlocloud. We are able to serve more
+                    customers now.
                   </p>
                   <div className="flex items-center gap-x-4">
                     <div className="h-[60px] w-[60px] overflow-hidden rounded-full">
@@ -1045,7 +1040,7 @@ function Home() {
                     </div>
                     <div className="flex flex-col gap-y-1">
                       <span className="block text-lg font-semibold leading-[1.6]">
-                        Douglas Smith
+                        Tea Villa Cafe
                       </span>
                       <span className="block text-sm font-light leading-[1.4]">
                         Businessman
