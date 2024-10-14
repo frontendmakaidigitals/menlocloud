@@ -417,7 +417,7 @@ function GenAI() {
                 : null}
             </div>
           </div>
-          <div className="relative mt-5 lg:flex flex-row gap-5 justify-center items-center global-container">
+          <div className="relative hidden mt-5 lg:flex flex-row gap-5 justify-center items-center global-container">
             {!isBeginning && (
               <button
                 onClick={handlePrev}
