@@ -270,7 +270,7 @@ function Insights() {
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
-          <div className=" flex justify-between flex-wrap w-full gap-5">
+          <div className=" flex justify-between flex-wrap lg:flex-nowrap w-full gap-5">
             <Select onValueChange={setSelectedTopic}>
               <SelectTrigger className="w-full">
                 <SelectValue placeholder="All Topics" />

@@ -27,20 +27,24 @@ function Industries({ params }) {
       });
     });
   }, []);
-  console.log(data);
 
   return (
     <>
       <Header_01 />
       <main className="main-wrapper relative ">
-        <div className="w-full h-auto lg:h-[85vh] xl:h-screen bg-no-repeat bg-center bg-cover bg-[url('https://images.unsplash.com/photo-1725203574073-79922f64110a?q=80&w=2012&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')]">
-          <div className="  bg-gradient-to-b w-full h-full from-gray-800/50 via-transparent to-gray-700/40">
+        <div
+          className="w-full h-auto lg:h-[85vh] xl:h-screen bg-no-repeat bg-center bg-cover"
+          style={{ backgroundImage: `url(${data?.bigImg})` }}
+        >
+          <div className="  bg-gradient-to-b w-full h-full from-gray-800/50 via-transparent to-gray-900/50">
             <div className="global-container flex lg:flex-row items-end py-32 justify-start h-full">
               <div className=" mt-32 xl:mt-0 w-full lg:w-2/3 ">
-                <p className="font-Satoshi text-3xl xl:text-4xl xxl:text-6xl w-full font-bold text-center lg:text-start text-black">
+                <p className="font-Satoshi text-3xl xl:text-4xl xxl:text-6xl w-full font-bold text-center lg:text-start text-gray-100">
                   {data?.title}
                 </p>
-                <p className="mt-3 font-Satoshi font-semibold leading-relaxed text-sm xl:text-lg text-gray-800 text-center lg:text-start w-full lg:w-2/4">
+                <p
+                  className={`mt-3 font-Satoshi font-semibold leading-relaxed text-sm xl:text-lg text-gray-100 text-center lg:text-start w-full lg:w-2/4`}
+                >
                   {data?.subTitle}
                 </p>
                 <div className="w-full flex justify-center lg:justify-start">
@@ -85,19 +89,15 @@ function Industries({ params }) {
               </div>
             </div>
             <div className="bg-slate-200 h-full overflow-hidden rounded-xl">
-              <img
-                src={
-                  "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                }
-              />
+              <img src={data?.contentImg} />
             </div>
           </div>
 
-          <div className="grid mt-16 grid-cols-1 lg:grid-cols-4 gap-x-5 place-items-center gap-y-10">
+          <div className="grid mt-16 grid-cols-1 lg:grid-cols-3 gap-x-5 place-items-center gap-y-10">
             {data?.points.map((elem, index) => (
               <div
                 key={index}
-                className="w-full rounded-lg min-h-[450px] flex flex-col justify-between overflow-hidden h-auto bg-gray-100"
+                className="w-full rounded-lg min-h-[400px] flex flex-col justify-between overflow-hidden h-auto bg-gray-100"
               >
                 <div className="p-2">
                   <div className="w-full flex justify-center items-center overflow-hidden rounded-lg h-[230px] bg-gray-200">

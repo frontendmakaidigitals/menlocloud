@@ -81,7 +81,12 @@ const Blogform = () => {
 
   const submitBlog = () => {
     setStatus(null);
-
+    if (!image) {
+      return alert("Please add an image");
+    }
+    if (tags.length == 0) {
+      return alert("Please add at least one tag");
+    }
     if (
       selectedOption == 1 ||
       selectedOption == 2 ||

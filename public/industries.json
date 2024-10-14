@@ -1,19 +1,21 @@
 [
   {
     "name": "Life Science & Health Care",
+    "bigImg": "https://images.unsplash.com/photo-1725203574073-79922f64110a?q=80&w=2012&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "contentImg": "https://images.pexels.com/photos/287227/pexels-photo-287227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     "title": "Resilient healthcare system",
     "subTitle": "Our solutions go deeper for the healthcare domain. Through our efforts, we have helped accelerate R&D, clinical trials and portfolio strategy and more.",
-    "contentHead": "Empowering Industries with Next-Gen Technology",
+    "contentHead": "Next-Gen Solutions For You",
     "contentDescription": "We leverage the most advanced solutions for life sciences and healthcare domain and generate practices that lead the change. Our services make intelligent use of technology to deliver surprising alternatives that surpass existing ways and add in the gamut of offering for the vertical.",
     "points": [
       {
         "name": "Research & development",
-        "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/circuit-board-3d-icon-download-in-png-blend-fbx-gltf-file-formats--microchip-microprocessor-chip-motherboard-electrician-tools-pack-industry-icons-9741473.png?f=webp",
+        "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/research-and-development-3d-icon-download-in-png-blend-fbx-gltf-file-formats--innovative-problem-solving-creative-business-pack-icons-5122412.png",
         "description": "We aid the R&D process through technology outcomes that are life changing for the people and the world."
       },
       {
         "name": "Clinical trials",
-        "icon": "https://static.vecteezy.com/system/resources/previews/024/683/392/original/3d-icon-processor-component-computer-hardware-illustration-concept-icon-render-png.png",
+        "icon": "https://cdn3.iconfinder.com/data/icons/medical-2267/512/Medical_Report.png",
         "description": "Our AI powered data analysis helps in working on clinical trials that help the pharma industries offer potent solutions."
       },
 
@@ -27,233 +29,209 @@
 
   {
     "name": "Finance",
-    "title": "Empowering Industries Through Proven Solutions",
-    "subTitle": "Discover how our innovative solutions have driven success across various sectors, tackling unique challenges and delivering impactful results.",
-    "contentHead": "Empowering Industries with Next-Gen Technology",
-    "contentDescription": "At MenloCloud, we leverage cutting-edge technology to deliver exceptional solutions tailored to the unique needs of our clients. From advanced manufacturing techniques to smart automation and data analytics, our technological expertise empowers industries to enhance efficiency, reduce costs, and drive innovation. We are committed to staying at the forefront of technological advancements, ensuring that our clients benefit from the best tools and practices available in the market.",
+    "title": "Streamlined transactions",
+    "subTitle": "Manage a gamut of financial transactions and serve your customers with best products with our AI powered solutions.",
+    "bigImg": "https://images.pexels.com/photos/5054539/pexels-photo-5054539.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "contentImg": "https://images.pexels.com/photos/6771607/pexels-photo-6771607.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "contentHead": "Connected environment",
+    "contentDescription": "Businesses and institutions can advance ahead with multiple services and help broaden investment portfolios with our AI powered processes that redefine the normal. We are merging data analytics and AI processes together to bring out solutions that match the pace of the changing world.",
     "points": [
       {
-        "name": "Hardware",
-        "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/circuit-board-3d-icon-download-in-png-blend-fbx-gltf-file-formats--microchip-microprocessor-chip-motherboard-electrician-tools-pack-industry-icons-9741473.png?f=webp",
-        "description": "Our state-of-the-art hardware components are designed for durability and performance, ensuring that your systems run efficiently and effectively."
+        "name": "Commercial banking",
+        "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/banking-3d-icon-download-in-png-blend-fbx-gltf-file-formats--bank-institution-savings-financial-investment-business-pack-icons-10117781.png",
+        "description": "Enabling financial institutions with banking products that matter. Whether credit or financial tools, we help commercial banking with more."
       },
       {
-        "name": "Semiconductor",
-        "icon": "https://static.vecteezy.com/system/resources/previews/024/683/392/original/3d-icon-processor-component-computer-hardware-illustration-concept-icon-render-png.png",
-        "description": "Our state-of-the-art hardware components are designed for durability and performance, ensuring that your systems run efficiently and effectively."
+        "name": "Investment and mortgage",
+        "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/property-loan-3d-icon-download-in-png-blend-fbx-gltf-file-formats--home-house-investment-pack-business-icons-5602247.png?f=webp",
+        "description": "High profits investment and minimal risks for users, we simplify mortgage processes and help customers pay off easily."
       },
       {
-        "name": "Software",
-        "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/software-development-3d-icon-download-in-png-blend-fbx-gltf-file-formats--programming-coding-web-pack-design-icons-5618482.png",
-        "description": "Our state-of-the-art hardware components are designed for durability and performance, ensuring that your systems run efficiently and effectively."
-      },
-      {
-        "name": "Professional services",
-        "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/consulting-creative-idea-3d-icon-download-in-png-blend-fbx-gltf-file-formats--chat-speech-bubble-digital-nomad-pack-business-icons-6166279.png?f=webp",
-        "description": "Our state-of-the-art hardware components are designed for durability and performance, ensuring that your systems run efficiently and effectively."
+        "name": "Insurance",
+        "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/insurance-3d-icon-download-in-png-blend-fbx-gltf-file-formats--protection-security-shield-safety-umbrella-banking-money-pack-finance-icons-4755623.png?f=webp",
+        "description": "Leverage the best insurance products with data empowered by powerful generative AI."
       }
     ]
   },
   {
     "name": "Technologies",
-    "title": "Empowering Industries Through Proven Solutions",
-    "subTitle": "Discover how our innovative solutions have driven success across various sectors, tackling unique challenges and delivering impactful results.",
-    "contentHead": "Empowering Industries with Next-Gen Technology",
-    "contentDescription": "At MenloCloud, we leverage cutting-edge technology to deliver exceptional solutions tailored to the unique needs of our clients. From advanced manufacturing techniques to smart automation and data analytics, our technological expertise empowers industries to enhance efficiency, reduce costs, and drive innovation. We are committed to staying at the forefront of technological advancements, ensuring that our clients benefit from the best tools and practices available in the market.",
+    "title": "Enhancing new-age solutions across industries",
+    "subTitle": "Technology is mult-dimensional and the solutions can empower business verticals for a better tomorrow.",
+    "bigImg": "https://images.pexels.com/photos/1181354/pexels-photo-1181354.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "contentImg": "https://images.pexels.com/photos/1105379/pexels-photo-1105379.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "contentHead": "Better and high performing",
+    "contentDescription": "Technology has transformed the way we live, work, and communicate. From smartphones to artificial intelligence, advancements enhance our daily lives and drive innovation. While it fosters connectivity and efficiency, it also presents challenges like privacy concerns and job displacement. Striking a balance between progress and ethical considerations is crucial for a sustainable future.",
     "points": [
       {
-        "name": "Hardware",
-        "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/circuit-board-3d-icon-download-in-png-blend-fbx-gltf-file-formats--microchip-microprocessor-chip-motherboard-electrician-tools-pack-industry-icons-9741473.png?f=webp",
-        "description": "Our state-of-the-art hardware components are designed for durability and performance, ensuring that your systems run efficiently and effectively."
+        "name": "Edtech",
+        "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/interactive-learning-robot-3d-icon-download-in-png-blend-fbx-gltf-file-formats--assistant-educational-technology-website-and-seo-pack-web-icons-8625955.png",
+        "description": "Coupled with tech-driven alternative center growth and innovation for learners."
       },
       {
-        "name": "Semiconductor",
-        "icon": "https://static.vecteezy.com/system/resources/previews/024/683/392/original/3d-icon-processor-component-computer-hardware-illustration-concept-icon-render-png.png",
-        "description": "Our state-of-the-art hardware components are designed for durability and performance, ensuring that your systems run efficiently and effectively."
+        "name": "FinTech",
+        "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/fintech-3d-illustration-download-in-png-blend-fbx-gltf-file-formats--financial-institute-technology-global-money-digital-currency-pack-business-illustrations-4635714.png?f=webp",
+        "description": "Provide financial solutions for a wider product line built for building superior customer experience."
       },
       {
-        "name": "Software",
-        "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/software-development-3d-icon-download-in-png-blend-fbx-gltf-file-formats--programming-coding-web-pack-design-icons-5618482.png",
-        "description": "Our state-of-the-art hardware components are designed for durability and performance, ensuring that your systems run efficiently and effectively."
-      },
-      {
-        "name": "Professional services",
-        "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/consulting-creative-idea-3d-icon-download-in-png-blend-fbx-gltf-file-formats--chat-speech-bubble-digital-nomad-pack-business-icons-6166279.png?f=webp",
-        "description": "Our state-of-the-art hardware components are designed for durability and performance, ensuring that your systems run efficiently and effectively."
+        "name": "Ecommerce",
+        "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/ecommerce-3d-illustration-download-in-png-blend-fbx-gltf-file-formats--online-shopping-purchase-payment-wallet-contactless-commerce-pack-illustrations-4034461.png",
+        "description": "Enable new-age businesses with structured frontend processes and streamlined backend."
       }
     ]
   },
   {
     "name": "Media and Communications",
-    "title": "Empowering Industries Through Proven Solutions",
-    "subTitle": "Discover how our innovative solutions have driven success across various sectors, tackling unique challenges and delivering impactful results.",
-    "contentHead": "Empowering Industries with Next-Gen Technology",
-    "contentDescription": "At MenloCloud, we leverage cutting-edge technology to deliver exceptional solutions tailored to the unique needs of our clients. From advanced manufacturing techniques to smart automation and data analytics, our technological expertise empowers industries to enhance efficiency, reduce costs, and drive innovation. We are committed to staying at the forefront of technological advancements, ensuring that our clients benefit from the best tools and practices available in the market.",
+    "title": "Communication effectiveness",
+    "bigImg": "https://images.pexels.com/photos/21627/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "contentImg": "https://images.pexels.com/photos/267389/pexels-photo-267389.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "subTitle": "Industries thrive within a sustainable business ecosystem. Our media and communication tactics provide the backbone for leading companies. We make use of services in a unique way to empower every effort.",
+    "contentHead": "Leading alternatives",
+    "contentDescription": "Across the different channels in the media sector, our solution spells success and brings changes that dominate. We texture our solutions to suit the needs of each stakeholder in the loop and apply methods to fulfill sectoral demands. Our experience takes you places and finetune your worth for increased growth.",
     "points": [
       {
-        "name": "Hardware",
-        "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/circuit-board-3d-icon-download-in-png-blend-fbx-gltf-file-formats--microchip-microprocessor-chip-motherboard-electrician-tools-pack-industry-icons-9741473.png?f=webp",
-        "description": "Our state-of-the-art hardware components are designed for durability and performance, ensuring that your systems run efficiently and effectively."
+        "name": "TV",
+        "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/tv-3d-illustration-download-in-png-blend-fbx-gltf-file-formats--television-device-screen-digital-technology-pack-appliances-illustrations-4159704.png",
+        "description": "Reaching demographics powered by perceptive data and technology solutions helps you win over millions."
       },
       {
-        "name": "Semiconductor",
-        "icon": "https://static.vecteezy.com/system/resources/previews/024/683/392/original/3d-icon-processor-component-computer-hardware-illustration-concept-icon-render-png.png",
-        "description": "Our state-of-the-art hardware components are designed for durability and performance, ensuring that your systems run efficiently and effectively."
+        "name": "Social Media",
+        "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/social-media-3d-icon-download-in-png-blend-fbx-gltf-file-formats--like-logo-feedback-marketing-advertisement-pack-branding-icons-4863035.png?f=webp",
+        "description": "The ever-changing media domain provides options such as social media channels for increased outreach."
       },
       {
-        "name": "Software",
-        "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/software-development-3d-icon-download-in-png-blend-fbx-gltf-file-formats--programming-coding-web-pack-design-icons-5618482.png",
-        "description": "Our state-of-the-art hardware components are designed for durability and performance, ensuring that your systems run efficiently and effectively."
-      },
-      {
-        "name": "Professional services",
-        "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/consulting-creative-idea-3d-icon-download-in-png-blend-fbx-gltf-file-formats--chat-speech-bubble-digital-nomad-pack-business-icons-6166279.png?f=webp",
-        "description": "Our state-of-the-art hardware components are designed for durability and performance, ensuring that your systems run efficiently and effectively."
+        "name": "Motion Picture",
+        "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/motion-graphic-3d-icon-download-in-png-blend-fbx-gltf-file-formats--animate-logo-after-effects-design-art-pack-tools-icons-5251827.png?f=webp",
+        "description": "Score better in the crowded market and gain the advantage of a firm that works for continuous success."
       }
     ]
   },
   {
-    "name": "Travel Transport and Logistics",
-    "title": "Empowering Industries Through Proven Solutions",
-    "subTitle": "Discover how our innovative solutions have driven success across various sectors, tackling unique challenges and delivering impactful results.",
-    "contentHead": "Empowering Industries with Next-Gen Technology",
-    "contentDescription": "At MenloCloud, we leverage cutting-edge technology to deliver exceptional solutions tailored to the unique needs of our clients. From advanced manufacturing techniques to smart automation and data analytics, our technological expertise empowers industries to enhance efficiency, reduce costs, and drive innovation. We are committed to staying at the forefront of technological advancements, ensuring that our clients benefit from the best tools and practices available in the market.",
+    "name": "Travel transport",
+    "title": "Enable multiple alternatives in one go",
+    "bigImg": "https://images.pexels.com/photos/46148/aircraft-jet-landing-cloud-46148.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "contentImg": "https://images.pexels.com/photos/68704/pexels-photo-68704.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "subTitle": "We power AI platforms and make it possible for companies to enlarge their operations and connect multiple locations on a single platform.",
+    "contentHead": "Smart Transportation Enabled",
+    "contentDescription": "At MenloCloud, we are tailoring our offerings every minute for you.  To match the unique needs of clients, we are defining the best options for you. From advanced manufacturing techniques to smart automation and rapid data analysis, we are adding capacities into systems which serve customers with their needs each day. Find best possible alternatives with our products and achieve success.",
     "points": [
       {
-        "name": "Hardware",
-        "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/circuit-board-3d-icon-download-in-png-blend-fbx-gltf-file-formats--microchip-microprocessor-chip-motherboard-electrician-tools-pack-industry-icons-9741473.png?f=webp",
-        "description": "Our state-of-the-art hardware components are designed for durability and performance, ensuring that your systems run efficiently and effectively."
+        "name": "Roadways",
+        "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/road-3d-icon-download-in-png-blend-fbx-gltf-file-formats--route-highway-travel-way-transport-navigation-vol-2-pack-maps-and-icons-5602701.png?f=webp",
+        "description": "Build a smart fleet for transportation and reach end customers across multiple locations through data."
       },
       {
-        "name": "Semiconductor",
-        "icon": "https://static.vecteezy.com/system/resources/previews/024/683/392/original/3d-icon-processor-component-computer-hardware-illustration-concept-icon-render-png.png",
-        "description": "Our state-of-the-art hardware components are designed for durability and performance, ensuring that your systems run efficiently and effectively."
+        "name": "Shipping",
+        "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/cargo-ship-3d-illustration-download-in-png-blend-fbx-gltf-file-formats--container-delivery-system-pack-e-commerce-shopping-illustrations-3718770.png",
+        "description": "Transport heavy goods and make commercial trade easy for companies through AI processes."
       },
       {
-        "name": "Software",
-        "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/software-development-3d-icon-download-in-png-blend-fbx-gltf-file-formats--programming-coding-web-pack-design-icons-5618482.png",
-        "description": "Our state-of-the-art hardware components are designed for durability and performance, ensuring that your systems run efficiently and effectively."
-      },
-      {
-        "name": "Professional services",
-        "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/consulting-creative-idea-3d-icon-download-in-png-blend-fbx-gltf-file-formats--chat-speech-bubble-digital-nomad-pack-business-icons-6166279.png?f=webp",
-        "description": "Our state-of-the-art hardware components are designed for durability and performance, ensuring that your systems run efficiently and effectively."
+        "name": "Logistics",
+        "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/logistics-trolley-3d-illustration-download-in-png-blend-fbx-gltf-file-formats--delivery-logistic-handcart-services-pack-e-commerce-shopping-illustrations-4688365.png",
+        "description": "Power sectors like ecommerce with data analysis and better turn around through intelligent generative AI."
       }
     ]
   },
   {
     "name": "Educations and Learning",
-    "title": "Empowering Industries Through Proven Solutions",
-    "subTitle": "Discover how our innovative solutions have driven success across various sectors, tackling unique challenges and delivering impactful results.",
-    "contentHead": "Empowering Industries with Next-Gen Technology",
-    "contentDescription": "At MenloCloud, we leverage cutting-edge technology to deliver exceptional solutions tailored to the unique needs of our clients. From advanced manufacturing techniques to smart automation and data analytics, our technological expertise empowers industries to enhance efficiency, reduce costs, and drive innovation. We are committed to staying at the forefront of technological advancements, ensuring that our clients benefit from the best tools and practices available in the market.",
+    "title": "Develop Engrossing Patterns",
+    "bigImg": "https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "contentImg": "https://images.pexels.com/photos/1205651/pexels-photo-1205651.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "subTitle": "Learning models and patterns become highly immersive when built with generative AI. We fulfill the demands of institutions with solutions that simplify education.",
+    "contentHead": "Create methodologies",
+    "contentDescription": "With AI, education has become customized with personal and societal growth, fostering critical thinking and creativity. It empowers individuals with knowledge and skills, opening doors to opportunities. Lifelong learning nurtures adaptability in a rapidly changing world. By promoting engagement, education bridges gaps and builds the future.",
     "points": [
       {
-        "name": "Hardware",
-        "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/circuit-board-3d-icon-download-in-png-blend-fbx-gltf-file-formats--microchip-microprocessor-chip-motherboard-electrician-tools-pack-industry-icons-9741473.png?f=webp",
-        "description": "Our state-of-the-art hardware components are designed for durability and performance, ensuring that your systems run efficiently and effectively."
+        "name": "Online tools",
+        "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/education-3d-icon-download-in-png-blend-fbx-gltf-file-formats--calculator-books-mortarboard-diploma-book-school-pack-icons-5753353.png",
+        "description": "Giving a hand to online tools and making learning simple and effective for learners."
       },
       {
-        "name": "Semiconductor",
-        "icon": "https://static.vecteezy.com/system/resources/previews/024/683/392/original/3d-icon-processor-component-computer-hardware-illustration-concept-icon-render-png.png",
-        "description": "Our state-of-the-art hardware components are designed for durability and performance, ensuring that your systems run efficiently and effectively."
+        "name": "Learning patterns",
+        "icon": "https://static.vecteezy.com/system/resources/previews/013/368/615/non_2x/3d-illustration-of-creative-learning-school-education-college-icon-png.png",
+        "description": "Engrossing learning patterns for learners to understand and absorb lessons."
       },
       {
-        "name": "Software",
-        "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/software-development-3d-icon-download-in-png-blend-fbx-gltf-file-formats--programming-coding-web-pack-design-icons-5618482.png",
-        "description": "Our state-of-the-art hardware components are designed for durability and performance, ensuring that your systems run efficiently and effectively."
-      },
-      {
-        "name": "Professional services",
-        "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/consulting-creative-idea-3d-icon-download-in-png-blend-fbx-gltf-file-formats--chat-speech-bubble-digital-nomad-pack-business-icons-6166279.png?f=webp",
-        "description": "Our state-of-the-art hardware components are designed for durability and performance, ensuring that your systems run efficiently and effectively."
+        "name": "Custom curriculums",
+        "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/curriculum-vitae-3d-icon-download-in-png-blend-fbx-gltf-file-formats--resume-cv-profile-biodata-business-pack-icons-5175109.png?f=webp",
+        "description": "Turning learning and adding innovation in curriculum development for modern learners."
       }
     ]
   },
   {
     "name": "Retails and E-commerce",
-    "title": "Empowering Industries Through Proven Solutions",
-    "subTitle": "Discover how our innovative solutions have driven success across various sectors, tackling unique challenges and delivering impactful results.",
-    "contentHead": "Empowering Industries with Next-Gen Technology",
-    "contentDescription": "At MenloCloud, we leverage cutting-edge technology to deliver exceptional solutions tailored to the unique needs of our clients. From advanced manufacturing techniques to smart automation and data analytics, our technological expertise empowers industries to enhance efficiency, reduce costs, and drive innovation. We are committed to staying at the forefront of technological advancements, ensuring that our clients benefit from the best tools and practices available in the market.",
+    "title": "Define trends with AI powered analytics",
+    "bigImg": "https://images.pexels.com/photos/4483610/pexels-photo-4483610.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "contentImg": "https://images.pexels.com/photos/4226270/pexels-photo-4226270.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "subTitle": "Powering revenue models in the domain for diverse customers. We understand the ground reality and this is why our solutions help the industry with engrappling tech-driven experiences.",
+    "contentHead": "Increasing operability",
+    "contentDescription": "In the retail sector, we have defined goals for conglomerates. Bigger solutions for big retail giants providing services to millions of customers on diverse platforms. Using the concoction of technology, marketing and enriching it with powerful data, we are holding on rapid changes and helping businesses define trends. Ride the wave with us.",
     "points": [
       {
-        "name": "Hardware",
-        "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/circuit-board-3d-icon-download-in-png-blend-fbx-gltf-file-formats--microchip-microprocessor-chip-motherboard-electrician-tools-pack-industry-icons-9741473.png?f=webp",
-        "description": "Our state-of-the-art hardware components are designed for durability and performance, ensuring that your systems run efficiently and effectively."
+        "name": "Online retail",
+        "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/online-store-3d-illustration-download-in-png-blend-fbx-gltf-file-formats--shop-marketplace-web-shopping-delivery-pack-e-commerce-illustrations-4323723.png?f=webp",
+        "description": "Booming traffic with online footfall like never before. Gain advantage of functionalities that introduce the new normals."
       },
       {
-        "name": "Semiconductor",
-        "icon": "https://static.vecteezy.com/system/resources/previews/024/683/392/original/3d-icon-processor-component-computer-hardware-illustration-concept-icon-render-png.png",
-        "description": "Our state-of-the-art hardware components are designed for durability and performance, ensuring that your systems run efficiently and effectively."
+        "name": "Walk-in stores",
+        "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/retail-store-3d-icon-download-in-png-blend-fbx-gltf-file-formats--shop-shopping-pack-marketplace-icons-8549828.png?f=webp",
+        "description": "Customers' experiences get better with each visit. More options and ways to fulfill their demands."
       },
       {
-        "name": "Software",
-        "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/software-development-3d-icon-download-in-png-blend-fbx-gltf-file-formats--programming-coding-web-pack-design-icons-5618482.png",
-        "description": "Our state-of-the-art hardware components are designed for durability and performance, ensuring that your systems run efficiently and effectively."
-      },
-      {
-        "name": "Professional services",
-        "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/consulting-creative-idea-3d-icon-download-in-png-blend-fbx-gltf-file-formats--chat-speech-bubble-digital-nomad-pack-business-icons-6166279.png?f=webp",
-        "description": "Our state-of-the-art hardware components are designed for durability and performance, ensuring that your systems run efficiently and effectively."
+        "name": "Loyalty programs",
+        "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/loyalty-program-3d-icon-download-in-png-blend-fbx-gltf-file-formats--customer-gift-e-commerce-pack-shopping-icons-7516532.png",
+        "description": "Making use of first-person data to hook customers and give them the rewarding options for loyalty."
       }
     ]
   },
   {
     "name": "Manufacturing & Distribution",
-    "title": "Empowering Industries Through Proven Solutions",
-    "subTitle": "Discover how our innovative solutions have driven success across various sectors, tackling unique challenges and delivering impactful results.",
-    "contentHead": "Empowering Industries with Next-Gen Technology",
-    "contentDescription": "At MenloCloud, we leverage cutting-edge technology to deliver exceptional solutions tailored to the unique needs of our clients. From advanced manufacturing techniques to smart automation and data analytics, our technological expertise empowers industries to enhance efficiency, reduce costs, and drive innovation. We are committed to staying at the forefront of technological advancements, ensuring that our clients benefit from the best tools and practices available in the market.",
+    "title": "Innovate and go multi-channel",
+    "bigImg": "https://images.pexels.com/photos/5532672/pexels-photo-5532672.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "contentImg": "https://images.pexels.com/photos/18468424/pexels-photo-18468424/free-photo-of-white-volvo-vnl-300-heavy-duty-truck.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "subTitle": "Line up innovative products and take them to diverse markets and help customers experience the best.",
+    "contentHead": "Streamlining for better",
+    "contentDescription": "Effective manufacturing processes enhance efficiency and quality. We are helping manufacturing and distribution sectors transform, add components, and create cutting-edge products.  While adding more to streamline distribution and ensure timely delivery, driving economic growth, meet consumer demand, and foster innovation.",
     "points": [
       {
-        "name": "Hardware",
-        "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/circuit-board-3d-icon-download-in-png-blend-fbx-gltf-file-formats--microchip-microprocessor-chip-motherboard-electrician-tools-pack-industry-icons-9741473.png?f=webp",
-        "description": "Our state-of-the-art hardware components are designed for durability and performance, ensuring that your systems run efficiently and effectively."
+        "name": "Research and development",
+        "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/research-3d-icon-download-in-png-blend-fbx-gltf-file-formats--magnifier-paper-search-business-marketing-pack-branding-icons-5013991.png?f=webp",
+        "description": "Facilitating state-of-the-art research and development processes in manufacturing."
       },
       {
-        "name": "Semiconductor",
-        "icon": "https://static.vecteezy.com/system/resources/previews/024/683/392/original/3d-icon-processor-component-computer-hardware-illustration-concept-icon-render-png.png",
-        "description": "Our state-of-the-art hardware components are designed for durability and performance, ensuring that your systems run efficiently and effectively."
+        "name": "Procurement",
+        "icon": "https://static.vecteezy.com/system/resources/previews/028/830/585/non_2x/procurement-management-exchange-illustration-3d-free-png.png",
+        "description": "Get the best AI solutions and procure machinery and establish processes which are mighty."
       },
       {
-        "name": "Software",
-        "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/software-development-3d-icon-download-in-png-blend-fbx-gltf-file-formats--programming-coding-web-pack-design-icons-5618482.png",
-        "description": "Our state-of-the-art hardware components are designed for durability and performance, ensuring that your systems run efficiently and effectively."
-      },
-      {
-        "name": "Professional services",
-        "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/consulting-creative-idea-3d-icon-download-in-png-blend-fbx-gltf-file-formats--chat-speech-bubble-digital-nomad-pack-business-icons-6166279.png?f=webp",
-        "description": "Our state-of-the-art hardware components are designed for durability and performance, ensuring that your systems run efficiently and effectively."
+        "name": "Innovation",
+        "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/innovation-3d-icon-download-in-png-blend-fbx-gltf-file-formats--idea-creative-creativity-bulb-digital-technology-pack-science-icons-7946835.png",
+        "description": "Seek innovative products through processes which are custom made."
       }
     ]
   },
   {
     "name": "Resource and Wealth",
-    "title": "Empowering Industries Through Proven Solutions",
-    "subTitle": "Discover how our innovative solutions have driven success across various sectors, tackling unique challenges and delivering impactful results.",
-    "contentHead": "Empowering Industries with Next-Gen Technology",
-    "contentDescription": "At MenloCloud, we leverage cutting-edge technology to deliver exceptional solutions tailored to the unique needs of our clients. From advanced manufacturing techniques to smart automation and data analytics, our technological expertise empowers industries to enhance efficiency, reduce costs, and drive innovation. We are committed to staying at the forefront of technological advancements, ensuring that our clients benefit from the best tools and practices available in the market.",
+    "title": "Broadening Socio-economic Empowerment ",
+    "bigImg": "https://images.pexels.com/photos/5466790/pexels-photo-5466790.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "contentImg": "https://images.pexels.com/photos/5980862/pexels-photo-5980862.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "subTitle": "Switch up the economic development and promote social growth through techniques that help the people. Making processes work towards a sustainable future.",
+    "contentHead": "New-age Options For Business",
+    "contentDescription": "Resources and wealth are fundamental to economic development and societal progress. Natural resources, human capital, and technological advancements drive prosperity. We drive equitable distribution essential to prevent disparities and enable sustainable management of resources for future generations to thrive, balancing economic growth with social responsibility.",
     "points": [
       {
-        "name": "Hardware",
-        "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/circuit-board-3d-icon-download-in-png-blend-fbx-gltf-file-formats--microchip-microprocessor-chip-motherboard-electrician-tools-pack-industry-icons-9741473.png?f=webp",
-        "description": "Our state-of-the-art hardware components are designed for durability and performance, ensuring that your systems run efficiently and effectively."
+        "name": "Economic factors",
+        "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/economic-growth-3d-icon-download-in-png-blend-fbx-gltf-file-formats--global-business-investment-money-financial-economy-situation-pack-icons-6166380.png?f=webp",
+        "description": "Control economic diversions through practices that bring change in policies for the long term."
       },
       {
-        "name": "Semiconductor",
-        "icon": "https://static.vecteezy.com/system/resources/previews/024/683/392/original/3d-icon-processor-component-computer-hardware-illustration-concept-icon-render-png.png",
-        "description": "Our state-of-the-art hardware components are designed for durability and performance, ensuring that your systems run efficiently and effectively."
+        "name": "Governance",
+        "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/government-building-3d-icon-download-in-png-blend-fbx-gltf-file-formats--parliament-house-architecture-politics-pack-icons-5727633.png?f=webp",
+        "description": "Enable governance on the basis of in-depth analysis of factors that matter."
       },
       {
-        "name": "Software",
-        "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/software-development-3d-icon-download-in-png-blend-fbx-gltf-file-formats--programming-coding-web-pack-design-icons-5618482.png",
-        "description": "Our state-of-the-art hardware components are designed for durability and performance, ensuring that your systems run efficiently and effectively."
-      },
-      {
-        "name": "Professional services",
-        "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/consulting-creative-idea-3d-icon-download-in-png-blend-fbx-gltf-file-formats--chat-speech-bubble-digital-nomad-pack-business-icons-6166279.png?f=webp",
-        "description": "Our state-of-the-art hardware components are designed for durability and performance, ensuring that your systems run efficiently and effectively."
+        "name": "Asset utilization",
+        "icon": "https://cdn3d.iconscout.com/3d/premium/thumb/asset-3d-icon-download-in-png-blend-fbx-gltf-file-formats--money-wealth-profit-saving-currency-pack-business-icons-5189997.png?f=webp",
+        "description": "Maximize asset utilization through methodologies that correspond to trends and current patterns."
       }
     ]
   }

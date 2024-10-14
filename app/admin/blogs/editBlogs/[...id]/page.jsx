@@ -113,6 +113,9 @@ const Blogform = ({ id, EditorComp }) => {
 
   const updateBlog = (e) => {
     e.preventDefault();
+    if (tags.length == 0) {
+      return alert("Please add at least one tag");
+    }
 
     if (
       (blog.priority == 1 && selectedOption == "default") ||

@@ -13,31 +13,83 @@ import Link from "next/link";
 import BlogSwiper from "@/components/blogSwiper";
 const Aiservices = [
   {
-    name: "Healthcare",
+    name: "Healthcare and Life Sciences",
     color: "#FF5252",
     img: "https://static.vecteezy.com/system/resources/previews/011/781/824/original/healthcare-3d-render-icon-illustration-png.png",
-    description: "Accurate and timely diagnosis",
+    description:
+      "Automating the creation of clinical trial reports, summarizing key findings and insights from large datasets.",
     sol: "Ai-assisted medical imaging analysis",
   },
   {
-    name: "Finance",
-    color: "#7C4DFF",
-    img: "https://cdn3d.iconscout.com/3d/premium/thumb/finance-3d-illustration-download-in-png-blend-fbx-gltf-file-formats--invoice-bill-receipt-online-money-service-pack-marketing-branding-illustrations-4159684.png",
-    description: "Risk Management and  fraud detection",
+    name: "Legal and Professional Services",
+    color: "#FFB74D",
+    img: "https://static.vecteezy.com/system/resources/previews/028/754/037/original/law-hammer-3d-icon-illustrations-png.png",
+    description:
+      "Generating customized legal contracts and agreements based on specific requirements and clauses.",
     sol: "Ai-powered predictive analytics",
   },
   {
-    name: "Retail",
-    color: "#64B5F6",
-    img: "https://cdn3d.iconscout.com/3d/premium/thumb/shopping-store-3d-illustration-download-in-png-blend-fbx-gltf-file-formats--shop-e-commerce-pack-illustrations-3728231.png",
-    description: "Personlized customer experience",
+    name: "Finance and Banking",
+    color: "#7C4DFF",
+    img: "https://cdn3d.iconscout.com/3d/premium/thumb/finance-3d-illustration-download-in-png-blend-fbx-gltf-file-formats--invoice-bill-receipt-online-money-service-pack-marketing-branding-illustrations-4159684.png",
+    description:
+      "Generating personalized financial advice and investment recommendations based on individual goals and risk profiles",
     sol: "Ai-driven recommendation engines",
   },
   {
-    name: "Manufacturing",
+    name: "Manufacturing and Industrial",
     color: "#EF9A9A",
     img: "https://static.vecteezy.com/system/resources/previews/019/031/202/original/factory-3d-illustration-icon-png.png",
-    description: "Predictive maintenance and quality control",
+    description:
+      "Generating detailed technical documentation, manuals, and standard operating procedures for complex machinery and processes",
+    sol: "Ai-powered predictive maintenance",
+  },
+  {
+    name: "Retail and E-commerce",
+    color: "#4FC3F7",
+    img: "https://cdn3d.iconscout.com/3d/premium/thumb/shopping-store-3d-illustration-download-in-png-blend-fbx-gltf-file-formats--shop-e-commerce-pack-illustrations-3728231.png",
+    description:
+      "Generating engaging and optimized product descriptions and marketing copy for e-commerce platforms.",
+    sol: "Ai-powered predictive maintenance",
+  },
+  {
+    name: "Media and Entertainment",
+    color: "#42A5F5",
+    img: "https://cdn3.iconfinder.com/data/icons/social-media-app-2/512/Telegram.png",
+    description:
+      "Generating story outlines, scripts, and dialogue for movies, TV shows, and video games",
+    sol: "Ai-powered predictive maintenance",
+  },
+  {
+    name: "Education and EdTech",
+    color: "#FFCA28",
+    img: "https://cdn3d.iconscout.com/3d/premium/thumb/online-learning-3d-icon-download-in-png-blend-fbx-gltf-file-formats--call-logo-laptop-internet-school-and-education-pack-icons-5220718.png",
+    description:
+      "Generating personalized learning materials and study guides tailored to individual student needs and learning styles",
+    sol: "Ai-powered predictive maintenance",
+  },
+  {
+    name: "Energy and Utilities",
+    color: "#00C853",
+    img: "https://cdn3d.iconscout.com/3d/premium/thumb/renewable-energy-3d-icon-download-in-png-blend-fbx-gltf-file-formats--power-solar-panel-green-clean-ecology-pack-environments-icons-5386087.png?f=webp",
+    description:
+      "Generating technical reports and analyses on energy usage, grid performance, and environmental impact",
+    sol: "Ai-powered predictive maintenance",
+  },
+  {
+    name: "Travel and Hospitality",
+    color: "#7986CB",
+    img: "https://cdn3d.iconscout.com/3d/premium/thumb/flight-ticket-3d-icon-download-in-png-blend-fbx-gltf-file-formats--travel-boarding-pass-plane-entry-holiday-element-vol2-pack-holidays-icons-6752734.png?f=webp",
+    description:
+      "Generating personalized travel itineraries, guides, and recommendations based on individual preferences and interests",
+    sol: "Ai-powered predictive maintenance",
+  },
+  {
+    name: "Automotive and Transportation",
+    color: "#FFA726",
+    img: "https://img.pikbest.com/origin/09/26/35/56fpIkbEsTZPX.png!sw800",
+    description:
+      "Generating technical documentation and repair manuals for vehicles and transportation systems",
     sol: "Ai-powered predictive maintenance",
   },
 ];
@@ -262,10 +314,6 @@ function GenAI() {
                       </p>
                     </motion.div>
 
-                    <motion.p className="leading-snug flex items-start gap-2  mt-1 overflow-hidden text-sm  text-gray-200 group-hover:text-gray-800  transition-all duration-500">
-                      <BsHandIndexThumbFill className="rotate-90 text-orange-500 text-lg" />
-                      {service.sol}
-                    </motion.p>
                     <div className="w-full flex justify-between items-center">
                       <button
                         onClick={() => setisOpen(true)}

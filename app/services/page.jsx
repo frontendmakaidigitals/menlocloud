@@ -186,40 +186,40 @@ function Services() {
   const [swiperInstance, setSwiperInstance] = useState(null);
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
-const handlePrev = () => {
-  if (swiperRef.current) {
-    swiperRef.current.slidePrev(); // Call slidePrev on the swiper instance
-    updateSlideState(); // Update state after sliding
-  }
-};
+  const handlePrev = () => {
+    if (swiperRef.current) {
+      swiperRef.current.slidePrev(); // Call slidePrev on the swiper instance
+      updateSlideState(); // Update state after sliding
+    }
+  };
 
-const handleNext = () => {
-  if (swiperRef.current) {
-    swiperRef.current.slideNext(); // Call slideNext on the swiper instance
-    updateSlideState(); // Update state after sliding
-  }
-};
-const updateSlideState = () => {
-  if (swiperInstance) {
-    setIsBeginning(swiperInstance.isBeginning);
-    setIsEnd(swiperInstance.isEnd);
-  }
-};
+  const handleNext = () => {
+    if (swiperRef.current) {
+      swiperRef.current.slideNext(); // Call slideNext on the swiper instance
+      updateSlideState(); // Update state after sliding
+    }
+  };
+  const updateSlideState = () => {
+    if (swiperInstance) {
+      setIsBeginning(swiperInstance.isBeginning);
+      setIsEnd(swiperInstance.isEnd);
+    }
+  };
 
-useEffect(() => {
-  if (swiperInstance) {
-    // Update the slide state on initialization
-    updateSlideState();
+  useEffect(() => {
+    if (swiperInstance) {
+      // Update the slide state on initialization
+      updateSlideState();
 
-    // Attach the event listener
-    swiperInstance.on("slideChange", updateSlideState);
+      // Attach the event listener
+      swiperInstance.on("slideChange", updateSlideState);
 
-    // Cleanup function to remove the event listener
-    return () => {
-      swiperInstance.off("slideChange", updateSlideState);
-    };
-  }
-}, [swiperInstance]);
+      // Cleanup function to remove the event listener
+      return () => {
+        swiperInstance.off("slideChange", updateSlideState);
+      };
+    }
+  }, [swiperInstance]);
 
   return (
     <>
@@ -379,7 +379,7 @@ useEffect(() => {
                 {tabs[tabSelected].data}
               </p>
               <p className="font-Satoshi font-[500] text-lg xl:text-xl xxl:text-2xl mt-5">
-                Industries included
+                Services included
               </p>
               <ul className="list-disc px-5 mt-2 w-full">
                 {tabs[tabSelected].points.map((point, index) => (
