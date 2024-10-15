@@ -25,7 +25,7 @@ const Home_4 = () => {
                   Next-gen AI solutions for cybersecurity
                 </h1>
                 <div className='mx-auto max-w-[1090px]'>
-                  <p className='leading-[1.33] lg:text-xl xl:text-2xl'>
+                  <p className='leading-[1.35] lg:text-xl xl:text-2xl'>
                     AI solutions for cyber security play a critical role in
                     staying ahead of increasingly sophisticated cyber threats by
                     providing faster, more accurate threat detection and
