@@ -172,7 +172,7 @@ function BlogDetails({ params }) {
 
           <div className="grid grid-cols-1 md:grid-cols-3 mt-12 lg:mt-7 xxl:grid-cols-4 gap-10">
             {blogs
-              .filter((blog) => ["default"].includes(blog.priority))
+              .filter((blog) => ["Default"].includes(blog.priority))
               .sort((a, b) => parseInt(a.priority) - parseInt(b.priority))
               .map((blog) => (
                 <Link
