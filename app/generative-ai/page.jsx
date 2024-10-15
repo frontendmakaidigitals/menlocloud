@@ -363,21 +363,22 @@ function GenAI() {
           </div>
         </div>
 
-        <div className="bg-[url('/assets/img_placeholder/bg.jpg')] bg-top bg-cover bg-no-repeat py-32">
+        <div className="bg-[url('/assets/img_placeholder/genBack.jpg')] bg-top bg-cover bg-no-repeat py-16 lg:py-32">
           <section className="global-container ">
-            <p className="w-full text-3xl lg:text-6xl  font-Satoshi font-bold text-start lg:text-center">
+            <p className="w-full text-4xl lg:text-6xl  font-Satoshi font-bold text-start lg:text-center">
               <span className="bg-gradient-to-r font-Telma from-blue-600 to-indigo-400 bg-clip-text  text-transparent">
-                {" "}
-                Generative Ai{" "}
-              </span>{" "}
+                {""}
+                Generative Ai <span className="opacity-0"> s</span> {"  "}
+              </span>
+              {""}
             </p>
-            <p className="text-lg xl:text-md xxl:text-lg text-start lg:text-center mt-2">
+            <p className="text-md xl:text-md xxl:text-lg text-start lg:text-center mt-4">
               Learn how we’re driving impact with organizations like yours
               across key industry sectors.
             </p>
           </section>
           <div
-            className={`bg-sky-400 block  lg:hidden px-4 py-3 transition-all duration-200   w-full `}
+            className={`bg-sky-400 block mt-10  lg:hidden px-4 py-3 transition-all duration-200   w-full `}
           >
             <p
               onClick={() => setMobileTabs(!mobileTabs)}
@@ -417,11 +418,11 @@ function GenAI() {
                 : null}
             </div>
           </div>
-          <div className="relative hidden mt-16 lg:flex flex-row gap-5 justify-center items-center global-container">
+          <div className="relative hidden mt-5 lg:flex flex-row gap-5 justify-center items-center global-container">
             {!isBeginning && (
               <button
                 onClick={handlePrev}
-                className="absolute left-0 text-black shadow-[0px_0px_12px_12px_rgba(250,250,250,.5)] bg-lime-400 size-10 flex justify-center items-center z-[99] rounded-full"
+                className="absolute left-0 text-black shadow-2xl bg-lime-400 size-10 flex justify-center items-center z-[99] rounded-full"
               >
                 <MdArrowBackIosNew />
               </button>
@@ -459,32 +460,42 @@ function GenAI() {
             {!isEnd && (
               <button
                 onClick={handleNext}
-                className="absolute shadow-[0px_0px_12px_12px_rgba(250,250,250,.5)] right-0 text-black bg-lime-400 hover:bg-lime-600 size-10 flex justify-center items-center  z-[99] rounded-full"
+                className="absolute shadow-2xl right-0 text-black bg-lime-400 hover:bg-lime-600 size-10 flex justify-center items-center  z-[99] rounded-full"
               >
                 <MdOutlineArrowForwardIos />
               </button>
             )}
           </div>
-          <div className="global-container mt-10 xl:mt-20 grid grid-cols-1  lg:grid-cols-2 px-0 xl:px-14 gap-8">
+          <div className="global-container mt-10 xl:mt-20 grid grid-cols-1  lg:grid-cols-2 px-4 xl:px-14 gap-8">
             <div>
-              <p className="text-lg xl:text-4xl xxl:text-5xl font-Satoshi font-[600]">
+              <p className="text-2xl xl:text-4xl xxl:text-5xl font-Satoshi font-[600]">
                 {tabs[tabSelected].name}
               </p>
               <div className="flex mt-3 items-start gap-2">
-                <div className="mt-5">
-                  <PiSealWarningFill className="text-yellow-500 text-xl" />
+                <div className="mt-4">
+                  <div className="flex items-center gap-3">
+                    <p className="font-Satoshi font-[400] text-3xl">Problem</p>
+                    <div className="mt-1">
+                      <PiSealWarningFill className="text-2xl text-[#F57C00] " />
+                    </div>
+                  </div>
+                  <p className=" text-md xl:text-sm xxl:text-lg font-Satoshi mt-2">
+                    {tabs[tabSelected].prob}
+                  </p>
                 </div>
-                <p className=" text-md xl:text-sm xxl:text-lg font-Satoshi mt-4 font-medium">
-                  {tabs[tabSelected].prob}
-                </p>
               </div>
-              <div className="flex items-start gap-2">
-                <div className="mt-5">
-                  <FaCircleCheck className="text-green-500 text-lg" />
+              <div className="flex mt-4 items-start gap-2">
+                <div>
+                  <div className="flex items-center gap-3">
+                    <p className="font-Satoshi font-[400] text-3xl">Solution</p>
+                    <div className="mt-1">
+                      <FaCircleCheck className="text-xl text-[#64DD17]" />
+                    </div>
+                  </div>
+                  <p className=" text-md xl:text-sm xxl:text-lg font-Satoshi mt-2">
+                    {tabs[tabSelected].sol}
+                  </p>
                 </div>
-                <p className=" text-md xl:text-sm xxl:text-lg font-Satoshi mt-4">
-                  {tabs[tabSelected].sol}
-                </p>
               </div>
 
               <button
