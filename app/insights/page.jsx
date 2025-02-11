@@ -67,15 +67,15 @@ function Insights() {
   const [selectedService, setSelectedService] = useState("All Services");
   const [selectedIndustry, setSelectedIndustry] = useState("All Industries");
 
-  const imageURL = `${NEXT_PUBLIC_SERVER_URL}/`;
+  const imageURL = `${process.env.NEXT_PUBLIC_SERVER_URL}/`;
   const getBlogs = () => {
     if (true) {
       setIsLoading(true);
-      axios.get(`${NEXT_PUBLIC_SERVER_URL}/sanctum/csrf-cookie`, {
+      axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/sanctum/csrf-cookie`, {
         withCredentials: true,
       });
       axios
-        .get(`${NEXT_PUBLIC_SERVER_URL}/api/blog`, {
+        .get(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/blog`, {
           withCredentials: true,
         })
         .then((res) => {

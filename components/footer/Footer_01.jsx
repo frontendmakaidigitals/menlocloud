@@ -15,7 +15,7 @@ const Footer_01 = () => {
   const [isSubmitting, setIsubmitting] = useState(false);
   const [email, setEmail] = useState([]);
   const [status, setStatus] = useState(null);
-  const serverURL = `${NEXT_PUBLIC_SERVER_URL}/`;
+  const serverURL = `${process.env.NEXT_PUBLIC_SERVER_URL}/`;
   const submitEmail = (e) => {
     setIsubmitting(true);
     e.preventDefault();

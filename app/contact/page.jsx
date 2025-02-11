@@ -19,11 +19,11 @@ function Contact() {
 
     if (true) {
       setIsSubmitting(true);
-      axios.get(`${NEXT_PUBLIC_SERVER_URL}/sanctum/csrf-cookie`, {
+      axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/sanctum/csrf-cookie`, {
         withCredentials: true,
       });
       axios
-        .post(`${NEXT_PUBLIC_SERVER_URL}/api/query`, updatedData, {
+        .post(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/query`, updatedData, {
           withCredentials: true,
           headers: { "Content-Type": "multipart/form-data" },
         })

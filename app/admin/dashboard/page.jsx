@@ -29,11 +29,11 @@ const BlogsCard = () => {
   const getBlogs = (data) => {
     if (true) {
       setIsLoading(true);
-      axios.get(`${NEXT_PUBLIC_SERVER_URL}/sanctum/csrf-cookie`, {
+      axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/sanctum/csrf-cookie`, {
         withCredentials: true,
       });
       axios
-        .get(`${NEXT_PUBLIC_SERVER_URL}/api/blog`, { withCredentials: true })
+        .get(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/blog`, { withCredentials: true })
         .then((res) => {
           setBlogs(res.data);
           setStatus("success");
@@ -73,7 +73,7 @@ const QueryCard = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [status, setStatus] = useState(false);
   const [searchTerm, setSearchTerm] = useState(""); // State for search term
-  const serverURL = `${NEXT_PUBLIC_SERVER_URL}/`;
+  const serverURL = `${process.env.NEXT_PUBLIC_SERVER_URL}/`;
   const [querys, setQueries] = useState([]);
   const [unread, setUnread] = useState(0);
   const getQueries = () => {

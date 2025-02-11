@@ -9,16 +9,16 @@ import { GoArrowLeft, GoArrowRight } from "react-icons/go";
 
 const BlogSwiper = () => {
   const swiperBlogRef = useRef(null);
-  const imageURL = `${NEXT_PUBLIC_SERVER_URL}/`;
+  const imageURL = `${process.env.NEXT_PUBLIC_SERVER_URL}/`;
   const [blogs, setBlogs] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const getBlogs = async () => {
     try {
-      await axios.get(`${NEXT_PUBLIC_SERVER_URL}/sanctum/csrf-cookie`, {
+      await axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/sanctum/csrf-cookie`, {
         withCredentials: true,
       });
-      const res = await axios.get(`${NEXT_PUBLIC_SERVER_URL}/api/blog`, {
+      const res = await axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/blog`, {
         withCredentials: true,
       });
       setBlogs(res.data);

@@ -12,7 +12,7 @@ function BlogDetails({ params }) {
   const Viewer = dynamic(() => import("@/components/MDXViewer"), {
     ssr: false,
   });
-  const serverURL = `${NEXT_PUBLIC_SERVER_URL}/`;
+  const serverURL = `${process.env.NEXT_PUBLIC_SERVER_URL}/`;
   const [tags, setTags] = useState([]);
   const [status, setStatus] = useState(null);
   const [title, setTitle] = useState("");
@@ -24,14 +24,14 @@ function BlogDetails({ params }) {
   const [date, setDate] = useState("");
   const [image, setImage] = useState("");
   const id = params.id[0];
-  const imageURL = `${NEXT_PUBLIC_SERVER_URL}/`;
+  const imageURL = `${process.env.NEXT_PUBLIC_SERVER_URL}/`;
   const getBlog = () => {
     if (true) {
-      axios.get(`${NEXT_PUBLIC_SERVER_URL}/sanctum/csrf-cookie`, {
+      axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/sanctum/csrf-cookie`, {
         withCredentials: true,
       });
       axios
-        .get(`${NEXT_PUBLIC_SERVER_URL}/api/editblog/${id}`, {
+        .get(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/editblog/${id}`, {
           withCredentials: true,
         })
         .then((res) => {

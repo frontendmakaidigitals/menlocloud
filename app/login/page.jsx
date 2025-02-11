@@ -81,12 +81,12 @@ const LoginTab = () => {
   const handleLogin = () => {
     if (validate()) {
       setLoader(true);
-      axios.get(`${NEXT_PUBLIC_SERVER_URL}/sanctum/csrf-cookie`, {
+      axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/sanctum/csrf-cookie`, {
         withCredentials: true,
       });
       axios
         .post(
-          `${NEXT_PUBLIC_SERVER_URL}/api/admin/login`,
+          `${process.env.NEXT_PUBLIC_SERVER_URL}/api/admin/login`,
           {
             email: email,
             password: password,
@@ -233,12 +233,12 @@ const SignupTab = () => {
     if (validate()) {
       setLoader(true);
       try {
-        axios.get(`${NEXT_PUBLIC_SERVER_URL}/sanctum/csrf-cookie`, {
+        axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/sanctum/csrf-cookie`, {
           withCredentials: true,
         });
         axios
           .post(
-            `${NEXT_PUBLIC_SERVER_URL}/api/admin/register`,
+            `${process.env.NEXT_PUBLIC_SERVER_URL}/api/admin/register`,
             {
               name: name,
               email: email,

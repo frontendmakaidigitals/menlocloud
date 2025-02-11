@@ -25,11 +25,11 @@ const Page = () => {
 
   const getBlogs = (data) => {
     setIsLoading(true);
-    axios.get(`${NEXT_PUBLIC_SERVER_URL}/sanctum/csrf-cookie`, {
+    axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/sanctum/csrf-cookie`, {
       withCredentials: true,
     });
     axios
-      .get(`${NEXT_PUBLIC_SERVER_URL}/api/blog`, { withCredentials: true })
+      .get(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/blog`, { withCredentials: true })
       .then((res) => {
         setBlogs(res.data);
         setStatus("success");
@@ -69,7 +69,7 @@ export default Page;
 
 const BlogList = ({ blogs }) => {
   const router = useRouter();
-  const imageURL = `${NEXT_PUBLIC_SERVER_URL}/`;
+  const imageURL = `${process.env.NEXT_PUBLIC_SERVER_URL}/`;
 
   const [isPopUpOpen, setIsPopUpOpen] = useState(false);
   const [blogPriority, setBlogPriority] = useState(0);
@@ -84,11 +84,11 @@ const BlogList = ({ blogs }) => {
     ) {
       setIsPopUpOpen(true);
     } else {
-      axios.get(`${NEXT_PUBLIC_SERVER_URL}/sanctum/csrf-cookie`, {
+      axios.get(`${process.env.NEXT_PUBLIC_SERVER_URL}/sanctum/csrf-cookie`, {
         withCredentials: true,
       });
       axios
-        .delete(`${NEXT_PUBLIC_SERVER_URL}/api/blog/${id}`, {
+        .delete(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/blog/${id}`, {
           withCredentials: true,
         })
         .then((res) => {
