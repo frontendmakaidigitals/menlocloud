@@ -15,7 +15,7 @@ const Footer_01 = () => {
   const [isSubmitting, setIsubmitting] = useState(false);
   const [email, setEmail] = useState([]);
   const [status, setStatus] = useState(null);
-  const serverURL = "https://admin.yatriclubs.com/";
+  const serverURL = "https://admin.milestonehomesre.com/";
   const submitEmail = (e) => {
     setIsubmitting(true);
     e.preventDefault();

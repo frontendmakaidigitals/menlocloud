@@ -12,7 +12,7 @@ function BlogDetails({ params }) {
   const Viewer = dynamic(() => import("@/components/MDXViewer"), {
     ssr: false,
   });
-  const serverURL = "https://admin.yatriclubs.com/";
+  const serverURL = "https://admin.milestonehomesre.com/";
   const [tags, setTags] = useState([]);
   const [status, setStatus] = useState(null);
   const [title, setTitle] = useState("");
@@ -24,14 +24,14 @@ function BlogDetails({ params }) {
   const [date, setDate] = useState("");
   const [image, setImage] = useState("");
   const id = params.id[0];
-  const imageURL = "https://admin.yatriclubs.com/";
+  const imageURL = "https://admin.milestonehomesre.com/";
   const getBlog = () => {
     if (true) {
-      axios.get("https://admin.yatriclubs.com/sanctum/csrf-cookie", {
+      axios.get("https://admin.milestonehomesre.com/sanctum/csrf-cookie", {
         withCredentials: true,
       });
       axios
-        .get(`https://admin.yatriclubs.com/api/editblog/${id}`, {
+        .get(`https://admin.milestonehomesre.com/api/editblog/${id}`, {
           withCredentials: true,
         })
         .then((res) => {

@@ -29,11 +29,11 @@ const BlogsCard = () => {
   const getBlogs = (data) => {
     if (true) {
       setIsLoading(true);
-      axios.get("https://admin.yatriclubs.com/sanctum/csrf-cookie", {
+      axios.get("https://admin.milestonehomesre.com/sanctum/csrf-cookie", {
         withCredentials: true,
       });
       axios
-        .get(`https://admin.yatriclubs.com/api/blog`, { withCredentials: true })
+        .get(`https://admin.milestonehomesre.com/api/blog`, { withCredentials: true })
         .then((res) => {
           setBlogs(res.data);
           setStatus("success");
@@ -73,7 +73,7 @@ const QueryCard = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [status, setStatus] = useState(false);
   const [searchTerm, setSearchTerm] = useState(""); // State for search term
-  const serverURL = "https://admin.yatriclubs.com/";
+  const serverURL = "https://admin.milestonehomesre.com/";
   const [querys, setQueries] = useState([]);
   const [unread, setUnread] = useState(0);
   const getQueries = () => {

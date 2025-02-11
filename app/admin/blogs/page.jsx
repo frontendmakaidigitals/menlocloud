@@ -25,11 +25,11 @@ const Page = () => {
 
   const getBlogs = (data) => {
     setIsLoading(true);
-    axios.get("https://admin.yatriclubs.com/sanctum/csrf-cookie", {
+    axios.get("https://admin.milestonehomesre.com/sanctum/csrf-cookie", {
       withCredentials: true,
     });
     axios
-      .get(`https://admin.yatriclubs.com/api/blog`, { withCredentials: true })
+      .get(`https://admin.milestonehomesre.com/api/blog`, { withCredentials: true })
       .then((res) => {
         setBlogs(res.data);
         setStatus("success");
@@ -69,7 +69,7 @@ export default Page;
 
 const BlogList = ({ blogs }) => {
   const router = useRouter();
-  const imageURL = "https://admin.yatriclubs.com/";
+  const imageURL = "https://admin.milestonehomesre.com/";
 
   const [isPopUpOpen, setIsPopUpOpen] = useState(false);
   const [blogPriority, setBlogPriority] = useState(0);
@@ -84,11 +84,11 @@ const BlogList = ({ blogs }) => {
     ) {
       setIsPopUpOpen(true);
     } else {
-      axios.get("https://admin.yatriclubs.com/sanctum/csrf-cookie", {
+      axios.get("https://admin.milestonehomesre.com/sanctum/csrf-cookie", {
         withCredentials: true,
       });
       axios
-        .delete(`https://admin.yatriclubs.com/api/blog/${id}`, {
+        .delete(`https://admin.milestonehomesre.com/api/blog/${id}`, {
           withCredentials: true,
         })
         .then((res) => {

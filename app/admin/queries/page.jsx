@@ -22,7 +22,7 @@ const Page = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [status, setStatus] = useState(false);
   const [searchTerm, setSearchTerm] = useState(""); // State for search term
-  const serverURL = "https://admin.yatriclubs.com/";
+  const serverURL = "https://admin.milestonehomesre.com/";
   const [querys, setQueries] = useState([]);
   const [selectedOption, setSelectedOption] = useState({
     value: 2,

@@ -67,15 +67,15 @@ function Insights() {
   const [selectedService, setSelectedService] = useState("All Services");
   const [selectedIndustry, setSelectedIndustry] = useState("All Industries");
 
-  const imageURL = "https://admin.yatriclubs.com/";
+  const imageURL = "https://admin.milestonehomesre.com/";
   const getBlogs = () => {
     if (true) {
       setIsLoading(true);
-      axios.get("https://admin.yatriclubs.com/sanctum/csrf-cookie", {
+      axios.get("https://admin.milestonehomesre.com/sanctum/csrf-cookie", {
         withCredentials: true,
       });
       axios
-        .get(`https://admin.yatriclubs.com/api/blog`, {
+        .get(`https://admin.milestonehomesre.com/api/blog`, {
           withCredentials: true,
         })
         .then((res) => {

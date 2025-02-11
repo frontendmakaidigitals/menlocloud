@@ -81,12 +81,12 @@ const LoginTab = () => {
   const handleLogin = () => {
     if (validate()) {
       setLoader(true);
-      axios.get("https://admin.yatriclubs.com/sanctum/csrf-cookie", {
+      axios.get("https://admin.milestonehomesre.com/sanctum/csrf-cookie", {
         withCredentials: true,
       });
       axios
         .post(
-          `https://admin.yatriclubs.com/api/admin/login`,
+          `https://admin.milestonehomesre.com/api/admin/login`,
           {
             email: email,
             password: password,
@@ -233,12 +233,12 @@ const SignupTab = () => {
     if (validate()) {
       setLoader(true);
       try {
-        axios.get("https://admin.yatriclubs.com/sanctum/csrf-cookie", {
+        axios.get("https://admin.milestonehomesre.com/sanctum/csrf-cookie", {
           withCredentials: true,
         });
         axios
           .post(
-            `https://admin.yatriclubs.com/api/admin/register`,
+            `https://admin.milestonehomesre.com/api/admin/register`,
             {
               name: name,
               email: email,

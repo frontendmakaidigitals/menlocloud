@@ -116,17 +116,17 @@ const Blogform = ({ id, EditorComp }) => {
   const [image, setImage] = useState(null);
   const [blogDetail, setBlogDetail] = useState(null);
   const [imageOpen, setimageOpen] = useState(false);
-  const imageURL = "https://admin.yatriclubs.com/";
+  const imageURL = "https://admin.milestonehomesre.com/";
   const [isPopUpOpen, setIsPopUpOpen] = useState(false);
   const [blog, setBlog] = useState([]);
 
   const getBlog = () => {
     if (true) {
-      axios.get("https://admin.yatriclubs.com/sanctum/csrf-cookie", {
+      axios.get("https://admin.milestonehomesre.com/sanctum/csrf-cookie", {
         withCredentials: true,
       });
       axios
-        .get(`https://admin.yatriclubs.com/api/editblog/${id}`, {
+        .get(`https://admin.milestonehomesre.com/api/editblog/${id}`, {
           withCredentials: true,
         })
         .then((res) => {
@@ -186,11 +186,11 @@ const Blogform = ({ id, EditorComp }) => {
         formData.append("image", image[0]);
       }
       setIsSubmitting(true);
-      axios.get("https://admin.yatriclubs.com/sanctum/csrf-cookie", {
+      axios.get("https://admin.milestonehomesre.com/sanctum/csrf-cookie", {
         withCredentials: true,
       });
       axios
-        .post(`https://admin.yatriclubs.com/api/updateblog/${id}`, formData, {
+        .post(`https://admin.milestonehomesre.com/api/updateblog/${id}`, formData, {
           withCredentials: true,
           headers: { "Content-Type": "multipart/form-data" },
         })
