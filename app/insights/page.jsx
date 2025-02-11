@@ -67,15 +67,15 @@ function Insights() {
   const [selectedService, setSelectedService] = useState("All Services");
   const [selectedIndustry, setSelectedIndustry] = useState("All Industries");
 
-  const imageURL = "https://admin.milestonehomesre.com/";
+  const imageURL = `${NEXT_PUBLIC_SERVER_URL}/`;
   const getBlogs = () => {
     if (true) {
       setIsLoading(true);
-      axios.get("https://admin.milestonehomesre.com/sanctum/csrf-cookie", {
+      axios.get(`${NEXT_PUBLIC_SERVER_URL}/sanctum/csrf-cookie`, {
         withCredentials: true,
       });
       axios
-        .get(`https://admin.milestonehomesre.com/api/blog`, {
+        .get(`${NEXT_PUBLIC_SERVER_URL}/api/blog`, {
           withCredentials: true,
         })
         .then((res) => {

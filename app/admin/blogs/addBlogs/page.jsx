@@ -168,12 +168,12 @@ const Blogform = () => {
 
       // First, make the CSRF cookie request
       axios
-        .get("https://admin.milestonehomesre.com/sanctum/csrf-cookie", {
+        .get(`${NEXT_PUBLIC_SERVER_URL}/sanctum/csrf-cookie`, {
           withCredentials: true,
         })
         .then(() => {
           // Then make the blog submission POST request
-          return axios.post(`https://admin.milestonehomesre.com/api/blog`, formData, {
+          return axios.post(`${NEXT_PUBLIC_SERVER_URL}/api/blog`, formData, {
             withCredentials: true,
             headers: { "Content-Type": "multipart/form-data" },
           });

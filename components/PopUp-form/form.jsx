@@ -15,11 +15,11 @@ const Form = ({ setIsOpen, setStatus, status }) => {
 
     if (true) {
       setIsSubmitting(true);
-      axios.get("https://admin.milestonehomesre.com/sanctum/csrf-cookie", {
+      axios.get(`${NEXT_PUBLIC_SERVER_URL}/sanctum/csrf-cookie`, {
         withCredentials: true,
       });
       axios
-        .post(`https://admin.milestonehomesre.com/api/query`, updatedData, {
+        .post(`${NEXT_PUBLIC_SERVER_URL}/api/query`, updatedData, {
           withCredentials: true,
           headers: { "Content-Type": "multipart/form-data" },
         })

@@ -81,12 +81,12 @@ const LoginTab = () => {
   const handleLogin = () => {
     if (validate()) {
       setLoader(true);
-      axios.get("https://admin.milestonehomesre.com/sanctum/csrf-cookie", {
+      axios.get(`${NEXT_PUBLIC_SERVER_URL}/sanctum/csrf-cookie`, {
         withCredentials: true,
       });
       axios
         .post(
-          `https://admin.milestonehomesre.com/api/admin/login`,
+          `${NEXT_PUBLIC_SERVER_URL}/api/admin/login`,
           {
             email: email,
             password: password,
@@ -233,12 +233,12 @@ const SignupTab = () => {
     if (validate()) {
       setLoader(true);
       try {
-        axios.get("https://admin.milestonehomesre.com/sanctum/csrf-cookie", {
+        axios.get(`${NEXT_PUBLIC_SERVER_URL}/sanctum/csrf-cookie`, {
           withCredentials: true,
         });
         axios
           .post(
-            `https://admin.milestonehomesre.com/api/admin/register`,
+            `${NEXT_PUBLIC_SERVER_URL}/api/admin/register`,
             {
               name: name,
               email: email,
